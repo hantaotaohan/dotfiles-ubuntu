@@ -192,14 +192,15 @@ echo -e "${blue}Install Chrome Requirements"
 sudo dpkg -i $Dotfiles_repo/chrome/google-chrome-stable_current_amd64.deb > /dev/null 2>&1
 echo -e "${blue}Chrome Install Successful"
 
-sudo chmod +x $Dotfiles_repo/chrome/chromedriver
 if [ -f "/usr/local/share/chromedriver" ];then
 sudo rm -rf /usr/local/share/chromedriver
 sudo cp -f $Dotfiles_repo/chrome/chromedriver /usr/local/share/chromedriver
+sudo chmod +x /usr/local/share/chromedriver
 sudo ln -sf /usr/local/share/chromedriver /usr/local/bin/chromedriver
 sudo ln -sf /usr/local/share/chromedriver /usr/bin/chromedriver
 else
 sudo cp -f $Dotfiles_repo/chrome/chromedriver /usr/local/share/chromedriver
+sudo chmod +x /usr/local/share/chromedriver
 sudo ln -sf /usr/local/share/chromedriver /usr/local/bin/chromedriver
 sudo ln -sf /usr/local/share/chromedriver /usr/bin/chromedriver
 fi
