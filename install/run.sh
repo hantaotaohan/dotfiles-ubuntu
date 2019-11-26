@@ -1,3 +1,2 @@
 git clone https://github.com/hantaotaohan/Dotfiles.git
-cd Dotfiles/install
-sudo ./install_server.sh
+sudo . $HOME/Dotfiles/install.install_server.sh
