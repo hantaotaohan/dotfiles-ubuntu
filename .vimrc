@@ -162,7 +162,7 @@ set showmatch                                                            " 匹�
 set nocompatible                                                         " 去掉有关vi一致性模式
 set backspace=indent,eol,start                                           " 设置退格键的工作方式
 set hlsearch                                                             " 高亮搜索的关键字
-set pythonthreedll=python36.dll                                          " python3.6支持
+set pythondll=                                                           " python3.6支持
 set writebackup                                                          " 保存文件前建立备份，保存成功后删除该备份
 set nobackup                                                             " 设置无备份文件
 set undofile                                                             " 开启撤销功能
