@@ -107,7 +107,7 @@ Plug 'scrooloose/nerdtree'                                               " 文�
 Plug 'godlygeek/tabular'                                                 " 文本对齐插件
 Plug 'dhruvasagar/vim-table-mode'                                        " 表格模式
 Plug 'majutsushi/tagbar'                                                 " Tag浏览
-Plug '$HOME/.fzf'                                                        " 为系统安装fzf工具
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }        " 为系统安装fzf工具
 Plug 'junegunn/fzf.vim'                                                  " 为vim安装fzf插件
 Plug 'skywind3000/asyncrun.vim'                                          " 配合调测python插件
 Plug 'christoomey/vim-tmux-navigator'                                    " 同步vim与tmux快捷键
