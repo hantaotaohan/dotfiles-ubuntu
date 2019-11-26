@@ -122,8 +122,8 @@ echo -e "${blue}Again Update Successful"
 
 for dots_home in "${Dotfiles_home[@]}"
     do
-        rm -rf "$HOME/${dots_home}"
-        ln -fs "$Dotfiles_repo/${dots_home}" "$HOME/"
+        sudo rm -rf "$HOME/${dots_home}"
+        sudo ln -fs "$Dotfiles_repo/${dots_home}" "$HOME/"
     done
 echo -e "${blue}Install Dotfiles Successful"
 
@@ -133,8 +133,8 @@ echo -e "${blue}Install Dotfiles Successful"
 
 for dots_copy in "${Dotfiles_copy[@]}"
     do
-        rm -rf "$HOME/${dots_copy}"
-        cp -rf "$Dotfiles_repo/${dots_copy}" "$HOME/"
+        sudo rm -rf "$HOME/${dots_copy}"
+        sudo cp -rf "$Dotfiles_repo/${dots_copy}" "$HOME/"
     done
 echo -e "${blue}Install Dotfiles COPY Successful"
 
