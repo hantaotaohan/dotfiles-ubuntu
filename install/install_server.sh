@@ -143,15 +143,15 @@ echo -e "${blue}Install Dotfiles COPY Successful"
 #-------------------------------------------------------------------
 
 if [ -f "$HOME/.viminfo" ];then
-    sudo chmod 777 $HOME/.viminfo
+    sudo chmod +x $HOME/.viminfo
 fi
 
 if [ -f "$HOME/.vim" ];then
-    sudo chmod 777 $HOME/.vim
+    sudo chmod +x $HOME/.vim
 fi
 
 if [ -f "$HOME/.tmux" ];then
-    sudo chmod 777 $HOME/.tmux
+    sudo chmod +x $HOME/.tmux
 fi
 
 echo -e "${blue}Chomd Needfolds Successful"
