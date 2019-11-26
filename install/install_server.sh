@@ -167,7 +167,14 @@ echo -e "${blue}Vim PlugInstall Successful"
 # Install Ripgrep
 #-------------------------------------------------------------------
 
-sudo dpkg -i ripgrep/ripgrep_11.0.2_amd64.deb > /dev/null 2>&1
+sudo dpkg -i $Dotfiles_repo/ripgrep/ripgrep_11.0.2_amd64.deb > /dev/null 2>&1
+echo -e "${blue}Ripgrep Install success"
+
+#-------------------------------------------------------------------
+# Install Ripgrep
+#-------------------------------------------------------------------
+
+sudo dpkg -i $Dotfiles_repo/bat/bat_0.12.1_amd64.deb > /dev/null 2>&1
 echo -e "${blue}Ripgrep Install success"
 
 #-------------------------------------------------------------------
@@ -202,13 +209,6 @@ sudo ln -sf /usr/local/share/chromedriver /usr/bin/chromedriver
 fi
 
 echo -e "${blue}ChromeDriver Install Successful"
-
-#-------------------------------------------------------------------
-# Install BAT
-#-------------------------------------------------------------------
-
-sudo wget -q -t 0 -P $HOME https://github.com/sharkdp/bat/releases/download/v0.12.1/bat_0.12.1_amd64.deb > /dev/null 2>&1 
-sudo dpkg -i $HOME/bat_0.12.1_amd64.deb > /dev/null 2>&1
 
 #-------------------------------------------------------------------
 # AutoRemove
