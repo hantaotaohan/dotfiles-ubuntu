@@ -150,10 +150,6 @@ if [ -f "$HOME/.vim" ];then
     sudo chmod +x $HOME/.vim
 fi
 
-if [ -f "$HOME/.tmux" ];then
-    sudo chmod +x $HOME/.tmux
-fi
-
 echo -e "${blue}Chomd Needfolds Successful"
 
 #-------------------------------------------------------------------
@@ -171,11 +167,11 @@ sudo dpkg -i $Dotfiles_repo/ripgrep/ripgrep_11.0.2_amd64.deb > /dev/null 2>&1
 echo -e "${blue}Ripgrep Install success"
 
 #-------------------------------------------------------------------
-# Install Ripgrep
+# Install Bat
 #-------------------------------------------------------------------
 
 sudo dpkg -i $Dotfiles_repo/bat/bat_0.12.1_amd64.deb > /dev/null 2>&1
-echo -e "${blue}Ripgrep Install success"
+echo -e "${blue}Bat Install success"
 
 #-------------------------------------------------------------------
 # Install Chrome and ChromeDriver
@@ -214,6 +210,18 @@ echo -e "${blue}ChromeDriver Install Successful"
 # AutoRemove
 #-------------------------------------------------------------------
 
+if [ ! -f "$HOME/.tmux" ];then
+    sudo mkdir -p $HOME/.tmux/plugins/tpm
+else
+    sudo rm -rf $HOME/.tmux
+fi
+git clone -q https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
+echo -e "${blue}TPM Successful"
+
+#-------------------------------------------------------------------
+# AutoRemove
+#-------------------------------------------------------------------
+
 sudo apt autoremove -y -qq > /dev/null 2>&1
 echo -e "${blue}AutoRemove Successful"
 
@@ -235,13 +243,7 @@ echo ""
 #-------------------------------------------------------------------
 # Restart Bash
 #-------------------------------------------------------------------
-if [ ! -f "$HOME/.tmux" ];then
-    sudo mkdir -p $HOME/.tmux/plugins/tpm
-else
-    sudo rm -rf $HOME/.tmux
-fi
-git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
-echo "tpmmmmmmmmmmmmmmmmmmmm"
+
 bash
 
 
