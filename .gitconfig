@@ -1,0 +1,51 @@
+[alias]
+    a = add
+    aa = add -A
+    b = branch
+    ba = branch -a
+    c = commit -m
+    ca = commit -am
+    co = checkout
+
+[user]
+    email = hantaotaohan@gmail.com 
+	name = hantaotaohan
+
+[core]
+    editor = vim
+    autocrlf = false
+
+[merge]
+    tool = vimdiff
+
+[color]
+    ui = always
+    diff = always
+
+[color "diff"]
+    meta = yellow bold
+    commit = cyan bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+    whitespace = red reverse
+
+[color "diff-highlight"]
+    oldNormal = red bold
+    oldHighlight = red bold 52
+    newNormal = green bold
+    newHighlight = green bold 22
+
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+
+[color "status"]
+    added = green
+    changed = yellow
+    untracked = red
+
+[pager]
+    diff = diff-so-fancy | less --tabs=4 -RFX
+    show = diff-so-fancy | less --tabs=4 -RFX

@@ -1,0 +1,195 @@
+# Mod1=Alt
+# Mod2=
+# Mod3=
+# Mod4=Win
+set $mod Mod1
+
+# 字体配置 
+font pango:monospace 8
+font pango:Inziu_IosevkaCC_Slab_SC_Bold 10
+
+# 鼠标移动调整方向设置
+set $up k
+set $down j
+set $left h
+set $right l
+
+# 新窗口无边框
+# 新浮动窗口无边框
+new_window none
+new_float none
+
+
+# 启用鼠标托放浮动窗口
+floating_modifier $mod
+
+# 开启Terminal快捷键 
+bindsym $mod+Return exec i3-sensible-terminal
+
+# 关闭窗口快捷键 
+bindsym $mod+Shift+q kill
+
+# rofi 设置及配置 apt install rofi
+bindsym $mod+d exec --no-startup-id rofi -show drun
+
+# 窗口焦点切换 - 方案一
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# 窗口焦点切换 - 方案二
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# 移动窗口 - 方案一 
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# 移动窗口 - 方案二 
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# 下一次开启窗口为水平 
+bindsym $mod+| split h
+
+# 下一次开启窗口为垂直
+bindsym $mod+v split v
+
+# 开启全屏模式
+bindsym $mod+f fullscreen toggle
+
+# 切换窗口布局
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# 切换模式 窗口模式与浮动窗口模式
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+#bindsym $mod+d focus child
+
+# 设定工作区名
+set $workspace1 "   01  "
+set $workspace2 "   02  "
+set $workspace3 "   03  "
+set $workspace4 "   04  "
+set $workspace5 "   05  "
+set $workspace6 "   06  "
+set $workspace7 "   07  "
+set $workspace8 "   08  "
+set $workspace9 "   09  "
+set $workspace0 "   10  "
+
+# 切换工作区
+bindsym $mod+1 workspace $workspace1
+bindsym $mod+2 workspace $workspace2
+bindsym $mod+3 workspace $workspace3
+bindsym $mod+4 workspace $workspace4
+bindsym $mod+5 workspace $workspace5
+bindsym $mod+6 workspace $workspace6
+bindsym $mod+7 workspace $workspace7
+bindsym $mod+8 workspace $workspace8
+bindsym $mod+9 workspace $workspace9
+bindsym $mod+0 workspace $workspace0
+
+# 移动当前至工作区
+bindsym $mod+Shift+1 move container to workspace $workspace1
+bindsym $mod+Shift+2 move container to workspace $workspace2
+bindsym $mod+Shift+3 move container to workspace $workspace3
+bindsym $mod+Shift+4 move container to workspace $workspace4
+bindsym $mod+Shift+5 move container to workspace $workspace5
+bindsym $mod+Shift+6 move container to workspace $workspace6
+bindsym $mod+Shift+7 move container to workspace $workspace7
+bindsym $mod+Shift+8 move container to workspace $workspace8
+bindsym $mod+Shift+9 move container to workspace $workspace9
+bindsym $mod+Shift+0 move container to workspace $workspace0
+
+# 打开指定程序到指定的工作区-可用 xprop | grep WM_CLASS 命令获取wm_class
+# assign [class="Firefox"]  					  $workspace1
+# assign [class="Gnome-terminal"]	              $workspace1
+
+# 设定那些程序为浮动窗口
+for_window [class="Nautilus"]               floating enable
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# 重置ℹ3wm配置文件
+bindsym $mod+Shift+r restart
+# 退出i3wm
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# 调整窗口大小配置
+mode "resize" {
+        # 调整窗口大小-方案一
+        bindsym l resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym h resize grow width 10 px or 10 ppt
+
+        # 调整窗口大小-方案二
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # 推出调整模式: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+# 调整窗口大小快捷键
+bindsym $mod+r mode "resize"
+
+
+# start i3bar to display a workspace bar
+bar {
+    font pango:Inziu IosevkaCC Slab SC Bold 12
+    status_command          i3status -c ~/.config/i3status/i3status.conf
+    separator_symbol        "-"
+    workspace_buttons       yes
+    strip_workspace_numbers yes
+    position                bottom
+    colors {
+        background  #212121
+        statusline  #dddddd
+        separator   #666666
+        # class             border  backgr. text
+        focused_workspace   #2b83a6 #2b83a6 #ffffff
+        active_workspace    #212121 #212121 #ffffff
+        inactive_workspace  #212121 #212121 #86888c
+        urgent_workspace    #d64e4e #d64e4e #ffffff
+        binding_mode        #229c56 #229c56 #ffffff
+    }
+}
+# 锁屏设定
+bindsym Mod4+Shift+l exec i3lock-fancy
+
+# 启动项
+# 启用输入法ibus
+exec --no-startup-id ibus-daemon -drx
+# 启用壁纸 apt install feh
+#exec --no-startup-id feh --bg-scale /home/saber/.config/i3/background.jpg
+exec --no-startup-id feh --bg-scale ~/.config/i3/background.jpg
+# 透明窗口
+#exec --no-startup-id compton --config /home/saber/.config/compton/compton.conf
+exec --no-startup-id compton --config ~/.config/compton/compton.conf
+# xmodmap
+exec --no-startup-id xmodmap ~/.Xmodmap
+# 自动锁屏
+exec --no-startup-id xautolock -time 1 -locker "i3lock-fancy"
+# 网络图标
+exec --no-startup-id nm-applet
+
