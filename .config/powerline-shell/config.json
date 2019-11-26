@@ -6,9 +6,9 @@
     "ssh",
     "cwd",
     "git",
+    "read_only",
     "jobs",
-    "root",
-    "read_only"
+    "root"
   ],
   "cwd": {
     "max_depth": 4
