@@ -235,10 +235,6 @@ echo ""
 #-------------------------------------------------------------------
 # Restart Bash
 #-------------------------------------------------------------------
-
-bash
-
-
 if [ ! -f "$HOME/.tmux" ];then
     sudo mkdir -p $HOME/.tmux/plugins/tpm
 else
@@ -246,3 +242,7 @@ else
 fi
 git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
 echo "tpmmmmmmmmmmmmmmmmmmmm"
+bash
+
+
+
