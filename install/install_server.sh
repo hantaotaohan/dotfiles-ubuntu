@@ -160,7 +160,7 @@ echo -e "${blue}Vim PlugInstall Successful"
 #-------------------------------------------------------------------
 
 if [ -f "$HOME/.viminfo" ];then
-    sudo chmod +x $HOME/.viminfo
+    sudo chmod 777 $HOME/.viminfo
 fi
 
 #-------------------------------------------------------------------
