@@ -142,10 +142,6 @@ echo -e "${blue}Install Dotfiles COPY Successful"
 # Chmod NeedFlods
 #-------------------------------------------------------------------
 
-if [ -f "$HOME/.viminfo" ];then
-    sudo chmod +x $HOME/.viminfo
-fi
-
 if [ -f "$HOME/.vim" ];then
     sudo chmod +x $HOME/.vim
 fi
@@ -158,6 +154,14 @@ echo -e "${blue}Chomd Needfolds Successful"
 
 sudo vim -c "PlugInstall" 
 echo -e "${blue}Vim PlugInstall Successful"
+
+#-------------------------------------------------------------------
+# Chmod NeedFlods
+#-------------------------------------------------------------------
+
+if [ -f "$HOME/.viminfo" ];then
+    sudo chmod +x $HOME/.viminfo
+fi
 
 #-------------------------------------------------------------------
 # Install Ripgrep
