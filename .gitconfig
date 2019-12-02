@@ -6,6 +6,13 @@
     c = commit -m
     ca = commit -am
     co = checkout
+    d = diff --patch-with-stat
+    df = diff --patch-with-stat --color-words
+    ds = diff --patch-with-stat --staged
+    lg = log --graph --pretty='%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset'
+    s = status -sb
+    sclone = clone --depth 1
+    undo = reset HEAD~1
 
 [user]
     email = hantaotaohan@gmail.com 
