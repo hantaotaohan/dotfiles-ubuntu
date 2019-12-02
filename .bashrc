@@ -9,6 +9,14 @@ case $- in
       *) return;;
 esac
 
+# Autocorrect typos in path names when using `cd`.
+# 使用"cd"时自动更正路径名中的键入错误.
+shopt -s cdspell
+
+# Case-insensitive globbing (used in pathname expansion).
+# 不区分大小写的全局搜索(用于路径名扩展)
+shopt -s nocaseglob
+
 # don't put duplicate lines or lines starting with space in the history.
 # 不要在历史中放置重复的行或以空格开头的行。 
 HISTCONTROL=ignoreboth
