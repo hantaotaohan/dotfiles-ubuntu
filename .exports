@@ -1,34 +1,42 @@
 # Locale.
+# 本地语言环境设定
 export LANG="en_US.UTF-8"
 export LANGUAGE="en_US.UTF-8"
 
 # Term.
+# Term颜色设定
 export TERM="xterm-256color"
 
 # Default Editor.
+# 默认编辑器设定
 export EDITOR="vim"
 
 # Default Pager.
+# 默认文字预览设定
 export PAGER="less"
 
-
-# bat.
+# Bat.
+# Bat主题设定
 export BAT_THEME="Material-Theme-Darker"
 
-# fzf.
+# FZF.
+# FZF默认功能设定及颜色设定
 export FZF_DEFAULT_OPTS=" \
     --color=fg:#c0c5ce,bg:#212121,hl:#808080,fg+:#e6e6e6,bg+:#3b3b3b,hl+:#f7c662 \
     --color=info:#f7c662,prompt:#6699cc,pointer:#a6bc69,marker:#a6bc69,spinner:#f7c662,header:#6699cc"
 
 # nnn.
+# nnn资源管理器设定
 #export NNN_BMS="d:~/Downloads;D:~/Documents;t:~/Temporary" # Bookmarks
 #export NNN_PLUG="D:mediainf" # Plugins
 #export NNN_TRASH=1 # Trash instead of delete the files
 
 # ripgrep.
+# Rg模糊搜索设定
 export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
 
 # Less.
+# 文档预览Less设定
 export LESS="--RAW-CONTROL-CHARS"
 export LESS_TERMCAP_mb=$'\e[1;31m' # Start blinking
 export LESS_TERMCAP_md=$'\e[1;34m' # Start bold mode
