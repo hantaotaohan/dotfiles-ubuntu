@@ -212,15 +212,22 @@ fi
 echo -e "${blue}ChromeDriver Install Successful"
 
 #-------------------------------------------------------------------
-# AutoRemove
+# .tmux
 #-------------------------------------------------------------------
 
 if [ ! -f "$HOME/.tmux" ];then
     sudo mkdir -p $HOME/.tmux/plugins/tpm
+    git clone -q https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
 else
     sudo rm -rf $HOME/.tmux
+    git clone -q https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
 fi
-git clone -q https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
+
+tmux start-server
+tmux new-session -d
+$HOME/.tmux/plugins/tpm/scripts/install_plugins.sh
+tmux kill-server
+
 echo -e "${blue}TPM Successful"
 
 #-------------------------------------------------------------------
