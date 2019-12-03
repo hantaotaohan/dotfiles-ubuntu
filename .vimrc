@@ -94,7 +94,14 @@ endif
 "                                                                                                                                
 "-----------------------------------------------------------------o--------------------------------------------------------------o
 
-
+"=================================================================================================================================
+" Vim-Plug-AutoSync 
+"=================================================================================================================================
+au VimEnter *
+            \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+            \|   PlugInstall --sync | qa!
+            \| endif
+	    
 "=================================================================================================================================
 " Vim-Plug-Config   
 "=================================================================================================================================
@@ -116,7 +123,7 @@ Plug 'scrooloose/nerdcommenter'                                          " 快�
 Plug 'mhinz/vim-startify'                                                " 定制vim开始页面
 Plug 'SirVer/ultisnips'                                                  " 代码片段管理器
 Plug 'honza/vim-snippets'                                                " 代码片段仓库
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }" MarkdownPreview插件
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install_sync() } }" MarkdownPreview插件
 "Plug 'terryma/vim-multiple-cursors'                                     " 多光标插件
 "Plug 'edkolev/tmuxline.vim'                                             " Vim同步tmux配色
 call plug#end()
