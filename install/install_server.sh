@@ -216,11 +216,9 @@ echo -e "${blue}ChromeDriver Install Successful"
 #-------------------------------------------------------------------
 
 if [ ! -f "$HOME/.tmux" ];then
-    sudo mkdir -p $HOME/.tmux/plugins/tpm
     git clone -q https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm/
 else
     sudo rm -rf $HOME/.tmux
-    sudo mkdir -p $HOME/.tmux/plugins/tpm
     git clone -q https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm/
 fi
 
