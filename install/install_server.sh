@@ -240,8 +240,8 @@ echo -e "${blue}AutoRemove Successful"
 # Set TimeZone
 #-------------------------------------------------------------------
 
-sudo timedatectl set-timezone "Asia/Shanghai"
-echo -e "${blue}Set TimeZone is Successful"
+# sudo timedatectl set-timezone "Asia/Shanghai"
+# echo -e "${blue}Set TimeZone is Successful"
 
 #-------------------------------------------------------------------
 # End
