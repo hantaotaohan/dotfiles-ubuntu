@@ -152,7 +152,7 @@ echo -e "${blue}Chomd Needfolds Successful"
 # Install Vim Plug
 #-------------------------------------------------------------------
 
-sudo vim -c "PlugInstall" 
+sudo vim
 echo -e "${blue}Vim PlugInstall Successful"
 
 #-------------------------------------------------------------------
