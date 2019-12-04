@@ -43,6 +43,9 @@ echo -e "${blue}Upgrade Successful"
 sudo apt install -y -qq wget > /dev/null 2>&1
 echo -e "${blue}Wget Successful"
 
+sudo apt install -y -qq git > /dev/null 2>&1
+echo -e "${blue}Git Successful"
+
 sudo apt install -y -qq python3-pip > /dev/null 2>&1
 echo -e "${blue}Python3-pip Successful"
 
