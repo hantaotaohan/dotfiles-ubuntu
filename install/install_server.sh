@@ -227,7 +227,7 @@ fi
 
 tmux start-server
 tmux new-session -d
-$HOME/.tmux/plugins/tpm/scripts/install_plugins.sh
+$HOME/.tmux/plugins/tpm/scripts/install_plugins.sh > /dev/null 2>&1
 tmux kill-server
 
 echo -e "${blue}TPM Successful"
