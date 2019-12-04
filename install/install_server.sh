@@ -244,6 +244,9 @@ else
     sudo rm -rf /usr/loacl/bin/diff-so-fancy
     sudo cp -f $Dotfiles_repo/diff-so-fancy /usr/loacl/bin
     sudo chmod 777 diff-so-fancy
+fi
+
+echo -e "${blue}Diff-So-Fancy Successful"
 
 #-------------------------------------------------------------------
 # AutoRemove
