@@ -17,7 +17,7 @@ echo "              |___||_| \_||____/   |_|  /_/   \_\|_____||_____|    ";
 echo "                                                                   ";                                                                                    
 echo ""
 echo "--------------------------------------------------------------------"
-echo -e " \tTaoTao - Saber - Ubuntu - Server - Install                    "
+echo -e " \t\tTaoTao - Saber - Ubuntu - Server - Install                    "
 echo "--------------------------------------------------------------------"
 echo ""
 
