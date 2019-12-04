@@ -4,7 +4,7 @@ echo "deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-updates main restr
 echo "deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-backports main restricted universe multiverse" >> /etc/apt/sources.list &&\
 echo "deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-security main restricted universe multiverse" >> /etc/apt/sources.list &&\
 sudo apt-get update -y &&\
-sudo apt install git &&\
+sudo apt install git -y &&\
 git clone https://github.com/hantaotaohan/Dotfiles.git &&\
 cd $HOME/Dotfiles/install &&\
 sudo ./install_server.sh
