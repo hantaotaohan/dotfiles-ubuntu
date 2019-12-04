@@ -21,6 +21,7 @@
 [core]
     editor = vim
     autocrlf = false
+    pager = diff-so-fancy | less --tabs=4 -RFX
 
 [merge]
     tool = vimdiff
