@@ -167,7 +167,7 @@ source "$HOME/z.sh"
 
 # Xmodmap Install
 # 用于xserver的键盘自定义
-if [ -d "/usr/bin/xmodmap" ];then
+if [ -f "/usr/bin/xmodmap" ];then
     xmodmap "$HOME/.xmodmap"
 fi
 
