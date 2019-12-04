@@ -2,6 +2,21 @@
 
 clear
 
+
+#-------------------------------------------------------------------
+# Start
+#-------------------------------------------------------------------
+
+echo -e ""
+echo -e "     _ _|                  |             |   | "
+echo -e "       |    __ \     __|   __|    _` |   |   | "
+echo -e "       |    |   |  \__ \   |     (   |   |   | "
+echo -e "     ___|  _|  _|  ____/  \__|  \__,_|  _|  _| "
+echo -e ""
+echo -e "------------------------------------------------------"
+echo -e " \tTaoTao - Saber - Ubuntu - Server - Install
+echo -e "------------------------------------------------------"
+
 #-------------------------------------------------------------------
 # Setting Colors
 #-------------------------------------------------------------------
@@ -239,11 +254,11 @@ echo -e "${blue}TPM Successful"
 
 if [ ! -f "/usr/local/bin/diff-so-fancy" ];then
     sudo cp -f $Dotfiles_repo/diff-so-fancy /usr/local/bin
-    sudo chmod 777 diff-so-fancy
+    sudo chmod 777 /usr/local/bin/diff-so-fancy
 else
     sudo rm -rf /usr/local/bin/diff-so-fancy
     sudo cp -f $Dotfiles_repo/diff-so-fancy /usr/local/bin
-    sudo chmod 777 diff-so-fancy
+    sudo chmod 777 /usr/local/bin/diff-so-fancy
 fi
 
 echo -e "${blue}Diff-So-Fancy Successful"
