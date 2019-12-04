@@ -241,7 +241,7 @@ if [ ! -f "/usr/local/bin/diff-so-fancy" ];then
     sudo cp -f $Dotfiles_repo/diff-so-fancy /usr/local/bin
     sudo chmod 777 diff-so-fancy
 else
-    sudo rm -rf /usr/loacl/bin/diff-so-fancy
+    sudo rm -rf /usr/local/bin/diff-so-fancy
     sudo cp -f $Dotfiles_repo/diff-so-fancy /usr/local/bin
     sudo chmod 777 diff-so-fancy
 fi
