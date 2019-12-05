@@ -96,6 +96,26 @@ sudo apt install -y -qq unzip > /dev/null 2>&1
 echo -e "\t[+]${blue}Unzip Successful"
 
 #-------------------------------------------------------------------
+# Install X Apps 
+#-------------------------------------------------------------------
+
+sudo apt install -y -qq xvfb > /dev/null 2>&1
+echo -e "\t[+]${blue}Xvfb Successful"
+
+sudo apt install -y -qq xorg > /dev/null 2>&1
+echo -e "\t[+]${blue}Xorg Successful"
+
+#-------------------------------------------------------------------
+# Install language 
+#-------------------------------------------------------------------
+
+sudo apt install -y -qq language-pack-zh-han* > /dev/null 2>&1
+echo -e "\t[+]${blue}Language zh_CN Successful"
+
+sudo apt install -y -qq fonts-wqy-microhei > /dev/null 2>&1
+echo -e "\t[+]${blue}Fonts install Successful"
+
+#-------------------------------------------------------------------
 # Install i3wm
 #-------------------------------------------------------------------
 
@@ -132,13 +152,6 @@ echo -e "\t[+]${blue}Openssh-server Successful"
 
 sudo apt install -y -qq openssh-client > /dev/null 2>&1
 echo -e "\t[+]${blue}Openssh-client Successful"
-
-#-------------------------------------------------------------------
-# Install X Apps 
-#-------------------------------------------------------------------
-
-sudo apt install -y -qq xvfb > /dev/null 2>&1
-echo -e "\t[+]${blue}Xvfb Successful"
 
 #-------------------------------------------------------------------
 # Pip3 install Apps
@@ -315,6 +328,12 @@ echo -e "\t[+]${blue}Set Xrdb Successful"
 
 # sudo timedatectl set-timezone "Asia/Shanghai"
 # echo -e "\t[+]${blue}Set TimeZone is Successful"
+
+#-------------------------------------------------------------------
+# Set Locales Language
+#-------------------------------------------------------------------
+
+dpkg-reconfigure locales
 
 #-------------------------------------------------------------------
 # End
