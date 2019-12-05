@@ -62,9 +62,6 @@ echo -e "\t[+]${blue}Upgrade Successful"
 sudo apt install -y -qq wget > /dev/null 2>&1
 echo -e "\t[+]${blue}Wget Successful"
 
-sudo apt install -y -qq xterm > /dev/null 2>&1
-echo -e "\t[+]${blue}Git Successful"
-
 sudo apt install -y -qq git > /dev/null 2>&1
 echo -e "\t[+]${blue}Git Successful"
 
@@ -97,6 +94,34 @@ echo -e "\t[+]${blue}W3m Successful"
 
 sudo apt install -y -qq unzip > /dev/null 2>&1
 echo -e "\t[+]${blue}Unzip Successful"
+
+#-------------------------------------------------------------------
+# Install i3wm
+#-------------------------------------------------------------------
+
+sudo apt install -y -qq i3 > /dev/null 2>&1
+echo -e "\t[+]${blue}i3wm Successful"
+
+sudo apt install -y -qq rofi > /dev/null 2>&1
+echo -e "\t[+]${blue}Rofi Successful"
+
+sudo apt install -y -qq feh > /dev/null 2>&1
+echo -e "\t[+]${blue}Feh Successful"
+
+sudo apt install -y -qq compton > /dev/null 2>&1
+echo -e "\t[+]${blue}Compton Successful"
+
+sudo apt install -y -qq i3status > /dev/null 2>&1
+echo -e "\t[+]${blue}i3 Status Successful"
+
+sudo apt install -y -qq i3lock-fancy > /dev/null 2>&1
+echo -e "\t[+]${blue}i3 Lock Fancy Successful"
+
+sudo apt install -y -qq xterm > /dev/null 2>&1
+echo -e "\t[+]${blue}xterm Successful"
+
+sudo apt install -y -qq zathura > /dev/null 2>&1
+echo -e "\t[+]${blue}zathura Successful"
 
 #-------------------------------------------------------------------
 # Install Openssh-Server
