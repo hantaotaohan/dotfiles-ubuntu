@@ -4,13 +4,13 @@
 
 **Auto Mode**
 
-*Ubuntu - Server*
+`Ubuntu - Server`
 
 ```bash
 sudo sh -c "$(wget -t 0 -T 5 https://raw.githubusercontent.com/hantaotaohan/Dotfiles/master/install/run_server.sh -O -)"
 ```
 
-*Ubuntu - Desktop*
+`Ubuntu - Desktop`
 
 ```bash
 sudo sh -c "$(wget -t 0 -T 5 https://raw.githubusercontent.com/hantaotaohan/Dotfiles/master/install/run_desktop.sh -O -)"
