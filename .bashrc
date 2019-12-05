@@ -167,7 +167,8 @@ source "$HOME/z.sh"
 
 # Xmodmap Install
 # 用于xserver的键盘自定义
-if [ -f "/usr/bin/xmodmap" ];then
+# 判断是否为桌面环境
+if [ ! "$XDG_CURRENT_DESKTOP" = "" ]; then
     xmodmap "$HOME/.xmodmap"
 fi
 
