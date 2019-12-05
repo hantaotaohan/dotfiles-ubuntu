@@ -7,4 +7,4 @@ sudo apt-get update -y &&\
 sudo apt install git -y &&\
 git clone https://github.com/hantaotaohan/Dotfiles.git &&\
 cd $HOME/Dotfiles/install &&\
-sudo ./install_server.sh
+sudo ./install_desktop.sh
