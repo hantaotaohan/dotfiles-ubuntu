@@ -179,12 +179,12 @@ bindsym Mod4+Shift+l exec i3lock-fancy
 
 # 启动项
 # 启用输入法ibus
-exec --no-startup-id ibus-daemon -drx
+# exec --no-startup-id ibus-daemon -drx
+# 启用输入法fcitx
+exec --no-startup-id fcitx &
 # 启用壁纸 apt install feh
-#exec --no-startup-id feh --bg-scale /home/saber/.config/i3/background.jpg
 exec --no-startup-id feh --bg-scale ~/.config/i3/background.jpg
 # 透明窗口
-#exec --no-startup-id compton --config /home/saber/.config/compton/compton.conf
 exec --no-startup-id compton --config ~/.config/compton/compton.conf
 # xmodmap
 exec --no-startup-id xmodmap ~/.Xmodmap
