@@ -187,7 +187,7 @@ exec --no-startup-id feh --bg-scale ~/.config/i3/background.jpg
 #exec --no-startup-id compton --config /home/saber/.config/compton/compton.conf
 exec --no-startup-id compton --config ~/.config/compton/compton.conf
 # xmodmap
-exec --no-startup-id xmodmap ~/.xmodmap
+exec --no-startup-id xmodmap ~/.Xmodmap
 # 自动锁屏
 exec --no-startup-id xautolock -time 1 -locker "i3lock-fancy"
 # 网络图标
