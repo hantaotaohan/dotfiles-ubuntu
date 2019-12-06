@@ -109,7 +109,7 @@ echo -e "\t[+]${blue}Xorg Successful"
 # Install language 
 #-------------------------------------------------------------------
 
-sudo apt install -y -qq language-pack-zh-han* > /dev/null 2>&1
+sudo apt install -y -qq language-pack-zh-hans > /dev/null 2>&1
 echo -e "\t[+]${blue}Language zh_CN Successful"
 
 sudo apt install -y -qq fonts-wqy-microhei > /dev/null 2>&1
