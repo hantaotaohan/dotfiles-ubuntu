@@ -34,9 +34,9 @@ green='\e[0;32m'
 
 Dotfiles_repo=$(dirname $PWD)
 Dotfiles_home=(.w3m .bashrc .bash_profile 
-    .bash_prompt .tmux.conf .vimrc .xmodmap .bash_aliases 
+    .bash_prompt .tmux.conf .vimrc .Xmodmap .bash_aliases 
     .curlrc .inputrc .gitconfig .exports .ripgreprc .wgetrc 
-    .dircolors .Xresources)
+    .dircolors .Xresources .locale)
 Dotfiles_copy=(.config .vim z.sh)
 
 #-------------------------------------------------------------------
@@ -102,8 +102,11 @@ echo -e "\t[+]${blue}Unzip Successful"
 sudo apt install -y -qq xvfb > /dev/null 2>&1
 echo -e "\t[+]${blue}Xvfb Successful"
 
-sudo apt install -y -qq xorg > /dev/null 2>&1
+sudo apt install -y -qq xserver-xorg > /dev/null 2>&1
 echo -e "\t[+]${blue}Xorg Successful"
+
+sudo apt install -y -qq xinit > /dev/null 2>&1
+echo -e "\t[+]${blue}Xinit Successful"
 
 #-------------------------------------------------------------------
 # Install language 
@@ -111,6 +114,9 @@ echo -e "\t[+]${blue}Xorg Successful"
 
 sudo apt install -y -qq language-pack-zh-hans > /dev/null 2>&1
 echo -e "\t[+]${blue}Language zh_CN Successful"
+
+sudo apt install -y -qq fcitx > /dev/null 2>&1
+echo -e "\t[+]${blue}Fcitx Successful"
 
 sudo apt install -y -qq fonts-wqy-microhei > /dev/null 2>&1
 echo -e "\t[+]${blue}Fonts install Successful"
@@ -136,9 +142,6 @@ echo -e "\t[+]${blue}i3 Status Successful"
 
 sudo apt install -y -qq i3lock-fancy > /dev/null 2>&1
 echo -e "\t[+]${blue}i3 Lock Fancy Successful"
-
-sudo apt install -y -qq xterm > /dev/null 2>&1
-echo -e "\t[+]${blue}xterm Successful"
 
 sudo apt install -y -qq zathura > /dev/null 2>&1
 echo -e "\t[+]${blue}zathura Successful"
@@ -250,14 +253,14 @@ echo -e "\t[+]${blue}Downloding Chrome"
 sudo dpkg -i $HOME/google-chrome-stable_current_amd64.deb > /dev/null 2>&1
 echo -e "\t[+]${blue}Install Chrome ............"
 
-sudo rm -rf $HOME/google*
-echo -e "\t[+]${blue}Delete Chrome ............"
-
 sudo apt --fix-broken install -y -qq > /dev/null 2>&1
 echo -e "\t[+]${blue}Install Chrome Requirements"
 
 sudo dpkg -i $Dotfiles_repo/chrome/google-chrome-stable_current_amd64.deb > /dev/null 2>&1
 echo -e "\t[+]${blue}Chrome Install Successful"
+
+sudo rm -rf $HOME/google*
+echo -e "\t[+]${blue}Delete Chrome ............"
 
 if [ -f "/usr/local/share/chromedriver" ];then
 sudo rm -rf /usr/local/share/chromedriver
