@@ -115,7 +115,7 @@ echo -e "\t[+]${blue}Xinit Successful"
 sudo apt install -y -qq language-pack-zh-hans > /dev/null 2>&1
 echo -e "\t[+]${blue}Language zh_CN Successful"
 
-sudo apt install -y -qq fcitx > /dev/null 2>&1
+sudo apt install -y -qq fcitx fcitx-pinyin > /dev/null 2>&1
 echo -e "\t[+]${blue}Fcitx Successful"
 
 sudo apt install -y -qq fonts-wqy-microhei > /dev/null 2>&1
