@@ -169,7 +169,7 @@ source "$HOME/z.sh"
 # 用于xserver的键盘自定义
 # 判断是否为桌面环境
 if [ ! "$XDG_CURRENT_DESKTOP" = "" ]; then
-    xmodmap "$HOME/.xmodmap"
+    xmodmap "$HOME/.Xmodmap"
 fi
 
 # Install FZF
