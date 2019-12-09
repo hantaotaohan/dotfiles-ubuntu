@@ -208,7 +208,7 @@ echo -e "\t[+]${blue}Install Dotfiles COPY Successful"
 # Chmod NeedFlods
 #-------------------------------------------------------------------
 
-if [ -f "$HOME/.vim" ];then
+if [ -f "$HOME/.vim" ]; then
     sudo chmod +x $HOME/.vim
 fi
 
@@ -257,12 +257,13 @@ sudo apt --fix-broken install -y -qq > /dev/null 2>&1
 echo -e "\t[+]${blue}Install Chrome Requirements"
 
 sudo dpkg -i $Dotfiles_repo/chrome/google-chrome-stable_current_amd64.deb > /dev/null 2>&1
+dpkg -i $Dotfiles_repo/chrome/google-chrome-stable_current_amd64.deb > /dev/null 2>&1
 echo -e "\t[+]${blue}Chrome Install Successful"
 
 sudo rm -rf $HOME/google*
 echo -e "\t[+]${blue}Delete Chrome ............"
 
-if [ -f "/usr/local/share/chromedriver" ];then
+if [ -f "/usr/local/share/chromedriver" ]; then
 sudo rm -rf /usr/local/share/chromedriver
 sudo cp -f $Dotfiles_repo/chrome/chromedriver /usr/local/share/chromedriver
 sudo chmod +x /usr/local/share/chromedriver
@@ -281,7 +282,7 @@ echo -e "\t[+]${blue}ChromeDriver Install Successful"
 # .tmux
 #-------------------------------------------------------------------
 
-if [ ! -d "$HOME/.tmux" ];then
+if [ ! -d "$HOME/.tmux" ]; then
     git clone -q https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
 else
     sudo rm -rf $HOME/.tmux
@@ -300,7 +301,7 @@ echo -e "\t[+]${blue}TPM Successful"
 # diff-so-fancy
 #-------------------------------------------------------------------
 
-if [ ! -f "/usr/local/bin/diff-so-fancy" ];then
+if [ ! -f "/usr/local/bin/diff-so-fancy" ]; then
     sudo cp -f $Dotfiles_repo/diff-so-fancy /usr/local/bin
     sudo chmod 777 /usr/local/bin/diff-so-fancy
 else
@@ -322,7 +323,7 @@ echo -e "\t[+]${blue}AutoRemove Successful"
 # Set Xrdb
 #-------------------------------------------------------------------
 
-xrdb ~/.Xresources 
+xrdb $HOME/.Xresources 
 echo -e "\t[+]${blue}Set Xrdb Successful"
 
 #-------------------------------------------------------------------
@@ -331,6 +332,17 @@ echo -e "\t[+]${blue}Set Xrdb Successful"
 
 # sudo timedatectl set-timezone "Asia/Shanghai"
 # echo -e "\t[+]${blue}Set TimeZone is Successful"
+
+#-------------------------------------------------------------------
+# Set .local 
+#-------------------------------------------------------------------
+if [ -d $HOME/.local ]; then
+    sudo rm -rf $HOME/.local
+else
+    sudo mkdir $HOME/.local
+fi
+    
+# echo -e "\t[+]${blue}Set .Local Successful"
 
 #-------------------------------------------------------------------
 # Set Inziu FiraCode Fonts install
