@@ -336,6 +336,7 @@ echo -e "\t[+]${blue}Set Xrdb Successful"
 #-------------------------------------------------------------------
 # Set .local 
 #-------------------------------------------------------------------
+
 if [ -d $HOME/.local ]; then
     sudo rm -rf $HOME/.local
 else
@@ -355,6 +356,13 @@ sudo sh -c "$(wget https://raw.githubusercontent.com/hantaotaohan/Fonts/master/r
 #-------------------------------------------------------------------
 
 dpkg-reconfigure locales
+
+#-------------------------------------------------------------------
+# Install startx-tools Xinit
+#-------------------------------------------------------------------
+
+sudo apt install -y -qq xinit > /dev/null 2>&1
+echo -e "\t[+]${blue}Xinit Successful"
 
 #-------------------------------------------------------------------
 # End
