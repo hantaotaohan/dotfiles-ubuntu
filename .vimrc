@@ -79,6 +79,11 @@ if (empty($TMUX))
   endif
 endif
 
+"Use 24-bit (true-color) mode in Rxvt.
+if &term=~'rxvt-unicode'
+    set termguicolors!
+endif
+
 
 "-----------------------------------------------------------------o--------------------------------------------------------------o
 "                                                                                                                                
