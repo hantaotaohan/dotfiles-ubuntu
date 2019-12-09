@@ -116,6 +116,8 @@ sudo apt install -y -qq language-pack-zh-hans > /dev/null 2>&1
 echo -e "\t[+]${blue}Language zh_CN Successful"
 
 sudo apt install -y -qq fcitx fcitx-pinyin > /dev/null 2>&1
+im-config -n fcitx
+im-config -s fcitx
 echo -e "\t[+]${blue}Fcitx Successful"
 
 sudo apt install -y -qq fonts-wqy-microhei > /dev/null 2>&1
@@ -342,13 +344,19 @@ sudo sh -c "$(wget https://raw.githubusercontent.com/hantaotaohan/Fonts/master/r
 # Set Locales Language
 #-------------------------------------------------------------------
 
-dpkg-reconfigure locales
+sudo dpkg-reconfigure locales
+exprot LANG=zh_CN.UTF-8
+sudo locale-gen $LANG
 
 #-------------------------------------------------------------------
 # Install startx-tools Xinit
 #-------------------------------------------------------------------
 
 sudo apt install -y -qq xinit > /dev/null 2>&1
+if [ -d $HOME/.local/share ]; then
+    sudo chmod 777 $HOME/.local/share
+if
+
 echo -e "\t[+]${blue}Xinit Successful"
 
 #-------------------------------------------------------------------
