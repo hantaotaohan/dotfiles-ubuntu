@@ -353,11 +353,21 @@ sudo locale-gen $LANG
 #-------------------------------------------------------------------
 
 sudo apt install -y -qq xinit > /dev/null 2>&1
-if [ -d $HOME/.local/share ]; then
-    sudo chmod 777 $HOME/.local/share
+echo -e "\t[+]${blue}Xinit Successful"
+
+#-------------------------------------------------------------------
+# Set Chown .local .config
+#-------------------------------------------------------------------
+
+if [ -d $HOME/.local ]; then
+    sudo chown -R $USER:$USER .local
 if
 
-echo -e "\t[+]${blue}Xinit Successful"
+if [ -d $HOME/.config ]; then
+    sudo chown -R $USER:$USER .config
+if
+    
+echo -e "\t[+]${blue}Chown Successful"
 
 #-------------------------------------------------------------------
 # End
