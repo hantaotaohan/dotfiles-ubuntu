@@ -257,7 +257,6 @@ sudo apt --fix-broken install -y -qq > /dev/null 2>&1
 echo -e "\t[+]${blue}Install Chrome Requirements"
 
 sudo dpkg -i $Dotfiles_repo/chrome/google-chrome-stable_current_amd64.deb > /dev/null 2>&1
-dpkg -i $Dotfiles_repo/chrome/google-chrome-stable_current_amd64.deb > /dev/null 2>&1
 echo -e "\t[+]${blue}Chrome Install Successful"
 
 sudo rm -rf $HOME/google*
@@ -337,11 +336,11 @@ echo -e "\t[+]${blue}Set Xrdb Successful"
 # Set .local 
 #-------------------------------------------------------------------
 
-if [ -d $HOME/.local ]; then
-    sudo rm -rf $HOME/.local
-else
-    sudo mkdir $HOME/.local
-fi
+# if [ -d $HOME/.local ]; then
+#     sudo rm -rf $HOME/.local
+# else
+#     sudo mkdir $HOME/.local
+# fi
     
 # echo -e "\t[+]${blue}Set .Local Successful"
 
