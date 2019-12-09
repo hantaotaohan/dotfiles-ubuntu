@@ -345,8 +345,6 @@ sudo sh -c "$(wget https://raw.githubusercontent.com/hantaotaohan/Fonts/master/r
 #-------------------------------------------------------------------
 
 sudo dpkg-reconfigure locales
-exprot LANG=zh_CN.UTF-8
-sudo locale-gen $LANG
 
 #-------------------------------------------------------------------
 # Install startx-tools Xinit
