@@ -36,7 +36,7 @@ Dotfiles_repo=$(dirname $PWD)
 Dotfiles_home=(.w3m .bashrc .bash_profile 
     .bash_prompt .tmux.conf .vimrc .Xmodmap .bash_aliases 
     .curlrc .inputrc .gitconfig .exports .ripgreprc .wgetrc 
-    .dircolors .Xresources .locale)
+    .dircolors .Xresources)
 Dotfiles_copy=(.config .vim z.sh)
 
 #-------------------------------------------------------------------
@@ -331,18 +331,6 @@ echo -e "\t[+]${blue}Set Xrdb Successful"
 
 # sudo timedatectl set-timezone "Asia/Shanghai"
 # echo -e "\t[+]${blue}Set TimeZone is Successful"
-
-#-------------------------------------------------------------------
-# Set .local 
-#-------------------------------------------------------------------
-
-# if [ -d $HOME/.local ]; then
-#     sudo rm -rf $HOME/.local
-# else
-#     sudo mkdir $HOME/.local
-# fi
-    
-# echo -e "\t[+]${blue}Set .Local Successful"
 
 #-------------------------------------------------------------------
 # Set Inziu FiraCode Fonts install
