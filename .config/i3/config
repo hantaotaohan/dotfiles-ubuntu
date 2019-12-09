@@ -26,6 +26,9 @@ floating_modifier $mod
 # 开启Terminal快捷键 
 bindsym $mod+Return exec i3-sensible-terminal
 
+# 开启Google Chrome快捷键 
+bindsym $mod+g exec google-chrome-stable --force-dark-mode
+
 # 关闭窗口快捷键 
 bindsym $mod+Shift+q kill
 
