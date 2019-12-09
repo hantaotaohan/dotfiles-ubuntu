@@ -52,13 +52,13 @@
 *.borderLess:False
 
 ! 滚动条设置
-*.scrollBar:True
+*.scrollBar:False
 
 ! 字体设置
 Xft.dpi:96
 
 ! 英文字体
-*faceName: Fira Code:style:bold:antialias=True:pixelsize=13
+*faceName:Fira Code:style:bold:antialias=True:pixelsize=13
 
 ! 中文字体
 *faceNameDoublesize:Inziu Iosevka SC:sytle:bold:antialias=True:pixelsize=13
