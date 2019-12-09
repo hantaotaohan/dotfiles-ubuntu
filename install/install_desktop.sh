@@ -331,8 +331,8 @@ echo -e "\t[+]${blue}Set Xrdb Successful"
 # Set TimeZone
 #-------------------------------------------------------------------
 
-# sudo timedatectl set-timezone "Asia/Shanghai"
-# echo -e "\t[+]${blue}Set TimeZone is Successful"
+sudo timedatectl set-timezone "Asia/Shanghai"
+echo -e "\t[+]${blue}Set TimeZone is Successful"
 
 #-------------------------------------------------------------------
 # Set Inziu FiraCode Fonts install
