@@ -105,8 +105,8 @@ echo -e "\t[+]${blue}Xvfb Successful"
 sudo apt install -y -qq xserver-xorg > /dev/null 2>&1
 echo -e "\t[+]${blue}Xorg Successful"
 
-sudo apt install -y -qq xinit > /dev/null 2>&1
-echo -e "\t[+]${blue}Xinit Successful"
+# sudo apt install -y -qq xinit > /dev/null 2>&1
+# echo -e "\t[+]${blue}Xinit Successful"
 
 #-------------------------------------------------------------------
 # Install language 
