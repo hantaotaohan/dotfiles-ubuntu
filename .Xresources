@@ -58,10 +58,10 @@
 Xft.dpi:96
 
 ! 英文字体
-*faceName:Fira Code:style:bold:antialias=True:pixelsize=13
+URxvt.font:xft:Inziu Iosevka SC:size=10:style=Bold:antialias=true
 
 ! 中文字体
-*faceNameDoublesize:Inziu Iosevka SC:sytle:bold:antialias=True:pixelsize=13
+URxvt.boldfont:xft:Inziu Iosevka SC:size=10:style=Bold:antialias=true
 
 ! 输入法
 *inputMethod:fcitx
