@@ -116,8 +116,8 @@ sudo apt install -y -qq language-pack-zh-hans > /dev/null 2>&1
 echo -e "\t[+]${blue}Language zh_CN Successful"
 
 sudo apt install -y -qq fcitx fcitx-pinyin > /dev/null 2>&1
-im-config -n fcitx
-im-config -s fcitx
+im-config -n fcitx > /dev/null 2>&1
+im-config -s fcitx > /dev/null 2>&1
 echo -e "\t[+]${blue}Fcitx Successful"
 
 sudo apt install -y -qq fonts-wqy-microhei > /dev/null 2>&1
