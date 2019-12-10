@@ -340,6 +340,7 @@ echo -e "\t[+]${blue}Xinit Successful"
 git clone https://github.com/meskarune/i3lock-fancy.git ~/i3lock-fancy &&\
 cd ~/i3lock-fancy &&\
 sudo make install &&\
+cd $HOME &&\
 sudo rm -rf ~/i3lock-fancy &&\
 
 echo -e "\t[+]${blue}I3-lock-fancy Successful"
