@@ -29,12 +29,18 @@ blue='\e[0;34m'
 green='\e[0;32m'
 
 #-------------------------------------------------------------------
-# Setting Variable
+# Setting Username
 #-------------------------------------------------------------------
 
 read -p "Enter Your Computer Name: "  username
 echo "Welcome $username!"
-echo -e ""
+echo ""
+echo "--------------------------------------------------------------------"
+echo ""
+
+#-------------------------------------------------------------------
+# Setting Variable
+#-------------------------------------------------------------------
 
 Dotfiles_repo=$(dirname $PWD)
 Dotfiles_home=(.w3m .bashrc .bash_profile 
