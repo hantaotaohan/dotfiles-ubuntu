@@ -5,8 +5,13 @@ set font "Inconsolata 11"
 map = zoom in
 map - zoom out
 map i recolor
-map r reload
 map R rotate
+
+map <C-u> scroll half-up
+map <C-d> scroll half-down
+map <C-p> scroll up
+map <C-n> scroll down
+
 
 # Options.
 set incremental-search    "true"
