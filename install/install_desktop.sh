@@ -105,6 +105,9 @@ echo -e "\t[+]${blue}W3m Successful"
 sudo apt install -y -qq unzip > /dev/null 2>&1
 echo -e "\t[+]${blue}Unzip Successful"
 
+sudo apt install -y -qq ranger > /dev/null 2>&1
+echo -e "\t[+]${blue}Ranger Successful"
+
 #-------------------------------------------------------------------
 # Install X Apps 
 #-------------------------------------------------------------------
