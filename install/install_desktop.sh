@@ -336,7 +336,10 @@ echo -e "\t[+]${blue}AutoRemove Successful"
 # Set Xrdb
 #-------------------------------------------------------------------
 
-xrdb $HOME/.Xresources 
+if [ ! "$XDG_VTNR" = "" ]; then
+    xrdb $HOME/.Xresources 
+fi
+
 echo -e "\t[+]${blue}Set Xrdb Successful"
 
 #-------------------------------------------------------------------
