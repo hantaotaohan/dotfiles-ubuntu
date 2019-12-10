@@ -1,6 +1,12 @@
 # Font
 set font "Inconsolata 11"
 
+# Map
+map + zoom in
+map - zoom out
+map i recolor
+map r reload
+map R rotate
 
 # Options.
 set incremental-search    "true"
@@ -8,8 +14,8 @@ set smooth-scroll         "true"
 set abort-clear-search    "true"
 set statusbar-home-tilde  "true"
 set adjust-open           "width"
-set window-height         "566"
-set window-width          "690"
+#set window-height         "566"
+#set window-width          "690"
 set window-title-basename "true"
 set first-page-column     "1:1"
 set selection-clipboard   clipboard
