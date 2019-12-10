@@ -334,20 +334,6 @@ sudo apt install -y -qq xinit > /dev/null 2>&1
 echo -e "\t[+]${blue}Xinit Successful"
 
 #-------------------------------------------------------------------
-# Set Chown .local .config
-#-------------------------------------------------------------------
-
-if [ -d "$HOME/.local" ]; then
-    sudo chown -R $USER:$USER $HOME/.local
-fi
-
-if [ -d "$HOME/.config" ]; then
-    sudo chown -R $USER:$USER $HOME/.config
-fi
-    
-echo -e "\t[+]${blue}Chown Successful"
-
-#-------------------------------------------------------------------
 # Install I3-lock-fancy
 #-------------------------------------------------------------------
 
@@ -382,6 +368,20 @@ else
     sudo sh -c "$(wget https://raw.githubusercontent.com/hantaotaohan/Fonts/master/run_install_font.sh -O -)"
 fi
 echo -e "\t[+]${blue}Set Fonts is Successful"
+
+#-------------------------------------------------------------------
+# Set Chown .local .config
+#-------------------------------------------------------------------
+
+if [ -d "$HOME/.local" ]; then
+    sudo chown -R $USER:$USER $HOME/.local
+fi
+
+if [ -d "$HOME/.config" ]; then
+    sudo chown -R $USER:$USER $HOME/.config
+fi
+    
+echo -e "\t[+]${blue}Chown Successful"
 
 #-------------------------------------------------------------------
 # End
