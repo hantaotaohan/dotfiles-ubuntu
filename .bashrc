@@ -179,7 +179,7 @@ source "$HOME/z.sh"
 # Xmodmap Install
 # 用于xserver的键盘自定义
 # 判断是否为桌面环境
-if [ ! "$XDG_CURRENT_DESKTOP" = "" ]; then
+if [ ! "$XDG_VTNR" = "" ]; then
     xmodmap "$HOME/.Xmodmap"
 fi
 
