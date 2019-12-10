@@ -351,11 +351,11 @@ echo -e "\t[+]${blue}Xinit Successful"
 # Set Chown .local .config
 #-------------------------------------------------------------------
 
-if [ -d $HOME/.local ]; then
+if [ -d "$HOME/.local" ]; then
     sudo chown -R $USER:$USER .local
 if
 
-if [ -d $HOME/.config ]; then
+if [ -d "$HOME/.config" ]; then
     sudo chown -R $USER:$USER .config
 if
     
