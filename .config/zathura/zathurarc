@@ -1,24 +1,29 @@
-"  colors
-set statusbar-bg #00FF00
-set statusbar-fg #FF0000
+# Font
+
 set font "Inconsolata 11"
 
-# zathurarc-dark
+# zathurarc-color
+
 set default-bg "#2E3440" #00
 set default-fg "#dcdccc" #01
+
 set statusbar-fg "#dcdccc" #04
 set statusbar-bg "#1E2320" #01
+
 set inputbar-fg "#dcdccc" #02
+
+set notification-bg "#709080" #0B
+set notification-fg "#1E2320" #00
 set notification-error-bg "#dca3a3" #08
 set notification-error-fg "#1E2320" #00
 set notification-warning-bg "#dca3a3" #08
 set notification-warning-fg "#1E2320" #00
+
 set highlight-color "#dc8cc3" #0A
-#set highlight-active-color "#F0DFAF" #0D
 set highlight-active-color "#FF0000" #0D
+
 set completion-highlight-fg "#303030" #02
 set completion-highlight-bg "#8cd0d3" #0C
 set completion-bg "#303030" #02
 set completion-fg "#8cd0d3" #0C
-set notification-bg "#709080" #0B
-set notification-fg "#1E2320" #00
+
