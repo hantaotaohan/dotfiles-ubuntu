@@ -350,7 +350,7 @@ echo -e "\t[+]${blue}Xinit Successful"
 # Install I3-lock-fancy
 #-------------------------------------------------------------------
 
-git clone https://github.com/meskarune/i3lock-fancy.git ~/i3lock-fancy &&\
+git clone -q https://github.com/meskarune/i3lock-fancy.git ~/i3lock-fancy &&\
 cd ~/i3lock-fancy &&\
 sudo make install &&\
 cd $HOME &&\
@@ -377,9 +377,9 @@ echo -e "\t[+]${blue}Set TimeZone is Successful"
 
 if [ -d "$HOME/Fonts" ]; then
     sudo rm -rf $HOME/Fonts
-    sudo sh -c "$(wget https://raw.githubusercontent.com/hantaotaohan/Fonts/master/run_install_font.sh -O -)"
+    sudo sh -c "$(wget -q -t 0 https://raw.githubusercontent.com/hantaotaohan/Fonts/master/run_install_font.sh -O -)"
 else
-    sudo sh -c "$(wget https://raw.githubusercontent.com/hantaotaohan/Fonts/master/run_install_font.sh -O -)"
+    sudo sh -c "$(wget -q -t 0 https://raw.githubusercontent.com/hantaotaohan/Fonts/master/run_install_font.sh -O -)"
 fi
 echo -e "\t[+]${blue}Set Fonts is Successful"
 
