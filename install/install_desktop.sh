@@ -341,12 +341,6 @@ echo -e "\t[+]${blue}Set TimeZone is Successful"
 sudo sh -c "$(wget https://raw.githubusercontent.com/hantaotaohan/Fonts/master/run_install_font.sh -O -)"
 
 #-------------------------------------------------------------------
-# Set Locales Language
-#-------------------------------------------------------------------
-
-sudo dpkg-reconfigure locales
-
-#-------------------------------------------------------------------
 # Install startx-tools Xinit
 #-------------------------------------------------------------------
 
@@ -368,6 +362,22 @@ if
 echo -e "\t[+]${blue}Chown Successful"
 
 #-------------------------------------------------------------------
+# Install I3-lock-fancy
+#-------------------------------------------------------------------
+
+git clone https://github.com/meskarune/i3lock-fancy.git ~/i3lock-fancy
+cd ~/i3lock-fancy
+sudo make install
+
+echo -e "\t[+]${blue}I3-lock-fancy Successful"
+
+#-------------------------------------------------------------------
+# Set Locales Language
+#-------------------------------------------------------------------
+
+sudo dpkg-reconfigure locales
+
+#-------------------------------------------------------------------
 # End
 #-------------------------------------------------------------------
 
@@ -380,6 +390,3 @@ echo ""
 #-------------------------------------------------------------------
 
 bash
-
-
-
