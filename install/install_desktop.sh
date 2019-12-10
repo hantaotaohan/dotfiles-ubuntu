@@ -297,7 +297,6 @@ tmux kill-server
 
 echo -e "\t[+]${blue}TPM Successful"
 
-
 #-------------------------------------------------------------------
 # diff-so-fancy
 #-------------------------------------------------------------------
@@ -328,19 +327,6 @@ xrdb $HOME/.Xresources
 echo -e "\t[+]${blue}Set Xrdb Successful"
 
 #-------------------------------------------------------------------
-# Set TimeZone
-#-------------------------------------------------------------------
-
-sudo timedatectl set-timezone "Asia/Shanghai"
-echo -e "\t[+]${blue}Set TimeZone is Successful"
-
-#-------------------------------------------------------------------
-# Set Inziu FiraCode Fonts install
-#-------------------------------------------------------------------
-
-# sudo sh -c "$(wget https://raw.githubusercontent.com/hantaotaohan/Fonts/master/run_install_font.sh -O -)"
-
-#-------------------------------------------------------------------
 # Install startx-tools Xinit
 #-------------------------------------------------------------------
 
@@ -353,11 +339,11 @@ echo -e "\t[+]${blue}Xinit Successful"
 
 if [ -d "$HOME/.local" ]; then
     sudo chown -R $USER:$USER .local
-if
+fi
 
 if [ -d "$HOME/.config" ]; then
     sudo chown -R $USER:$USER .config
-if
+fi
     
 echo -e "\t[+]${blue}Chown Successful"
 
@@ -376,6 +362,24 @@ echo -e "\t[+]${blue}I3-lock-fancy Successful"
 #-------------------------------------------------------------------
 
 sudo dpkg-reconfigure locales
+
+#-------------------------------------------------------------------
+# Set TimeZone
+#-------------------------------------------------------------------
+
+sudo timedatectl set-timezone "Asia/Shanghai"
+echo -e "\t[+]${blue}Set TimeZone is Successful"
+
+#-------------------------------------------------------------------
+# Set Inziu FiraCode Fonts install
+#-------------------------------------------------------------------
+
+if [ -d "$HOME/Fonts" ]; then
+    sudo rm -rf $HOME/Fonts
+    sudo sh -c "$(wget https://raw.githubusercontent.com/hantaotaohan/Fonts/master/run_install_font.sh -O -)"
+else
+    sudo sh -c "$(wget https://raw.githubusercontent.com/hantaotaohan/Fonts/master/run_install_font.sh -O -)"
+fi
 
 #-------------------------------------------------------------------
 # End
