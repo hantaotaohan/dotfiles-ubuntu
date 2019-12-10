@@ -380,6 +380,7 @@ if [ -d "$HOME/Fonts" ]; then
 else
     sudo sh -c "$(wget https://raw.githubusercontent.com/hantaotaohan/Fonts/master/run_install_font.sh -O -)"
 fi
+echo -e "\t[+]${blue}Set Fonts is Successful"
 
 #-------------------------------------------------------------------
 # End
