@@ -2,28 +2,38 @@
 
 set font "Inconsolata 11"
 
-# zathurarc-color
+# Base16 OneDark
+# Author: Lalit Magant (http://github.com/tilal6991)
 
-set default-bg "#2E3440" #00
-set default-fg "#dcdccc" #01
+set default-bg                  "#282c34"
+set default-fg                  "#353b45"
 
-set statusbar-fg "#dcdccc" #04
-set statusbar-bg "#1E2320" #01
+set statusbar-fg                "#565c64"
+set statusbar-bg                "#3e4451"
 
-set inputbar-fg "#dcdccc" #02
+set inputbar-bg                 "#282c34"
+set inputbar-fg                 "#c8ccd4"
 
-set notification-bg "#709080" #0B
-set notification-fg "#1E2320" #00
-set notification-error-bg "#dca3a3" #08
-set notification-error-fg "#1E2320" #00
-set notification-warning-bg "#dca3a3" #08
-set notification-warning-fg "#1E2320" #00
+set notification-bg             "#282c34"
+set notification-fg             "#c8ccd4"
 
-set highlight-color "#dc8cc3" #0A
-set highlight-active-color "#FF0000" #0D
+set notification-error-bg       "#282c34"
+set notification-error-fg       "#e06c75"
 
-set completion-highlight-fg "#303030" #02
-set completion-highlight-bg "#8cd0d3" #0C
-set completion-bg "#303030" #02
-set completion-fg "#8cd0d3" #0C
+set notification-warning-bg     "#282c34"
+set notification-warning-fg     "#e06c75"
 
+set highlight-color             "#e5c07b"
+set highlight-active-color      "#61afef"
+
+set completion-bg               "#353b45"
+set completion-fg               "#61afef"
+
+set completion-highlight-fg     "#c8ccd4"
+set completion-highlight-bg     "#61afef"
+
+set recolor-lightcolor          "#282c34"
+set recolor-darkcolor           "#b6bdca"
+
+set recolor                     "false"
+set recolor-keephue             "false"
