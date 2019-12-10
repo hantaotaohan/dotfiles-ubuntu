@@ -34,6 +34,7 @@ green='\e[0;32m'
 
 read -p "Enter Your Computer Name: "  username
 echo "Welcome $username!"
+echo -e ""
 
 Dotfiles_repo=$(dirname $PWD)
 Dotfiles_home=(.w3m .bashrc .bash_profile 
