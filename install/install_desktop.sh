@@ -365,7 +365,8 @@ echo -e "\t[+]${blue}I3-lock-fancy Successful"
 # Set Locales Language
 #-------------------------------------------------------------------
 
-sudo dpkg-reconfigure locales
+# sudo dpkg-reconfigure locales
+sudo dpkg-reconfigure -f noninteractive locales
 
 #-------------------------------------------------------------------
 # Set TimeZone
