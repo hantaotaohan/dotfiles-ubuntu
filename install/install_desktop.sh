@@ -32,6 +32,9 @@ green='\e[0;32m'
 # Setting Variable
 #-------------------------------------------------------------------
 
+read -p "Enter Your Computer Name: "  username
+echo "Welcome $username!"
+
 Dotfiles_repo=$(dirname $PWD)
 Dotfiles_home=(.w3m .bashrc .bash_profile 
     .bash_prompt .tmux.conf .vimrc .Xmodmap .bash_aliases 
@@ -44,7 +47,7 @@ Dotfiles_copy=(.config .vim z.sh)
 #-------------------------------------------------------------------
 
 sudo ln -sf "$Dotfiles_repo/sources.list" "/etc/apt/sources.list"
-echo -e "\t[+]${blue}Repace sources.list Done !"
+echo -e "\t${blue}[+]Repace sources.list Done !"
 
 #-------------------------------------------------------------------
 # Update Upgrade Packages
@@ -375,11 +378,11 @@ echo -e "\t[+]${blue}Set Fonts is Successful"
 #-------------------------------------------------------------------
 
 if [ -d "$HOME/.local" ]; then
-    sudo chown -R $USER:$USER $HOME/.local
+    sudo chown -R $username:$username $HOME/.local
 fi
 
 if [ -d "$HOME/.config" ]; then
-    sudo chown -R $USER:$USER $HOME/.config
+    sudo chown -R $username:$username $HOME/.config
 fi
     
 echo -e "\t[+]${blue}Chown Successful"
