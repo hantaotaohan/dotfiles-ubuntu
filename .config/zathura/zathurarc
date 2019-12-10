@@ -2,7 +2,7 @@
 set font "Inconsolata 11"
 
 # Map
-map + zoom in
+map = zoom in
 map - zoom out
 map i recolor
 map r reload
