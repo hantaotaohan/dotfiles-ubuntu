@@ -159,7 +159,7 @@ bindsym $mod+r mode "resize"
 
 # start i3bar to display a workspace bar
 bar {
-    font pango:Inziu IosevkaCC Slab SC Bold 12
+    font pango:Inziu IosevkaCC Slab SC Bold 10
     status_command          i3status -c ~/.config/i3status/config
     separator_symbol        "-"
     workspace_buttons       yes
