@@ -252,6 +252,13 @@ sudo dpkg -i $Dotfiles_repo/ripgrep/ripgrep_11.0.2_amd64.deb > /dev/null 2>&1
 echo -e "\t[+]${blue}Ripgrep Install success"
 
 #-------------------------------------------------------------------
+# Install Fd
+#-------------------------------------------------------------------
+
+sudo dpkg -i $Dotfiles_repo/fd/fd_7.4.0_amd64.deb > /dev/null 2>&1
+echo -e "\t[+]${blue}Fd Install success"
+
+#-------------------------------------------------------------------
 # Install Bat
 #-------------------------------------------------------------------
 
