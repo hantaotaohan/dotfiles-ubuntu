@@ -19,7 +19,6 @@ set $right l
 new_window none
 new_float none
 
-
 # 启用鼠标托放浮动窗口
 floating_modifier $mod
 
@@ -29,6 +28,9 @@ bindsym $mod+Return exec alacritty
 
 # 开启Google Chrome快捷键 
 bindsym $mod+g exec google-chrome-stable --force-dark-mode
+
+# 打开Ranger快捷键
+bindsym $mod+Shift+Return exec alacritty -e ranger
 
 # 关闭窗口快捷键 
 bindsym $mod+Shift+q kill
