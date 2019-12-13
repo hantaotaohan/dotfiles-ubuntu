@@ -89,16 +89,26 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # 设定工作区名
-set $workspace1 "   01  "
-set $workspace2 "   02  "
-set $workspace3 "   03  "
-set $workspace4 "   04  "
-set $workspace5 "   05  "
-set $workspace6 "   06  "
-set $workspace7 "   07  "
-set $workspace8 "   08  "
-set $workspace9 "   09  "
-set $workspace0 "   10  "
+#set $workspace1 "   01  "
+#set $workspace2 "   02  "
+#set $workspace3 "   03  "
+#set $workspace4 "   04  "
+#set $workspace5 "   05  "
+#set $workspace6 "   06  "
+#set $workspace7 "   07  "
+#set $workspace8 "   08  "
+#set $workspace9 "   09  "
+#set $workspace0 "   10  "
+set $workspace1 "1"
+set $workspace2 "2"
+set $workspace3 "3"
+set $workspace4 "4"
+set $workspace5 "5"
+set $workspace6 "6"
+set $workspace7 "7"
+set $workspace8 "8"
+set $workspace9 "9"
+set $workspace0 "10"
 
 # 切换工作区
 bindsym $mod+1 workspace $workspace1
