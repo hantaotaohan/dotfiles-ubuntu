@@ -35,25 +35,31 @@ markup=none
 # See the script for details.
 [volume]
 label=VOL
-label=♪
+label=
 instance=Master
 #instance=PCM
 interval=once
 signal=10
+interval=30
+separator_block_width=30
 
 # Memory usage
 #
 # The type defaults to "mem" if the instance is not specified.
 [memory]
 label=MEM
+label=
 separator=false
 interval=30
+separator_block_width=30
 
 [memory]
 label=SWAP
+label=
 instance=swap
 separator=false
 interval=30
+separator_block_width=30
 
 # Disk usage
 #
@@ -62,8 +68,10 @@ interval=30
 # (defaults to 10 for 10%).
 [disk]
 label=HOME
+label=
 #instance=/mnt/data
 interval=30
+separator_block_width=30
 
 # Network interface monitoring
 #
@@ -109,8 +117,10 @@ interval=30
 # Date Time
 #
 [time]
+label=
 command=date '+%Y-%m-%d %H:%M:%S'
 interval=5
+#separator_block_width=30
 
 # Generic media player support
 #
