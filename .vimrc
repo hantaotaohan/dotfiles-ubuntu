@@ -59,9 +59,10 @@ if filereadable("/etc/vim/vimrc.local")
   source /etc/vim/vimrc.local
 endif
 
-"if exists('$TMUX')
-"  set term=screen-256color
-"endif
+if exists('$TMUX')
+  set termguicolors
+  set term=xterm-256
+endif
 
 "Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
 "If you're using tmux version 2.2 or later, you can remove the outermost $TMUX check and use tmux's 24-bit color support
@@ -78,12 +79,6 @@ if (empty($TMUX))
     set termguicolors
   endif
 endif
-
-"Use 24-bit (true-color) mode in Rxvt.
-if &term=~'rxvt-unicode'
-    set termguicolors!
-endif
-
 
 "-----------------------------------------------------------------o--------------------------------------------------------------o
 "                                                                                                                                
