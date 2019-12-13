@@ -266,6 +266,19 @@ sudo dpkg -i $Dotfiles_repo/bat/bat_0.12.1_amd64.deb > /dev/null 2>&1
 echo -e "\t[+]${blue}Bat Install success"
 
 #-------------------------------------------------------------------
+# Install Alacritty
+#-------------------------------------------------------------------
+
+sudo wget -q -t 0 -P $HOME https://github.com/jwilm/alacritty/releases/download/v0.4.0/Alacritty-v0.4.0-ubuntu_18_04_amd64.deb > /dev/null 2>&1
+echo -e "\t[+]${blue}Downloding Alacritty"
+
+sudo dpkg -i $HOME/Alacritty-v0.4.0-ubuntu_18_04_amd64.deb > /dev/null 2>&1
+echo -e "\t[+]${blue}Install Alacritty ............"
+
+sudo rm -rf $HOME/Alacritty*
+echo -e "\t[+]${blue}Delete Alacritty ............"
+
+#-------------------------------------------------------------------
 # Install Chrome and ChromeDriver
 #-------------------------------------------------------------------
 
