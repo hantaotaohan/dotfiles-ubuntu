@@ -222,6 +222,7 @@ client.background $base07
 bar {
     font pango:Inziu IosevkaCC Slab SC Bold 10
     status_command          i3status -c ~/.config/i3status/config
+    status_command 	    i3blocks
     separator_symbol        "-"
     workspace_buttons       yes
     strip_workspace_numbers yes
