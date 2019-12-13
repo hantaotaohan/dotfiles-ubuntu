@@ -63,10 +63,10 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # 下一次开启窗口为水平 
-bindsym $mod+| split h
+bindsym $mod+Shift+b split h
 
 # 下一次开启窗口为垂直
-bindsym $mod+v split v
+bindsym $mod+Shift+v split v
 
 # 开启全屏模式
 bindsym $mod+f fullscreen toggle
@@ -238,7 +238,7 @@ bar {
         active_workspace    $base00 $base00 $base06
         inactive_workspace  $base00 $base00 $base06
         urgent_workspace    $base00 $base08 $base00
-        binding_mode        $base00 $base0A $base00
+        binding_mode        $base00 $base0E $base00
     }
 }
 
