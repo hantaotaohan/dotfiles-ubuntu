@@ -316,6 +316,23 @@ fi
 echo -e "\t[+]${blue}ChromeDriver Install Successful"
 
 #-------------------------------------------------------------------
+# Unzip Chrome Plugin
+#-------------------------------------------------------------------
+
+if [ ! -d "$HOME/chrome-extend" ]; then
+    sudo mkdir $HOME/chrome-extend
+else
+    sudo rm -rf $HOME/chrome-extend
+    sudo mkdir $HOME/chrome-extend
+fi
+
+sudo unzip -q $Dotfiles_repo/chrome/darkreader.zip -d $HOME/chrome-extend
+echo -e "\t[+]${blue}Unzip darkreader ............"
+
+sudo unzip -q $Dotfiles_repo/chrome/vimium.zip -d $HOME/chrome-extend
+echo -e "\t[+]${blue}Unzip vimium ............"
+
+#-------------------------------------------------------------------
 # .tmux
 #-------------------------------------------------------------------
 
