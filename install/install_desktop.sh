@@ -161,6 +161,9 @@ echo -e "\t[+]${blue}i3 Lock Fancy Successful"
 sudo apt install -y -qq zathura > /dev/null 2>&1
 echo -e "\t[+]${blue}zathura Successful"
 
+sudo apt install -y -qq i3blocks > /dev/null 2>&1
+echo -e "\t[+]${blue}i3blocks Successful"
+
 #-------------------------------------------------------------------
 # Install Openssh-Server
 #-------------------------------------------------------------------
