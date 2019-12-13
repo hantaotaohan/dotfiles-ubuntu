@@ -1,5 +1,8 @@
+# --------------------------------------------------------------------------------------
+# Theme - Solarized
 # Oxide dircolors by Diki Ananta (https://github.com/dikiaap/dotfiles)
 # Modification from Solarized dircolors (https://github.com/seebi/dircolors-solarized)
+# --------------------------------------------------------------------------------------
 
 COLOR tty
 TERM alacritty
