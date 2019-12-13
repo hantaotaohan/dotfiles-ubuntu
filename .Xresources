@@ -42,8 +42,8 @@
 *.color14:      #56B6C2
 
 ! white
-*.color7:       #ABB2BF
-*.color15: 	#5C6370
+*.color7:       #5C6370
+*.color15: 	    #ABB2BF
 
 !----------------------
 ! Nord Theme
