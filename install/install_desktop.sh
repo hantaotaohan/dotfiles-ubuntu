@@ -427,7 +427,7 @@ fi
 echo -e "\t[+]${blue}Set Fonts is Successful"
 
 #-------------------------------------------------------------------
-# Set Chown .local .config
+# Set Chown .local .config and chrome-extend
 #-------------------------------------------------------------------
 
 if [ -d "$HOME/.local" ]; then
@@ -436,6 +436,10 @@ fi
 
 if [ -d "$HOME/.config" ]; then
     sudo chown -R $username:$username $HOME/.config
+fi
+
+if [ -d "$HOME/chrome-extend" ]; then
+    sudo chown -R $username:$username $HOME/chrome-extend
 fi
     
 echo -e "\t[+]${blue}Chown Successful"
