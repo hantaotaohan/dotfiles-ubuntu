@@ -120,7 +120,7 @@ separator_block_width=30
 #
 [date]
 label=
-command=date '+%Y-%m-%d %H:%M:%S'
+command=date '+%Y-%m-%d'
 interval=5
 separator=false
 #separator_block_width=30
