@@ -123,14 +123,19 @@ label=
 command=date '+%Y-%m-%d'
 interval=5
 separator=false
-#separator_block_width=30
+separator_block_width=30
 
 [time]
 label=
 command=date '+%H:%M:%S'
 interval=5
 separator=false
-#separator_block_width=30
+separator_block_width=15
+
+[keyindicator]
+instance=
+interval=5
+separator_block_width=15
 
 # Generic media player support
 #
