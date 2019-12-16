@@ -119,7 +119,7 @@ separator_block_width=30
 # Date Time
 #
 [date]
-label=
+label=
 command=date '+%Y-%m-%d'
 interval=5
 separator=false
