@@ -41,6 +41,7 @@ instance=Master
 interval=once
 signal=10
 interval=30
+separator=false
 separator_block_width=30
 
 # Memory usage
@@ -71,6 +72,7 @@ label=HOME
 label=
 #instance=/mnt/data
 interval=30
+separator=false
 separator_block_width=30
 
 # Network interface monitoring
@@ -120,12 +122,14 @@ separator_block_width=30
 label=
 command=date '+%Y-%m-%d %H:%M:%S'
 interval=5
+separator=false
 #separator_block_width=30
 
 [time]
 label=
 command=date '+%H:%M:%S'
 interval=5
+separator=false
 #separator_block_width=30
 
 # Generic media player support
