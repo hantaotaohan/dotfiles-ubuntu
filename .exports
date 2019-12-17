@@ -21,8 +21,12 @@ export FZF_DEFAULT_OPTS=" \
     --color=fg:#abb2bf,bg:#282c34,hl:#e06c75,fg+:#61afef,bg+:#282c34,hl+:#c678dd \
     --color=info:#f7c662,prompt:#e06c75,pointer:#61afef,marker:#a6bc69,spinner:#f7c662,header:#6699cc"
 
-export FZF_DEFAULT_COMMAND='fd --type f'
-export FZF_ALT_C_COMMAND="fd -t d . $HOME"
+# CTRL+T 搜索目录
+export FZF_DEFAULT_COMMAND="fd --hidden --follow --exclude .git -t f . /"
+export FZF_CTRL_T_COMMAND="${FZF_DEFAULT_COMMAND}"
+
+# ALT+C 搜索文件夹并cd进入
+export FZF_ALT_C_COMMAND="fd -t d . /"
 
 # ripgrep.
 # Rg模糊搜索设定
