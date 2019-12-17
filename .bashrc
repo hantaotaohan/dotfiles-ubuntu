@@ -4,10 +4,10 @@ export PATH="$HOME/bin:$PATH";
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
 # * ~/.extra can be used for other settings you don’t want to commit.
-# for file in ~/.{path,bash_prompt,exports,aliases,functions,extra}; do
-# 	[ -r "$file" ] && [ -f "$file" ] && source "$file";
-# done;
-# unset file;
+for file in ~/.{path,bash_prompt,exports,aliases,functions,extra}; do
+	[ -r "$file" ] && [ -f "$file" ] && source "$file";
+done;
+unset file;
 
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
@@ -164,6 +164,7 @@ fi
 
 # Install powerline-shell
 # 设定powerline-shell
+
 function _update_ps1() {
     PS1=$(powerline-shell $?)
 }
