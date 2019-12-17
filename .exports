@@ -23,7 +23,7 @@ export FZF_DEFAULT_OPTS=" \
 
 # ripgrep.
 # Rg模糊搜索设定
-export RIPGREP_CONFIG_PATH="$HOME/.config/ripgrep/ripgreprc"
+export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
 
 # Less.
 # 文档预览Less设定
