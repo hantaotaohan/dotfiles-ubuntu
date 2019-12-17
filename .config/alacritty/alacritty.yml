@@ -53,7 +53,7 @@ font:
         style: Bold
 
     bold:
-        family: Inziu Iosevka Slab SC
+        family: FiraCode Nerd Font
         style: Bold
 
     italic:
