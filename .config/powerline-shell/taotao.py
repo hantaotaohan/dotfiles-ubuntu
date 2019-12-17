@@ -24,7 +24,7 @@ class DefaultColor(object):
     SEPARATOR_FG = 244
 
     READONLY_BG = 236
-    READONLY_FG = 9
+    READONLY_FG = 5
 
     SSH_BG = 166  # medium orange
     SSH_FG = 254
@@ -53,8 +53,8 @@ class DefaultColor(object):
     GIT_STAGED_FG = 15
     GIT_NOTSTAGED_BG = 8 
     GIT_NOTSTAGED_FG = 7 # 有更该
-    GIT_UNTRACKED_BG = 250
-    GIT_UNTRACKED_FG = 8
+    GIT_UNTRACKED_BG = 8
+    GIT_UNTRACKED_FG = 3
     GIT_CONFLICTED_BG = 9
     GIT_CONFLICTED_FG = 15
 
