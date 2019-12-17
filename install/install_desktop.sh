@@ -268,6 +268,19 @@ sudo dpkg -i $Dotfiles_repo/bat/bat_0.12.1_amd64.deb > /dev/null 2>&1
 echo -e "\t[+]${blue}Bat Install success"
 
 #-------------------------------------------------------------------
+# Install Tldr
+#-------------------------------------------------------------------
+
+if [ ! -f "/bin/tldr" ];then
+sudo cp $Dotfiles_repo/tldr/tldr /bin
+else
+sudo rm -rf /bin/tldr
+sudo cp $Dotfiles_repo/tldr/tldr /bin
+fi
+
+echo -e "\t[+]${blue}Tldr Install success"
+
+#-------------------------------------------------------------------
 # Install Alacritty
 #-------------------------------------------------------------------
 
