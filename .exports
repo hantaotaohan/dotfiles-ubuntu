@@ -18,7 +18,7 @@ export PAGER="less"
 # FZF.
 # FZF默认功能设定及颜色设定
 export FZF_DEFAULT_OPTS=" \
-    --color=fg:#abb2bf,bg:#282c34,hl:#808080,fg+:#61afef,bg+:#282c34,hl+:#f7c662 \
+    --color=fg:#abb2bf,bg:#282c34,hl:#e06c75,fg+:#61afef,bg+:#282c34,hl+:#c678dd \
     --color=info:#f7c662,prompt:#e06c75,pointer:#61afef,marker:#a6bc69,spinner:#f7c662,header:#6699cc"
 
 # ripgrep.
