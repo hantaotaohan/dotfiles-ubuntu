@@ -2,11 +2,10 @@
 --map-syntax .ignore:.gitignore
 
 # theme
-#--theme=TwoDark
 --theme=OneHalfDark
 
 # style
-#--style=numbers,changes,header
 --style=full
+
 # pager
-#--pager="less -RFX~"
+--pager="less -RFX~"
