@@ -21,6 +21,9 @@ export FZF_DEFAULT_OPTS=" \
     --color=fg:#abb2bf,bg:#282c34,hl:#e06c75,fg+:#61afef,bg+:#282c34,hl+:#c678dd \
     --color=info:#f7c662,prompt:#e06c75,pointer:#61afef,marker:#a6bc69,spinner:#f7c662,header:#6699cc"
 
+export FZF_DEFAULT_COMMAND='fd --type f'
+export FZF_ALT_C_COMMAND="fd -t d . $HOME"
+
 # ripgrep.
 # Rg模糊搜索设定
 export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
