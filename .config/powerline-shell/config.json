@@ -17,5 +17,5 @@
     "show_symbol": true
   },
   "mode": "patched",
-  "theme": "~/.config/powerline-shell/default.py"
+  "theme": "~/.config/powerline-shell/taotao.py"
 }
