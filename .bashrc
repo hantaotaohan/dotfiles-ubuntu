@@ -153,6 +153,10 @@ if [ -f ~/.bash_prompt ]; then
     . ~/.bash_prompt
 fi
 
+if [ -f ~/.exports ]; then
+    . ~/.exports
+fi
+
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
