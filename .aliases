@@ -8,6 +8,11 @@ alias 3='cd -3'
 alias 4='cd -4'
 alias 5='cd -5'
 
+# some more ls aliases
+alias ll='ls -alF --color=always'
+alias la='ls -A'
+alias l='ls -CF'
+
 # Easy report
 alias ls='ls -Fh --color=auto --group-directories-first'
 alias grep='grep --color=auto'
