@@ -133,7 +133,7 @@ separator=false
 separator_block_width=15
 
 [keyindicator]
-instance=
+instance= 
 interval=5
 separator_block_width=15
 
