@@ -124,12 +124,6 @@ fi
 # 彩色GCC警告和错误
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
-# some more ls aliases
-# 一些别名设置
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-
 # Add an "alert" alias for long running commands.  Use like so:
 # sleep 10; alert
 # 为长时间运行的命令添加“警报”别名。像这样使用：              
