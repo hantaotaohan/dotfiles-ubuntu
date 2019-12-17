@@ -15,6 +15,9 @@ export EDITOR="vim"
 # 默认文字预览设定
 export PAGER="less"
 
+# 多用户历史记录保存及读取
+export PROMPT_COMMAND="history -a; history -r;  $PROMPT_COMMAND"    
+
 # FZF.
 # FZF默认功能设定及颜色设定
 export FZF_DEFAULT_OPTS=" \
