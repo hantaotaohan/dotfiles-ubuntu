@@ -23,8 +23,8 @@ class DefaultColor(object):
     CWD_FG = 254  # nearly-white grey
     SEPARATOR_FG = 244
 
-    READONLY_BG = 236
-    READONLY_FG = 5
+    READONLY_BG = 239
+    READONLY_FG = 1
 
     SSH_BG = 166  # medium orange
     SSH_FG = 254
