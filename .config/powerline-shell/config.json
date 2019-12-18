@@ -5,10 +5,11 @@
     "hostname",
     "ssh",
     "cwd",
-    "git",
     "read_only",
+    "git",
     "jobs",
-    "root"
+    "root",
+    "newline"
   ],
   "cwd": {
     "max_depth": 4
