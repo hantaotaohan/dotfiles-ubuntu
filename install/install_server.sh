@@ -214,10 +214,10 @@ echo -e "\t[+]${blue}Bat Install success"
 #-------------------------------------------------------------------
 
 if [ ! -f "/bin/tldr" ];then
-sudo cp $Dotfiles_repo/tldr/tldr /bin
+    sudo cp $Dotfiles_repo/tldr/tldr /bin
 else
-sudo rm -rf /bin/tldr
-sudo cp $Dotfiles_repo/tldr/tldr /bin
+    sudo rm -rf /bin/tldr
+    sudo cp $Dotfiles_repo/tldr/tldr /bin
 fi
 
 echo -e "\t[+]${blue}Tldr Install success"
@@ -242,16 +242,16 @@ sudo dpkg -i $Dotfiles_repo/chrome/google-chrome-stable_current_amd64.deb > /dev
 echo -e "\t[+]${blue}Chrome Install Successful"
 
 if [ -f "/usr/local/share/chromedriver" ];then
-sudo rm -rf /usr/local/share/chromedriver
-sudo cp -f $Dotfiles_repo/chrome/chromedriver /usr/local/share/chromedriver
-sudo chmod +x /usr/local/share/chromedriver
-sudo ln -sf /usr/local/share/chromedriver /usr/local/bin/chromedriver
-sudo ln -sf /usr/local/share/chromedriver /usr/bin/chromedriver
+    sudo rm -rf /usr/local/share/chromedriver
+    sudo cp -f $Dotfiles_repo/chrome/chromedriver /usr/local/share/chromedriver
+    sudo chmod +x /usr/local/share/chromedriver
+    sudo ln -sf /usr/local/share/chromedriver /usr/local/bin/chromedriver
+    sudo ln -sf /usr/local/share/chromedriver /usr/bin/chromedriver
 else
-sudo cp -f $Dotfiles_repo/chrome/chromedriver /usr/local/share/chromedriver
-sudo chmod +x /usr/local/share/chromedriver
-sudo ln -sf /usr/local/share/chromedriver /usr/local/bin/chromedriver
-sudo ln -sf /usr/local/share/chromedriver /usr/bin/chromedriver
+    sudo cp -f $Dotfiles_repo/chrome/chromedriver /usr/local/share/chromedriver
+    sudo chmod +x /usr/local/share/chromedriver
+    sudo ln -sf /usr/local/share/chromedriver /usr/local/bin/chromedriver
+    sudo ln -sf /usr/local/share/chromedriver /usr/bin/chromedriver
 fi
 
 echo -e "\t[+]${blue}ChromeDriver Install Successful"
