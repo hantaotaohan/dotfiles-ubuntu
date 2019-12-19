@@ -25,6 +25,9 @@
 
 [merge]
     tool = vimdiff
+    
+[http]
+    sslVerify = false
 
 [color]
     ui = always
