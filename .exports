@@ -1,6 +1,6 @@
 # Locale.
 # 本地语言环境设定
-if [ ! -z "grep Microsoft /proc/version" ]; then
+if [ -f "/usr/bin/i3" ]; then
     export LANG="zh_CN.UTF-8"
     export LANGUAGE="zh_CN.UTF-8"
 else
