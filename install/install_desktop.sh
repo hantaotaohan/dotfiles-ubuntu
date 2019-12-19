@@ -447,9 +447,9 @@ echo -e "\t[+]${blue}Set Add Hosts is Successful"
 
 if [ -d "$HOME/Fonts" ]; then
     sudo rm -rf $HOME/Fonts
-    sudo sh -c "$(wget -q -t 0 https://raw.githubusercontent.com/hantaotaohan/Fonts/master/run_install_font.sh -O -)"
+    sudo sh -c "$(wget --no-check-certificate -q -t 0 https://raw.githubusercontent.com/hantaotaohan/Fonts/master/run_install_font.sh -O -)"
 else
-    sudo sh -c "$(wget -q -t 0 https://raw.githubusercontent.com/hantaotaohan/Fonts/master/run_install_font.sh -O -)"
+    sudo sh -c "$(wget --no-check-certificate -q -t 0 https://raw.githubusercontent.com/hantaotaohan/Fonts/master/run_install_font.sh -O -)"
 fi
 echo -e "\t[+]${blue}Set Fonts is Successful"
 
