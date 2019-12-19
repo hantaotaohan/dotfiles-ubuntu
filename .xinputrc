@@ -1,3 +1,8 @@
 # Keystrokes rate and frequency to 300ms and 30Hz
 # 更改键盘灵敏度
 xset r rate 200 60
+
+# 设置全局输入法为fcitx
+export GTK_IM_MODULE='fcitx'
+export QT_IM_MODULE='fcitx'
+export XMODIFIERS='@im=fcitx'
