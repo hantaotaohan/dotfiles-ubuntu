@@ -29,6 +29,19 @@ blue='\e[0;34m'
 green='\e[0;32m'
 
 #-------------------------------------------------------------------
+
+# Setting Username
+
+#-------------------------------------------------------------------
+
+read -p "\tEnter Your Computer Name: "  username
+echo ""
+echo -e "\tWelcome $username!"
+echo ""
+echo "--------------------------------------------------------------------"
+echo ""
+
+#-------------------------------------------------------------------
 # Setting Variable
 #-------------------------------------------------------------------
 
@@ -44,7 +57,7 @@ Dotfiles_copy=(.config .vim z.sh)
 #-------------------------------------------------------------------
 
 sudo ln -sf "$Dotfiles_repo/sources.list" "/etc/apt/sources.list"
-echo -e "\t[+]${blue}Repace sources.list Done !"
+echo -e "\t${blue}[+]Repace sources.list Done !"
 
 #-------------------------------------------------------------------
 # Update Upgrade Packages
@@ -303,6 +316,15 @@ echo -e "\t[+]${blue}AutoRemove Successful"
 
 # sudo timedatectl set-timezone "Asia/Shanghai"
 # echo -e "\t[+]${blue}Set TimeZone is Successful"
+
+
+#-------------------------------------------------------------------
+# Set Chown .config 
+#-------------------------------------------------------------------
+
+if [ -d "$HOME/.config" ]; then
+    sudo chown -R $username:$username $HOME/.config
+fi
 
 #-------------------------------------------------------------------
 # Set Add Hosts
