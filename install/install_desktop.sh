@@ -428,18 +428,6 @@ sudo timedatectl set-timezone "Asia/Shanghai"
 echo -e "\t[+]${blue}Set TimeZone is Successful"
 
 #-------------------------------------------------------------------
-# Set Inziu FiraCode Fonts install
-#-------------------------------------------------------------------
-
-if [ -d "$HOME/Fonts" ]; then
-    sudo rm -rf $HOME/Fonts
-    sudo sh -c "$(wget -q -t 0 https://raw.githubusercontent.com/hantaotaohan/Fonts/master/run_install_font.sh -O -)"
-else
-    sudo sh -c "$(wget -q -t 0 https://raw.githubusercontent.com/hantaotaohan/Fonts/master/run_install_font.sh -O -)"
-fi
-echo -e "\t[+]${blue}Set Fonts is Successful"
-
-#-------------------------------------------------------------------
 # Set Chown .local .config and chrome-extend
 #-------------------------------------------------------------------
 
@@ -466,6 +454,18 @@ if [ -f "/etc/hosts" ]; then
 fi
 
 echo -e "\t[+]${blue}Set Add Hosts is Successful"
+
+#-------------------------------------------------------------------
+# Set Inziu FiraCode Fonts install
+#-------------------------------------------------------------------
+
+if [ -d "$HOME/Fonts" ]; then
+    sudo rm -rf $HOME/Fonts
+    sudo sh -c "$(wget -q -t 0 https://raw.githubusercontent.com/hantaotaohan/Fonts/master/run_install_font.sh -O -)"
+else
+    sudo sh -c "$(wget -q -t 0 https://raw.githubusercontent.com/hantaotaohan/Fonts/master/run_install_font.sh -O -)"
+fi
+echo -e "\t[+]${blue}Set Fonts is Successful"
 
 #-------------------------------------------------------------------
 # End
