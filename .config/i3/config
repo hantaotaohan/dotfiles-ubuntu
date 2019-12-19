@@ -6,7 +6,7 @@ set $mod Mod1
 
 # 字体配置 
 #font pango:monospace 8
-#font pango:Inziu_IosevkaCC_Slab_SC_Bold 10
+#font pango:Inziu_Iosevka_SC_Bold 10
 
 # 鼠标移动调整方向设置
 set $up k
@@ -220,7 +220,7 @@ client.background $base07
 
 # start i3bar to display a workspace bar
 bar {
-    font pango:Inziu IosevkaCC Slab SC Bold 10
+    font pango:Inziu Iosevka SC Bold 10
     status_command          i3status -c ~/.config/i3status/config
     status_command 	    i3blocks
     separator_symbol        "-"
