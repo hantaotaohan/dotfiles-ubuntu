@@ -429,24 +429,6 @@ sudo timedatectl set-timezone "Asia/Shanghai"
 echo -e "\t[+]${blue}Set TimeZone is Successful"
 
 #-------------------------------------------------------------------
-# Set Chown .local .config and chrome-extend
-#-------------------------------------------------------------------
-
-if [ -d "$HOME/.local" ]; then
-    sudo chown -R $username:$username $HOME/.local
-fi
-
-if [ -d "$HOME/.config" ]; then
-    sudo chown -R $username:$username $HOME/.config
-fi
-
-if [ -d "$HOME/chrome-extend" ]; then
-    sudo chown -R $username:$username $HOME/chrome-extend
-fi
-    
-echo -e "\t[+]${blue}Chown Successful"
-
-#-------------------------------------------------------------------
 # Set Add Hosts
 #-------------------------------------------------------------------
 
@@ -467,6 +449,24 @@ else
     sudo sh -c "$(wget -q -t 0 https://raw.githubusercontent.com/hantaotaohan/Fonts/master/run_install_font.sh -O -)"
 fi
 echo -e "\t[+]${blue}Set Fonts is Successful"
+
+#-------------------------------------------------------------------
+# Set Chown .local .config and chrome-extend
+#-------------------------------------------------------------------
+
+if [ -d "$HOME/.local" ]; then
+    sudo chown -R $username:$username $HOME/.local
+fi
+
+if [ -d "$HOME/.config" ]; then
+    sudo chown -R $username:$username $HOME/.config
+fi
+
+if [ -d "$HOME/chrome-extend" ]; then
+    sudo chown -R $username:$username $HOME/chrome-extend
+fi
+    
+echo -e "\t[+]${blue}Chown Successful"
 
 #-------------------------------------------------------------------
 # End
