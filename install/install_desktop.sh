@@ -164,6 +164,9 @@ echo -e "\t[+]${blue}zathura Successful"
 sudo apt install -y -qq i3blocks > /dev/null 2>&1
 echo -e "\t[+]${blue}i3blocks Successful"
 
+sudo apt install -y -qq xinput > /dev/null 2>&1
+echo -e "\t[+]${blue}Xinput Successful"
+
 #-------------------------------------------------------------------
 # Install Openssh-Server
 #-------------------------------------------------------------------
