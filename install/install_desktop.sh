@@ -31,8 +31,9 @@ green='\e[0;32m'
 # Setting Username
 #-------------------------------------------------------------------
 
-read -p "Enter Your Computer Name: "  username
-echo "Welcome $username!"
+read -p "                Enter Your Computer Name: "  username
+echo ""
+echo -e "\t\tWelcome $username!"
 echo ""
 echo "--------------------------------------------------------------------"
 echo ""
