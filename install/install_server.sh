@@ -34,7 +34,7 @@ green='\e[0;32m'
 
 #-------------------------------------------------------------------
 
-read -p "\tEnter Your Computer Name: "  username
+read -p \t"Enter Your Computer Name: "  username
 echo ""
 echo -e "\tWelcome $username!"
 echo ""
