@@ -34,7 +34,7 @@
     diff = always
 
 [color "diff"]
-    meta = yellow bold
+    meta = 11 bold
     commit = cyan bold
     frag = magenta bold
     old = red bold
@@ -43,9 +43,9 @@
 
 [color "diff-highlight"]
     oldNormal = red bold
-    oldHighlight = red bold 52
+    oldHighlight = 0 bold 1
     newNormal = green bold
-    newHighlight = green bold 22
+    newHighlight = 0 bold 2
 
 [color "branch"]
     current = yellow reverse
@@ -63,6 +63,6 @@
     
 [diff-so-fancy]
     stripLeadingSymbols = false
-    changeHunkIndicators = false
-    markEmptyLines = false
-    useUnicodeRuler = false
+    changeHunkIndicators = true
+    markEmptyLines = true
+    useUnicodeRuler = true
