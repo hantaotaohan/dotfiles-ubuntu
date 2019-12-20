@@ -259,4 +259,6 @@ exec --no-startup-id xmodmap ~/.Xmodmap
 exec --no-startup-id xautolock -time 1 -locker "i3lock-fancy"
 # 网络图标
 exec --no-startup-id nm-applet
+# 加载键盘加速脚本
+exec_always "sh ~/.config/i3/speedkeyboard.sh"
 
