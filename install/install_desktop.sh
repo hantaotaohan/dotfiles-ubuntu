@@ -226,29 +226,11 @@ for dots_copy in "${Dotfiles_copy[@]}"
 echo -e "\t[+]${blue}Install Dotfiles COPY Successful"
 
 #-------------------------------------------------------------------
-# Chmod NeedFlods
-#-------------------------------------------------------------------
-
-if [ -f "$HOME/.vim" ]; then
-    sudo chmod +x $HOME/.vim
-fi
-
-echo -e "\t[+]${blue}Chomd Needfolds Successful"
-
-#-------------------------------------------------------------------
 # Install Vim Plug
 #-------------------------------------------------------------------
 
-sudo vim
+vim
 echo -e "\t[+]${blue}Vim PlugInstall Successful"
-
-#-------------------------------------------------------------------
-# Chmod NeedFlods
-#-------------------------------------------------------------------
-
-if [ -f "$HOME/.viminfo" ];then
-    sudo chmod 777 $HOME/.viminfo
-fi
 
 #-------------------------------------------------------------------
 # Install Ripgrep
