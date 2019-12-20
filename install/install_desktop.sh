@@ -120,13 +120,13 @@ echo -e "\t[+]${blue}Xinit Successful"
 sudo apt install -y -qq language-pack-zh-hans > /dev/null 2>&1
 echo -e "\t[+]${blue}Language zh_CN Successful"
 
+sudo apt install -y -qq fonts-wqy-microhei > /dev/null 2>&1
+echo -e "\t[+]${blue}WQY Fonts install Successful"
+
 sudo apt install -y -qq fcitx fcitx-pinyin > /dev/null 2>&1
 im-config -n fcitx > /dev/null 2>&1
 im-config -s fcitx > /dev/null 2>&1
 echo -e "\t[+]${blue}Fcitx Successful"
-
-sudo apt install -y -qq fonts-wqy-microhei > /dev/null 2>&1
-echo -e "\t[+]${blue}Fonts install Successful"
 
 #-------------------------------------------------------------------
 # Install i3wm
@@ -158,6 +158,18 @@ echo -e "\t[+]${blue}i3blocks Successful"
 
 sudo apt install -y -qq xinput > /dev/null 2>&1
 echo -e "\t[+]${blue}Xinput Successful"
+
+#-------------------------------------------------------------------
+# Install I3-lock-fancy
+#-------------------------------------------------------------------
+
+git clone -q https://github.com/meskarune/i3lock-fancy.git ~/i3lock-fancy &&\
+cd ~/i3lock-fancy &&\
+sudo make install &&\
+cd $HOME &&\
+sudo rm -rf ~/i3lock-fancy &&\
+
+echo -e "\t[+]${blue}I3-lock-fancy Successful"
 
 #-------------------------------------------------------------------
 # Install Openssh-Server
@@ -196,7 +208,7 @@ sudo apt update -y -qq > /dev/null 2>&1
 echo -e "\t[+]${blue}Again Update Successful"
 
 #-------------------------------------------------------------------
-# Install Dotfiles.
+# Install Dotfiles. Link
 #-------------------------------------------------------------------
 
 for dots_home in "${Dotfiles_home[@]}"
@@ -204,7 +216,7 @@ for dots_home in "${Dotfiles_home[@]}"
         sudo rm -rf "$HOME/${dots_home}"
         ln -fs "$Dotfiles_repo/${dots_home}" "$HOME/"
     done
-echo -e "\t[+]${blue}Install Dotfiles Successful"
+echo -e "\t[+]${blue}Install Dotfiles LINK Successful"
 
 #-------------------------------------------------------------------
 # Install Dotfiles.COPY
@@ -266,10 +278,10 @@ sudo wget -q -t 0 -P $HOME https://github.com/jwilm/alacritty/releases/download/
 echo -e "\t[+]${blue}Downloding Alacritty"
 
 sudo dpkg -i $HOME/Alacritty-v0.4.0-ubuntu_18_04_amd64.deb > /dev/null 2>&1
-echo -e "\t[+]${blue}Install Alacritty ............"
+echo -e "\t[+]${blue}Install Alacritty Successful"
 
 sudo rm -rf $HOME/Alacritty*
-echo -e "\t[+]${blue}Delete Alacritty ............"
+echo -e "\t[+]${blue}Delete Alacritty DEB PACK............"
 
 #-------------------------------------------------------------------
 # Install Chrome and ChromeDriver
@@ -285,10 +297,10 @@ sudo apt --fix-broken install -y -qq > /dev/null 2>&1
 echo -e "\t[+]${blue}Install Chrome Requirements"
 
 sudo dpkg -i $Dotfiles_repo/chrome/google-chrome-stable_current_amd64.deb > /dev/null 2>&1
-echo -e "\t[+]${blue}Chrome Install Successful"
+echo -e "\t[+]${blue}Chrome Install Again"
 
 sudo rm -rf $HOME/google*
-echo -e "\t[+]${blue}Delete Chrome ............"
+echo -e "\t[+]${blue}Delete Chrome DEB PACK ............"
 
 if [ -f "/usr/local/share/chromedriver" ]; then
     sudo rm -rf /usr/local/share/chromedriver
@@ -317,10 +329,10 @@ else
 fi
 
 sudo unzip -q $Dotfiles_repo/chrome/darkreader.zip -d $HOME/chrome-extend
-echo -e "\t[+]${blue}Unzip darkreader ............"
+echo -e "\t[+]${blue}Unzip darkreader Successful"
 
 sudo unzip -q $Dotfiles_repo/chrome/vimium.zip -d $HOME/chrome-extend
-echo -e "\t[+]${blue}Unzip vimium ............"
+echo -e "\t[+]${blue}Unzip vimium Successful"
 
 #-------------------------------------------------------------------
 # .tmux
@@ -338,7 +350,7 @@ tmux new-session -d
 $HOME/.tmux/plugins/tpm/scripts/install_plugins.sh > /dev/null 2>&1
 tmux kill-server
 
-echo -e "\t[+]${blue}TPM Successful"
+echo -e "\t[+]${blue}TMUX TPM Successful"
 
 #-------------------------------------------------------------------
 # diff-so-fancy
@@ -370,26 +382,13 @@ if [ ! "$XDG_VTNR" = "" ]; then
     xrdb $HOME/.Xresources 
 fi
 
-echo -e "\t[+]${blue}Set Xrdb Successful"
-
-#-------------------------------------------------------------------
-# Install I3-lock-fancy
-#-------------------------------------------------------------------
-
-git clone -q https://github.com/meskarune/i3lock-fancy.git ~/i3lock-fancy &&\
-cd ~/i3lock-fancy &&\
-sudo make install &&\
-cd $HOME &&\
-sudo rm -rf ~/i3lock-fancy &&\
-
-echo -e "\t[+]${blue}I3-lock-fancy Successful"
+echo -e "\t[+]${blue}Set Xterm of Xrdb Successful"
 
 #-------------------------------------------------------------------
 # Set Locales Language
 #-------------------------------------------------------------------
 
 sudo dpkg-reconfigure locales
-# sudo dpkg-reconfigure -f noninteractive locales
 
 #-------------------------------------------------------------------
 # Set TimeZone
