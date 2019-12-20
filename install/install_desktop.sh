@@ -418,7 +418,7 @@ echo -e "\t[+]${blue}Set TimeZone is Successful"
 #-------------------------------------------------------------------
 
 if [ -f "/etc/hosts" ]; then
-    sudo echo -e "127.0.0.1\t$HOSTNAME" >> /etc/hosts
+    sudo bash -c -e "127.0.0.1\t$HOSTNAME >> /etc/hosts"
 fi
 
 echo -e "\t[+]${blue}Set Add Hosts is Successful"
