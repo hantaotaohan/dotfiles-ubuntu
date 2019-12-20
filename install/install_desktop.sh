@@ -28,17 +28,6 @@ blue='\e[0;34m'
 green='\e[0;32m'
 
 #-------------------------------------------------------------------
-# Setting Username
-#-------------------------------------------------------------------
-
-read -p "                Enter Your Computer Name: "  username
-echo ""
-echo -e "\t\tWelcome $username!"
-echo ""
-echo "--------------------------------------------------------------------"
-echo ""
-
-#-------------------------------------------------------------------
 # Setting Variable
 #-------------------------------------------------------------------
 
@@ -120,6 +109,9 @@ echo -e "\t[+]${blue}Xorg Successful"
 
 sudo apt install -y -qq dbus-x11 > /dev/null 2>&1
 echo -e "\t[+]${blue}Dbus-x11 Successful"
+
+sudo apt install -y -qq xinit > /dev/null 2>&1
+echo -e "\t[+]${blue}Xinit Successful"
 
 #-------------------------------------------------------------------
 # Install language 
@@ -381,13 +373,6 @@ fi
 echo -e "\t[+]${blue}Set Xrdb Successful"
 
 #-------------------------------------------------------------------
-# Install startx-tools Xinit
-#-------------------------------------------------------------------
-
-sudo apt install -y -qq xinit > /dev/null 2>&1
-echo -e "\t[+]${blue}Xinit Successful"
-
-#-------------------------------------------------------------------
 # Install I3-lock-fancy
 #-------------------------------------------------------------------
 
@@ -414,7 +399,7 @@ sudo timedatectl set-timezone "Asia/Shanghai"
 echo -e "\t[+]${blue}Set TimeZone is Successful"
 
 #-------------------------------------------------------------------
-# Set Add Hosts
+# Set Add Hosts Speed Sudo 
 #-------------------------------------------------------------------
 
 if [ -f "/etc/hosts" ]; then
@@ -434,24 +419,6 @@ else
     sh -c "$(wget --no-check-certificate -q -t 0 https://raw.githubusercontent.com/hantaotaohan/Fonts/master/run_install_font.sh -O -)"
 fi
 echo -e "\t[+]${blue}Set Fonts is Successful"
-
-#-------------------------------------------------------------------
-# Set Chown .local .config and chrome-extend
-#-------------------------------------------------------------------
-
-if [ -d "$HOME/.local" ]; then
-    sudo chown -R $username:$username $HOME/.local
-fi
-
-if [ -d "$HOME/.config" ]; then
-    sudo chown -R $username:$username $HOME/.config
-fi
-
-if [ -d "$HOME/chrome-extend" ]; then
-    sudo chown -R $username:$username $HOME/chrome-extend
-fi
-    
-echo -e "\t[+]${blue}Chown Successful"
 
 #-------------------------------------------------------------------
 # End
