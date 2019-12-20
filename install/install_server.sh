@@ -214,16 +214,16 @@ echo -e "\t[+]${blue}Downloding Chrome"
 sudo dpkg -i $HOME/google-chrome-stable_current_amd64.deb > /dev/null 2>&1
 echo -e "\t[+]${blue}Install Chrome ............"
 
-sudo rm -rf $HOME/google*
-echo -e "\t[+]${blue}Delete Chrome ............"
-
 sudo apt --fix-broken install -y -qq > /dev/null 2>&1
 echo -e "\t[+]${blue}Install Chrome Requirements"
 
 sudo dpkg -i $Dotfiles_repo/chrome/google-chrome-stable_current_amd64.deb > /dev/null 2>&1
-echo -e "\t[+]${blue}Chrome Install Successful"
+echo -e "\t[+]${blue}Chrome Install Again"
 
-if [ -f "/usr/local/share/chromedriver" ];then
+sudo rm -rf $HOME/google*
+echo -e "\t[+]${blue}Delete Chrome DEB PACK ............"
+
+if [ -f "/usr/local/share/chromedriver" ]; then
     sudo rm -rf /usr/local/share/chromedriver
     sudo cp -f $Dotfiles_repo/chrome/chromedriver /usr/local/share/chromedriver
     sudo chmod +x /usr/local/share/chromedriver
@@ -237,6 +237,7 @@ else
 fi
 
 echo -e "\t[+]${blue}ChromeDriver Install Successful"
+
 
 #-------------------------------------------------------------------
 # .tmux
