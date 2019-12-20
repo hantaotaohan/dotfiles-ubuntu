@@ -29,19 +29,6 @@ blue='\e[0;34m'
 green='\e[0;32m'
 
 #-------------------------------------------------------------------
-
-# Setting Username
-
-#-------------------------------------------------------------------
-
-read -p "                Enter Your Computer Name: "  username
-echo ""
-echo -e "\t\tWelcome $username!"
-echo ""
-echo "--------------------------------------------------------------------"
-echo ""
-
-#-------------------------------------------------------------------
 # Setting Variable
 #-------------------------------------------------------------------
 
@@ -155,7 +142,7 @@ sudo apt update -y -qq > /dev/null 2>&1
 echo -e "\t[+]${blue}Again Update Successful"
 
 #-------------------------------------------------------------------
-# Install Dotfiles.
+# Install Dotfiles.LINK
 #-------------------------------------------------------------------
 
 for dots_home in "${Dotfiles_home[@]}"
@@ -163,7 +150,7 @@ for dots_home in "${Dotfiles_home[@]}"
         sudo rm -rf "$HOME/${dots_home}"
         sudo ln -fs "$Dotfiles_repo/${dots_home}" "$HOME/"
     done
-echo -e "\t[+]${blue}Install Dotfiles Successful"
+echo -e "\t[+]${blue}Install Dotfiles LINK Successful"
 
 #-------------------------------------------------------------------
 # Install Dotfiles.COPY
@@ -177,29 +164,11 @@ for dots_copy in "${Dotfiles_copy[@]}"
 echo -e "\t[+]${blue}Install Dotfiles COPY Successful"
 
 #-------------------------------------------------------------------
-# Chmod NeedFlods
-#-------------------------------------------------------------------
-
-if [ -f "$HOME/.vim" ];then
-    sudo chmod +x $HOME/.vim
-fi
-
-echo -e "\t[+]${blue}Chomd Needfolds Successful"
-
-#-------------------------------------------------------------------
 # Install Vim Plug
 #-------------------------------------------------------------------
 
-sudo vim
+vim
 echo -e "\t[+]${blue}Vim PlugInstall Successful"
-
-#-------------------------------------------------------------------
-# Chmod NeedFlods
-#-------------------------------------------------------------------
-
-if [ -f "$HOME/.viminfo" ];then
-    sudo chmod 777 $HOME/.viminfo
-fi
 
 #-------------------------------------------------------------------
 # Install Ripgrep
@@ -317,21 +286,12 @@ echo -e "\t[+]${blue}AutoRemove Successful"
 # sudo timedatectl set-timezone "Asia/Shanghai"
 # echo -e "\t[+]${blue}Set TimeZone is Successful"
 
-
-#-------------------------------------------------------------------
-# Set Chown .config 
-#-------------------------------------------------------------------
-
-if [ -d "$HOME/.config" ]; then
-    sudo chown -R $username:$username $HOME/.config
-fi
-
 #-------------------------------------------------------------------
 # Set Add Hosts
 #-------------------------------------------------------------------
 
 if [ -f "/etc/hosts" ]; then
-    sudo echo -e "127.0.0.1\t$HOSTNAME" >> /etc/hosts
+    sudo bash -c "echo -e '127.0.0.1\t$HOSTNAME' >> /etc/hosts"
 fi
 
 echo -e "\t[+]${blue}Set Add Hosts is Successful"
