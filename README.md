@@ -10,11 +10,11 @@
 
 # Ubuntu - Server
 
-sudo sh -c "$(wget https://raw.githubusercontent.com/hantaotaohan/Dotfiles/master/install/run_server.sh -O -)"
+sh -c "$(wget https://raw.githubusercontent.com/hantaotaohan/Dotfiles/master/install/run_server.sh -O -)"
 
 # Ubuntu - Desktop
 
-sudo sh -c "$(wget https://raw.githubusercontent.com/hantaotaohan/Dotfiles/master/install/run_desktop.sh -O -)"
+sh -c "$(wget https://raw.githubusercontent.com/hantaotaohan/Dotfiles/master/install/run_desktop.sh -O -)"
 
 ```
 
