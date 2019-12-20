@@ -35,7 +35,7 @@ Dotfiles_repo=$(dirname $PWD)
 Dotfiles_home=(.w3m .bashrc .bash_profile 
     .bash_prompt .tmux.conf .vimrc .Xmodmap .aliases 
     .curlrc .inputrc .gitconfig .exports .ripgreprc .wgetrc 
-    .dircolors .Xresources .xinputrc)
+    .dircolors .Xresources)
 Dotfiles_copy=(.config .vim z.sh)
 
 #-------------------------------------------------------------------
