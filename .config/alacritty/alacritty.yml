@@ -61,7 +61,7 @@ font:
         style: Italic
 
     # Font size (pt)
-    size: 11.0
+    size: 10.5
 
     # Offset around characters
     # x = letter spacing
