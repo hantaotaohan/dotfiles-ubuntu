@@ -29,18 +29,9 @@ shopt -s cdspell
 # 不区分大小写的全局搜索(用于路径名扩展)
 shopt -s nocaseglob
 
-# don't put duplicate lines or lines starting with space in the history.
-# 不要在历史中放置重复的行或以空格开头的行。 
-HISTCONTROL=ignoreboth
-
 # append to the history file, don't overwrite it
 # 附加到历史文件，不要覆盖它
 shopt -s histappend
-
-# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-# 历史长度信息设置
-HISTSIZE=1000
-HISTFILESIZE=2000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -52,6 +43,15 @@ shopt -s checkwinsize
 # 如果设置了，在路径名扩展上下文中使用的模式“**”将              
 # 匹配所有文件以及零个或多个目录和子目录。
 #shopt -s globstar
+
+# don't put duplicate lines or lines starting with space in the history.
+# 不要在历史中放置重复的行或以空格开头的行。 
+HISTCONTROL=ignoreboth
+
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+# 历史长度信息设置
+HISTSIZE=1000
+HISTFILESIZE=2000
 
 # make less more friendly for non-text input files, see lesspipe(1)
 # 使非文本输入文件更加友好
@@ -89,7 +89,7 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
-# 自定义bash.ps1设置
+# 默认bash.ps1设置
 if [ "$color_prompt" = yes ]; then
     PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 else
@@ -114,7 +114,6 @@ if [ -x /usr/bin/dircolors ]; then
     alias ls='ls --color=auto'
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
-
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
@@ -122,7 +121,7 @@ fi
 
 # colored GCC warnings and errors
 # 彩色GCC警告和错误
-#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # Add an "alert" alias for long running commands.  Use like so:
 # sleep 10; alert
@@ -139,17 +138,21 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # ~/.bash_别名，而不是直接添加到这里。              
 # 请参见bash doc包中的/usr/share/doc/bash doc/examples。
 
-if [ -f ~/.aliases ]; then
-    . ~/.aliases
-fi
+#if [ -f ~/.aliases ]; then
+#    . ~/.aliases
+#fi
 
-if [ -f ~/.bash_prompt ]; then
-    . ~/.bash_prompt
-fi
+#if [ -f ~/.bash_prompt ]; then
+#    . ~/.bash_prompt
+#fi
 
-if [ -f ~/.exports ]; then
-    . ~/.exports
-fi
+#if [ -f ~/.exports ]; then
+#    . ~/.exports
+#fi
+
+[ -f ~/.exports ] && source ~/.exports
+[ -f ~/.aliases ] && source ~/.aliases
+[ -f ~/.bash_prompt ] && source ~/.bash_prompt
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -178,15 +181,18 @@ fi
 
 # Install Z.sh
 # 设定 z.sh
+
 source "$HOME/z.sh"
+
+# Install FZF
+# 安装FZF模糊所搜
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash 
 
 # Xmodmap Install
 # 用于xserver的键盘自定义
 # 判断是否为桌面环境
+
 if [ ! "$XDG_CURRENT_DESKTOP" = "" ]; then
     xmodmap "$HOME/.Xmodmap"
 fi
-
-# Install FZF
-# 安装FZF模糊所搜
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash 
