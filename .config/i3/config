@@ -108,7 +108,7 @@ set $workspace6 "6"
 set $workspace7 "7"
 set $workspace8 "8"
 set $workspace9 "9"
-set $workspace0 "10"
+#set $workspace0 "10"
 
 # 切换工作区
 bindsym $mod+1 workspace $workspace1
@@ -120,7 +120,7 @@ bindsym $mod+6 workspace $workspace6
 bindsym $mod+7 workspace $workspace7
 bindsym $mod+8 workspace $workspace8
 bindsym $mod+9 workspace $workspace9
-bindsym $mod+0 workspace $workspace0
+#bindsym $mod+0 workspace $workspace0
 
 # 移动当前至工作区
 bindsym $mod+Shift+1 move container to workspace $workspace1
@@ -132,7 +132,7 @@ bindsym $mod+Shift+6 move container to workspace $workspace6
 bindsym $mod+Shift+7 move container to workspace $workspace7
 bindsym $mod+Shift+8 move container to workspace $workspace8
 bindsym $mod+Shift+9 move container to workspace $workspace9
-bindsym $mod+Shift+0 move container to workspace $workspace0
+#bindsym $mod+Shift+0 move container to workspace $workspace0
 
 # 打开指定程序到指定的工作区-可用 xprop | grep WM_CLASS 命令获取wm_class
 # assign [class="Firefox"]  					  $workspace1
@@ -260,5 +260,5 @@ exec --no-startup-id xautolock -time 1 -locker "i3lock-fancy"
 # 网络图标
 exec --no-startup-id nm-applet
 # 加载键盘加速脚本
-exec_always "sh ~/.config/i3/speedkeyboard.sh"
+exec --no-startup-id bash ~/.config/i3/speedkeyboard.sh
 
