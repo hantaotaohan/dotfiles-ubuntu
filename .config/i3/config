@@ -24,7 +24,7 @@ floating_modifier $mod
 
 # 开启Terminal快捷键 
 #bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec --no-startup-id alacritty
 
 # 开启Google Chrome快捷键 
 bindsym $mod+g exec google-chrome-stable --force-dark-mode
@@ -139,7 +139,7 @@ bindsym $mod+Shift+9 move container to workspace $workspace9
 # assign [class="Gnome-terminal"]	              $workspace1
 
 # 设定那些程序为浮动窗口
-for_window [class="Nautilus"]               floating enable
+# for_window [class="Nautilus"]               floating enable
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -167,7 +167,7 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 # 调整窗口大小快捷键
-bindsym $mod+r mode "resize"
+bindsym $mod+r mode "Resize"
 
 
 # 锁屏设定
