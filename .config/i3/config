@@ -27,10 +27,10 @@ floating_modifier $mod
 bindsym $mod+Return exec --no-startup-id alacritty
 
 # 开启Google Chrome快捷键 
-bindsym $mod+g exec google-chrome-stable --force-dark-mode
+bindsym $mod+g exec --no-startup-id google-chrome-stable --force-dark-mode
 
 # 打开Ranger快捷键
-bindsym $mod+Shift+Return exec alacritty -e ranger
+bindsym $mod+Shift+Return exec --no-startup-id alacritty -e ranger
 
 # 关闭窗口快捷键 
 bindsym $mod+Shift+q kill
