@@ -274,6 +274,19 @@ fi
 echo -e "\t[+]${blue}Diff-So-Fancy Successful"
 
 #-------------------------------------------------------------------
+# Rsync Config install
+#-------------------------------------------------------------------
+
+if [ ! -f "/etc/rsyncd.conf" ]; then
+    sudo cp -f $Dotfiles_repo/rsyncd.conf /etc
+else
+    sudo rm -rf /etc/rsyncd.conf
+    sudo cp -f $Dotfiles_repo/rsyncd.conf /etc
+fi
+
+echo -e "\t[+]${blue}Rsync Config Successful"
+
+#-------------------------------------------------------------------
 # AutoRemove
 #-------------------------------------------------------------------
 
