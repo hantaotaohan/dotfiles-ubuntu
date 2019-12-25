@@ -61,7 +61,7 @@ endif
 
 if exists('$TMUX')
   set termguicolors
-  set term=xterm-256
+  set term=xterm-256color
 endif
 
 "Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
