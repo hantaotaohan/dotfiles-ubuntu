@@ -334,6 +334,9 @@ echo -e "\t[+]${blue}Unzip darkreader Successful"
 unzip -q $Dotfiles_repo/chrome/vimium.zip -d $HOME/chrome-extend
 echo -e "\t[+]${blue}Unzip vimium Successful"
 
+unzip -q $Dotfiles_repo/chrome/proxyswitch.zip -d $HOME/chrome-extend
+echo -e "\t[+]${blue}Unzip proxyswitch Successful"
+
 #-------------------------------------------------------------------
 # .tmux
 #-------------------------------------------------------------------
