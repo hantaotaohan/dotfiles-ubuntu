@@ -261,4 +261,5 @@ exec --no-startup-id xautolock -time 1 -locker "i3lock-fancy"
 exec --no-startup-id nm-applet
 # 加载键盘加速脚本
 exec --no-startup-id bash ~/.config/i3/speedkeyboard.sh
-
+# 加载vmwaretools实现复制粘贴
+exec --no-startup-id /usr/bin/vmware-user
