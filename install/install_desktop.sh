@@ -159,6 +159,12 @@ echo -e "\t[+]${blue}i3blocks Successful"
 sudo apt install -y -qq xinput > /dev/null 2>&1
 echo -e "\t[+]${blue}Xinput Successful"
 
+sudo apt install -y -qq open-vm-tools > /dev/null 2>&1
+echo -e "\t[+]${blue}open-vm-tools Successful"
+
+sudo apt install -y -qq open-vm-tools-desktop > /dev/null 2>&1
+echo -e "\t[+]${blue}open-vm-tools-desktop Successful"
+
 #-------------------------------------------------------------------
 # Install I3-lock-fancy
 #-------------------------------------------------------------------
