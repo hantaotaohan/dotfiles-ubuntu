@@ -33,7 +33,8 @@ bindsym $mod+g exec --no-startup-id google-chrome-stable --force-dark-mode
 bindsym $mod+Shift+Return exec --no-startup-id alacritty -e ranger
 
 # 关闭窗口快捷键 
-bindsym $mod+Shift+q kill
+# bindsym $mod+Shift+q kill
+bindsym $mod+q kill
 
 # rofi 设置及配置 apt install rofi
 bindsym $mod+d exec --no-startup-id rofi -show drun
