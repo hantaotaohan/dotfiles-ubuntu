@@ -34,5 +34,6 @@ keycode 21 = equal plus F12
 
 keycode 34 = bracketleft braceleft Escape
 
-keycode 9 = Escape grave asciitilde
+! keycode 9 = Escape grave asciitilde
+keycode 9 = Escape asciitilde grave
 
