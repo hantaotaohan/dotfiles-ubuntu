@@ -165,6 +165,9 @@ echo -e "\t[+]${blue}open-vm-tools Successful"
 sudo apt install -y -qq open-vm-tools-desktop > /dev/null 2>&1
 echo -e "\t[+]${blue}open-vm-tools-desktop Successful"
 
+sudo apt install -y -qq calibre > /dev/null 2>&1
+echo -e "\t[+]${blue}Calibre Successful"
+
 #-------------------------------------------------------------------
 # Install I3-lock-fancy
 #-------------------------------------------------------------------
