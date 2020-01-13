@@ -98,6 +98,9 @@ echo -e "\t[+]${blue}Unzip Successful"
 sudo apt install -y -qq ranger > /dev/null 2>&1
 echo -e "\t[+]${blue}Ranger Successful"
 
+sudo apt install -y -qq calibre > /dev/null 2>&1
+echo -e "\t[+]${blue}Calibre Successful"
+
 #-------------------------------------------------------------------
 # Install Openssh-Server
 #-------------------------------------------------------------------
