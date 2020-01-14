@@ -9,4 +9,8 @@ a {
   background-color: #282c34 !important;
   color: #ABB2BF !important;
   }
+  
+em {
+color: #E06C75 !important;
+   }
 ```
