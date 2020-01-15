@@ -10,7 +10,7 @@ a {
   color: #ABB2BF !important;
   }
   
-em {
+em,strong  {
 color: #E06C75 !important;
    }
 ```
