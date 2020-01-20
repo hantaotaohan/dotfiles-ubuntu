@@ -6,6 +6,8 @@
   background-color: #282c34
  }
 
+p{padding:10px 0}
+
 .markdown-body ol ol,
 .markdown-body ul ol,
 .markdown-body ol ul,
