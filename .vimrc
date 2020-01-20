@@ -537,6 +537,8 @@ inoremap <c-k> <esc><c-w>k
 " nnoremap L <Esc>$
 
 " 编辑模式下:Alt+Shift+hjkl加速移动
+inoremap <C-a> <ESC>I
+inoremap <C-e> <ESC>A
 " inoremap <C-H> <ESC>I
 " inoremap <C-J> <down><down><down><down><down>
 " inoremap <C-K> <up><up><up><up><up>
