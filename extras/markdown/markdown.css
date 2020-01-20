@@ -2,6 +2,10 @@
  * github like style
  * https://github.com/iamcco/markdown.css/blob/master/dest/github/markdown.css
  */
+ body{
+  background-color: #282c34
+ }
+
 .markdown-body ol ol,
 .markdown-body ul ol,
 .markdown-body ol ul,
