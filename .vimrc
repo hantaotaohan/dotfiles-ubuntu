@@ -124,6 +124,7 @@ Plug 'mhinz/vim-startify'                                                " 定�
 Plug 'SirVer/ultisnips'                                                  " 代码片段管理器
 Plug 'honza/vim-snippets'                                                " 代码片段仓库
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install_sync() } }" MarkdownPreview插件
+Plug 'jszakmeister/markdown2ctags'                                       " Tags的Toc插件
 "Plug 'terryma/vim-multiple-cursors'                                     " 多光标插件
 "Plug 'edkolev/tmuxline.vim'                                             " Vim同步tmux配色
 call plug#end()
@@ -396,7 +397,7 @@ let g:tagbar_autofocus = 1                                               " 焦�
 "---------------------------------------------------------------------------------------------------------------------------------
 let g:tagbar_type_markdown = {
     \ 'ctagstype': 'markdown',
-    \ 'ctagsbin' : '$HOME/.vim/markdown2ctags.py',
+    \ 'ctagsbin' : '$HOME/.vim/plugged/markdown2ctags/markdown2ctags.py', 
     \ 'ctagsargs' : '-f - --sort=yes --sro=»',
     \ 'kinds' : [
         \ 's:sections',
