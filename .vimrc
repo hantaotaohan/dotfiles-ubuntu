@@ -256,6 +256,7 @@ endif
 " NERDTree 插件配置
 "=================================================================================================================================
 nmap <F8> :NERDTreeToggle<CR>                                         " F8开启关闭NERDTree
+imap <F8> <Esc>:NERDTreeToggle<CR>                                    " F8开启关闭NERDTree
 "---------------------------------------------------------------------------------------------------------------------------------
 let NERDTreeShowBookmarks=1                                              " 显示书签
 let NERDTreeChDirMode=2                                                  " 是否改变PWD目录路径
@@ -384,6 +385,7 @@ let g:table_mode_corner = '|'
 " Tagbar   
 "=================================================================================================================================
 noremap <F9> :TagbarToggle<CR>                                           " F9打开关闭Tagbar
+inoremap <F9> <Esc>:TagbarToggle<CR>                                     " F9打开关闭Tagbar
 let g:tagbar_autofocus = 1                                               " 焦点自动聚焦到Tagbar
 
 
