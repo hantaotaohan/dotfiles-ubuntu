@@ -695,3 +695,17 @@ endfunction
 
 autocmd InsertEnter * call IMtoCN()
 autocmd InsertLeave * call IMtoEng()
+
+"=================================================================================================================================
+" 输入法自动切换 - IM-SELECT.exe Config
+"=================================================================================================================================
+"function! IMtoEng()
+"    call system('/$HOME/.vim/plugged/neuims/bin/im-select.exe 1033')
+" endfunction
+"
+"function! IMtoCN()
+"    call system('/$HOME/.vim/plugged/neuims/bin/im-select.exe 2052')
+"endfunction
+"
+"autocmd InsertEnter * call IMtoCN()
+"autocmd InsertLeave * call IMtoEng()                                                                                             
