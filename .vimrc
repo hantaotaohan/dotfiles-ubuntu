@@ -125,6 +125,7 @@ Plug 'SirVer/ultisnips'                                                  " 代�
 Plug 'honza/vim-snippets'                                                " 代码片段仓库
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install_sync() } }" MarkdownPreview插件
 Plug 'jszakmeister/markdown2ctags'                                       " Tags的Toc插件
+Plug 'Neur1n/neuims'                                                     " 输入法自动切换 
 "Plug 'terryma/vim-multiple-cursors'                                     " 多光标插件
 "Plug 'edkolev/tmuxline.vim'                                             " Vim同步tmux配色
 call plug#end()
@@ -680,3 +681,17 @@ endfunc
 " 自动切换目录为当前编辑文件所在目录
 "=================================================================================================================================
 au BufRead,BufNewFile,BufEnter * cd %:p:h
+
+"=================================================================================================================================
+" 输入法自动切换
+"=================================================================================================================================
+function! IMtoEng()
+    call system('/$HOME/.vim/plugged/neuims/bin/win_ims.exe 0x0409')
+endfunction
+
+function! IMtoCN()
+    call system('$HOME/.vim/plugged/neuims/bin/win_ims.exe 0x0804')
+endfunction
+
+autocmd InsertEnter * call IMtoCN()
+autocmd InsertLeave * call IMtoEng()
