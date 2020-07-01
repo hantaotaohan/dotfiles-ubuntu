@@ -194,19 +194,19 @@ echo -e "\t[+]${blue}Openssh-client Successful"
 # Pip3 install Apps
 #-------------------------------------------------------------------
 
-sudo pip3 install -q --timeout 1000 powerline-shell
+sudo pip3 install -q --timeout 1000 powerline-shell -i https://pypi.tuna.tsinghua.edu.cn/simple/
 echo -e "\t[+]${blue}Powerline-shell Successful"
 
-sudo pip3 install -q --timeout 1000 pandas
+sudo pip3 install -q --timeout 1000 pandas -i https://pypi.tuna.tsinghua.edu.cn/simple/
 echo -e "\t[+]${blue}Pandas Successful"
 
-sudo pip3 install -q --timeout 1000 django
+sudo pip3 install -q --timeout 1000 django -i https://pypi.tuna.tsinghua.edu.cn/simple/
 echo -e "\t[+]${blue}Django Successful"
 
-sudo pip3 install -q --timeout 1000 pyvirtualdisplay 
+sudo pip3 install -q --timeout 1000 pyvirtualdisplay -i https://pypi.tuna.tsinghua.edu.cn/simple/
 echo -e "\t[+]${blue}Pyvirtualdisplay Successful"
 
-sudo pip3 install -q --timeout 1000 selenium
+sudo pip3 install -q --timeout 1000 selenium -i https://pypi.tuna.tsinghua.edu.cn/simple/
 echo -e "\t[+]${blue}Selenium Successful"
 
 #-------------------------------------------------------------------
