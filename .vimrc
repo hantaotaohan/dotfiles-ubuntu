@@ -127,6 +127,7 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install_sync() } }" 
 Plug 'jszakmeister/markdown2ctags'                                       " Tags的Toc插件
 Plug 'Neur1n/neuims'                                                     " 输入法自动切换 
 Plug 'vim-scripts/fcitx.vim'                                             " 输入法自动切换Fcitx
+Plug 'ferrine/md-img-paste.vim'                                          " Markdown截图自动粘贴
 "Plug 'terryma/vim-multiple-cursors'                                     " 多光标插件
 "Plug 'edkolev/tmuxline.vim'                                             " Vim同步tmux配色
 call plug#end()
@@ -709,4 +710,12 @@ autocmd InsertLeave * call IMtoEng()
 "endfunction
 "
 "autocmd InsertEnter * call IMtoCN()
-"autocmd InsertLeave * call IMtoEng()                                                                                             
+"autocmd InsertLeave * call IMtoEng()   
+
+"=================================================================================================================================
+" Markdown截图自动粘贴设置
+"=================================================================================================================================
+autocmd FileType markdown nmap <buffer><silent> <leader>p :call mdip#MarkdownClipboardImage()<CR>
+" there are some defaults for image directory and image name, you can change them
+" let g:mdip_imgdir = 'img'
+" let g:mdip_imgname = 'image'
