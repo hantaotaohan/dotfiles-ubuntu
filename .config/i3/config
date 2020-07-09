@@ -264,3 +264,5 @@ exec --no-startup-id nm-applet
 exec --no-startup-id bash ~/.config/i3/speedkeyboard.sh
 # 加载vmwaretools实现复制粘贴
 exec --no-startup-id /usr/bin/vmware-user
+# 截图快捷键
+bindsym $mod+a exec --no-startup-ed deepin-screenshot
