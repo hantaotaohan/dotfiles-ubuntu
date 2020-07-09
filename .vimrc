@@ -126,6 +126,7 @@ Plug 'honza/vim-snippets'                                                " 代�
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install_sync() } }" MarkdownPreview插件
 Plug 'jszakmeister/markdown2ctags'                                       " Tags的Toc插件
 Plug 'Neur1n/neuims'                                                     " 输入法自动切换 
+Plug 'vim-scripts/fcitx.vim'                                             " 输入法自动切换Fcitx
 "Plug 'terryma/vim-multiple-cursors'                                     " 多光标插件
 "Plug 'edkolev/tmuxline.vim'                                             " Vim同步tmux配色
 call plug#end()
