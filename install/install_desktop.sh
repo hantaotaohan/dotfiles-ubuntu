@@ -168,6 +168,9 @@ echo -e "\t[+]${blue}open-vm-tools-desktop Successful"
 sudo apt install -y -qq calibre > /dev/null 2>&1
 echo -e "\t[+]${blue}Calibre Successful"
 
+sudo apt install -y -qq deepin-screenshot > /dev/null 2>&1
+echo -e "\t[+]${blue}deepin-screenshot Successful"
+
 #-------------------------------------------------------------------
 # Install I3-lock-fancy
 #-------------------------------------------------------------------
