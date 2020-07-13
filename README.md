@@ -27,3 +27,9 @@ sudo wget -q -t 0 -P $HOME/extras https://github.com/obsidianmd/obsidian-release
 cd extras
 sudo snap install ./obsidian_0.7.6_amd64.snap --dangerous
 ```
+
+if need setup foliate
+
+```bash
+sudo snap install foliate
+```
