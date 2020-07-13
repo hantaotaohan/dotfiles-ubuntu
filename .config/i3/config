@@ -27,7 +27,8 @@ floating_modifier $mod
 bindsym $mod+Return exec --no-startup-id alacritty
 
 # 截图快捷键
-indsym $mod+p exec --no-startup-id deepin-screenshot | xclip -selection clipboard -t image/png -i
+#indsym $mod+p exec --no-startup-id deepin-screenshot | xclip -selection clipboard -t image/png -i
+indsym --release $mod+p exec "deepin-screenshot -s /tmp/screenshot.png && xclip -selection clipboard -t image/png < /tmp/screenshot.png"
 
 # 开启Google Chrome快捷键 
 bindsym $mod+g exec --no-startup-id google-chrome-stable --force-dark-mode
