@@ -23,7 +23,7 @@ sh -c "$(wget --no-check-certificate https://raw.githubusercontent.com/hantaotao
 if need setup obsidian
 
 ```bash
-sudo wget -q -t 0 -P $HOME/extras https://github.com/obsidianmd/obsidian-releases/releases/download/v0.7.6/obsidian_0.7.6_amd64.snap
+sudo wget https://github.com/obsidianmd/obsidian-releases/releases/download/v0.7.6/obsidian_0.7.6_amd64.snap
 cd extras
 sudo snap install ./obsidian_0.7.6_amd64.snap --dangerous
 ```
