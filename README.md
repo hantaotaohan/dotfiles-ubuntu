@@ -24,7 +24,6 @@ if need setup obsidian
 
 ```bash
 sudo wget https://github.com/obsidianmd/obsidian-releases/releases/download/v0.7.6/obsidian_0.7.6_amd64.snap
-cd extras
 sudo snap install ./obsidian_0.7.6_amd64.snap --dangerous
 ```
 
