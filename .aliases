@@ -13,6 +13,10 @@ alias ll='ls -alF --color=always'
 alias la='ls -A'
 alias l='ls -CF'
 
+# BookMarks
+alias d='cd ~/Desktop && ls -lA'
+alias w='cd ~/Workspace && ls -lA'
+
 # Easy report
 alias ls='ls -Fh --color=auto --group-directories-first'
 alias grep='grep --color=auto'
