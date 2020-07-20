@@ -153,6 +153,8 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 [ -f ~/.exports ] && source ~/.exports
 [ -f ~/.aliases ] && source ~/.aliases
 [ -f ~/.bash_prompt ] && source ~/.bash_prompt
+[ -f ~/..functions ] && source ~/.functions
+
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
