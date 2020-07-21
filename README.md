@@ -59,3 +59,10 @@ sudo vim /etc/hosts
 151.101.76.133 avatars8.githubusercontent.com
 # GitHub End
 ```
+
+install Peek
+```bash
+sudo add-apt-repository ppa:peek-developers/stable
+sudo apt update
+sudo apt install peek
+```
