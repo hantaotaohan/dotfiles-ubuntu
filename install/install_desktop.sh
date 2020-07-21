@@ -278,9 +278,11 @@ echo -e "\t[+]${blue}Bat Install success"
 
 if [ ! -f "/bin/tldr" ];then
     sudo cp $Dotfiles_repo/bin/tldr /bin
+    sudo chmod +x $HOME/bin/tldr
 else
     sudo rm -rf /bin/tldr
     sudo cp $Dotfiles_repo/bin/tldr /bin
+    sudo chmod +x $HOME/bin/tldr
 fi
 
 echo -e "\t[+]${blue}Tldr Install success"
