@@ -37,7 +37,7 @@ Dotfiles_home=(.bashrc .bash_profile
     .bash_prompt .tmux.conf .vimrc .Xmodmap .aliases 
     .curlrc .inputrc .gitconfig .exports .ripgreprc .wgetrc 
     .dircolors .Xresources .gitignore)
-Dotfiles_copy=(.config .vim z.sh .w3m extras)
+Dotfiles_copy=(.config .vim z.sh .w3m bin extras)
 
 #-------------------------------------------------------------------
 # Repace Sources
@@ -174,21 +174,21 @@ echo -e "\t[+]${blue}Vim PlugInstall Successful"
 # Install Ripgrep
 #-------------------------------------------------------------------
 
-sudo dpkg -i $Dotfiles_repo/ripgrep/ripgrep_11.0.2_amd64.deb > /dev/null 2>&1
+sudo dpkg -i $Dotfiles_repo/bin/ripgrep.deb > /dev/null 2>&1
 echo -e "\t[+]${blue}Ripgrep Install success"
 
 #-------------------------------------------------------------------
 # Install Fd
 #-------------------------------------------------------------------
 
-sudo dpkg -i $Dotfiles_repo/fd/fd_7.4.0_amd64.deb > /dev/null 2>&1
+sudo dpkg -i $Dotfiles_repo/bin/fd.deb > /dev/null 2>&1
 echo -e "\t[+]${blue}Fd Install success"
 
 #-------------------------------------------------------------------
 # Install Bat
 #-------------------------------------------------------------------
 
-sudo dpkg -i $Dotfiles_repo/bat/bat_0.12.1_amd64.deb > /dev/null 2>&1
+sudo dpkg -i $Dotfiles_repo/bat/bat.deb > /dev/null 2>&1
 echo -e "\t[+]${blue}Bat Install success"
 
 #-------------------------------------------------------------------
@@ -196,10 +196,10 @@ echo -e "\t[+]${blue}Bat Install success"
 #-------------------------------------------------------------------
 
 if [ ! -f "/bin/tldr" ];then
-    sudo cp $Dotfiles_repo/tldr/tldr /bin
+    sudo cp $Dotfiles_repo/bin/tldr /bin
 else
     sudo rm -rf /bin/tldr
-    sudo cp $Dotfiles_repo/tldr/tldr /bin
+    sudo cp $Dotfiles_repo/bin/tldr /bin
 fi
 
 echo -e "\t[+]${blue}Tldr Install success"
@@ -272,19 +272,6 @@ else
 fi
 
 echo -e "\t[+]${blue}Diff-So-Fancy Successful"
-
-#-------------------------------------------------------------------
-# Rsync Config install
-#-------------------------------------------------------------------
-
-if [ ! -f "/etc/rsyncd.conf" ]; then
-    sudo cp -f $Dotfiles_repo/rsyncd.conf /etc
-else
-    sudo rm -rf /etc/rsyncd.conf
-    sudo cp -f $Dotfiles_repo/rsyncd.conf /etc
-fi
-
-echo -e "\t[+]${blue}Rsync Config Successful"
 
 #-------------------------------------------------------------------
 # AutoRemove
