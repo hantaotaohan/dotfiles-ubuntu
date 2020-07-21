@@ -36,7 +36,7 @@ Dotfiles_home=(.bashrc .bash_profile
     .bash_prompt .tmux.conf .vimrc .Xmodmap .aliases 
     .curlrc .inputrc .gitconfig .exports .ripgreprc .wgetrc 
     .dircolors .Xresources .gitignore)
-Dotfiles_copy=(.config .vim z.sh .w3m bin extras)
+Dotfiles_copy=(.config .vim .w3m bin extras)
 
 #-------------------------------------------------------------------
 # Repace Sources
