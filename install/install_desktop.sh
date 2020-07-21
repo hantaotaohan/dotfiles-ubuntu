@@ -432,11 +432,29 @@ echo -e "\t[+]${blue}Set Add Hosts is Successful"
 # Set Inziu FiraCode Fonts install
 #-------------------------------------------------------------------
 
+#if [ -d "$HOME/Fonts" ]; then
+#    sudo rm -rf $HOME/Fonts
+#    sh -c "$(wget --no-check-certificate -q -t 0 https://raw.githubusercontent.com/hantaotaohan/Fonts/master/run_install_font.sh -O -)"
+#else
+#    sh -c "$(wget --no-check-certificate -q -t 0 https://raw.githubusercontent.com/hantaotaohan/Fonts/master/run_install_font.sh -O -)"
+#fi
+#echo -e "\t[+]${blue}Set Fonts is Successful"
+
 if [ -d "$HOME/Fonts" ]; then
     sudo rm -rf $HOME/Fonts
-    sh -c "$(wget --no-check-certificate -q -t 0 https://raw.githubusercontent.com/hantaotaohan/Fonts/master/run_install_font.sh -O -)"
+    wget --no-check-certificate -t 0 -q --show-progress -P $HOME/ https://github.com/hantaotaohan/Fonts/releases/download/1.0/Fonts.zip &&\
+    unzip -q $HOME/Fonts.zip -d $HOME/Fonts &&\
+    cd Fonts &&\
+    ./install.sh &&\
+    cd $HOME &&\
+    sudo rm -rf $HOME/Fonts.zip
 else
-    sh -c "$(wget --no-check-certificate -q -t 0 https://raw.githubusercontent.com/hantaotaohan/Fonts/master/run_install_font.sh -O -)"
+    wget --no-check-certificate -t 0 -q --show-progress -P $HOME/ https://github.com/hantaotaohan/Fonts/releases/download/1.0/Fonts.zip &&\
+    unzip -q $HOME/Fonts.zip -d $HOME/Fonts &&\
+    cd Fonts &&\
+    ./install.sh &&\
+    cd $HOME &&\
+    sudo rm -rf $HOME/Fonts.zip
 fi
 echo -e "\t[+]${blue}Set Fonts is Successful"
 
