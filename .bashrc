@@ -184,7 +184,7 @@ fi
 # Install Z.sh
 # 设定 z.sh
 
-source "$HOME/z.sh"
+source "$HOME/extras/z.sh"
 
 # Install FZF
 # 安装FZF模糊所搜
