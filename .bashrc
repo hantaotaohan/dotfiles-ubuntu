@@ -5,10 +5,10 @@ export PATH="$HOME/bin:$PATH";
 # * ~/.path can be used to extend `$PATH`.
 # * ~/.extra can be used for other settings you don’t want to commit.
 
-#for file in ~/.{path,bash_prompt,exports,aliases,functions,extra}; do
-#	[ -r "$file" ] && [ -f "$file" ] && source "$file";
-#done;
-#unset file;
+for file in ~/.{path,bash_prompt,exports,aliases,functions}; do
+	[ -r "$file" ] && [ -f "$file" ] && source "$file";
+done;
+unset file;
 
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
@@ -150,10 +150,10 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 #    . ~/.exports
 #fi
 
-[ -f ~/.exports ] && source ~/.exports
-[ -f ~/.aliases ] && source ~/.aliases
-[ -f ~/.bash_prompt ] && source ~/.bash_prompt
-[ -f ~/..functions ] && source ~/.functions
+#[ -f ~/.exports ] && source ~/.exports
+#[ -f ~/.aliases ] && source ~/.aliases
+#[ -f ~/.bash_prompt ] && source ~/.bash_prompt
+#[ -f ~/..functions ] && source ~/.functions
 
 
 # enable programmable completion features (you don't need to enable
