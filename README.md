@@ -10,12 +10,11 @@
 
 # Ubuntu - Server
 
-sh -c "$(wget --no-check-certificate https://raw.githubusercontent.com/hantaotaohan/Dotfiles/master/install/run_server.sh -O -)"
+sh -c "$(wget -O- https://raw.githubusercontent.com/hantaotaohan/Dotfiles/master/install/run_server.sh)"
 
 # Ubuntu - Desktop
 
-sh -c "$(wget --no-check-certificate https://raw.githubusercontent.com/hantaotaohan/Dotfiles/master/install/run_desktop.sh -O -)"
-
+sh -c "$(wget -O-  https://raw.githubusercontent.com/hantaotaohan/Dotfiles/master/install/run_desktop.sh)"
 ```
 
 ----
