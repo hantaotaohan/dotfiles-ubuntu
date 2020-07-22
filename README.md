@@ -57,6 +57,10 @@ sudo vim /etc/hosts
 151.101.76.133 avatars6.githubusercontent.com
 151.101.76.133 avatars7.githubusercontent.com
 151.101.76.133 avatars8.githubusercontent.com
+192.30.253.112 github.com
+185.199.108.153 assets-cdn.github.com 
+151.101.185.194 github.global.ssl.fastly.net
+140.82.114.9 codeload.github.com
 # GitHub End
 ```
 
