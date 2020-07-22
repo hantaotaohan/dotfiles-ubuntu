@@ -445,7 +445,7 @@ if [ -d "$HOME/Fonts" ]; then
     wget --no-check-certificate -t 0 -q --show-progress -P $HOME/ https://github.com/hantaotaohan/Fonts/releases/download/1.0/Fonts.zip &&\
     unzip -q $HOME/Fonts.zip -d $HOME/ &&\
     cd Fonts &&\
-    chmod +x install.sh &&\
+    chmod -R +x * &&\
     ./install.sh &&\
     cd $HOME &&\
     sudo rm -rf $HOME/Fonts.zip
@@ -453,7 +453,7 @@ else
     wget --no-check-certificate -t 0 -q --show-progress -P $HOME/ https://github.com/hantaotaohan/Fonts/releases/download/1.0/Fonts.zip &&\
     unzip -q $HOME/Fonts.zip -d $HOME/ &&\
     cd Fonts &&\
-    chmod +x install.sh &&\
+    chmod -R +x * &&\
     ./install.sh &&\
     cd $HOME &&\
     sudo rm -rf $HOME/Fonts.zip
