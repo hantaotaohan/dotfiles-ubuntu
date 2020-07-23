@@ -729,7 +729,7 @@ let g:vimwiki_list = [{
         \ 'auto_export': 1,
         \ 'automatic_nested_syntaxes': 1,
         \ 'path': '$HOME/vimwiki/src',
-        \ 'path_html': '$HOME/vimwiki/html/',
+        \ 'path_html': '$HOME/vimwiki/docs/',
         \ 'template_path': '$HOME/vimwiki/templates/',
         \ 'template_default': 'default',
         \ 'template_ext': '.tpl',
