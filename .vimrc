@@ -128,6 +128,8 @@ Plug 'jszakmeister/markdown2ctags'                                       " Tags�
 Plug 'Neur1n/neuims'                                                     " 输入法自动切换 
 Plug 'vim-scripts/fcitx.vim'                                             " 输入法自动切换Fcitx
 Plug 'ferrine/md-img-paste.vim'                                          " Markdown截图自动粘贴
+Plug 'vimwiki/vimwiki'                                                   " Vimwiki插件
+Plug 'michal-h21/vim-zettel'                                             " 配合vimwiki的功能插件
 "Plug 'terryma/vim-multiple-cursors'                                     " 多光标插件
 "Plug 'edkolev/tmuxline.vim'                                             " Vim同步tmux配色
 call plug#end()
@@ -719,3 +721,21 @@ autocmd FileType markdown nmap <buffer><silent> <leader>p :call mdip#MarkdownCli
 " there are some defaults for image directory and image name, you can change them
 " let g:mdip_imgdir = 'img'
 " let g:mdip_imgname = 'image'
+
+"=================================================================================================================================
+" Vimwiki settings
+"=================================================================================================================================
+let g:vimwiki_list = [{
+        \ 'auto_export': 1,
+        \ 'automatic_nested_syntaxes': 1,
+        \ 'path': '$HOME/vimwiki/src',
+        \ 'path_html': '$HOME/vimwiki/html/',
+        \ 'template_path': '$HOME/vimwiki/templates/',
+        \ 'template_default': 'default',
+        \ 'template_ext': '.tpl',
+        \ 'css_file': '$HOME/vimwiki/templates/style.css',
+        \ 'syntax': 'markdown',
+        \ 'ext': '.md',
+        \ 'custom_wiki2html': 'vimwiki_markdown',
+        \ 'html_filename_parameterization': 1
+        \ }]
