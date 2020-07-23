@@ -99,6 +99,16 @@ sudo apt install -y -qq ranger > /dev/null 2>&1
 echo -e "\t[+]${blue}Ranger Successful"
 
 #-------------------------------------------------------------------
+# Install Ruby becuase vimwiki
+#-------------------------------------------------------------------
+
+sudo apt install -y -qq ruby-full > /dev/null 2>&1
+echo -e "\t[+]${blue}Ruby Successful"
+
+sudo gem install vimwiki_markdown >/dev/null 2>&1
+echo -e "\t[+]${blue}Vimwiki_markdown Successful"
+
+#-------------------------------------------------------------------
 # Install Openssh-Server
 #-------------------------------------------------------------------
 
