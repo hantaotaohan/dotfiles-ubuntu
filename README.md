@@ -71,5 +71,7 @@ sudo apt update
 sudo apt install peek
 ```
 
-install FreeFileSync
-https://freefilesync.org/download/FreeFileSync_11.0_Linux.tar.gz
+install goodsync
+gsync job 123 /f1=$HOME/vimwiki/ /f2=$HOME/Desktop/ /dir=ltor
+gsync analyze /all
+gsync 123
