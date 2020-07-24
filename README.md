@@ -75,3 +75,5 @@ install goodsync
 gsync job 123 /f1=$HOME/vimwiki/ /f2=$HOME/Desktop/ /dir=ltor
 gsync analyze /all
 gsync 123
+
+rsync -rtvu --delete source_folder/ destination_folder/
