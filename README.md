@@ -70,3 +70,6 @@ sudo add-apt-repository ppa:peek-developers/stable
 sudo apt update
 sudo apt install peek
 ```
+
+install FreeFileSync
+https://freefilesync.org/download/FreeFileSync_11.0_Linux.tar.gz
