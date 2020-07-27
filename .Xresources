@@ -100,10 +100,12 @@
 Xft.dpi:96
 
 ! 英文字体
+! URxvt.font:xft:Inziu Iosevka SC:size=10:style=Bold:antialias=true
 URxvt.font:xft:Inziu Iosevka SC:size=10:style=Bold:antialias=true
 
 ! 中文字体
-URxvt.boldfont:xft:Inziu Iosevka SC:size=10:style=Bold:antialias=true
+! URxvt.boldfont:xft:Saber:size=10:style=Bold:antialias=true
+URxvt.boldfont:xft:Saber:size=10:style=Bold:antialias=true
 
 ! 输入法
 *inputMethod:fcitx
