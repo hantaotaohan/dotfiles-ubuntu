@@ -1,16 +1,11 @@
 #!/bin/bash
 
-Path1=$HOME/1
-Path2=$HOME/2
+Path1=$HOME/Vimwiki/src/img/
+Path2=$HOME/Vimwiki/docs/img/
 
 monitor() {
-  /usr/bin/inotifywait -mrq --format '%w%f' -e create,close_write,delete $1 | while read
-    if [ -f $line ]; then
-      rsync -rtvu $line --delete ${Path1} ${Path2}
-    else
-      cd $1 &&
-        rsync -rtvu ./ --delete ${Path1} ${Path2}
-    fi
+  inotifywait -mrq --format '%w%f' -e create,close_write,delete $1 | while read
+        rsync -rtvu --delete ${Path1} ${Path2}
   done
 }
 
