@@ -100,6 +100,9 @@ echo -e "\t[+]${blue}Ranger Successful"
 sudo apt install -y -qq xclip > /dev/null 2>&1
 echo -e "\t[+]${blue}Xclip Successful"
 
+sudo apt install -y -qq inotify-tools > /dev/null 2>&1
+echo -e "\t[+]${blue}Inotify-tools Successful"
+
 #-------------------------------------------------------------------
 # Install Ruby becuase vimwiki
 #-------------------------------------------------------------------
