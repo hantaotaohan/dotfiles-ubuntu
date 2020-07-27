@@ -725,6 +725,11 @@ autocmd FileType markdown nmap <buffer><silent> <leader>p :call mdip#MarkdownCli
 "=================================================================================================================================
 " Vimwiki settings
 "=================================================================================================================================
+au VimEnter *
+            \  if (!isdirectory($HOME . "Vimwiki"))
+            \| silent execute "!nohup $HOME/extras/AutoSync.sh >/dev/null 2>&1 &"
+            \| endif
+	    
 let g:vimwiki_list = [{
         \ 'auto_export': 1,
         \ 'automatic_nested_syntaxes': 1,
