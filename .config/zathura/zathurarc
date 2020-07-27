@@ -1,5 +1,6 @@
 # Font
-set font "Inziu Iosevka SC bold 11"
+# set font "Inziu Iosevka SC bold 11"
+set font "Saber bold 11"
 
 # Map
 map = zoom in
