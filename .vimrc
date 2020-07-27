@@ -726,7 +726,7 @@ autocmd FileType markdown nmap <buffer><silent> <leader>p :call mdip#MarkdownCli
 " Vimwiki settings
 "=================================================================================================================================
 au VimEnter *
-            \  if (!isdirectory($HOME . "Vimwiki"))
+            \  if (!isdirectory($HOME . "Vimwiki")) && filereadable("$HOME/extras/AutoSync.sh")
             \| silent execute "!nohup $HOME/extras/AutoSync.sh >/dev/null 2>&1 &"
             \| endif
 	    
