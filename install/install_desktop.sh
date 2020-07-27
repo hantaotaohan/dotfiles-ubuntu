@@ -107,6 +107,9 @@ echo -e "\t[+]${blue}Inotify-tools Successful"
 # Install Ruby becuase vimwiki
 #-------------------------------------------------------------------
 
+sudo apt install -y -qq zlib1g-dev > /dev/null 2>&1
+echo -e "\t[+]${blue}Zlib1g-dev Successful"
+
 sudo apt install -y -qq ruby-full > /dev/null 2>&1
 echo -e "\t[+]${blue}Ruby Successful"
 
