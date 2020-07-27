@@ -225,7 +225,8 @@ client.background $base07
 
 # start i3bar to display a workspace bar
 bar {
-    font pango:Inziu Iosevka SC Bold 10
+    # font pango:Inziu Iosevka SC Bold 10
+    font pango:Saber 10
     status_command          i3status -c ~/.config/i3status/config
     status_command 	    i3blocks
     separator_symbol        "-"
