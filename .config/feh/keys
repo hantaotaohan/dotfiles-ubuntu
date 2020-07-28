@@ -32,8 +32,8 @@ delete   C-d C-Delete
 toggle_filenames f
 
 # zooming
-zoom_in  C-Up K 
-zoom_out C-Down J
+zoom_in  C-Up equal
+zoom_out C-Down minus
 zoom_default z
 zoom_fit w
 
