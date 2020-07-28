@@ -140,8 +140,9 @@ bindsym $mod+Shift+9 move container to workspace $workspace9
 #bindsym $mod+Shift+0 move container to workspace $workspace0
 
 # 打开指定程序到指定的工作区-可用 xprop | grep WM_CLASS 命令获取wm_class
-# assign [class="Firefox"]  					  $workspace1
+# assign [class="Firefox"]  			      $workspace1
 # assign [class="Gnome-terminal"]	              $workspace1
+assign [class="Google-chrome"]                        $workspace2
 
 # 设定那些程序为浮动窗口
 # for_window [class="Nautilus"]               floating enable
