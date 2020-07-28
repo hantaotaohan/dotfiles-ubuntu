@@ -425,7 +425,8 @@ echo -e "\t[+]${blue}Set Xterm of Xrdb Successful"
 # Set Locales Language
 #-------------------------------------------------------------------
 
-sudo dpkg-reconfigure locales
+# sudo dpkg-reconfigure locales
+sudo locale-gen "zh_CN.UTF-8" && sudo dpkg-reconfigure --frontend=noninteractive locales
 
 #-------------------------------------------------------------------
 # Set TimeZone
