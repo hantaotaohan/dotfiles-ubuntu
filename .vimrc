@@ -725,22 +725,47 @@ autocmd FileType markdown nmap <buffer><silent> <leader>p :call mdip#MarkdownCli
 "=================================================================================================================================
 " Vimwiki settings
 "=================================================================================================================================
+" Vimwiki 快捷键设置
+autocmd FileType vimwiki nmap <Leader>wg <Plug>Vimwiki2HTMLBrowse
+autocmd FileType vimwiki nmap <Leader>wh :VimwikiAll2HTML<cr>
+autocmd FileType vimwiki nmap <Leader>wb :ZettelBackLinks<cr>
+autocmd FileType vimwiki nmap <Leader>wn :ZettelNew<cr>
+autocmd FileType vimwiki nmap <Leader>bb :VimwikiBacklinks<cr>
+
+
+" 自动执行同步src的img同步到docs的img脚本
 au VimEnter *
             \  if (!isdirectory($HOME . "Vimwiki")) && filereadable("$HOME/extras/AutoSync.sh")
             \| silent execute "!nohup $HOME/extras/AutoSync.sh >/dev/null 2>&1 &"
             \| endif
-	    
+
+" Vimwiki设置
 let g:vimwiki_list = [{
         \ 'auto_export': 1,
         \ 'automatic_nested_syntaxes': 1,
-        \ 'path': '$HOME/vimwiki/src',
-        \ 'path_html': '$HOME/vimwiki/docs/',
-        \ 'template_path': '$HOME/vimwiki/templates/',
+        \ 'path': '$HOME/Vimwiki/src',
+        \ 'path_html': '$HOME/Vimwiki/docs/',
+        \ 'template_path': '$HOME/Vimwiki/templates/',
         \ 'template_default': 'default',
         \ 'template_ext': '.tpl',
-        \ 'css_file': '$HOME/vimwiki/templates/style.css',
+        \ 'css_file': '$HOME/Vimwiki/templates/style.css',
         \ 'syntax': 'markdown',
         \ 'ext': '.md',
         \ 'custom_wiki2html': 'vimwiki_markdown',
         \ 'html_filename_parameterization': 1
         \ }]
+
+" Vimwiki-zettel设置
+let g:zettel_dir = "$HOME/Vimwiki/src"
+let g:vimwiki_global_ext=0
+let g:vimwiki_conceallevel=0
+let g:zettel_format = "%Y%m%d%H%M"
+
+" 关闭Vim时自动上传github
+" Git Pull
+au! BufReadPost $HOME/Vimwiki/src/index.md !git -C $HOME/Vimwiki/ pull origin master
+" Git Add
+au! BufWritePost $HOME/Vimwiki/* !git -C $HOME/Vimwiki/ add . ;git commit -m "Auto commit."
+" Git Push
+au! VimLeave  $HOME/Vimwiki/* !git -C $HOME/Vimwiki/ add . ;git commit -m "Auto commit + push." ;git push origin master
+
