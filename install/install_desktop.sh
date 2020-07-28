@@ -70,9 +70,6 @@ echo -e "\t[+]${blue}Python3-pip Successful"
 sudo apt install -y -qq python-pip > /dev/null 2>&1
 echo -e "\t[+]${blue}Python2-pip Successful"
 
-sudo apt install -y -qq git > /dev/null 2>&1
-echo -e "\t[+]${blue}Git Successful"
-
 sudo apt install -y -qq curl > /dev/null 2>&1
 echo -e "\t[+]${blue}Curl Successful"
 
