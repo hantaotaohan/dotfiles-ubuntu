@@ -28,6 +28,24 @@ command=/usr/share/i3blocks/$BLOCK_NAME
 separator_block_width=15
 markup=none
 
+# Date Time
+#
+[date]
+label=
+command=date '+%Y-%m-%d'
+interval=5
+separator=false
+separator_block_width=30
+
+[time]
+full_text=Here.
+label=
+command=date '+%H:%M:%S'
+interval=1
+separator=false
+min_width=600
+separator_block_width=15
+
 # Volume indicator
 #
 # The first parameter sets the step (and units to display)
@@ -115,22 +133,6 @@ separator_block_width=30
 #label=⚡
 #instance=1
 #interval=30
-
-# Date Time
-#
-[date]
-label=
-command=date '+%Y-%m-%d'
-interval=5
-separator=false
-separator_block_width=30
-
-[time]
-label=
-command=date '+%H:%M:%S'
-interval=5
-separator=false
-separator_block_width=15
 
 [keyindicator]
 instance= 
