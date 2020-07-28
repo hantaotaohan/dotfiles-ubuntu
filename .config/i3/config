@@ -145,7 +145,8 @@ bindsym $mod+Shift+9 move container to workspace $workspace9
 assign [class="Google-chrome"]                        $workspace2
 
 # 设定那些程序为浮动窗口
-# for_window [class="Nautilus"]               floating enable
+# for_window [class="Nautilus"]                       floating enable
+for_window [class="feh"]                              floating enable
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
