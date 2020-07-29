@@ -598,7 +598,7 @@ main() {
             echo "--------------------------------------------------------------------"
             installFonts
             sudo apt autoremove -y -qq > /dev/null 2>&1
-            echo -e "\t[√]${green} *** All Install Successful *** ${reset}\n"
+            echo -e "\t\t[√]${green} *** All Install Successful *** ${reset}\n"
             bash
             ;;
         *)
