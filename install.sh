@@ -520,13 +520,13 @@ main() {
             echo -e "\t\t${blue}[#] Installing 'Advanced Packaging Tool'${reset}"
             echo "--------------------------------------------------------------------"
             echo ""
-	        aptInstall
+	    aptInstall
 
             echo "--------------------------------------------------------------------"
             echo -e "\t\t${blue}[#] Installing 'Python3 Installing Packages'${reset}"
             echo "--------------------------------------------------------------------"
             echo ""
-	        pipInstall
+	    pipInstall
 
             echo "--------------------------------------------------------------------"
             echo -e "\t\t${blue}[#] Installing 'RubyGems Installing Tool'${reset}"
@@ -572,12 +572,12 @@ main() {
             echo -e "\t\t${blue}[#] Installing 'Advanced Packaging Tool'${reset}"
             echo "--------------------------------------------------------------------"
             echo ""
-	        aptInstall
+	    aptInstall
             echo "--------------------------------------------------------------------"
             echo -e "\t\t${blue}[#] Installing 'Python3 Installing Packages'${reset}"
             echo "--------------------------------------------------------------------"
             echo ""
-	        pipInstall
+	    pipInstall
             echo "--------------------------------------------------------------------"
             echo -e "\t\t${blue}[#] Installing 'RubyGems Installing Tool'${reset}"
             echo "--------------------------------------------------------------------"
