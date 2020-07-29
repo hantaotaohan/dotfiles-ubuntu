@@ -349,7 +349,7 @@ LocalDpkg() {
 LoaclConfig() {
 
 #-------------------------------------------------------------------
-# TLDR 
+# Fcitx 
 #-------------------------------------------------------------------
 
         im-config -n fcitx > /dev/null 2>&1
@@ -362,11 +362,11 @@ LoaclConfig() {
 
         if [ ! -f "/bin/tldr" ];then
             sudo cp $Dotfiles_repo/bin/tldr /bin
-            sudo chmod +x $HOME/bin/tldr
+            sudo chmod +x /bin/tldr
         else
             sudo rm -rf /bin/tldr
             sudo cp $Dotfiles_repo/bin/tldr /bin
-            sudo chmod +x $HOME/bin/tldr
+            sudo chmod +x /bin/tldr
         fi
         echo -e "\t\t[√]${green} TLDR Successful${reset}\n"
 
