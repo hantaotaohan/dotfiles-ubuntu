@@ -456,14 +456,14 @@ LoaclConfig() {
 installFonts() {
         prefix="$1"
         font_dir="$HOME/.local/share/fonts"
-        powerline_fonts_dir="$HOME/Fonts"
+
         
         if [ ! -d "$font_dir" ]; then sudo mkdir -p "$font_dir"; fi
         if [ ! -d "$powerline_font_dir" ]; then env mkdir -p "$font_dir"; fi
         
         wget --no-check-certificate -t 0 -q --show-progress -P $HOME/ https://github.com/hantaotaohan/Fonts/releases/download/1.0/Fonts.zip &&\
-        unzip -q $HOME/Fonts.zip -d $powerline_font_dir/ &&\
-        find "$powerline_fonts_dir" \( -name "$prefix*.[ot]tf" -or -name "$prefix*.pcf.gz" \) -type f -print0 | xargs -0 -n1 -I % cp "%" "$font_dir/"
+        unzip -q $HOME/Fonts.zip -d $HOME/ &&\
+        find "$HOME/Fonts" \( -name "$prefix*.[ot]tf" -or -name "$prefix*.pcf.gz" \) -type f -print0 | xargs -0 -n1 -I % sudo cp "%" "$font_dir/"
         
         if which fc-cache >/dev/null 2>&1 ; then
             echo -e "\t\t[*]${green} Resetting font cache, this may take a moment...${reset}\n"
