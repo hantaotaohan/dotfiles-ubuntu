@@ -257,7 +257,7 @@ aptInstall() {
         zlib1g-dev\
         ruby-full\
         xvfb\
-        xerver-xorg\
+        xserver-xorg\
         dbus-x11\
         xinit\
         language-pack-zh-hans\
