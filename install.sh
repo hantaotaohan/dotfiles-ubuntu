@@ -45,6 +45,8 @@ Dotfiles_symlinks=(\
         .bash_prompt\
         .curlrc\
         .exports\
+	.functions\
+	.fzf.bash\
         .dircolors\
         .gitignore\
         .gitconfig\
