@@ -139,9 +139,11 @@ install_dotfiles() {
 
     echo -e "${blue}New dotfiles is installed!\n${white}" >&2
     echo "There may be some errors when Terminal is restarted." >&2
-    echo "Please read carefully the error messages and make sure all packages are installed. See more info in README.md." >&2
+    echo "Please read carefully the error messages and make sure." >&2
+    echo "all packages are installed. See more info in README.md." >&2
     echo "Note that the author of this dotfiles uses dev branch in some packages." >&2
-    echo -e "If you want to restore your old config, you can use ${red}./install.sh -r${white} command." >&2
+    echo -e "If you want to restore your old config, " >&2
+    echo -e "you can use ${red}./install.sh -r${white} command.\n" >&2
 }
 
 
@@ -159,24 +161,24 @@ if [ ! "$XDG_VTNR" = "" ]; then
     xrdb $HOME/.Xresources 
 fi
 
-echo -e "\t[+]${green}Set Xterm of Xrdb Successful\n"
+echo -e "\t\t[+]${green}Set Xterm of Xrdb Successful\n"
 
 # Set Locales Language
 # sudo dpkg-reconfigure locales
 sudo locale-gen "zh_CN.UTF-8" > /dev/null 2>&1
 sudo dpkg-reconfigure --frontend=noninteractive locales > /dev/null 2>&1
-echo -e "\t[+]${green}Set Locales Language is Successful\n"
+echo -e "\t\t[+]${green}Set Locales Language is Successful\n"
 
 # Set TimeZone
 sudo timedatectl set-timezone "Asia/Shanghai"
-echo -e "\t[+]${green}Set TimeZone is Successful\n"
+echo -e "\t\t[+]${green}Set TimeZone is Successful\n"
 
 # Set Add Hosts Speed Sudo 
 if [ -f "/etc/hosts" ]; then
     sudo bash -c "echo -e '127.0.0.1\t$HOSTNAME' >> /etc/hosts"
 fi
 
-echo -e "\t[+]${green}Set Add Hosts is Successful\n"
+echo -e "\t\t[+]${green}Set Add Hosts is Successful\n"
 }
 
 #===================================================================
@@ -227,11 +229,11 @@ uninstall_dotfiles() {
 
 sysUpdate(){
 sudo ln -sf "$Dotfiles_repo/sources.list" "/etc/apt/sources.list"
-echo -e "\t${green}[+]Repace sources.list Done !${reset}"
+echo -e "\t\t${green}[+]Repace sources.list Done !${reset}\n"
 sudo apt update -y -qq > /dev/null 2>&1
-echo -e "\t${green}[+]Update Successful !${reset}"
+echo -e "\t\t${green}[+]Update Successful !${reset}\n"
 sudo apt upgrade -y -qq > /dev/null 2>&1
-echo -e "\t${green}[+]Upgrade Successful !${reset}"
+echo -e "\t\t${green}[+]Upgrade Successful !${reset}\n"
 }
 
 #===================================================================
@@ -282,7 +284,7 @@ aptInstall() {
         )
 	for app in "${aptApps[@]}"
 	do
-		echo "[*] Installing: $app";
+		echo -e "\t\t[*] Installing: $app";
 		sudo apt install -y -qq $app > /dev/null 2>&1
 		installSuccess $? $app
 	done
@@ -302,7 +304,7 @@ pipInstall() {
         )
 	for app in "${pipApps[@]}"
 	do
-		echo "[*] Installing: $app";
+		echo -e "\t\t[*] Installing: $app";
 		sudo pip3 install -q --timeout 1000 $app -i https://pypi.tuna.tsinghua.edu.cn/simple/ > /dev/null 2>&1
 		installSuccess $? $app
 	done
@@ -318,7 +320,7 @@ gemInstall() {
         )
 	for app in "${gemApps[@]}"
 	do
-		echo "[*] Installing: $app";
+		echo -e "\t\t[*] Installing: $app";
 		sudo gem install $app > /dev/null 2>&1
 		installSuccess $? $app
 	done
@@ -338,7 +340,7 @@ LocalDpkg() {
         )
 	for app in "${dpkgApps[@]}"
 	do
-		echo "[*] Installing: $app";
+		echo -e "\t\t[*] Installing: $app";
 		sudo dpkg -i $Dotfiles_repo/bin/$app > /dev/null 2>&1
 		installSuccess $? $app
 	done
@@ -352,7 +354,7 @@ LoaclConfig() {
 
         im-config -n fcitx > /dev/null 2>&1
         im-config -s fcitx > /dev/null 2>&1
-        echo -e "\t[√]${green} Fcitx Successful${reset}\n"
+        echo -e "\t\t[√]${green} Fcitx Successful${reset}\n"
 
 #-------------------------------------------------------------------
 # TLDR 
@@ -366,7 +368,7 @@ LoaclConfig() {
             sudo cp $Dotfiles_repo/bin/tldr /bin
             sudo chmod +x $HOME/bin/tldr
         fi
-        echo -e "\t[√]${green} TLDR Successful${reset}\n"
+        echo -e "\t\t[√]${green} TLDR Successful${reset}\n"
 
 
 #-------------------------------------------------------------------
@@ -379,7 +381,7 @@ LoaclConfig() {
         sudo apt --fix-broken install -y -qq > /dev/null 2>&1
         sudo dpkg -i $Dotfiles_repo/chrome/google-chrome-stable_current_amd64.deb > /dev/null 2>&1
         sudo rm -rf $HOME/google*
-        echo -e "\t[√]${green} Chrome Successful${reset}\n"
+        echo -e "\t\t[√]${green} Chrome Successful${reset}\n"
         
         # Install ChromeDriver
         if [ -f "/usr/local/share/chromedriver" ]; then
@@ -394,7 +396,7 @@ LoaclConfig() {
             sudo ln -sf /usr/local/share/chromedriver /usr/local/bin/chromedriver
             sudo ln -sf /usr/local/share/chromedriver /usr/bin/chromedriver
         fi
-        echo -e "\t[√]${green} ChromeDriver Successful${reset}\n"
+        echo -e "\t\t[√]${green} ChromeDriver Successful${reset}\n"
 
         # Unzip Chrome Plugin
         if [ ! -d "$HOME/chrome-extend" ]; then
@@ -406,7 +408,7 @@ LoaclConfig() {
         unzip -q $Dotfiles_repo/chrome/darkreader.zip -d $HOME/chrome-extend
         unzip -q $Dotfiles_repo/chrome/vimium.zip -d $HOME/chrome-extend
         unzip -q $Dotfiles_repo/chrome/proxyswitch.zip -d $HOME/chrome-extend
-        echo -e "\t[√]${green} Unzip ChromeExtend-Pack Successful${reset}\n"
+        echo -e "\t\t[√]${green} Unzip ChromeExtend-Pack Successful${reset}\n"
 
 #-------------------------------------------------------------------
 # Tmux
@@ -422,7 +424,7 @@ LoaclConfig() {
         tmux new-session -d
         $HOME/.tmux/plugins/tpm/scripts/install_plugins.sh > /dev/null 2>&1
         tmux kill-server
-        echo -e "\t[√]${green} Tmux Successful${reset}\n"
+        echo -e "\t\t[√]${green} Tmux Successful${reset}\n"
 
 #-------------------------------------------------------------------
 # diff-so-fancy
@@ -436,14 +438,14 @@ LoaclConfig() {
             sudo cp -f $Dotfiles_repo/bin/diff-so-fancy /usr/local/bin
             sudo chmod 777 /usr/local/bin/diff-so-fancy
         fi
-        echo -e "\t[√]${green} Diff-So-Fancy Successful${reset}\n"
+        echo -e "\t\t[√]${green} Diff-So-Fancy Successful${reset}\n"
 
 #-------------------------------------------------------------------
 # Install Vim Plug
 #-------------------------------------------------------------------
 
         vim
-        echo -e "\t[√]${green} Vim Successful${reset}\n"
+        echo -e "\t\t[√]${green} Vim Successful${reset}\n"
 
 }
 
@@ -464,9 +466,9 @@ installFonts() {
         find "$powerline_fonts_dir" \( -name "$prefix*.[ot]tf" -or -name "$prefix*.pcf.gz" \) -type f -print0 | xargs -0 -n1 -I % cp "%" "$font_dir/"
         
         if which fc-cache >/dev/null 2>&1 ; then
-            echo -e "\t[*]${green} Resetting font cache, this may take a moment...${reset}\n"
+            echo -e "\t\t[*]${green} Resetting font cache, this may take a moment...${reset}\n"
             fc-cache -f "$font_dir"
-            echo -e "\t[√]${green} Fonts Install Successful${reset}\n"
+            echo -e "\t\t[√]${green} Fonts Install Successful${reset}\n"
         fi
 
 }
@@ -476,9 +478,9 @@ installFonts() {
 
 installSuccess() {
 	if [ $1 -eq 0 ]; then
-            echo -e "${green}[√] Install Success: $2${reset}\n"
+            echo -e "\t\t${green}[√] Install Success: $2${reset}\n"
 	else
-    		echo -e "${red}[X] Install Failed: $2${reset}\n"
+    		echo -e "\t\t${red}[X] Install Failed: $2${reset}\n"
 	fi
 }
 
