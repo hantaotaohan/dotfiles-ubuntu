@@ -40,7 +40,7 @@ scrolling:
     #faux_multiplier: 3
 
     # Scroll to bottom when new text is printed
-    auto_scroll: false
+    # auto_scroll: false
 
 # Size of a single tab character
 # Has to be the same as defined in the terminfo 'it' value
