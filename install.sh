@@ -623,8 +623,8 @@ echo "--------------------------------------------------------------------------
 echo ""
 
         if [ ! -d "$HOME/Fonts" ]; then
-            git clone –depth=1 -q \
-                https://github.com/hantaotaohan/Fonts_minimize.git \
+            git clone -–depth=1 -q\
+                https://github.com/hantaotaohan/Fonts_minimize.git\
                 $HOME/Desktop/Fonts && cd $Powerlinefont_dir && ./install.sh
         else
             cd $HOME/Fonts &&\
