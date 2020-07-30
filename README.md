@@ -84,17 +84,25 @@
     
 ----
 
-**Auto Mode Install**
+## How to Install
+
+### Manual installation
+
+```bash
+git clone https://github.com/hantaotaohan/Dotfiles.git
+
+cd Dotfiles
+
+./install.sh
+```
+
+### Auto Mode Install
+
 
 ```bash
 
-# Ubuntu - Server
+sh -c "$(wget -O- https://raw.githubusercontent.com/hantaotaohan/Dotfiles/master/install/auto_install.sh)"
 
-sh -c "$(wget -O- https://raw.githubusercontent.com/hantaotaohan/Dotfiles/master/install/run_server.sh)"
-
-# Ubuntu - Desktop
-
-sh -c "$(wget -O- https://raw.githubusercontent.com/hantaotaohan/Dotfiles/master/install/run_desktop.sh)"
 ```
 
 ----
