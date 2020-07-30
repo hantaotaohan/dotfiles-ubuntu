@@ -76,14 +76,34 @@ usage() {
     local program_name
     program_name=${0##*/}
     cat <<EOF
-    Usage: $program_name [-option]
-    Options:
-    --help    Print this message
-    -d        Install all config
-    -r        Restore old config
-    -s        Install System 
-    -f        Install Fonts 
-    -a        Install All's
+
+Usage: $program_name [-option]
+
+Options:
+                                                                            
+----------------------------------------------------------------------------
+                                                                            
+ -h        Print this message                                               
+                                                                            
+ -A        Install All                                                      
+ -D        Install Dotfiles & Enviroment                                    
+ -S        Update System & Setup Alls Tools & Enviroment                    
+                                                                            
+----------------------------------------------------------------------------
+                                                                            
+ -1        Install Dotfiles                                                 
+ -2        Uninstall Dotfiles                                               
+ -3        Install Environment                                              
+ -4        Install APT Tools                                                
+ -5        Install PIP3 Tools                                               
+ -6        Install GEM Tools                                                
+ -7        Install Local Bin Folder Tools                                   
+ -8        Install Fonts                                                    
+                                                                            
+ -q        Exit                                                             
+                                                                            
+----------------------------------------------------------------------------
+                                                                            
 EOF
 }
 
@@ -679,7 +699,7 @@ main() {
             usage
             exit 0
             ;;
-        -A)
+        -[aA])
             install_dotfiles
             workspace_settings
             sysUpdate
@@ -693,12 +713,12 @@ main() {
             echo -e "\t\t[√]${green} *** All Install Successful *** ${reset}\n"
             bash
             ;;
-        -D)
+        -[dD])
             install_dotfiles
             workspace_settings
             bash
             ;;
-        -S)
+        -[sS])
             sysUpdate
 	        aptInstall
 	        pipInstall
