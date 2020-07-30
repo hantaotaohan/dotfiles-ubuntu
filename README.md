@@ -1,6 +1,12 @@
 # Dotfiles
 
-> Hantaotaohan - TaoTao - Saber - Desktop & Server
+> TaoTao - Saber - Desktop & Server
+
+## Info
+
+**Desktop Edition** : Including I3wm desktop configuration based on Ubuntu Server version
+
+**Server  Edition** : It is a refined workspace based on Ubuntu Server
 
 ----
 
