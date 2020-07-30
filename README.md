@@ -5,6 +5,12 @@
 ## Info
 
 **Screenshot**
+<center>
+<img src="https://github.com/hantaotaohan/Dotfiles/raw/master/install/1.png" width = "400" height = "300" alt="" align=center />
+<img src="https://github.com/hantaotaohan/Dotfiles/raw/master/install/2.png" width = "400" height = "300" alt="" align=center />
+<img src="https://github.com/hantaotaohan/Dotfiles/raw/master/install/3.png" width = "400" height = "300" alt="" align=center />
+<img src="https://github.com/hantaotaohan/Dotfiles/raw/master/install/4.png" width = "400" height = "300" alt="" align=center />
+</center>
 
 
 **Desktop Edition** : Including I3wm desktop configuration based on Ubuntu Server version
