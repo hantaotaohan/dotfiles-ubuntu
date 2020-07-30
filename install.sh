@@ -264,25 +264,23 @@ if [ ! -d "$HOME/Desktop" ]; then mkdir -p "$HOME/Desktop"; fi
 if [ ! "$XDG_VTNR" = "" ]; then
     xrdb $HOME/.Xresources 
 fi
-
-echo -e "\t\t[+]${green}Set Xterm of Xrdb Successful${reset}\n"
+echo -e "              ${green}[+]Set Xterm of Xrdb Successful${reset}\n"
 
 # Set Locales Language
 # sudo dpkg-reconfigure locales
 sudo locale-gen "zh_CN.UTF-8" > /dev/null 2>&1
 sudo dpkg-reconfigure --frontend=noninteractive locales > /dev/null 2>&1
-echo -e "\t\t[+]${green}Set Locales Language is Successful${reset}\n"
+echo -e "              ${green}[+]Set Locales Language is Successful${reset}\n"
 
 # Set TimeZone
 sudo timedatectl set-timezone "Asia/Shanghai"
-echo -e "\t\t[+]${green}Set TimeZone is Successful${reset}\n"
+echo -e "              ${green}[+]Set TimeZone is Successful${reset}\n"
 
 # Set Add Hosts Speed Sudo 
 if [ -f "/etc/hosts" ]; then
     sudo bash -c "echo -e '127.0.0.1\t$HOSTNAME' >> /etc/hosts"
 fi
-
-echo -e "\t\t[+]${green}Set Add Hosts is Successful${reset}\n"
+echo -e "              ${green}[+]Set Add Hosts is Successful${reset}\n"
 }
 
 
@@ -308,11 +306,11 @@ echo -e "-----------------------------------------------------------------------
 echo -e "                                                                               ";
 
 sudo ln -sf "$Dotfiles_repo/sources.list" "/etc/apt/sources.list"
-echo -e "\t\t${green}[+]Repace sources.list Done !${reset}\n"
+echo -e "              ${green}[+]Repace sources.list Done !${reset}\n"
 sudo apt update -y -qq > /dev/null 2>&1
-echo -e "\t\t${green}[+]Update Successful !${reset}\n"
+echo -e "              ${green}[+]Update Successful !${reset}\n"
 sudo apt upgrade -y -qq > /dev/null 2>&1
-echo -e "\t\t${green}[+]Upgrade Successful !${reset}\n"
+echo -e "              ${green}[+]Upgrade Successful !${reset}\n"
 }
 
 #----------------------------------------------------------------------------------------#
@@ -378,7 +376,7 @@ echo -e "                                                                       
         )
 	for app in "${aptApps[@]}"
 	do
-		echo -e "\t\t[*] Installing: $app";
+        echo -e "              [*] Installing: $app";
 		sudo apt install -y -qq $app > /dev/null 2>&1
 		installSuccess $? $app
 	done
@@ -413,7 +411,7 @@ echo -e "                                                                       
         )
 	for app in "${pipApps[@]}"
 	do
-		echo -e "\t\t[*] Installing: $app";
+        echo -e "              [*] Installing: $app";
 		sudo pip3 install -q --timeout 1000 $app -i https://pypi.tuna.tsinghua.edu.cn/simple/ > /dev/null 2>&1
 		installSuccess $? $app
 	done
@@ -444,7 +442,7 @@ echo -e "                                                                       
         )
 	for app in "${gemApps[@]}"
 	do
-		echo -e "\t\t[*] Installing: $app";
+        echo -e "              [*] Installing: $app";
 		sudo gem install $app > /dev/null 2>&1
 		installSuccess $? $app
 	done
@@ -479,7 +477,7 @@ echo -e "                                                                       
         )
 	for app in "${dpkgApps[@]}"
 	do
-		echo -e "\t\t[*] Installing: $app";
+        echo -e "              [*] Installing: $app";
 		sudo dpkg -i $Dotfiles_repo/bin/$app > /dev/null 2>&1
 		installSuccess $? $app
 	done
@@ -507,7 +505,7 @@ echo -e "                                                                       
 
         im-config -n fcitx > /dev/null 2>&1
         im-config -s fcitx > /dev/null 2>&1
-        echo -e "\t\t[√]${green} Fcitx Successful${reset}\n"
+        echo -e "              ${green}[√] Fcitx Successful${reset}\n"
 
 #----------------------------------------------------------------------------------------#
 # TLDR 
@@ -521,7 +519,7 @@ echo -e "                                                                       
             sudo cp $Dotfiles_repo/bin/tldr /bin
             sudo chmod +x /bin/tldr
         fi
-        echo -e "\t\t[√]${green} TLDR Successful${reset}\n"
+        echo -e "              ${green}[√] TLDR Successful${reset}\n"
 
 
 #----------------------------------------------------------------------------------------#
@@ -534,7 +532,7 @@ echo -e "                                                                       
         sudo apt --fix-broken install -y -qq > /dev/null 2>&1
         sudo dpkg -i $Dotfiles_repo/chrome/google-chrome-stable_current_amd64.deb > /dev/null 2>&1
         sudo rm -rf $HOME/google*
-        echo -e "\t\t[√]${green} Chrome Successful${reset}\n"
+        echo -e "              ${green}[√] Chrome Successful${reset}\n"
         
         # Install ChromeDriver
         if [ -f "/usr/local/share/chromedriver" ]; then
@@ -549,7 +547,7 @@ echo -e "                                                                       
             sudo ln -sf /usr/local/share/chromedriver /usr/local/bin/chromedriver
             sudo ln -sf /usr/local/share/chromedriver /usr/bin/chromedriver
         fi
-        echo -e "\t\t[√]${green} ChromeDriver Successful${reset}\n"
+        echo -e "              ${green}[√] ChromeDriver Successful${reset}\n"
 
         # Unzip Chrome Plugin
         if [ ! -d "$HOME/chrome-extend" ]; then
@@ -561,7 +559,7 @@ echo -e "                                                                       
         unzip -q $Dotfiles_repo/chrome/darkreader.zip -d $HOME/chrome-extend
         unzip -q $Dotfiles_repo/chrome/vimium.zip -d $HOME/chrome-extend
         unzip -q $Dotfiles_repo/chrome/proxyswitch.zip -d $HOME/chrome-extend
-        echo -e "\t\t[√]${green} Unzip ChromeExtend-Pack Successful${reset}\n"
+        echo -e "              ${green}[√] Unzip ChromeExtend-Pack Successful${reset}\n"
 
 #----------------------------------------------------------------------------------------#
 # Tmux
@@ -577,7 +575,7 @@ echo -e "                                                                       
         tmux new-session -d
         $HOME/.tmux/plugins/tpm/scripts/install_plugins.sh > /dev/null 2>&1
         tmux kill-server
-        echo -e "\t\t[√]${green} Tmux Successful${reset}\n"
+        echo -e "              ${green}[√] TMUX Successful${reset}\n"
 
 #----------------------------------------------------------------------------------------#
 # diff-so-fancy
@@ -591,15 +589,14 @@ echo -e "                                                                       
             sudo cp -f $Dotfiles_repo/bin/diff-so-fancy /usr/local/bin
             sudo chmod 777 /usr/local/bin/diff-so-fancy
         fi
-        echo -e "\t\t[√]${green} Diff-So-Fancy Successful${reset}\n"
+        echo -e "              ${green}[√] Diff-So-Fancy Successful${reset}\n"
 
 #----------------------------------------------------------------------------------------#
 # Install Vim Plug
 #----------------------------------------------------------------------------------------#
 
         vim
-        echo -e "\t\t[√]${green} Vim Successful${reset}\n"
-
+        echo -e "              ${green}[√] Vim Successful${reset}\n"
 }
 
 #----------------------------------------------------------------------------------------#
@@ -625,7 +622,7 @@ echo -e "                                                                       
         if [ ! -d "$HOME/Fonts" ]; then
             git clone --depth=1 -q\
                 https://github.com/hantaotaohan/Fonts_minimize.git\
-                $HOME/Desktop/Fonts && cd $Powerlinefont_dir && ./install.sh
+                $HOME/Fonts && cd $HOME/Fonts && ./install.sh
         else
             cd $HOME/Fonts &&\
             git reset --hard && git pull -q && ./install.sh
@@ -638,9 +635,9 @@ echo -e "                                                                       
 
 installSuccess() {
 	if [ $1 -eq 0 ]; then
-            echo -e "\t\t${green}[√] Install Success: $2${reset}\n"
+            echo -e "              ${green}[√] Install Success: $2${reset}\n";
 	else
-    		echo -e "\t\t${red}[X] Install Failed: $2${reset}\n"
+            echo -e "              ${red}[X] Install Failed: $2${reset}\n";
 	fi
 }
 
@@ -709,7 +706,7 @@ main() {
             LoaclConfig
             installFonts
             sudo apt autoremove -y -qq > /dev/null 2>&1
-            echo -e "\t\t[√]${green} *** All Install Successful *** ${reset}\n"
+            echo -e "[√]${green} *** All Install Successful *** ${reset}\n"
             bash
             ;;
         -[dD])
@@ -725,7 +722,7 @@ main() {
             LocalDpkg
             LoaclConfig
             sudo apt autoremove -y -qq > /dev/null 2>&1
-            echo -e "\t[√]${green} *** All Install Successful *** ${reset}\n"
+            echo -e "[√]${green} *** All Install Successful *** ${reset}\n"
             bash
             ;;
         -1)
