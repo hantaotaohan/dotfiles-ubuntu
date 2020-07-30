@@ -210,6 +210,25 @@ au BufWinLeave .* mkview                                                 " 关�
 au BufWinEnter .* silent loadview                                        " 打开时自动读取折叠视图
 augroup END
 
+"=================================================================================================================================
+" 跨终端粘贴 
+"=================================================================================================================================
+let g:copy_file=$HOME . "/.vim_copybuffer"
+function Write_copy_file()
+let lines=split(@", "\n")
+call writefile(lines,g:copy_file)
+endfunction
+
+function Read_copy_file()
+"将copy_file文件写入@" 缓冲区，并且粘贴
+let l:buf=readfile(g:copy_file)
+let @"=join(l:buf,"\n")
+normal ""p
+endfunction
+
+nmap <silent> ;y :call Write_copy_file()<CR>
+nmap <silent> ;p :call Read_copy_file()<CR>
+
 
 "-----------------------------------------------------------------o--------------------------------------------------------------o
 "                                                                                                                                
