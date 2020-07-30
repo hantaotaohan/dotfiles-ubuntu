@@ -8,6 +8,80 @@
 
 **Server  Edition** : It is a refined workspace based on Ubuntu Server
 
+## Detailed introduction
+
+**Desktop Edition** 
+- CLI
+  - Fd
+  - Bash - A Unix shell and command language.
+  - Xclip
+  - Ranger
+  - Silversearcher-ag
+  - Unzip
+  - ctags
+  - Curl
+  - Inotify-tools
+  - Z - Tracks your most used directories, based on frecency.
+  - Tmux - A terminal multiplexer.
+  - Git - A free and open source distributed version control system.
+  - Diff-so-fancy - Make your diffs human readable instead of machine readable.
+  - Htop - An interactive text-mode process viewer.
+  - Bat - A cat clone with syntax highlighting and Git integration.
+  - Fzf - A command-line fuzzy finder.
+  - Ripgrep - A line-oriented search tool that recursively searches directories for a regex pattern.
+  - Wget - A free software package for retrieving files using HTTP, HTTPS, FTP, and FTPS.
+  - Vim
+    - vim-airline 
+    - onedark.vim  
+    - vim-airline 
+    - vim-airline-themes
+    - vim-fugitive
+    - nerdtree
+    - tabular
+    - vim-table-mode
+    - tagbar
+    - fzf
+    - asyncrun
+    - vim-tmux-navigator
+    - indentLine
+    - nerdcommenter
+    - vim-startify
+    - ultisnips
+    - vim-snippets
+    - markdown-preview
+    - markdown2ctags
+    - neuims
+    - fcitx.vim
+    - md-img-paste
+    - vimwiki
+    - vim-zettel
+    - vim-multiple-cursors
+  - Pip Tools
+    - Powerline-shell
+    - Pandas
+    - Django
+    - Pyvirtualdisplay
+    - Selenium
+  - Gem Tools
+    - Vimwiki_markdown
+
+- GUI
+  - i3 - A tiling window manager.
+  - i3blocks - A feed generator for text based status bars.
+  - i3lock-fancy - A script that takes a screenshot of the desktop, blurs the background and adds a lock icon and text.
+  - Rofi - A window switcher, application launcher and dmenu replacement.
+  - Compton - A lightweight compositor for X11.
+  - Alacritty - A cross-platform, GPU-accelerated terminal emulator.
+  - zathura
+  - open-vm-tools-desktop
+  - calibre
+  - deepin-screenshot
+  - Fcitx
+  - Chrome
+  - Fonts
+    - Inziu
+    - NordFonts
+    
 ----
 
 **Auto Mode Install**
