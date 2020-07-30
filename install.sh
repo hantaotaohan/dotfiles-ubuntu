@@ -624,10 +624,10 @@ echo ""
 
         if [ ! -d "$HOME/Fonts" ]; then
             git clone –depth=1 -q \
-                https://github.com/hantaotaohan/Fonts_minimize.git\
+                https://github.com/hantaotaohan/Fonts_minimize.git \
                 $HOME/Desktop/Fonts && cd $Powerlinefont_dir && ./install.sh
         else
-            cd $HOME/Fonts
+            cd $HOME/Fonts &&\
             git reset --hard && git pull -q && ./install.sh
         fi
 }
