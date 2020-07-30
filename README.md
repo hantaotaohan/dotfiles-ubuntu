@@ -105,25 +105,14 @@ sh -c "$(wget -O- https://raw.githubusercontent.com/hantaotaohan/Dotfiles/master
 
 ```
 
-----
+### If Problems
 
-if need setup obsidian
-
-```bash
-sudo wget https://github.com/obsidianmd/obsidian-releases/releases/download/v0.7.6/obsidian_0.7.6_amd64.snap
-sudo snap install ./obsidian_0.7.6_amd64.snap --dangerous
-```
-
-if need setup foliate
+> If it prompts failed: Connection refused.
 
 ```bash
-sudo snap install foliate
-```
-
-if 
-failed: Connection refused.
-
 sudo vim /etc/hosts
+```
+Copy the following content in
 
 ```bash
 # GitHub Start
@@ -152,12 +141,28 @@ sudo vim /etc/hosts
 # GitHub End
 ```
 
-install Peek
+----
+
+## Additional installation
+
+###  obsidian
+
+```bash
+sudo wget https://github.com/obsidianmd/obsidian-releases/releases/download/v0.7.6/obsidian_0.7.6_amd64.snap
+sudo snap install ./obsidian_0.7.6_amd64.snap --dangerous
+```
+
+### foliate
+
+```bash
+sudo snap install foliate
+```
+
+### Peek
+
 ```bash
 sudo add-apt-repository ppa:peek-developers/stable
 sudo apt update
 sudo apt install peek
 ```
 
-install rsync
-nohup ./sync.sh >/dev/null 2>&1 < /dev/null &
