@@ -122,7 +122,7 @@ echo -e "              | |_| | (_) | |_|  _| | |  __/\__ \                      
 echo -e "              |____/ \___/ \__|_| |_|_|\___||___/                           ";
 echo -e "                                                                            ";
 echo -e "----------------------------------------------------------------------------";
-echo -e "       ${blue}Start Backup and Install Dotfiles${reset}                     ";
+echo -e "              ${blue}Start Backup and Install Dotfiles${reset}              ";
 echo -e "----------------------------------------------------------------------------";
 echo -e "                                                                            ";
     # Backup config.
