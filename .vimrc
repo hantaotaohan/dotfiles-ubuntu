@@ -220,7 +220,6 @@ call writefile(lines,g:copy_file)
 endfunction
 
 function Read_copy_file()
-"将copy_file文件写入@" 缓冲区，并且粘贴
 let l:buf=readfile(g:copy_file)
 let @"=join(l:buf,"\n")
 normal ""p
@@ -786,5 +785,5 @@ au! BufReadPost $HOME/Vimwiki/src/index.md !git -C $HOME/Vimwiki/ pull origin ma
 " Git Add
 au! BufWritePost $HOME/Vimwiki/* !git -C $HOME/Vimwiki/ add . ;git commit -m "Auto commit."
 " Git Push
-au! VimLeave  $HOME/Vimwiki/* !git -C $HOME/Vimwiki/ add . ;git commit -m "Auto commit + push." ;git push origin master
+au! VimLeave $HOME/Vimwiki/* !git -C $HOME/Vimwiki/ add . ;git commit -m "Auto commit + push." ;git push origin master
 
