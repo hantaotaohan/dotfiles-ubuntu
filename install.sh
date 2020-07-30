@@ -632,6 +632,7 @@ installSuccess() {
 
 Sync_Dotfiles() {
     git reset -q --hard && git pull -q
+    echo -e "${green}Update Complete ${reset}"
 }
 
 #----------------------------------------------------------------------------------------#
@@ -666,7 +667,10 @@ main() {
     echo " -7        Install Local Bin Folder Tools                                   "
     echo " -8        Install Fonts                                                    "
     echo "                                                                            "
+    echo " -q        Exit                                                             "
+    echo "                                                                            "
     echo "----------------------------------------------------------------------------"
+    echo "                                                                            "
 
     read -r -p "Please select the mode you want to install ?  " input
 
@@ -738,8 +742,11 @@ main() {
             installFonts
             bash
             ;;
+        [qQ]) 
+            exit; break 
+            ;;
         *)
-            echo "Command not found" >&2
+            echo -e"\nCommand not found" >&2
             exit 1
     esac
 }
