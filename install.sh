@@ -22,6 +22,11 @@ echo "--------------------------------------------------------------------------
 echo ""
 
 #----------------------------------------------------------------------------------------#
+# Auto Sync Dotfiles
+#----------------------------------------------------------------------------------------#
+Sync_Dotfiles
+
+#----------------------------------------------------------------------------------------#
 # Setting Bash Colors
 #----------------------------------------------------------------------------------------#
 
@@ -609,7 +614,7 @@ echo ""
                 $HOME/Desktop/Fonts && cd $Powerlinefont_dir && ./install.sh
         else
             cd $Powerlinefont_dir
-            git reset --hard && git pull && ./install.sh
+            git reset --hard && git pull -q && ./install.sh
         fi
 }
 
@@ -625,41 +630,49 @@ installSuccess() {
 	fi
 }
 
+
+#----------------------------------------------------------------------------------------#
+# Sync & Update - Dotfiles
+#----------------------------------------------------------------------------------------#
+
+Sync_Dotfiles() {
+    git reset --hard && git pull -q
+}
+
 #----------------------------------------------------------------------------------------#
 # Running Bash in Install.sh
 #----------------------------------------------------------------------------------------#
 
 main() {
-    case "$1" in
+    read -r -p "Please select the mode you want to install ?  " input
+    echo "                                                        "
+    echo " -------------------------------------------------------"
+    echo "                                                        "
+    echo " -h        Print this message                           "
+    echo "                                                        "
+    echo " -A        Install All                                  "
+    echo " -D        Install Dotfiles & Enviroment                "
+    echo " -S        Update System & Setup Alls Tools & Enviroment"
+    echo "                                                        "
+    echo " -------------------------------------------------------"
+    echo "                                                        "
+    echo " -1        Install Dotfiles                             "
+    echo " -2        Uninstall Dotfiles                           "
+    echo " -3        Install Environment                          "
+    echo " -4        Install APT Tools                            "
+    echo " -5        Install PIP3 Tools                           "
+    echo " -6        Install GEM Tools                            "
+    echo " -7        Install Local Bin Folder Tools               "
+    echo " -8        Install Fonts                                "
+    echo "                                                        "
+    echo " -------------------------------------------------------"
+
+    case "$input" in
         ''|-h|--help)
             usage
             exit 0
             ;;
-        -d)
-            install_dotfiles
-            workspace_settings
-            bash
-            ;;
-        -r)
-            uninstall_dotfiles
-            bash
-            ;;
-        -s)
-            sysUpdate
-	        aptInstall
-	        pipInstall
-            gemInstall
-            LocalDpkg
-            LoaclConfig
-            sudo apt autoremove -y -qq > /dev/null 2>&1
-            echo -e "\t[√]${green} *** All Install Successful *** ${reset}\n"
-            bash
-            ;;
-        -f)
-            installFonts
-            bash
-            ;;
-        -a)
+        -A)
             install_dotfiles
             workspace_settings
             sysUpdate
@@ -671,6 +684,55 @@ main() {
             installFonts
             sudo apt autoremove -y -qq > /dev/null 2>&1
             echo -e "\t\t[√]${green} *** All Install Successful *** ${reset}\n"
+            bash
+            ;;
+        -D)
+            install_dotfiles
+            workspace_settings
+            bash
+            ;;
+        -S)
+            sysUpdate
+	        aptInstall
+	        pipInstall
+            gemInstall
+            LocalDpkg
+            LoaclConfig
+            sudo apt autoremove -y -qq > /dev/null 2>&1
+            echo -e "\t[√]${green} *** All Install Successful *** ${reset}\n"
+            bash
+            ;;
+        -1)
+            install_dotfiles
+            bash
+            ;;
+        -2)
+            uninstall_dotfiles
+            bash
+            ;;
+        -3)
+            workspace_settings
+            bash
+            ;;
+        -4)
+	        aptInstall
+            bash
+            ;;
+        -5)
+	        pipInstall
+            bash
+            ;;
+        -6)
+            gemInstall
+            bash
+            ;;
+        -7)
+            LocalDpkg
+            LoaclConfig
+            bash
+            ;;
+        -8)
+            installFonts
             bash
             ;;
         *)
