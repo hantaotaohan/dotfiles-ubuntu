@@ -625,7 +625,7 @@ echo -e "                                                                       
                 $HOME/Fonts && cd $HOME/Fonts && ./install.sh
         else
             cd $HOME/Fonts &&\
-            git reset --hard && git pull -q && ./install.sh
+            git reset -q --hard && git pull -q && ./install.sh
         fi
 }
 
