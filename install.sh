@@ -266,24 +266,24 @@ if [ ! "$XDG_VTNR" = "" ]; then
     xrdb $HOME/.Xresources 
 fi
 
-echo -e "\t\t[+]${green}Set Xterm of Xrdb Successful\n"
+echo -e "\t\t[+]${green}Set Xterm of Xrdb Successful${reset}\n"
 
 # Set Locales Language
 # sudo dpkg-reconfigure locales
 sudo locale-gen "zh_CN.UTF-8" > /dev/null 2>&1
 sudo dpkg-reconfigure --frontend=noninteractive locales > /dev/null 2>&1
-echo -e "\t\t[+]${green}Set Locales Language is Successful\n"
+echo -e "\t\t[+]${green}Set Locales Language is Successful${reset}\n"
 
 # Set TimeZone
 sudo timedatectl set-timezone "Asia/Shanghai"
-echo -e "\t\t[+]${green}Set TimeZone is Successful\n"
+echo -e "\t\t[+]${green}Set TimeZone is Successful${reset}\n"
 
 # Set Add Hosts Speed Sudo 
 if [ -f "/etc/hosts" ]; then
     sudo bash -c "echo -e '127.0.0.1\t$HOSTNAME' >> /etc/hosts"
 fi
 
-echo -e "\t\t[+]${green}Set Add Hosts is Successful\n"
+echo -e "\t\t[+]${green}Set Add Hosts is Successful${reset}\n"
 }
 
 
