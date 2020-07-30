@@ -651,7 +651,7 @@ installSuccess() {
 
 Sync_Dotfiles() {
     git reset -q --hard && git pull -q
-    echo -e "${green}Update Complete ${reset}"
+    echo -e "${green}● ۞ Update Complete ${reset}"
 }
 
 #----------------------------------------------------------------------------------------#
