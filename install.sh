@@ -35,7 +35,6 @@ reset='\e[0;37m'
 # Setting Bash Variable
 #----------------------------------------------------------------------------------------#
 
-Powerlinefont_dir="$HOME/Fonts"
 Backup_dir="$HOME/.dotfiles.orig"
 Dotfiles_repo=$(pwd)
 #Dotfiles_repo=$(dirname $PWD)
@@ -623,12 +622,12 @@ echo -e " \t\t ${blue}Fonts Install ${reset}                                    
 echo "----------------------------------------------------------------------------"
 echo ""
 
-        if [ ! -d "$Powerlinefont_dir" ]; then
+        if [ ! -d "$HOME/Fonts" ]; then
             git clone –depth=1 -q \
                 https://github.com/hantaotaohan/Fonts_minimize.git\
                 $HOME/Desktop/Fonts && cd $Powerlinefont_dir && ./install.sh
         else
-            cd $Powerlinefont_dir
+            cd $HOME/Fonts
             git reset --hard && git pull -q && ./install.sh
         fi
 }
