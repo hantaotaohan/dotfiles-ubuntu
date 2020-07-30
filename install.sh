@@ -98,7 +98,8 @@ Options:
  -6        Install GEM Tools                                                
  -7        Install Local Bin Folder Tools                                   
  -8        Install Fonts                                                    
-                                                                            
+ -9        Install Server Edition                                           
+                                                                      
  -q        Exit                                                             
                                                                             
 ------------------------------------------------------------------------------------------
@@ -472,8 +473,7 @@ echo -e "                                                                       
         ripgrep.deb\
         fd.deb\
         bat.deb\
-        Alacritty.deb\
-        bat.deb
+        Alacritty.deb
         )
 	for app in "${dpkgApps[@]}"
 	do
@@ -683,6 +683,10 @@ main() {
     echo " -7        Install Local Bin Folder Tools                                   "
     echo " -8        Install Fonts                                                    "
     echo "                                                                            "
+    echo "----------------------------------------------------------------------------"
+    echo "                                                                            "
+    echo " -9        Install Server Edition                                           "
+    echo "                                                                            "
     echo " -q        Exit                                                             "
     echo "                                                                            "
     echo "----------------------------------------------------------------------------"
@@ -756,6 +760,10 @@ main() {
             ;;
         -8)
             installFonts
+            bash
+            ;;
+	-9)
+            bash $HOME/Dotfiles/install/install_i3.sh
             bash
             ;;
         [qQ]) 
