@@ -10,10 +10,11 @@
     <tr>
         <td ><center><img src="https://github.com/hantaotaohan/Dotfiles/raw/master/readme/image/1.png" width = "600" height = "300" alt="" align=center /></center></td>
         <td ><center><img src="https://github.com/hantaotaohan/Dotfiles/raw/master/readme/image/2.png" width = "600" height = "300" alt="" align=center /></center></td>
+    </tr>
+    <tr>
         <td ><center><img src="https://github.com/hantaotaohan/Dotfiles/raw/master/readme/image/3.png" width = "600" height = "300" alt="" align=center /></center></td>
         <td ><center><img src="https://github.com/hantaotaohan/Dotfiles/raw/master/readme/image/4.png" width = "600" height = "300" alt="" align=center /></center></td>
     </tr>
-
 </table>
 
 
