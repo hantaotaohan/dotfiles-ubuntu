@@ -110,7 +110,7 @@ cd Dotfiles
 
 ```bash
 
-sh -c "$(wget -O- https://raw.githubusercontent.com/hantaotaohan/Dotfiles/master/install/auto_install.sh)"
+sh -c "$(wget -O- https://raw.githubusercontent.com/hantaotaohan/Dotfiles/master/setup/auto_run_install.sh)"
 
 ```
 
