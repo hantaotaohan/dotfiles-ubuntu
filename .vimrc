@@ -750,14 +750,6 @@ autocmd FileType vimwiki nmap <Leader>wb :ZettelBackLinks<cr>
 autocmd FileType vimwiki nmap <Leader>wn :ZettelNew<cr>
 autocmd FileType vimwiki nmap <Leader>bb :VimwikiBacklinks<cr>
 
-
-" 自动执行同步src的img同步到docs的img脚本
-au VimEnter *
-            \  if (!isdirectory($HOME . "Vimwiki")) && filereadable("$HOME/extras/AutoSync.sh")
-            \| silent execute "!nohup $HOME/extras/AutoSync.sh >/dev/null 2>&1 &"
-            \| endif
-
-" Vimwiki设置
 let g:vimwiki_list = [{
         \ 'auto_export': 1,
         \ 'automatic_nested_syntaxes': 1,
@@ -773,17 +765,38 @@ let g:vimwiki_list = [{
         \ 'html_filename_parameterization': 1
         \ }]
 
-" Vimwiki-zettel设置
-let g:zettel_dir = "$HOME/Vimwiki/src"
-let g:vimwiki_global_ext=0
+let g:vimwiki_ext = '.md' " set extension to .md
+let g:vimwiki_global_ext = 0 " make sure vimwiki doesn't own all .md files
+let g:vimwiki_use_mouse = 1
 let g:vimwiki_conceallevel=0
-let g:zettel_format = "%Y%m%d%H%M"
+let g:vimwiki_markdown_link_ext = 1
 
+" 自动执行同步src的img同步到docs的img脚本
+au VimEnter *
+            \  if (!isdirectory($HOME . "Vimwiki")) && filereadable("$HOME/extras/AutoSync.sh")
+            \| silent execute "!nohup $HOME/extras/AutoSync.sh >/dev/null 2>&1 &"
+            \| endif
+	    
 " 关闭Vim时自动上传github
-" Git Pull
 au! BufReadPost $HOME/Vimwiki/src/index.md !git -C $HOME/Vimwiki/ pull origin master
-" Git Add
 au! BufWritePost $HOME/Vimwiki/* !git -C $HOME/Vimwiki/ add . ;git commit -m "Auto commit."
-" Git Push
 au! VimLeave $HOME/Vimwiki/* !git -C $HOME/Vimwiki/ add . ;git commit -m "Auto commit + push." ;git push origin master
 
+" 使用wd删除markdown时自动删除相对应不使用的HTML文件
+" Automatically clean the unused html
+function! VimwikiDeleteClean()
+  let htmlfile = expand('%:r') . '.html'
+  lcd ${HOME}/vimwiki/docs/
+  call delete(htmlfile)
+  lcd %:p:h
+  call vimwiki#base#delete_link()
+endfunction
+autocmd filetype vimwiki nnoremap <buffer> <leader>wd :call VimwikiDeleteClean()<CR>
+
+"=================================================================================================================================
+" Vimwiki Zettel settings
+"=================================================================================================================================
+let g:zettel_dir = "$HOME/Vimwiki/src"
+let g:zettel_format = "%Y%m%d%H%M"
+let g:zettel_link_format="[%title](%link)"
+let g:zettel_options = [{"template" :  "$HOME/vimwiki/templates/zettelnew.tpl"}]
