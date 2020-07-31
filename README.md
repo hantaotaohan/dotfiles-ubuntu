@@ -175,3 +175,10 @@ sudo apt update
 sudo apt install peek
 ```
 
+### Vmware-tools-patches
+
+```bash
+$ git clone https://github.com/rasa/vmware-tools-patches.git
+$ cd vmware-tools-patches
+$ ./patched-open-vm-tools.sh
+```
