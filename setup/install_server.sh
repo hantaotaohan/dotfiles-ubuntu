@@ -644,7 +644,6 @@ main() {
             gemInstall
             LocalDpkg
             LoaclConfig
-            installFonts
             sudo apt autoremove -y -qq > /dev/null 2>&1
             echo -e "[√]${green} *** All Install Successful *** ${reset}\n"
             bash
@@ -692,10 +691,6 @@ main() {
         -7)
             LocalDpkg
             LoaclConfig
-            bash
-            ;;
-        -8)
-            installFonts
             bash
             ;;
         [qQ]) 

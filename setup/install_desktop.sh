@@ -762,7 +762,7 @@ main() {
             installFonts
             bash
             ;;
-	-9)
+    	-9)
             bash $HOME/Dotfiles/setup/install_server.sh
             bash
             ;;

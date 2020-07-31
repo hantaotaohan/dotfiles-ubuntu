@@ -783,7 +783,6 @@ au! BufWritePost $HOME/Vimwiki/* !git -C $HOME/Vimwiki/ add . ;git commit -m "Au
 au! VimLeave $HOME/Vimwiki/* !git -C $HOME/Vimwiki/ add . ;git commit -m "Auto commit + push." ;git push origin master
 
 " 使用wd删除markdown时自动删除相对应不使用的HTML文件
-" Automatically clean the unused html
 function! VimwikiDeleteClean()
   let htmlfile = expand('%:r') . '.html'
   lcd ${HOME}/vimwiki/docs/
