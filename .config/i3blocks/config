@@ -25,26 +25,19 @@
 # The top properties below are applied to every block, but can be overridden.
 # Each block command defaults to the script name to avoid boilerplate.
 command=/usr/share/i3blocks/$BLOCK_NAME
-separator_block_width=15
+separator_block_width=50
 markup=none
 
 # Date Time
 #
-[date]
-label=
-command=date '+%Y-%m-%d'
-interval=5
-separator=false
-separator_block_width=30
+#label=    
 
-[time]
-full_text=Here.
-label=
-command=date '+%H:%M:%S'
+[datetime]
+label=
+command=date '+%Y-%m-%d • %H:%M:%S'
 interval=1
 separator=false
-min_width=600
-separator_block_width=15
+separator_block_width=500
 
 # Volume indicator
 #
@@ -60,7 +53,6 @@ interval=once
 signal=10
 interval=30
 separator=false
-separator_block_width=30
 
 # Memory usage
 #
@@ -70,7 +62,6 @@ label=MEM
 label=
 separator=false
 interval=30
-separator_block_width=30
 
 [memory]
 label=SWAP
@@ -78,7 +69,6 @@ label=
 instance=swap
 separator=false
 interval=30
-separator_block_width=30
 
 # Disk usage
 #
@@ -91,7 +81,6 @@ label=
 #instance=/mnt/data
 interval=30
 separator=false
-separator_block_width=30
 
 # Network interface monitoring
 #
@@ -133,11 +122,6 @@ separator_block_width=30
 #label=⚡
 #instance=1
 #interval=30
-
-[keyindicator]
-instance= 
-interval=5
-separator_block_width=15
 
 # Generic media player support
 #
