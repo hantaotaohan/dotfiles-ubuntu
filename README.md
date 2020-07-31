@@ -17,6 +17,7 @@
     </tr>
 </table>
 
+---
 
 **Desktop Edition** : Including I3wm desktop configuration based on Ubuntu Server version
 
