@@ -6,16 +6,11 @@
     c = commit -m
     ca = commit -am
     co = checkout
-    d = diff --patch-with-stat
-    df = diff --patch-with-stat --color-words
-    ds = diff --patch-with-stat --staged
     lg = log --graph --pretty='%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset'
     s = status -sb
     sclone = clone --depth 1
     undo = reset HEAD~1
-    # Show the diff between the latest commit and the current state.
-    dd = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
-    # `git di $number` shows the diff between the state `$number` revisions ago and the current state.
+    d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
     di = !"d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD -- || clear; d"
 
 [user]
