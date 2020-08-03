@@ -370,11 +370,14 @@ let g:mkdp_preview_options = {
     \ 'sequence_diagrams': {}
     \ }
 
+" settings markdowncss & highdark paht
+let g:mdpath='/home/saber/Dotfiles/extras/vim_preview_markdown/onedark/'
+
 " use a custom markdown style must be absolute path
-let g:mkdp_markdown_css = ''
+let g:mkdp_markdown_css = g:mdpath . 'onedark.css'
 
 " use a custom highlight style must absolute path
-let g:mkdp_highlight_css = ''
+let g:mkdp_highlight_css = g:mdpath . 'highdark.css'
 
 " use a custom port to start server or random for empty
 let g:mkdp_port = '8888'
