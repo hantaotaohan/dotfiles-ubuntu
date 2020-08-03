@@ -720,8 +720,8 @@ main() {
             gemInstall
             LocalDpkg
             LoaclConfig
-	    Make_apps
             installFonts
+	    Make_apps
             sudo apt autoremove -y -qq > /dev/null 2>&1
             echo -e "[√]${green} *** All Install Successful *** ${reset}\n"
             bash
