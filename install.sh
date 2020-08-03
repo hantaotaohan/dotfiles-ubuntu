@@ -631,6 +631,17 @@ echo -e "                                                                       
 }
 
 #----------------------------------------------------------------------------------------#
+# Make apps
+#----------------------------------------------------------------------------------------#
+
+Make_apps() {
+	pushd $HOME/extras/i3lock_fancy > /dev/null
+	sudo make install
+	popd > /dev/null
+	echo -e "              ${green}[√] Make_apps Successful${reset}\n"
+}
+
+#----------------------------------------------------------------------------------------#
 # Install - Status
 #----------------------------------------------------------------------------------------#
 
@@ -710,6 +721,7 @@ main() {
             LocalDpkg
             LoaclConfig
             installFonts
+	    Make_apps
             sudo apt autoremove -y -qq > /dev/null 2>&1
             echo -e "[√]${green} *** All Install Successful *** ${reset}\n"
             bash
@@ -726,6 +738,7 @@ main() {
             gemInstall
             LocalDpkg
             LoaclConfig
+	    Make_apps
             sudo apt autoremove -y -qq > /dev/null 2>&1
             echo -e "[√]${green} *** All Install Successful *** ${reset}\n"
             bash
