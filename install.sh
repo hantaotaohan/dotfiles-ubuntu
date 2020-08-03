@@ -373,7 +373,8 @@ echo -e "                                                                       
         calibre\
         deepin-screenshot\
         openssh-server\
-        openssh-client
+        openssh-client\
+	yank
         )
 	for app in "${aptApps[@]}"
 	do
