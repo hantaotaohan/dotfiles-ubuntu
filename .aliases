@@ -40,3 +40,6 @@ alias e='exit'
 # Developer shortcuts
 alias g='git'
 alias python='python3'
+
+# Yank clip
+alias yank='yank-cli | xclip -sel c'
