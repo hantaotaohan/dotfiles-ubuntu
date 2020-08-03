@@ -506,6 +506,13 @@ echo -e "                                                                       
 
         im-config -n fcitx > /dev/null 2>&1
         im-config -s fcitx > /dev/null 2>&1
+	
+	if [ -f " /usr/share/fcitx/imicon/pinyin.png" ]; then
+	sudo mv /usr/share/fcitx/imicon/pinyin.png pinyin.png1
+	fi
+	if [ -f "/usr/share/fcitx/skin/dark/en.png" ]; then
+	sudo mv /usr/share/fcitx/skin/dark/en.png inactive.png
+	fi
         echo -e "              ${green}[√] Fcitx Successful${reset}\n"
 
 #----------------------------------------------------------------------------------------#
