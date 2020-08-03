@@ -181,12 +181,11 @@ bindsym $mod+r mode "Resize"
 bindsym Ctrl+$mod+l exec --no-startup-id i3lock-fancy
 
 # 关机锁屏相关设定
-set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
+# set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
+set $mode_system		,		,		,		
 mode "$mode_system" {
      bindsym l exec --no-startup-id i3lock-fancy, mode "default"
      bindsym e exec --no-startup-id systemctl exit, mode "default"
-     bindsym s exec --no-startup-id i3lock-fancy; systemctl suspend, mode "default"
-     bindsym h exec --no-startup-id i3lock-fancy; systemctl hibernate, mode "default"
      bindsym r exec --no-startup-id systemctl reboot, mode "default"
      bindsym Shift+s exec --no-startup-id systemctl poweroff, mode "default"
      # back to normal: Enter or Escape
