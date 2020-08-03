@@ -351,7 +351,8 @@ echo -e "                                                                       
         ruby-full\
         xvfb\
         openssh-server\
-        openssh-client
+        openssh-client\
+	yank
         )
 	for app in "${aptApps[@]}"
 	do
