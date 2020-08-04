@@ -409,7 +409,8 @@ echo -e "                                                                       
         pandas\
         django\
         pyvirtualdisplay\
-        selenium
+        selenium\
+	xlsx2csv
         )
 	for app in "${pipApps[@]}"
 	do
