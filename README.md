@@ -208,3 +208,9 @@ sudo apt install fonts-noto-cjk
 ```bash
 sudo apt install solaar
 ```
+
+### Fiddler
+```bash
+wget -c "https://downloads.getfiddler.com/linux/fiddler-everywhere-1.0.0.AppImage" -O fiddler.AppImage
+sudo ln -f fiddler.AppImage /usr/local/bin/
+```
