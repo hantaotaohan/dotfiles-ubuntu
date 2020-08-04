@@ -370,7 +370,7 @@ echo -e "                                                                       
         xinput\
         open-vm-tools\
         open-vm-tools-desktop\
-        calibre\
+        #calibre\
         deepin-screenshot\
         openssh-server\
         openssh-client\
