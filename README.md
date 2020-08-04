@@ -190,3 +190,11 @@ $ ./download-tools.sh latest
 $ ./untar-and-patch.sh
 $ ./compile.sh
 ```
+
+### TimeShift
+```bash
+wget https://github.com/teejee2008/timeshift/releases/download/v20.03/timeshift-v20.03-amd64.deb
+sudo dpkg -i timeshift-v20.03-amd64.deb
+sudo apt install -f
+sudo dpkg -i timeshift-v20.03-amd64.deb
+```
