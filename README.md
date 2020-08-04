@@ -198,3 +198,8 @@ sudo dpkg -i timeshift-v20.03-amd64.deb
 sudo apt install -f
 sudo dpkg -i timeshift-v20.03-amd64.deb
 ```
+
+### Install Other Fonts
+```bash
+sudo apt install fonts-noto-cjk
+```
