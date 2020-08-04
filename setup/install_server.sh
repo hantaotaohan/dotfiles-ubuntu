@@ -645,7 +645,9 @@ main() {
             gemInstall
             LocalDpkg
             LoaclConfig
+            sudo apt-get -y -qq --purge remove byobu
             sudo apt autoremove -y -qq > /dev/null 2>&1
+	    sudo apt-get clean
             echo -e "              ${green}[√] *** All Install Successful *** l${reset}\n"
             bash
             ;;
@@ -661,7 +663,9 @@ main() {
             gemInstall
             LocalDpkg
             LoaclConfig
+            sudo apt-get -y -qq --purge remove byobu
             sudo apt autoremove -y -qq > /dev/null 2>&1
+	    sudo apt-get clean
             echo -e "              ${green}[√] *** All Install Successful *** l${reset}\n"
             bash
             ;;
