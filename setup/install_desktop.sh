@@ -262,10 +262,10 @@ if [ ! -d "$HOME/Workspace" ]; then mkdir -p "$HOME/Workspace"; fi
 if [ ! -d "$HOME/Desktop" ]; then mkdir -p "$HOME/Desktop"; fi
 
 # Set Xrdb
-if [ ! "$XDG_VTNR" = "" ]; then
-    xrdb $HOME/.Xresources 
-fi
-echo -e "              ${green}[+]Set Xterm of Xrdb Successful${reset}\n"
+#if [ ! "$XDG_VTNR" = "" ]; then
+#    xrdb $HOME/.Xresources 
+#fi
+#echo -e "              ${green}[+]Set Xterm of Xrdb Successful${reset}\n"
 
 # Set Locales Language
 # sudo dpkg-reconfigure locales
@@ -729,7 +729,7 @@ main() {
             installFonts
 	    Make_apps
             sudo apt autoremove -y -qq > /dev/null 2>&1
-            echo -e "[√]${green} *** All Install Successful *** ${reset}\n"
+            echo -e "              ${green}[√] *** All Install Successful *** l${reset}\n"
             bash
             ;;
         -[dD])
@@ -746,7 +746,7 @@ main() {
             LoaclConfig
 	    Make_apps
             sudo apt autoremove -y -qq > /dev/null 2>&1
-            echo -e "[√]${green} *** All Install Successful *** ${reset}\n"
+            echo -e "              ${green}[√] *** All Install Successful *** l${reset}\n"
             bash
             ;;
         -1)
