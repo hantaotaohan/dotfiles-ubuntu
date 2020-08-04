@@ -203,3 +203,8 @@ sudo dpkg -i timeshift-v20.03-amd64.deb
 ```bash
 sudo apt install fonts-noto-cjk
 ```
+
+### mouse
+```bash
+sudo apt install solaar
+```
