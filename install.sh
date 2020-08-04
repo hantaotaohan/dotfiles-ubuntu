@@ -409,12 +409,13 @@ echo -e "                                                                       
         pandas\
         django\
         pyvirtualdisplay\
-        selenium
+        selenium\
+	xlsx2csv
         )
 	for app in "${pipApps[@]}"
 	do
         echo -e "              [*] Installing: $app";
-		sudo pip3 install -q --timeout 1000 $app -i https://pypi.tuna.tsinghua.edu.cn/simple/ > /dev/null 2>&1
+		sudo pip3 install -q --timeout 1000 $app -i https://pypi.tuna.tsinghua.edu.cn/simple > /dev/null 2>&1
 		installSuccess $? $app
 	done
 }
