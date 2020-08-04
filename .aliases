@@ -12,6 +12,7 @@ alias 5='cd -5'
 alias ll='ls -alF --color=always'
 alias la='ls -A'
 alias l='ls -CF'
+alias lk='ls -AlXHLF --color=always'
 
 # BookMarks
 alias d='cd ~/Desktop && ls -lA'
