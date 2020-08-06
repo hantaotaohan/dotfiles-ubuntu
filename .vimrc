@@ -130,6 +130,7 @@ Plug 'vim-scripts/fcitx.vim'                                             " 输�
 Plug 'ferrine/md-img-paste.vim'                                          " Markdown截图自动粘贴
 Plug 'vimwiki/vimwiki'                                                   " Vimwiki插件
 Plug 'michal-h21/vim-zettel'                                             " 配合vimwiki的功能插件
+Plug 'Lenovsky/nuake'                                                    " 快速启动命令行工具
 "Plug 'terryma/vim-multiple-cursors'                                     " 多光标插件
 "Plug 'edkolev/tmuxline.vim'                                             " Vim同步tmux配色
 call plug#end()
@@ -672,32 +673,43 @@ command W w !sudo tee % > /dev/null
 " autocmd BufRead *.py nmap <F6> :make<CR>
 " autocmd BufRead *.py :cclose
 "=================================================================================================================================
+" nnoremap <F5> :call CompileRunGcc1()<cr>
+" func! CompileRunGcc1()
+"     exec "w"
+"     if &filetype == 'python'
+"         if search("@profile")
+"             exec "AsyncRun kernprof -l -v %"
+"             exec "copen"
+"             exec "wincmd p"
+"         elseif search("set_trace()")
+"             exec "!python3 %"
+"         else
+"             exec "AsyncRun -raw python3 %"
+"             exec "copen"
+"             exec "wincmd p"
+"         endif
+"     endif
+" endfunc
+"=================================================================================================================================
+" map <F6> :call CompileRunGcc2()<CR>
+" func! CompileRunGcc2()
+"     exec "w"
+"     if &filetype == 'python'
+"         exec "!clear"
+"         exec "!time python3 %"
+"     elseif &filetype == 'sh'
+"         :!time bash %
+"     endif
+" endfunc
+"=================================================================================================================================
 nnoremap <F5> :call CompileRunGcc1()<cr>
 func! CompileRunGcc1()
     exec "w"
     if &filetype == 'python'
-        if search("@profile")
-            exec "AsyncRun kernprof -l -v %"
-            exec "copen"
-            exec "wincmd p"
-        elseif search("set_trace()")
-            exec "!python3 %"
-        else
-            exec "AsyncRun -raw python3 %"
-            exec "copen"
-            exec "wincmd p"
-        endif
-    endif
-endfunc
-"=================================================================================================================================
-map <F6> :call CompileRunGcc2()<CR>
-func! CompileRunGcc2()
-    exec "w"
-    if &filetype == 'python'
-        exec "!clear"
-        exec "!time python3 %"
+        exec "AsyncRun -mode=term -pos=bottom -rows=10 -focus=0 python3 %"
+        exec "wincmd p"
     elseif &filetype == 'sh'
-        :!time bash %
+        exec "AsyncRun -mode=term -pos=bottom -rows=10 -focus=0 time bash %"
     endif
 endfunc
 
@@ -705,7 +717,7 @@ endfunc
 "=================================================================================================================================
 " 自动切换目录为当前编辑文件所在目录
 "=================================================================================================================================
-au BufRead,BufNewFile,BufEnter * cd %:p:h
+" au BufRead,BufNewFile,BufEnter * cd %:p:h
 
 "=================================================================================================================================
 " 输入法自动切换
@@ -802,3 +814,10 @@ let g:zettel_dir = "$HOME/Vimwiki/src"
 let g:zettel_format = "%Y%m%d%H%M"
 let g:zettel_link_format="[%title](%link)"
 let g:zettel_options = [{"template" :  "$HOME/vimwiki/templates/zettelnew.tpl"}]
+
+"=================================================================================================================================
+" Nuake settings
+"=================================================================================================================================
+nnoremap <F6> :Nuake<CR>
+inoremap <F6> <C-\><C-n>:Nuake<CR>
+tnoremap <F6> <C-\><C-n>:Nuake<CR>
