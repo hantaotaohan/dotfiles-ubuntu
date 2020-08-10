@@ -252,3 +252,20 @@ sudo apt install solaar
 wget -c "https://downloads.getfiddler.com/linux/fiddler-everywhere-1.0.0.AppImage" -O fiddler.AppImage
 sudo ln -f fiddler.AppImage /usr/local/bin/
 ```
+
+###
+
+>
+
+```bash
+wget https://www.imagemagick.org/download/ImageMagick.tar.gz
+cd ImageMagick
+./configure
+make
+sudo make install
+sudo ldconfig /usr/local/lib
+magick -version
+# magick pdfname.pdf image.png
+# or
+# magick imagename.png pdfname.pdf
+```
