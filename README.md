@@ -169,6 +169,10 @@ sudo apt install vim
 sudo add-apt-repository --remove ppa:jonathonf/vim
 ```
 
+### TabViewer
+
+[link](https://github.com/TabViewer/tabview)
+
 ###  obsidian
 
 ```bash
