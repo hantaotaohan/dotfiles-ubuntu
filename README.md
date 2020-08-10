@@ -165,6 +165,8 @@ Copy the following content in
 
 ### Update Vim8.2
 
+> Update Vim
+
 ```bash
 sudo add-apt-repository ppa:jonathonf/vim
 sudo apt update
@@ -174,22 +176,28 @@ sudo add-apt-repository --remove ppa:jonathonf/vim
 
 ### TabViewer
 
+> A tool for terminal to view CSV file
+
 [link](https://github.com/TabViewer/tabview)
 
-###  obsidian
+### Obsidian
 
 ```bash
 sudo wget https://github.com/obsidianmd/obsidian-releases/releases/download/v0.7.6/obsidian_0.7.6_amd64.snap
 sudo snap install ./obsidian_0.7.6_amd64.snap --dangerous
 ```
 
-### foliate
+### Foliate
+
+> E-book viewing software
 
 ```bash
 sudo snap install foliate
 ```
 
 ### Peek
+
+> Recording GIF software
 
 ```bash
 sudo add-apt-repository ppa:peek-developers/stable
@@ -198,6 +206,8 @@ sudo apt install peek
 ```
 
 ### Vmware-tools-patches
+
+> VMware Tools patch file Solve the problem of VMware sharing files
 
 ```bash
 $ git clone https://github.com/rasa/vmware-tools-patches.git
@@ -208,6 +218,9 @@ $ ./compile.sh
 ```
 
 ### TimeShift
+
+> System backup software
+
 ```bash
 wget https://github.com/teejee2008/timeshift/releases/download/v20.03/timeshift-v20.03-amd64.deb
 sudo dpkg -i timeshift-v20.03-amd64.deb
@@ -216,16 +229,25 @@ sudo dpkg -i timeshift-v20.03-amd64.deb
 ```
 
 ### Install Other Fonts
+
+> Chinese font
+
 ```bash
 sudo apt install fonts-noto-cjk
 ```
 
-### mouse
+### Mouse
+
+> Mouse driven
+
 ```bash
 sudo apt install solaar
 ```
 
 ### Fiddler
+
+> Bag grabbing tool
+
 ```bash
 wget -c "https://downloads.getfiddler.com/linux/fiddler-everywhere-1.0.0.AppImage" -O fiddler.AppImage
 sudo ln -f fiddler.AppImage /usr/local/bin/
