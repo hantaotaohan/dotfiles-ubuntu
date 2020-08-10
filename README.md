@@ -106,6 +106,9 @@
 ```bash
 git clone https://github.com/hantaotaohan/Dotfiles.git
 
+# Users in China
+git clone https://github.com.cnpmjs.org/hantaotaohan/Dotfiles.git
+
 cd Dotfiles
 
 ./install.sh
