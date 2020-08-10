@@ -269,3 +269,11 @@ magick -version
 # or
 # magick imagename.png pdfname.pdf
 ```
+
+### Navi
+
+> Cheatsheet
+
+```bash
+sudo bash -c "$(wget -O- https://raw.githubusercontent.com/denisidoro/navi/master/scripts/install)"
+```
