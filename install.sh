@@ -410,6 +410,7 @@ echo -e "                                                                       
         django\
         pyvirtualdisplay\
         selenium\
+	tabview\
 	xlsx2csv
         )
 	for app in "${pipApps[@]}"
@@ -608,6 +609,17 @@ echo -e "                                                                       
 
         vim
         echo -e "              ${green}[√] Vim Successful${reset}\n"
+}
+
+#----------------------------------------------------------------------------------------#
+# Install tabview
+#----------------------------------------------------------------------------------------#
+
+        if [ -f "$HOME/.local/bin/tabview" ]; then
+            sudo cp $HOME/.local/bin/tabview /bin/
+            sudo chmod +x /bin/tabview
+        else
+        echo -e "              ${green}[√] Tabview Successful${reset}\n"
 }
 
 #----------------------------------------------------------------------------------------#
