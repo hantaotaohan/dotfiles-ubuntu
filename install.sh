@@ -632,7 +632,7 @@ echo -e "                                                                       
 
         if [ ! -d "$HOME/Fonts" ]; then
             git clone --depth=1 -q\
-                https://github.com/hantaotaohan/Fonts_minimize.git\
+                https://github.com.cnpmjs.org/hantaotaohan/Fonts_minimize.git\
                 $HOME/Fonts && cd $HOME/Fonts && ./install.sh
         else
             cd $HOME/Fonts &&\
