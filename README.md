@@ -253,9 +253,9 @@ wget -c "https://downloads.getfiddler.com/linux/fiddler-everywhere-1.0.0.AppImag
 sudo ln -f fiddler.AppImage /usr/local/bin/
 ```
 
-###
+### ImageMagick
 
->
+> Conver png > pdf Tools
 
 ```bash
 wget https://www.imagemagick.org/download/ImageMagick.tar.gz
