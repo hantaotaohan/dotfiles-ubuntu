@@ -1,6 +1,6 @@
 #!/bin/bash
 
-grep -io "# Github" ~/Desktop/test > /dev/null
+grep -io "# Github" /etc/hosts > /dev/null
 if [[ $? -eq 1 ]]; then
     sed -i '$a # GitHub Start' /etc/hosts
     sed -i '$a 52.74.223.119 github.com' /etc/hosts
