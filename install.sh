@@ -617,7 +617,7 @@ echo -e "                                                                       
         if [ -f "$HOME/.local/bin/tabview" ]; then
             sudo cp $HOME/.local/bin/tabview /bin/
             sudo chmod +x /bin/tabview
-        else
+        fi
         echo -e "              ${green}[√] Tabview Successful${reset}\n"
 }
 
