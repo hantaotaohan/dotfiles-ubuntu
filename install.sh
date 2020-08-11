@@ -512,10 +512,10 @@ echo -e "                                                                       
 	sudo mv /usr/share/fcitx/imicon/pinyin.png pinyin.png1
 	fi
 	if [ -f "/usr/share/fcitx/skin/dark/cn.png" ]; then
-	sudo mv /usr/share/fcitx/skin/dark/cn.png active.png
+	sudo mv $HOME/Dotfiles/extras/fcitx/cn.png active.png
 	fi
 	if [ -f "/usr/share/fcitx/skin/dark/vk_inactive.png" ]; then
-	sudo mv /usr/share/fcitx/skin/dark/vk_inactive.png inactive.png
+	sudo mv $HOME/Dotfiles/extras/fcitx/en.png inactive.png
 	fi
         echo -e "              ${green}[√] Fcitx Successful${reset}\n"
 
