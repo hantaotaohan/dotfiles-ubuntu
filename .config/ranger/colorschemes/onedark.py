@@ -12,6 +12,22 @@ from ranger.gui.color import (
     default_colors,
 )
 
+self.base00 = "#282c34"
+self.base01 = "#353b45"
+self.base02 = "#3e4451"
+self.base03 = "#545862"
+self.base04 = "#565c64"
+self.base05 = "#abb2bf"
+self.base06 = "#b6bdca"
+self.base07 = "#c8ccd4"
+self.base08 = "#e06c75"
+self.base09 = "#d19a66"
+self.base0A = "#e5c07b"
+self.base0B = "#98c379"
+self.base0C = "#56b6c2"
+self.base0D = "#61afef"
+self.base0E = "#c678dd"
+self.base0F = "#be5046"
 
 class OneDark(ColorScheme):
     progress_bar_color = 39
