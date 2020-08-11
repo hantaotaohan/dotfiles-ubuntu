@@ -509,16 +509,16 @@ echo -e "                                                                       
         im-config -n fcitx > /dev/null 2>&1
         im-config -s fcitx > /dev/null 2>&1
 	if [ -f "/usr/share/fcitx/imicon/pinyin.png" ]; then
-	sudo mv /usr/share/fcitx/imicon/pinyin.png pinyin.png1
-	fi
-	if [ -f "/usr/share/fcitx/skin/dark/cn.png" ]; then
-	sudo mv $HOME/Dotfiles/extras/fcitx/cn.png active.png
-	fi
-	if [ -f "/usr/share/fcitx/skin/dark/vk_inactive.png" ]; then
-	sudo mv $HOME/Dotfiles/extras/fcitx/en.png inactive.png
-	fi
+    	sudo mv /usr/share/fcitx/imicon/pinyin.png /usr/share/fcitx/imicon/pinyin.png1
+    	fi
+    	if [ -f "/usr/share/fcitx/skin/dark/cn.png" ]; then
+    	sudo cp $HOME/Dotfiles/extras/fcitx/cn.png /usr/share/fcitx/skin/dark/active.png
+    	fi
+    	if [ -f "/usr/share/fcitx/skin/dark/vk_inactive.png" ]; then
+    	sudo cp $HOME/Dotfiles/extras/fcitx/en.png /usr/share/fcitx/skin/dark/inactive.png
+    	fi
         echo -e "              ${green}[√] Fcitx Successful${reset}\n"
-
+	
 #----------------------------------------------------------------------------------------#
 # TLDR 
 #----------------------------------------------------------------------------------------#
