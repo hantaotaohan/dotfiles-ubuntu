@@ -442,12 +442,13 @@ echo -e "-----------------------------------------------------------------------
 echo -e "                                                                               ";
 
 	gemApps=(\
-        vimwiki_markdown
+        vimwiki_markdown.gem
         )
 	for app in "${gemApps[@]}"
 	do
         echo -e "              [*] Installing: $app";
-		sudo gem install $app > /dev/null 2>&1
+		# sudo gem install $app > /dev/null 2>&1
+		sudo gem install --local $Dotfiles_repo/bin/$app > /dev/null 2>&1
 		installSuccess $? $app
 	done
 }
