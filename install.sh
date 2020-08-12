@@ -518,6 +518,15 @@ echo -e "                                                                       
     	sudo cp $HOME/Dotfiles/extras/fcitx/en.png /usr/share/fcitx/skin/dark/inactive.png
     	fi
         echo -e "              ${green}[√] Fcitx Successful${reset}\n"
+
+#----------------------------------------------------------------------------------------#
+# Vmware share 
+#----------------------------------------------------------------------------------------#
+
+	if [ ! -f "/etc/init.d/share.sh" ]; then
+	    sudo cp $Dotfiles_repo/extras/share.sh /etc/init.d/share.sh
+	fi
+	echo -e "              ${green}[√] Vmware share Successful${reset}\n"
 	
 #----------------------------------------------------------------------------------------#
 # TLDR 
