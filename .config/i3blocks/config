@@ -37,6 +37,7 @@ label=
 command=date '+%H:%M:%S'
 interval=1
 separator=false
+min_width=350
 
 [datetime]
 label=
