@@ -271,4 +271,5 @@ exec --no-startup-id nm-applet
 exec --no-startup-id bash ~/.config/i3/speedkeyboard.sh
 # 加载vmwaretools实现复制粘贴
 exec --no-startup-id /usr/bin/vmware-user
-
+# 加载vmware共享文件夹配置
+exec --no-startup-id bash ~/Dotfiles/extras/share.sh
