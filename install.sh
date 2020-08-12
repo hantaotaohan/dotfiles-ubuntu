@@ -523,8 +523,10 @@ echo -e "                                                                       
 # Vmware share 
 #----------------------------------------------------------------------------------------#
 
-	if [ ! -f "/etc/init.d/share.sh" ]; then
-	    sudo cp $Dotfiles_repo/extras/share.sh /etc/init.d/share.sh
+	if [ ! -f "/etc/rc.local" ]; then
+	    sudo cp $Dotfiles_repo/extras/share.sh /etc/rc.local
+	    sudo chmod +x /etc/rc.local
+	    sudo ln -s /lib/systemd/system/rc-local.service /etc/systemd/system/
 	fi
 	echo -e "              ${green}[√] Vmware share Successful${reset}\n"
 	
