@@ -215,6 +215,8 @@ $ cd vmware-tools-patches
 $ ./download-tools.sh latest
 $ ./untar-and-patch.sh
 $ ./compile.sh
+
+$ sudo vmhgfs-fuse .host:/ /mnt/hgfs -o allow_other,nonempty
 ```
 
 ### TimeShift
