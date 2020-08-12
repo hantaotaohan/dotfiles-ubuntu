@@ -37,7 +37,7 @@ label=
 command=date '+%Y-%m-%d • %H:%M:%S'
 interval=1
 separator=false
-separator_block_width=500
+# separator_block_width=500
 
 # Volume indicator
 #
