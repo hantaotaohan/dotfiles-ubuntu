@@ -32,12 +32,17 @@ markup=none
 #
 #label=    
 
-[datetime]
-label=
-command=date '+%Y-%m-%d • %H:%M:%S'
+[time]
+label=
+command=date '+%H:%M:%S'
 interval=1
 separator=false
-# separator_block_width=500
+
+[datetime]
+label=
+command=date '+%Y-%m-%d'
+interval=1
+separator=false
 
 # Volume indicator
 #
@@ -81,6 +86,8 @@ label=
 #instance=/mnt/data
 interval=30
 separator=false
+#separator_block_width=500
+min_width=50
 
 # Network interface monitoring
 #
