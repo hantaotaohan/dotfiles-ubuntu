@@ -107,7 +107,7 @@
 git clone https://github.com/hantaotaohan/Dotfiles.git
 
 # Users in China
-git clone https://github.com.cnpmjs.org/hantaotaohan/Dotfiles.git
+git clone https://hub.fastgit.org/hantaotaohan/Dotfiles.git
 
 cd Dotfiles
 
