@@ -411,6 +411,9 @@ echo -e "                                                                       
         pyvirtualdisplay\
         selenium\
 	tabview\
+	you-get\
+	bpython\
+	beautifulsoup4\
 	xlsx2csv
         )
 	for app in "${pipApps[@]}"
