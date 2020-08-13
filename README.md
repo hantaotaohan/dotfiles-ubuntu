@@ -279,3 +279,9 @@ magick -version
 ```bash
 sudo bash -c "$(wget -O- https://raw.githubusercontent.com/denisidoro/navi/master/scripts/install)"
 ```
+
+### CopyTranslator
+
+> Translator
+
+[Link](https://github.com/CopyTranslator/CopyTranslator)
