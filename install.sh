@@ -345,6 +345,7 @@ echo -e "                                                                       
         tmux\
         silversearcher-ag\
         w3m\
+	zip\
         unzip\
         ranger\
         xclip\
@@ -374,6 +375,14 @@ echo -e "                                                                       
         deepin-screenshot\
         openssh-server\
         openssh-client\
+	ncdu\
+	axel\
+	pv\
+	aria2\
+	rar\
+	unrar\
+	ffmpeg\
+	vlc\
 	yank
         )
 	for app in "${aptApps[@]}"
