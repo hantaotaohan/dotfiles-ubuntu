@@ -477,6 +477,7 @@ echo -e "                                                                       
         ripgrep.deb\
         fd.deb\
         bat.deb\
+	resilio-sync.deb\
         Alacritty.deb
         )
 	for app in "${dpkgApps[@]}"
@@ -623,7 +624,7 @@ echo -e "                                                                       
         echo -e "              ${green}[√] Vim Successful${reset}\n"
 
 #----------------------------------------------------------------------------------------#
-# Install tabview
+# Install Tabview
 #----------------------------------------------------------------------------------------#
 
         if [ -f "$HOME/.local/bin/tabview" ]; then
@@ -631,6 +632,16 @@ echo -e "                                                                       
             sudo chmod +x /bin/tabview
         fi
         echo -e "              ${green}[√] Tabview Successful${reset}\n"
+
+#----------------------------------------------------------------------------------------#
+# Install Rsync
+#----------------------------------------------------------------------------------------#
+
+        if [ -f "/usr/bin/rslsync" ]; then
+            sudo systemctl enable resilio-sync > /dev/null 2>&1
+	    sudo service resilio-sync start > /dev/null 2>&1
+        fi
+        echo -e "              ${green}[√] Rsync Successful${reset}\n"
 }
 
 #----------------------------------------------------------------------------------------#
