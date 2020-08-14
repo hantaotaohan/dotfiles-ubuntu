@@ -11,7 +11,7 @@ monitor() {
 }
 
 
-processName="AutoSync.sh"
+processName="autosync.sh"
 processNum=`ps -aef |grep "${processName}" | wc -l`
 
 if [ "${processNum}" -gt "3" ]; then
