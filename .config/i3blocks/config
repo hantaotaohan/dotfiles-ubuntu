@@ -73,7 +73,6 @@ label=
 interval=30
 separator=false
 #separator_block_width=500
-min_width=50
 
 # Date Time
 #label=    
