@@ -285,3 +285,9 @@ sudo bash -c "$(wget -O- https://raw.githubusercontent.com/denisidoro/navi/maste
 > Translator
 
 [Link](https://github.com/CopyTranslator/CopyTranslator)
+
+### Mailspring
+
+> Email
+
+[Link](https://github.com/Foundry376/Mailspring)
