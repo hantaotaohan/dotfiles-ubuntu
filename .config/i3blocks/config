@@ -25,7 +25,7 @@
 # The top properties below are applied to every block, but can be overridden.
 # Each block command defaults to the script name to avoid boilerplate.
 command=/usr/share/i3blocks/$BLOCK_NAME
-separator_block_width=50
+separator_block_width=30
 markup=none
 
 
