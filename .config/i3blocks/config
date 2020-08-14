@@ -28,22 +28,6 @@ command=/usr/share/i3blocks/$BLOCK_NAME
 separator_block_width=50
 markup=none
 
-# Date Time
-#
-#label=    
-
-[time]
-label=
-command=date '+%H:%M:%S'
-interval=1
-separator=false
-min_width=450
-
-[datetime]
-label=
-command=date '+%Y-%m-%d'
-interval=1
-separator=false
 
 # Volume indicator
 #
@@ -75,6 +59,22 @@ label=
 instance=swap
 separator=false
 interval=30
+
+# Date Time
+#label=    
+
+[datetime]
+label=
+command=date '+%Y-%m-%d'
+interval=1
+separator=false
+
+[time]
+label=
+command=date '+%H:%M:%S'
+interval=1
+separator=false
+min_width=100
 
 # Disk usage
 #
