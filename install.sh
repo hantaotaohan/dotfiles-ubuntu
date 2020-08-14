@@ -639,11 +639,11 @@ echo -e "                                                                       
 # Install Tabview
 #----------------------------------------------------------------------------------------#
 
-        if [ -f "$HOME/.local/bin/tabview" ]; then
-            sudo cp $HOME/.local/bin/tabview /bin/
-            sudo chmod +x /bin/tabview
-        fi
-        echo -e "              ${green}[√] Tabview Successful${reset}\n"
+#        if [ -f "$HOME/.local/bin/tabview" ]; then
+#            sudo cp $HOME/.local/bin/tabview /bin/
+#            sudo chmod +x /bin/tabview
+#        fi
+#        echo -e "              ${green}[√] Tabview Successful${reset}\n"
 
 #----------------------------------------------------------------------------------------#
 # Install Rsync
