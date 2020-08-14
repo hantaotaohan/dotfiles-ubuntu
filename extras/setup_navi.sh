@@ -4,4 +4,7 @@ sudo bash -c "$(wget -O- https://raw.githubusercontent.com/denisidoro/navi/maste
 
 if [ -d "$HOME/.local/share/navi/cheats/denisidoro__cheats/" ]; then
     ln -fs $HOME/Dotfiles/extras/Cheat_Sheet.cheat $HOME/.local/share/navi/cheats/denisidoro__cheats/Cheat_Sheet.cheat
+else
+    mkdir -p $HOME/.local/share/navi/cheats/denisidoro__cheats
+    ln -fs $HOME/Dotfiles/extras/Cheat_Sheet.cheat $HOME/.local/share/navi/cheats/denisidoro__cheats/Cheat_Sheet.cheat
 fi
