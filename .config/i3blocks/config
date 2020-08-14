@@ -60,6 +60,21 @@ instance=swap
 separator=false
 interval=30
 
+
+# Disk usage
+#
+# The directory defaults to $HOME if the instance is not specified.
+# The script may be called with a optional argument to set the alert
+# (defaults to 10 for 10%).
+[disk]
+label=HOME
+label=
+#instance=/mnt/data
+interval=30
+separator=false
+#separator_block_width=500
+min_width=50
+
 # Date Time
 #label=    
 
@@ -75,20 +90,6 @@ command=date '+%H:%M:%S'
 interval=1
 separator=false
 min_width=100
-
-# Disk usage
-#
-# The directory defaults to $HOME if the instance is not specified.
-# The script may be called with a optional argument to set the alert
-# (defaults to 10 for 10%).
-[disk]
-label=HOME
-label=
-#instance=/mnt/data
-interval=30
-separator=false
-#separator_block_width=500
-min_width=50
 
 # Network interface monitoring
 #
