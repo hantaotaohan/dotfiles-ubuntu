@@ -6,6 +6,14 @@
 # aaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
 echo 张辉 15010023871298
 
+% pdf
+
+# Concatenate pdf files
+files=($(echo "<files>"))
+pdftk "${files[@]:-}" cat output <pdf_output>
+
+$ files: fd --type f -e pdf --- --multi --overrides '--tac'
+
 ;-----------------------------------------------------------------------------------------------------
 
 % taotao
