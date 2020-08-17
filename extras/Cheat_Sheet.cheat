@@ -1,10 +1,6 @@
-% Telephone
+% vim
 
-# Middle argument
-<is_permanent> && arg="--permanent"
-echo mycmd <port> foo "${arg:-}" bar 
-
-$ is_permanent: echo 'true false' | tr ' ' '\n'
+# echo -e ("Middle argument\n<is_permanent> && arg="--permanent"\necho mycmd <port> foo "${arg:-}" bar)"
 
 % pdf
 
