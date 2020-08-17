@@ -383,6 +383,7 @@ echo -e "                                                                       
 	unrar\
 	ffmpeg\
 	vlc\
+	p7zip-full\
 	yank
         )
 	for app in "${aptApps[@]}"
