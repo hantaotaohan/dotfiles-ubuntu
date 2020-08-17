@@ -1,9 +1,7 @@
 % vim
-
 # echo -e ("Middle argument\n<is_permanent> && arg="--permanent"\necho mycmd <port> foo "${arg:-}" bar)"
 
 % pdf
-
 # Concatenate pdf files
 files=($(echo "<files>"))
 pdftk "${files[@]:-}" cat output <pdf_output>
