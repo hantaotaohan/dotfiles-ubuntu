@@ -6,6 +6,12 @@
   asdfasdf
 echo 张辉 15010023871298
 
+# This will output "foo\nyes"
+echo foo
+true \
+   && echo yes \
+   || echo no
+
 # send a http request
 curl -X <method> <url>
 
