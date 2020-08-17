@@ -51,5 +51,3 @@ curl -X <method> <url> --data-binary "@<file>"
 # send a http request wih a custom header
 curl -X <method> <url> -H "<headername>: <headervalue>"
 
-$ file: ls
-$ method: echo -e 'GET\nPOST\nPUT\nDELETE\nPATCH'
