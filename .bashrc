@@ -199,3 +199,8 @@ source "$HOME/extras/z.sh"
 if [ ! "$XDG_CURRENT_DESKTOP" = "" ]; then
     xmodmap "$HOME/.Xmodmap"
 fi
+
+# 为navi配置启动快捷键 CTRL+G
+if command -v git >/dev/null 2>&1; then
+    source <(echo "$(navi widget bash)")
+fi
