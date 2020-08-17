@@ -1,10 +1,10 @@
 % Telephone
 
-# 张辉 15010023871298\n11111111111111111111111111111111111111111123123121
-# 44444444444444444444444444444444444444444444444444444444444441241777777
-# 7777777777777777777777aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-# aaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
-echo 张辉 15010023871298
+# Middle argument
+<is_permanent> && arg="--permanent"
+echo mycmd <port> foo "${arg:-}" bar 
+
+$ is_permanent: echo 'true false' | tr ' ' '\n'
 
 % pdf
 
