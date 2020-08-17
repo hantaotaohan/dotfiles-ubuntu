@@ -25,9 +25,14 @@ export PROMPT_COMMAND="history -a; history -r;  $PROMPT_COMMAND"
 
 # FZF.
 # FZF默认功能设定及颜色设定
-export FZF_DEFAULT_OPTS=" \
-    --color=fg:#abb2bf,bg:#282c34,hl:#e06c75,fg+:#61afef,bg+:#282c34,hl+:#c678dd \
-    --color=info:#f7c662,prompt:#e06c75,pointer:#61afef,marker:#a6bc69,spinner:#f7c662,header:#6699cc"
+#export FZF_DEFAULT_OPTS=" \
+#    --color=fg:#abb2bf,bg:#282c34,hl:#e06c75,fg+:#61afef,bg+:#282c34,hl+:#c678dd \
+#    --color=info:#f7c662,prompt:#e06c75,pointer:#61afef,marker:#a6bc69,spinner:#f7c662,header:#6699cc"
+    
+export FZF_DEFAULT_OPTS='
+  --color=fg:#abb2bf,bg:#282c34,hl:#e06c75,gutter:#282c34,fg+:#e06c75,bg+:#3d4148,hl+:#282c34
+  --color=info:#f7c662,prompt:#e06c75,pointer:#e06c75,marker:#e5c07b,spinner:#f7c662,header:#6699cc
+'
 
 # CTRL+T 搜索目录
 export FZF_DEFAULT_COMMAND="fd --hidden --follow --exclude .git -t f . /"
