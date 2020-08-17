@@ -14,6 +14,9 @@ pdftk "${files[@]:-}" cat output <pdf_output>
 
 $ files: fd --type f -e pdf --- --multi --overrides '--tac'
 
+# add port
+firewall-cmd <PERM> --add-port=80/tcp
+
 ;-----------------------------------------------------------------------------------------------------
 
 % taotao
