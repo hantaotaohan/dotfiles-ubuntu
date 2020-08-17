@@ -1,5 +1,6 @@
 % vim
-# "Middle argument\n<is_permanent> && a\nbar"
+# Middle argument\n<is_permanent> && a\nbar
+echo foo
 
 % pdf
 # Concatenate pdf files
