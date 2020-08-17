@@ -291,3 +291,14 @@ sudo bash -c "$(wget -O- https://raw.githubusercontent.com/denisidoro/navi/maste
 > Email
 
 [Link](https://github.com/Foundry376/Mailspring)
+
+### Tesseract-ocr
+
+> OCR
+
+```bash
+sudo apt install tesseract-ocr
+sudo apt install tesseract-ocr-chi-sim
+sudo add-apt-repository ppa:sandromani/gimagereader
+sudo apt install gimagereader
+```
