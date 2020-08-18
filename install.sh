@@ -425,6 +425,7 @@ echo -e "                                                                       
 	you-get\
 	bpython\
 	beautifulsoup4\
+	keyring\
 	xlsx2csv
         )
 	for app in "${pipApps[@]}"
