@@ -306,3 +306,11 @@ sudo apt install tesseract-ocr-chi-sim
 sudo add-apt-repository ppa:sandromani/gimagereader
 sudo apt install gimagereader
 ```
+
+### Config I3blocks-email
+
+> i3blocks-email config
+
+```bash
+python3 $HOME/.config/i3blocks/email --add $Email@xxx.com
+```
