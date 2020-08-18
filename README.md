@@ -270,6 +270,10 @@ magick -version
 # magick pdfname.pdf image.png
 # or
 # magick imagename.png pdfname.pdf
+# or
+------------------------------------------------------------------
+sudo apt install imagemagick
+sed -i 's/<policy domain="coder" rights="none" pattern="PDF" \/>/<policy domain="coder" rights="read|write" pattern="PDF" \/>/g' /etc/ImageMagick-6/policy.xml
 ```
 
 ### Navi
