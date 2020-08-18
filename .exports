@@ -41,6 +41,10 @@ export FZF_CTRL_T_COMMAND="${FZF_DEFAULT_COMMAND}"
 # ALT+C 搜索文件夹并cd进入
 export FZF_ALT_C_COMMAND="fd -t d . /"
 
+# ctrl+t 采用预览框 ?打开关闭预览框
+export FZF_CTRL_T_OPTS="--preview 'bat --color=always {}' --preview-window right:wrap --bind '?:toggle-preview'"
+export FZF_DEFAULT_OPTS="--preview 'bat --color=always {}' --preview-window right:wrap --bind '?:toggle-preview'"
+
 # ripgrep.
 # Rg模糊搜索设定
 export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
