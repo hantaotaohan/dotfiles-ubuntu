@@ -1,53 +1,25 @@
-% vim
-# Middle argument\n<is_permanent> && a\nbar
-echo foo
+; -----------------------------------------------------------------------------------------------------------------
+; FZF
+; -----------------------------------------------------------------------------------------------------------------
 
-% pdf
-# Concatenate pdf files
-files=($(echo "<files>"))
-pdftk "${files[@]:-}" cat output <pdf_output>
+% fzf
+# <CTRL+T> Paste the selected files and directories onto the command-line
+echo "CTRL+T"
 
-$ files: fd --type f -e pdf --- --multi --overrides '--tac'
+# <CTRL+R> Paste the selected command from history onto the command-line
+echo "CTRL+R"
 
-# add port
-firewall-cmd <PERM> --add-port=80/tcp
+# <ALT+C>  CD into the selected directory
+echo "ALT+C"
 
-;-----------------------------------------------------------------------------------------------------
+# fzf preview <?> toggle on/off
+fzf --preview 'bat --color=always {}' --preview-window right:wrap --bind '?:toggle-preview'
 
-% taotao
-# This will output "foo\nyes"
-echo foo
-true \
-   && echo yes \
-   || echo no
+# ** <TAB> Fuzzy completion
+echo "vim ** [TAB]"
 
-# send a http request
-curl -X <method> <url>
+# Directories under current directory (single-selection)
+echo "cd ** [TAB]"
 
-# send a http request and write the output to a file
-curl -X <method> <url> -o <filename>
-
-# send a get http request and follow redirects
-curl -L <url>
-
-# send a get http request exit with a non-zero status code on failure
-curl --fail <url>
-
-# send an authenticated http request
-curl -u <username>:<password> -X <method> <url>
-
-# send a http request with a json body
-curl -X <method> <url>  -H 'Content-Type: application/json' -d '<json>'
-
-# send a http request with a form body
-curl <url> -d <bodykey>=<bodyvalue>
-
-# send a http request and see the request as well as the response
-curl -v <url>
-
-# send a http request wih a body from a file
-curl -X <method> <url> --data-binary "@<file>"
-
-# send a http request wih a custom header
-curl -X <method> <url> -H "<headername>: <headervalue>"
-
+# Can select multiple processes with <TAB> or <Shift-TAB> keys
+echo "kill -9 [TAB]"
