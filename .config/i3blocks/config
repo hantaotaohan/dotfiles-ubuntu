@@ -88,7 +88,12 @@ label=
 command=date '+%H:%M:%S'
 interval=1
 separator=false
-min_width=100
+
+[email]
+label=
+command=$HOME/.config/i3blocks/email
+interval=60
+min_width=50
 
 # Network interface monitoring
 #
