@@ -74,9 +74,12 @@ interval=30
 separator=false
 #separator_block_width=500
 
-# Date Time
-#label=    
+[bandwidth]
+command=$HOME/.config/i3blocks/bandwidth
+interval=1
 
+# Date Time
+# label=    
 [datetime]
 label=
 command=date '+%Y-%m-%d'
@@ -92,7 +95,7 @@ separator=false
 [email]
 label=
 command=$HOME/.config/i3blocks/email
-interval=60
+interval=1
 min_width=50
 
 # Network interface monitoring
