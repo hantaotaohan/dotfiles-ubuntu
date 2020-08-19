@@ -96,6 +96,11 @@ separator=false
 label=
 command=$HOME/.config/i3blocks/email
 interval=1
+
+[mozc_status]
+command=$HOME/.config/i3blocks/mozc_status
+label=
+interval=1
 min_width=50
 
 # Network interface monitoring
