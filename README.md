@@ -314,3 +314,12 @@ sudo apt install gimagereader
 ```bash
 python3 $HOME/.config/i3blocks/email --add $Email@xxx.com
 ```
+
+### Gtk3.0 thmees
+
+> themes
+
+```bash
+sudo apt install arc-theme
+sudo sed -i 's/gtk-theme-name = Ambiance/gtk-theme-name = Arc-Dark/g' /etc/gtk-3.0/settings.ini
+```
