@@ -97,8 +97,8 @@ label=
 command=$HOME/.config/i3blocks/email
 interval=1
 
-[mozc_status]
-command=$HOME/.config/i3blocks/mozc_status
+[fcitx]
+command=$HOME/.config/i3blocks/fcitx
 label=
 interval=1
 min_width=50
