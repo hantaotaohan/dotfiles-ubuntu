@@ -245,7 +245,7 @@ bar {
     tray_padding            0
 	colors {
         background $base00
-        separator  $base01
+        separator  $base04
         statusline $base06
         # State             Border  BG      Text
         focused_workspace   $base00 $base00 $base0D
