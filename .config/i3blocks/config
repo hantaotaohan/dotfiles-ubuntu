@@ -25,15 +25,55 @@
 # The top properties below are applied to every block, but can be overridden.
 # Each block command defaults to the script name to avoid boilerplate.
 command=/usr/share/i3blocks/$BLOCK_NAME
-separator_block_width=30
+#separator_block_width=30
 markup=none
+align=center
+separator=true
 
+[cpu_usage]
+full_text=CPU
+label= CPU:
+interval=10
+interval=persist
+min_width=100
 
-# Volume indicator
-#
-# The first parameter sets the step (and units to display)
-# The second parameter overrides the mixer selection
-# See the script for details.
+[memory]
+label= Ram:
+interval=30
+min_width=50
+
+[memory]
+label= Swap:
+instance=swap
+interval=30
+min_width=50
+
+[disk]
+label= Disk:
+interval=30
+min_width=50
+#instance=/mnt/data
+
+[bandwidth]
+full_text=Network I/O
+label=Net:
+command=$HOME/.config/i3blocks/bandwidth
+interval=1
+min_width=120
+
+[email]
+full_text=Email
+label=
+command=$HOME/.config/i3blocks/email
+interval=persist
+min_width=50
+
+[fcitx]
+command=$HOME/.config/i3blocks/fcitx
+label=
+interval=1
+min_width=50
+
 [volume]
 label=VOL
 label=
@@ -42,67 +82,27 @@ instance=Master
 interval=once
 signal=10
 interval=30
-separator=false
+min_width=50
 
-# Memory usage
-#
-# The type defaults to "mem" if the instance is not specified.
-[memory]
-label=MEM
-label=
-separator=false
-interval=30
-
-[memory]
-label=SWAP
-label=
+[time]
 instance=swap
-separator=false
-interval=30
-
-
-# Disk usage
-#
-# The directory defaults to $HOME if the instance is not specified.
-# The script may be called with a optional argument to set the alert
-# (defaults to 10 for 10%).
-[disk]
-label=HOME
-label=
-#instance=/mnt/data
-interval=30
-separator=false
-#separator_block_width=500
-
-[bandwidth]
-command=$HOME/.config/i3blocks/bandwidth
+command=$HOME/.config/i3blocks/time
 interval=1
+min_width=100
 
 # Date Time
 # label=    
-[datetime]
-label=
-command=date '+%Y-%m-%d'
-interval=1
-separator=false
+#[datetime]
+#label=
+#command=date '+%Y-%m-%d'
+#interval=1
+#separator=false
 
-[time]
-label=
-command=date '+%H:%M:%S'
-interval=1
-separator=false
-
-[email]
-label=
-command=$HOME/.config/i3blocks/email
-interval=1
-
-[fcitx]
-command=$HOME/.config/i3blocks/fcitx
-label=
-interval=1
-min_width=50
-
+#[time]
+#label=
+#command=date '+%H:%M:%S'
+#interval=1
+#separator=false
 # Network interface monitoring
 #
 # If the instance is not specified, use the interface used for default route.
@@ -126,11 +126,6 @@ min_width=50
 #
 # The script may be called with -w and -c switches to specify thresholds,
 # see the script for details.
-#[cpu_usage]
-#label=CPU
-#interval=10
-#min_width=CPU: 100.00%
-#separator=false
 
 #[load_average]
 #interval=10
