@@ -824,3 +824,5 @@ let g:zettel_options = [{"template" :  "$HOME/vimwiki/templates/zettelnew.tpl"}]
 nnoremap <F6> :Nuake<CR>
 inoremap <F6> <C-\><C-n>:Nuake<CR>
 tnoremap <F6> <C-\><C-n>:Nuake<CR>
+let g:nuake_position = 'bottom'                                  " 'bottom', 'right', 'top' or 'left'.
+let g:nuake_size = 0.38                                          " 'default 0.25'
