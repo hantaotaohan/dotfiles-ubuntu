@@ -713,6 +713,8 @@ func! CompileRunGcc1()
         exec "wincmd p"
     elseif &filetype == 'sh'
         exec "AsyncRun -mode=term -pos=bottom -rows=10 -focus=0 time bash %"
+    elseif &filetype == 'javascript'
+        exec "AsyncRun -mode=term -pos=bottom -rows=10 -focus=0 time node %"
     endif
 endfunc
 
