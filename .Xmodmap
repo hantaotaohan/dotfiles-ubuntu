@@ -3,22 +3,27 @@
 keycode 66 = Mode_switch
 clear Lock
 
-! application shortcuts
-keycode 58 = m M Delete
-keycode 57 = n N BackSpace
-
-! navigation shortcuts
-keycode 47 = semicolon colon Home
-keycode 61 = slash question Next
-keycode 48 = apostrophe quotedbl Prior
-keycode 60 = period greater End
-
+! Caps + hjkl > left Down Up Right
 keycode 43 = h H Left
 keycode 44 = j J Down
 keycode 45 = k K Up
 keycode 46 = l L Right
 
+! Caps + c v > copy paste
+keycode 54 = c C XF86Copy
+keycode 55 = v V XF86Paste
 
+! Caps + m n > Delete BackSpace
+keycode 58 = m M Delete
+keycode 57 = n N BackSpace
+
+! Caps + uiop > Home Next Prior End
+keycode 47 = semicolon colon Home
+keycode 61 = slash question Next
+keycode 48 = apostrophe quotedbl Prior
+keycode 60 = period greater End
+
+! Caps + 1-F12 > F1-F12
 keycode 10 = 1 exclam F1
 keycode 11 = 2 at F2
 keycode 12 = 3 numbersign F3
@@ -32,8 +37,11 @@ keycode 19 = 0 parenright F10
 keycode 20 = minus underscore F11
 keycode 21 = equal plus F12
 
+! Caps + [ > Esc
 keycode 34 = bracketleft braceleft Escape
 
-! keycode 9 = Escape grave asciitilde
-keycode 9 = Escape asciitilde grave
+! Caps + R_Shift > `
+keycode 62 = Shift_R Shift_R grave
 
+! Caps + R_Shift > `
+keycode 9 = Escape asciitilde grave
