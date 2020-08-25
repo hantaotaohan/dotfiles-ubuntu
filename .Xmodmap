@@ -1,5 +1,8 @@
 ! xmodmap path/to/capslock.txt
 ! use caps lock as additional modifier
+!       Key       Base            Shift           Caps    ShiftCaps
+!------------------------------------------------------------------------
+
 keycode 66 = Mode_switch
 clear Lock
 
