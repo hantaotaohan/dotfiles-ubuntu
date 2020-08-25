@@ -385,6 +385,7 @@ echo -e "                                                                       
 	ffmpeg\
 	vlc\
 	p7zip-full\
+	lua5.2\
 	yank
         )
 	for app in "${aptApps[@]}"
