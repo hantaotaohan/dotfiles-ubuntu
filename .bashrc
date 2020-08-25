@@ -184,8 +184,9 @@ fi
 
 # Install Z.sh
 # 设定 z.sh
-
-source "$HOME/extras/z.sh"
+# source "$HOME/extras/z.sh"
+# 设定 z.lua
+[ -f ~/extras/z.lua ] && eval "$(lua $HOME/extras/z.lua --init bash enhanced echo fzf)"
 
 # Install FZF
 # 安装FZF模糊所搜
