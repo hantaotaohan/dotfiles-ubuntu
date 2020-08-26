@@ -45,6 +45,9 @@ export FZF_ALT_C_COMMAND="fd -t d . /"
 # export FZF_CTRL_T_OPTS="--preview 'bat --color=always {}' --preview-window right:wrap --bind '?:toggle-preview'"
 # export FZF_DEFAULT_OPTS="--preview 'bat --color=always {}' --preview-window right:wrap --bind '?:toggle-preview'"
 
+# Navi fzf预览设置
+export NAVI_FZF_OVERRIDES='--margin 1,1 --inline-info --border --preview-window=top:20:wrap'
+
 # ripgrep.
 # Rg模糊搜索设定
 export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
