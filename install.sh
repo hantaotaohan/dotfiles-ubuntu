@@ -784,9 +784,9 @@ main() {
             LoaclConfig
             installFonts
 	    Make_apps
-            sudo apt-get -y -qq --purge remove byobu
+            sudo apt-get -y -qq --purge remove byobu > /dev/null 2>&1
             sudo apt autoremove -y -qq > /dev/null 2>&1
-	    sudo apt-get clean
+	    sudo apt-get clean > /dev/null 2>&1
             echo -e "              ${green}[√] *** All Install Successful *** l${reset}\n"
             bash
             ;;
