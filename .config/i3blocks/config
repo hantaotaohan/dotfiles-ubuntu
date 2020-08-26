@@ -85,7 +85,7 @@ min_width=50
 full_text=Network I/O
 command=$HOME/.config/i3blocks/bandwidth
 interval=1
-min_width=100
+min_width=80
 
 [time]
 instance=swap
