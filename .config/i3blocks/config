@@ -37,6 +37,9 @@ separator=true
 #interval=persist
 #min_width=100
 
+[separator]
+full_text= 
+
 [memory]
 label=
 interval=30
@@ -54,25 +57,6 @@ interval=30
 min_width=50
 #instance=/mnt/data
 
-[bandwidth]
-full_text=Network I/O
-command=$HOME/.config/i3blocks/bandwidth
-interval=1
-min_width=100
-
-[email]
-full_text=Email
-label=
-command=$HOME/.config/i3blocks/email
-interval=persist
-min_width=50
-
-[fcitx]
-command=$HOME/.config/i3blocks/fcitx
-label=
-interval=1
-min_width=50
-
 [volume]
 label=VOL
 label=
@@ -82,6 +66,25 @@ interval=once
 signal=10
 interval=30
 min_width=50
+
+[fcitx]
+command=$HOME/.config/i3blocks/fcitx
+label=
+interval=1
+min_width=50
+
+[email]
+full_text=Email
+label=
+command=$HOME/.config/i3blocks/email
+interval=persist
+min_width=50
+
+[bandwidth]
+full_text=Network I/O
+command=$HOME/.config/i3blocks/bandwidth
+interval=1
+min_width=100
 
 [time]
 instance=swap
@@ -106,6 +109,7 @@ min_width=100
 #
 # If the instance is not specified, use the interface used for default route.
 # The address can be forced to IPv4 or IPv6 with -4 or -6 switches.
+
 #[iface]
 ##instance=wlan0
 #color=#00FF00
@@ -122,7 +126,6 @@ min_width=100
 #interval=5
 
 # CPU usage
-#
 # The script may be called with -w and -c switches to specify thresholds,
 # see the script for details.
 
@@ -130,7 +133,6 @@ min_width=100
 #interval=10
 
 # Battery indicator
-#
 # The battery instance defaults to 0.
 #[battery]
 #label=BAT
@@ -139,7 +141,6 @@ min_width=100
 #interval=30
 
 # Generic media player support
-#
 # This displays "ARTIST - SONG" if a music is playing.
 # Supported players are: spotify, vlc, audacious, xmms2, mplayer, and others.
 #[mediaplayer]
@@ -148,13 +149,11 @@ min_width=100
 #signal=10
 
 # OpenVPN support
-#
 # Support multiple VPN, with colors.
 #[openvpn]
 #interval=20
 
 # Temperature
-#
 # Support multiple chips, though lm-sensors.
 # The script may be called with -w and -c switches to specify thresholds,
 # see the script for details.
@@ -163,9 +162,7 @@ min_width=100
 #interval=10
 
 # Key indicators
-#
 # Add the following bindings to i3 config file:
-#
 # bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
 # bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
 #[keyindicator]
