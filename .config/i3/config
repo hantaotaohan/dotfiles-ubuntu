@@ -237,7 +237,7 @@ bar {
     font pango:Saber 10
     status_command          i3status -c ~/.config/i3status/config
     status_command 	    i3blocks
-    separator_symbol        "-"
+    separator_symbol        "|"
     workspace_buttons       yes
     strip_workspace_numbers yes
     position                top
