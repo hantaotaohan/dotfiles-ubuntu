@@ -697,7 +697,7 @@ echo -e "                                                                       
 #----------------------------------------------------------------------------------------#
 
 Make_apps() {
-	pushd $HOME/extras/i3lock_fancy > /dev/null
+	pushd $Dotfiles_repo/extras/i3lock_fancy > /dev/null
 	sudo make install
 	popd > /dev/null
 	echo -e "              ${green}[√] Make_apps Successful${reset}\n"
