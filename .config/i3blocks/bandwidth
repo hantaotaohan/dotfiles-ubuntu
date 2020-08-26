@@ -94,7 +94,8 @@ else
   echo -n "${rx_kib}K"
 fi
 
-echo -n " - "
+# echo -n " - "
+echo -n " ● "
 
 # outgoing
 echo -n "$OUTLABEL"
