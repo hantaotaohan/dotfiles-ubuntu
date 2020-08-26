@@ -43,19 +43,33 @@ full_text=
 [memory]
 label=
 interval=30
-min_width=50
+min_width=60
 
 [memory]
 label=
 instance=swap
 interval=30
-min_width=50
+min_width=60
 
 [disk]
 label=
 interval=30
-min_width=50
+min_width=60
 #instance=/mnt/data
+
+[fcitx]
+command=$HOME/.config/i3blocks/fcitx
+label=
+interval=1
+min_width=50
+
+[email]
+# label= 
+full_text=Email
+label=
+command=$HOME/.config/i3blocks/email
+interval=persist
+min_width=50
 
 [volume]
 label=VOL
@@ -65,19 +79,6 @@ instance=Master
 interval=once
 signal=10
 interval=30
-min_width=50
-
-[fcitx]
-command=$HOME/.config/i3blocks/fcitx
-label=
-interval=1
-min_width=50
-
-[email]
-full_text=Email
-label=
-command=$HOME/.config/i3blocks/email
-interval=persist
 min_width=50
 
 [bandwidth]
