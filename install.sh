@@ -633,6 +633,20 @@ echo -e "                                                                       
             sudo chmod 777 /usr/local/bin/diff-so-fancy
         fi
         echo -e "              ${green}[√] Diff-So-Fancy Successful${reset}\n"
+	
+#----------------------------------------------------------------------------------------#
+# trans
+#----------------------------------------------------------------------------------------#
+
+        if [ ! -f "/usr/local/bin/trans" ]; then
+            sudo cp -f $Dotfiles_repo/bin/trans /usr/local/bin
+            sudo chmod 777 /usr/local/bin/trans
+        else
+            sudo rm -rf /usr/local/bin/trans
+            sudo cp -f $Dotfiles_repo/bin/trans /usr/local/bin
+            sudo chmod 777 /usr/local/bin/trans
+        fi
+        echo -e "              ${green}[√] Trans Successful${reset}\n"
 
 #----------------------------------------------------------------------------------------#
 # Install Vim Plug
