@@ -44,3 +44,11 @@ alias python='python3'
 
 # Yank clip
 alias yank='yank-cli | xclip -sel c'
+
+# ----------------------------------------------------------
+# Fcode bind | showkey -a
+# ----------------------------------------------------------
+# Ctrl+l
+# bind -x '"\C-l":ls -l'
+# F5
+bind '"\e[15~":"cd $HOME && ll\n"'
