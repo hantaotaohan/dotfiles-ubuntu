@@ -48,5 +48,8 @@ keycode 34 = bracketleft braceleft Escape
 ! Caps + R_Shift > `
 keycode 62 = Shift_R Shift_R grave
 
-! Caps + R_Shift > `
+! Caps + Esc > `
 keycode 9 = Escape asciitilde grave
+
+! Caps + Enter > `
+keycode 36 = Return Return grave
