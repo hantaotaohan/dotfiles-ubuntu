@@ -184,7 +184,7 @@ bindsym $mod+r mode "Resize"
 
 
 # 锁屏设定
-bindsym Ctrl+$mod+l exec --no-startup-id i3lock-fancy
+bindsym Ctrl+$mod+l exec --no-startup-id i3lock-fancy -f DejaVu-Sans-Bold  -t "Type Password To Unlock"
 
 # 关机锁屏相关设定
 # set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
