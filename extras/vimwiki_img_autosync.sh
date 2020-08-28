@@ -11,7 +11,7 @@ monitor() {
 }
 
 
-processName="autosync.sh"
+processName="vimwiki_img_autosync.sh"
 processNum=`ps -aef |grep "${processName}" | wc -l`
 
 if [ "${processNum}" -gt "3" ]; then
