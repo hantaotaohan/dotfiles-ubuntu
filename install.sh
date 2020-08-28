@@ -671,8 +671,9 @@ echo -e "                                                                       
 #----------------------------------------------------------------------------------------#
 
         if [ -f "/usr/bin/rslsync" ]; then
-            sudo systemctl enable resilio-sync > /dev/null 2>&1
-	    sudo service resilio-sync start > /dev/null 2>&1
+            systemctl --user enable resilio-sync > /dev/null 2>&1
+	    systemctl --user start resilio-sync > /dev/null 2>&1
+	    
         fi
         echo -e "              ${green}[√] Rsync Successful${reset}\n"
 }
