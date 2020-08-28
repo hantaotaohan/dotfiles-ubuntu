@@ -2,7 +2,8 @@
 --map-syntax .ignore:.gitignore
 
 # theme
---theme=OneHalfDark
+#--theme=OneHalfDark
+--theme=TwoDark
 
 # style
 --style=full
