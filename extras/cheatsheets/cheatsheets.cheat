@@ -1,25 +1,58 @@
 ; -----------------------------------------------------------------------------------------------------------------
-; FZF
+; CheatSheet
 ; -----------------------------------------------------------------------------------------------------------------
 
-% fzf
-# <CTRL+T> Paste the selected files and directories onto the command-line
-echo "CTRL+T"
+% CheatSheet,cs,vimcs
+# Vim CheatSheet vim速查表
+bat --style header,grid --color always $HOME/Dotfiles/extras/cheatsheets/vim_cheatsheet.vim
 
-# <CTRL+R> Paste the selected command from history onto the command-line
-echo "CTRL+R"
+% CheatSheet,cs,bashcs
+# Bash CheatSheet bash速查表
+bat --style header,grid --color always $HOME/Dotfiles/extras/cheatsheets/bash_cheatsheet.vim
 
-# <ALT+C>  CD into the selected directory
-echo "ALT+C"
+% CheatSheet,cs,gitcs
+# Git CheatSheet git速查表
+bat --style header,grid --color always $HOME/Dotfiles/extras/cheatsheets/git_cheatsheet.vim
 
-# fzf preview <?> toggle on/off
-fzf --preview 'bat --color=always {}' --preview-window right:wrap --bind '?:toggle-preview'
+% CheatSheet,cs,tmuxcs
+# Tmux CheatSheet tmux速查表
+bat --style header,grid --color always $HOME/Dotfiles/extras/cheatsheets/tmux_cheatsheet.vim
 
-# ** <TAB> Fuzzy completion
-echo "vim ** [TAB]"
+; -----------------------------------------------------------------------------------------------------------------
+; zip
+; -----------------------------------------------------------------------------------------------------------------
 
-# Directories under current directory (single-selection)
-echo "cd ** [TAB]"
+% zip
+# 打包并压缩目录及其内容
+zip -r <compressed.zip> </path/to/dir>
 
-# Can select multiple processes with <TAB> or <Shift-TAB> keys
-echo "kill -9 [TAB]"
+% zip
+#打包和压缩多个目录和文件
+zip -r <compressed.zip> <dir1> <dir2> <file>
+
+% zip
+# 将文件添加到现有zip文件：
+zip <compressed.zip> <file>
+
+% zip
+# 从现有zip文件中删除文件：
+zip -d <compressed.zip> <"*.tmp">
+
+
+; -----------------------------------------------------------------------------------------------------------------
+; Unzip
+; -----------------------------------------------------------------------------------------------------------------
+
+% unzip
+# 解压缩到指定目录
+unzip <compressed_file> -d <extracted_file>
+
+% unzip
+# 查看压缩包内容
+unzip -l <file.zip>
+
+% unzip
+# 提取在windows中创建的zip文件，其中包含非ascii（中文）文件名的文件
+unzip -O gbk <file.zip>
+
+
