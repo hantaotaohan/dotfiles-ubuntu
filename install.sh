@@ -383,6 +383,7 @@ echo -e "                                                                       
 	rar\
 	unrar\
 	ffmpeg\
+	xautolock\
 	vlc\
 	p7zip-full\
 	lua5.2\
