@@ -544,7 +544,7 @@ echo -e "                                                                       
 #----------------------------------------------------------------------------------------#
 
 	if [ ! -f "/etc/rc.local" ]; then
-	    sudo cp $Dotfiles_repo/extras/share.sh /etc/rc.local
+	    sudo cp $Dotfiles_repo/extras/vm_share_fix.sh /etc/rc.local
 	    sudo chmod +x /etc/rc.local
 	    sudo ln -s /lib/systemd/system/rc-local.service /etc/systemd/system/
 	fi
