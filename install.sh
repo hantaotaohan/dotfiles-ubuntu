@@ -817,7 +817,7 @@ main() {
             LocalDpkg
             LoaclConfig
 	    Make_apps
-	    sudo apt-get -y -qq --purge remove byobu
+	    sudo apt-get -y -qq --purge remove byobu gnome-terminal > /dev/null 2>&1
             sudo apt autoremove -y -qq > /dev/null 2>&1
 	    sudo apt-get clean
 	    echo -e "              ${green}[√] *** All Install Successful *** l${reset}\n"
