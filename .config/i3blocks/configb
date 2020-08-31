@@ -33,16 +33,21 @@ separator=true
 [separator]
 full_text=
 
+[iface]
+command=$HOME/.config/i3blocks/iface
+label=
+color=#abb2bf
+interval=10
+min_width=200
+
 [cpu_usage]
 full_text=CPU
-label=
+label=
 interval=10
 interval=persist
-min_width=100
+min_width=200
 
 [sync]
 full_text=  Sync
 command=google-chrome-stable http://localhost:8888
-min_width=100
-
-
+min_width=200
