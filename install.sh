@@ -428,6 +428,8 @@ echo -e "                                                                       
 	ipython\
 	beautifulsoup4\
 	keyring\
+	notebook\
+	prompt-toolkit\
 	litecli\
 	xlsx2csv
         )
