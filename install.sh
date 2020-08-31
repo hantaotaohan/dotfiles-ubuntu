@@ -376,6 +376,7 @@ echo -e "                                                                       
         deepin-screenshot\
         openssh-server\
         openssh-client\
+	solaar\
 	ncdu\
 	axel\
 	pv\
