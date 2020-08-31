@@ -47,7 +47,6 @@ Dotfiles_symlinks=(\
         .curlrc\
         .exports\
 	.functions\
-	.fzf.bash\
 	.fonts.conf\
         .dircolors\
         .gitignore\
@@ -65,6 +64,7 @@ Dotfiles_copy=(\
         .config\
         .vim\
         .w3m\
+	.fzf.bash\
         extras/z.lua
         )
 
