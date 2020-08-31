@@ -86,12 +86,6 @@ signal=10
 interval=30
 min_width=50
 
-[bandwidth]
-full_text=Network I/O
-command=$HOME/.config/i3blocks/bandwidth
-interval=1
-min_width=100
-
 [time]
 instance=swap
 command=$HOME/.config/i3blocks/time
