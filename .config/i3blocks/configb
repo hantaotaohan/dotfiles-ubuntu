@@ -41,6 +41,7 @@ interval=10
 min_width=200
 
 [bandwidth]
+label= 
 full_text=Network I/O
 command=$HOME/.config/i3blocks/bandwidth
 interval=1
