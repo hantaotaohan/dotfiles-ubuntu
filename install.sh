@@ -425,7 +425,7 @@ echo -e "                                                                       
         selenium\
 	tabview\
 	you-get\
-	bpython\
+	ipython\
 	beautifulsoup4\
 	keyring\
 	litecli\
