@@ -30,19 +30,19 @@ markup=none
 align=center
 separator=true
 
-#[cpu_usage]
-#full_text=CPU
-#label= CPU:
-#interval=10
-#interval=persist
-#min_width=100
-
 [separator]
-full_text= 
+full_text=
 
+[cpu_usage]
+full_text=CPU
+label=
+interval=10
+interval=persist
+min_width=100
 
 [sync]
 full_text=  Sync
 command=google-chrome-stable http://localhost:8888
-min_width=50
+min_width=100
+
 
