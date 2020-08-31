@@ -57,10 +57,10 @@ interval=30
 min_width=60
 #instance=/mnt/data
 
-[sync]
-full_text=  Sync
-command=google-chrome-stable http://localhost:8888
-min_width=50
+#[sync]
+#full_text=  Sync
+#command=google-chrome-stable http://localhost:8888
+#min_width=50
 
 [fcitx]
 command=$HOME/.config/i3blocks/fcitx
