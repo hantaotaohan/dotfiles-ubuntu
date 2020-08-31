@@ -498,7 +498,7 @@ echo -e "                                                                       
         ripgrep.deb\
         fd.deb\
         bat.deb\
-	resilio-sync.deb\
+	# resilio-sync.deb\
         Alacritty.deb
         )
 	for app in "${dpkgApps[@]}"
@@ -673,15 +673,15 @@ echo -e "                                                                       
 # Install Rsync
 #----------------------------------------------------------------------------------------#
 
-        if [ -f "/usr/bin/rslsync" ]; then
-	    sudo usermod -aG $USER rslsync &&\
-	    sudo usermod -aG rslsync $USER &&\
-	    sudo chmod g+rw $HOME &&\
-	    systemctl --user enable resilio-sync &&\
-	    systemctl --user start resilio-sync &&\
-	    sudo service resilio-sync start    
-        fi
-        echo -e "              ${green}[√] Rsync Successful${reset}\n"
+#        if [ -f "/usr/bin/rslsync" ]; then
+#	    sudo usermod -aG $USER rslsync &&\
+#	    sudo usermod -aG rslsync $USER &&\
+#	    sudo chmod g+rw $HOME &&\
+#	    systemctl --user enable resilio-sync &&\
+#	    systemctl --user start resilio-sync &&\
+#	    sudo service resilio-sync start    
+#        fi
+#        echo -e "              ${green}[√] Rsync Successful${reset}\n"
 }
 
 #----------------------------------------------------------------------------------------#
