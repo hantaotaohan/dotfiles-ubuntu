@@ -235,8 +235,7 @@ client.background $base07
 bar {
     # font pango:Inziu Iosevka SC Bold 10
     font pango:Saber 10
-    status_command          i3status -c ~/.config/i3status/config
-    status_command 	    i3blocks
+    status_command 	        i3blocks -c ~/.config/i3blocks/config
     separator_symbol        "|"
     workspace_buttons       yes
     strip_workspace_numbers yes
@@ -256,6 +255,32 @@ bar {
     }
 }
 
+
+bar {
+    # font pango:Inziu Iosevka SC Bold 10
+    font pango:Saber 10
+    status_command 	        i3blocks -c ~/.config/i3blocks/configb
+    separator_symbol        "|"
+    workspace_buttons       no
+    strip_workspace_numbers no
+    position                bottom
+    tray_output             none
+    tray_padding            0
+    mode                    hide
+    hidden_state            hide
+    modifier                Mod4
+	colors {
+        background $base00
+        separator  $base04
+        statusline $base06
+        # State             Border  BG      Text
+        focused_workspace   $base00 $base00 $base0D
+        active_workspace    $base00 $base00 $base06
+        inactive_workspace  $base00 $base00 $base06
+        urgent_workspace    $base00 $base08 $base00
+        binding_mode        $base00 $base00 $base0E
+    }
+}
 
 
 # 启动项
