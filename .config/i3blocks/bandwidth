@@ -30,7 +30,7 @@ while [[ $# -gt 1 ]]; do
     shift
 done
 
- [[ -z "$INLABEL" ]] && INLABEL=" "
+# [[ -z "$INLABEL" ]] && INLABEL=" "
 # [[ -z "$OUTLABEL" ]] && OUTLABEL=" "
 
 [[ -z "$INLABEL" ]] && INLABEL=""
@@ -94,8 +94,8 @@ else
   echo -n "${rx_kib}K"
 fi
 
-# echo -n " - "
-echo -n " ● "
+echo -n " - "
+# echo -n " ● "
 
 # outgoing
 echo -n "$OUTLABEL"
