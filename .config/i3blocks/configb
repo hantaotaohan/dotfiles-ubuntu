@@ -1,0 +1,48 @@
+# i3blocks config file
+#
+# Please see man i3blocks for a complete reference!
+# The man page is also hosted at http://vivien.github.io/i3blocks
+#
+# List of valid properties:
+#
+# align
+# color
+# command
+# full_text
+# instance
+# interval
+# label
+# min_width
+# name
+# separator
+# separator_block_width
+# short_text
+# signal
+# urgent
+
+# Global properties
+#
+# The top properties below are applied to every block, but can be overridden.
+# Each block command defaults to the script name to avoid boilerplate.
+command=/usr/share/i3blocks/$BLOCK_NAME
+#separator_block_width=30
+markup=none
+align=center
+separator=true
+
+#[cpu_usage]
+#full_text=CPU
+#label= CPU:
+#interval=10
+#interval=persist
+#min_width=100
+
+[separator]
+full_text= 
+
+
+[sync]
+full_text=  Sync
+command=google-chrome-stable http://localhost:8888
+min_width=50
+
