@@ -636,7 +636,7 @@ echo -e "                                                                       
         echo -e "              ${green}[√] Diff-So-Fancy Successful${reset}\n"
 	
 #----------------------------------------------------------------------------------------#
-# trans
+# Install trans
 #----------------------------------------------------------------------------------------#
 
         if [ ! -f "/usr/local/bin/trans" ]; then
@@ -674,8 +674,8 @@ echo -e "                                                                       
 	    sudo usermod -aG $USER rslsync
 	    sudo usermod -aG rslsync $USER
 	    sudo chmod g+rw $HOME
-	    systemctl --user enable resilio-sync > /dev/null 2>&1
-	    systemctl --user start resilio-sync > /dev/null 2>&1
+	    systemctl --user enable resilio-sync
+	    systemctl --user start resilio-sync
 	    sudo service resilio-sync start    
         fi
         echo -e "              ${green}[√] Rsync Successful${reset}\n"
