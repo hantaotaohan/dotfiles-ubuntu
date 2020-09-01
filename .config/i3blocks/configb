@@ -35,26 +35,26 @@ full_text=
 
 [iface]
 command=$HOME/.config/i3blocks/iface
-label= 
+label=
 color=#abb2bf
 interval=10
 min_width=200
 
 [bandwidth]
-label= 
+label=
 full_text=Network I/O
 command=$HOME/.config/i3blocks/bandwidth
 interval=1
-min_width=100
+min_width=200
 
 [cpu_usage]
 full_text=CPU
-label= 
+label=
 interval=10
 interval=persist
 min_width=200
 
 [sync]
-full_text=  Sync
-command=google-chrome-stable http://localhost:8888
+full_text=  Github
 min_width=200
+command=i3-msg exec "google-chrome --force-dark-mode https://www.github.com" > /dev/null
