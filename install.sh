@@ -419,16 +419,16 @@ echo -e "-----------------------------------------------------------------------
 echo -e "                                                                               ";
 
 	pipApps=(\
-        powerline-shell\
-        pandas\
-        django\
+        #powerline-shell\
+        #pandas\
+        #django\
         pyvirtualdisplay\
-        selenium\
+        #selenium\
 	tabview\
 	you-get\
 	ipython\
-	beautifulsoup4\
-	keyring\
+	#beautifulsoup4\
+	#keyring\
 	notebook\
 	prompt-toolkit\
 	litecli\
@@ -498,7 +498,7 @@ echo -e "                                                                       
         ripgrep.deb\
         fd.deb\
         bat.deb\
-	# resilio-sync.deb\
+	#resilio-sync.deb\
         Alacritty.deb
         )
 	for app in "${dpkgApps[@]}"
