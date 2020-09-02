@@ -37,10 +37,10 @@ bindsym $mod+g exec --no-startup-id google-chrome-stable --force-dark-mode
 bindsym $mod+Shift+Return exec --no-startup-id alacritty -e ranger
 
 # 移动当前窗口到便签区
-bindsym $mod+shift+n move scratchpad
+bindsym $mod+shift+n move scratchpad ,resize set 1200 800 , move position center
 
 # 调出便签区的窗口
-bindsym $mod+Tab scratchpad show
+bindsym $mod+Tab scratchpad show ,resize set 1200 800 , move position center , sticky enable
 
 # 关闭窗口快捷键 
 # bindsym $mod+Shift+q kill
@@ -284,7 +284,7 @@ bar {
 }
 
 # bar toggle settings
-bindsym $mod+m bar mode toggle bar-1
+bindsym Mod4+m bar mode toggle bar-1
 
 # Scratchpad config
 #for_window [class="Zathura"] move to scratchpad, scratchpad
