@@ -40,7 +40,7 @@ bindsym $mod+Shift+Return exec --no-startup-id alacritty -e ranger
 bindsym $mod+shift+n move scratchpad
 
 # 调出便签区的窗口
-bindsym $mod+n scratchpad show
+bindsym $mod+Tab scratchpad show
 
 # 关闭窗口快捷键 
 # bindsym $mod+Shift+q kill
@@ -282,6 +282,12 @@ bar {
     }
 }
 
+# Scratchpad config
+#for_window [class="Zathura"] move to scratchpad, scratchpad show resize set 900 700
+#bindsym Mod4+1 [class="Zathura"] scratchpad show resize set 900 700
+
+#for_window [title ="^阿里"], move scratchpad
+#bindsym Mod4+2 [title="^阿里"] scratchpad show
 
 # 启动项
 # 启用输入法ibus
