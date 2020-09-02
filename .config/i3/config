@@ -287,11 +287,15 @@ bar {
 bindsym $mod+m bar mode toggle bar-1
 
 # Scratchpad config
-#for_window [class="Zathura"] move to scratchpad, scratchpad show resize set 900 700
-#bindsym Mod4+1 [class="Zathura"] scratchpad show resize set 900 700
+#for_window [class="Zathura"] move to scratchpad, scratchpad
+#bindsym $mod+z [class="Zathura"] scratchpad show resize set 900 700 , move position center
 
 #for_window [title ="^阿里"], move scratchpad
-#bindsym Mod4+2 [title="^阿里"] scratchpad show
+#bindsym Mod4+1 [title="^阿里"] scratchpad show  , move position center
+
+bindsym $mod+b [class="Alacritty" title="vim"] focus
+for_window [class="Alacritty" title="vim"] move to scratchpad
+bindsym Mod4+1 [title="vim"] scratchpad show resize set 1200 800 , move position center
 
 # 启动项
 # 启用输入法ibus
