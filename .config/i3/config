@@ -258,6 +258,7 @@ bar {
 
 bar {
     # font pango:Inziu Iosevka SC Bold 10
+    id			    bar-1
     font pango:Saber 10
     status_command 	        i3blocks -c ~/.config/i3blocks/configb
     separator_symbol        "|"
@@ -281,6 +282,9 @@ bar {
         binding_mode        $base00 $base00 $base0E
     }
 }
+
+# bar toggle settings
+bindsym $mod+m bar mode toggle bar-1
 
 # Scratchpad config
 #for_window [class="Zathura"] move to scratchpad, scratchpad show resize set 900 700
