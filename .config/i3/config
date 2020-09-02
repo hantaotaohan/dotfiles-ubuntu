@@ -293,8 +293,7 @@ bindsym $mod+m bar mode toggle bar-1
 #for_window [title ="^阿里"], move scratchpad
 #bindsym Mod4+1 [title="^阿里"] scratchpad show  , move position center
 
-bindsym $mod+b [class="Alacritty" title="vim"] focus
-for_window [class="Alacritty" title="vim"] move to scratchpad
+for_window [class="Alacritty" title="vim"] move to scratchpad , sticky enable
 bindsym Mod4+1 [title="vim"] scratchpad show resize set 1200 800 , move position center
 
 # 启动项
