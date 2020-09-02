@@ -31,7 +31,12 @@ align=center
 separator=true
 
 [separator]
-full_text=
+full_text= 
+
+[vim]
+full_text=  Vim
+min_width=200
+command=i3-msg exec "alacritty -d 80 20 -t vim -e vim $HOME/.scratchpad" > /dev/null
 
 [iface]
 command=$HOME/.config/i3blocks/iface
