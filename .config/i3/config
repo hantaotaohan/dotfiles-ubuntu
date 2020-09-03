@@ -74,18 +74,18 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # 下一次开启窗口为水平 
-bindsym $mod+Shift+b split h
+# bindsym $mod+Shift+b split h
 
 # 下一次开启窗口为垂直
-bindsym $mod+Shift+v split v
+# bindsym $mod+Shift+v split v
 
 # 开启全屏模式
 bindsym $mod+f fullscreen toggle
 
 # 切换窗口布局
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+# bindsym $mod+s layout stacking
+# bindsym $mod+w layout tabbed
+# bindsym $mod+e layout toggle split
 
 # 切换模式 窗口模式与浮动窗口模式
 bindsym $mod+Shift+space floating toggle
@@ -94,7 +94,7 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # focus the parent container
-bindsym $mod+a focus parent
+# bindsym $mod+a focus parent
 
 # focus the child container
 #bindsym $mod+d focus child
@@ -284,7 +284,7 @@ bar {
 }
 
 # bar toggle settings
-bindsym Mod4+m bar mode toggle bar-1
+bindsym $mod+m bar mode toggle bar-1
 
 # Scratchpad config
 #for_window [class="Zathura"] move to scratchpad, scratchpad
@@ -295,7 +295,7 @@ bindsym Mod4+m bar mode toggle bar-1
 
 for_window [class="Alacritty" title="vim"] move to scratchpad , sticky enable
 #bindsym Mod4+1 [title="vim"] scratchpad show resize set 1200 800 , move position center
-bindsym Mod4+1 exec "$HOME/.config/i3blocks/vim"
+bindsym $mod+v exec "$HOME/.config/i3blocks/vim"
 
 # 启动项
 # 启用输入法ibus
