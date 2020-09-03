@@ -217,20 +217,20 @@ au BufWinEnter *.* silent loadview                                          " �
 "=================================================================================================================================
 " 跨终端粘贴 
 "=================================================================================================================================
-nnoremap <silent> y "+y
-vnoremap <silent> y "+y
-inoremap <silent> y "+y
-nnoremap <silent> yy "+yy
-vnoremap <silent> yy "+yy
-inoremap <silent> yy "+yy
+nnoremap <silent> ;y "+y
+vnoremap <silent> ;y "+y
+inoremap <silent> ;y "+y
+nnoremap <silent> ;yy "+yy
+vnoremap <silent> ;yy "+yy
+inoremap <silent> ;yy "+yy
 
-nnoremap <silent> p "+p
-vnoremap <silent> p "+p
-inoremap <silent> p "+p
+nnoremap <silent> ;p "+p
+vnoremap <silent> ;p "+p
+inoremap <silent> ;p "+p
 
-nnoremap <silent> P "+P
-vnoremap <silent> P "+P
-inoremap <silent> P "+P
+nnoremap <silent> ;P "+P
+vnoremap <silent> ;P "+P
+inoremap <silent> ;P "+P
 
 "-----------------------------------------------------------------o--------------------------------------------------------------o
 "                                                                                                                                
