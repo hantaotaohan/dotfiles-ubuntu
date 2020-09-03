@@ -38,10 +38,15 @@ full_text=  Book
 min_width=200
 command=i3-msg exec "google-chrome --force-dark-mode --enable-features=OverlayScrollbar --enable-plugins --app=https://weread.qq.com/" > /dev/null
 
+#[vim]
+#full_text=  Vim
+#min_width=200
+#command=i3-msg exec "alacritty -d 80 20 -t vim -e vim $HOME/.scratchpad" > /dev/null
+
 [vim]
 full_text=  Vim
 min_width=200
-command=i3-msg exec "alacritty -d 80 20 -t vim -e vim $HOME/.scratchpad" > /dev/null
+command=i3-msg exec "$HOME/.config/i3blocks/vim" > /dev/null
 
 [iface]
 command=$HOME/.config/i3blocks/iface
