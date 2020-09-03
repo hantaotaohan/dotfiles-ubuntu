@@ -1,0 +1,6 @@
+#!/bin/bash
+
+if [ `wmctrl -l | grep -c "vim"` = 0 ]
+then
+    alacritty -d 100 30 -t vim -e vim $HOME/.scratchpad
+fi
