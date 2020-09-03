@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ `wmctrl -l | grep -c "vim"` = 0 ]
+if [ `wmctrl -l | grep -c "scratchpad"` = 0 ]
 then
-    alacritty -d 100 30 -t vim -e vim $HOME/.scratchpad
+    alacritty -d 100 30 -t scratchpad -e vim $HOME/.scratchpad
 fi
