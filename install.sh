@@ -343,6 +343,7 @@ echo -e "                                                                       
         curl\
         ctags\
         vim\
+	vim-gtk\
         tmux\
         silversearcher-ag\
         w3m\
