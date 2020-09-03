@@ -293,7 +293,7 @@ bindsym $mod+m bar mode toggle bar-1
 #for_window [title ="^阿里"], move scratchpad
 #bindsym Mod4+1 [title="^阿里"] scratchpad show  , move position center
 
-for_window [class="Alacritty" title="vim"] move to scratchpad , sticky enable
+for_window [class="Alacritty" title="scratchpad"] move to scratchpad , sticky enable
 #bindsym Mod4+1 [title="scratchpad"] scratchpad show resize set 1200 800 , move position center
 bindsym $mod+v exec "$HOME/.config/i3blocks/vim"
 
