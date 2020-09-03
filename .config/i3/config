@@ -294,7 +294,8 @@ bindsym Mod4+m bar mode toggle bar-1
 #bindsym Mod4+1 [title="^阿里"] scratchpad show  , move position center
 
 for_window [class="Alacritty" title="vim"] move to scratchpad , sticky enable
-bindsym Mod4+1 [title="vim"] scratchpad show resize set 1200 800 , move position center
+#bindsym Mod4+1 [title="vim"] scratchpad show resize set 1200 800 , move position center
+bindsym Mod4+1 exec "$HOME/.config/i3blocks/vim"
 
 # 启动项
 # 启用输入法ibus
