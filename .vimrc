@@ -210,8 +210,8 @@ vnoremap <Space> zf                                                      " 空�
 " au BufWinLeave .* mkview                                                 " 关闭时自动保存折叠视图
 " au BufWinEnter .* silent loadview                                        " 打开时自动读取折叠视图
 " augroup END
-au BufWinLeave * silent mkview                                            " 关闭时自动保存折叠视图
-au BufWinEnter * silent loadview                                          " 打开时自动读取折叠视图
+au BufWinLeave *.* silent mkview                                            " 关闭时自动保存折叠视图
+au BufWinEnter *.* silent loadview                                          " 打开时自动读取折叠视图
 
 "=================================================================================================================================
 " 跨终端粘贴 
