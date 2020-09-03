@@ -170,6 +170,10 @@ Copy the following content in
 ```bash
 sudo add-apt-repository ppa:jonathonf/vim
 sudo apt update
+
+# if network slow also
+sudo sed -i "s/http:\/\/ppa\.launchpad\.net/https:\/\/launchpad.proxy.ustclug.org/g" /etc/apt/sources.list.d/*.list
+
 sudo apt install vim
 sudo add-apt-repository --remove ppa:jonathonf/vim
 ```
