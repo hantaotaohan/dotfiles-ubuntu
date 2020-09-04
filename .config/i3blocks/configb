@@ -45,7 +45,9 @@ command=i3-msg exec "google-chrome --force-dark-mode --enable-features=OverlaySc
 
 [vim]
 full_text=  Vim
+label=  Vim
 min_width=200
+interval=1
 command=i3-msg exec "$HOME/.config/i3blocks/vim" > /dev/null
 
 [iface]
