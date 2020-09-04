@@ -44,9 +44,10 @@ command=i3-msg exec "google-chrome --force-dark-mode --enable-features=OverlaySc
 #command=i3-msg exec "alacritty -d 80 20 -t vim -e vim $HOME/.scratchpad" > /dev/null
 
 [vim]
-full_text=  Vim
 min_width=200
-command=i3-msg exec "$HOME/.config/i3blocks/vim" > /dev/null
+markup=pango
+command=$HOME/.config/i3blocks/vim
+interval=1
 
 [iface]
 command=$HOME/.config/i3blocks/iface
