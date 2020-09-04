@@ -347,6 +347,7 @@ echo -e "                                                                       
         tmux\
         silversearcher-ag\
         w3m\
+	wmctrl\
 	zip\
         unzip\
         ranger\
