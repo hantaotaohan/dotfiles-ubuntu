@@ -1,18 +1,16 @@
 #!/bin/bash
 
-#if [ `wmctrl -l | grep -c "scratchpad"` = 0 ]
-#then
-#    alacritty -d 100 30 -t scratchpad -e vim $HOME/.scratchpad
-#fi
-
-dbm=$(wmctrl -l | grep -c "scratchpad")
-
-if [ $dbm = 0 ]
+if [ `wmctrl -l | grep -c "scratchpad"` = 0 ]
 then
-    i3-msg exec "alacritty -d 100 30 -t scratchpad -e vim $HOME/.scratchpad" > /dev/null
-    OUT="[off]"
-else
-    OUT="[on]"
+    alacritty -d 100 30 -t scratchpad -e vim $HOME/.scratchpad
 fi
 
-echo -e "$OUT"
+#dbm=$(wmctrl -l | grep -c "scratchpad")
+#if [ $dbm = 0 ]
+#then
+#    i3-msg exec "alacritty -d 100 30 -t scratchpad -e vim $HOME/.scratchpad" > /dev/null
+#    OUT="[off]"
+#else
+#    OUT="[on]"
+#fi
+#echo -e "$OUT"
