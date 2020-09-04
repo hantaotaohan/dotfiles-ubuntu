@@ -381,6 +381,7 @@ echo -e "                                                                       
         openssh-client\
 	solaar\
 	ncdu\
+	nautilus\
 	axel\
 	pv\
 	aria2\
