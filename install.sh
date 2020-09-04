@@ -356,6 +356,7 @@ echo -e "                                                                       
         ruby-full\
         xvfb\
         xserver-xorg\
+	xdotool\
         dbus-x11\
         xinit\
         language-pack-zh-hans\
