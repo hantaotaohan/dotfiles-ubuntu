@@ -65,6 +65,7 @@ Dotfiles_copy=(\
         .vim\
         .w3m\
 	.fzf.bash\
+	.snclirc\
         extras/z.lua
         )
 
