@@ -431,6 +431,7 @@ echo -e "                                                                       
         #selenium\
 	tabview\
 	you-get\
+	sncli\
 	ipython\
 	#beautifulsoup4\
 	#keyring\
