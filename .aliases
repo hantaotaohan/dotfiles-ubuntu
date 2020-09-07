@@ -45,6 +45,10 @@ alias python='python3'
 # Yank clip
 alias yank='yank-cli | xclip -sel c'
 
+# Google-Chrome
+alias chrome="google-chrome --force-dark-mode --proxy-server=socks5://127.0.0.1:1080"
+
+
 # ----------------------------------------------------------
 # Fcode bind | showkey -a
 # ----------------------------------------------------------
