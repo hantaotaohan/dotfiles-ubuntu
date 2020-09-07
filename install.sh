@@ -607,9 +607,9 @@ echo -e "                                                                       
             env mkdir $HOME/chrome-extend
         fi
         unzip -q $Dotfiles_repo/chrome/darkreader.zip -d $HOME/chrome-extend
-        unzip -q $Dotfiles_repo/chrome/vimium.zip -d $HOME/chrome-extend
         unzip -q $Dotfiles_repo/chrome/proxyswitch.zip -d $HOME/chrome-extend
 	unzip -q $Dotfiles_repo/chrome/tampermonkey.zip -d $HOME/chrome-extend
+	unzip -q $Dotfiles_repo/chrome/Surfingkeys.zip -d $HOME/chrome-extend
         echo -e "              ${green}[√] Unzip ChromeExtend-Pack Successful${reset}\n"
 
 #----------------------------------------------------------------------------------------#
