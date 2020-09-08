@@ -328,3 +328,9 @@ python3 $HOME/.config/i3blocks/email --add $Email@xxx.com
 sudo apt install arc-theme
 sudo sed -i 's/gtk-theme-name = Ambiance/gtk-theme-name = Arc-Dark/g' /etc/gtk-3.0/settings.ini
 ```
+
+### If time Error
+
+```bash
+timedatectl set-local-rtc 1 --adjust-system-clock
+```
