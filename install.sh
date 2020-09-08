@@ -308,7 +308,8 @@ echo -e "              ${blue}Repace Sources and System Update ${reset}         
 echo -e "-------------------------------------------------------------------------------";
 echo -e "                                                                               ";
 
-sudo ln -sf "$Dotfiles_repo/sources.list" "/etc/apt/sources.list"
+#sudo ln -sf "$Dotfiles_repo/sources.list" "/etc/apt/sources.list"
+sudo cp "$Dotfiles_repo/sources.list" "/etc/apt/sources.list"
 echo -e "              ${green}[+]Repace sources.list Done !${reset}\n"
 sudo apt update -y -qq > /dev/null 2>&1
 echo -e "              ${green}[+]Update Successful !${reset}\n"
