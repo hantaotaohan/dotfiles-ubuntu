@@ -432,11 +432,11 @@ echo -e "                                                                       
 	tabview\
 	you-get\
 	sncli\
-	ipython\
+	#ipython\
 	#beautifulsoup4\
 	#keyring\
-	notebook\
-	prompt-toolkit\
+	#notebook\
+	#prompt-toolkit\
 	litecli\
 	xlsx2csv
         )
