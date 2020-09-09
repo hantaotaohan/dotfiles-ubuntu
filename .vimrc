@@ -81,6 +81,26 @@ if (empty($TMUX))
 endif
 
 "-----------------------------------------------------------------o--------------------------------------------------------------o
+"
+"                                                                GUI
+"
+"-----------------------------------------------------------------o--------------------------------------------------------------o
+
+if has("gui_running")
+set guioptions=M                                                         " 去除VIN得GUI版本中得菜单栏
+set guioptions=T                                                         " 去除VIN得GUI版本中得工具栏
+set guioptions-=m
+set guioptions-=T
+map <silent> <S-F2> :if &guioptions =~# 'T' <Bar>
+        \set guioptions-=T <Bar>
+        \set guioptions-=m <bar>
+    \else <Bar>
+        \set guioptions+=T <Bar>
+        \set guioptions+=m <Bar>
+    \endif<CR>
+endif
+
+"-----------------------------------------------------------------o--------------------------------------------------------------o
 "                                                                                                                                
 "                                                                ESC                                                          
 "                                                                                                                                
