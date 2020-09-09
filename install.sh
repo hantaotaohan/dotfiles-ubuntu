@@ -377,6 +377,7 @@ echo -e "                                                                       
         xinput\
         open-vm-tools\
         open-vm-tools-desktop\
+	language-pack-gnome-zh-hans\
         #calibre\
         deepin-screenshot\
         openssh-server\
