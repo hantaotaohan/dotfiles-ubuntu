@@ -434,6 +434,7 @@ echo -e "                                                                       
 	tabview\
 	you-get\
 	sncli\
+	i3ipc\
 	#ipython\
 	#beautifulsoup4\
 	#keyring\
