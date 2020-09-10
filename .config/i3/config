@@ -449,3 +449,6 @@ exec --no-startup-id dunst
 
 # 自动锁屏
 # exec --no-startup-id xautolock -time 3 -locker "i3lock-fancy"
+
+# 切换便签
+bindsym $mod+Ctrl+Tab exec --no-startup-id ~/.local/bin/i3-scratchpad-dmenu.py
