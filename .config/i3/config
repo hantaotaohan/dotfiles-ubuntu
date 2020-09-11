@@ -31,6 +31,10 @@ floating_modifier $mod
 # 开启工作区自动返回
 workspace_auto_back_and_forth yes
 
+# 默认浮动窗口大小
+floating_minimum_size 1200 x 800
+floating_maximum_size -1 x -1
+
 # 窗口标题居中
 # title_align center
 
@@ -118,11 +122,11 @@ bindsym $mod+Shift+space floating toggle
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
 
-# 下一次开启窗口为水平 
-# bindsym $mod+Shift+b split h
+# 下一次开启窗口为水平
+bindsym $mod+backslash split h
 
 # 下一次开启窗口为垂直
-# bindsym $mod+Shift+v split v
+bindsym $mod+minus split v
 
 # 切换窗口布局
 # bindsym $mod+s layout stacking
