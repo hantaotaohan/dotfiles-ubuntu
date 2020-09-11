@@ -15,10 +15,14 @@ keycode 45 = k K Up
 keycode 46 = l L Right
 
 ! Caps + c v a x > copy paste select all cut
-keycode 38 = a A 0xffe3
-keycode 54 = c C XF86Copy
-keycode 55 = v V XF86Paste
-keycode 53 = x X XF86Cut
+! keycode 38 = a A 0xffe3
+! keycode 54 = c C XF86Copy
+! keycode 55 = v V XF86Paste
+! keycode 53 = x X XF86Cut
+keycode 38 = a A Control_L
+keycode 54 = c C Control_L
+keycode 55 = v V Control_L
+keycode 53 = x X Control_L
 
 ! Caps + m n > Delete BackSpace
 keycode 58 = m M Delete
