@@ -55,7 +55,8 @@ bindsym $mod+d exec --no-startup-id rofi -show drun
 bindsym $mod+Shift+Return exec --no-startup-id alacritty -e ranger
 
 # 开启Google Chrome快捷键 
-bindsym $mod+g exec --no-startup-id raiseorlaunch -c google-chrome-stable --force-dark-mode
+#bindsym $mod+g exec --no-startup-id raiseorlaunch -c google-chrome-stable --force-dark-mode
+bindsym $mod+g exec --no-startup-id raiseorlaunch -c "Google-chrome" -e "google-chrome --force-dark-mode"
 
 # 移动当前窗口到便签区
 bindsym $mod+shift+n move scratchpad ,resize set 1200 800 , move position center
