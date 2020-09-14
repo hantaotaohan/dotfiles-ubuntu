@@ -441,6 +441,7 @@ echo -e "                                                                       
 	#notebook\
 	#prompt-toolkit\
 	litecli\
+	raiseorlaunch\
 	xlsx2csv
         )
 	for app in "${pipApps[@]}"
