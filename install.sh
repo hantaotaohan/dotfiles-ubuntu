@@ -55,6 +55,7 @@ Dotfiles_symlinks=(\
         .ripgreprc\
         .tmux.conf\
         .vimrc\
+	.muttrc\
         .wgetrc\
         .Xmodmap\
         .Xresources
@@ -347,6 +348,7 @@ echo -e "                                                                       
         vim\
 	vim-gtk\
         tmux\
+	neomutt\
         silversearcher-ag\
         w3m\
 	wmctrl\
