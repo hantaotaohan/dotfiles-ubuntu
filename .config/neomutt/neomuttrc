@@ -162,7 +162,7 @@ bind index                      <Up>    sidebar-prev
 bind index,pager                \Cp     sidebar-prev
 bind index                      <Down>  sidebar-next
 bind index,pager                \Cn     sidebar-next
-bind index,pager                <Space> sidebar-open
+bind index,pager                <Right> sidebar-open
 bind index,pager                R       group-reply
 
 # Threads
@@ -172,7 +172,7 @@ bind index,pager                uT      undelete-thread
 bind index,pager                ut      undelete-subthread
 bind index,pager                gt      next-thread
 bind index,pager                gT      previous-thread
-bind index                      za      collapse-thread
+bind index                      <Space> collapse-thread
 bind index                      zA      collapse-all # Missing :folddisable/foldenabl
 # '?' is used for search-opposite
 bind pager \Ch help
@@ -252,3 +252,4 @@ macro index <F5> '<sync-mailbox><enter-command>source $HOME/.config/neomutt/hotm
 folder-hook "bteb" 'source ~/.config/neomutt/bteb'
 macro index <F6> '<sync-mailbox><enter-command>source $HOME/.config/neomutt/bteb<enter><change-folder>!<enter>'
 
+macro index,pager A "<save-message>=已归档<enter>" "Archive Message"
