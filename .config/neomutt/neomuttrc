@@ -1,33 +1,38 @@
+source $HOME/.config/neomutt/bteb
+source $HOME/.config/neomutt/neomutt.alias
+
 # About Me
 set from                =       "hantao@bteb.cn"
 set realname            =       "Han Tao"
 
-# My credentials
-set smtp_url            =       "smtp://hantao\@bteb.cn@smtp.bteb.cn:25"
-set smtp_pass           =       ""
-set from                =       "hantao@bteb.cn"
-set realname            =       "Han Tao"
-set smtp_authenticators =       "gssapi:login"
+## My credentials
+#set smtp_url            =       "smtp://hantao\@bteb.cn@smtp.bteb.cn:25"
+#set smtp_pass           =       "2008"
+#set from                =       "hantao@bteb.cn"
+#set realname            =       "Han Tao"
+#set smtp_authenticators =       "gssapi:login"
 
-# My Account Pop3
-#set pop_user           =       "hantao@bteb.cn"
-#set pop_host           =       "pop3.mxhichina.com:995"
-#set pop_pass           =       ""
+## My Account Pop3
+##set pop_user           =       "hantao@bteb.cn"
+##set pop_host           =       "pop3.mxhichina.com/INBOX"
+##set pop_pass           =       "2008"
 
-# My Account Imap
-set imap_user           =       "hantao@bteb.cn"
-set imap_pass           =       ""
-set imap_authenticators =       "login"
-set folder              =       "imaps://imap.mxhichina.com:993/"
-set spoolfile           =       "imaps://imap.mxhichina.com:993/INBOX"
+## My Account Imap
+#set imap_user           =       "hantao@bteb.cn"
+#set imap_pass           =       "2008"
+#set imap_authenticators =       "login"
+#set folder              =       "imaps://imap.mxhichina.com:993/"
+#set spoolfile           =       "imaps://imap.mxhichina.com:993/INBOX"
 set imap_check_subscribed
 
-# Where to put the stuff
+
+## Where to put the stuff
 set header_cache        =       "~/.mutt/cache/headers"
 set message_cachedir    =       "~/.mutt/cache/bodies"
 set certificate_file    =       "~/.mutt/certificates"
 
 # Etc
+set alias_file          =       "$HOME/.config/neomutt/neomutt.alias"
 set mail_check          =       1 
 set check_new           =       yes                         # 查是否有新邮件
 set imap_keepalive      =       900
@@ -89,9 +94,16 @@ set send_charset        =       "utf-8:iso-8859-15:us-ascii"
 
 # Sidebar
 set sidebar_visible     =       no
-set sidebar_width       =       25
-set sidebar_divider_char=       '│'
-set sidebar_format      =       '%B%?F? [%F]?%* %?N?%N/?%S'
+set sidebar_width       =       55
+set sidebar_divider_char=       '  │'
+set sidebar_format      =     '%B%?F? [%F]?%* %?N?%N/? %?S?%S?'
+
+#set sidebar_component_depth=3
+#set sidebar_delim_chars='.'
+set sidebar_short_path 
+set sidebar_folder_indent
+set sidebar_format  ="%B%?F? [%F]?%* %?N?%N/?%S"
+
 
 # Load atomic theme
 # source ~/Desktop/colors
@@ -227,9 +239,16 @@ color body          color9    default         "([a-z][a-z0-9+-]*://(((([a-z0-9_.
 
 
 # Sidebar -------------------------------------------------------
-color sidebar_indicator     color0      color1
+color sidebar_indicator     color0      color2
 color sidebar_divider       color0      color0
 color sidebar_ordinary      color4      color0
 color sidebar_new           color4      color0
 color sidebar_flagged       color4      color0
 color sidebar_highlight     color0      color1
+
+
+folder-hook "hotmail" 'source ~/.config/neomutt/hotmail'
+macro index <F5> '<sync-mailbox><enter-command>source $HOME/.config/neomutt/hotmail<enter><change-folder>!<enter>'
+folder-hook "bteb" 'source ~/.config/neomutt/bteb'
+macro index <F6> '<sync-mailbox><enter-command>source $HOME/.config/neomutt/bteb<enter><change-folder>!<enter>'
+
