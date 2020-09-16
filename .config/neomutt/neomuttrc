@@ -38,6 +38,7 @@ set check_new           =       yes                         # 查是否有新邮
 set imap_keepalive      =       900
 set editor              =       "vim"
 set nomark_old                                              # 未读新邮件别标注为旧邮件
+set markers             =       yes
 set move                =       no                          # 移动已读邮件
 set quit
 auto_view                       text/html                                         # 自动显示HTML
@@ -117,7 +118,7 @@ set sidebar_format  ="%B%?F? [%F]?%* %?N?%N/?%S"
 ###################################
 
 # Reload settings
-macro index \Cr '<enter-command>source $HOME/.muttrc<enter>'
+macro index \Cr '<enter-command>source $HOME/.config/neomutt/neomuttrc<enter>'
 
 # Get emails
 bind index \Cl imap-fetch-mail
@@ -253,3 +254,4 @@ folder-hook "bteb" 'source ~/.config/neomutt/bteb'
 macro index <F6> '<sync-mailbox><enter-command>source $HOME/.config/neomutt/bteb<enter><change-folder>!<enter>'
 
 macro index,pager A "<save-message>=已归档<enter>" "Archive Message"
+macro index,pager I "<save-message>=INBOX<enter>" "Archive Message"
