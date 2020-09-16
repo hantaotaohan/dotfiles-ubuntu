@@ -1,108 +1,98 @@
 # About Me
-set from      = "hantao@bteb.cn"
-set realname  = "Han Tao"
+set from                =       "hantao@bteb.cn"
+set realname            =       "Han Tao"
 
 # My credentials
-set smtp_url  = "smtp://hantao\@bteb.cn@smtp.bteb.cn:25"
-set smtp_pass = ""
-set smtp_authenticators = "gssapi:login"
-set from      = "hantao@bteb.cn"
-set realname  = "Han Tao"
+set smtp_url            =       "smtp://hantao\@bteb.cn@smtp.bteb.cn:25"
+set smtp_pass           =       "2008"
+set from                =       "hantao@bteb.cn"
+set realname            =       "Han Tao"
+set smtp_authenticators =       "gssapi:login"
 
-# My Account
-set imap_user = "hantao@bteb.cn"
-set imap_pass = ""
-set imap_authenticators="login"
-set folder    = "imaps://imap.mxhichina.com:993/"
-set spoolfile = "imaps://imap.mxhichina.com:993/INBOX"
+# My Account Pop3
+#set pop_user           =       "hantao@bteb.cn"
+#set pop_host           =       "pop3.mxhichina.com:995"
+#set pop_pass           =       "2008"
+
+# My Account Imap
+set imap_user           =       "hantao@bteb.cn"
+set imap_pass           =       "2008"
+set imap_authenticators =       "login"
+set folder              =       "imaps://imap.mxhichina.com:993/"
+set spoolfile           =       "imaps://imap.mxhichina.com:993/INBOX"
 set imap_check_subscribed
 
 # Where to put the stuff
-set header_cache = "~/.mutt/cache/headers"
-set message_cachedir = "~/.mutt/cache/bodies"
-set certificate_file = "~/.mutt/certificates"
+set header_cache        =       "~/.mutt/cache/headers"
+set message_cachedir    =       "~/.mutt/cache/bodies"
+set certificate_file    =       "~/.mutt/certificates"
 
 # Etc
-set mail_check = 1 
-set check_new=yes                         # 查是否有新邮件
-set imap_keepalive = 900
-set sort = threads
-set editor = "vim"
-set nomark_old                            # 未读新邮件别标注为旧邮件
-set move=no    #移动已读邮件
-auto_view text/html   #自动显示HTML
-alternative_order text/enriched text/plain text/html
+set mail_check          =       1 
+set check_new           =       yes                         # 查是否有新邮件
+set imap_keepalive      =       900
+set editor              =       "vim"
+set nomark_old                                              # 未读新邮件别标注为旧邮件
+set move                =       no                          # 移动已读邮件
+set quit
+auto_view                       text/html                                         # 自动显示HTML
+alternative_order               text/enriched text/plain text/html
+set fast_reply          =       yes
+set sleep_time          =       0
+set edit_headers        =       yes
+#unset help
+unset wait_key
 
 # UI
-#set sort          = threads
-#set sort_aux      = last-date-received
-set index_format  = "%[%b %d %H:%M]   %-15.15L   %?M?<%03M> &      ?%s"
-set status_format = "%f (%s) (%?V?limited to '%V'&no limit pattern?) (%P)"
-# 发件箱显示to subject date 邮件
-folder-hook . "ignore *; unignore from subject X-mailer date"
-folder-hook sent.* "ignore *; unignore to subject date"
-
-ignore *
-unignore From: To: Reply-To: Newsgroups: Followup-to: Subject: Date: CC: BCC: X-Lable: Organization:
-hdr_order Subject: From: Date: To: CC: BCC: Reply-To: Newsgroups: Followup-to: X-Lable: Organization:
-alternative_order text/plain
-
-## Options city
-# Quit without confirming
-set quit
-# Don't ask to confirm the recipient and the subject when reply to an e-mail
-set fast_reply=yes
-set include=yes
-# always show X number of mails in the index
-set pager_index_lines = 10
-# Make mutt faster
-set sleep_time = 0
-# Default is: Mutt with %?m?%m messages&no messages?%?n? [%n NEW]?
-set ts_status_format = 'mutt %m messages%?n?, %n new?'
-# A customizable header
-set edit_headers = yes
-set folder_format = '%4C %t %f'
-# Pager options
+set sort                =       threads
+set sort_aux            =       reverse-last-date-received
+set index_format        =       "%[%b %d %H:%M]   %-15.15L   %?M?<%03M> &      ?%s"
+set include             =       yes
+set pager_index_lines   =       10
+set ts_status_format    =       'mutt %m messages%?n?, %n new?'
+set folder_format       =       '%4C %t %f'
 set smart_wrap
-# Pad blank lines in pager with ~ (ala vi)
 set tilde
 set menu_scroll
-set quote_regexp = "^( {0,4}[>|:#%]| {0,4}[a-z0-9]+[>|]+)+"
-set sort = 'reverse-date' # sorting the mails in threads in index (mails-list-view)
-set sort_aux = reverse-last-date-received # and the thread themselves reverse-date
+set quote_regexp        =       "^( {0,4}[>|:#%]| {0,4}[a-z0-9]+[>|]+)+"
 set uncollapse_jump # don't collapse on an unread message
 set sort_re # thread based on regex
-set reply_regexp = "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
+set reply_regexp        =       "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
+set date_format         =       "%m/%d"
+set pager_format        =       '=%b %C/%m: %-20.20F   %s%* (%P)'
+set forward_format      =       "Fwd: %s"
+set                             collapse_all
+# status
+set status_format="$from/%f [Msgs:%?M?%M/?%m%?n? New:%n?%?o? Old:%o?%?F? Flag:%F?%?t? Tag:%t?%?d? Del:%d?]%>-(%P)---"
+# 发件箱显示to subject date 邮件
+ignore *
+unignore from date subject to cc
+unignore organization organisation x-mailer: x-newsreader: x-mailing-list:
+unignore posted-to:
+alternative_order text/plain
 
 # Use vim editor and don't break lines
 set editor="vim +':set textwidth=0' +':set wrapmargin=0' +':set wrap'"
 
 # Certificates
-set certificate_file = "~/.mutt/certificates"
-set ssl_starttls     = yes
-set ssl_force_tls    = yes
+set certificate_file    =       "~/.mutt/certificates"
+set ssl_starttls        =       yes
+set ssl_force_tls       =       yes
 
 # Disable GPGME
-set crypt_use_gpgme = no
+set crypt_use_gpgme     =       no
 
-# Default is: "-%Z- %C/%m: %-20.20n   %s%*  -- (%P)"
-set pager_format = '=%b %C/%m: %-20.20F   %s%* (%P)'
-set forward_format = "Fwd: %s"
+# Charset
+set charset             =       "utf-8"
+set assumed_charset     =       "utf-8"
+set send_charset        =       "utf-8:iso-8859-15:us-ascii"
 
-# charset
-set charset = "utf-8"
-set assumed_charset = "utf-8"
-set send_charset = "utf-8:iso-8859-15:us-ascii"
+# Sidebar
+set sidebar_visible     =       no
+set sidebar_width       =       25
+set sidebar_divider_char=       '│'
+set sidebar_format      =       '%B%?F? [%F]?%* %?N?%N/?%S'
 
-# sidebar
-
-
-set sidebar_visible      = no
-set sidebar_width        = 23
-set sidebar_divider_char = '│'
-set sidebar_format       = '%B%?F? [%F]?%* %?N?%N/?%S'
-
-set status_format="$from/%f [Msgs:%?M?%M/?%m%?n? New:%n?%?o? Old:%o?%?F? Flag:%F?%?t? Tag:%t?%?d? Del:%d?]%>-(%P)---"
 # Load atomic theme
 # source ~/Desktop/colors
 
@@ -177,134 +167,6 @@ bind pager \Ch help
 bind index \Ch help
 
 
-## general ------------ foreground ---- background -----------------------------
-#color error        color231    color212
-#color indicator        color231    color241
-#color markers        color210    default
-#color message        default        default
-#color normal        default        default
-#color prompt        default            default
-#color search        color84        default
-#color status         color141    color236
-#color tilde        color231    default
-#color tree        color141    default
-
-## message index ------ foreground ---- background -----------------------------
-#color index        color210    default     ~D # deleted messages
-#color index        color84        default     ~F # flagged messages
-#color index        color117    default     ~N # new messages
-#color index        color212    default     ~Q # messages which have been replied to
-#color index        color215    default     ~T # tagged messages
-#color index        color141    default        ~v # messages part of a collapsed thread
-
-## message headers ---- foreground ---- background -----------------------------
-#color hdrdefault    color117    default
-#color header        color231    default        ^Subject:.*
-## message body ------- foreground ---- background -----------------------------
-#color attachment    color228    default
-#color body        color231    default        [\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+               # email addresses
-#color body        color228    default        (https?|ftp)://[\-\.,/%~_:?&=\#a-zA-Z0-9]+        # URLs
-#color body        color231    default        (^|[[:space:]])\\*[^[:space:]]+\\*([[:space:]]|$) # *bold* text
-#color body        color231    default        (^|[[:space:]])_[^[:space:]]+_([[:space:]]|$)     # _underlined_ text
-#color body        color231    default        (^|[[:space:]])/[^[:space:]]+/([[:space:]]|$)     # /italic/ text
-#color quoted        color61        default
-#color quoted1        color117    default
-#color quoted2        color84        default
-#color quoted3        color215    default
-#color quoted4        color212    default
-#color signature color212 default
-#
-#
-#
-#
-#
-#
-#
-# vim: filetype=muttrc
-
-
-
-
-## -----------------
-## General interface
-## -----------------
-## Default text
-#color normal color249 color0
-## Status bar
-#color status color241 color0
-## color status color234 color238
-## Selection bar
-#color indicator color249 color238
-## Error messages
-#color error color1 color0
-## Connection messages, etc
-#color message color3 color0
-## Prefixes appearing in prompt. Eg 'To:' when composing a message
-#color prompt color4 color0
-
-## -------
-## Sidebar
-## -------
-## Selection bar
-#color sidebar_indicator color0 color39
-## Divider
-#color sidebar_divider color0 color0
-## Normal folders
-#color sidebar_ordinary color39 color0
-## Folders containing new mail
-#color sidebar_new color39 color0
-## Folders containing flagged mail
-#color sidebar_flagged color39 color0
-
-## ------------
-## Message list
-## ------------
-## All messages
-#color index color247 color0 "~A"
-## Unread messages
-#color index color4 color0 "~U"
-## "Tagged" (selected) messages.
-#color index color3 color0 "~T"
-## Flagged messages
-#color index color2 color0 "~F"
-## arrow in threads
-#color tree color5 color0
-
-## --------------
-## Message header
-## --------------
-#color hdrdefault color4 color0
-#color header color4 color0 "^(From)"
-#color header color4 color0 "^(To)"
-#color header color4 color0 "^(Date)"
-#color header color1 color0 "^(Subject)"
-
-## ------------
-## Message text
-## ------------
-## Previous messages (quoted)
-#color quoted color8 color0
-## Links
-#color body color3 color0 "(https?|ftp|news|telnet|finger)://[^ \"\t\r\n]*"
-#color body color3 color0 "[-a-z_0-9.%$]+@[-a-z_0-9.]+\\.[-a-z][-a-z]+"
-#color body color3 color0 "mailto:[-a-z_0-9.]+@[-a-z_0-9.]+"
-## Signature
-##color signature color8 color0
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 # vim: filetype=muttrc
@@ -325,15 +187,15 @@ bind index \Ch help
 
 # UI ------------------------------------------------------------
 color status        color5    brightblack
-color indicator     color0    color1
+color indicator     color0    color5
 color tree          color1    default
 
 # general -------------------------------------------------------
 color normal        default    default
 color message       default    default
-color markers       color2     default
+color markers       color1     default
 color error         color1     default
-color tilde         color7     default
+color tilde         color0     default
 color attachment    color3     default
 color search        color196   default
 
@@ -365,8 +227,9 @@ color body          color9    default         "([a-z][a-z0-9+-]*://(((([a-z0-9_.
 
 
 # Sidebar -------------------------------------------------------
-color sidebar_indicator color0 color1
-color sidebar_divider color0 color0
-color sidebar_ordinary color4 color0
-color sidebar_new color4 color0
-color sidebar_flagged color4 color0
+color sidebar_indicator     color0      color1
+color sidebar_divider       color0      color0
+color sidebar_ordinary      color4      color0
+color sidebar_new           color4      color0
+color sidebar_flagged       color4      color0
+color sidebar_highlight     color0      color1
