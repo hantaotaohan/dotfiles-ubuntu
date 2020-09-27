@@ -3,7 +3,7 @@
 # Script to notify user for new mails.
 
 #run OfflineIMAP once, with quiet interface
-offlineimap -o -q -u quiet
+#offlineimap -o -q -u quiet
 
 #count new mail for every maildir
 # maildirnew="$HOME/Maildir/*/*/new/"
