@@ -18,5 +18,5 @@ new1="$(find $maildirnew1 -type f | wc -l)"
 
 if [ $new -gt 0 ] || [ $new1 -gt 0 ]
 then
-     dunstify -r 6666 -a "neomutt" normal  "New mail! BTEB: $new   HOTMAIL: $new1"
+     dunstify -r 6666 -a "neomutt" normal  "New mail! \n\nBTEB: $new   HOTMAIL: $new1"
 fi
