@@ -55,7 +55,7 @@ Dotfiles_symlinks=(\
         .ripgreprc\
         .tmux.conf\
         .vimrc\
-	.muttrc\
+	.offlineimaprc\
         .wgetrc\
         .Xmodmap\
         .Xresources
@@ -396,6 +396,7 @@ echo -e "                                                                       
 	xautolock\
 	vlc\
 	p7zip-full\
+	gnome-keyring\
 	lua5.2\
 	yank
         )
@@ -439,7 +440,7 @@ echo -e "                                                                       
 	i3ipc\
 	#ipython\
 	#beautifulsoup4\
-	#keyring\
+	keyring\
 	#notebook\
 	#prompt-toolkit\
 	litecli\
