@@ -334,3 +334,6 @@ sudo sed -i 's/gtk-theme-name = Ambiance/gtk-theme-name = Arc-Dark/g' /etc/gtk-3
 ```bash
 timedatectl set-local-rtc 1 --adjust-system-clock
 ```
+
+### keyring config (neomutt password settings)
+keyring.set_password("system", "username", "password")
