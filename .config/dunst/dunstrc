@@ -321,9 +321,10 @@
 #    summary = *says*
 #    urgency = critical
 #
-#[twitter]
-#    appname = Pidgin
-#    summary = *twitter.com*
-#    urgency = normal
-#
+[neomutt]
+    appname = neomutt
+    format = "<span ><b>%s</b> - <i>%a</i></span>\n<span>%
+    background = "#d64e4e"
+    foreground = "#f0e0e0"
+    
 # vim: ft=cfg
