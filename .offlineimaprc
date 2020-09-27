@@ -1,7 +1,7 @@
 [general]
-accounts = bteb
+accounts = bteb,live
 maxsyncaccounts = 3
-pythonfile = /home/taotao/offlineimap.py
+pythonfile = $HOME/.config/neomutt/offlineimap.py
 
 # --------------------------------------------------------------
 
