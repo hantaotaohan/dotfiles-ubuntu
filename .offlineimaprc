@@ -1,29 +1,67 @@
 [general]
-accounts = main
+accounts = bteb
 maxsyncaccounts = 3
+pythonfile = /home/taotao/offlineimap.py
 
-[Account main]
-localrepository = main-local
-remoterepository = main-remote
+# --------------------------------------------------------------
+
+[Account bteb]
+localrepository = bteb-local
+remoterepository = bteb-remote
 autorefresh = 0.2
 quick = 10
-utf8foldernames = True
-#postsynchook = ~/.config/offlineimap/notify.sh
+utf8foldernames = yes
+# postsynchook = ~/.config/offlineimap/notify.sh
 
-[Repository main-local]
+[Repository bteb-local]
 type = Maildir
 localfolders = ~/mail/bteb
+sync_deletes = no
 
-[Repository main-remote]
+[Repository bteb-remote]
 type = IMAP
 remoteport = 143
 remotehost = imap.mxhichina.com
 remoteuser = hantao@bteb.cn
-remotepass = 
+remotepasseval = keyring.get_password("bteb", "hantao@bteb.cn")
+#remotepass = 
 realdelete = no
-#folderfilter = lambda foldername: foldername in ['INBOX','草稿箱','已发送','>
 maxconnections = 10
-# SSL
 ssl = no
 starttls = yes
 #ssl_version = tls1_3
+keepalive = 60
+holdconnectionopen = yes
+readonly = True
+
+# --------------------------------------------------------------
+
+[Account live]
+localrepository = live-local
+remoterepository = live-remote
+autorefresh = 0.2
+quick = 10
+utf8foldernames = yes
+# postsynchook = ~/.config/offlineimap/notify.sh
+
+[Repository live-local]
+type = Maildir
+localfolders = ~/mail/live
+sync_deletes = no
+
+[Repository live-remote]
+type = IMAP
+#remoteport = 993
+remotehost = outlook.office365.com
+remoteuser = hantaotaohan@hotmail.com
+remotepasseval = keyring.get_password("hotmail", "hantaotaohan@hotmail.com")
+#remotepass = 
+realdelete = no
+maxconnections = 10
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+ssl = yes
+starttls = yes
+#ssl_version = tls1_3
+keepalive = 60
+holdconnectionopen = yes
+readonly = True
