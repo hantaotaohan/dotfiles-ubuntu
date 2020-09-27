@@ -323,8 +323,7 @@
 #
 [neomutt]
     appname = neomutt
-    format = "<span ><b>%s</b> - <i>%a</i></span>\n<span>%
     background = "#d64e4e"
     foreground = "#f0e0e0"
-    
+    timeout = 600
 # vim: ft=cfg
