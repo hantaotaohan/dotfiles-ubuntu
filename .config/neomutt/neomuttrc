@@ -7,7 +7,7 @@ set realname            =       "Han Tao"
 
 ## My credentials
 #set smtp_url            =       "smtp://hantao\@bteb.cn@smtp.bteb.cn:25"
-#set smtp_pass           =       "2008"
+#set smtp_pass           =       ""
 #set from                =       "hantao@bteb.cn"
 #set realname            =       "Han Tao"
 #set smtp_authenticators =       "gssapi:login"
@@ -15,11 +15,11 @@ set realname            =       "Han Tao"
 ## My Account Pop3
 ##set pop_user           =       "hantao@bteb.cn"
 ##set pop_host           =       "pop3.mxhichina.com/INBOX"
-##set pop_pass           =       "2008"
+##set pop_pass           =       ""
 
 ## My Account Imap
 #set imap_user           =       "hantao@bteb.cn"
-#set imap_pass           =       "2008"
+#set imap_pass           =       ""
 #set imap_authenticators =       "login"
 #set folder              =       "imaps://imap.mxhichina.com:993/"
 #set spoolfile           =       "imaps://imap.mxhichina.com:993/INBOX"
