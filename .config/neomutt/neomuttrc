@@ -4,7 +4,7 @@ set realname            =       "Han Tao"
 
 ## My credentials
 set smtp_url            =       "smtp://hantao\@bteb.cn@smtp.bteb.cn:25"
-set smtp_pass           =       "2008"
+set smtp_pass           =       ""
 set from                =       "hantao@bteb.cn"
 set realname            =       "Han Tao"
 set smtp_authenticators =       "gssapi:login"
@@ -47,6 +47,7 @@ set imap_keepalive      =       900
 set nomark_old                                              # 未读新邮件别标注为旧邮件
 set markers             =       yes
 set move                =       no                          # 移动已读邮件
+set keep_flagged        
 set quit
 auto_view                       text/html                                         # 自动显示HTML
 alternative_order               text/enriched text/plain text/html
@@ -103,7 +104,7 @@ set send_charset        =       "utf-8:iso-8859-15:us-ascii"
 set sidebar_visible     =       no
 set sidebar_width       =       55
 set sidebar_divider_char=       '  │'
-set sidebar_format      =     '%B%?F? [%F]?%* %?N?%N/? %?S?%S?'
+#set sidebar_format      =     '%B%?F? [%F]?%* %?N?%N/? %?S?%S?'
 
 #set sidebar_component_depth=3
 #set sidebar_delim_chars='.'
