@@ -384,6 +384,7 @@ echo -e "                                                                       
         deepin-screenshot\
         openssh-server\
         openssh-client\
+	offlineimap\
 	solaar\
 	ncdu\
 	nautilus\
