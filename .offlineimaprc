@@ -1,7 +1,7 @@
 [general]
 accounts = bteb,live
 maxsyncaccounts = 3
-pythonfile = $HOME/.config/neomutt/offlineimap.py
+pythonfile = $HOME/offlineimap.py
 
 # --------------------------------------------------------------
 
@@ -11,12 +11,12 @@ remoterepository = bteb-remote
 autorefresh = 0.2
 quick = 10
 utf8foldernames = yes
-postsynchook = $HOME/.config/neomutt/notify.sh
+postsynchook = ~/notify.sh
 
 [Repository bteb-local]
 type = Maildir
 localfolders = ~/mail/bteb
-sync_deletes = no
+sync_deletes = yes
 
 [Repository bteb-remote]
 type = IMAP
@@ -25,14 +25,14 @@ remotehost = imap.mxhichina.com
 remoteuser = hantao@bteb.cn
 remotepasseval = keyring.get_password("bteb", "hantao@bteb.cn")
 #remotepass = 
-realdelete = no
 maxconnections = 10
 ssl = no
 starttls = yes
 #ssl_version = tls1_3
 keepalive = 60
-holdconnectionopen = yes
-readonly = True
+holdconnectionopen = no
+readonly = False
+expunge = yes
 
 # --------------------------------------------------------------
 
@@ -47,7 +47,7 @@ utf8foldernames = yes
 [Repository live-local]
 type = Maildir
 localfolders = ~/mail/live
-sync_deletes = no
+sync_deletes = yes
 
 [Repository live-remote]
 type = IMAP
@@ -56,12 +56,12 @@ remotehost = outlook.office365.com
 remoteuser = hantaotaohan@hotmail.com
 remotepasseval = keyring.get_password("hotmail", "hantaotaohan@hotmail.com")
 #remotepass = 
-realdelete = no
 maxconnections = 10
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt
 ssl = yes
 starttls = yes
 #ssl_version = tls1_3
 keepalive = 60
-holdconnectionopen = yes
-readonly = True
+holdconnectionopen = no
+readonly = False
+expunge = yes
