@@ -20,18 +20,23 @@ set smtp_authenticators =       "gssapi:login"
 #set imap_authenticators =       "login"
 #set folder              =       "imaps://imap.mxhichina.com:993/"
 #set spoolfile           =       "imaps://imap.mxhichina.com:993/INBOX"
-set imap_check_subscribed
+#set imap_check_subscribed
 
 set folder = ~/mail
 set spoolfile=+bteb/INBOX
 mailboxes +"----------   BTEB ------------"\
           +bteb/INBOX \
-          +bteb/Archive \
-          +bteb/Sent \
-          +bteb/Drafts \
-          +bteb/Trash \
+          +bteb/草稿 \
+          +bteb/垃圾邮件 \
+          +bteb/已发送 \
+          +bteb/已归档 \
+          +bteb/已删除邮件 \
           +"---------   HOTMAIL ----------"\
-          +live/Inbox
+          +live/Inbox \
+          +live/Archive \
+          +live/Deleted \
+          +live/Drafts \
+          +live/Sent 
 
 
 ## Where to put the stuff
