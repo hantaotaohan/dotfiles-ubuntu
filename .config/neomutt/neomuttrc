@@ -1,16 +1,13 @@
-source $HOME/.config/neomutt/bteb
-source $HOME/.config/neomutt/neomutt.alias
-
 # About Me
 set from                =       "hantao@bteb.cn"
 set realname            =       "Han Tao"
 
 ## My credentials
-#set smtp_url            =       "smtp://hantao\@bteb.cn@smtp.bteb.cn:25"
-#set smtp_pass           =       ""
-#set from                =       "hantao@bteb.cn"
-#set realname            =       "Han Tao"
-#set smtp_authenticators =       "gssapi:login"
+set smtp_url            =       "smtp://hantao\@bteb.cn@smtp.bteb.cn:25"
+set smtp_pass           =       "2008"
+set from                =       "hantao@bteb.cn"
+set realname            =       "Han Tao"
+set smtp_authenticators =       "gssapi:login"
 
 ## My Account Pop3
 ##set pop_user           =       "hantao@bteb.cn"
@@ -25,18 +22,28 @@ set realname            =       "Han Tao"
 #set spoolfile           =       "imaps://imap.mxhichina.com:993/INBOX"
 set imap_check_subscribed
 
+set folder = ~/mail
+set spoolfile=+bteb/INBOX
+mailboxes +"----------   BTEB ------------"\
+          +bteb/INBOX \
+          +bteb/Archive \
+          +bteb/Sent \
+          +bteb/Drafts \
+          +bteb/Trash \
+          +"---------   HOTMAIL ----------"\
+          +live/Inbox
+
 
 ## Where to put the stuff
-set header_cache        =       "~/.mutt/cache/headers"
-set message_cachedir    =       "~/.mutt/cache/bodies"
-set certificate_file    =       "~/.mutt/certificates"
+set header_cache        =       ~/mail/cache/headers
+set message_cachedir    =       ~/mail/cache/bodies
+set certificate_file    =       ~/mail/certificates
 
 # Etc
 set alias_file          =       "$HOME/.config/neomutt/neomutt.alias"
 set mail_check          =       1 
 set check_new           =       yes                         # 查是否有新邮件
 set imap_keepalive      =       900
-set editor              =       "vim"
 set nomark_old                                              # 未读新邮件别标注为旧邮件
 set markers             =       yes
 set move                =       no                          # 移动已读邮件
@@ -67,7 +74,9 @@ set reply_regexp        =       "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
 set date_format         =       "%m/%d"
 set pager_format        =       '=%b %C/%m: %-20.20F   %s%* (%P)'
 set forward_format      =       "Fwd: %s"
-set                             collapse_all
+set editor              =       "vim +':set textwidth=70' +':set wrap' +\`awk '/^$/ {print i+2; exit} {i++}' %s\` %s"
+set collapse_all
+
 # status
 set status_format="$from/%f [Msgs:%?M?%M/?%m%?n? New:%n?%?o? Old:%o?%?F? Flag:%F?%?t? Tag:%t?%?d? Del:%d?]%>-(%P)---"
 # 发件箱显示to subject date 邮件
@@ -76,9 +85,6 @@ unignore from date subject to cc
 unignore organization organisation x-mailer: x-newsreader: x-mailing-list:
 unignore posted-to:
 alternative_order text/plain
-
-# Use vim editor and don't break lines
-set editor="vim +':set textwidth=0' +':set wrapmargin=0' +':set wrap'"
 
 # Certificates
 set certificate_file    =       "~/.mutt/certificates"
@@ -216,14 +222,15 @@ color search        color196   default
 color index         default    default         "~A"        # All messages
 color index         color13    default         "~E"        # Expired messages
 color index         color3     default         "~F"        # Flagged messages
-color index         color1     default         "~D"        # Deleted messages
-color index         color2     default         "~N"        # New messages
+color index         color0     color1          "~D"        # Deleted messages
+color index         color0     color2          "~N"        # New messages
 color index         color2     default         "~O"        # Old messages
 color index         color2     default         "~U"        # Unread messages
 color index         color2     default         "~U~$"      # Unread, unreferenced messages
-color index         color2     default         "~(~N)"     # Messages in threads with some unread
-color index         color2     default         "~v~(~N)"   # Collapsed thread with some unread
-color index         color2     default         "~v~(~F~N)" # Collapsed thread with some unread & flagged
+color index         color0     color2          "~(~N)"     # Messages in threads with some unread
+color index         color0     color1          "~v~(~N)"   # Collapsed thread with some unread
+color index         color0     color1         "~v~(~F~N)" # Collapsed thread with some unread & flagged
+color index         color0     color1         "~N~(~D~N)" # Collapsed thread with some unread & flagged
 
 # message headers -----------------------------------------------
 color hdrdefault    color4    default
@@ -240,18 +247,14 @@ color body          color9    default         "([a-z][a-z0-9+-]*://(((([a-z0-9_.
 
 
 # Sidebar -------------------------------------------------------
-color sidebar_indicator     color0      color2
+color sidebar_indicator     color0      color4
 color sidebar_divider       color0      color0
 color sidebar_ordinary      color4      color0
 color sidebar_new           color4      color0
 color sidebar_flagged       color4      color0
-color sidebar_highlight     color0      color1
+color sidebar_highlight     color0      color5
 
 
-folder-hook "hotmail" 'source ~/.config/neomutt/hotmail'
-macro index <F5> '<sync-mailbox><enter-command>source $HOME/.config/neomutt/hotmail<enter><change-folder>!<enter>'
-folder-hook "bteb" 'source ~/.config/neomutt/bteb'
-macro index <F6> '<sync-mailbox><enter-command>source $HOME/.config/neomutt/bteb<enter><change-folder>!<enter>'
 
 macro index,pager A "<save-message>=已归档<enter>" "Archive Message"
 macro index,pager I "<save-message>=INBOX<enter>" "Archive Message"
