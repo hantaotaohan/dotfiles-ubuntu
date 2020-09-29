@@ -477,13 +477,15 @@ echo -e "-----------------------------------------------------------------------
 echo -e "                                                                               ";
 
 	gemApps=(\
-        vimwiki_markdown.gem
+        vimwiki_markdown
         )
 	for app in "${gemApps[@]}"
 	do
         echo -e "              [*] Installing: $app";
-		# sudo gem install $app > /dev/null 2>&1
-		sudo gem install --local $Dotfiles_repo/bin/$app > /dev/null 2>&1
+		gem sources --remove https://rubygems.org/
+		gem sources -a https://gems.ruby-china.com/
+		sudo gem install $app > /dev/null 2>&1
+		#sudo gem install --local $Dotfiles_repo/bin/$app > /dev/null 2>&1
 		installSuccess $? $app
 	done
 }
