@@ -62,7 +62,8 @@ bindsym $mod+g exec --no-startup-id raiseorlaunch -c "Google-chrome" -e "google-
 bindsym $mod+shift+n move scratchpad ,resize set 1200 800 , move position center
 
 # 调出便签区的窗口
-bindsym $mod+Tab scratchpad show ,resize set 1200 800 , move position center , sticky enable
+#bindsym $mod+Tab scratchpad show ,resize set 1200 800 , move position center , sticky enable
+bindsym $mod+Tab scratchpad show , move position center , sticky enable
 
 # 截图快捷键
 #bindsym $mod+p exec --no-startup-id deepin-screenshot | xclip -selection clipboard -t image/png -i
