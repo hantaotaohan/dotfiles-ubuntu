@@ -329,6 +329,11 @@ sudo apt install arc-theme
 sudo sed -i 's/gtk-theme-name = Ambiance/gtk-theme-name = Arc-Dark/g' /etc/gtk-3.0/settings.ini
 ```
 
+### SSR
+ > ssr
+ 
+ https://github.com/shadowsocksrr/electron-ssr
+
 ### If time Error
 
 ```bash
