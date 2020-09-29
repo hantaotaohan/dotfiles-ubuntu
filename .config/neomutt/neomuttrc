@@ -46,13 +46,14 @@ set certificate_file    =       ~/mail/certificates
 
 # Etc
 set alias_file          =       "$HOME/.config/neomutt/neomutt.alias"
-set mail_check          =       1 
+set mail_check          =       2 
 set check_new           =       yes                         # 查是否有新邮件
-set imap_keepalive      =       900
+set imap_keepalive      =       10
 set nomark_old                                              # 未读新邮件别标注为旧邮件
 set markers             =       yes
 set move                =       no                          # 移动已读邮件
-set keep_flagged        
+#set keep_flagged        
+set timeout 		    =       1
 set quit
 auto_view                       text/html                                         # 自动显示HTML
 alternative_order               text/enriched text/plain text/html
@@ -107,7 +108,7 @@ set send_charset        =       "utf-8:iso-8859-15:us-ascii"
 
 # Sidebar
 set sidebar_visible     =       no
-set sidebar_width       =       55
+set sidebar_width       =       30
 set sidebar_divider_char=       '  │'
 #set sidebar_format      =     '%B%?F? [%F]?%* %?N?%N/? %?S?%S?'
 
@@ -138,12 +139,12 @@ bind index \Cl imap-fetch-mail
 # Search
 bind index / search
 bind index ? search-reverse
-bind index n search-next
-bind index N search-opposite
+#bind index n search-next
+#bind index N search-opposite
 bind pager / search
 bind pager ? search-reverse
-bind pager n search-next
-bind pager N search-opposite
+#bind pager n search-next
+#bind pager N search-opposite
 # Moving around
 bind attach,browser,index       g       noop
 bind attach,browser,index       gg      first-entry
@@ -232,16 +233,16 @@ color underline     color16   default
 color body          color9    default         "([a-z][a-z0-9+-]*://(((([a-z0-9_.!~*'();:&=+$,-]|%[0-9a-f][0-9a-f])*@)?((([a-z0-9]([a-z0-9-]*[a-z0-9])?)\\.)*([a-z]([a-z0-9-]*[a-z0-9])?)\\.?|[0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+)(:[0-9]+)?)|([a-z0-9_.!~*'()$,;:@&=+-]|%[0-9a-f][0-9a-f])+)(/([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*(;([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*)*(/([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*(;([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*)*)*)?(\\?([a-z0-9_.!~*'();/?:@&=+$,-]|%[0-9a-f][0-9a-f])*)?(#([a-z0-9_.!~*'();/?:@&=+$,-]|%[0-9a-f][0-9a-f])*)?|(www|ftp)\\.(([a-z0-9]([a-z0-9-]*[a-z0-9])?)\\.)*([a-z]([a-z0-9-]*[a-z0-9])?)\\.?(:[0-9]+)?(/([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*(;([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*)*(/([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*(;([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*)*)*)?(\\?([-a-z0-9_.!~*'();/?:@&=+$,]|%[0-9a-f][0-9a-f])*)?(#([-a-z0-9_.!~*'();/?:@&=+$,]|%[0-9a-f][0-9a-f])*)?)[^].,:;!)? \t\r\n<>\"]"
 
 # quoted -------------------------------------------------------
-color quoted        cyan default
-color quoted1       yellow black
-color quoted2       red black
-color quoted3       green black
-color quoted4       cyan black
-color quoted5       yellow black
-color quoted6       red black
-color quoted7       green black
+color quoted        cyan        default
+color quoted1       yellow      black
+color quoted2       red         black
+color quoted3       green       black
+color quoted4       cyan        black
+color quoted5       yellow      black
+color quoted6       red         black
+color quoted7       green       black
 color quoted8       brightblack black
-color quoted9       brightred black
+color quoted9       brightred   black
 
 # index ---------------------------------------------------------
 color index         default    default         "~A"        # 全部邮件
@@ -277,22 +278,22 @@ color header        color4    default         "^(Subject)"
 #color index         color2     color8          "~>(~U)"   # Collapsed thread with some unread
 
 # URL -----------------------------------------------------------
-#color body brightgreen black "(http|ftp|news|telnet|finger)://[^ \"\t\r\n]*"
-#color body brightgreen black "mailto:[-a-z_0-9.]+@[-a-z_0-9.]+"
-#mono body bold "(http|ftp|news|telnet|finger)://[^ \"\t\r\n]*"
-#mono body bold "mailto:[-a-z_0-9.]+@[-a-z_0-9.]+"
+color body brightgreen black "(http|ftp|news|telnet|finger)://[^ \"\t\r\n]*"
+color body brightgreen black "mailto:[-a-z_0-9.]+@[-a-z_0-9.]+"
+mono body bold "(http|ftp|news|telnet|finger)://[^ \"\t\r\n]*"
+mono body bold "mailto:[-a-z_0-9.]+@[-a-z_0-9.]+"
 
 ## Email address ------------------------------------------------
-#color body brightgreen black "[-a-z_0-9.%$]+@[-a-z_0-9.]+\\.[-a-z][-a-z]+"
+color body brightgreen black "[-a-z_0-9.%$]+@[-a-z_0-9.]+\\.[-a-z][-a-z]+"
 
 ## header -------------------------------------------------------
-#color hdrdefault        color30         black
-#color header            magenta        black    '^date:'
-#color header            color153        black    '^(to|cc|bcc):'
-#color header cyan black '^from:'
-#color header brightyellow black '^subject:'
-#color header            color31         black    '^user-agent:'
-#color header            color29         black    '^reply-to:'
+color hdrdefault        color30         black
+color header            magenta         black       '^date:'
+color header            color153        black       '^(to|cc|bcc):'
+color header            cyan            black       '^from:'
+color header            brightyellow    black       '^subject:'
+color header            color31         black       '^user-agent:'
+color header            color29         black       '^reply-to:'
 
 # Sidebar -------------------------------------------------------
 color sidebar_indicator     color0      color4
@@ -351,8 +352,8 @@ color status default        black   ''
 #mono index     bold '~h "^content-type: *(multipart/(mixed|signed|encrypted)|application/)"'
 #color index    red black '~h "^content-type: *multipart/(signed|encrypted)"'
 
-macro index,pager A "<save-message>=已归档<enter>" "Archive Message"
-macro index,pager I "<save-message>=INBOX<enter>" "Archive Message"
+#macro index,pager A "<save-message>=已归档<enter>" "Archive Message"
+#macro index,pager I "<save-message>=INBOX<enter>" "Archive Message"
 
 #--------------------------------------------------
 #
@@ -382,6 +383,7 @@ macro index,pager I "<save-message>=INBOX<enter>" "Archive Message"
 
 
 
+#set new_mail_command="dunstify -r 8888  normal  'New mail! %n new, %u unread.'"
 
 
 
