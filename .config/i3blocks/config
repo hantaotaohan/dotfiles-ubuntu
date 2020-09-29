@@ -68,14 +68,14 @@ label=
 interval=1
 min_width=50
 
-[email]
+#[email]
 # label= 
-full_text=Email
-label=
-command=$HOME/.config/i3blocks/email
+#full_text=Email
+#label=
+#command=$HOME/.config/i3blocks/email
 #interval=persist
-interval=1
-min_width=50
+#interval=1
+#min_width=50
 
 [volume]
 label=VOL
