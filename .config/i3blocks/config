@@ -73,7 +73,8 @@ min_width=50
 full_text=Email
 label=
 command=$HOME/.config/i3blocks/email
-interval=persist
+#interval=persist
+interval=1
 min_width=50
 
 [volume]
