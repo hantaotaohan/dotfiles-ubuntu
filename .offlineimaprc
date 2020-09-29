@@ -11,7 +11,7 @@ remoterepository = bteb-remote
 autorefresh = 0.2
 quick = 10
 utf8foldernames = yes
-postsynchook = ~/notify.sh
+postsynchook = $HOME/.config/neomutt/notify.sh
 
 [Repository bteb-local]
 type = Maildir
