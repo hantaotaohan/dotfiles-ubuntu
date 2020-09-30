@@ -442,6 +442,7 @@ echo -e "                                                                       
 	#ipython\
 	#beautifulsoup4\
 	keyring\
+	mdv\
 	#notebook\
 	#prompt-toolkit\
 	litecli\
