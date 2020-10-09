@@ -817,7 +817,7 @@ let g:vimwiki_markdown_link_ext = 1
 
 " 自动执行同步src的img同步到docs的img脚本
 au VimEnter *
-            \  if (!isdirectory($HOME . "Vimwiki")) && filereadable("$HOME/Dotfiles/extras/vimwiki_img_autosync.sh")
+            \  if (isdirectory($HOME . "Vimwiki")) && filereadable("$HOME/Dotfiles/extras/vimwiki_img_autosync.sh")
             \| silent execute "!nohup $HOME/Dotfiles/extras/vimwiki_img_autosync.sh >/dev/null 2>&1 &"
             \| endif
 	    
