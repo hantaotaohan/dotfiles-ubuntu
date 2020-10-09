@@ -352,6 +352,7 @@ echo -e "                                                                       
         silversearcher-ag\
         w3m\
 	wmctrl\
+	tree\
 	zip\
         unzip\
         ranger\
