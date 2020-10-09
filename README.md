@@ -342,7 +342,7 @@ timedatectl set-local-rtc 1 --adjust-system-clock
 
 ### keyring config (neomutt password settings)
 ```python
-python3
+python2
 import keyring
 keyring.set_password("system", "username", "password")
 ```
