@@ -823,8 +823,8 @@ au VimEnter *
 	    
 " 关闭Vim时自动上传github
 au! BufReadPost $HOME/Vimwiki/src/index.md !git -C $HOME/Vimwiki/ pull origin master
-au! BufWritePost $HOME/Vimwiki/* !git -C $HOME/Vimwiki/ add . ;git commit -m "Auto commit."
-au! VimLeave $HOME/Vimwiki/* !git -C $HOME/Vimwiki/ add . ;git commit -m "Auto commit + push." ;git push origin master
+au! BufWritePost $HOME/Vimwiki/* !bash $HOME/Dotfiles/extras/comparefolders.sh || !git -C $HOME/Vimwiki/ add . ;git commit -m "Auto commit."
+au! VimLeave $HOME/Vimwiki/* !bash $HOME/Dotfiles/extras/comparefolders.sh || !git -C $HOME/Vimwiki/ add . ;git commit -m "Auto commit + push." ;git push origin master
 
 " 使用wd删除markdown时自动删除相对应不使用的HTML文件
 function! VimwikiDeleteClean()
