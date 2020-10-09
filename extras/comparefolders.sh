@@ -58,7 +58,7 @@ dir2=$HOME/Vimwiki/docs
 
 #CompareFolders 文件夹1 文件夹2 文件夹1的后缀 文件夹2的后缀
 if [ -d $HOME/Vimwiki ]; then
-    CompareFolders ${dir2} ${dir1} html md | xargs -p rm
+    CompareFolders ${dir2} ${dir1} html md | xargs -r -p rm
 fi
 
 #如果需要删除利用管道符号
