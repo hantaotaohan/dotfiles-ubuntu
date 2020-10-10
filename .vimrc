@@ -152,6 +152,9 @@ Plug 'ferrine/md-img-paste.vim'                                          " Markd
 Plug 'vimwiki/vimwiki'                                                   " Vimwiki插件
 Plug 'michal-h21/vim-zettel'                                             " 配合vimwiki的功能插件
 Plug 'Lenovsky/nuake'                                                    " 快速启动命令行工具
+Plug 'jiangmiao/auto-pairs'                                              " 成对添加括号等
+Plug 'tpope/vim-surround'                                                " 成对更改删除括号等
+Plug 'junegunn/vim-easy-align'                                           " 自动对齐插件
 "Plug 'terryma/vim-multiple-cursors'                                     " 多光标插件
 "Plug 'edkolev/tmuxline.vim'                                             " Vim同步tmux配色
 call plug#end()
@@ -879,3 +882,12 @@ inoremap <F6> <C-\><C-n>:Nuake<CR>
 tnoremap <F6> <C-\><C-n>:Nuake<CR>
 let g:nuake_position = 'bottom'                                  " 'bottom', 'right', 'top' or 'left'.
 let g:nuake_size = 0.38                                          " 'default 0.25'
+
+"=================================================================================================================================
+" EasyAlign settings
+"=================================================================================================================================
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
