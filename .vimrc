@@ -785,6 +785,14 @@ autocmd FileType markdown nmap <buffer><silent> <leader>p :call mdip#MarkdownCli
 " let g:mdip_imgname = 'image'
 
 "=================================================================================================================================
+" Vimwiki Zettel settings
+"=================================================================================================================================
+let g:zettel_dir = "$HOME/Vimwiki/src"
+let g:zettel_format = "%Y%m%d%H%M"
+let g:zettel_link_format="[%title](%link)"
+let g:zettel_options = [{"template" :  "$HOME/vimwiki/templates/zettelnew.tpl"}]
+
+"=================================================================================================================================
 " Vimwiki settings
 "=================================================================================================================================
 " Vimwiki 快捷键设置
@@ -815,16 +823,43 @@ let g:vimwiki_use_mouse = 1
 let g:vimwiki_conceallevel=0
 let g:vimwiki_markdown_link_ext = 1
 
+"=================================================================================================================================
 " 自动执行同步src的img同步到docs的img脚本
 au VimEnter *
             \  if (isdirectory($HOME . "Vimwiki")) && filereadable("$HOME/Dotfiles/extras/vimwiki_img_autosync.sh")
             \| silent execute "!nohup $HOME/Dotfiles/extras/vimwiki_img_autosync.sh >/dev/null 2>&1 &"
             \| endif
-	    
-" 关闭Vim时自动上传github
-au! BufReadPost $HOME/Vimwiki/src/index.md !git -C $HOME/Vimwiki/ pull origin master
-au! BufWritePost $HOME/Vimwiki/* !bash $HOME/Dotfiles/extras/comparefolders.sh || !git -C $HOME/Vimwiki/ add . ;git commit -m "Auto commit."
-au! VimLeave $HOME/Vimwiki/* !bash $HOME/Dotfiles/extras/comparefolders.sh || !git -C $HOME/Vimwiki/ add . ;git commit -m "Auto commit + push." ;git push origin master
+
+" 开启/关闭Vimiki时自动步上传github
+" 方案一
+augroup Vimwiki
+  if !exists('g:zettel_synced')
+    let g:zettel_synced = 0
+  else
+    finish
+  endif
+
+  if !exists('g:zettel_dir')
+    let g:zettel_dir = vimwiki#vars#get_wikilocal('path')
+  endif
+
+  function! s:git_action(action)
+    execute ':silent !pushd ' . g:zettel_dir . "; ". a:action . "; popd"
+    " prevent screen artifacts
+    redraw!
+  endfunction
+
+  " sync changes at the start
+  au! BufRead $HOME/Vimwiki/src/index.md call <sid>git_action("git pull origin master")
+  au! BufWritePost $HOME/Vimwiki/src/index.md call <sid>git_action("git add .;git commit -m \"Auto commit + push. `date`\"")
+  au! VimLeave $HOME/Vimwiki/src/index.md call <sid>git_action("git push origin master")
+augroup END
+
+" 方案二
+"au! BufReadPost $HOME/Vimwiki/src/index.md !git -C $HOME/Vimwiki/ pull origin master
+"au! BufWritePost $HOME/Vimwiki/* !git -C $HOME/Vimwiki/ add . ;git commit -m "Auto commit."
+"au! VimLeave $HOME/Vimwiki/* !bash $HOME/Dotfiles/extras/comparefolders.sh || !git -C $HOME/Vimwiki/ add . ;git commit -m "Auto commit + push." ;git push origin master
+"=================================================================================================================================
 
 " 使用wd删除markdown时自动删除相对应不使用的HTML文件
 function! VimwikiDeleteClean()
@@ -835,14 +870,6 @@ function! VimwikiDeleteClean()
   call vimwiki#base#delete_link()
 endfunction
 autocmd filetype vimwiki nnoremap <buffer> <leader>wd :call VimwikiDeleteClean()<CR>
-
-"=================================================================================================================================
-" Vimwiki Zettel settings
-"=================================================================================================================================
-let g:zettel_dir = "$HOME/Vimwiki/src"
-let g:zettel_format = "%Y%m%d%H%M"
-let g:zettel_link_format="[%title](%link)"
-let g:zettel_options = [{"template" :  "$HOME/vimwiki/templates/zettelnew.tpl"}]
 
 "=================================================================================================================================
 " Nuake settings
