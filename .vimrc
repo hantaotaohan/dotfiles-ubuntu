@@ -155,6 +155,9 @@ Plug 'Lenovsky/nuake'                                                    " 快�
 Plug 'jiangmiao/auto-pairs'                                              " 成对添加括号等
 Plug 'tpope/vim-surround'                                                " 成对更改删除括号等
 Plug 'junegunn/vim-easy-align'                                           " 自动对齐插件
+Plug 'mg979/vim-visual-multi'                                            " 多光标插件
+Plug 'junegunn/goyo.vim'                                                 " 专注模式
+Plug 'junegunn/limelight.vim'                                            " 专注模式辅助
 "Plug 'terryma/vim-multiple-cursors'                                     " 多光标插件
 "Plug 'edkolev/tmuxline.vim'                                             " Vim同步tmux配色
 call plug#end()
@@ -884,10 +887,67 @@ let g:nuake_position = 'bottom'                                  " 'bottom', 'ri
 let g:nuake_size = 0.38                                          " 'default 0.25'
 
 "=================================================================================================================================
-" EasyAlign settings
+" EasyAlign  settings
 "=================================================================================================================================
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
-
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
+
+"=================================================================================================================================
+" Vim-visual-multi  settings
+"=================================================================================================================================
+let g:VM_maps = {}
+let g:VM_maps['Find Under']         = '<C-d>'           " replace C-n
+let g:VM_maps['Find Subword Under'] = '<C-d>'           " replace visual C-n
+
+"=================================================================================================================================
+" Goyo  settings
+"=================================================================================================================================
+function! s:goyo_enter()
+  if executable('tmux') && strlen($TMUX)
+    silent !tmux set status off
+    silent !tmux list-panes -F '\#F' | grep -q Z || tmux resize-pane -Z
+  endif
+  set noshowmode
+  set noshowcmd
+  set scrolloff=999
+  Limelight
+  " ...
+endfunction
+
+function! s:goyo_leave()
+  if executable('tmux') && strlen($TMUX)
+    silent !tmux set status on
+    silent !tmux list-panes -F '\#F' | grep -q Z && tmux resize-pane -Z
+  endif
+  set showmode
+  set showcmd
+  set scrolloff=5
+  Limelight!
+  " ...
+endfunction
+
+autocmd! User GoyoEnter nested call <SID>goyo_enter()
+autocmd! User GoyoLeave nested call <SID>goyo_leave()
+
+"=================================================================================================================================
+
+" Auto switch goyo
+function! s:switch_goyo()
+    if  winnr('$') == 1
+        Goyo 200x200
+        "Goyo 80
+        "set colorcolumn=
+    elseif exists('#goyo')
+        Goyo!
+"        "set colorcolumn=+1
+    endif
+endfunction
+nnoremap <Leader>g :call <SID>switch_goyo()<cr>
+
+"=================================================================================================================================
+" Limelight  settings
+"=================================================================================================================================
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
