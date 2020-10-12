@@ -162,6 +162,7 @@ Plug 'junegunn/limelight.vim'                                            " 专�
 "Plug 'edkolev/tmuxline.vim'                                             " Vim同步tmux配色
 call plug#end()
 
+let g:plug_url_format = 'https://hub.fastgit.org/%s.git'
 
 "=================================================================================================================================
 " Display Config  
