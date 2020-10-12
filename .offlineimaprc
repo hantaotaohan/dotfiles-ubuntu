@@ -16,7 +16,8 @@ postsynchook = $HOME/.config/neomutt/notify.sh
 [Repository bteb-local]
 type = Maildir
 localfolders = ~/mail/bteb
-sync_deletes = yes
+sync_deletes = no
+startdate = 2020-01-01
 
 [Repository bteb-remote]
 type = IMAP
@@ -47,7 +48,8 @@ utf8foldernames = yes
 [Repository live-local]
 type = Maildir
 localfolders = ~/mail/live
-sync_deletes = yes
+sync_deletes = no
+startdate = 2020-01-01
 
 [Repository live-remote]
 type = IMAP
