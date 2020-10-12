@@ -126,6 +126,9 @@ au VimEnter *
 "=================================================================================================================================
 " Vim-Plug-Config   
 "=================================================================================================================================
+
+let g:plug_url_format = 'https://hub.fastgit.org/%s.git'
+
 call plug#begin('$HOME/.vim/plugged')
 Plug 'joshdick/onedark.vim'                                              " 主题文件
 Plug 'vim-airline/vim-airline'                                           " 状态栏
@@ -162,7 +165,6 @@ Plug 'junegunn/limelight.vim'                                            " 专�
 "Plug 'edkolev/tmuxline.vim'                                             " Vim同步tmux配色
 call plug#end()
 
-let g:plug_url_format = 'https://hub.fastgit.org/%s.git'
 
 "=================================================================================================================================
 " Display Config  
