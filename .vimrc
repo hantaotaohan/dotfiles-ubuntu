@@ -695,17 +695,24 @@ command W w !sudo tee % > /dev/null
 "=================================================================================================================================
 " Python
 "-----------------------------------------------------------------o--------------------------------------------------------------o
+
 " F5 开启Quitfix 调测
 " F6 开启Term    调测
+
 "=================================================================================================================================
+
 " 窗口位置参数可选 leftabove aboveleft rightbelow belowright topleft botright
 " 分割位置参数 vert splitbelow
 " autocmd BufRead *.py nmap <F5> :rightbelow vert term python3 "%"<CR>
+
 "=================================================================================================================================
+
 " autocmd BufRead *.py nmap <F5> :botright term exec "w" python3 "%"<CR>
 " autocmd BufRead *.py nmap <F6> :make<CR>
 " autocmd BufRead *.py :cclose
+
 "=================================================================================================================================
+
 " nnoremap <F5> :call CompileRunGcc1()<cr>
 " func! CompileRunGcc1()
 "     exec "w"
@@ -723,7 +730,9 @@ command W w !sudo tee % > /dev/null
 "         endif
 "     endif
 " endfunc
+
 "=================================================================================================================================
+
 " map <F6> :call CompileRunGcc2()<CR>
 " func! CompileRunGcc2()
 "     exec "w"
@@ -734,7 +743,9 @@ command W w !sudo tee % > /dev/null
 "         :!time bash %
 "     endif
 " endfunc
+
 "=================================================================================================================================
+
 nnoremap <F5> :call CompileRunGcc1()<cr>
 func! CompileRunGcc1()
     exec "w"
@@ -754,6 +765,7 @@ endfunc
 "=================================================================================================================================
 " au BufRead,BufNewFile,BufEnter * cd %:p:h
 
+
 "=================================================================================================================================
 " 输入法自动切换
 "=================================================================================================================================
@@ -767,6 +779,7 @@ endfunction
 
 autocmd InsertEnter * call IMtoCN()
 autocmd InsertLeave * call IMtoEng()
+
 
 "=================================================================================================================================
 " 输入法自动切换 - IM-SELECT.exe Config
@@ -782,6 +795,7 @@ autocmd InsertLeave * call IMtoEng()
 "autocmd InsertEnter * call IMtoCN()
 "autocmd InsertLeave * call IMtoEng()   
 
+
 "=================================================================================================================================
 " Markdown截图自动粘贴设置
 "=================================================================================================================================
@@ -790,6 +804,7 @@ autocmd FileType markdown nmap <buffer><silent> <leader>p :call mdip#MarkdownCli
 " let g:mdip_imgdir = 'img'
 " let g:mdip_imgname = 'image'
 
+
 "=================================================================================================================================
 " Vimwiki Zettel settings
 "=================================================================================================================================
@@ -797,6 +812,7 @@ let g:zettel_dir = "$HOME/Vimwiki/src"
 let g:zettel_format = "%Y%m%d%H%M"
 let g:zettel_link_format="[%title](%link)"
 let g:zettel_options = [{"template" :  "$HOME/vimwiki/templates/zettelnew.tpl"}]
+
 
 "=================================================================================================================================
 " Vimwiki settings
@@ -830,6 +846,7 @@ let g:vimwiki_conceallevel=0
 let g:vimwiki_markdown_link_ext = 1
 
 "=================================================================================================================================
+
 " 自动执行同步src的img同步到docs的img脚本
 au VimEnter *
             \  if (isdirectory($HOME . "Vimwiki")) && filereadable("$HOME/Dotfiles/extras/vimwiki_img_autosync.sh")
@@ -865,6 +882,7 @@ augroup END
 "au! BufReadPost $HOME/Vimwiki/src/index.md !git -C $HOME/Vimwiki/ pull origin master
 "au! BufWritePost $HOME/Vimwiki/* !git -C $HOME/Vimwiki/ add . ;git commit -m "Auto commit."
 "au! VimLeave $HOME/Vimwiki/* !bash $HOME/Dotfiles/extras/comparefolders.sh || !git -C $HOME/Vimwiki/ add . ;git commit -m "Auto commit + push." ;git push origin master
+
 "=================================================================================================================================
 
 " 使用wd删除markdown时自动删除相对应不使用的HTML文件
@@ -877,6 +895,7 @@ function! VimwikiDeleteClean()
 endfunction
 autocmd filetype vimwiki nnoremap <buffer> <leader>wd :call VimwikiDeleteClean()<CR>
 
+
 "=================================================================================================================================
 " Nuake settings
 "=================================================================================================================================
@@ -886,6 +905,7 @@ tnoremap <F6> <C-\><C-n>:Nuake<CR>
 let g:nuake_position = 'bottom'                                  " 'bottom', 'right', 'top' or 'left'.
 let g:nuake_size = 0.38                                          " 'default 0.25'
 
+
 "=================================================================================================================================
 " EasyAlign  settings
 "=================================================================================================================================
@@ -894,12 +914,14 @@ xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
 
+
 "=================================================================================================================================
 " Vim-visual-multi  settings
 "=================================================================================================================================
 let g:VM_maps = {}
 let g:VM_maps['Find Under']         = '<C-d>'           " replace C-n
 let g:VM_maps['Find Subword Under'] = '<C-d>'           " replace visual C-n
+
 
 "=================================================================================================================================
 " Goyo  settings
@@ -945,6 +967,7 @@ function! s:switch_goyo()
     endif
 endfunction
 nnoremap <Leader>g :call <SID>switch_goyo()<cr>
+
 
 "=================================================================================================================================
 " Limelight  settings
