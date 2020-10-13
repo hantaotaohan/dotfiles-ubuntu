@@ -107,6 +107,7 @@ set assumed_charset     =       "utf-8"
 set send_charset        =       "utf-8:iso-8859-15:us-ascii"
 
 # Sidebar
+set mail_check_stats
 set sidebar_visible     =       no
 set sidebar_width       =       30
 set sidebar_divider_char=       '  │'
