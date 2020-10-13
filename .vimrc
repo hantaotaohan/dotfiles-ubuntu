@@ -857,34 +857,70 @@ au VimEnter *
             \| endif
 
 " 开启/关闭Vimiki时自动步上传github
+
 " 方案一
-augroup Vimwiki
-  if !exists('g:zettel_synced')
-    let g:zettel_synced = 0
-  else
-    finish
-  endif
+"augroup Vimwiki
+  "if !exists('g:zettel_synced')
+    "let g:zettel_synced = 0
+  "else
+    "finish
+  "endif
 
-  if !exists('g:zettel_dir')
-    let g:zettel_dir = vimwiki#vars#get_wikilocal('path')
-  endif
+  "if !exists('g:zettel_dir')
+    "let g:zettel_dir = vimwiki#vars#get_wikilocal('path')
+  "endif
 
-  function! s:git_action(action)
-    execute ':silent !pushd ' . g:zettel_dir . "; ". a:action . "; popd"
-    " prevent screen artifacts
-    redraw!
-  endfunction
+  "function! s:git_action(action)
+    "exec ":cd %:h"
+    ".normal ^L
+    "exec ":AsyncStop"
+    "exec ":AsyncRun !pushd" . g:zettel_dir . "; ". a:action . "; popd"
+    "autocmd User AsyncRunStop exec ":ccl"
+    "autocmd User AsyncRunStop exec ":e %"
+    "redraw!
+  "endfunction
 
-  " sync changes at the start
-  au! BufRead $HOME/Vimwiki/src/index.md call <sid>git_action("git pull origin master")
-  au! BufWritePost $HOME/Vimwiki/src/index.md call <sid>git_action("git add .;git commit -m \"Auto commit + push. `date`\"")
-  au! VimLeave $HOME/Vimwiki/src/index.md call <sid>git_action("git push origin master")
-augroup END
+  "" sync changes at the start
+  "au! BufRead $HOME/Vimwiki/src/index.md call <sid>git_action("git pull origin master")
+  "au! BufWritePost $HOME/Vimwiki/src/index.md call <sid>git_action("git add .;git commit -m \"Auto commit + push. `date`\"")
+  "au! VimLeave $HOME/Vimwiki/src/index.md call <sid>git_action("git push origin master")
+"augroup END
+
 
 " 方案二
 "au! BufReadPost $HOME/Vimwiki/src/index.md !git -C $HOME/Vimwiki/ pull origin master
 "au! BufWritePost $HOME/Vimwiki/* !git -C $HOME/Vimwiki/ add . ;git commit -m "Auto commit."
 "au! VimLeave $HOME/Vimwiki/* !bash $HOME/Dotfiles/extras/comparefolders.sh || !git -C $HOME/Vimwiki/ add . ;git commit -m "Auto commit + push." ;git push origin master
+
+
+" 方案三(异步)
+func GitPull()
+    " 获取云端最新版
+    exec "w"
+    exec ":cd %:h"
+    .normal ^L
+    exec ":AsyncStop"
+    exec ":AsyncRun git pull origin master"
+    autocmd User AsyncRunStop exec ":ccl"
+    autocmd User AsyncRunStop exec ":e %"
+    let g:asyncrun_exit = "echom 'Sync done'"
+endfunc
+
+func GitCommit()
+    " 提交到本地
+    exec ":AsyncStop"
+    exec ":AsyncRun git -C $HOME/Vimwiki/ add . ;git commit -m 'Auto commit'"
+endfunc
+
+func GitPush()
+    " 上传到云端
+    exec ":AsyncStop"
+    exec ":AsyncRun git -C $HOME/Vimwiki/ add . ;git commit -m \"Auto commit `date`\" ;git push origin master"
+endfunc
+
+autocmd BufReadPost $HOME/Vimwiki/src/index.md call GitPull()
+autocmd BufWritePost $HOME/Vimwiki/src/index.md call GitCommit()
+autocmd VimLeave $HOME/Vimwiki/src/index.md call GitPush()
 
 "=================================================================================================================================
 
