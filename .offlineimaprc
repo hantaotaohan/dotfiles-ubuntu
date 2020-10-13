@@ -11,13 +11,13 @@ remoterepository = bteb-remote
 autorefresh = 0.2
 quick = 10
 utf8foldernames = yes
+maxage = 10
 postsynchook = $HOME/.config/neomutt/notify.sh
 
 [Repository bteb-local]
 type = Maildir
 localfolders = ~/mail/bteb
 sync_deletes = no
-maxage = 2020-01-01
 
 [Repository bteb-remote]
 type = IMAP
@@ -34,7 +34,6 @@ keepalive = 60
 holdconnectionopen = no
 readonly = False
 expunge = yes
-usecompression = yes
 
 # --------------------------------------------------------------
 
@@ -44,13 +43,13 @@ remoterepository = live-remote
 autorefresh = 0.2
 quick = 10
 utf8foldernames = yes
+maxage = 10
 # postsynchook = ~/.config/offlineimap/notify.sh
 
 [Repository live-local]
 type = Maildir
 localfolders = ~/mail/live
 sync_deletes = no
-maxage = 2020-01-01
 
 [Repository live-remote]
 type = IMAP
@@ -68,4 +67,3 @@ keepalive = 60
 holdconnectionopen = no
 readonly = False
 expunge = yes
-usecompression = yes
