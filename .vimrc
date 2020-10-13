@@ -927,7 +927,7 @@ autocmd VimLeave $HOME/Vimwiki/src/index.md call GitPush()
 " 使用wd删除markdown时自动删除相对应不使用的HTML文件
 function! VimwikiDeleteClean()
   let htmlfile = expand('%:r') . '.html'
-  lcd ${HOME}/vimwiki/docs/
+  lcd ${HOME}/Vimwiki/docs/
   call delete(htmlfile)
   lcd %:p:h
   call vimwiki#base#delete_link()
