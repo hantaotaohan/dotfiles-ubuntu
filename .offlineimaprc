@@ -26,7 +26,7 @@ remotehost = imap.mxhichina.com
 remoteuser = hantao@bteb.cn
 remotepasseval = keyring.get_password("bteb", "hantao@bteb.cn")
 #remotepass = 
-maxconnections = 10
+maxconnections = 2
 ssl = no
 starttls = yes
 #ssl_version = tls1_3
@@ -34,6 +34,7 @@ keepalive = 60
 holdconnectionopen = no
 readonly = False
 expunge = yes
+usecompression = yes
 
 # --------------------------------------------------------------
 
@@ -58,7 +59,7 @@ remotehost = outlook.office365.com
 remoteuser = hantaotaohan@hotmail.com
 remotepasseval = keyring.get_password("hotmail", "hantaotaohan@hotmail.com")
 #remotepass = 
-maxconnections = 10
+maxconnections = 2
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt
 ssl = yes
 starttls = yes
@@ -67,3 +68,4 @@ keepalive = 60
 holdconnectionopen = no
 readonly = False
 expunge = yes
+usecompression = yes
