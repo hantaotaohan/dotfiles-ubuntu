@@ -919,8 +919,8 @@ func GitPush()
 endfunc
 
 autocmd BufReadPost $HOME/Vimwiki/src/index.md call GitPull()
-autocmd BufWritePost $HOME/Vimwiki/src/index.md call GitCommit()
-autocmd VimLeave $HOME/Vimwiki/src/index.md call GitPush()
+autocmd BufWritePost $HOME/Vimwiki/src/index.md call GitPush()
+au! VimLeave $HOME/Vimwiki/index.md !git -C $HOME/Vimwiki/ add . ;git commit -m "Auto commit `date`" ;git push origin master
 
 "=================================================================================================================================
 
