@@ -392,5 +392,7 @@ color status default        black   ''
 
 #set new_mail_command="dunstify -r 8888  normal  'New mail! %n new, %u unread.'"
 
+macro generic "<esc>1" ":set from=hantao@bteb.cn"
+macro generic "<esc>2" ":set from=hantaotaohan@hotmail.com"
 
 
