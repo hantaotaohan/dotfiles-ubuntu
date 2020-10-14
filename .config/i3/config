@@ -29,7 +29,7 @@ new_float none
 floating_modifier $mod
 
 # 开启工作区自动返回
-workspace_auto_back_and_forth yes
+# workspace_auto_back_and_forth yes
 
 # 默认浮动窗口大小
 floating_minimum_size 1200 x 800
@@ -363,7 +363,7 @@ bar {
     # font pango:Inziu Iosevka SC Bold 10
     font pango:Saber 10
     status_command 	        i3blocks -c ~/.config/i3blocks/config
-    bindsym button1         nop
+    #bindsym button1         nop
     separator_symbol        "|"
     workspace_buttons       yes
     strip_workspace_numbers yes
@@ -394,7 +394,7 @@ bar {
     separator_symbol        "|"
     workspace_buttons       no
     strip_workspace_numbers no
-    binding_mode_indicator jno
+    binding_mode_indicator  no
     position                bottom
     tray_output             none
     tray_padding            0
