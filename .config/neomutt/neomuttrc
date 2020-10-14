@@ -2,12 +2,18 @@
 set from                =       "hantao@bteb.cn"
 set realname            =       "Han Tao"
 
+# Msmtp
+set sendmail="/usr/bin/msmtp"
+set use_from             =       yes       # 让 msmtp 知道用哪个帐号
+set use_envelope_from    =       yes       # 让 mutt 使用 msmtp 的 -f 选项
+set envelope_from_address=       "hantaotaohan@hotmail.com"
+
 ## My credentials
-set smtp_url            =       "smtp://hantao\@bteb.cn@smtp.bteb.cn:25"
-set smtp_pass           =       ""
-set from                =       "hantao@bteb.cn"
-set realname            =       "Han Tao"
-set smtp_authenticators =       "gssapi:login"
+#set smtp_url            =       "smtp://hantao\@bteb.cn@smtp.bteb.cn:25"
+#set smtp_pass           =       ""
+#set from                =       "hantao@bteb.cn"
+#set realname            =       "Han Tao"
+#set smtp_authenticators =       "gssapi:login"
 
 ## My Account Pop3
 ##set pop_user           =       "hantao@bteb.cn"
