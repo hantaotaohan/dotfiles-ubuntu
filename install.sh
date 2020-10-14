@@ -56,6 +56,7 @@ Dotfiles_symlinks=(\
         .tmux.conf\
         .vimrc\
 	.offlineimaprc\
+	.msmtprc\
         .wgetrc\
         .Xmodmap\
         .Xresources
@@ -386,6 +387,7 @@ echo -e "                                                                       
         openssh-server\
         openssh-client\
 	offlineimap\
+	msmtp\
 	solaar\
 	ncdu\
 	nautilus\
