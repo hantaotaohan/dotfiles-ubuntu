@@ -198,6 +198,8 @@ bind index                      zA      collapse-all # Missing :folddisable/fold
 bind pager \Ch help
 bind index \Ch help
 
+bind index,pager S sync-mailbox
+
 
 
 
