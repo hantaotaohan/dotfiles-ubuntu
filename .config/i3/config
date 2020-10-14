@@ -363,7 +363,7 @@ bar {
     # font pango:Inziu Iosevka SC Bold 10
     font pango:Saber 10
     status_command 	        i3blocks -c ~/.config/i3blocks/config
-    #bindsym button1         nop
+    bindsym button5         nop
     separator_symbol        "|"
     workspace_buttons       yes
     strip_workspace_numbers yes
