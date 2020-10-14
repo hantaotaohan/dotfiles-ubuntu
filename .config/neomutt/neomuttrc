@@ -29,6 +29,7 @@ set use_envelope_from    =       yes       # 让 mutt 使用 msmtp 的 -f 选项
 
 set folder = ~/mail
 set spoolfile=+bteb/INBOX
+set postponed=~/mail/Postponed
 mailboxes +"----------   BTEB ------------"\
           +bteb/INBOX \
           +bteb/草稿 \
@@ -41,8 +42,9 @@ mailboxes +"----------   BTEB ------------"\
           +live/Archive \
           +live/Deleted \
           +live/Drafts \
-          +live/Sent 
-
+          +live/Sent \
+          +"---------   SYSTEM ----------"\
+          +"Postponed"
 
 ## Where to put the stuff
 set header_cache        =       ~/mail/cache/headers
@@ -121,7 +123,7 @@ set sidebar_divider_char=       '  │'
 #set sidebar_component_depth=3
 #set sidebar_delim_chars='.'
 set sidebar_short_path 
-set sidebar_folder_indent
+#set sidebar_folder_indent
 set sidebar_format  ="%B%?F? [%F]?%* %?N?%N/?%S"
 
 
