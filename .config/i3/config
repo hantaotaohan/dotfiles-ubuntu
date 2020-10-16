@@ -422,6 +422,9 @@ for_window [class="Alacritty" title="scratchpad"] move to scratchpad , sticky en
 #bindsym $mod+v exec i3-msg exec "alacritty -d 100 30 -t scratchpad -e vim $HOME/.scratchpad" > /dev/null
 bindsym $mod+v exec --no-startup-id raiseorlaunch -r -t "scratchpad" -e "alacritty -d 100 30 -t scratchpad -e vim $HOME/.scratchpad"
 
+for_window [class="Lotion"] move to scratchpad , sticky enable , border normal 0 , title_format "<b>%title</b>"
+#bindsym $mod+v exec i3-msg exec "alacritty -d 100 30 -t scratchpad -e vim $HOME/.scratchpad" > /dev/null
+bindsym $mod+n exec --no-startup-id raiseorlaunch -r -c "Lotion" -e "/home/taotao/Desktop/lotion/Lotion/Lotion"
 
 # Scratchpad config
 #for_window [class="Zathura"] move to scratchpad, scratchpad
