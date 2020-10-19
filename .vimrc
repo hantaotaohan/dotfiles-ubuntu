@@ -126,7 +126,7 @@ endif
 "                                                                                                                                
 "-----------------------------------------------------------------o--------------------------------------------------------------o
 inoremap jk <Esc>
-vnoremap jk <Esc>
+"vnoremap jk <Esc>
 nnoremap ;; :
 vnoremap ;; :
 nnoremap q <nop>
@@ -732,21 +732,30 @@ noremap <silent><leader>l <C-W>:vertical resize  -4<CR>
 " 设定相对行号和绝对行号显示问题 编辑模式=绝对行号 普通模式=相对行号 Ctrl+n 切换
 " 相对行号: 行号变成相对，可以用 nj/nk 进行跳转
 "=================================================================================================================================
-set relativenumber number
-au FocusLost * :set norelativenumber number
-au FocusGained * :set relativenumber
-" 插入模式下用绝对行号, 普通模式下用相对
-autocmd InsertEnter * :set norelativenumber number
-autocmd InsertLeave * :set relativenumber
+"set relativenumber number
+"au FocusLost * :set norelativenumber number
+"au FocusGained * :set relativenumber
+"" 插入模式下用绝对行号, 普通模式下用相对
+"autocmd InsertEnter * :set norelativenumber number
+"autocmd InsertLeave * :set relativenumber
+"function! NumberToggle()
+"if(&relativenumber == 1)
+"set norelativenumber number
+"else
+"set relativenumber
+"endif
+"endfunc
+"nnoremap <C-n> :call NumberToggle()<cr>
+
+"=================================================================================================================================
 function! NumberToggle()
 if(&relativenumber == 1)
-set norelativenumber number
+set norelativenumber
 else
 set relativenumber
 endif
 endfunc
 nnoremap <C-n> :call NumberToggle()<cr>
-
 
 "=================================================================================================================================
 " F2 行号开关，用于鼠标复制代码用
