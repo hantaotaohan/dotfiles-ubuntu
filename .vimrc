@@ -125,12 +125,35 @@ endif
 "                                                                ESC                                                          
 "                                                                                                                                
 "-----------------------------------------------------------------o--------------------------------------------------------------o
+
 inoremap jk <Esc>
-"vnoremap jk <Esc>
+
 nnoremap ;; :
 vnoremap ;; :
+
 nnoremap q <nop>
 vnoremap q <nop>
+nnoremap J <nop>
+vnoremap J <nop>
+nnoremap K <nop>
+vnoremap K <nop>
+
+" Go to home and end using capitalized directions
+noremap H ^
+noremap L $
+
+" Quickly close the current window
+nnoremap <leader>q :q<CR>
+
+" Quickly save the current file
+nnoremap <leader>w :w<CR>
+
+" remap U to <C-r> for easier redo
+nnoremap U <C-r>
+
+" Keep search pattern at the center of the screen.
+nnoremap <silent> n nzz
+nnoremap <silent> N Nzz
 
 "-----------------------------------------------------------------o--------------------------------------------------------------o
 "                                                                                                                                
