@@ -242,6 +242,7 @@ set ambiwidth=single                                                     " 设�
 set hidden                                                               " 针对buffer不保存即可切换
 set ttimeout                                                             " 打开功能键超时检测（终端下功能键为一串 ESC 开头的字符串）
 set ttimeoutlen=50                                                       " 功能键超时检测 50 毫秒
+set incsearch                                                            " 查找输入时动态增量显示查找结果
 " set backupdir=/etc/vim/.vim/                                           " 备份文件目录  
 " set directory=/etc/vim/.vim/                                           " 交换文件目录  
 " set vb t_vb=                                                           " 关闭提示音
