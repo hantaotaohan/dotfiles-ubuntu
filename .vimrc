@@ -721,17 +721,19 @@ tnoremap <c-l> <c-w><c-l>
 " 快速移动光标快捷键 
 "=================================================================================================================================
 " 普通模式下:Shift+HJKL快速移动
-" nnoremap K <Esc>5<up>
-" nnoremap J <Esc>5<down>
+nnoremap K <Esc>5<up>
+nnoremap J <Esc>5<down>
 " nnoremap H <Esc>0
 " nnoremap L <Esc>$
 
 " 编辑模式下:Alt+Shift+hjkl加速移动
 inoremap <C-a> <ESC>I
 inoremap <C-e> <ESC>A
+inoremap <C-w> <C-o>W
+inoremap <C-b> <C-o>B
 " inoremap <C-H> <ESC>I
-" inoremap <C-J> <down><down><down><down><down>
-" inoremap <C-K> <up><up><up><up><up>
+inoremap <C-j> <down><down><down><down><down>
+inoremap <C-k> <up><up><up><up><up>
 " inoremap <C-L> <ESC>A
 
 " 可视化模式下:Shift+HJKL快速移动
