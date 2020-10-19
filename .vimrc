@@ -748,14 +748,14 @@ noremap <silent><leader>l <C-W>:vertical resize  -4<CR>
 "nnoremap <C-n> :call NumberToggle()<cr>
 
 "=================================================================================================================================
-function! NumberToggle()
-if(&relativenumber == 1)
-set norelativenumber
-else
-set relativenumber
-endif
-endfunc
-nnoremap <C-n> :call NumberToggle()<cr>
+"function! NumberToggle()
+"if(&relativenumber == 1)
+"set norelativenumber
+"else
+"set relativenumber
+"endif
+"endfunc
+"nnoremap <C-n> :call NumberToggle()<cr>
 
 "=================================================================================================================================
 " F2 行号开关，用于鼠标复制代码用
