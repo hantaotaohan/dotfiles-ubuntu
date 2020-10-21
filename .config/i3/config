@@ -428,6 +428,9 @@ bindsym $mod+n exec --no-startup-id raiseorlaunch -r -c "Lotion" -e "/home/taota
 for_window [class="Alacritty" title="neomutt"] move to scratchpad , sticky enable , border normal 0 , title_format "<b>%title</b>"
 bindsym $mod+n exec --no-startup-id raiseorlaunch -r -t "neomutt" -e "alacritty -d 100 30 -t neomutt -e neomutt"
 
+for_window [class="Google-chrome" title="notion.so"] move to scratchpad , sticky enable , border normal 0 , title_format "<b>%title</b>"
+bindsym $mod+b exec --no-startup-id raiseorlaunch -r -c "notion.so" -c "Google-chrome" -e "google-chrome --force-dark-mode --enable-features=OverlayScrollbar --enable-plugins --process-per-tab --app=https://notion.so"
+
 # Scratchpad config
 #for_window [class="Zathura"] move to scratchpad, scratchpad
 #bindsym $mod+z [class="Zathura"] scratchpad show resize set 900 700 , move position center
