@@ -380,7 +380,7 @@ bar {
         separator  $base04
         statusline $base06
         # State             Border  BG      Text
-        focused_workspace   $base00 $base00 $base06
+        focused_workspace   $base00 $base00 $base0D
         active_workspace    $base00 $base00 $base06
         inactive_workspace  $base00 $base00 $base06
         urgent_workspace    $base00 $base08 $base00
