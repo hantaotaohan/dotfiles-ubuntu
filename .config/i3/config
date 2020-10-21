@@ -146,16 +146,17 @@ bindsym $mod+minus split v ;  exec --no-startup-id dunstify -r 6666 normal "Vert
 # 工作区设置
 # --------------------------------------------------------------------------------------------------
 
-set $workspace1 "1"
-set $workspace2 "2"
-set $workspace3 "3"
-set $workspace4 "4"
-set $workspace5 "5"
-set $workspace6 "6"
-set $workspace7 "7"
-set $workspace8 "8"
-set $workspace9 "9"
+set $workspace1 "1: 1 "
+set $workspace2 "2: 2 "
+set $workspace3 "3: 3 "
+set $workspace4 "4: 4 "
+set $workspace5 "5: 5 "
+set $workspace6 "6: 6 "
+set $workspace7 "7: 7 "
+set $workspace8 "8: 8 "
+set $workspace9 "9: 9 "
 set $workspace10 "10:   Chrome "
+
 
 # 切换工作区
 bindsym $mod+1 workspace $workspace1
@@ -379,7 +380,7 @@ bar {
         separator  $base04
         statusline $base06
         # State             Border  BG      Text
-        focused_workspace   $base00 $base00 $base0D
+        focused_workspace   $base00 $base0D $base00
         active_workspace    $base00 $base00 $base06
         inactive_workspace  $base00 $base00 $base06
         urgent_workspace    $base00 $base08 $base00
