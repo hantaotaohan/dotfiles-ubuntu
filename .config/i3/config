@@ -44,6 +44,7 @@ floating_maximum_size -1 x -1
 
 # 关闭窗口快捷键 
 bindsym $mod+Shift+q kill
+bindsym Mod4+Shift+q kill
 
 # 开启Terminal快捷键 
 bindsym $mod+Return exec --no-startup-id alacritty
