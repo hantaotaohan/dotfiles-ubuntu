@@ -6,5 +6,5 @@
 }
 
 * {
-        gtk-key-bindings: gtk-xf86cut-copy-paste
+        -gtk-key-bindings: gtk-xf86cut-copy-paste
 }
