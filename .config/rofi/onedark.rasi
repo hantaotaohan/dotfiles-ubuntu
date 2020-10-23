@@ -26,7 +26,7 @@
   spacing: 0;
   background-color: transparent;
 
-  font: "Knack Nerd Font 14";
+  font: "Saber 16";
   text-color: @text;
 }
 
@@ -66,14 +66,14 @@ listview {
 }
 
 element {
-  padding: 5px;
+  padding: 10px;
   text-color: @text-alt;
-  highlight: bold #95ee8f; /* green */
-  border-radius: 3px;
+  highlight: bold #e06c75; /* green */
+  border-radius: 10px;
 }
 
 element selected {
-  background-color: @emphasis;
+  background-color:RGB(79,87,103,0.3);
   text-color: @text;
 }
 
