@@ -273,6 +273,8 @@ set incsearch                                                            " 查�
 " set directory=/etc/vim/.vim/                                           " 交换文件目录  
 " set vb t_vb=                                                           " 关闭提示音
 " set noincsearch                                                        " 在输入要搜索的文字时，取消实时匹配
+hi Search term=standout ctermfg=235 ctermbg=204 guifg=#282C34 guibg=#E06C75      "搜索高亮自定义"
+hi IncSearch term=standout ctermfg=235 ctermbg=204 guifg=#282C34 guibg=#E06C75   "搜索行高亮自定义"
 
 "=================================================================================================================================
 " Other Config 
