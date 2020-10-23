@@ -467,6 +467,7 @@ exec --no-startup-id feh --bg-scale ~/.config/i3/background.jpg
 
 # 透明窗口 Compton
 exec --no-startup-id compton --config ~/.config/compton/compton.conf
+#exec_always --no-startup-id picom
 
 # 透明窗口 Picom
 # exec --no-startup-id picom --config ~/.config/picom/picom.conf
