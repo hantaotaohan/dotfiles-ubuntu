@@ -1184,7 +1184,8 @@ let g:AutoPairsMapBS=0
 "=================================================================================================================================
 " Which Key Map  settings
 "=================================================================================================================================
-let g:which_key_sep = '→'
+" let g:which_key_sep = '→'
+let g:which_key_sep = ' ◆ '
 let g:which_key_use_floating_win = 0
 let g:which_key_use_floating_relative = 0
 let g:which_key_align_by_seperator = 1
