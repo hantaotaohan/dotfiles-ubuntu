@@ -52,6 +52,9 @@ bindsym $mod+Return exec --no-startup-id alacritty
 # rofi 设置及配置 apt install rofi
 bindsym $mod+d exec --no-startup-id rofi -show drun
 
+# 切换窗口
+bindsym $mod+s exec --no-startup-id rofi -show window
+
 # 打开Ranger快捷键
 bindsym $mod+Shift+Return exec --no-startup-id alacritty -e ranger
 
