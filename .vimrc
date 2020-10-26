@@ -207,6 +207,7 @@ Plug 'junegunn/vim-easy-align'                                           " 自�
 Plug 'mg979/vim-visual-multi'                                            " 多光标插件
 Plug 'junegunn/goyo.vim'                                                 " 专注模式
 Plug 'junegunn/limelight.vim'                                            " 专注模式辅助
+Plug 'liuchengxu/vim-which-key'
 "Plug 'terryma/vim-multiple-cursors'                                     " 多光标插件
 "Plug 'edkolev/tmuxline.vim'                                             " Vim同步tmux配色
 call plug#end()
@@ -962,7 +963,7 @@ autocmd FileType vimwiki nmap <Leader>wg <Plug>Vimwiki2HTMLBrowse
 autocmd FileType vimwiki nmap <Leader>wh :VimwikiAll2HTML<cr>
 autocmd FileType vimwiki nmap <Leader>wb :ZettelBackLinks<cr>
 autocmd FileType vimwiki nmap <Leader>wn :ZettelNew<cr>
-autocmd FileType vimwiki nmap <Leader>bb :VimwikiBacklinks<cr>
+autocmd FileType vimwiki nmap <Leader>wl :VimwikiBacklinks<cr>
 
 let g:vimwiki_list = [{
         \ 'auto_export': 1,
@@ -1090,6 +1091,30 @@ xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
 
+let g:easy_align_delimiters = {
+\ '>': { 'pattern': '>>\|=>\|>'  },
+\ '/': {
+\     'pattern':         '//\+\|/\*\|\*/',
+\     'delimiter_align': 'l',
+\     'ignore_groups':   ['!Comment'] },
+\ ']': {
+\     'pattern':       '[[\]]',
+\     'left_margin':   0,
+\     'right_margin':  0,
+\     'stick_to_left': 0
+\   },
+\ ')': {
+\     'pattern':       '[()]',
+\     'left_margin':   0,
+\     'right_margin':  0,
+\     'stick_to_left': 0
+\   },
+\ 'd': {
+\     'pattern':      ' \(\S\+\s*[;=]\)\@=',
+\     'left_margin':  0,
+\     'right_margin': 0
+\   }
+\ }
 
 "=================================================================================================================================
 " Vim-visual-multi  settings
@@ -1155,3 +1180,157 @@ autocmd! User GoyoLeave Limelight!
 " AutoPairs  settings
 "=================================================================================================================================
 let g:AutoPairsMapBS=0
+
+"=================================================================================================================================
+" Which Key Map  settings
+"=================================================================================================================================
+let g:which_key_sep = '→'
+let g:which_key_use_floating_win = 0
+let g:which_key_use_floating_relative = 0
+let g:which_key_align_by_seperator = 1
+let g:which_key_flatten = 1
+let g:which_key_run_map_on_popup = 0
+let g:which_key_fallback_to_native_key=1
+let g:which_key_disable_default_offset = 1
+let g:which_key_exit = ["\<Esc>","\q"]
+let g:which_key_hspace = 30
+let g:which_key_vertical = 0
+let g:which_key_max_size = 0
+let g:which_key_sort_horizontal = 1
+let g:which_key_map =  {}
+
+let g:which_key_map.b = {
+  \ 'name' : '+Buffer',
+  \ }
+let g:which_key_map.d = {
+  \ 'name' : '+Display',
+  \ }
+let g:which_key_map.F = {
+  \ 'name' : '+File',
+  \ }
+let g:which_key_map.f = {
+  \ 'name' : '+FZF',
+  \ }
+let g:which_key_map.t = {
+  \ 'name' : '+Table',
+  \ }
+let g:which_key_map.v = {
+  \ 'name' : '+VCS',
+  \ }
+let g:which_key_map.w = {
+  \ 'name' : '+VimWiki',
+  \ }
+let g:which_key_map.p = {
+  \ 'name' : '+Plug',
+  \ }
+let g:which_key_map.g = {
+  \ 'name' : '+Goyo',
+  \ }
+
+" BUFFER
+let g:which_key_map.b.1 = ['b1'            , 'buffers 1 '      ]
+let g:which_key_map.b.2 = ['b2'            , 'buffers 2 '      ]
+let g:which_key_map.b.3 = ['b3'            , 'buffers 3 '      ]
+let g:which_key_map.b.4 = ['b4'            , 'buffers 4 '      ]
+let g:which_key_map.b.5 = ['b5'            , 'buffers 5 '      ]
+let g:which_key_map.b.6 = ['b6'            , 'buffers 6 '      ]
+let g:which_key_map.b.7 = ['b7'            , 'buffers 7 '      ]
+let g:which_key_map.b.8 = ['b8'            , 'buffers 8 '      ]
+let g:which_key_map.b.9 = ['b9'            , 'buffers 9 '      ]
+let g:which_key_map.b.0 = ['b10'           , 'buffers 10'      ]
+let g:which_key_map.b.a = ['badd'          , 'Add buffer'      ]
+let g:which_key_map.b.d = ['bdelete'       , 'Delete buffer'   ]
+let g:which_key_map.b.n = ['bnext'         , 'Next buffer'     ]
+let g:which_key_map.b.p = ['bprevious'     , 'Previous buffer' ]
+let g:which_key_map.b.h = ['Startify'      , 'Home'            ]
+
+" DISPLAY
+let g:which_key_map.d.w = ['<C-W>w'     , 'other-window'          ]
+let g:which_key_map.d.d = ['<C-W>c'     , 'delete-window'         ]
+let g:which_key_map.d.S = ['<C-W>s'     , 'split-window-below'    ]
+let g:which_key_map.d.V = ['<C-W>v'     , 'split-window-right'    ]
+let g:which_key_map.d.2 = ['<C-W>v'     , 'layout-double-columns' ]
+let g:which_key_map.d.h = ['<C-W>5<'    , 'expand-window-left'    ]
+let g:which_key_map.d.l = ['<C-W>5>'    , 'expand-window-right'   ]
+let g:which_key_map.d.D = ['<C-W>='     , 'balance-window'        ]
+let g:which_key_map.d.s = ['<C-W>s'     , 'split-window-below'    ]
+let g:which_key_map.d.v = ['<C-W>v'     , 'split-window-below'    ]
+let g:which_key_map.d.k = [':resize -5' , 'expand-window-up'      ]
+let g:which_key_map.d.j = [':resize +5' , 'expand-window-below'   ]
+
+" FILE
+let g:which_key_map.F.v = ['tabedit $MYVIMRC' , 'edit-vimrc'              ]
+let g:which_key_map.F.e = ['NERDTreeFind'     , 'explore-at-current-file' ]
+
+" FZF 
+let g:which_key_map.f.f = ['Files'    , 'files'                   ]
+let g:which_key_map.f.G = ['GFiles'   , 'git-files'               ]
+let g:which_key_map.f.g = ['GFiles?'  , 'modified-git-files'      ]
+let g:which_key_map.f.b = ['Buffers'  , 'open buffers'            ]
+let g:which_key_map.f.o = ['Colors'   , 'color schemes'           ]
+let g:which_key_map.f.a = ['Ag'       , 'ag search'               ]
+let g:which_key_map.f.r = ['Rg'       , 'rg search'               ]
+let g:which_key_map.f.l = ['Lines'    , 'lines in loaded buffers' ]
+let g:which_key_map.f.t = ['Tags'     , 'tigs in the project'     ]
+let g:which_key_map.f.m = ['Marks'    , 'marks'                   ]
+let g:which_key_map.f.w = ['Windows'  , 'windows'                 ]
+let g:which_key_map.f.c = ['Commands' , 'commands'                ]
+
+" TABLE
+let g:which_key_map.t.m = ['TableModeToggle'    , 'TableModeToggle' ]
+
+" VSC-GIT
+let g:which_key_map.v.B = ['Gbrowse' , 'browse' ]
+let g:which_key_map.v.D = ['Gdiff'   , 'diff'   ]
+let g:which_key_map.v.M = ['Gmerge'  , 'merge'  ]
+let g:which_key_map.v.P = ['Gpush'   , 'push'   ]
+let g:which_key_map.v.R = ['Grebase' , 'rebase' ]
+let g:which_key_map.v.b = ['Gblame'  , 'blame'  ]
+let g:which_key_map.v.c = ['Gcommit' , 'commit' ]
+let g:which_key_map.v.d = ['Gdelete' , 'delete' ]
+let g:which_key_map.v.f = ['Gfetch'  , 'fetch'  ]
+let g:which_key_map.v.l = ['Glog'    , 'log'    ]
+let g:which_key_map.v.m = ['Gmove'   , 'move'   ]
+let g:which_key_map.v.p = ['Gpull'   , 'pull'   ]
+let g:which_key_map.v.r = ['Grename' , 'rename' ]
+let g:which_key_map.v.s = ['Gstatus' , 'status' ]
+
+"VIMWIKI
+let g:which_key_map.w.g = ['<Plug>Vimwiki2HTMLBrowse' , 'vimwiki-to-html-browse' ]
+let g:which_key_map.w.h = ['VimwikiAll2HTML'          , 'vimwiki-to-html'        ]
+let g:which_key_map.w.b = ['ZettelBackLinks'          , 'add-backlineks'         ]
+let g:which_key_map.w.n = ['ZettelNew'                , 'add-new'                ]
+let g:which_key_map.w.l = ['VimwikiBacklinks'         , 'display-backlinks'      ]
+
+" PLUG-VIM
+let g:which_key_map.p.s = ['PlugSnapshot' , 'snapshot' ]
+let g:which_key_map.p.u = ['PlugUpgrade'  , 'upgrade'  ]
+let g:which_key_map.p.c = ['PlugClean'    , 'clean'    ]
+let g:which_key_map.p.d = ['PlugDiff'     , 'diff'     ]
+let g:which_key_map.p.i = ['PlugInstall'  , 'install'  ]
+let g:which_key_map.p.s = ['PlugStatus'   , 'status'   ]
+let g:which_key_map.p.u = ['PlugUpdate'   , 'update'   ]
+
+" GOYO
+let g:which_key_map.g.g = ['Goyo'  , 'Enter Goyo' ]
+let g:which_key_map.g.o = ['q'     , 'Leave Goyo' ]
+
+
+highlight default link WhichKey          Function
+highlight default link WhichKeySeperator DiffAdded
+highlight default link WhichKeyGroup     Keyword
+highlight default link WhichKeyDesc      Identifier
+highlight default link WhichKeyFloating  Pmenu
+"highlight Pmenu ctermbg=red guibg=#282c34
+"highlight Keyword ctermbg=red guibg=#282c34
+"highlight Function ctermbg=red guibg=#282c34
+
+
+call which_key#register('<Space>', "g:which_key_map")
+nnoremap <silent> <space><space> :<c-u>WhichKey '<Space>'<CR>
+vnoremap <silent> <space><space> :<c-u>WhichKeyVisual '<Space>'<CR>
+
+autocmd! FileType which_key
+autocmd  FileType which_key set laststatus=0 noshowmode noruler
+  \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
+
