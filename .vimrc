@@ -1315,6 +1315,30 @@ let g:which_key_map.p.u = ['PlugUpdate'   , 'update'   ]
 let g:which_key_map.g.g = ['Goyo'  , 'Enter Goyo' ]
 let g:which_key_map.g.o = ['q'     , 'Leave Goyo' ]
 
+let g:which_key_map[' '] = {
+      \ 'name' : '+Easymotion ' ,
+      \ 'f' : ['<plug>(easymotion-prefix)f' , 'find {char} to the right'],
+      \ 'F' : ['<plug>(easymotion-prefix)F' , 'find {char} to the left'],
+      \ 't' : ['<plug>(easymotion-prefix)t' , 'till before the {char} to the right'],
+      \ 'T' : ['<plug>(easymotion-prefix)T' , 'till after the {char} to the left'],
+      \ 'w' : ['<plug>(easymotion-prefix)w' , 'beginning of word forward'],
+      \ 'W' : ['<plug>(easymotion-prefix)W' , 'beginning of WORD forward'],
+      \ 'b' : ['<plug>(easymotion-prefix)b' , 'beginning of word backward'],
+      \ 'B' : ['<plug>(easymotion-prefix)B' , 'beginning of WORD backward'],
+      \ 'e' : ['<plug>(easymotion-prefix)e' , 'end of word forward'],
+      \ 'E' : ['<plug>(easymotion-prefix)E' , 'end of WORD forward'],
+      \ 'g' : {
+        \ 'name' : '+Backwards ' ,
+        \ 'e' : ['<plug>(easymotion-prefix)ge' , 'end of word backward'],
+        \ 'E' : ['<plug>(easymotion-prefix)gE' , 'end of WORD backward'],
+        \ },
+      \ 'j' : ['<plug>(easymotion-prefix)j' , 'line downward'],
+      \ 'k' : ['<plug>(easymotion-prefix)k' , 'line upward'],
+      \ 'n' : ['<plug>(easymotion-prefix)n' , 'jump to latest "/" or "?" forward'],
+      \ 'N' : ['<plug>(easymotion-prefix)N' , 'jump to latest "/" or "?" backward.'],
+      \ 's' : ['<plug>(easymotion-prefix)s' , 'find(search) {char} forward and backward.'],
+      \ }
+
 
 highlight default link WhichKey          Function
 highlight default link WhichKeySeperator DiffAdded
