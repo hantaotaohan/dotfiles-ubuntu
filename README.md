@@ -345,4 +345,10 @@ timedatectl set-local-rtc 1 --adjust-system-clock
 python2
 import keyring
 keyring.set_password("system", "username", "password")
+
+or
+
+keyring set bteb hantao@bteb.cn
+keyring set bteb hantaotaohan@hotmail.com
+
 ```
