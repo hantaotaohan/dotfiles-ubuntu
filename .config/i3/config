@@ -53,7 +53,7 @@ bindsym $mod+Return exec --no-startup-id alacritty
 bindsym $mod+d exec --no-startup-id rofi -show drun
 
 # 切换窗口
-bindsym $mod+s exec --no-startup-id rofi -show window
+bindsym $mod+s exec --no-startup-id rofi -show window -theme sidetab -window-format {t}
 
 # 打开Ranger快捷键
 bindsym $mod+Shift+Return exec --no-startup-id alacritty -e ranger
