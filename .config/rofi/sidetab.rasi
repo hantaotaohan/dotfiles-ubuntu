@@ -13,30 +13,16 @@ configuration {
 }
 
 * {
-    background-color:            #282c34dd;
-	text-color:                  #d3d7cf;
+    background-color: #282C33;
+    border-color: #2e343f;
+    text-color: #8ca0aa;
+    spacing: 0;
 	selbg:                       #215d9c;
 	actbg:                       #262626;
 	urgbg:                       #e53935;
 	winbg:			             #26c6da;
-    /*background-color: transparent;*/
-    font: "Saber 13";
-
-
-	selected-normal-foreground:  @winbg;
-	normal-foreground:           @text-color;
-	selected-normal-background:  @actbg;
-	normal-background:           @background-color;
-
-	selected-urgent-foreground:  @background-color;
-	urgent-foreground:           @text-color;
-	selected-urgent-background:  @urgbg;
-	urgent-background:           @background-color;
-
-	selected-active-foreground:  @winbg;
-	active-foreground:           @text-color;
-	selected-active-background:  @actbg;
-	active-background:           @selbg;
+    background-color: transparent;
+    font: "Saber 10";
 
 	line-margin:                 2;
 	line-padding:                2;
@@ -62,12 +48,6 @@ mainbox {
 	children: [ entry,listview,mode-switcher ];
 }
 
-button { padding: 5px 2px; }
-
-button selected {
-	background-color: @active-background;
-	text-color:       @background-color;
-}
 
 inputbar {
 	padding: 5px;
@@ -77,10 +57,13 @@ inputbar {
 listview {
 	spacing: 0.5em;
 	dynamic: false;
-	cycle:   true;
+	cycle:   false;
 }
 
-element { padding: 10px; }
+element {
+  border: 0 0 1px 0;
+  padding: 16px;
+}
 
 entry {
 	expand:         false;
@@ -89,50 +72,18 @@ entry {
 	padding:        5px;
 }
 
-element normal.normal {
-	background-color: @normal-background;
-	text-color:       @normal-foreground;
+element {
+  border: 0 0 1px 0;
+  padding: 16px;
 }
 
-element normal.urgent {
-	background-color: @urgent-background;
-	text-color:       @urgent-foreground;
+element selected {
+  background-color: #2e343f;
 }
 
-element normal.active {
-	background-color: @active-background;
-	text-color:       @active-foreground;
+textbox {
+  background-color: #2e343f;
+  border: 0 0 1px 0;
+  border-color: #282C33;
+  padding: 8px 16px;
 }
-
-element selected.normal {
-	background-color: @selected-normal-background;
-	text-color:       @selected-normal-foreground;
-	border:           0 5px solid 0 0;
-	border-color:	    @active-background;
-}
-
-element selected.urgent {
-	background-color: @selected-urgent-background;
-	text-color:       @selected-urgent-foreground;
-}
-
-element selected.active {
-	background-color: @selected-active-background;
-	text-color:       @selected-active-foreground;
-}
-
-element alternate.normal {
-	background-color: @normal-background;
-	text-color:       @normal-foreground;
-}
-
-element alternate.urgent {
-	background-color: @urgent-background;
-	text-color:       @urgent-foreground;
-}
-
-element alternate.active {
-	background-color: @active-background;
-	text-color:       @active-foreground;
-}
-
