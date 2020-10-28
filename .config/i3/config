@@ -56,7 +56,7 @@ bindsym $mod+Return exec --no-startup-id alacritty
 bindsym $mod+d exec --no-startup-id rofi -show drun
 
 # 切换窗口
-bindsym $mod+s exec --no-startup-id rofi -show window -theme sidetab -window-format {t}
+bindsym $mod+p exec --no-startup-id rofi -show window -theme sidetab -window-format {t}
 
 # 打开Ranger快捷键
 bindsym $mod+Shift+Return exec --no-startup-id alacritty -e ranger
@@ -70,7 +70,7 @@ bindsym $mod+shift+n move scratchpad ,resize set 1200 800 , move position center
 
 # 调出便签区的窗口
 #bindsym $mod+Tab scratchpad show ,resize set 1200 800 , move position center , sticky enable
-bindsym $mod+p scratchpad show , move position center , sticky enable
+bindsym $mod+s scratchpad show , move position center , sticky enable
 
 # 切换工作区
 bindsym $mod+Tab workspace next
