@@ -5,6 +5,18 @@
 #    alacritty -d 100 30 -t scratchpad -e vim $HOME/.scratchpad
 #fi
 
+case $BLOCK_BUTTON in
+    1) # Left Click
+        i3-msg exec "raiseorlaunch -r -t "scratchpad" -e 'alacritty -d 100 30 -t scratchpad -e vim $HOME/.scratchpad'"
+        ;;
+    2) # Middle Click
+        i3-msg "kill"
+        ;;
+    3) # Right Click
+        i3-msg "kill"
+        ;;
+esac
+
 dbm=$(wmctrl -l | grep -c "scratchpad")
 COLOR_on="#e06c75"
 COLOR_off="#abb2bf"
