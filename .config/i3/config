@@ -66,7 +66,10 @@ bindsym $mod+Shift+Return exec --no-startup-id alacritty -e ranger
 bindsym $mod+g exec --no-startup-id raiseorlaunch -c "Google-chrome" -e "google-chrome --force-dark-mode"
 
 # 移动当前窗口到便签区
-bindsym $mod+shift+n move scratchpad ,resize set 1200 800 , move position center
+# bindsym $mod+shift+n move scratchpad ,resize set 1200 800 , move position center
+# bindsym Mod4+n move scratchpad ,resize set 1200 800 , move position center
+bindsym $mod+shift+n move scratchpad 
+bindsym Mod4+n move scratchpad
 
 # 调出便签区的窗口
 #bindsym $mod+Tab scratchpad show ,resize set 1200 800 , move position center , sticky enable
