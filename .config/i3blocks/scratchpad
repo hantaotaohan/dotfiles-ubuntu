@@ -7,13 +7,13 @@ show_count() {
   echo "${count}"
 
   if   [[ "${count}" -gt 5 ]]; then
-    echo "#d33682"
+    echo "#e06c75"
   elif [[ "${count}" -gt 4 ]]; then
-    echo "#dc322f"
+    echo "#c678dd"
   elif [[ "${count}" -gt 3 ]]; then
-    echo "#cb4b16"
+    echo "#e5c07b"
   elif [[ "${count}" -gt 2 ]]; then
-    echo "#b58900"
+    echo "#61afef"
   else
     echo "#abb2bf"
   fi
@@ -25,3 +25,4 @@ case $BLOCK_BUTTON in
 esac
 
 show_count
+
