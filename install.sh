@@ -379,6 +379,7 @@ echo -e "                                                                       
         zathura\
         i3blocks\
         xinput\
+	jq\
         open-vm-tools\
         open-vm-tools-desktop\
 	language-pack-gnome-zh-hans\
