@@ -155,6 +155,9 @@ nnoremap U <C-r>
 nnoremap <silent> n nzz
 nnoremap <silent> N Nzz
 
+" Clear highlighted search
+nnoremap <CR> :noh<CR><CR>
+
 "-----------------------------------------------------------------o--------------------------------------------------------------o
 "                                                                                                                                
 "                                                              基础设置                                                          
