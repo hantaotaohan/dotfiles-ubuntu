@@ -40,6 +40,12 @@ separator=true
 [separator]
 full_text= 
 
+[scratchpad]
+label=✎ 
+command=$HOME/.config/i3blocks/scratchpad
+min_width=60
+interval=1
+
 [memory]
 label=
 interval=30
