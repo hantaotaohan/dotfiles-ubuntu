@@ -5,6 +5,18 @@
 #    alacritty -d 100 30 -t scratchpad -e vim $HOME/.scratchpad
 #fi
 
+case $BLOCK_BUTTON in
+    1) # Left Click
+        i3-msg exec "raiseorlaunch -r -c 'notion.so' -c 'Google-chrome' -e 'google-chrome --force-dark-mode --enable-features=OverlayScrollbar --enable-plugins --process-per-tab --app=https://notion.so'"
+        ;;
+    2) # Middle Click
+        i3-msg "kill"
+        ;;
+    3) # Right Click
+        i3-msg "kill"
+        ;;
+esac
+
 dbm=$( xdotool search --classname notion.so)
 COLOR_on="#e06c75"
 COLOR_off="#abb2bf"
