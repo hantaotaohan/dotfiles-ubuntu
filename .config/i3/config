@@ -45,6 +45,9 @@ focus_follows_mouse no
 # 快捷键设置
 # --------------------------------------------------------------------------------------------------
 
+# alt+鼠标中建关闭窗口
+bindsym --whole-window $mod+button2 kill
+
 # 关闭窗口快捷键 
 bindsym $mod+Shift+q kill
 bindsym Mod4+Shift+q kill
