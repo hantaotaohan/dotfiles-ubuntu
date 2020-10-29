@@ -1201,6 +1201,16 @@ let g:which_key_hspace = 30
 let g:which_key_vertical = 0
 let g:which_key_max_size = 0
 let g:which_key_sort_horizontal = 1
+"=================================================================================================================================
+highlight default link WhichKey          Function
+highlight default link WhichKeySeperator DiffAdded
+highlight default link WhichKeyGroup     Keyword
+highlight default link WhichKeyDesc      Identifier
+highlight default link WhichKeyFloating  Pmenu
+"highlight Pmenu ctermbg=red guibg=#282c34
+"highlight Keyword ctermbg=red guibg=#282c34
+"highlight Function ctermbg=red guibg=#282c34
+"=================================================================================================================================
 let g:which_key_map =  {}
 
 let g:which_key_map.b = {
@@ -1342,19 +1352,13 @@ let g:which_key_map[' '] = {
       \ 'N' : ['<plug>(easymotion-prefix)N' , 'jump to latest "/" or "?" backward.'],
       \ 's' : ['<plug>(easymotion-prefix)s' , 'find(search) {char} forward and backward.'],
       \ }
+      
+"=================================================================================================================================
 
+if !exists('which_key#register')
+    silent! call which_key#register('<Space>', "g:which_key_map")
+endif
 
-highlight default link WhichKey          Function
-highlight default link WhichKeySeperator DiffAdded
-highlight default link WhichKeyGroup     Keyword
-highlight default link WhichKeyDesc      Identifier
-highlight default link WhichKeyFloating  Pmenu
-"highlight Pmenu ctermbg=red guibg=#282c34
-"highlight Keyword ctermbg=red guibg=#282c34
-"highlight Function ctermbg=red guibg=#282c34
-
-
-call which_key#register('<Space>', "g:which_key_map")
 nnoremap <silent> <space><space> :<c-u>WhichKey '<Space>'<CR>
 vnoremap <silent> <space><space> :<c-u>WhichKeyVisual '<Space>'<CR>
 
