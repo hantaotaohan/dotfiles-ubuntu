@@ -192,7 +192,7 @@ Plug 'junegunn/fzf.vim'                                                  " 为vi
 Plug 'skywind3000/asyncrun.vim'                                          " 配合调测python插件
 Plug 'christoomey/vim-tmux-navigator'                                    " 同步vim与tmux快捷键
 Plug 'Yggdroot/indentLine'                                               " 缩进线显示插件
-Plug 'scrooloose/nerdcommenter'                                          " 快速注释插件
+Plug 'tpope/vim-commentary'                                              " 快速注释插件                                     
 Plug 'mhinz/vim-startify'                                                " 定制vim开始页面
 Plug 'SirVer/ultisnips'                                                  " 代码片段管理器
 Plug 'honza/vim-snippets'                                                " 代码片段仓库
@@ -213,6 +213,7 @@ Plug 'junegunn/limelight.vim'                                            " 专�
 Plug 'liuchengxu/vim-which-key'
 "Plug 'terryma/vim-multiple-cursors'                                     " 多光标插件
 "Plug 'edkolev/tmuxline.vim'                                             " Vim同步tmux配色
+"Plug 'scrooloose/nerdcommenter'                                         " 快速注释插件
 call plug#end()
 
 
