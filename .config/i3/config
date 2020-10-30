@@ -511,3 +511,6 @@ exec --no-startup-id dunst
 
 # 切换便签
 bindsym Mod4+Tab exec --no-startup-id $HOME/.config/i3/i3-scratchpad-dmenu.py
+
+# alttab
+exec --no-startup-id "alttab -mk Control_L -s 1 -t 500x200 -d 1 -font xft:Saber:style=Bold:size=10 -i 30x30"
