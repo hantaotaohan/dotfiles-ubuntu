@@ -12,4 +12,5 @@ bash setup_peek.sh &&\
 bash config_fcitx.sh &&\
 bash config_hosts.sh &&\
 bash config_i3_terminal.sh &&\
-bash config_autorun_offlineimap.sh
+bash config_autorun_offlineimap.sh &&\
+bash setup_alttab.sh
