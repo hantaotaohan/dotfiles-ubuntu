@@ -55,4 +55,4 @@ alias chrome="google-chrome --force-dark-mode --proxy-server=socks5://127.0.0.1:
 # Ctrl+l
 # bind -x '"\C-l":ls -l'
 # F5
-bind '"\e[15~":"cd $HOME && ll\n"'
+# bind '"\e[15~":"cd $HOME && ll\n"'
