@@ -403,6 +403,7 @@ echo -e "                                                                       
 	p7zip-full\
 	gnome-keyring\
 	lua5.2\
+	imwheel\
 	yank
         )
 	for app in "${aptApps[@]}"
