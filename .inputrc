@@ -49,3 +49,9 @@ set convert-meta off
 # Use Alt/Meta + Delete to delete the preceding word
 # 使用Alt/Meta+Delete删除前面的单词
 "\e[3;3~": kill-word
+
+# 自定义按键绑定
+# F5 进入HOME
+"\e[15~":"cd $HOME && ll\n"
+# \+q 退出bash
+"\q":"exit\n"
