@@ -74,6 +74,9 @@ bindsym $mod+g exec --no-startup-id raiseorlaunch -c "Google-chrome" -e "google-
 bindsym $mod+shift+n move scratchpad 
 bindsym Mod4+n move scratchpad
 
+# 切换便签
+bindsym Mod4+Tab exec --no-startup-id $HOME/.config/i3/i3-scratchpad-dmenu.py
+
 # 调出便签区的窗口
 #bindsym $mod+Tab scratchpad show ,resize set 1200 800 , move position center , sticky enable
 bindsym $mod+s scratchpad show , move position center , sticky enable
@@ -509,8 +512,8 @@ exec --no-startup-id dunst
 # 自动锁屏
 # exec --no-startup-id xautolock -time 3 -locker "i3lock-fancy"
 
-# 切换便签
-bindsym Mod4+Tab exec --no-startup-id $HOME/.config/i3/i3-scratchpad-dmenu.py
+# 启用鼠标加速
+exec --no-startup-id imwheel
 
-# alttab
+# Alttab
 exec --no-startup-id "alttab -mk Control_L -s 1 -t 500x200 -d 1 -font xft:Saber:style=Bold:size=10 -i 30x30"
