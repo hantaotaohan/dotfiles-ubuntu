@@ -59,6 +59,7 @@ Dotfiles_symlinks=(\
 	.msmtprc\
         .wgetrc\
         .Xmodmap\
+	.imwheelrc\
         .Xresources
         )
 
