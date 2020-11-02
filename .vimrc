@@ -1062,7 +1062,7 @@ endfunc
 
 autocmd BufReadPost $HOME/Vimwiki/src/index.md call GitPull()
 autocmd BufWritePost $HOME/Vimwiki/src/index.md call GitPush()
-au! VimLeave $HOME/Vimwiki/index.md !git -C $HOME/Vimwiki/ add . ;git commit -m "Auto commit `date`" ;git push origin master
+autocmd VimLeave $HOME/Vimwiki/* !git -C $HOME/Vimwiki/ add . ;git commit -m "Auto commit + push." ;git push origin master
 
 "=================================================================================================================================
 
