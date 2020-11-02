@@ -39,10 +39,10 @@ EOF
 Alttab() {
     sudo apt install -y libx11-dev libxmu-dev libxft-dev libxrender-dev libxrandr-dev libpng-dev uthash-dev libxpm*
     git clone https://github.com/sagb/alttab.git $HOME/Desktop/alttab 
-    cd $HOME/Desktop/alttab
+    cd $HOME/Desktop/alttab || return
     ./configure && make
     sudo make install
-    cd $HOME
+    cd $HOME || return
     sudo rm -rf $HOME/Desktop/alttab
 }
 
