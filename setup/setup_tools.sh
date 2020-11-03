@@ -42,14 +42,12 @@ row() {
 
 Alttab() {
     sudo apt install -y libx11-dev libxmu-dev libxft-dev libxrender-dev libxrandr-dev libpng-dev uthash-dev libxpm4 libxpm-dev
-    sudo rm -rf $HOME/Desktop/alttab/ && \
-    git clone https://github.com/sagb/alttab.git $HOME/Desktop/alttab 
-    cd $HOME/Desktop/alttab
+    wget -P $HOME/Desktop https://download.fastgit.org/sagb/alttab/archive/v1.5.0.zip
+    cd $HOME/Desktop && unzip v1.5.0.zip && cd alttab-1.5.0
     ./configure 
     make 
-    sudo make install
-    cd $HOME 
-    sudo rm -rf $HOME/Desktop/alttab/
+    sudo make install 
+    sudo rm -rf $HOME/Desktop/alttab-1.5.0
     row
 }
 
