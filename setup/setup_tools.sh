@@ -41,8 +41,8 @@ row() {
 }
 
 Alttab() {
-    sudo rm -rf $HOME/Desktop/alttab/
     sudo apt install -y libx11-dev libxmu-dev libxft-dev libxrender-dev libxrandr-dev libpng-dev uthash-dev libxpm4 libxpm-dev
+    sudo rm -rf $HOME/Desktop/alttab/ && \
     git clone https://github.com/sagb/alttab.git $HOME/Desktop/alttab 
     cd $HOME/Desktop/alttab
     ./configure 
