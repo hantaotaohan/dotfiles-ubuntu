@@ -41,7 +41,7 @@ row() {
 }
 
 Alttab() {
-    if [ -d $HOME/Desktop/alttab  ]; then
+    if [ -d "$HOME/Desktop/alttab/"  ]; then
         rm -rf $HOME/Desktop/alttab
         sudo apt install -y libx11-dev libxmu-dev libxft-dev libxrender-dev libxrandr-dev libpng-dev uthash-dev libxpm4 libxpm-dev
         git clone https://github.com/sagb/alttab.git $HOME/Desktop/alttab 
