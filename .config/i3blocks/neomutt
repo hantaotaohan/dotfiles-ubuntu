@@ -7,7 +7,7 @@
 
 case $BLOCK_BUTTON in
     1) # Left Click
-        i3-msg exec "raiseorlaunch -r -t "neomutt" -e '--no-startup-id alacritty -d 100 30 -t neomutt -e neomutt'" > /dev/null
+        i3-msg --quiet "exec --no-startup-id raiseorlaunch -r -t neomutt -e '--no-startup-id alacritty -d 100 30 -t neomutt -e neomutt'"
         ;;
     2) # Middle Click
         i3-msg "kill"

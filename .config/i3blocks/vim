@@ -7,13 +7,15 @@
 
 case $BLOCK_BUTTON in
     1) # Left Click
-        i3-msg exec "raiseorlaunch -r -t "scratchpad" -e '--no-startup-id alacritty -d 100 30 -t scratchpad -e vim $HOME/.scratchpad'" > /dev/null
+        # i3-msg exec --no-startup-id "raiseorlaunch -r -t "scratchpad" -e '--no-startup-id alacritty -d 100 30 -t scratchpad -e vim $HOME/.scratchpad'" > /dev/null
+        # i3-msg exec "raiseorlaunch -r -t scratchpad -e 'alacritty -d 100 30 -t scratchpad -e vim $HOME/.scratchpad'"
+        i3-msg --quiet "exec --no-startup-id raiseorlaunch -r -t scratchpad -e '--no-startup-id alacritty -d 100 30 -t scratchpad -e vim $HOME/.scratchpad'"
         ;;
     2) # Middle Click
-        i3-msg "kill"
+        i3-msg --no-startup-id exec "kill"
         ;;
     3) # Right Click
-        i3-msg "kill"
+        i3-msg --no-startup-id exec "kill"
         ;;
 esac
 
