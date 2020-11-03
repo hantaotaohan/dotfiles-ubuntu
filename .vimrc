@@ -536,7 +536,7 @@ let g:mkdp_preview_options = {
     \ }
 
 " settings markdowncss & highdark paht
-let g:mdpath='/home/saber/Dotfiles/extras/vim_preview_markdown/onedark/'
+let g:mdpath='/home/saber/Dotfiles/setup/vim_preview_markdown/onedark/'
 
 " use a custom markdown style must be absolute path
 let g:mkdp_markdown_css = g:mdpath . 'onedark.css'

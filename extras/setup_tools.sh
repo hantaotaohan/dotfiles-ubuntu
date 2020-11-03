@@ -12,27 +12,27 @@ Options:
     
     -all      Install All tools
 
-    -1        Alttab
-    -2        Arcthemes
-    -3        Arcicons
-    -4        Alttab
-    -5        Copytranslator
-    -6        Crossover
-    -7        I3gaps
-    -8        Imagemagick
-    -9        Jupyter
-    -10       Navi
-    -11       Peek
-    -12       Picom
-    -13       SSR
-    -14       Dunst
-    -15       VIM
-    -16       Offlineimap
-    -17       Fcitx
-    -18       GTK
-    -19       Github
-    -20       Github_Hosts
-    -21       I3_Sensible_Terminal
+    -1        Install Alttab
+    -2        Install Arcthemes
+    -3        Install Arcicons
+    -4        Install Copytranslator
+    -5        Install Crossover
+    -6        Install I3gaps
+    -7        Install Imagemagick
+    -8        Install Jupyter Themes
+    -9        Install Navi
+    -10       Install Peek
+    -11       Install Picom
+    -12       Install SSR
+    -13       Install Dunst
+    -14       Install VIM
+    -15       Auto run Offlineimap
+    -16       Config Dark Fcitx
+    -17       Config GTK Suppor Ctrlc.v
+    -18       Config Github SSHkey
+    -19       Config Hosts Suppor Github_Hosts
+    -20       Config I3_Sensible_Terminal Default
+    -21       Fix VMware Share Floader
 EOF
 }
 
@@ -65,12 +65,12 @@ Alttab() {
     fi
 }
 
-
 Arcthemes() {
     sudo apt install -y arc-theme
     if [ -f /etc/gtk-3.0/settings.ini ]; then
         sudo sed -i 's/gtk-theme-name = Ambiance/gtk-theme-name = Arc-Dark/g' /etc/gtk-3.0/settings.ini
     fi
+    row
 }
 
 Arcicons() {
@@ -82,6 +82,7 @@ Arcicons() {
     fi
     cd $HOME
     sudo rm -rf $HOME/Desktop/arc-icon-theme
+    row
 }
 
 Copytranslator() {
@@ -89,6 +90,7 @@ Copytranslator() {
     sudo dpkg -i copytranslator_10.0.0-beta.2_amd64.deb
     cd $HOME
     sudo rm -rf $HOME/Desktop/copytranslator_10.0.0-beta.2_amd64.deb
+    row
 }
 
 Crossover() {
@@ -103,14 +105,18 @@ Crossover() {
     sudo cp $HOME/Desktop/winewrapper.exe.so /opt/cxoffice/lib/wine/
     cd $HOME
     sudo rm -rf $HOME/Desktop/winewrapper.exe.so crossover-20.deb
+    row
 }
 
 I3gaps() {
     sudo add-apt-repository -y ppa:kgilmer/speed-ricer
+    sudo sed -i "s/http:\/\/ppa.launchpad.net/https:\/\/launchpad.proxy.ustclug.org/g" /etc/apt/sources.list.d/*.list
     sudo apt-get update
     sudo apt install -y i3-gaps-wm
     sudo apt-get -y -qq --purge remove rxvt-unicode > /dev/null 2>&1 
+    sudo sed -i "s/https:\/\/launchpad.proxy.ustclug.org/http:\/\/ppa.launchpad.net/g" /etc/apt/sources.list.d/*.list
     sudo add-apt-repository -y --remove ppa:kgilmer/speed-ricer
+    row
 }
 
 Imagemagick() {
@@ -118,6 +124,7 @@ Imagemagick() {
     if [ -f /etc/ImageMagick-6/policy.xml ]; then
         sudo sed -i 's/<policy domain="coder" rights="none" pattern="PDF" \/>/<policy domain="coder" rights="read|write" pattern="PDF" \/>/g' /etc/ImageMagick-6/policy.xml
     fi
+    row
 }
 
 Jupyter() {
@@ -125,31 +132,36 @@ Jupyter() {
     if [ ! -d "$HOME/.jupyter/custom/" ]
     then
         mkdir -p $HOME/.jupyter/custom/
-        cp $HOME/Dotfiles/extras/jupyter/custom.css $HOME/.jupyter/custom/custom.css
+        cp $HOME/Dotfiles/setup/jupyter/custom.css $HOME/.jupyter/custom/custom.css
     fi
 
     if [ ! -d "$HOME/.ipython/profile_default/startup/" ]
     then
         mkdir -p $HOME/.ipython/profile_default/startup/
-        cp $HOME/Dotfiles/extras/jupyter/startup.py $HOME/.ipython/profile_default/startup/startup.py
+        cp $HOME/Dotfiles/setup/jupyter/startup.py $HOME/.ipython/profile_default/startup/startup.py
     fi
+    row
 }
 
 Navi() {
     sudo bash -c "$(wget -O- https://raw.githubusercontent.com/denisidoro/navi/master/scripts/install)"
     if [ -d "$HOME/.local/share/navi/cheats/denisidoro__cheats/" ]; then
-        ln -fs $HOME/Dotfiles/extras/cheatsheets/cheatsheets.cheat $HOME/.local/share/navi/cheats/denisidoro__cheats/cheatsheets.cheat
+        ln -fs $HOME/Dotfiles/setup/cheatsheets/cheatsheets.cheat $HOME/.local/share/navi/cheats/denisidoro__cheats/cheatsheets.cheat
     else
         mkdir -p $HOME/.local/share/navi/cheats/denisidoro__cheats
-        ln -fs $HOME/Dotfiles/extras/cheatsheets/cheatsheets.cheat $HOME/.local/share/navi/cheats/denisidoro__cheats/cheatsheets.cheat
+        ln -fs $HOME/Dotfiles/setup/cheatsheets/cheatsheets.cheat $HOME/.local/share/navi/cheats/denisidoro__cheats/cheatsheets.cheat
     fi
+    row
 }
 
 Peek() {
     sudo add-apt-repository -y ppa:peek-developers/stable
+    sudo sed -i "s/http:\/\/ppa.launchpad.net/https:\/\/launchpad.proxy.ustclug.org/g" /etc/apt/sources.list.d/*.list
     sudo apt update
     sudo apt install -y peek
+    sudo sed -i "s/https:\/\/launchpad.proxy.ustclug.org/http:\/\/ppa.launchpad.net/g" /etc/apt/sources.list.d/*.list
     sudo add-apt-repository -y --remove peek-developers/stable
+    row
 }
 
 Picom() {
@@ -163,6 +175,7 @@ Picom() {
     sudo ninja -C build install && \
     cd $HOME
     sudo rm -rf $HOME/Desktop/picom
+    row
 }
 
 SSR() {
@@ -170,6 +183,7 @@ SSR() {
     sudo dpkg -i $HOME/Desktop/electron-ssr-0.3.0-alpha.6.deb
     cd $HOME
     sudo rm -rf $HOME/Desktop/electron-ssr-0.3.0-alpha.6.deb
+    row
 }
 
 Dunst() {
@@ -180,34 +194,43 @@ Dunst() {
     sudo make install
     cd $HOME
     rm -rf $HOME/Desktop/dunst
+    row
 }
 
 VIM() {
     sudo add-apt-repository -y ppa:jonathonf/vim
+    sudo sed -i "s/http:\/\/ppa.launchpad.net/https:\/\/launchpad.proxy.ustclug.org/g" /etc/apt/sources.list.d/*.list
     sudo apt update
     sudo apt install -y vim
+    sudo sed -i "s/https:\/\/launchpad.proxy.ustclug.org/http:\/\/ppa.launchpad.net/g" /etc/apt/sources.list.d/*.list
     sudo add-apt-repository -y --remove ppa:jonathonf/vim
+    row
 }
+
+
 
 Offlineimap() {
     sudo cp /usr/share/doc/offlineimap/examples/systemd/offlineimap.service /etc/systemd/user
     systemctl --user enable offlineimap
     systemctl --user start offlineimap
+    row
 }
 
 Fcitx() {
     if [ -f $HOME/.config/fcitx/conf/fcitx-classic-ui.config ]; then
         sudo rm -rf $HOME/.config/fcitx/conf/fcitx-classic-ui.config
-        sudo cp $HOME/Dotfiles/extras/fcitx/fcitx-classic-ui.config $HOME/.config/fcitx/conf/fcitx-classic-ui.config
+        sudo cp $HOME/Dotfiles/setup/fcitx/fcitx-classic-ui.config $HOME/.config/fcitx/conf/fcitx-classic-ui.config
     else
-        sudo cp $HOME/Dotfiles/extras/fcitx/fcitx-classic-ui.config $HOME/.config/fcitx/conf/fcitx-classic-ui.config
+        sudo cp $HOME/Dotfiles/setup/fcitx/fcitx-classic-ui.config $HOME/.config/fcitx/conf/fcitx-classic-ui.config
     fi
+    row
 }
 
 GTK() {
     if [ -f /etc/gtk-3.0/settings.ini ]; then
-        sudo cp $HOME/Dotfiles/extras/gtk3setting/settings.ini /etc/gtk-3.0/settings.ini
+        sudo cp $HOME/Dotfiles/setup/gtk3setting/settings.ini /etc/gtk-3.0/settings.ini
     fi
+    row
 }
 
 Github() {
@@ -219,10 +242,12 @@ Github() {
         xclip -sel clip < $HOME/.ssh/id_rsa.pub
         google-chrome --new-window 'https://github.com/settings/keys'
     fi
+    row
 }
 
 Github_Hosts() {
-    python3 $HOME/Dotfiles/extras/github_hosts.py
+    sudo python3 $HOME/Dotfiles/setup/github_hosts.py
+    row
 }
 
 I3_Sensible_Terminal() {
@@ -232,46 +257,53 @@ I3_Sensible_Terminal() {
     if [ -f /usr/bin/rofi-sensible-terminal ]; then
         sudo sed -i 's/konsole/konsole alacritty/g' /usr/bin/i3-sensible-terminal
     fi
+    row
+}
+
+Vmware_Share_Fix() {
+    if type vmhgfs-fuse >/dev/null 2>&1; then
+        sudo vmhgfs-fuse .host:/ /mnt/hgfs -o allow_other,nonempty ;
+    fi
 }
 
 main() {
 
 
-    echo " "
-    echo "-------------------------------------------------------------------------------"
-    echo " "
-    echo "--help    Print this message"
-    echo "-all      Install All tools"
-    echo " "
-    echo "-------------------------------------------------------------------------------"
-    echo " "
-    echo "-1        Alttab"
-    echo "-2        Arcthemes"
-    echo "-3        Arcicons"
-    echo "-4        Alttab"
-    echo "-5        Copytranslator"
-    echo "-6        Crossover"
-    echo "-7        I3gaps"
-    echo "-8        Imagemagick"
-    echo "-9        Jupyter"
-    echo "-10       Navi"
-    echo "-11       Peek"
-    echo "-12       Picom"
-    echo "-13       SSR"
-    echo "-14       Dunst"
-    echo "-15       VIM"
-    echo "-16       Offlineimap"
-    echo "-17       Fcitx"
-    echo "-18       GTK"
-    echo "-19       Github"
-    echo "-20       Github_Hosts"
-    echo "-21       I3_Sensible_Terminal"
-    echo "-------------------------------------------------------------------------------"
-    echo " "
+#     echo " "
+#     echo "-------------------------------------------------------------------------------"
+#     echo " "
+#     echo "--help    Print this message"
+#     echo "-all      Install All tools"
+#     echo " "
+#     echo "-------------------------------------------------------------------------------"
+#     echo " "
+#     echo "-1        Alttab"
+#     echo "-2        Arcthemes"
+#     echo "-3        Arcicons"
+#     echo "-4        Alttab"
+#     echo "-5        Copytranslator"
+#     echo "-6        Crossover"
+#     echo "-7        I3gaps"
+#     echo "-8        Imagemagick"
+#     echo "-9        Jupyter"
+#     echo "-10       Navi"
+#     echo "-11       Peek"
+#     echo "-12       Picom"
+#     echo "-13       SSR"
+#     echo "-14       Dunst"
+#     echo "-15       VIM"
+#     echo "-16       Offlineimap"
+#     echo "-17       Fcitx"
+#     echo "-18       GTK"
+#     echo "-19       Github"
+#     echo "-20       Github_Hosts"
+#     echo "-21       I3_Sensible_Terminal"
+#     echo "-------------------------------------------------------------------------------"
+#     echo " "
 
-    read -r -p "Please select the mode you want to install ?  " input
+#     read -r -p "Please select the mode you want to install ?  " input
 
-    case "$input" in
+    case "$1" in
         ''|-h|--help)
             usage
             exit 0
@@ -286,60 +318,61 @@ main() {
             Arcicons
             ;;
         -4)
-            Alttab
-            ;;
-        -5)
             Copytranslator
             ;;
-        -6)
+        -5)
             Crossover
             ;;
-        -7)
+        -6)
             I3gaps
             ;;
-        -8)
+        -7)
             Imagemagick
             ;;
-        -9)
+        -8)
             Jupyter
             ;;
-        -10)
+        -9)
             Navi
             ;;
-        -11)
+        -10)
             Peek
             ;;
-        -12)
+        -11)
             Picom
             ;;
-        -13)
+        -12)
             SSR
             ;;
-        -14)
+        -13)
             Dunst
             ;;
-        -15)
+        -14)
             VIM
             ;;
-        -16)
+        -15)
             Offlineimap
             ;;
-        -17)
+        -16)
             Fcitx
             ;;
-        -18)
+        -17)
             GTK
             ;;
-        -19)
+        -18)
             Github
             ;;
-        -20)
+        -19)
             Github_Hosts
             ;;
-        -21)
+        -20)
             I3_Sensible_Terminal
             ;;
+        -21)
+            Vmware_Share_Fix
+            ;;
         -all)
+            Github_Hosts
             Dunst
             VIM
             I3gaps
@@ -351,7 +384,6 @@ main() {
             Navi
             Peek
             Fcitx
-            Github_Hosts
             I3_Sensible_Terminal
             Offlineimap
             Alttab
