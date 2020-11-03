@@ -482,7 +482,7 @@ bindsym Mod4+3 exec --no-startup-id raiseorlaunch -r -c "notion.so" -c "Google-c
 exec --no-startup-id fcitx &
 
 # 启用壁纸 apt install feh
-exec --no-startup-id feh --bg-scale ~/.config/i3/background.jpg
+exec --no-startup-id feh --bg-scale ~/.config/i3/background/1.jpg
 
 # 透明窗口 Compton
 exec --no-startup-id compton --config ~/.config/compton/compton.conf
