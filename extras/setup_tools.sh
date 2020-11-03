@@ -37,14 +37,16 @@ EOF
 }
 
 Alttab() {
-    sudo apt install -y libx11-dev libxmu-dev libxft-dev libxrender-dev libxrandr-dev libpng-dev uthash-dev libxpm*
+    sudo apt install -y libx11-dev libxmu-dev libxft-dev libxrender-dev libxrandr-dev libpng-dev uthash-dev libxpm4 libxpm-dev
     git clone https://github.com/sagb/alttab.git $HOME/Desktop/alttab 
     cd $HOME/Desktop/alttab || return
-    ./configure && make
-    sudo make install
+    ./configure && \
+    make && \
+    sudo make install && \
     cd $HOME || return
     sudo rm -rf $HOME/Desktop/alttab
 }
+
 
 Arcthemes() {
     sudo apt install -y arc-theme
