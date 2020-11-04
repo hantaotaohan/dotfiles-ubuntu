@@ -23,6 +23,7 @@ keycode 53 = x X XF86Cut
 ! keycode 54 = c C Control_L
 ! keycode 55 = v V Control_L
 ! keycode 53 = x X Control_L
+keycode 56 = b B at
 
 ! Caps + m n > Delete BackSpace
 keycode 58 = m M Delete
