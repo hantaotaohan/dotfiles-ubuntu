@@ -255,6 +255,12 @@ Vmware_Share_Fix() {
     fi
 }
 
+Calibre() {
+    sudo apt install calibre
+    sudo snap install foliate
+    git clone https://github.com/hantaotaohan/CalibreLibrary $HOME/CalibreLibrary
+}
+
 main() {
 
 
@@ -359,6 +365,9 @@ main() {
             ;;
         -21)
             Vmware_Share_Fix
+            ;;
+        -22)
+            Calibre
             ;;
         -all)
             Github_Hosts
