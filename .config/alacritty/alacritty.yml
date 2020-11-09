@@ -49,19 +49,20 @@ tabspace: 4
 # Font configuration
 font:
     normal:
-        # family: Inziu Iosevka SC
-        family: Saber
+        family: Inziu Iosevka SC
         style: Bold
 
     bold:
-        # family: Inziu Iosevka SC
-        family: Saber
+        family: Inziu Iosevka SC
         style: Bold
 
     italic:
-        # family: Inziu Iosevka SC
-        family: Saber
+        family: Inziu Iosevka SC
         style: Italic
+
+    bolditalic:
+        family: Inziu Iosevka SC
+        style: BoldItalic
 
     # Font size (pt)
     size: 10.5
