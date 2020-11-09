@@ -5,8 +5,9 @@ reload-threads 4
 download-retries 2
 download-timeout 10
 download-full-page yes
+html-renderer "w3m -dump -T text/html"
 
-external-url-viewer "urlscan -dc -r 'linkhandler {}'"
+# external-url-viewer "urlscan -dc -r 'linkhandler {}'"
 
 bind-key j down
 bind-key k up
@@ -28,16 +29,16 @@ bind-key U show-urls
 bind-key x pb-delete
 
 color listnormal cyan default
-color listfocus black yellow standout bold
+color listfocus black color3 standout bold
 color listnormal_unread blue default
-color listfocus_unread yellow default bold
-color info red black bold
-color article white default bold
+color listfocus_unread color3 default bold
+color info color5 black bold
+color article color250 default bold
 
 text-width 80
 
-browser linkhandler
-macro , open-in-browser
+# browser linkhandler
+# macro , open-in-browser
 macro t set browser "qndl" ; open-in-browser ; set browser linkhandler
 macro a set browser "tsp youtube-dl --write-srt --sub-lang en --add-metadata -xic -f bestaudio/best" ; open-in-browser ; set browser linkhandler
 macro v set browser "setsid -f mpv" ; open-in-browser ; set browser linkhandler
