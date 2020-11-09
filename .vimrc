@@ -188,7 +188,7 @@ Plug 'godlygeek/tabular'                                                 " 文�
 Plug 'dhruvasagar/vim-table-mode'                                        " 表格模式
 Plug 'majutsushi/tagbar'                                                 " Tag浏览
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }        " 为系统安装fzf工具
-Plug 'junegunn/fzf.vim'                                                  " 为vim安装fzf插件
+Plug 'https://github.com/junegunn/fzf.vim'                               " 为vim安装fzf插件
 Plug 'skywind3000/asyncrun.vim'                                          " 配合调测python插件
 Plug 'christoomey/vim-tmux-navigator'                                    " 同步vim与tmux快捷键
 Plug 'Yggdroot/indentLine'                                               " 缩进线显示插件
@@ -210,10 +210,12 @@ Plug 'junegunn/vim-easy-align'                                           " 自�
 Plug 'mg979/vim-visual-multi'                                            " 多光标插件
 Plug 'junegunn/goyo.vim'                                                 " 专注模式
 Plug 'junegunn/limelight.vim'                                            " 专注模式辅助
-Plug 'liuchengxu/vim-which-key'
+Plug 'liuchengxu/vim-which-key'                                          " Leader辅助
+Plug 'kshenoy/vim-signature'                                             " 书签插件
 "Plug 'terryma/vim-multiple-cursors'                                     " 多光标插件
 "Plug 'edkolev/tmuxline.vim'                                             " Vim同步tmux配色
 "Plug 'scrooloose/nerdcommenter'                                         " 快速注释插件
+"Plug 'junegunn/fzf.vim'                                                  " 为vim安装fzf插件
 call plug#end()
 
 
@@ -1367,3 +1369,8 @@ autocmd! FileType which_key
 autocmd  FileType which_key set laststatus=0 noshowmode noruler
   \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
 
+"=================================================================================================================================
+" Limelight  settings
+"=================================================================================================================================
+let g:SignatureEnabledAtStartup = 0
+nnoremap <silent> <leader>m :SignatureToggleSigns<CR>    
