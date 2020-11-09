@@ -195,7 +195,7 @@ Plug 'Yggdroot/indentLine'                                               " 缩�
 Plug 'tpope/vim-commentary'                                              " 快速注释插件                                     
 Plug 'mhinz/vim-startify'                                                " 定制vim开始页面
 Plug 'SirVer/ultisnips'                                                  " 代码片段管理器
-Plug 'honza/vim-snippets'                                                " 代码片段仓库
+Plug 'hantaotaohan/vim-snippets'                                         " 代码片段仓库
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install_sync() } }" MarkdownPreview插件
 Plug 'jszakmeister/markdown2ctags'                                       " Tags的Toc插件
 Plug 'Neur1n/neuims'                                                     " 输入法自动切换 
