@@ -54,4 +54,4 @@ set convert-meta off
 # F5 进入HOME
 "\e[15~":"cd $HOME && ll\n"
 # \+q 退出bash
-"\q":"exit\n"
+"\\q":"exit\n"
