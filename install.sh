@@ -393,6 +393,7 @@ echo -e "                                                                       
 	solaar\
 	ncdu\
 	nautilus\
+	newsboat\
 	axel\
 	pv\
 	aria2\
