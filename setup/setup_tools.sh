@@ -84,7 +84,7 @@ Copytranslator() {
 Crossover() {
     wget -P $HOME/Desktop/ https://download.fastgit.org/hantaotaohan/Dotfiles/releases/download/1.0.3/crossover-20.deb
     wget -P $HOME/Desktop/ https://download.fastgit.org/hantaotaohan/Dotfiles/releases/download/1.0.3/winewrapper.exe.so
-    wget -P $HOME/Desktop/ https://download.fastgit.org/hantaotaohan/Dotfiles/releases/download/1.0.3/KindleForPC-installer-1.16.44025.exe
+    wget -P $HOME/Desktop/ https://download.fastgit.org/hantaotaohan/Dotfiles/releases/download/1.0.3/KindleforPC_v1.21.48019.exe
     sudo dpkg -i $HOME/Desktop/crossover-20.deb
     sudo apt install -f -y
     sudo dpkg -i $HOME/Desktop/crossover-20.deb
