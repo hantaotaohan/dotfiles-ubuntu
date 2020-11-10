@@ -144,6 +144,7 @@ noremap L $
 
 " Quickly close the current window
 nnoremap <leader>q :q<CR>
+vnoremap <leader>q <esc>:wq<CR>
 
 " Quickly save the current file
 nnoremap <leader>w :w<CR>
