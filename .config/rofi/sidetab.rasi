@@ -57,7 +57,7 @@ inputbar {
 listview {
 	spacing: 0.5em;
 	dynamic: false;
-	cycle:   false;
+	cycle:   true;
 }
 
 element {
