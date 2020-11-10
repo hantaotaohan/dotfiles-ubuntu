@@ -213,6 +213,7 @@ Plug 'junegunn/goyo.vim'                                                 " 专�
 Plug 'junegunn/limelight.vim'                                            " 专注模式辅助
 Plug 'liuchengxu/vim-which-key'                                          " Leader辅助
 Plug 'kshenoy/vim-signature'                                             " 书签插件
+Plug 'arecarn/vim-auto-autoread'                                         " 自动Autoread插件
 "Plug 'terryma/vim-multiple-cursors'                                     " 多光标插件
 "Plug 'edkolev/tmuxline.vim'                                             " Vim同步tmux配色
 "Plug 'scrooloose/nerdcommenter'                                         " 快速注释插件
