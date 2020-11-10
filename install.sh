@@ -807,6 +807,8 @@ main() {
     echo "                                                                               "
     echo " -9        Install Server Edition                                              "
     echo "                                                                               "
+    echo " -s        Install Tools                                                       "
+    echo "                                                                               "
     echo " -q        Exit                                                                "
     echo "                                                                               "
     echo "-------------------------------------------------------------------------------"
@@ -890,6 +892,10 @@ main() {
             ;;
     	-9)
             bash $HOME/Dotfiles/setup/install_server.sh
+            bash
+            ;;
+	-[tT])
+            bash $HOME/Dotfiles/setup/setup_tools.sh
             bash
             ;;
         [qQ]) 
