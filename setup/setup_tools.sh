@@ -270,42 +270,49 @@ Foliate() {
 
 main() {
 
+    echo "                                                                               "
+    echo "-------------------------------------------------------------------------------"
+    echo "                                                                               "
+    echo " -h        Print this message                                                  "
+    echo "                                                                               "
+    echo " -a        Setup All                                                           "
+    echo "                                                                               "
+    echo "-------------------------------------------------------------------------------"
+    echo "                                                                               "
+    echo " -1        Setup Alttab                                                        "
+    echo " -2        Setup Arc-themes                                                    "
+    echo " -3        Setup Arc-icons                                                     "
+    echo " -4        Setup Copytranslator                                                "
+    echo " -5        Setup Crossover & Kindle                                            "
+    echo " -6        Setup I3gaps                                                        "
+    echo " -7        Setup Imagemagick                                                   "
+    echo " -8        Setup Jupyter Themes                                                "
+    echo " -9        Setup Navi                                                          "
+    echo " -10       Setup Peek                                                          "
+    echo " -11       Setup Picom                                                         "
+    echo " -12       Setup SSR Tools                                                     "
+    echo " -13       Update Dunst                                                        "
+    echo " -14       Update VIM with PPA                                                 "
+    echo " -15       Auto Start Run Offlineimap                                          "
+    echo " -16       Config Fcitx                                                        "
+    echo " -17       Config GTK with Ctrl+xcv                                            "
+    echo " -18       Config Github SSH                                                   "
+    echo " -19       Config Github_Hosts > Hosts                                         "
+    echo " -20       Config I3wm - Defaul - I3_Sensible_Terminal - Fix                   "
+    echo " -21       Fix VMware Share Floader                                            "
+    echo " -22       Setup Calibre                                                       "
+    echo " -23       Setup Foliate                                                       "
+    echo "                                                                               "
+    echo "-------------------------------------------------------------------------------"
+    echo "                                                                               "
+    echo " -q        Exit                                                                "
+    echo "                                                                               "
+    echo "-------------------------------------------------------------------------------"
+    echo "                                                                               "
 
-#     echo " "
-#     echo "-------------------------------------------------------------------------------"
-#     echo " "
-#     echo "--help    Print this message"
-#     echo "-all      Install All tools"
-#     echo " "
-#     echo "-------------------------------------------------------------------------------"
-#     echo " "
-#     echo "-1        Alttab"
-#     echo "-2        Arcthemes"
-#     echo "-3        Arcicons"
-#     echo "-4        Alttab"
-#     echo "-5        Copytranslator"
-#     echo "-6        Crossover"
-#     echo "-7        I3gaps"
-#     echo "-8        Imagemagick"
-#     echo "-9        Jupyter"
-#     echo "-10       Navi"
-#     echo "-11       Peek"
-#     echo "-12       Picom"
-#     echo "-13       SSR"
-#     echo "-14       Dunst"
-#     echo "-15       VIM"
-#     echo "-16       Offlineimap"
-#     echo "-17       Fcitx"
-#     echo "-18       GTK"
-#     echo "-19       Github"
-#     echo "-20       Github_Hosts"
-#     echo "-21       I3_Sensible_Terminal"
-#     echo "-------------------------------------------------------------------------------"
-#     echo " "
+    read -r -p "Please select the mode you want to install ?  " input
 
-#     read -r -p "Please select the mode you want to install ?  " input
-
-    case "$1" in
+    case "$input" in
         ''|-h|--help)
             usage
             exit 0
@@ -379,7 +386,7 @@ main() {
         -23)
             Foliate
             ;;
-        -all)
+        -[aA])
             Github_Hosts
             Dunst
             VIM
@@ -401,6 +408,9 @@ main() {
             # SSR
             # Github
             ;;
+        -[qQ]) 
+            exit; break 
+            ;;
         *)
             echo "Command not found" >&2
             exit 1
@@ -408,3 +418,4 @@ main() {
 }
 
 main "$@"
+
