@@ -819,7 +819,7 @@ main() {
             usage
             exit 0
             ;;
-        -[aA])
+        -[aA]|-all)
             install_dotfiles
             workspace_settings
             sysUpdate
