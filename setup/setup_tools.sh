@@ -33,6 +33,8 @@ Options:
     -19       Config Hosts Suppor Github_Hosts
     -20       Config I3_Sensible_Terminal Default
     -21       Fix VMware Share Floader
+    -22       Install Calibre
+    -23       Install Foliate
 EOF
 }
 
@@ -262,6 +264,10 @@ Calibre() {
     git clone https://github.com/hantaotaohan/CalibreLibrary $HOME/CalibreLibrary
 }
 
+Foliate() {
+    sudo snap install foliate
+}
+
 main() {
 
 
@@ -369,6 +375,9 @@ main() {
             ;;
         -22)
             Calibre
+            ;;
+        -23)
+            Foliate
             ;;
         -all)
             Github_Hosts
