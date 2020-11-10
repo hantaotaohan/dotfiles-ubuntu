@@ -106,6 +106,9 @@ I3gaps() {
     sudo apt-get -y -qq --purge remove rxvt-unicode > /dev/null 2>&1 
     sudo sed -i "s/https:\/\/launchpad.proxy.ustclug.org/http:\/\/ppa.launchpad.net/g" /etc/apt/sources.list.d/*.list
     sudo add-apt-repository -y --remove ppa:kgilmer/speed-ricer
+    sed -i 's|# smart_gaps on|smart_gaps on|g' $HOME/.config/i3/config
+    sed -i 's|# gaps inner 8|gaps inner 8|g' $HOME/.config/i3/config
+    sed -i 's|# gaps outer 2|gaps outer 2|g' $HOME/.config/i3/config
     row
 }
 
