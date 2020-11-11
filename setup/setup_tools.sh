@@ -243,7 +243,7 @@ Github() {
 
 Github_Hosts() {
     sudo sed -i '/# GitHub/,$d' /etc/hosts
-    sudo sed -i '$a\# ------------------------------------------------------------------' test
+    sudo sed -i '$a\# ------------------------------------------------------------------' /etc/hosts
     sudo python3 $HOME/Dotfiles/setup/github_hosts.py
     row
 }
