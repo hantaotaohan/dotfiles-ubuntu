@@ -836,6 +836,7 @@ main() {
             sudo apt autoremove -y -qq > /dev/null 2>&1
 	    sudo apt-get clean > /dev/null 2>&1
             echo -e "              ${green}[√] *** All Install Successful *** l${reset}\n"
+	    cd $HOME
             bash
             ;;
         -[dD])
