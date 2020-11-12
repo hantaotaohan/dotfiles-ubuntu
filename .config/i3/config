@@ -220,6 +220,7 @@ for_window [class="Nautilus"]                       floating enable , resize set
 for_window [window_role="app"]                      floating enable , resize set 1200 800 , move position center , sticky enable , border normal 0 , title_format "<b>%title</b>"
 for_window [class="Vmware"]                         floating enable , resize set 1200 800 , move position center , sticky enable
 for_window [class="feh"]                            floating enable
+for_window [class="kindle.exe"]                     floating enable , move position center
 
 # --------------------------------------------------------------------------------------------------
 # 调整窗口大小配置
