@@ -80,9 +80,15 @@ command=$HOME/.config/i3blocks/bandwidth
 interval=1
 min_width=200
 
+[memory]
+command=$HOME/.config/i3blocks/memory
+label=
+interval=1
+instance=mem
+min_width=70
+
 [cpu_usage]
 full_text=CPU
 label= 
-interval=10
 interval=1
 min_width=200
