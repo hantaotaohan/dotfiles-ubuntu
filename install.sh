@@ -807,7 +807,7 @@ main() {
     echo "                                                                               "
     echo " -9        Install Server Edition                                              "
     echo "                                                                               "
-    echo " -s        Install Tools                                                       "
+    echo " -t        Install Tools                                                       "
     echo "                                                                               "
     echo " -q        Exit                                                                "
     echo "                                                                               "
