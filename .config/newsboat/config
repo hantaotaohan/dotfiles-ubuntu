@@ -42,11 +42,11 @@ bind-key \ macro-prefix
 unbind-key ,
 macro w set browser "google-chrome %u" ; open-in-browser ; set browser rdrview -B w3m
 
-highlight all "  Reeder" color1 
-highlight all "  Other" color1 
-highlight all ".*-.*" color1 
-# highlight all "(0/0)" color0 
-highlight feedlist "^(.+?)((0/0)))" color8 
+highlight all "  Reeder.*" color1
+highlight all "  Other.*" color1
+highlight all ".*-.*" color1
+# highlight all "(0/0)" color0
+highlight feedlist "^(.+?)((0/0)))" color8
 highlight feedlist ".((0/0)))" color0
 
 highlight article "(^Feed:.*|^Title:.*|^Author:.*)" cyan default bold
