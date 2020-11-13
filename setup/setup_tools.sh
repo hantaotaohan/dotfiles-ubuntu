@@ -35,6 +35,7 @@ Options:
     -21       Fix VMware Share Floader
     -22       Install Calibre
     -23       Install Foliate
+    -24       Install rdrview
 EOF
 }
 
@@ -274,6 +275,18 @@ Foliate() {
     sudo snap install foliate
 }
 
+Rdrview() {
+    sudo apt install libxml2-dev libseccomp-dev libcurl4-gnutls-dev
+    rm -rf $HOME/Desktop/rdrview
+    git clone https://hub.fastgit.org/eafer/rdrview.git $HOME/Desktop/rdrview
+    cd $HOME/Desktop/rdrview
+    make
+    sudo make install
+    cd $HOME
+    rm -rf $HOME/Desktop/rdrview
+    row
+}
+
 main() {
 
     echo "                                                                               "
@@ -308,6 +321,7 @@ main() {
     echo " -21       Fix VMware Share Floader                                            "
     echo " -22       Setup Calibre                                                       "
     echo " -23       Setup Foliate                                                       "
+    echo " -24       Setup Rdrview                                                       "
     echo "                                                                               "
     echo "-------------------------------------------------------------------------------"
     echo "                                                                               "
@@ -392,6 +406,9 @@ main() {
         -23)
             Foliate
             ;;
+        -24)
+            Rdrview
+            ;;
         -[aA])
             Github_Hosts
             Dunst
@@ -408,6 +425,7 @@ main() {
             I3_Sensible_Terminal
             Offlineimap
             Alttab
+            Rdrview
             # Copytranslator
             # Crossover
             # Picom
