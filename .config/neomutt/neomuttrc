@@ -158,11 +158,13 @@ bind attach,browser,index       g       noop
 bind attach,browser,index       gg      first-entry
 bind attach,browser,index       G       last-entry
 #bind        browser,index,pager N       search-opposite
-bind                      pager g       noop
-bind                      pager gg      top
-bind                      pager G       bottom
-bind                      pager k       previous-line
-bind                      pager j       next-line
+bind pager                      g       noop
+bind pager                      gg      top
+bind pager                      G       bottom
+bind pager                      K       previous-line
+bind pager                      J       next-line
+bind browser                    k       next-page
+bind browser                    j       previous-page 
 
 # Scrolling
 bind browser,pager,index,attach \CF     next-page
@@ -180,11 +182,11 @@ bind index,pager                u       noop
 bind index,pager                dd      delete-message
 bind index,pager                uu      undelete-message
 bind index,pager                <F8>    sidebar-toggle-visible
-bind index                      <Up>    sidebar-prev
+bind index,pager                <Up>    sidebar-prev
 bind index,pager                \Cp     sidebar-prev
-bind index                      <Down>  sidebar-next
+bind index,pager                <Down>  sidebar-next
 bind index,pager                \Cn     sidebar-next
-bind index,pager                <Right> sidebar-open
+bind index                      <Right> sidebar-open
 bind index,pager                R       group-reply
 
 # Threads
