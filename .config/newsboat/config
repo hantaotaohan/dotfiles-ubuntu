@@ -41,6 +41,7 @@ browser rdrview -B w3m
 bind-key \ macro-prefix
 unbind-key ,
 macro w set browser "google-chrome %u" ; open-in-browser ; set browser rdrview -B w3m
+macro q quit
 
 highlight all "  Reeder.*" color1
 highlight all "  Other.*" color1
