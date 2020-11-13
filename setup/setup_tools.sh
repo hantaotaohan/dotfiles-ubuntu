@@ -277,7 +277,6 @@ Foliate() {
 
 Rdrview() {
     sudo apt install libxml2-dev libseccomp-dev libcurl4-gnutls-dev
-    rm -rf $HOME/Desktop/rdrview
     git clone https://hub.fastgit.org/eafer/rdrview.git $HOME/Desktop/rdrview
     cd $HOME/Desktop/rdrview
     make
@@ -427,8 +426,8 @@ main() {
             Alttab
             Rdrview
             # Copytranslator
-            # Crossover
-            # Picom
+            Crossover
+            Picom
             # SSR
             # Github
             ;;
