@@ -103,7 +103,7 @@ convert <image1_png> <image2_png> <image3_png> -delay 10 <animation_gif>
 convert <img_png>  <doc_pdf>
 
 % convert
-# pdf to png (%02d是以页码为文件名,density数值越大文件越大)
+# pdf to png
 convert -density 200 <foo_pdf> <foo-%02d_png>
 
 % convert
