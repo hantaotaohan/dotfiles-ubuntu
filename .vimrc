@@ -1367,8 +1367,8 @@ endif
 nnoremap <silent> <space><space> :<c-u>WhichKey '<Space>'<CR>
 vnoremap <silent> <space><space> :<c-u>WhichKeyVisual '<Space>'<CR>
 
-nnoremap <silent> <leader> :<c-u>WhichKey '<Space>'<CR>                                                                                                                              
-vnoremap <silent> <leader> :<c-u>WhichKeyVisual '<Space>'<CR>
+nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
+vnoremap <silent> <leader> :WhichKeyVisual '<Space>'<CR>
 
 autocmd! FileType which_key
 autocmd  FileType which_key set laststatus=0 noshowmode noruler
