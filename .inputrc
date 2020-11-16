@@ -55,3 +55,5 @@ set convert-meta off
 "\e[15~":"cd $HOME && ll\n"
 # \+q 退出bash
 "\\q":"exit\n"
+# \+g 进入navi
+"\\g":"exit\n"
