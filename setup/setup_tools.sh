@@ -207,6 +207,8 @@ VIM() {
 
 
 Offlineimap() {
+    keyring set bteb hantao@bteb.cn
+    keyring set hotmail hantaotaohan@hotmail.com
     sudo cp /usr/share/doc/offlineimap/examples/systemd/offlineimap.service /etc/systemd/user
     systemctl --user enable offlineimap
     systemctl --user start offlineimap
