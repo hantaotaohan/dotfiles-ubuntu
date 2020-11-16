@@ -757,10 +757,10 @@ inoremap <C-k> <up><up><up><up><up>
 "=================================================================================================================================
 " Shift + - = , . 调整窗口高低宽窄快捷键 
 "=================================================================================================================================
-noremap <silent><leader>j <C-W>:resize           +2<CR>
-noremap <silent><leader>k <C-W>:resize           -2<CR>
-noremap <silent><leader>h <C-W>:vertical resize  +4<CR>
-noremap <silent><leader>l <C-W>:vertical resize  -4<CR>
+noremap <silent><leader>j <C-W>:resize           +5<CR>
+noremap <silent><leader>k <C-W>:resize           -5<CR>
+noremap <silent><leader>h <C-W>:vertical resize  +5<CR>
+noremap <silent><leader>l <C-W>:vertical resize  -5<CR>
 
 
 "=================================================================================================================================
@@ -1334,30 +1334,45 @@ let g:which_key_map.p.u = ['PlugUpdate'   , 'update'   ]
 let g:which_key_map.g.g = ['Goyo'  , 'Enter Goyo' ]
 let g:which_key_map.g.o = ['q'     , 'Leave Goyo' ]
 
+"=================================================================================================================================
+
 let g:which_key_map[' '] = {
-      \ 'name' : '+Easymotion ' ,
-      \ 'f' : ['<plug>(easymotion-prefix)f' , 'find {char} to the right'],
-      \ 'F' : ['<plug>(easymotion-prefix)F' , 'find {char} to the left'],
-      \ 't' : ['<plug>(easymotion-prefix)t' , 'till before the {char} to the right'],
-      \ 'T' : ['<plug>(easymotion-prefix)T' , 'till after the {char} to the left'],
-      \ 'w' : ['<plug>(easymotion-prefix)w' , 'beginning of word forward'],
-      \ 'W' : ['<plug>(easymotion-prefix)W' , 'beginning of WORD forward'],
-      \ 'b' : ['<plug>(easymotion-prefix)b' , 'beginning of word backward'],
-      \ 'B' : ['<plug>(easymotion-prefix)B' , 'beginning of WORD backward'],
-      \ 'e' : ['<plug>(easymotion-prefix)e' , 'end of word forward'],
-      \ 'E' : ['<plug>(easymotion-prefix)E' , 'end of WORD forward'],
-      \ 'g' : {
-        \ 'name' : '+Backwards ' ,
-        \ 'e' : ['<plug>(easymotion-prefix)ge' , 'end of word backward'],
-        \ 'E' : ['<plug>(easymotion-prefix)gE' , 'end of WORD backward'],
-        \ },
-      \ 'j' : ['<plug>(easymotion-prefix)j' , 'line downward'],
-      \ 'k' : ['<plug>(easymotion-prefix)k' , 'line upward'],
-      \ 'n' : ['<plug>(easymotion-prefix)n' , 'jump to latest "/" or "?" forward'],
-      \ 'N' : ['<plug>(easymotion-prefix)N' , 'jump to latest "/" or "?" backward.'],
-      \ 's' : ['<plug>(easymotion-prefix)s' , 'find(search) {char} forward and backward.'],
+      \ 'name' : '+System ' ,
+      \ 'm' : [ ':SignatureToggleSigns'                   ,      'SignatureToggle'        ],
+      \ 'q' : [ ':q'                                      ,      'Exit Vim'               ],
+      \ 'w' : [ ':w'                                      ,      'Save Vim'               ],
+      \                                                                                                               
+      \ ']' : [ '<Plug>MarkdownPreviewToggle'             ,      'MarkdownPreview'        ],
+      \ 'j' : [ ':resize           +5'                    ,      'Resize Vim +5'          ],
+      \ 'k' : [ ':resize           -5'                    ,      'Resize Vim -5'          ],
+      \ 'h' : [ ':vertical resize  +5'                    ,      'Resize Vim +5'          ],
+      \ 'l' : [ ':vertical resize  -5'                    ,      'Resize Vim -5'          ],
+      \ 'p' : [ ':call mdip#MarkdownClipboardImage()<cr>' ,      'ClipboardImage to Vim'  ],
       \ }
-      
+" let g:which_key_map[' '] = {
+"       \ 'name' : '+Easymotion ' ,
+"       \ 'f' : ['<plug>(easymotion-prefix)f' , 'find {char} to the right'],
+"       \ 'F' : ['<plug>(easymotion-prefix)F' , 'find {char} to the left'],
+"       \ 't' : ['<plug>(easymotion-prefix)t' , 'till before the {char} to the right'],
+"       \ 'T' : ['<plug>(easymotion-prefix)T' , 'till after the {char} to the left'],
+"       \ 'w' : ['<plug>(easymotion-prefix)w' , 'beginning of word forward'],
+"       \ 'W' : ['<plug>(easymotion-prefix)W' , 'beginning of WORD forward'],
+"       \ 'b' : ['<plug>(easymotion-prefix)b' , 'beginning of word backward'],
+"       \ 'B' : ['<plug>(easymotion-prefix)B' , 'beginning of WORD backward'],
+"       \ 'e' : ['<plug>(easymotion-prefix)e' , 'end of word forward'],
+"       \ 'E' : ['<plug>(easymotion-prefix)E' , 'end of WORD forward'],
+"       \ 'g' : {
+"         \ 'name' : '+Backwards ' ,
+"         \ 'e' : ['<plug>(easymotion-prefix)ge' , 'end of word backward'],
+"         \ 'E' : ['<plug>(easymotion-prefix)gE' , 'end of WORD backward'],
+"         \ },
+"       \ 'j' : ['<plug>(easymotion-prefix)j' , 'line downward'],
+"       \ 'k' : ['<plug>(easymotion-prefix)k' , 'line upward'],
+"       \ 'n' : ['<plug>(easymotion-prefix)n' , 'jump to latest "/" or "?" forward'],
+"       \ 'N' : ['<plug>(easymotion-prefix)N' , 'jump to latest "/" or "?" backward.'],
+"       \ 's' : ['<plug>(easymotion-prefix)s' , 'find(search) {char} forward and backward.'],
+"       \ }
+
 "=================================================================================================================================
 
 if !exists('which_key#register')
