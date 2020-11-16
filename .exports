@@ -45,8 +45,13 @@ export FZF_ALT_C_COMMAND="fd -t d . /"
 # export FZF_CTRL_T_OPTS="--preview 'bat --color=always {}' --preview-window right:wrap --bind '?:toggle-preview'"
 # export FZF_DEFAULT_OPTS="--preview 'bat --color=always {}' --preview-window right:wrap --bind '?:toggle-preview'"
 
-# Navi fzf预览设置
-export NAVI_FZF_OVERRIDES='--margin 1,1 --inline-info --border --preview-window=top:20:wrap'
+# # Navi fzf预览设置
+export NAVI_FZF_OVERRIDES='--height 30 --margin 1,1 --inline-info --border --preview-window=top:3:wrap'
+export NAVI_FZF_OVERRIDES_VAR='--height 3'
+export NAVI_TAG_COLOR=1
+export NAVI_COMMENT_COLOR=5
+export NAVI_SNIPPET_COLOR=2
+export NAVI_COMMENT_WIDTH=50
 
 # ripgrep.
 # Rg模糊搜索设定
