@@ -657,6 +657,7 @@ let g:startify_custom_footer = [
     \ '    +----------------+-------------+',
     \]
 
+nnoremap <Leader>s :Startify <CR>
 
 "-----------------------------------------------------------------o--------------------------------------------------------------o
 "                                                                                                                                
@@ -1341,6 +1342,7 @@ let g:which_key_map[' '] = {
       \ 'm' : [ ':SignatureToggleSigns'                   ,      'SignatureToggle'        ],
       \ 'q' : [ ':q'                                      ,      'Exit Vim'               ],
       \ 'w' : [ ':w'                                      ,      'Save Vim'               ],
+      \ 's' : [ ':Startify'                               ,      'Go to Startify'         ],
       \                                                                                                               
       \ ']' : [ '<Plug>MarkdownPreviewToggle'             ,      'MarkdownPreview'        ],
       \ 'j' : [ ':resize           +5'                    ,      'Resize Vim +5'          ],
