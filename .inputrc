@@ -56,4 +56,4 @@ set convert-meta off
 # \+q 退出bash
 "\\q":"exit\n"
 # \+g 进入navi
-"\\g":"exit\n"
+"\\g":"navi\n"
