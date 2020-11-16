@@ -2,20 +2,20 @@
 ; CheatSheet
 ; -----------------------------------------------------------------------------------------------------------------
 
-% CheatSheet,cs,vimcs
-# Vim CheatSheet vim速查表
+% cheatsheet
+# Vim CheatSheet
 bat --style header,grid --color always $HOME/Dotfiles/extras/cheatsheets/vim_cheatsheet.vim
 
-% CheatSheet,cs,bashcs
-# Bash CheatSheet bash速查表
+% cheatsheet
+# Bash CheatSheet
 bat --style header,grid --color always $HOME/Dotfiles/extras/cheatsheets/bash_cheatsheet.vim
 
-% CheatSheet,cs,gitcs
-# Git CheatSheet git速查表
+% cheatsheet
+# Git CheatSheet
 bat --style header,grid --color always $HOME/Dotfiles/extras/cheatsheets/git_cheatsheet.vim
 
-% CheatSheet,cs,tmuxcs
-# Tmux CheatSheet tmux速查表
+% cheatsheet
+# Tmux CheatSheet
 bat --style header,grid --color always $HOME/Dotfiles/extras/cheatsheets/tmux_cheatsheet.vim
 
 ; -----------------------------------------------------------------------------------------------------------------
@@ -23,104 +23,93 @@ bat --style header,grid --color always $HOME/Dotfiles/extras/cheatsheets/tmux_ch
 ; -----------------------------------------------------------------------------------------------------------------
 
 % zip
-# 打包并压缩目录及其内容
+# compressed zip
 zip -r <compressed_zip> <dir>
 
 % zip
-# 打包和压缩多个目录和文件
+# compressed Multiple zip
 zip -r <compressed_zip> <dir1> <dir2> <file>
 
 % zip
-# 将文件添加到现有zip文件：
+# Add a file to an existing zip file
 zip <compressed_zip> <file>
 
 % zip
-# 从现有zip文件中删除文件：
+# Remove files from existing zip files
 zip -d "<compressed_zip> <filename>
 
-
-; -----------------------------------------------------------------------------------------------------------------
-; Unzip
-; -----------------------------------------------------------------------------------------------------------------
-
-% unzip
-# 解压缩到指定目录
+% zip
+# Unzip to the specified directory
 unzip <compressed_file> -d <extracted_file>
 
-% unzip
-# 查看压缩包内容
+% zip
+# View the contents of the package
 unzip -l <file_zip>
-
-% unzip
-# 提取在windows中创建的zip文件，其中包含非ascii（中文）文件名的文件
-unzip -O gbk <file_zip>
-
 
 ; -----------------------------------------------------------------------------------------------------------------
 ; Tar
 ; -----------------------------------------------------------------------------------------------------------------
 
 % tar
-# 创建.tar压缩包
+# create .tar package
 tar cf <target_tar> <file1> <file2> <file3>
 
 % tar
-# 创建.tar.gz压缩包
+# create .tar.gz package
 tar czf <target_tar_gz> <file1> <file2> <file3>
 
 % tar
-# 使用目录创建压缩包
+# Use the Directory to create a compression package
 tar czf <target_tar_gz> -C <path/to/directory> .
 
 % tar
-# 解压缩到当前目录
+# Unzip to the current directory
 tar xf <source_tar>
 
 % tar
-# 解压缩到指定目录
+# Unzip to the specified directory
 tar xf <source_tar> -C <directory>
-
 
 ; -----------------------------------------------------------------------------------------------------------------
 ; Convert & ImageMagick
 ; -----------------------------------------------------------------------------------------------------------------
 
-% convert,imagemagick,pdf,png,jpg
-# jpg 转 png
+% convert
+# jpg to png
 convert <image_jpg> <image_png>
 
-% convert,imagemagick,pdf,png,jpg
-# 将图片缩放至50%
+% convert
+# img zoom 50%
 convert <image_png> -resize 50% <image2_png>
 
-% convert,imagemagick,pdf,png,jpg
-# 将图片缩放并保持纵横比例
+% convert
+# Zoom the picture and maintain the vertical and horizontal scale
 convert <image_png> -resize 640x480 <image2_png>
 
-% convert,imagemagick,pdf,png,jpg
-# 水平添加图片
+% convert
+# Add pictures horizontally
 convert <image1_png> <image2_png> <image3_png> +append <image123_png>
 
-% convert,imagemagick,pdf,png,jpg
-# 垂直添加图片
+% convert
+# Add pictures vertically
 convert <image1_png> <image2_png> <image3_png> -append <image123_png>
 
-% convert,imagemagick,pdf,png,jpg
-# 从一系列图像中创建一个gif，这些图像之间有100毫秒的延迟
+% convert
+# Create a gif of images with a 100-millisecond delay 
 convert <image1_png> <image2_png> <image3_png> -delay 10 <animation_gif>
 
-% convert,imagemagick,pdf,png,jpg
-# png 转 pdf
+% convert
+# png to pdf
 convert <img_png>  <doc_pdf>
 
-% convert,imagemagick,pdf,png,jpg
-# pdf 转 png (%02d是以页码为文件名,density数值越大文件越大)
+% convert
+# pdf to png (%02d是以页码为文件名,density数值越大文件越大)
 convert -density 200 <foo_pdf> <foo-%02d_png>
 
-% convert,imagemagick,pdf,png,jpg
-# 方式一:多张图片按照顺序合并成pdf
+% convert
+# Method.1:Multiple pictures are merged into pdfs in order
 convert $(ls *jpg | sort -n) <result_pdf>
 
-% convert,imagemagick,pdf,png,jpg
-# 方式二:多张图片按照顺序合并成pdf
+% convert
+# Method.2:Multiple pictures are merged into pdfs in order
 ls *jpg | sort -n | convert @- result_pdf
