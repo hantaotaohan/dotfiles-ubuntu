@@ -113,3 +113,32 @@ convert $(ls *jpg | sort -n) <result_pdf>
 % convert
 # Method.2:Multiple pictures are merged into pdfs in order
 ls *jpg | sort -n | convert @- result_pdf
+
+; -----------------------------------------------------------------------------------------------------------------
+; Git
+; -----------------------------------------------------------------------------------------------------------------
+
+% git
+# Create and Toggle a new branch 
+git checkout --orphan latest_branch
+
+% git
+# Git add --all
+git add -A
+
+% git
+# Git add and Commit 
+git commit -am "commit message"
+
+% git
+# Delete master branch
+git branch -D master
+
+% git
+# Rename branch names to Master
+git branch -m master
+
+% git
+# Forced Push
+git push -f origin master
+
