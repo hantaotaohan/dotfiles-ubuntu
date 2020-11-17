@@ -9,7 +9,7 @@ alias 4='cd -4'
 alias 5='cd -5'
 
 # some more ls aliases
-alias ll='ls -alhF --color=always'
+alias ll='ls -alhovqF --color=always --group-directories-first'
 alias la='ls -A'
 alias l='ls -CF'
 alias lk='ls -AlXHLF --color=always'
