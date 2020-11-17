@@ -825,7 +825,7 @@ main() {
             sudo apt-get -y -qq --purge remove byobu gnome-terminal yelp > /dev/null 2>&1
             sudo apt autoremove -y -qq > /dev/null 2>&1
 	    sudo apt-get clean > /dev/null 2>&1
-            echo -e "              ${green}[√] *** All Install Successful *** l${reset}\n"
+            echo -e "              ${green}[√] *** All Install Successful *** ${reset}\n"
 	    cd $HOME
             bash
             ;;
