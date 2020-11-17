@@ -14,8 +14,7 @@ alias la='ls -A'
 alias l='ls -CF'
 alias lk='ls -AlXHLF --color=always'
 
-alias c='cd "$(ls -axF | grep "/$" | yank-cli -i )"'
-
+alias c='cd "$(ls  -dx -- */ .*/ | yank-cli -i)"'
 
 # BookMarks
 alias dt='cd ~/desktop && ls -lhA'
