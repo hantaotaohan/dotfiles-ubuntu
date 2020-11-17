@@ -959,7 +959,7 @@ autocmd FileType markdown nmap <buffer><silent> <leader>p :call mdip#MarkdownCli
 "=================================================================================================================================
 " Vimwiki Zettel settings
 "=================================================================================================================================
-let g:zettel_dir = "$HOME/Vimwiki/src"
+let g:zettel_dir = "$HOME/vimwiki/src"
 let g:zettel_format = "%Y%m%d%H%M"
 let g:zettel_link_format="[%title](%link)"
 let g:zettel_options = [{"template" :  "$HOME/vimwiki/templates/zettelnew.tpl"}]
@@ -978,12 +978,12 @@ autocmd FileType vimwiki nmap <Leader>wl :VimwikiBacklinks<cr>
 let g:vimwiki_list = [{
         \ 'auto_export': 1,
         \ 'automatic_nested_syntaxes': 1,
-        \ 'path': '$HOME/Vimwiki/src',
-        \ 'path_html': '$HOME/Vimwiki/docs/',
-        \ 'template_path': '$HOME/Vimwiki/templates/',
+        \ 'path': '$HOME/vimwiki/src',
+        \ 'path_html': '$HOME/vimwiki/docs/',
+        \ 'template_path': '$HOME/vimwiki/templates/',
         \ 'template_default': 'default',
         \ 'template_ext': '.tpl',
-        \ 'css_file': '$HOME/Vimwiki/templates/style.css',
+        \ 'css_file': '$HOME/vimwiki/templates/style.css',
         \ 'syntax': 'markdown',
         \ 'ext': '.md',
         \ 'custom_wiki2html': 'vimwiki_markdown',
@@ -1000,14 +1000,14 @@ let g:vimwiki_markdown_link_ext = 1
 
 " 自动执行同步src的img同步到docs的img脚本
 au VimEnter *
-            \  if (isdirectory($HOME . "Vimwiki")) && filereadable("$HOME/Dotfiles/extras/vimwiki_img_autosync.sh")
+            \  if (isdirectory($HOME . "vimwiki")) && filereadable("$HOME/Dotfiles/extras/vimwiki_img_autosync.sh")
             \| silent execute "!nohup $HOME/Dotfiles/extras/vimwiki_img_autosync.sh >/dev/null 2>&1 &"
             \| endif
 
 " 开启/关闭Vimiki时自动步上传github
 
 " 方案一
-"augroup Vimwiki
+"augroup vimwiki
   "if !exists('g:zettel_synced')
     "let g:zettel_synced = 0
   "else
@@ -1029,16 +1029,16 @@ au VimEnter *
   "endfunction
 
   "" sync changes at the start
-  "au! BufRead $HOME/Vimwiki/src/index.md call <sid>git_action("git pull origin master")
-  "au! BufWritePost $HOME/Vimwiki/src/index.md call <sid>git_action("git add .;git commit -m \"Auto commit + push. `date`\"")
-  "au! VimLeave $HOME/Vimwiki/src/index.md call <sid>git_action("git push origin master")
+  "au! BufRead $HOME/vimwiki/src/index.md call <sid>git_action("git pull origin master")
+  "au! BufWritePost $HOME/vimwiki/src/index.md call <sid>git_action("git add .;git commit -m \"Auto commit + push. `date`\"")
+  "au! VimLeave $HOME/vimwiki/src/index.md call <sid>git_action("git push origin master")
 "augroup END
 
 
 " 方案二
-"au! BufReadPost $HOME/Vimwiki/src/index.md !git -C $HOME/Vimwiki/ pull origin master
-"au! BufWritePost $HOME/Vimwiki/* !git -C $HOME/Vimwiki/ add . ;git commit -m "Auto commit."
-"au! VimLeave $HOME/Vimwiki/* !bash $HOME/Dotfiles/extras/comparefolders.sh || !git -C $HOME/Vimwiki/ add . ;git commit -m "Auto commit + push." ;git push origin master
+"au! BufReadPost $HOME/vimwiki/src/index.md !git -C $HOME/vimwiki/ pull origin master
+"au! BufWritePost $HOME/vimwiki/* !git -C $HOME/vimwiki/ add . ;git commit -m "Auto commit."
+"au! VimLeave $HOME/vimwiki/* !bash $HOME/Dotfiles/extras/comparefolders.sh || !git -C $HOME/vimwiki/ add . ;git commit -m "Auto commit + push." ;git push origin master
 
 
 " 方案三(异步)
@@ -1057,25 +1057,25 @@ endfunc
 func GitCommit()
     " 提交到本地
     exec ":AsyncStop"
-    exec ":AsyncRun git -C $HOME/Vimwiki/ add . ;git commit -m 'Auto commit'"
+    exec ":AsyncRun git -C $HOME/vimwiki/ add . ;git commit -m 'Auto commit'"
 endfunc
 
 func GitPush()
     " 上传到云端
     exec ":AsyncStop"
-    exec ":AsyncRun git -C $HOME/Vimwiki/ add . ;git commit -m \"Auto commit `date`\" ;git push origin master"
+    exec ":AsyncRun git -C $HOME/vimwiki/ add . ;git commit -m \"Auto commit `date`\" ;git push origin master"
 endfunc
 
-autocmd BufReadPost $HOME/Vimwiki/src/index.md call GitPull()
-autocmd BufWritePost $HOME/Vimwiki/src/index.md call GitPush()
-autocmd VimLeave $HOME/Vimwiki/* !git -C $HOME/Vimwiki/ add . ;git commit -m "Auto commit + push." ;git push origin master
+autocmd BufReadPost $HOME/vimwiki/src/index.md call GitPull()
+autocmd BufWritePost $HOME/vimwiki/src/index.md call GitPush()
+autocmd VimLeave $HOME/vimwiki/* !git -C $HOME/vimwiki/ add . ;git commit -m "Auto commit + push." ;git push origin master
 
 "=================================================================================================================================
 
 " 使用wd删除markdown时自动删除相对应不使用的HTML文件
 function! VimwikiDeleteClean()
   let htmlfile = expand('%:r') . '.html'
-  lcd ${HOME}/Vimwiki/docs/
+  lcd ${HOME}/vimwiki/docs/
   call delete(htmlfile)
   lcd %:p:h
   call vimwiki#base#delete_link()
