@@ -1,7 +1,7 @@
 #!/bin/bash
 
-Path1=$HOME/Vimwiki/src/img/
-Path2=$HOME/Vimwiki/docs/img/
+Path1=$HOME/vimwiki/src/img/
+Path2=$HOME/vimwiki/docs/img/
 
 
 monitor() {
