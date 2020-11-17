@@ -223,6 +223,7 @@ Fcitx() {
         sudo rm -rf $HOME/.config/fcitx/conf/fcitx-classic-ui.config
         sudo cp $Dotfiles_repo/fcitx/fcitx-classic-ui.config $HOME/.config/fcitx/conf/fcitx-classic-ui.config
     else
+        mkdir -p $HOME/.config/fcitx/conf
         sudo cp $Dotfiles_repo/fcitx/fcitx-classic-ui.config $HOME/.config/fcitx/conf/fcitx-classic-ui.config
     fi
     row
