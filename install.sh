@@ -555,27 +555,17 @@ echo -e "                                                                       
 
         im-config -n fcitx > /dev/null 2>&1
         im-config -s fcitx > /dev/null 2>&1
-	if [ -f "/usr/share/fcitx/imicon/pinyin.png" ]; then
-    	sudo mv /usr/share/fcitx/imicon/pinyin.png /usr/share/fcitx/imicon/pinyin.png1
+        if [ -f "/usr/share/fcitx/imicon/pinyin.png" ]; then
+            sudo mv /usr/share/fcitx/imicon/pinyin.png /usr/share/fcitx/imicon/pinyin.png1
     	fi
     	if [ -f "/usr/share/fcitx/skin/dark/cn.png" ]; then
-    	sudo cp $HOME/Dotfiles/extras/fcitx/cn.png /usr/share/fcitx/skin/dark/active.png
+            sudo cp $Dotfiles_repo/setup/fcitx/cn.png /usr/share/fcitx/skin/dark/active.png
     	fi
     	if [ -f "/usr/share/fcitx/skin/dark/vk_inactive.png" ]; then
-    	sudo cp $HOME/Dotfiles/extras/fcitx/en.png /usr/share/fcitx/skin/dark/inactive.png
+            sudo cp $Dotfiles_repo/setup/fcitx/en.png /usr/share/fcitx/skin/dark/inactive.png
     	fi
         echo -e "              ${green}[√] Fcitx Successful${reset}\n"
 
-#----------------------------------------------------------------------------------------#
-# Vmware share 
-#----------------------------------------------------------------------------------------#
-
-	if [ ! -f "/etc/rc.local" ]; then
-	    sudo cp $Dotfiles_repo/extras/vm_share_fix.sh /etc/rc.local
-	    sudo chmod +x /etc/rc.local
-	    sudo ln -s /lib/systemd/system/rc-local.service /etc/systemd/system/
-	fi
-	echo -e "              ${green}[√] Vmware share Successful${reset}\n"
 	
 #----------------------------------------------------------------------------------------#
 # TLDR 
@@ -628,8 +618,8 @@ echo -e "                                                                       
         fi
         unzip -q $Dotfiles_repo/chrome/darkreader.zip -d $HOME/chrome-extend
         unzip -q $Dotfiles_repo/chrome/proxyswitch.zip -d $HOME/chrome-extend
-	unzip -q $Dotfiles_repo/chrome/tampermonkey.zip -d $HOME/chrome-extend
-	unzip -q $Dotfiles_repo/chrome/Surfingkeys.zip -d $HOME/chrome-extend
+        unzip -q $Dotfiles_repo/chrome/tampermonkey.zip -d $HOME/chrome-extend
+        unzip -q $Dotfiles_repo/chrome/Surfingkeys.zip -d $HOME/chrome-extend
         echo -e "              ${green}[√] Unzip ChromeExtend-Pack Successful${reset}\n"
 
 #----------------------------------------------------------------------------------------#
@@ -892,11 +882,11 @@ main() {
             bash
             ;;
     	-9)
-            bash $HOME/Dotfiles/setup/install_server.sh
+            bash $Dotfiles_repo/setup/install_server.sh
             bash
             ;;
 	-[tT])
-            bash $HOME/Dotfiles/setup/setup_tools.sh
+            bash $Dotfiles_repo/setup/setup_tools.sh
             bash
             ;;
         [qQ]) 

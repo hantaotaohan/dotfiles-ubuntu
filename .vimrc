@@ -541,7 +541,7 @@ let g:mkdp_preview_options = {
     \ }
 
 " settings markdowncss & highdark paht
-let g:mdpath='/home/saber/Dotfiles/setup/vim_preview_markdown/onedark/'
+let g:mdpath='/home/saber/dotfiles/setup/vim_preview_markdown/onedark/'
 
 " use a custom markdown style must be absolute path
 let g:mkdp_markdown_css = g:mdpath . 'onedark.css'
@@ -1000,8 +1000,8 @@ let g:vimwiki_markdown_link_ext = 1
 
 " 自动执行同步src的img同步到docs的img脚本
 au VimEnter *
-            \  if (isdirectory($HOME . "vimwiki")) && filereadable("$HOME/Dotfiles/extras/vimwiki_img_autosync.sh")
-            \| silent execute "!nohup $HOME/Dotfiles/extras/vimwiki_img_autosync.sh >/dev/null 2>&1 &"
+            \  if (isdirectory($HOME . "vimwiki")) && filereadable("$HOME/dotfiles/extras/vimwiki_img_autosync.sh")
+            \| silent execute "!nohup $HOME/dotfiles/extras/vimwiki_img_autosync.sh >/dev/null 2>&1 &"
             \| endif
 
 " 开启/关闭Vimiki时自动步上传github
@@ -1038,7 +1038,7 @@ au VimEnter *
 " 方案二
 "au! BufReadPost $HOME/vimwiki/src/index.md !git -C $HOME/vimwiki/ pull origin master
 "au! BufWritePost $HOME/vimwiki/* !git -C $HOME/vimwiki/ add . ;git commit -m "Auto commit."
-"au! VimLeave $HOME/vimwiki/* !bash $HOME/Dotfiles/extras/comparefolders.sh || !git -C $HOME/vimwiki/ add . ;git commit -m "Auto commit + push." ;git push origin master
+"au! VimLeave $HOME/vimwiki/* !bash $HOME/dotfiles/extras/comparefolders.sh || !git -C $HOME/vimwiki/ add . ;git commit -m "Auto commit + push." ;git push origin master
 
 
 " 方案三(异步)
