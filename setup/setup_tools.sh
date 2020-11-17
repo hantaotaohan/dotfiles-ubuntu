@@ -47,12 +47,13 @@ row() {
 
 Alttab() {
     sudo apt install -y libx11-dev libxmu-dev libxft-dev libxrender-dev libxrandr-dev libpng-dev uthash-dev libxpm4 libxpm-dev
-    wget -P $HOME/Desktop https://download.fastgit.org/sagb/alttab/archive/v1.5.0.zip
-    cd $HOME/Desktop && unzip v1.5.0.zip && cd alttab-1.5.0
+    wget -P $HOME/desktop https://download.fastgit.org/sagb/alttab/archive/v1.5.0.zip
+    cd $HOME/desktop && unzip v1.5.0.zip && cd alttab-1.5.0
     ./configure 
     make 
     sudo make install 
-    sudo rm -rf $HOME/Desktop/alttab-1.5.0
+    sudo rm -rf $HOME/desktop/alttab-1.5.0
+    sudo rm -rf $HOME/desktop/v1.5.0.zip
     row
 }
 
@@ -65,38 +66,38 @@ Arcthemes() {
 }
 
 Arcicons() {
-    git clone https://hub.fastgit.org/horst3180/arc-icon-theme --depth 1 $HOME/Desktop/arc-icon-theme && cd $HOME/Desktop/arc-icon-theme
+    git clone https://hub.fastgit.org/horst3180/arc-icon-theme --depth 1 $HOME/desktop/arc-icon-theme && cd $HOME/desktop/arc-icon-theme
     sudo cp -r Arc /usr/share/icons/
     sudo chmod +x /usr/share/icons/Arc
     if [ -f /etc/gtk-3.0/settings.ini ]; then
         sudo sed -i 's/gtk-icon-theme-name = ubuntu-mono-dark/gtk-icon-theme-name = Arc/g' /etc/gtk-3.0/settings.ini
     fi
     cd $HOME
-    sudo rm -rf $HOME/Desktop/arc-icon-theme
+    sudo rm -rf $HOME/desktop/arc-icon-theme
     row
 }
 
 Copytranslator() {
-    wget -P $HOME/Desktop https://download.fastgit.org/CopyTranslator/CopyTranslator/releases/download/v10.0.0-beta.2/copytranslator_10.0.0-beta.2_amd64.deb
-    cd $HOME/Desktop
+    wget -P $HOME/desktop https://download.fastgit.org/CopyTranslator/CopyTranslator/releases/download/v10.0.0-beta.2/copytranslator_10.0.0-beta.2_amd64.deb
+    cd $HOME/desktop
     sudo dpkg -i copytranslator_10.0.0-beta.2_amd64.deb
     sudo chown -R taotao:taotao /dev/input/mice
     cd $HOME
-    sudo rm -rf $HOME/Desktop/copytranslator_10.0.0-beta.2_amd64.deb
+    sudo rm -rf $HOME/desktop/copytranslator_10.0.0-beta.2_amd64.deb
     row
 }
 
 Crossover() {
-    wget -P $HOME/Desktop/ https://download.fastgit.org/hantaotaohan/dotfiles/releases/download/1.0.3/crossover-20.deb
-    wget -P $HOME/Desktop/ https://download.fastgit.org/hantaotaohan/dotfiles/releases/download/1.0.3/winewrapper.exe.so
-    wget -P $HOME/Desktop/ https://download.fastgit.org/hantaotaohan/dotfiles/releases/download/1.0.3/kindle.zip
-    sudo dpkg -i $HOME/Desktop/crossover-20.deb
+    wget -P $HOME/desktop/ https://download.fastgit.org/hantaotaohan/dotfiles/releases/download/1.0.3/crossover-20.deb
+    wget -P $HOME/desktop/ https://download.fastgit.org/hantaotaohan/dotfiles/releases/download/1.0.3/winewrapper.exe.so
+    wget -P $HOME/desktop/ https://download.fastgit.org/hantaotaohan/dotfiles/releases/download/1.0.3/kindle.zip
+    sudo dpkg -i $HOME/desktop/crossover-20.deb
     sudo apt install -f -y
-    sudo dpkg -i $HOME/Desktop/crossover-20.deb
+    sudo dpkg -i $HOME/desktop/crossover-20.deb
     sudo mv /opt/cxoffice/lib/wine/winewrapper.exe.so /opt/cxoffice/lib/wine/winewrapper.exe.so.bak
-    sudo cp $HOME/Desktop/winewrapper.exe.so /opt/cxoffice/lib/wine/
+    sudo cp $HOME/desktop/winewrapper.exe.so /opt/cxoffice/lib/wine/
     cd $HOME
-    sudo rm -rf $HOME/Desktop/winewrapper.exe.so crossover-20.deb
+    sudo rm -rf $HOME/desktop/winewrapper.exe.so crossover-20.deb
     row
 }
 
@@ -162,37 +163,37 @@ Peek() {
 Picom() {
     sudo apt install -y libxext-dev libxcb1-dev libxcb-damage0-dev libxcb-xfixes0-dev libxcb-shape0-dev libxcb-render-util0-dev libxcb-render0-dev libxcb-randr0-dev libxcb-composite0-dev libxcb-image0-dev libxcb-present-dev libxcb-xinerama0-dev libxcb-glx0-dev libpixman-1-dev libdbus-1-dev libconfig-dev libgl1-mesa-dev  libpcre2-dev  libevdev-dev uthash-dev libev-dev libx11-xcb-dev
     sudo apt install -y meson
-    git clone https://hub.fastgit.org/yshui/picom.git $HOME/Desktop/picom && \
-    cd $HOME/Desktop/picom && \
+    git clone https://hub.fastgit.org/yshui/picom.git $HOME/desktop/picom && \
+    cd $HOME/desktop/picom && \
     git submodule update --init --recursive && \
     meson --buildtype=release . build && \
     sudo ninja -C build && \
     sudo ninja -C build install && \
     cd $HOME
-    sudo rm -rf $HOME/Desktop/picom
+    sudo rm -rf $HOME/desktop/picom
     sed -i "s|# exec --no-startup-id picom --config ~/.config/picom/picom.conf|exec --no-startup-id picom --config ~/.config/picom/picom.conf|g" $HOME/.config/i3/config
     sed -i "s|exec --no-startup-id compton --config ~/.config/compton/compton.conf|# exec --no-startup-id compton --config ~/.config/compton/compton.conf|g" $HOME/.config/i3/config
     row
 }
 
 SSR() {
-    wget -P $HOME/Desktop https://download.fastgit.org/shadowsocksrr/electron-ssr/releases/download/0.3.0-alpha.6/electron-ssr-0.3.0-alpha.6.deb
-    sudo dpkg -i $HOME/Desktop/electron-ssr-0.3.0-alpha.6.deb
+    wget -P $HOME/desktop https://download.fastgit.org/shadowsocksrr/electron-ssr/releases/download/0.3.0-alpha.6/electron-ssr-0.3.0-alpha.6.deb
+    sudo dpkg -i $HOME/desktop/electron-ssr-0.3.0-alpha.6.deb
     sudo apt install -f -y
-    sudo dpkg -i $HOME/Desktop/electron-ssr-0.3.0-alpha.6.deb
+    sudo dpkg -i $HOME/desktop/electron-ssr-0.3.0-alpha.6.deb
     cd $HOME
-    sudo rm -rf $HOME/Desktop/electron-ssr-0.3.0-alpha.6.deb
+    sudo rm -rf $HOME/desktop/electron-ssr-0.3.0-alpha.6.deb
     row
 }
 
 Dunst() {
     sudo apt install -y libdbus-1-dev libx11-dev libxinerama-dev libxrandr-dev libxss-dev libglib2.0-dev libpango1.0-dev libgtk-3-dev libxdg-basedir-dev libnotify-dev
-    git clone https://hub.fastgit.org/dunst-project/dunst.git $HOME/Desktop/dunst
-    cd $HOME/Desktop/dunst
+    git clone https://hub.fastgit.org/dunst-project/dunst.git $HOME/desktop/dunst
+    cd $HOME/desktop/dunst
     make
     sudo make install
     cd $HOME
-    rm -rf $HOME/Desktop/dunst
+    rm -rf $HOME/desktop/dunst
     row
 }
 
@@ -281,12 +282,12 @@ Foliate() {
 
 Rdrview() {
     sudo apt install libxml2-dev libseccomp-dev libcurl4-gnutls-dev
-    git clone https://hub.fastgit.org/eafer/rdrview.git $HOME/Desktop/rdrview
-    cd $HOME/Desktop/rdrview
+    git clone https://hub.fastgit.org/eafer/rdrview.git $HOME/desktop/rdrview
+    cd $HOME/desktop/rdrview
     make
     sudo make install
     cd $HOME
-    rm -rf $HOME/Desktop/rdrview
+    rm -rf $HOME/desktop/rdrview
     row
 }
 
