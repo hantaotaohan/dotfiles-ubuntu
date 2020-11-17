@@ -215,6 +215,7 @@ Offlineimap() {
     sudo cp /usr/share/doc/offlineimap/examples/systemd/offlineimap.service /etc/systemd/user
     systemctl --user enable offlineimap
     systemctl --user start offlineimap
+    sudo chmod 0600 $HOME/.msmtprc
     row
 }
 
