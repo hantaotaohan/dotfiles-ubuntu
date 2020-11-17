@@ -52,15 +52,15 @@ IFS=$SAVEIFS
 }
 
 #vimwiki is docs folder (markdown)
-dir1=$HOME/Vimwiki/src
+dir1=$HOME/vimwiki/src
 #vimwiki is docs folder (html)
-dir2=$HOME/Vimwiki/docs
+dir2=$HOME/vimwiki/docs
 
 #CompareFolders 文件夹1 文件夹2 文件夹1的后缀 文件夹2的后缀
-if [ -d $HOME/Vimwiki ]; then
+if [ -d $HOME/vimwiki ]; then
     CompareFolders ${dir2} ${dir1} html md | xargs -r -p rm
 fi
 
 #如果需要删除利用管道符号
 #./del.sh ~/test2 ~/test1 html md | xargs rm
-# ./comparefolders.sh ~/Vimwiki/docs ~/Vimwiki/src html md | xargs rm
+# ./comparefolders.sh ~/vimwiki/docs ~/vimwiki/src html md | xargs rm
