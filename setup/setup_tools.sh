@@ -128,13 +128,13 @@ Jupyter() {
     if [ ! -d "$HOME/.jupyter/custom/" ]
     then
         mkdir -p $HOME/.jupyter/custom/
-        cp $Dotfiles_repo/setup/jupyter/custom.css $HOME/.jupyter/custom/custom.css
+        cp $Dotfiles_repo/jupyter/custom.css $HOME/.jupyter/custom/custom.css
     fi
 
     if [ ! -d "$HOME/.ipython/profile_default/startup/" ]
     then
         mkdir -p $HOME/.ipython/profile_default/startup/
-        cp $Dotfiles_repo/setup/jupyter/startup.py $HOME/.ipython/profile_default/startup/startup.py
+        cp $Dotfiles_repo/jupyter/startup.py $HOME/.ipython/profile_default/startup/startup.py
     fi
     row
 }
@@ -142,10 +142,10 @@ Jupyter() {
 Navi() {
     sudo bash -c "$(wget -O- https://raw.githubusercontent.com/denisidoro/navi/master/scripts/install)"
     if [ -d "$HOME/.local/share/navi/cheats/denisidoro__cheats/" ]; then
-        ln -fs $Dotfiles_repo/setup/cheatsheets/cheatsheets.cheat $HOME/.local/share/navi/cheats/denisidoro__cheats/cheatsheets.cheat
+        ln -fs $Dotfiles_repo/cheatsheets/cheatsheets.cheat $HOME/.local/share/navi/cheats/denisidoro__cheats/cheatsheets.cheat
     else
         mkdir -p $HOME/.local/share/navi/cheats/denisidoro__cheats
-        ln -fs $Dotfiles_repo/setup/cheatsheets/cheatsheets.cheat $HOME/.local/share/navi/cheats/denisidoro__cheats/cheatsheets.cheat
+        ln -fs $Dotfiles_repo/cheatsheets/cheatsheets.cheat $HOME/.local/share/navi/cheats/denisidoro__cheats/cheatsheets.cheat
     fi
     row
 }
@@ -221,16 +221,16 @@ Offlineimap() {
 Fcitx() {
     if [ -f $HOME/.config/fcitx/conf/fcitx-classic-ui.config ]; then
         sudo rm -rf $HOME/.config/fcitx/conf/fcitx-classic-ui.config
-        sudo cp $Dotfiles_repo/setup/fcitx/fcitx-classic-ui.config $HOME/.config/fcitx/conf/fcitx-classic-ui.config
+        sudo cp $Dotfiles_repo/fcitx/fcitx-classic-ui.config $HOME/.config/fcitx/conf/fcitx-classic-ui.config
     else
-        sudo cp $Dotfiles_repo/setup/fcitx/fcitx-classic-ui.config $HOME/.config/fcitx/conf/fcitx-classic-ui.config
+        sudo cp $Dotfiles_repo/fcitx/fcitx-classic-ui.config $HOME/.config/fcitx/conf/fcitx-classic-ui.config
     fi
     row
 }
 
 GTK() {
     if [ -f /etc/gtk-3.0/settings.ini ]; then
-        sudo cp $Dotfiles_repo/setup/gtk3setting/settings.ini /etc/gtk-3.0/settings.ini
+        sudo cp $Dotfiles_repo/gtk3setting/settings.ini /etc/gtk-3.0/settings.ini
     fi
     row
 }
@@ -250,7 +250,7 @@ Github() {
 Github_Hosts() {
     sudo sed -i '/# GitHub/,$d' /etc/hosts
     sudo sed -i '$a\# ------------------------------------------------------------------' /etc/hosts
-    sudo python3 $Dotfiles_repo/setup/github_hosts.py
+    sudo python3 $Dotfiles_repo/github_hosts.py
     row
 }
 
