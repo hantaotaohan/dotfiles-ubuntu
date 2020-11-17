@@ -728,12 +728,12 @@ echo -e "              ${blue}Fonts Install ${reset}                            
 echo -e "-------------------------------------------------------------------------------";
 echo -e "                                                                               ";
 
-        if [ ! -d "$HOME/Fonts" ]; then
+        if [ ! -d "$HOME/fonts" ]; then
             git clone -q\
-                https://hub.fastgit.org/hantaotaohan/Fonts_minimize.git\
-                $HOME/Fonts && cd $HOME/Fonts && ./install.sh
+                https://hub.fastgit.org/hantaotaohan/fonts_minimize.git\
+                $HOME/fonts && cd $HOME/fonts && ./install.sh
         else
-            cd $HOME/Fonts &&\
+            cd $HOME/fonts &&\
             git reset -q --hard && git pull -q && ./install.sh
         fi
 }
