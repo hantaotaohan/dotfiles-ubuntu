@@ -98,6 +98,38 @@ Crossover() {
     sudo cp $HOME/desktop/winewrapper.exe.so /opt/cxoffice/lib/wine/
     cd $HOME
     sudo rm -rf $HOME/desktop/winewrapper.exe.so crossover-20.deb
+    sudo dpkg --add-architecture i386 && \
+    sudo apt-get update && \
+    sudo apt-get install -y gstreamer1.0-plugins-base:i386 \
+    gstreamer1.0-plugins-good:i386 \
+    gstreamer1.0-plugins-ugly:i386 \
+    libc6-i386 \
+    libcups2:i386 \
+    libdbus-1-3:i386 \
+    libfontconfig1:i386 \
+    libfreetype6:i386 \
+    libgl1-mesa-dri:i386 \
+    libgl1-mesa-glx:i386 \
+    libglu1-mesa:i386 \
+    libgnutls30:i386 \
+    libgstreamer1.0-0:i386 \
+    libldap-2.4-2:i386 \
+    libpng16-16:i386 \
+    libsane:i386 \
+    libudev1:i386 \
+    libvulkan1:i386 \
+    libx11-6:i386 \
+    libxcomposite1:i386 \
+    libxcursor1:i386 \
+    libxext6:i386 \
+    libxfixes3:i386 \
+    libxi6:i386 \
+    libxinerama1:i386 \
+    libxml2:i386 \
+    libxrandr2:i386 \
+    libxrender1:i386 \
+    libxslt1.1:i386 \
+    libxxf86vm1:i386
     row
 }
 
