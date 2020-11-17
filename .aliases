@@ -18,11 +18,11 @@ alias c='cd "$(ls -axF | grep "/$" | yank-cli -i )"'
 
 
 # BookMarks
-alias de='cd ~/Desktop && ls -lhA'
-alias wo='cd ~/Workspace && ls -lhA'
-alias dow='cd ~/Downloads && ls -lhA'
-alias dot='cd ~/Dotfiles && ls -lhA'
-alias con='cd ~/.config && ls -lhA'
+alias dt='cd ~/Desktop && ls -lhA'
+alias ws='cd ~/Workspace && ls -lhA'
+alias dl='cd ~/Downloads && ls -lhA'
+alias ds='cd ~/Dotfiles && ls -lhA'
+alias cf='cd ~/.config && ls -lhA'
 
 # Easy report
 alias ls='ls -Fh --color=auto --group-directories-first'
