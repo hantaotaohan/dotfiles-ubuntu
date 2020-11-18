@@ -38,6 +38,7 @@ Options:
     -22       Install Calibre
     -23       Install Foliate
     -24       Install rdrview
+    -25       Install I3wm
 EOF
 }
 
@@ -325,6 +326,18 @@ Rdrview() {
     row
 }
 
+
+I3wm() {
+    sudo add-apt-repository -y ppa:kgilmer/speed-ricer
+    sudo sed -i "s/http:\/\/ppa.launchpad.net/https:\/\/launchpad.proxy.ustclug.org/g" /etc/apt/sources.list.d/*.list
+    sudo apt-get update
+    sudo apt install -y i3 i3-wm
+    sudo apt-get -y -qq --purge remove rxvt-unicode > /dev/null 2>&1 
+    sudo sed -i "s/https:\/\/launchpad.proxy.ustclug.org/http:\/\/ppa.launchpad.net/g" /etc/apt/sources.list.d/*.list
+    sudo add-apt-repository -y --remove ppa:kgilmer/speed-ricer
+    row
+}
+
 main() {
 
     echo "                                                                               "
@@ -360,6 +373,7 @@ main() {
     echo " -22       Setup Calibre                                                       "
     echo " -23       Setup Foliate                                                       "
     echo " -24       Setup Rdrview                                                       "
+    echo " -25       Setup I3wm                                                          "
     echo "                                                                               "
     echo "-------------------------------------------------------------------------------"
     echo "                                                                               "
@@ -446,6 +460,9 @@ main() {
             ;;
         -24)
             Rdrview
+            ;;
+        -25)
+            I3wm
             ;;
         -[aA])
             Github_Hosts
