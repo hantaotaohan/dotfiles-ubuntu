@@ -371,6 +371,7 @@ echo -e "                                                                       
         fonts-wqy-microhei\
         fcitx\
         fcitx-pinyin\
+	fcitx-module-cloudpinyin\
         i3\
         rofi\
         feh\
