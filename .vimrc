@@ -1075,6 +1075,10 @@ autocmd BufReadPost $HOME/vimwiki/src/index.md call GitPull()
 autocmd BufWritePost $HOME/vimwiki/src/index.md call GitCommit()
 autocmd VimLeave $HOME/vimwiki/* if exists("g:asyncrun_exit") | call GitPush() | endif 
 
+let g:asyncrun_status_old = ''
+let g:airline_section_x = airline#section#create_right(['%{g:asyncrun_status}'])
+
+
 " " 方案三(异步)
 " func GitPull()
 "     " 获取云端最新版
