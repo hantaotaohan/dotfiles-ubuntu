@@ -1051,24 +1051,58 @@ func GitPull()
     exec ":AsyncRun git pull origin master"
     autocmd User AsyncRunStop exec ":ccl"
     autocmd User AsyncRunStop exec ":e %"
-    let g:asyncrun_exit = "echom 'Sync done'"
+    let g:asyncrun_exit = "echom 'Sync Done'"
 endfunc
 
 func GitCommit()
     " 提交到本地
-    exec ":AsyncStop"
-    exec ":AsyncRun git -C $HOME/vimwiki/ add . ;git commit -m 'Auto commit'"
+    call system("git add --all")
+	call system("git commit -m \"`whoami` @  `hostname` in `date +%Y-%m-%d=%H:%M:%S`\"")
+	exec ":AsyncRun git push origin master"
+    let g:asyncrun_exit = "echom 'Git Push Done'"
 endfunc
 
 func GitPush()
     " 上传到云端
+    call system("git add --all")
+	call system("git commit -m \"`whoami` @  `hostname` in `date +%Y-%m-%d=%H:%M:%S`\"")
+	exec ":AsyncRun -mode=bang git push origin master"
     exec ":AsyncStop"
-    exec ":AsyncRun git -C $HOME/vimwiki/ add . ;git commit -m \"Auto commit `date`\" ;git push origin master"
+    let g:asyncrun_exit = "echom 'Done'"
 endfunc
 
 autocmd BufReadPost $HOME/vimwiki/src/index.md call GitPull()
-autocmd BufWritePost $HOME/vimwiki/src/index.md call GitPush()
-autocmd VimLeave $HOME/vimwiki/* !git -C $HOME/vimwiki/ add . ;git commit -m "Auto commit + push." ;git push origin master
+autocmd BufWritePost $HOME/vimwiki/src/index.md call GitCommit()
+autocmd VimLeave $HOME/vimwiki/* if exists("g:asyncrun_exit") | call GitPush() | endif 
+
+" " 方案三(异步)
+" func GitPull()
+"     " 获取云端最新版
+"     exec "w"
+"     exec ":cd %:h"
+"     .normal ^L
+"     exec ":AsyncStop"
+"     exec ":AsyncRun git pull origin master"
+"     autocmd User AsyncRunStop exec ":ccl"
+"     autocmd User AsyncRunStop exec ":e %"
+"     let g:asyncrun_exit = "echom 'Sync done'"
+" endfunc
+
+" func GitCommit()
+"     " 提交到本地
+"     exec ":AsyncStop"
+"     exec ":AsyncRun git -C $HOME/vimwiki/ add . ;git commit -m 'Auto commit'"
+" endfunc
+
+" func GitPush()
+"     " 上传到云端
+"     exec ":AsyncStop"
+"     exec ":AsyncRun git -C $HOME/vimwiki/ add . ;git commit -m \"Auto commit `date`\" ;git push origin master"
+" endfunc
+
+" autocmd BufReadPost $HOME/vimwiki/src/index.md call GitPull()
+" autocmd BufWritePost $HOME/vimwiki/src/index.md call GitPush()
+" autocmd VimLeave $HOME/vimwiki/* !git -C $HOME/vimwiki/ add . ;git commit -m "Auto commit + push." ;git push origin master
 
 "=================================================================================================================================
 
