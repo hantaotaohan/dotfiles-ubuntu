@@ -1000,6 +1000,16 @@ let g:vimwiki_use_mouse = 1
 let g:vimwiki_conceallevel=0
 let g:vimwiki_markdown_link_ext = 1
 
+hi VimwikiHeader1 guifg=#e5c07b
+hi VimwikiHeader2 guifg=#98c379
+hi VimwikiHeader3 guifg=#c678dd
+hi VimwikiHeader4 guifg=#8096BF
+hi VimwikiHeader5 guifg=#8096BF
+hi VimwikiHeader6 guifg=#8096BF
+hi VimwikiLink guifg=#61afef
+hi VimwikiLink guifg=#61afef
+hi VimwikiBold term=reverse cterm=underline ctermfg=204 gui=underline guifg=#E06C75
+
 "=================================================================================================================================
 
 " 自动执行同步src的img同步到docs的img脚本
