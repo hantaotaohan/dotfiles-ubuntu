@@ -243,8 +243,19 @@ VIM() {
 
 
 Offlineimap() {
+    echo " config offline user and password "
     keyring set bteb hantao@bteb.cn
     keyring set hotmail hantaotaohan@hotmail.com
+    echo " config msmtp user and password - bteb "
+    secret-tool store --label msmtp \
+    host smtp.bteb.cn \
+    service smtp \
+    user hantao@bteb.cn
+    echo " config msmtp user and password - hotmail "
+    secret-tool store --label msmtp \
+    host smtp.office365.com \
+    service smtp \
+    user hantaotaohan@hotmail.com
     sudo cp /usr/share/doc/offlineimap/examples/systemd/offlineimap.service /etc/systemd/user
     systemctl --user enable offlineimap
     systemctl --user start offlineimap
