@@ -1151,46 +1151,44 @@ autocmd VimLeave $HOME/vimwiki/* call GitPush()
 "=================================================================================================================================
 
 " 自定义airline同步通知颜色
-    function! AirlineThemePatch(palette)
-      " [ guifg, guibg, ctermfg, ctermbg, opts ].
-      " See "help attr-list" for valid values for the "opt" value.
-      " http://vim.wikia.com/wiki/Xterm256_color_names_for_console_Vim
-      let a:palette.accents.running = [ '#c678dd', '' , '', '', '' ]
-      let a:palette.accents.success = [ '#61afef', '' , '', '', '' ]
-      let a:palette.accents.failure = [ '#e06c75', '' , '', '', '' ]
-    endfunction
-    let g:airline_theme_patch_func = 'AirlineThemePatch'
+function! AirlineThemePatch(palette)
+  " [ guifg, guibg, ctermfg, ctermbg, opts ].
+  " See "help attr-list" for valid values for the "opt" value.
+  " http://vim.wikia.com/wiki/Xterm256_color_names_for_console_Vim
+  let a:palette.accents.running = [ '#c678dd', '' , '', '', '' ]
+  let a:palette.accents.success = [ '#61afef', '' , '', '', '' ]
+  let a:palette.accents.failure = [ '#e06c75', '' , '', '', '' ]
+endfunction
+let g:airline_theme_patch_func = 'AirlineThemePatch'
 
+" Change color of the relevant section according to g:asyncrun_status, a global variable exposed by AsyncRun
+" 'running': default, 'success': green, 'failure': red
+let g:async_status_old = ''
+function! Get_asyncrun_running()
 
-    " Change color of the relevant section according to g:asyncrun_status, a global variable exposed by AsyncRun
-    " 'running': default, 'success': green, 'failure': red
-    let g:async_status_old = ''
-    function! Get_asyncrun_running()
+  let async_status = g:asyncrun_status
+  if async_status != g:async_status_old
 
-      let async_status = g:asyncrun_status
-      if async_status != g:async_status_old
+    if async_status == 'running'
+      call airline#parts#define_accent('asyncrun_status', 'running')
+    elseif async_status == 'success'
+      call airline#parts#define_accent('asyncrun_status', 'success')
+    elseif async_status == 'failure'
+      call airline#parts#define_accent('asyncrun_status', 'failure')
+    endif
 
-        if async_status == 'running'
-          call airline#parts#define_accent('asyncrun_status', 'running')
-        elseif async_status == 'success'
-          call airline#parts#define_accent('asyncrun_status', 'success')
-        elseif async_status == 'failure'
-          call airline#parts#define_accent('asyncrun_status', 'failure')
-        endif
-
-        let g:airline_section_x = airline#section#create(['asyncrun_status'])
-        AirlineRefresh
-        let g:async_status_old = async_status
-
-      endif
-
-      return async_status
-
-    endfunction
-
-    call airline#parts#define_function('asyncrun_status', 'Get_asyncrun_running')
     let g:airline_section_x = airline#section#create(['asyncrun_status'])
+    AirlineRefresh
+    let g:async_status_old = async_status
 
+  endif
+
+  return async_status
+
+endfunction
+
+call airline#parts#define_function('asyncrun_status', 'Get_asyncrun_running')
+let g:airline_section_x = airline#section#create(['asyncrun_status'])
 
 "=================================================================================================================================
 
