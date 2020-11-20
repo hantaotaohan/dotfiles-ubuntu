@@ -39,6 +39,7 @@ Options:
     -23       Install Foliate
     -24       Install rdrview
     -25       Install I3wm
+    -26       Install SSH_banner
 EOF
 }
 
@@ -349,6 +350,13 @@ I3wm() {
     row
 }
 
+SSH_banner() {
+    sudo sed -i '$a\Banner \/etc\/ssh\/my_ssh_banner' /etc/ssh/sshd_config
+    sudo cp $Dotfiles_repo/banner/my_ssh_banner /etc/ssh/
+    systemctl restart sshd
+    row
+}
+
 main() {
 
     echo "                                                                               "
@@ -385,6 +393,7 @@ main() {
     echo " -23       Setup Foliate                                                       "
     echo " -24       Setup Rdrview                                                       "
     echo " -25       Setup I3wm                                                          "
+    echo " -25       Setup SSH_banner                                                    "
     echo "                                                                               "
     echo "-------------------------------------------------------------------------------"
     echo "                                                                               "
@@ -475,6 +484,9 @@ main() {
         -25)
             I3wm
             ;;
+        -26)
+            SSH_banner
+            ;;
         -[aA])
             Github_Hosts
             Dunst
@@ -492,6 +504,7 @@ main() {
             Offlineimap
             Alttab
             Rdrview
+            SSH_banner
             # Copytranslator
             Crossover
             Picom
