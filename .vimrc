@@ -1163,9 +1163,9 @@ let g:airline_theme_patch_func = 'AirlineThemePatch'
 
 " Change color of the relevant section according to g:asyncrun_status, a global variable exposed by AsyncRun
 " 'running': default, 'success': green, 'failure': red
+let g:asyncrun_status = ''
 let g:async_status_old = ''
 function! Get_asyncrun_running()
-
   let async_status = g:asyncrun_status
   if async_status != g:async_status_old
 
