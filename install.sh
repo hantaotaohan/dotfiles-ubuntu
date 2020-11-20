@@ -407,6 +407,7 @@ echo -e "                                                                       
 	gnome-keyring\
 	lua5.2\
 	imwheel\
+	libsecret-tools\
 	yank
         )
 	for app in "${aptApps[@]}"
