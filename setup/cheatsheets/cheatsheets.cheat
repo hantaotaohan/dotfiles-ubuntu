@@ -4,19 +4,19 @@
 
 % cheatsheet
 # Vim CheatSheet
-bat --style header,grid --color always $HOME/dotfiles/extras/cheatsheets/vim_cheatsheet.vim
+bat --style header,grid --color always $HOME/dotfiles/setup/cheatsheets/vim_cheatsheet.vim
 
 % cheatsheet
 # Bash CheatSheet
-bat --style header,grid --color always $HOME/dotfiles/extras/cheatsheets/bash_cheatsheet.vim
+bat --style header,grid --color always $HOME/dotfiles/setup/cheatsheets/bash_cheatsheet.vim
 
 % cheatsheet
 # Git CheatSheet
-bat --style header,grid --color always $HOME/dotfiles/extras/cheatsheets/git_cheatsheet.vim
+bat --style header,grid --color always $HOME/dotfiles/setup/cheatsheets/git_cheatsheet.vim
 
 % cheatsheet
 # Tmux CheatSheet
-bat --style header,grid --color always $HOME/dotfiles/extras/cheatsheets/tmux_cheatsheet.vim
+bat --style header,grid --color always $HOME/dotfiles/setup/cheatsheets/tmux_cheatsheet.vim
 
 ; -----------------------------------------------------------------------------------------------------------------
 ; zip
