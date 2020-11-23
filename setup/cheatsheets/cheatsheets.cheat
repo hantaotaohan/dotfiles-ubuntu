@@ -25,14 +25,20 @@ bat --style header,grid --color always $HOME/dotfiles/setup/cheatsheets/tmux_che
 % zip
 # compressed zip
 zip -r <compressed_zip> <dir>
+$ compressed_zip: echo "input Compressed name:  "
+$ dir: ls $HOME/ --- --preview 'bat {}' --preview-window 'right:50%' 
 
 % zip
 # compressed Multiple zip
 zip -r <compressed_zip> <dir1> <dir2> <file>
+$ compressed_zip: echo "input Compressed name:  "
+$ dir: ls . --- --multi --preview 'bat {}' --preview-window 'right:50%' 
 
 % zip
 # Add a file to an existing zip file
 zip <compressed_zip> <file>
+$ compressed_zip: echo "Choose Compressed name:  " | ls $HOME/ --- --preview 'bat {}' --preview-window 'right:50%' 
+$ dir: ls . --- --multi --preview 'bat {}' --preview-window 'right:50%' 
 
 % zip
 # Remove files from existing zip files
