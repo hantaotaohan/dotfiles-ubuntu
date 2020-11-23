@@ -1354,7 +1354,9 @@ highlight default link WhichKeyFloating  Pmenu
 "highlight Pmenu ctermbg=red guibg=#282c34
 "highlight Keyword ctermbg=red guibg=#282c34
 "highlight Function ctermbg=red guibg=#282c34
+
 "=================================================================================================================================
+
 let g:which_key_map =  {}
 
 let g:which_key_map.b = {
@@ -1363,7 +1365,7 @@ let g:which_key_map.b = {
 let g:which_key_map.d = {
   \ 'name' : '+Display',
   \ }
-let g:which_key_map.F = {
+let g:which_key_map.e = {
   \ 'name' : '+File',
   \ }
 let g:which_key_map.f = {
@@ -1377,6 +1379,18 @@ let g:which_key_map.v = {
   \ }
 let g:which_key_map.w = {
   \ 'name' : '+VimWiki',
+  \ 'c' : {
+  \ 'name': '+CheckBox',
+  \ },
+  \ 'h' : {
+  \ 'name': '+HTML',
+  \ },
+  \ 't' : {
+  \ 'name': '+Tables',
+  \ },
+  \ 'z' : {
+  \ 'name': '+Zettel',
+  \ },
   \ }
 let g:which_key_map.p = {
   \ 'name' : '+Plug',
@@ -1386,133 +1400,129 @@ let g:which_key_map.g = {
   \ }
 
 " BUFFER
-let g:which_key_map.b.1 = ['b1'            , 'buffers 1 '      ]
-let g:which_key_map.b.2 = ['b2'            , 'buffers 2 '      ]
-let g:which_key_map.b.3 = ['b3'            , 'buffers 3 '      ]
-let g:which_key_map.b.4 = ['b4'            , 'buffers 4 '      ]
-let g:which_key_map.b.5 = ['b5'            , 'buffers 5 '      ]
-let g:which_key_map.b.6 = ['b6'            , 'buffers 6 '      ]
-let g:which_key_map.b.7 = ['b7'            , 'buffers 7 '      ]
-let g:which_key_map.b.8 = ['b8'            , 'buffers 8 '      ]
-let g:which_key_map.b.9 = ['b9'            , 'buffers 9 '      ]
-let g:which_key_map.b.0 = ['b10'           , 'buffers 10'      ]
-let g:which_key_map.b.a = ['badd'          , 'Add buffer'      ]
-let g:which_key_map.b.d = ['bdelete'       , 'Delete buffer'   ]
-let g:which_key_map.b.n = ['bnext'         , 'Next buffer'     ]
-let g:which_key_map.b.p = ['bprevious'     , 'Previous buffer' ]
-let g:which_key_map.b.h = ['Startify'      , 'Home'            ]
+let g:which_key_map.b.1   = ['b1'                                , 'buffers 1 '                              ]
+let g:which_key_map.b.2   = ['b2'                                , 'buffers 2 '                              ]
+let g:which_key_map.b.3   = ['b3'                                , 'buffers 3 '                              ]
+let g:which_key_map.b.4   = ['b4'                                , 'buffers 4 '                              ]
+let g:which_key_map.b.5   = ['b5'                                , 'buffers 5 '                              ]
+let g:which_key_map.b.6   = ['b6'                                , 'buffers 6 '                              ]
+let g:which_key_map.b.7   = ['b7'                                , 'buffers 7 '                              ]
+let g:which_key_map.b.8   = ['b8'                                , 'buffers 8 '                              ]
+let g:which_key_map.b.9   = ['b9'                                , 'buffers 9 '                              ]
+let g:which_key_map.b.0   = ['b10'                               , 'buffers 10'                              ]
+let g:which_key_map.b.a   = ['badd'                              , 'Add buffer'                              ]
+let g:which_key_map.b.d   = ['bdelete'                           , 'Delete buffer'                           ]
+let g:which_key_map.b.n   = ['bnext'                             , 'Next buffer'                             ]
+let g:which_key_map.b.p   = ['bprevious'                         , 'Previous buffer'                         ]
+let g:which_key_map.b.h   = ['Startify'                          , 'Home'                                    ]
 
 " DISPLAY
-let g:which_key_map.d.w = ['<C-W>w'     , 'other-window'          ]
-let g:which_key_map.d.d = ['<C-W>c'     , 'delete-window'         ]
-let g:which_key_map.d.S = ['<C-W>s'     , 'split-window-below'    ]
-let g:which_key_map.d.V = ['<C-W>v'     , 'split-window-right'    ]
-let g:which_key_map.d.2 = ['<C-W>v'     , 'layout-double-columns' ]
-let g:which_key_map.d.h = ['<C-W>5<'    , 'expand-window-left'    ]
-let g:which_key_map.d.l = ['<C-W>5>'    , 'expand-window-right'   ]
-let g:which_key_map.d.D = ['<C-W>='     , 'balance-window'        ]
-let g:which_key_map.d.s = ['<C-W>s'     , 'split-window-below'    ]
-let g:which_key_map.d.v = ['<C-W>v'     , 'split-window-below'    ]
-let g:which_key_map.d.k = [':resize -5' , 'expand-window-up'      ]
-let g:which_key_map.d.j = [':resize +5' , 'expand-window-below'   ]
+let g:which_key_map.d.w   = ['<C-W>w'                            , 'other-window'                            ]
+let g:which_key_map.d.d   = ['<C-W>c'                            , 'delete-window'                           ]
+let g:which_key_map.d.b   = ['<C-W>s'                            , 'split-window-below'                      ]
+let g:which_key_map.d.r   = ['<C-W>v'                            , 'split-window-right'                      ]
+let g:which_key_map.d.2   = ['<C-W>v'                            , 'layout-double-columns'                   ]
+let g:which_key_map.d.h   = ['<C-W>5<'                           , 'expand-window-left'                      ]
+let g:which_key_map.d.l   = ['<C-W>5>'                           , 'expand-window-right'                     ]
+let g:which_key_map.d.a   = ['<C-W>='                            , 'balance-window'                          ]
+let g:which_key_map.d.s   = ['<C-W>s'                            , 'split-window-below'                      ]
+let g:which_key_map.d.v   = ['<C-W>v'                            , 'split-window-below'                      ]
+let g:which_key_map.d.k   = [':resize -5'                        , 'expand-window-up'                        ]
+let g:which_key_map.d.j   = [':resize +5'                        , 'expand-window-below'                     ]
 
 " FILE
-let g:which_key_map.F.v = ['tabedit $MYVIMRC' , 'edit-vimrc'              ]
-let g:which_key_map.F.e = ['NERDTreeFind'     , 'explore-at-current-file' ]
+let g:which_key_map.e.v   = ['tabedit $MYVIMRC'                  , 'edit-vimrc'                              ]
+let g:which_key_map.e.e   = ['NERDTreeFind'                      , 'explore-at-current-file'                 ]
 
 " FZF 
-let g:which_key_map.f.f = ['Files'    , 'files'                   ]
-let g:which_key_map.f.G = ['GFiles'   , 'git-files'               ]
-let g:which_key_map.f.g = ['GFiles?'  , 'modified-git-files'      ]
-let g:which_key_map.f.b = ['Buffers'  , 'open buffers'            ]
-let g:which_key_map.f.o = ['Colors'   , 'color schemes'           ]
-let g:which_key_map.f.a = ['Ag'       , 'ag search'               ]
-let g:which_key_map.f.r = ['Rg'       , 'rg search'               ]
-let g:which_key_map.f.l = ['Lines'    , 'lines in loaded buffers' ]
-let g:which_key_map.f.t = ['Tags'     , 'tigs in the project'     ]
-let g:which_key_map.f.m = ['Marks'    , 'marks'                   ]
-let g:which_key_map.f.w = ['Windows'  , 'windows'                 ]
-let g:which_key_map.f.c = ['Commands' , 'commands'                ]
+let g:which_key_map.f.f   = ['Files'                             , 'files'                                   ]
+let g:which_key_map.f.i   = ['GFiles'                            , 'git-files'                               ]
+let g:which_key_map.f.g   = ['GFiles?'                           , 'modified-git-files'                      ]
+let g:which_key_map.f.b   = ['Buffers'                           , 'open buffers'                            ]
+let g:which_key_map.f.o   = ['Colors'                            , 'color schemes'                           ]
+let g:which_key_map.f.a   = ['Ag'                                , 'ag search'                               ]
+let g:which_key_map.f.r   = ['Rg'                                , 'rg search'                               ]
+let g:which_key_map.f.l   = ['Lines'                             , 'lines in loaded buffers'                 ]
+let g:which_key_map.f.t   = ['Tags'                              , 'tigs in the project'                     ]
+let g:which_key_map.f.m   = ['Marks'                             , 'marks'                                   ]
+let g:which_key_map.f.w   = ['Windows'                           , 'windows'                                 ]
+let g:which_key_map.f.c   = ['Commands'                          , 'commands'                                ]
 
 " TABLE
-let g:which_key_map.t.m = ['TableModeToggle'    , 'TableModeToggle' ]
+let g:which_key_map.t.m   = ['TableModeToggle'                   , 'TableModeToggle'                         ]
 
 " VSC-GIT
-let g:which_key_map.v.B = ['Gbrowse' , 'browse' ]
-let g:which_key_map.v.D = ['Gdiff'   , 'diff'   ]
-let g:which_key_map.v.M = ['Gmerge'  , 'merge'  ]
-let g:which_key_map.v.P = ['Gpush'   , 'push'   ]
-let g:which_key_map.v.R = ['Grebase' , 'rebase' ]
-let g:which_key_map.v.b = ['Gblame'  , 'blame'  ]
-let g:which_key_map.v.c = ['Gcommit' , 'commit' ]
-let g:which_key_map.v.d = ['Gdelete' , 'delete' ]
-let g:which_key_map.v.f = ['Gfetch'  , 'fetch'  ]
-let g:which_key_map.v.l = ['Glog'    , 'log'    ]
-let g:which_key_map.v.m = ['Gmove'   , 'move'   ]
-let g:which_key_map.v.p = ['Gpull'   , 'pull'   ]
-let g:which_key_map.v.r = ['Grename' , 'rename' ]
-let g:which_key_map.v.s = ['Gstatus' , 'status' ]
+let g:which_key_map.v.e   = ['Gbrowse'                           , 'browse'                                  ]
+let g:which_key_map.v.i   = ['Gdiff'                             , 'diff'                                    ]
+let g:which_key_map.v.g   = ['Gmerge'                            , 'merge'                                   ]
+let g:which_key_map.v.s   = ['Gpush'                             , 'push'                                    ]
+let g:which_key_map.v.g   = ['Grebase'                           , 'rebase'                                  ]
+let g:which_key_map.v.b   = ['Gblame'                            , 'blame'                                   ]
+let g:which_key_map.v.c   = ['Gcommit'                           , 'commit'                                  ]
+let g:which_key_map.v.d   = ['Gdelete'                           , 'delete'                                  ]
+let g:which_key_map.v.f   = ['Gfetch'                            , 'fetch'                                   ]
+let g:which_key_map.v.o   = ['Glog'                              , 'log'                                     ]
+let g:which_key_map.v.m   = ['Gmove'                             , 'move'                                    ]
+let g:which_key_map.v.l   = ['Gpull'                             , 'pull'                                    ]
+let g:which_key_map.v.r   = ['Grename'                           , 'rename'                                  ]
+let g:which_key_map.v.t   = ['Gstatus'                           , 'status'                                  ]
 
 "VIMWIKI
-let g:which_key_map.w.g = ['<Plug>Vimwiki2HTMLBrowse' , 'vimwiki-to-html-browse' ]
-let g:which_key_map.w.h = ['VimwikiAll2HTML'          , 'vimwiki-to-html'        ]
-let g:which_key_map.w.b = ['ZettelBackLinks'          , 'add-backlineks'         ]
-let g:which_key_map.w.n = ['ZettelNew'                , 'add-new'                ]
-let g:which_key_map.w.l = ['VimwikiBacklinks'         , 'display-backlinks'      ]
+let g:which_key_map.w.w   = ['VimwikiIndex'                      , 'Go toIndex'                              ]
+let g:which_key_map.w.n   = ['VimwikiGoto'                       , 'Create new wiki page'                    ]
+let g:which_key_map.w.d   = ['VimwikiDeleteFile'                 , 'Delete wiki page'                        ]
+let g:which_key_map.w.r   = ['VimwikiRenameFile'                 , 'Rename wiki page'                        ]
+let g:which_key_map.w.s   = ['VimwikiSearch'                     , 'Search-for-wiki'                         ]
+let g:which_key_map.w.o   = ['lopen'                             , 'Display-all-matches'                     ]
+let g:which_key_map.w.n   = ['lnext'                             , 'Display-next-matches'                    ]
+let g:which_key_map.w.p   = ['lprevious'                         , 'Display-previous-matches'                ]
+let g:which_key_map.w.b   = ['VimwikiBacklinks'                  , 'Display-backlinks'                       ]
+let g:which_key_map.w.T   = ['VimwikiTOC'                        , 'Create or Update TOC'                    ]
+let g:which_key_map.w.h.h = ['Vimwiki2HTML'                      , 'Covert wiki to HTML'                     ]
+let g:which_key_map.w.h.b = ['Vimwiki2HTMLBrowse'                , 'Covert wiki to HTML open Browser'        ]
+let g:which_key_map.w.h.a = ['VimwikiAll2HTML'                   , 'Covert all wiki to HTML'                 ]
+let g:which_key_map.w.c.t = ['VimwikiToggleListItem'             , 'Toggle checkbox On/Off'                  ]
+let g:which_key_map.w.c.n = ['VimwikiIncrementListItem'          , 'Toggle checkbox Next/Previous'           ]
+let g:which_key_map.w.t.t = ['VimwikiTable'                      , 'Create Table'                            ]
+let g:which_key_map.w.t.l = ['VimwikiTableMoveColumnLeft'        , 'Move current column to the left'         ]
+let g:which_key_map.w.t.r = ['VimwikiTableMoveColumnRight'       , 'Move current column to the Right'        ]
+let g:which_key_map.w.z.b = ['ZettelBackLinks'                   , 'add-backlineks'                          ]
+let g:which_key_map.w.z.n = ['ZettelNew'                         , 'add-new'                                 ]
+let g:which_key_map.w.z.o = ['ZettelOpen'                        , 'Search fulltext use FZF'                 ]
+let g:which_key_map.w.z.i = ['ZettelInsertNote'                  , 'Using FZF and insert in the current'     ]
+let g:which_key_map.w.z.s = ['ZettelSearch'                      , 'Search the content of your zettelkasten' ]
+let g:which_key_map.w.z.y = ['ZettelYankName'                    , 'Copy the current zettel file name'       ]
 
 " PLUG-VIM
-let g:which_key_map.p.s = ['PlugSnapshot' , 'snapshot' ]
-let g:which_key_map.p.u = ['PlugUpgrade'  , 'upgrade'  ]
-let g:which_key_map.p.c = ['PlugClean'    , 'clean'    ]
-let g:which_key_map.p.d = ['PlugDiff'     , 'diff'     ]
-let g:which_key_map.p.i = ['PlugInstall'  , 'install'  ]
-let g:which_key_map.p.s = ['PlugStatus'   , 'status'   ]
-let g:which_key_map.p.u = ['PlugUpdate'   , 'update'   ]
+let g:which_key_map.p.n   = ['PlugSnapshot'                      , 'snapshot'                                ]
+let g:which_key_map.p.u   = ['PlugUpgrade'                       , 'upgrade'                                 ]
+let g:which_key_map.p.c   = ['PlugClean'                         , 'clean'                                   ]
+let g:which_key_map.p.d   = ['PlugDiff'                          , 'diff'                                    ]
+let g:which_key_map.p.i   = ['PlugInstall'                       , 'install'                                 ]
+let g:which_key_map.p.s   = ['PlugStatus'                        , 'status'                                  ]
+let g:which_key_map.p.u   = ['PlugUpdate'                        , 'update'                                  ]
 
 " GOYO
-let g:which_key_map.g.g = ['Goyo'  , 'Enter Goyo' ]
-let g:which_key_map.g.o = ['q'     , 'Leave Goyo' ]
+let g:which_key_map.g.g   = ['Goyo'                              , 'Enter Goyo'                              ]
+let g:which_key_map.g.o   = ['q'                                 , 'Leave Goyo'                              ]
 
 "=================================================================================================================================
 
 let g:which_key_map[' '] = {
       \ 'name' : '+System ' ,
-      \ 'm' : [ ':SignatureToggleSigns'                   ,      'SignatureToggle'        ],
-      \ 'q' : [ ':q'                                      ,      'Exit Vim'               ],
-      \ 'w' : [ ':w'                                      ,      'Save Vim'               ],
-      \ 's' : [ ':Startify'                               ,      'Go to Startify'         ],
-      \                                                                                                               
-      \ ']' : [ '<Plug>MarkdownPreviewToggle'             ,      'MarkdownPreview'        ],
-      \ 'j' : [ ':resize           +5'                    ,      'Resize Vim +5'          ],
-      \ 'k' : [ ':resize           -5'                    ,      'Resize Vim -5'          ],
-      \ 'h' : [ ':vertical resize  +5'                    ,      'Resize Vim +5'          ],
-      \ 'l' : [ ':vertical resize  -5'                    ,      'Resize Vim -5'          ],
-      \ 'p' : [ ':call mdip#MarkdownClipboardImage()<cr>' ,      'ClipboardImage to Vim'  ],
+      \ 'm' : [ ':SignatureToggleSigns'                          , 'SignatureToggle'                         ],
+      \ 'q' : [ ':q'                                             , 'Exit Vim'                                ],
+      \ 'w' : [ ':w'                                             , 'Save Vim'                                ],
+      \ 's' : [ ':Startify'                                      , 'Go to Startify'                          ],
+      \                                                                                                                                  
+      \ ']' : [ '<Plug>MarkdownPreviewToggle'                    , 'MarkdownPreview'                         ],
+      \ 'j' : [ ':resize           +5'                           , 'Resize Vim +5'                           ],
+      \ 'k' : [ ':resize           -5'                           , 'Resize Vim -5'                           ],
+      \ 'h' : [ ':vertical resize  +5'                           , 'Resize Vim +5'                           ],
+      \ 'l' : [ ':vertical resize  -5'                           , 'Resize Vim -5'                           ],
+      \ 'p' : [ ':call mdip#MarkdownClipboardImage()<cr>'        , 'ClipboardImage to Vim'                   ],
       \ }
-" let g:which_key_map[' '] = {
-"       \ 'name' : '+Easymotion ' ,
-"       \ 'f' : ['<plug>(easymotion-prefix)f' , 'find {char} to the right'],
-"       \ 'F' : ['<plug>(easymotion-prefix)F' , 'find {char} to the left'],
-"       \ 't' : ['<plug>(easymotion-prefix)t' , 'till before the {char} to the right'],
-"       \ 'T' : ['<plug>(easymotion-prefix)T' , 'till after the {char} to the left'],
-"       \ 'w' : ['<plug>(easymotion-prefix)w' , 'beginning of word forward'],
-"       \ 'W' : ['<plug>(easymotion-prefix)W' , 'beginning of WORD forward'],
-"       \ 'b' : ['<plug>(easymotion-prefix)b' , 'beginning of word backward'],
-"       \ 'B' : ['<plug>(easymotion-prefix)B' , 'beginning of WORD backward'],
-"       \ 'e' : ['<plug>(easymotion-prefix)e' , 'end of word forward'],
-"       \ 'E' : ['<plug>(easymotion-prefix)E' , 'end of WORD forward'],
-"       \ 'g' : {
-"         \ 'name' : '+Backwards ' ,
-"         \ 'e' : ['<plug>(easymotion-prefix)ge' , 'end of word backward'],
-"         \ 'E' : ['<plug>(easymotion-prefix)gE' , 'end of WORD backward'],
-"         \ },
-"       \ 'j' : ['<plug>(easymotion-prefix)j' , 'line downward'],
-"       \ 'k' : ['<plug>(easymotion-prefix)k' , 'line upward'],
-"       \ 'n' : ['<plug>(easymotion-prefix)n' , 'jump to latest "/" or "?" forward'],
-"       \ 'N' : ['<plug>(easymotion-prefix)N' , 'jump to latest "/" or "?" backward.'],
-"       \ 's' : ['<plug>(easymotion-prefix)s' , 'find(search) {char} forward and backward.'],
-"       \ }
-
+      
 "=================================================================================================================================
 
 if !exists('which_key#register')
