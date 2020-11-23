@@ -24,33 +24,38 @@ bat --style header,grid --color always $HOME/dotfiles/setup/cheatsheets/tmux_che
 
 % zip
 # compressed zip
-zip -r <compressed_zip> <dir>
-$ compressed_zip: echo "input Compressed name:  "
-$ dir: ls $HOME/ --- --preview 'bat {}' --preview-window 'right:50%' 
+zip -r <filename> <dir>
+$ filename : echo -e 'Please Input Filename:  \n'
+$ dir : ls .
 
 % zip
 # compressed Multiple zip
-zip -r <compressed_zip> <dir1> <dir2> <file>
-$ compressed_zip: echo "input Compressed name:  "
-$ dir: ls . --- --multi --preview 'bat {}' --preview-window 'right:50%' 
+zip -r <filename> $(echo "<dir>")
+$ filename : echo -e 'Please Input Filename:  \n'
+$ dir : ls .  --- --multi 
 
 % zip
 # Add a file to an existing zip file
-zip <compressed_zip> <file>
-$ compressed_zip: echo "Choose Compressed name:  " | ls $HOME/ --- --preview 'bat {}' --preview-window 'right:50%' 
-$ dir: ls . --- --multi --preview 'bat {}' --preview-window 'right:50%' 
+zip <filename> <file>
+$ filename : echo -e 'Please Input Filename:  \n'
+$ dir : ls .  --- --multi 
 
 % zip
 # Remove files from existing zip files
-zip -d "<compressed_zip> <filename>
+zip -d <dir> <filename>
+$ dir : ls .
+$ filename : zip -sf <dir>
 
 % zip
 # Unzip to the specified directory
 unzip <compressed_file> -d <extracted_file>
+$ compressed_file : ls .
+$ extracted_file : echo -e 'Please Input Extracted_file:  \n'
 
 % zip
 # View the contents of the package
 unzip -l <file_zip>
+$ file_zip : ls .
 
 ; -----------------------------------------------------------------------------------------------------------------
 ; Tar
