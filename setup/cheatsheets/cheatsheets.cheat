@@ -152,3 +152,12 @@ git branch -m master
 % git
 # Forced Push
 git push -f origin master
+
+% git
+# Clear origin Commit number
+git checkout --orphan latest_branch && \
+git add -A && \
+git commit -am "commit message" && \
+git branch -D main && \
+git branch -m main && \
+git push -f origin main
