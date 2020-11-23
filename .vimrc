@@ -991,6 +991,7 @@ let g:vimwiki_list = [{
         \ 'syntax': 'markdown',
         \ 'ext': '.md',
         \ 'custom_wiki2html': 'vimwiki_markdown',
+        \ 'let wiki.nested_syntaxes': {'python': 'python', 'bash': 'sh'},
         \ 'html_filename_parameterization': 1
         \ }]
 
