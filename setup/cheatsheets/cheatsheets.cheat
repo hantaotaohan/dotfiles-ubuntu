@@ -158,6 +158,7 @@ git push -f origin master
 git checkout --orphan latest_branch && \
 git add -A && \
 git commit -am "commit message" && \
-git branch -D main && \
-git branch -m main && \
-git push -f origin main
+git branch -D <branch> && \
+git branch -m <branch> && \
+git push -f origin <branch>
+$ branch: git branch | awk '{print $NF}'
