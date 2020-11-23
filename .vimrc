@@ -997,7 +997,7 @@ let g:vimwiki_list = [{
 let g:vimwiki_ext = '.md' " set extension to .md
 let g:vimwiki_global_ext = 0 " make sure vimwiki doesn't own all .md files
 let g:vimwiki_use_mouse = 1
-let g:vimwiki_conceallevel=0
+let g:vimwiki_conceallevel=1
 let g:vimwiki_markdown_link_ext = 1
 
 hi VimwikiHeader1 guifg=#e5c07b
@@ -1006,9 +1006,18 @@ hi VimwikiHeader3 guifg=#c678dd
 hi VimwikiHeader4 guifg=#8096BF
 hi VimwikiHeader5 guifg=#8096BF
 hi VimwikiHeader6 guifg=#8096BF
+
+hi VimwikiH1Folding guifg=#e5c07b
+hi VimwikiH2Folding guifg=#98c379
+hi VimwikiH3Folding guifg=#c678dd
+hi VimwikiH4Folding guifg=#8096BF
+hi VimwikiH5Folding guifg=#8096BF
+hi VimwikiH6Folding guifg=#8096BF
+
 hi VimwikiLink guifg=#61afef
 hi VimwikiLink guifg=#61afef
 hi VimwikiBold term=reverse cterm=underline ctermfg=204 gui=underline guifg=#E06C75
+
 
 "=================================================================================================================================
 
