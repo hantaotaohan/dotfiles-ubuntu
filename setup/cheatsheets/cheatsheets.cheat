@@ -63,23 +63,32 @@ $ file_zip : ls .
 
 % tar
 # create .tar package
-tar cf <target_tar> <file1> <file2> <file3>
+tar cf <filename> <dir>
+$ filename : echo -e 'Please Input Filename:  \n'
+$ dir : ls .  --- --multi 
 
 % tar
 # create .tar.gz package
-tar czf <target_tar_gz> <file1> <file2> <file3>
+tar czf <filename> <dir>
+$ filename : echo -e 'Please Input Filename:  \n'
+$ dir : ls .  --- --multi 
 
 % tar
 # Use the Directory to create a compression package
-tar czf <target_tar_gz> -C <path/to/directory> .
+tar czf <filename> -C <path> .
+$ filename : echo -e 'Please Input Filename:  \n'
+$ path : echo -e 'Please Input Path/to/directors:  \n'
 
 % tar
 # Unzip to the current directory
 tar xf <source_tar>
+$ source_tar : ls .
 
 % tar
 # Unzip to the specified directory
-tar xf <source_tar> -C <directory>
+tar xf <source_tar> -C <path>
+$ source_tar : ls .
+$ path : echo -e 'Please Input Path/to/directors:  \n'
 
 ; -----------------------------------------------------------------------------------------------------------------
 ; Convert & ImageMagick
