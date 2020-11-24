@@ -84,7 +84,7 @@ tar xf <source_tar> -C <untar_file_path>
 $ source_tar : ls *.tar
 
 % tar
-# Untar to the specified directory
+# Untar.gz to the specified directory
 tar xzf <source_tar> -C <untargz_file_path>
 $ source_tar : ls *.tar.gz
 
