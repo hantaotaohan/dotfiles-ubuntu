@@ -964,7 +964,7 @@ autocmd FileType markdown nmap <buffer><silent> <leader>p :call mdip#MarkdownCli
 " Vimwiki Zettel settings
 "=================================================================================================================================
 let g:zettel_dir = "$HOME/vimwiki/src"
-let g:zettel_format = "%Y%m%d%H%M"
+let g:zettel_format = "%Y-%m-%d-%H-%M"
 let g:zettel_link_format="[%title](%link)"
 let g:zettel_options = [{"template" :  "$HOME/vimwiki/templates/zettelnew.tpl"}]
 
