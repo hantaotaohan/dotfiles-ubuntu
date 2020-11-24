@@ -41,3 +41,12 @@ element {
 element selected {
   background-color: #2e343f;
 }
+
+window {
+  transparency: "real";
+  fullscreen: true;
+}
+
+mainbox {
+  padding: 31% 31% 31% 31%;
+}
