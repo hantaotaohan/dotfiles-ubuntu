@@ -61,6 +61,9 @@ bindsym $mod+d exec --no-startup-id rofi -show drun
 # 切换窗口
 bindsym $mod+p exec --no-startup-id rofi -show window -theme sidetab -window-format {t} -kb-row-down 'Alt+p' -kb-accept-entry '!Alt-p'
 
+# 查看CheatSheet
+bindsym $mod+Shift+backslash exec --no-startup-id cat $HOME/.config/rofi/rofi-shortcuts.conf | rofi -i -dmenu -p 'Shortcuts' -theme slate.rasi
+
 # 打开Ranger快捷键
 bindsym $mod+Shift+Return exec --no-startup-id alacritty -e ranger
 
