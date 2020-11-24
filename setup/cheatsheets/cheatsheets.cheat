@@ -101,8 +101,22 @@ $ untargz_file_path : fd -t d . /
 ; -----------------------------------------------------------------------------------------------------------------
 
 % convert
-# jpg to png
-convert <image_jpg> <image_png>
+# jpg to png (Single)
+convert <image_jpg> <image_png>.png
+$ image_jpg : ls *.jpg
+
+% convert
+# png to jpg (Single)
+convert <image_png> <image_jpg>.jpg
+$ image_png : ls *.png
+
+% convert
+# jpg to png (Multiple)
+ls -1 *.jpg | xargs -n 1 bash -c 'convert "$0" "${0%.jpg}.png"'
+
+% convert
+# png to jpg (Multiple)
+ls -1 *.png | xargs -n 1 bash -c 'convert "$0" "${0%.png}.jpg"'
 
 % convert
 # img zoom 50%
@@ -125,20 +139,32 @@ convert <image1_png> <image2_png> <image3_png> -append <image123_png>
 convert <image1_png> <image2_png> <image3_png> -delay 10 <animation_gif>
 
 % convert
-# png to pdf
-convert <img_png>  <doc_pdf>
+# png to pdf (Single)
+convert <img_png> <doc_pdf>.pdf
+$ img_png : ls *.png
 
 % convert
-# pdf to png
-convert -density 200 <foo_pdf> <foo-%02d_png>
+# pdf to png (Single)
+convert -density 200 <foo_pdf> <foo_png>.png
+$ foo_pdf : ls *.pdf
 
 % convert
-# Method.1:Multiple pictures are merged into pdfs in order
-convert $(ls *jpg | sort -n) <result_pdf>
+# jpg to pdf (Single)
+convert <img_jpg> <doc_pdf>.pdf
+$ img_jpg : ls *.jpg
 
 % convert
-# Method.2:Multiple pictures are merged into pdfs in order
-ls *jpg | sort -n | convert @- result_pdf
+# pdf to jpg (Single)
+convert -density 200 <foo_pdf> <foo_jpg>.jpg
+$ foo_pdf : ls *.pdf
+
+% convert
+# Multiple pictures are merged into pdfs in order (jpg to pdf)(Multiple)
+convert $(ls *jpg | sort -n) <result_pdf>.pdf
+
+% convert
+# Multiple pictures are merged into pdfs in order (png to pdf)(Multiple)
+convert $(ls *png | sort -n) <result_pdf>.pdf
 
 ; -----------------------------------------------------------------------------------------------------------------
 ; Git
