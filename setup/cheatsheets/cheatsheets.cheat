@@ -23,39 +23,31 @@ bat --style header,grid --color always $HOME/dotfiles/setup/cheatsheets/tmux_che
 ; -----------------------------------------------------------------------------------------------------------------
 
 % zip
-# compressed zip
-zip -r <filename> <dir>
-$ filename : echo -e 'Please Input Filename:  \n'
-$ dir : ls .
-
-% zip
-# compressed Multiple zip
-zip -r <filename> $(echo "<dir>")
-$ filename : echo -e 'Please Input Filename:  \n'
-$ dir : ls .  --- --multi 
+# Compressed a file or Multiple files to zip
+zip -r <file_zip_name>.zip $(echo "<files>")
+$ files : ls .  --- --multi 
 
 % zip
 # Add a file to an existing zip file
-zip <filename> <file>
-$ filename : echo -e 'Please Input Filename:  \n'
-$ dir : ls .  --- --multi 
+zip <file_zip_name> <files>
+$ file_zip_name: ls *.zip
+$ files : ls .  --- --multi 
 
 % zip
 # Remove files from existing zip files
-zip -d <dir> <filename>
-$ dir : ls .
-$ filename : zip -sf <dir>
+zip -d <file_zip_name> <filenames>
+$ file_zip_name: ls *.zip
+$ filenames : zip -sf <file_zip_name>
 
 % zip
 # Unzip to the specified directory
-unzip <compressed_file> -d <extracted_file>
-$ compressed_file : ls .
-$ extracted_file : echo -e 'Please Input Extracted_file:  \n'
+unzip <file_zip_name> -d <unzip_file_path>
+$ file_zip_name : ls *.zip
 
 % zip
 # View the contents of the package
-unzip -l <file_zip>
-$ file_zip : ls .
+unzip -l <file_zip_name>
+$ file_zip_name: ls *.zip
 
 ; -----------------------------------------------------------------------------------------------------------------
 ; Tar
@@ -63,32 +55,38 @@ $ file_zip : ls .
 
 % tar
 # create .tar package
-tar cf <filename> <dir>
-$ filename : echo -e 'Please Input Filename:  \n'
-$ dir : ls .  --- --multi 
+tar cf <file_tar_name>.tar $(echo "<files>")
+$ files : ls .  --- --multi 
 
 % tar
 # create .tar.gz package
-tar czf <filename> <dir>
-$ filename : echo -e 'Please Input Filename:  \n'
-$ dir : ls .  --- --multi 
+tar czf <file_tar_name>.tar.gz $(echo "<files>")
+$ files : ls .  --- --multi 
 
 % tar
 # Use the Directory to create a compression package
-tar czf <filename> -C <path> .
-$ filename : echo -e 'Please Input Filename:  \n'
-$ path : echo -e 'Please Input Path/to/directors:  \n'
+tar czf <file_tar_name>.tar.gz -C <Directory> .
+$ Directory : fd -t d . 
 
 % tar
-# Unzip to the current directory
+# Untar .tar to the current directory
 tar xf <source_tar>
-$ source_tar : ls .
+$ source_tar : ls *.tar
 
 % tar
-# Unzip to the specified directory
-tar xf <source_tar> -C <path>
-$ source_tar : ls .
-$ path : echo -e 'Please Input Path/to/directors:  \n'
+# Untargz .tar.gz to the current directory
+tar xzf <source_tar_gz>
+$ source_tar_gz : ls *.tar.gz
+
+% tar
+# Untar to the specified directory
+tar xf <source_tar> -C <untar_file_path>
+$ source_tar : ls *.tar
+
+% tar
+# Untar to the specified directory
+tar xzf <source_tar> -C <untargz_file_path>
+$ source_tar : ls *.tar.gz
 
 ; -----------------------------------------------------------------------------------------------------------------
 ; Convert & ImageMagick
