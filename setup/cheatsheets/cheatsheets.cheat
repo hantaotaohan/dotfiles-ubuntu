@@ -40,9 +40,15 @@ $ file_zip_name: ls *.zip
 $ filenames : zip -sf <file_zip_name>
 
 % zip
+# Unzip to the current directory
+unzip <file_zip_name> 
+$ file_zip_name : ls *.zip
+
+% zip
 # Unzip to the specified directory
 unzip <file_zip_name> -d <unzip_file_path>
 $ file_zip_name : ls *.zip
+$ unzip_file_path : fd -t d . /
 
 % zip
 # View the contents of the package
@@ -82,11 +88,13 @@ $ source_tar_gz : ls *.tar.gz
 # Untar to the specified directory
 tar xf <source_tar> -C <untar_file_path>
 $ source_tar : ls *.tar
+$ untar_file_path : fd -t d . /
 
 % tar
 # Untar.gz to the specified directory
 tar xzf <source_tar> -C <untargz_file_path>
 $ source_tar : ls *.tar.gz
+$ untargz_file_path : fd -t d . /
 
 ; -----------------------------------------------------------------------------------------------------------------
 ; Convert & ImageMagick
