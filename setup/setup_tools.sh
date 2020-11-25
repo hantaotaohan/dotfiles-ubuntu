@@ -517,9 +517,11 @@ main() {
             ;;
         *)
             echo "Command not found" >&2
-            exit 1
+            # exit 1
     esac
 }
 
+while true ; do
 main "$@"
+done
 
