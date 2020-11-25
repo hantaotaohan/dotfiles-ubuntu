@@ -272,6 +272,14 @@ Fcitx() {
         mkdir -p $HOME/.config/fcitx/conf
         sudo cp $Dotfiles_repo/fcitx/fcitx-classic-ui.config $HOME/.config/fcitx/conf/fcitx-classic-ui.config
     fi
+    
+    if [ -f $HOME/.config/fcitx/skin/dark/fcitx_skin.conf  ]; then
+        sudo rm -rf $HOME/.config/fcitx/skin/dark/fcitx_skin.conf
+        sudo cp $Dotfiles_repo/fcitx_skin.conf $HOME/.config/fcitx/skin/dark/fcitx_skin.conf
+    else
+        mkdir -p $HOME/.config/fcitx/skin/dark
+        sudo cp $Dotfiles_repo/fcitx_skin.conf $HOME/.config/fcitx/skin/dark/fcitx_skin.conf
+    fi
     row
 }
 
