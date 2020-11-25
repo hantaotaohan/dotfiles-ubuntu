@@ -408,6 +408,7 @@ echo -e "                                                                       
 	lua5.2\
 	imwheel\
 	libsecret-tools\
+	tldr\
 	yank
         )
 	for app in "${aptApps[@]}"
@@ -573,15 +574,15 @@ echo -e "                                                                       
 # TLDR 
 #----------------------------------------------------------------------------------------#
 
-        if [ ! -f "/bin/tldr" ];then
-            sudo cp $Dotfiles_repo/bin/tldr /bin
-            sudo chmod +x /bin/tldr
-        else
-            sudo rm -rf /bin/tldr
-            sudo cp $Dotfiles_repo/bin/tldr /bin
-            sudo chmod +x /bin/tldr
-        fi
-        echo -e "              ${green}[√] TLDR Successful${reset}\n"
+        # if [ ! -f "/bin/tldr" ];then
+        #     sudo cp $Dotfiles_repo/bin/tldr /bin
+        #     sudo chmod +x /bin/tldr
+        # else
+        #     sudo rm -rf /bin/tldr
+        #     sudo cp $Dotfiles_repo/bin/tldr /bin
+        #     sudo chmod +x /bin/tldr
+        # fi
+        # echo -e "              ${green}[√] TLDR Successful${reset}\n"
 
 
 #----------------------------------------------------------------------------------------#
