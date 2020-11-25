@@ -830,6 +830,8 @@ main() {
             echo -e "              ${green}[√] *** All Install Successful *** ${reset}\n"
 	    cd $HOME
             bash
+	    bash $Dotfiles_repo/setup/setup_tools.sh
+	    bash
             ;;
         -[dD])
             install_dotfiles
