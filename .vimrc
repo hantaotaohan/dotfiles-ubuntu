@@ -973,11 +973,14 @@ let g:zettel_options = [{"template" :  "$HOME/vimwiki/templates/zettelnew.tpl"}]
 " Vimwiki settings
 "=================================================================================================================================
 " Vimwiki 快捷键设置
-autocmd FileType vimwiki nmap <Leader>wg <Plug>Vimwiki2HTMLBrowse
-autocmd FileType vimwiki nmap <Leader>wh :VimwikiAll2HTML<cr>
-autocmd FileType vimwiki nmap <Leader>wb :ZettelBackLinks<cr>
-autocmd FileType vimwiki nmap <Leader>wn :ZettelNew<cr>
-autocmd FileType vimwiki nmap <Leader>wl :VimwikiBacklinks<cr>
+" autocmd FileType vimwiki nmap <Leader>wg <Plug>Vimwiki2HTMLBrowse
+" autocmd FileType vimwiki nmap <Leader>wh :VimwikiAll2HTML<cr>
+" autocmd FileType vimwiki nmap <Leader>wb :ZettelBackLinks<cr>
+" autocmd FileType vimwiki nmap <Leader>wn :ZettelNew<cr>
+" autocmd FileType vimwiki nmap <Leader>wl :VimwikiBacklinks<cr>
+autocmd FileType vimwiki nmap <Leader>ws :VWS<Space>
+autocmd FileType vimwiki nmap <Plug>VimwikiUISelect <nop>
+
 
 let g:vimwiki_list = [{
         \ 'auto_export': 1,
