@@ -128,8 +128,8 @@ endif
 
 inoremap jk <Esc>
 
-nnoremap ;; :
-vnoremap ;; :
+" nnoremap ;; :
+" vnoremap ;; :
 
 nnoremap q <nop>
 vnoremap q <nop>
@@ -143,14 +143,14 @@ noremap H ^
 noremap L $
 
 " Quickly close the current window
-nnoremap <leader>q :q<CR>
+nnoremap <leader>q :wq<CR>
 vnoremap <leader>q <esc>:wq<CR>
 
 " Quickly save the current file
-nnoremap <leader>w :w<CR>
+" nnoremap <leader>w :w<CR>
 
 " remap U to <C-r> for easier redo
-nnoremap U <C-r>
+" nnoremap U <C-r>
 
 " Keep search pattern at the center of the screen.
 nnoremap <silent> n nzz
@@ -1477,7 +1477,7 @@ let g:which_key_map.w.d   = ['VimwikiDeleteFile'                 , 'Delete wiki 
 let g:which_key_map.w.r   = ['VimwikiRenameFile'                 , 'Rename wiki page'                        ]
 let g:which_key_map.w.s   = ['VimwikiSearch'                     , 'Search-for-wiki'                         ]
 let g:which_key_map.w.o   = ['lopen'                             , 'Display-all-matches'                     ]
-let g:which_key_map.w.n   = ['lnext'                             , 'Display-next-matches'                    ]
+let g:which_key_map.w.x   = ['lnext'                             , 'Display-next-matches'                    ]
 let g:which_key_map.w.p   = ['lprevious'                         , 'Display-previous-matches'                ]
 let g:which_key_map.w.b   = ['VimwikiBacklinks'                  , 'Display-backlinks'                       ]
 let g:which_key_map.w.T   = ['VimwikiTOC'                        , 'Create or Update TOC'                    ]
