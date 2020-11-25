@@ -57,7 +57,7 @@ export NAVI_COMMENT_COLOR=5
 export NAVI_SNIPPET_COLOR=2
 export NAVI_TAG=50
 export NAVI_COMMENT_WIDTH=50
-export NAVI_FZF_OVERRIDES='--height 30 --margin 1,1 --border'
+export NAVI_FZF_OVERRIDES='--height 30 --margin 1,1 --border --no-sort --layout=reverse'
 export NAVI_FZF_OVERRIDES_VAR='--height 30 --margin 1,1 --border'
 
 # ripgrep.
