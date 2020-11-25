@@ -499,8 +499,7 @@ main() {
             Github_Hosts
             Dunst
             VIM
-            # I3gaps
-            I3wm
+            I3gaps
             Arcthemes
             Arcicons
             GTK
