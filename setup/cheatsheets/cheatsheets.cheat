@@ -2,55 +2,49 @@
 ; CheatSheet
 ; -----------------------------------------------------------------------------------------------------------------
 
-% cheatsheet
-# Vim CheatSheet
+% CheatSheet
+
+# CheatSheet Vim
 bat --style header,grid --color always $HOME/dotfiles/setup/cheatsheets/vim_cheatsheet.vim
 
-% cheatsheet
-# Bash CheatSheet
+# CheatSheet Bash 
 bat --style header,grid --color always $HOME/dotfiles/setup/cheatsheets/bash_cheatsheet.vim
 
-% cheatsheet
-# Git CheatSheet
+# CheatSheet Git 
 bat --style header,grid --color always $HOME/dotfiles/setup/cheatsheets/git_cheatsheet.vim
 
-% cheatsheet
-# Tmux CheatSheet
+# CheatSheet Tmux 
 bat --style header,grid --color always $HOME/dotfiles/setup/cheatsheets/tmux_cheatsheet.vim
 
 ; -----------------------------------------------------------------------------------------------------------------
-; zip
+; Zip
 ; -----------------------------------------------------------------------------------------------------------------
 
-% zip
+% Zip
+
 # Compressed a file or Multiple files to zip
 zip -r <file_zip_name>.zip $(echo "<files>")
 $ files : ls .  --- --multi 
 
-% zip
-# Add a file to an existing zip file
+# Add a file to zip file
 zip <file_zip_name> <files>
 $ file_zip_name: ls *.zip
 $ files : ls .  --- --multi 
 
-% zip
-# Remove files from existing zip files
+# Remove files from  zip files
 zip -d <file_zip_name> <filenames>
 $ file_zip_name: ls *.zip
 $ filenames : zip -sf <file_zip_name>
 
-% zip
 # Unzip to the current directory
 unzip <file_zip_name> 
 $ file_zip_name : ls *.zip
 
-% zip
 # Unzip to the specified directory
 unzip <file_zip_name> -d <unzip_file_path>
 $ file_zip_name : ls *.zip
 $ unzip_file_path : fd -t d . /
 
-% zip
 # View the contents of the package
 unzip -l <file_zip_name>
 $ file_zip_name: ls *.zip
@@ -59,39 +53,34 @@ $ file_zip_name: ls *.zip
 ; Tar
 ; -----------------------------------------------------------------------------------------------------------------
 
-% tar
-# create .tar package
+% Tar
+
+# Create .tar package
 tar cf <file_tar_name>.tar $(echo "<files>")
 $ files : ls .  --- --multi 
 
-% tar
-# create .tar.gz package
+# Create .tar.gz package
 tar czf <file_tar_name>.tar.gz $(echo "<files>")
 $ files : ls .  --- --multi 
 
-% tar
 # Use the Directory to create a compression package
 tar czf <file_tar_name>.tar.gz -C <Directory> .
 $ Directory : fd -t d . 
 
-% tar
-# Untar .tar to the current directory
+# Unzip tar to the current directory
 tar xf <source_tar>
 $ source_tar : ls *.tar
 
-% tar
-# Untargz .tar.gz to the current directory
+# Unzip tar.gz to the current directory
 tar xzf <source_tar_gz>
 $ source_tar_gz : ls *.tar.gz
 
-% tar
-# Untar to the specified directory
+# Unzip tar to the specified directory
 tar xf <source_tar> -C <untar_file_path>
 $ source_tar : ls *.tar
 $ untar_file_path : fd -t d . /
 
-% tar
-# Untar.gz to the specified directory
+# Unzip tar.gz to the specified directory
 tar xzf <source_tar> -C <untargz_file_path>
 $ source_tar : ls *.tar.gz
 $ untargz_file_path : fd -t d . /
@@ -100,106 +89,90 @@ $ untargz_file_path : fd -t d . /
 ; Convert & ImageMagick
 ; -----------------------------------------------------------------------------------------------------------------
 
-% convert
+% Convert
+
 # jpg to png (Single)
 convert <image_jpg> <image_png>.png
 $ image_jpg : ls *.jpg
 
-% convert
 # png to jpg (Single)
 convert <image_png> <image_jpg>.jpg
 $ image_png : ls *.png
 
-% convert
 # jpg to png (Multiple)
 ls -1 *.jpg | xargs -n 1 bash -c 'convert "$0" "${0%.jpg}.png"'
 
-% convert
 # png to jpg (Multiple)
 ls -1 *.png | xargs -n 1 bash -c 'convert "$0" "${0%.png}.jpg"'
 
-% convert
 # img zoom 50%
 convert <image_png> -resize 50% <image2_png>
 
-% convert
 # Zoom the picture and maintain the vertical and horizontal scale
 convert <image_png> -resize 640x480 <image2_png>
 
-% convert
 # Add pictures horizontally
 convert <image1_png> <image2_png> <image3_png> +append <image123_png>
 
-% convert
 # Add pictures vertically
 convert <image1_png> <image2_png> <image3_png> -append <image123_png>
 
-% convert
 # Create a gif of images with a 100-millisecond delay 
 convert <image1_png> <image2_png> <image3_png> -delay 10 <animation_gif>
 
-% convert
 # png to pdf (Single)
 convert <img_png> <doc_pdf>.pdf
 $ img_png : ls *.png
 
-% convert
 # pdf to png (Single)
 convert -density 200 <foo_pdf> <foo_png>.png
 $ foo_pdf : ls *.pdf
 
-% convert
 # jpg to pdf (Single)
 convert <img_jpg> <doc_pdf>.pdf
 $ img_jpg : ls *.jpg
 
-% convert
 # pdf to jpg (Single)
 convert -density 200 <foo_pdf> <foo_jpg>.jpg
 $ foo_pdf : ls *.pdf
 
-% convert
-# Multiple pictures are merged into pdfs in order (jpg to pdf)(Multiple)
+# Multiple jpg to pdf (Multiple)
 convert $(ls *jpg | sort -n) <result_pdf>.pdf
 
-% convert
-# Multiple pictures are merged into pdfs in order (png to pdf)(Multiple)
+# Multiple png to pdf (Multiple)
 convert $(ls *png | sort -n) <result_pdf>.pdf
 
 ; -----------------------------------------------------------------------------------------------------------------
 ; Git
 ; -----------------------------------------------------------------------------------------------------------------
 
-% git
+% Git
+
 # Create and Toggle a new branch 
 git checkout --orphan latest_branch
 
-% git
 # Git add --all
 git add -A
 
-% git
 # Git add and Commit 
 git commit -am "commit message"
 
-% git
 # Delete master branch
 git branch -D master
 
-% git
 # Rename branch names to Master
 git branch -m master
 
-% git
 # Forced Push
 git push -f origin master
 
-% git
 # Clear origin Commit number
 git checkout --orphan latest_branch && \
 git add -A && \
 git commit -am "commit message" && \
-git branch -D <branch> && \
-git branch -m <branch> && \
-git push -f origin <branch>
-$ branch: git branch | awk '{print $NF}'
+git branch -D <branch_name> && \
+git branch -m <branch_name> && \
+git push -f origin <branch_name>
+$ branch_name: git branch | awk '{print $NF}'
+
+vim:tw=78:sw=4:ts=8:ft=bash:norl:
