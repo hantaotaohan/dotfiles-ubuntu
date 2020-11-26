@@ -263,8 +263,8 @@ echo -e "-----------------------------------------------------------------------
 echo -e "                                                                               ";
 
 # Make Floder
-if [ ! -d "$HOME/Workspace" ]; then mkdir -p "$HOME/workspace"; fi
-if [ ! -d "$HOME/Desktop" ]; then mkdir -p "$HOME/desktop"; fi
+if [ ! -d "$HOME/workspace" ]; then mkdir -p "$HOME/workspace"; fi
+if [ ! -d "$HOME/desktop" ]; then mkdir -p "$HOME/desktop"; fi
 
 # Set Xrdb
 #if [ ! "$XDG_VTNR" = "" ]; then
