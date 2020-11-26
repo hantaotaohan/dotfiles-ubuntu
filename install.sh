@@ -828,9 +828,9 @@ main() {
             sudo apt autoremove -y -qq > /dev/null 2>&1
 	    sudo apt-get clean > /dev/null 2>&1
             echo -e "              ${green}[√] *** All Install Successful *** ${reset}\n"
-	    cd $HOME
-            bash
+	    bash
 	    bash $Dotfiles_repo/setup/setup_tools.sh
+	    cd $HOME
 	    bash
             ;;
         -[dD])
