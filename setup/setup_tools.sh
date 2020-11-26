@@ -40,6 +40,7 @@ Options:
     -24       Install rdrview
     -25       Install I3wm
     -26       Install SSH_banner
+    -27       Install Ly
 EOF
 }
 
@@ -373,6 +374,19 @@ SSH_banner() {
     row
 }
 
+Ly() {
+    sudo apt install -y build-essential libpam0g-dev libxcb-xkb-dev
+    git clone https://github.com/nullgemm/ly.git $HOME/desktop/ly
+    cd $HOME/desktop/ly
+    make github
+    make
+    sudo make install
+    sudo systemctl enable ly.service
+    cd $HOME
+    rm -rf $HOME/desktop/ly
+    row
+}
+
 main() {
 
     echo "                                                                               "
@@ -409,7 +423,8 @@ main() {
     echo " -23       Setup Foliate                                                       "
     echo " -24       Setup Rdrview                                                       "
     echo " -25       Setup I3wm                                                          "
-    echo " -25       Setup SSH_banner                                                    "
+    echo " -26       Setup SSH_banner                                                    "
+    echo " -27       Setup Ly                                                            "
     echo "                                                                               "
     echo "-------------------------------------------------------------------------------"
     echo "                                                                               "
@@ -502,6 +517,9 @@ main() {
             ;;
         -26)
             SSH_banner
+            ;;
+        -27)
+            Ly
             ;;
         -[aA])
             Github_Hosts
