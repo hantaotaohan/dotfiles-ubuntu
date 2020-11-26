@@ -275,10 +275,18 @@ Fcitx() {
     
     if [ -f $HOME/.config/fcitx/skin/dark/fcitx_skin.conf  ]; then
         sudo rm -rf $HOME/.config/fcitx/skin/dark/fcitx_skin.conf
-        sudo cp $Dotfiles_repo/fcitx_skin.conf $HOME/.config/fcitx/skin/dark/fcitx_skin.conf
+        sudo cp $Dotfiles_repo/fcitx/fcitx_skin.conf $HOME/.config/fcitx/skin/dark/fcitx_skin.conf
     else
         mkdir -p $HOME/.config/fcitx/skin/dark
-        sudo cp $Dotfiles_repo/fcitx_skin.conf $HOME/.config/fcitx/skin/dark/fcitx_skin.conf
+        sudo cp $Dotfiles_repo/fcitx/fcitx_skin.conf $HOME/.config/fcitx/skin/dark/fcitx_skin.conf
+    fi
+    
+    if [ -f $HOME/.config/fcitx/skin/dark/bar.png  ]; then
+        sudo rm -rf $HOME/.config/fcitx/skin/dark/bar.png
+        sudo cp $Dotfiles_repo/fcitx/bar.png $HOME/.config/fcitx/skin/dark/bar.png
+    else
+        mkdir -p $HOME/.config/fcitx/skin/dark
+        sudo cp $Dotfiles_repo/fcitx/bar.png $HOME/.config/fcitx/skin/dark/bar.png
     fi
     row
 }
