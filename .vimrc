@@ -610,6 +610,17 @@ let g:tagbar_type_markdown = {
     \ 'sort': 0,
 \ }
 
+let g:tagbar_type_vimwiki = {
+          \   'ctagstype':'vimwiki'
+          \ , 'kinds':['h:header']
+          \ , 'sro':'&&&'
+          \ , 'kind2scope':{'h':'header'}
+          \ , 'sort':0
+          \ , 'ctagsbin':'$HOME/.vim/vimwiki2ctags.py'
+          \ , 'ctagsargs': 'markdown'
+          \ }
+
+
 
 "=================================================================================================================================
 " FZF.vim 
