@@ -1020,7 +1020,7 @@ let g:vimwiki_use_mouse = 1
 let g:vimwiki_conceallevel=1
 let g:vimwiki_markdown_link_ext = 1
 let g:list_margin=0
-let g:vimwiki_user_htmls = '404.html,search.html,books.html,todo,html,contact.html'
+let g:vimwiki_user_htmls = '404.html,search.html,books.html,todo,html,contact.html,tags.html'
 let g:vimwiki_valid_html_tags='b,i,s,u,sub,sup,kbd,del,br,hr,div,code,h1,nav,body,aside'
 
 
