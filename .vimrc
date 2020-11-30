@@ -202,7 +202,7 @@ Plug 'jszakmeister/markdown2ctags'                                       " Tags�
 Plug 'Neur1n/neuims'                                                     " 输入法自动切换 
 Plug 'vim-scripts/fcitx.vim'                                             " 输入法自动切换Fcitx
 Plug 'ferrine/md-img-paste.vim'                                          " Markdown截图自动粘贴
-Plug 'vimwiki/vimwiki'                                                   " Vimwiki插件
+Plug 'vimwiki/vimwiki' , { 'branch': 'dev' }                             " Vimwiki插件
 Plug 'michal-h21/vim-zettel'                                             " 配合vimwiki的功能插件
 Plug 'Lenovsky/nuake'                                                    " 快速启动命令行工具
 Plug 'jiangmiao/auto-pairs'                                              " 成对添加括号等
