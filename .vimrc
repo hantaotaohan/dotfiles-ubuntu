@@ -995,6 +995,10 @@ autocmd FileType vimwiki nmap <Plug>VimwikiUISelect <nop>
 
 let g:vimwiki_list = [{
         \ 'auto_export': 1,
+	\ 'auto_tags': 1,
+        \ 'auto_generate_tags': 1,
+        \ 'automatic_nested_syntaxes': 1,
+        \ 'auto_generate_links': 1,
         \ 'automatic_nested_syntaxes': 1,
         \ 'path': '$HOME/vimwiki/src',
         \ 'path_html': '$HOME/vimwiki/docs/',
@@ -1009,12 +1013,14 @@ let g:vimwiki_list = [{
         \ 'html_filename_parameterization': 1
         \ }]
 
+let g:vimwiki_hl_cb_checked = 2
 let g:vimwiki_ext = '.md' " set extension to .md
 let g:vimwiki_global_ext = 0 " make sure vimwiki doesn't own all .md files
 let g:vimwiki_use_mouse = 1
 let g:vimwiki_conceallevel=1
 let g:vimwiki_markdown_link_ext = 1
 let g:list_margin=0
+let g:vimwiki_user_htmls = '404.html,search.html,books.html,todo,html,contact.html'
 let g:vimwiki_valid_html_tags='b,i,s,u,sub,sup,kbd,del,br,hr,div,code,h1,nav,body,aside'
 
 
