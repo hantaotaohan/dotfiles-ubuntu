@@ -126,31 +126,8 @@ endif
 "                                                                                                                                
 "-----------------------------------------------------------------o--------------------------------------------------------------o
 
-inoremap jk <Esc>
-
-" nnoremap ;; :
-" vnoremap ;; :
-
 nnoremap q <nop>
 vnoremap q <nop>
-nnoremap J <nop>
-vnoremap J <nop>
-nnoremap K <nop>
-vnoremap K <nop>
-
-" Go to home and end using capitalized directions
-noremap H ^
-noremap L $
-
-" Quickly close the current window
-nnoremap <leader>q :wq<CR>
-vnoremap <leader>q <esc>:wq<CR>
-
-" Quickly save the current file
-" nnoremap <leader>w :w<CR>
-
-" remap U to <C-r> for easier redo
-" nnoremap U <C-r>
 
 " Keep search pattern at the center of the screen.
 nnoremap <silent> n nzz
@@ -158,6 +135,27 @@ nnoremap <silent> N Nzz
 
 " Clear highlighted search
 nnoremap <CR> :noh<CR><CR>
+
+" Go to home and end using capitalized directions
+noremap H ^
+noremap L $
+
+" Quickly close the current window
+function! BufferClose()
+    " close whole vim if this is the last buffer
+    if len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1
+        return ":q\n"
+    elseif buflisted(bufnr('%')) == 1
+        return ":bn\n:bd#\n"
+    else
+        return ":bd\n"
+    endif
+endfunction
+
+nnoremap <expr><leader>q BufferClose()
+vnoremap <expr><leader>q BufferClose()
+inoremap <expr><leader>q BufferClose()
+
 
 "-----------------------------------------------------------------o--------------------------------------------------------------o
 "                                                                                                                                
