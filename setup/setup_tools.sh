@@ -391,7 +391,7 @@ Ly() {
 Ctags() {
     sudo apt purge --remove ctags
     sudo apt-get install libjansson-dev
-    git clone https://github.com/universal-ctags/ctags.git --depth=1 $HOME/desktop/ctags
+    git clone https://hub.fastgit.org/universal-ctags/ctags.git --depth=1 $HOME/desktop/ctags
     cd $HOME/desktop/ctags
     ./autogen.sh
     ./configure
