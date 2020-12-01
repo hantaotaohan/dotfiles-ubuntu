@@ -424,10 +424,44 @@ let g:airline#extensions#tabline#buffer_nr_show = 1                      " tabli
 let g:airline#extensions#tabline#fnamemod = ':t'                         " 只显示文件名称
 let g:airline_powerline_fonts= 1                                         " 使用powerline打过补丁的字体
 let g:airline#extensions#whitespace#enabled = 0                          " 取消计数
+let g:airline#extensions#tabline#buf_label_first = 1                     " 在第一个位置显示缓冲区标签"
 let g:airline#extensions#tabline#buffers_label = 'Buffers'               " airline右上角定制
 let g:airline#extensions#wordcount#enabled = 1                           " 开启字数统计
 let g:airline#extensions#wordcount#filetypes = ['all']                   " 开启字数统计文件类型
 let g:airline#extensions#wordcount#formatter#default#fmt = '%s words'    " 自定义字数统计格式
+let g:airline_inactive_collapse=0                                        " 确定不活动的窗口是否应将左侧部分折叠到该缓冲区的文件名。"
+let g:airline_inactive_alt_sep=0                                         " 对非活动窗口的状态行使用替代分隔符"
+let g:airline_highlighting_cache = 0                                     " 将更改缓存到突出显示组中，因此应更快。如果遇到缓慢的Vim，请将其设置为1"
+let g:airline_focuslost_inactive = 1                                     " 使用FocusLost自动命令禁用航空公"
+let g:airline_stl_path_style = 'short'                                   " 在状态栏显示短路经
+let g:airline#extensions#fzf#enabled = 1                                 " 启用FZF集成"
+let g:airline#extensions#quickfix#quickfix_text = 'Quickfix'             " 配置快速修复缓冲区的标题文本
+let g:airline#extensions#quickfix#location_text = 'Location'             " 配置位置列表缓冲区的标题文本
+let g:airline#extensions#tabline#show_close_button = 1                   " 是否显示关闭按钮"
+let g:airline#extensions#tabline#close_symbol = 'X'                      " 关闭按钮的符号
+let airline#extensions#tabline#disable_refresh = 0                       " 在| BufAdd |上启用Tabline缓冲区的刷新自动命令
+let airline#extensions#tabline#middle_click_preserves_windows = 1        " 从缓冲区关闭时保留窗口"
+let g:airline#extensions#tabline#show_splits = 1                         " 启用/禁用显示每个选项卡的打开拆分（仅在打开选项卡时）"
+let g:airline#extensions#tabline#exclude_preview = 1                     " 在选项行中启用/禁用显示预览窗口缓冲区。"
+" let g:airline_statusline_ontop = 1                                     " 在状态栏中显示状态行（第一行)
+" let g:airline_disable_statusline = 1                                   " 禁用每个缓冲区
+
+"定义要显示的名称集，而不是特定的文件类型
+let g:airline_filetype_overrides = {
+  \ 'coc-explorer':  [ 'CoC Explorer', '' ],
+  \ 'defx':  ['defx', '%{b:defx.paths[0]}'],
+  \ 'fugitive': ['fugitive', '%{airline#util#wrap(airline#extensions#branch#get_head(),80)}'],
+  \ 'gundo': [ 'Gundo', '' ],
+  \ 'help':  [ 'Help', '%f' ],
+  \ 'minibufexpl': [ 'MiniBufExplorer', '' ],
+  \ 'nerdtree': [ get(g:, 'NERDTreeStatusline', 'NERD'), '' ],
+  \ 'startify': [ 'startify', '' ],
+  \ 'vim-plug': [ 'Plugins', '' ],
+  \ 'vimfiler': [ 'vimfiler', '%{vimfiler#get_status_string()}' ],
+  \ 'vimshell': ['vimshell','%{vimshell#get_status_string()}'],
+  \ 'vaffle' : [ 'Vaffle', '%{b:vaffle.dir}' ],
+  \ }
+
 "---------------------------------------------------------------------------------------------------------------------------------
 " 自定义airline c x z 区域的各项功能
 let g:airline_section_c = airline#section#create(['readonly','  ','%{getcwd()}/','file'])
