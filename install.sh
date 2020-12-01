@@ -346,7 +346,7 @@ echo -e "                                                                       
         python3-pip\
         python-pip\
         curl\
-        ctags\
+        #ctags\
         vim\
 	vim-gtk\
         tmux\
