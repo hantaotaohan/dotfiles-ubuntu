@@ -41,6 +41,7 @@ Options:
     -25       Install I3wm
     -26       Install SSH_banner
     -27       Install Ly
+    -28       Install Ctags
 EOF
 }
 
@@ -387,6 +388,20 @@ Ly() {
     row
 }
 
+Ctags() {
+    sudo apt purge --remove ctags
+    sudo apt-get install libjansson-dev
+    git clone https://github.com/universal-ctags/ctags.git --depth=1 $HOME/desktop/ctags
+    cd $HOME/desktop/ctags
+    ./autogen.sh
+    ./configure
+    make
+    sudo make install
+    cd $HOME
+    rm -rf $HOME/desktop/ctags
+    row
+}
+
 main() {
 
     echo "                                                                               "
@@ -425,6 +440,7 @@ main() {
     echo " -25       Setup I3wm                                                          "
     echo " -26       Setup SSH_banner                                                    "
     echo " -27       Setup Ly                                                            "
+    echo " -28       Setup Ctags                                                         "
     echo "                                                                               "
     echo "-------------------------------------------------------------------------------"
     echo "                                                                               "
@@ -521,6 +537,9 @@ main() {
         -27)
             Ly
             ;;
+        -28)
+            Ctags
+            ;;
         -[aA])
             Github_Hosts
             Dunst
@@ -542,6 +561,7 @@ main() {
             # Copytranslator
             Crossover
             Picom
+            Ctags
             # SSR
             # Github
             ;;
