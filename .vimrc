@@ -216,7 +216,7 @@ Plug 'kshenoy/vim-signature'                                             " 书�
 Plug 'arecarn/vim-auto-autoread'                                         " 自动Autoread插件
 Plug 'brooth/far.vim'                                                    " 全局查找替换插件
 Plug 'arcticicestudio/nord-vim'
-Plug 'morhetz/gruvbox'
+"Plug 'morhetz/gruvbox'
 "Plug 'terryma/vim-multiple-cursors'                                     " 多光标插件
 "Plug 'edkolev/tmuxline.vim'                                             " Vim同步tmux配色
 "Plug 'scrooloose/nerdcommenter'                                         " 快速注释插件
