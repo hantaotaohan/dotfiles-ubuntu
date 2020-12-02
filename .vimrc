@@ -1032,7 +1032,6 @@ let g:vimwiki_list = [{
         \ 'auto_export': 1,
 	\ 'auto_tags': 1,
         \ 'auto_generate_tags': 1,
-        \ 'automatic_nested_syntaxes': 1,
         \ 'auto_generate_links': 1,
         \ 'automatic_nested_syntaxes': 1,
         \ 'path': '$HOME/vimwiki/src',
