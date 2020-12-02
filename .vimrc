@@ -731,40 +731,40 @@ nnoremap <Leader>s :Startify <CR>
 "=================================================================================================================================
 " Leader(\)+ 123....  切换Buffers快捷键设置
 "=================================================================================================================================
-noremap <Leader>a :badd<Space>
-noremap <leader>d :bdelete<Space>
-noremap <silent><leader>1 :b1<cr>
-noremap <silent><leader>2 :b2<cr>
-noremap <silent><leader>3 :b3<cr>
-noremap <silent><leader>4 :b4<cr>
-noremap <silent><leader>5 :b5<cr>
-noremap <silent><leader>6 :b6<cr>
-noremap <silent><leader>7 :b7<cr>
-noremap <silent><leader>8 :b8<cr>
-noremap <silent><leader>9 :b9<cr>
-noremap <silent><leader>0 :b10<cr>
-noremap <silent><leader><tab> :bnext<CR>
-inoremap <silent><leader><tab> <ESC>:bnext<CR>
-
+" noremap <Leader>a :badd<Space>
+" noremap <leader>d :bdelete<Space>
+" noremap <silent><leader>1 :b1<cr>
+" noremap <silent><leader>2 :b2<cr>
+" noremap <silent><leader>3 :b3<cr>
+" noremap <silent><leader>4 :b4<cr>
+" noremap <silent><leader>5 :b5<cr>
+" noremap <silent><leader>6 :b6<cr>
+" noremap <silent><leader>7 :b7<cr>
+" noremap <silent><leader>8 :b8<cr>
+" noremap <silent><leader>9 :b9<cr>
+" noremap <silent><leader>0 :b10<cr>
+" noremap <silent><leader><tab> :bnext<CR>
+" inoremap <silent><leader><tab> <ESC>:bnext<CR>
+noremap <silent><leader><s-tab> :bnext<CR>
+inoremap <silent><leader><s-tab> <ESC>:bnext<CR>
 
 "=================================================================================================================================
 " Leader(\)+ 123....  切换Tabs快捷键设置 
 "=================================================================================================================================
-" noremap <silent><leader>n :tabnew<cr>
-" noremap <silent><leader>c :tabclose<cr>
-" noremap <silent><leader>1 :tabn 1<cr>
-" noremap <silent><leader>2 :tabn 2<cr>
-" noremap <silent><leader>3 :tabn 3<cr>
-" noremap <silent><leader>4 :tabn 4<cr>
-" noremap <silent><leader>5 :tabn 5<cr>
-" noremap <silent><leader>6 :tabn 6<cr>
-" noremap <silent><leader>7 :tabn 7<cr>
-" noremap <silent><leader>8 :tabn 8<cr>
-" noremap <silent><leader>9 :tabn 9<cr>
-" noremap <silent><leader>0 :tabn 10<cr>
-" noremap <silent><leader><tab> :tabnext<CR>
-" inoremap <silent><leader><tab> <ESC>:tabnext<CR>
-
+noremap <Leader>a :tabnew<cr>
+noremap <Leader>d :tabclose<cr>
+noremap <silent><leader>1 :tabn1<cr>
+noremap <silent><leader>2 :tabn2<cr>
+noremap <silent><leader>3 :tabn3<cr>
+noremap <silent><leader>4 :tabn4<cr>
+noremap <silent><leader>5 :tabn5<cr>
+noremap <silent><leader>6 :tabn6<cr>
+noremap <silent><leader>7 :tabn7<cr>
+noremap <silent><leader>8 :tabn8<cr>
+noremap <silent><leader>9 :tabn9<cr>
+noremap <silent><leader>0 :tabn10<cr>
+noremap <silent><leader><tab> :tabnext<CR>
+inoremap <silent><leader><tab> <ESC>:tabnext<CR>
 
 "================================================================================================================================= 
 " Ctrl + n 切换buff快捷键 
