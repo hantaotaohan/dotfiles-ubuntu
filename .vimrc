@@ -523,62 +523,54 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 "=================================================================================================================================
 " MarkdownPreview插件配置
 "=================================================================================================================================
-" set to 1, nvim will open the preview window after entering the markdown buffer
+" 设置为 1 可以在打开 markdown 文件的时候自动打开浏览器预览，只在打开  markdown 文件的时候打开一次
 " default: 0
 let g:mkdp_auto_start = 0
 
-" set to 1, the nvim will auto close current preview window when change
-" from markdown buffer to another buffer
+" 在切换 buffer 的时候自动关闭预览窗口，设置为 0 则在切换 buffer 的时候不  自动关闭预览窗口
 " default: 1
 let g:mkdp_auto_close = 1
 
-" set to 1, the vim will refresh markdown when save the buffer or
-" leave from insert mode, default 0 is auto refresh markdown as you edit or
-" move the cursor
+" 设置为 1 则只有在保存文件，或退出插入模式的时候更新预览，默认为 0，实时  更新预览
 " default: 0
 let g:mkdp_refresh_slow = 0
 
-" set to 1, the MarkdownPreview command can be use for all files,
-" by default it can be use in markdown file
+" 设置为 1 则所有文件都可以使用 MarkdownPreview 进行预览，默认只有 markdown  文件可以使用改命令
 " default: 0
 let g:mkdp_command_for_global = 1
 
-" set to 1, preview server available to others in your network
-" by default, the server listens on localhost (127.0.0.1)
+" 设置为 1, 在使用的网络中的其他计算机也能访问预览页面  默认只监听本地（127.0.0.1），其他计算机不能访问
 " default: 0
 let g:mkdp_open_to_the_world = 1
 
-" use custom IP to open preview page
-" useful when you work in remote vim and preview on local browser
-" more detail see: https://github.com/iamcco/markdown-preview.nvim/pull/9
+" 使用自定义IP打开预览页面在远程vim中工作并在本地浏览器上预览时很有用
 " default empty
 let g:mkdp_open_ip = ''
 
-" specify browser to open preview page
+" 指定浏览器以打开预览页面
 " default: ''
 let g:mkdp_browser = ''
 
-" set to 1, echo preview page url in command line when open preview page
+" 设置为1时，打开预览页时在命令行中回显预览页网址
 " default is 0
 let g:mkdp_echo_preview_url = 1
 
-" a custom vim function name to open preview page
-" this function will receive url as param
+" 自定义vim函数名称以打开预览页面 此函数将接收url作为参数
 " default is empty
 let g:mkdp_browserfunc = ''
 
-" options for markdown render
-" mkit: markdown-it options for render
-" katex: katex options for math
-" uml: markdown-it-plantuml options
-" maid: mermaid options
-" disable_sync_scroll: if disable sync scroll, default 0
-" sync_scroll_type: 'middle', 'top' or 'relative', default value is 'middle'
-"   middle: mean the cursor position alway show at the middle of the preview page
-"   top: mean the vim top viewport alway show at the top of the preview page
-"   relative: mean the cursor position alway show at the relative positon of the preview page
-" hide_yaml_meta: if hide yaml metadata, default is 1
-" sequence_diagrams: js-sequence-diagrams options
+" 渲染的选项
+" mkit：markdown-it渲染选项
+" katex：数学的katex选项
+" uml：markdown-it-plantuml选项
+" maid：美人鱼的选择
+" disable_sync_scroll：如果禁用同步滚动，则默认为0
+" sync_scroll_type：
+"       middle：表示光标位置始终显示在预览页面的中间
+"       top：表示总是在预览页面顶部显示的vim top视口
+"       relative：表示光标位置始终显示在预览页面的相对位置
+" hide_yaml_meta：如果隐藏yaml元数据，则默认为1
+" sequence_diagrams：js-sequence-diagrams选项
 let g:mkdp_preview_options = {
     \ 'mkit': {},
     \ 'katex': {},
@@ -590,7 +582,7 @@ let g:mkdp_preview_options = {
     \ 'sequence_diagrams': {}
     \ }
 
-" settings markdowncss & highdark paht
+" 设置markdowncss和highdark paht
 let g:mdpath='/home/saber/dotfiles/setup/vim_preview_markdown/onedark/'
 
 " use a custom markdown style must be absolute path
@@ -599,16 +591,14 @@ let g:mkdp_markdown_css = g:mdpath . 'onedark.css'
 " use a custom highlight style must absolute path
 let g:mkdp_highlight_css = g:mdpath . 'highdark.css'
 
-" use a custom port to start server or random for empty
+" 使用自定义端口启动服务器，或使用随机端口将其清空
 let g:mkdp_port = '8888'
 
-" preview page title
-" ${name} will be replace with the file name
+" “预览页面标题 ${name} 将被替换为文件名
 let g:mkdp_page_title = '「${name}」'
 
 " MarkdownPreviewToggle
 nmap <Leader>] <Plug>MarkdownPreviewToggle
-
 
 "=================================================================================================================================
 " Vim-table-mode 插件配置
