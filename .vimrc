@@ -505,6 +505,8 @@ endif
 "=================================================================================================================================
 nmap <F8> :NERDTreeToggle<CR>                                         " F8开启关闭NERDTree
 imap <F8> <Esc>:NERDTreeToggle<CR>                                    " F8开启关闭NERDTree
+nmap <localleader>e :NERDTreeToggle<CR>                               " ;e开启关闭NERDTree
+imap <localleader>e <Esc>:NERDTreeToggle<CR>                          " ;e开启关闭NERDTree
 "---------------------------------------------------------------------------------------------------------------------------------
 let NERDTreeShowBookmarks=1                                              " 显示书签
 let NERDTreeChDirMode=2                                                  " 是否改变PWD目录路径
@@ -627,6 +629,8 @@ let g:table_mode_corner = '|'
 "=================================================================================================================================
 noremap <F9> :TagbarToggle<CR>                                           " F9打开关闭Tagbar
 inoremap <F9> <Esc>:TagbarToggle<CR>                                     " F9打开关闭Tagbar
+noremap <localleader>t :TagbarToggle<CR>                                 " ;t打开关闭Tagbar
+inoremap <localleader>t <Esc>:TagbarToggle<CR>                           " ;t打开关闭Tagbar
 let g:tagbar_autofocus = 1                                               " 焦点自动聚焦到Tagbar
 
 
@@ -1604,6 +1608,7 @@ autocmd  FileType which_key set laststatus=0 noshowmode noruler
 "=================================================================================================================================
 let g:SignatureEnabledAtStartup = 0
 nnoremap <silent> <leader>m :SignatureToggleSigns<CR>    
+nnoremap <silent> <localleader>m :SignatureToggleSigns<CR> 
 
 "=================================================================================================================================
 " Ultisnips settings
