@@ -216,6 +216,7 @@ Plug 'kshenoy/vim-signature'                                             " 书�
 Plug 'arecarn/vim-auto-autoread'                                         " 自动Autoread插件
 Plug 'brooth/far.vim'                                                    " 全局查找替换插件
 Plug 'arcticicestudio/nord-vim'                                          " Themes
+Plug 'dhruvasagar/vim-zoom'                                              " 缩放插件
 "Plug 'morhetz/gruvbox'                                                  " Themes
 "Plug 'terryma/vim-multiple-cursors'                                     " 多光标插件
 "Plug 'edkolev/tmuxline.vim'                                             " Vim同步tmux配色
@@ -1617,3 +1618,9 @@ let g:UltiSnipsExpandTrigger="<LocalLeader><Tab>"
 let g:UltiSnipsJumpForwardTrigger="<C-j>"
 let g:UltiSnipsJumpBackwardTrigger="<C-k>"
 
+"=================================================================================================================================
+" Zoom settings
+"=================================================================================================================================
+nmap <localleader>f <Plug>(zoom-toggle)
+let g:zoom#statustext = 'Zoomed'
+let g:airline_section_error = airline#section#create('%{zoom#statusline()}')
