@@ -1608,4 +1608,6 @@ nnoremap <silent> <leader>m :SignatureToggleSigns<CR>
 " Ultisnips settings
 "=================================================================================================================================
 let g:UltiSnipsExpandTrigger = "<S-Tab>"
+let g:UltiSnipsJumpForwardTrigger="<Down>"
+let g:UltiSnipsJumpBackwardTrigger="<Up>"
 
