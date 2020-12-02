@@ -1608,7 +1608,7 @@ nnoremap <silent> <leader>m :SignatureToggleSigns<CR>
 "=================================================================================================================================
 " Ultisnips settings
 "=================================================================================================================================
-let g:UltiSnipsExpandTrigger="<Down>"
-let g:UltiSnipsJumpForwardTrigger="<Down>"
-let g:UltiSnipsJumpBackwardTrigger="<Up>"
+let g:UltiSnipsExpandTrigger="<LocalLeader><Tab>"
+let g:UltiSnipsJumpForwardTrigger="<C-j>"
+let g:UltiSnipsJumpBackwardTrigger="<C-k>"
 
