@@ -417,7 +417,7 @@ inoremap <silent> ;P "+P
 if !empty(glob('$HOME/.vim/plugged/vim-airline'))
 let g:airline_theme='onedark'                                            " 设置状态栏主题默认powerlineish
 let g:airline#extensions#tabline#enabled= 1                              " 开启tabline
-let g:airline#extensions#tabline#show_tabs = 0                           " 显示Tabls文字
+let g:airline#extensions#tabline#show_tabs = 1                           " 显示Tabls文字
 let g:airline#extensions#tabline#buffer_nr_show = 1                      " tabline中buffer显示编号
 let g:airline#extensions#tabline#fnamemod = ':t'                         " 只显示文件名称
 let g:airline_powerline_fonts= 1                                         " 使用powerline打过补丁的字体
