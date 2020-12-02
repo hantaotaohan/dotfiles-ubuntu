@@ -42,6 +42,7 @@ Options:
     -26       Install SSH_banner
     -27       Install Ly
     -28       Install Ctags
+    -29       Install Nodejs
 EOF
 }
 
@@ -241,9 +242,9 @@ VIM() {
     sudo sed -i "s/https:\/\/launchpad.proxy.ustclug.org/http:\/\/ppa.launchpad.net/g" /etc/apt/sources.list.d/*.list
     sudo add-apt-repository -y --remove ppa:jonathonf/vim
     row
+    vim --version | grep "VIM - Vi IMproved "
+    row
 }
-
-
 
 Offlineimap() {
     echo " config offline user and password "
@@ -366,6 +367,8 @@ I3wm() {
     sudo sed -i "s/https:\/\/launchpad.proxy.ustclug.org/http:\/\/ppa.launchpad.net/g" /etc/apt/sources.list.d/*.list
     sudo add-apt-repository -y --remove ppa:kgilmer/speed-ricer
     row
+    i3 --version
+    row
 }
 
 SSH_banner() {
@@ -399,6 +402,16 @@ Ctags() {
     sudo make install
     cd $HOME
     rm -rf $HOME/desktop/ctags
+    row
+    ctags --version | grep "Universal Ctags"
+    row
+}
+
+Nodejs() {
+    curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+    sudo apt install nodejs
+    row
+    node --version
     row
 }
 
@@ -441,6 +454,7 @@ main() {
     echo " -26       Setup SSH_banner                                                    "
     echo " -27       Setup Ly                                                            "
     echo " -28       Setup Ctags                                                         "
+    echo " -29       Setup Nodejs                                                        "
     echo "                                                                               "
     echo "-------------------------------------------------------------------------------"
     echo "                                                                               "
@@ -540,6 +554,9 @@ main() {
         -28)
             Ctags
             ;;
+        -29)
+            Nodejs
+            ;;
         -[aA])
             Github_Hosts
             Dunst
@@ -562,6 +579,7 @@ main() {
             Crossover
             Picom
             Ctags
+            Nodejs
             # SSR
             # Github
             ;;
