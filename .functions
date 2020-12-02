@@ -39,23 +39,58 @@ git-remove-all-commit() {
 }
 
 function colors() {
-for i in {0..255}; do
-    printf "\x1b[38;5;${i}mcolor%-5i\x1b[0m" $i
-    if ! (( ($i + 1 ) % 8 )); then
-        echo ""
-    fi
-done
+    for i in {0..255}; do
+        printf "\x1b[38;5;${i}mcolor%-5i\x1b[0m" $i
+        if ! (( ($i + 1 ) % 8 )); then
+            echo ""
+        fi
+    done
 }
 
 function colorss() {
-for x in {0..8}; do
-    for i in {30..37}; do
-        for a in {40..47}; do
-            echo -ne "\e[$x;$i;$a""m\\\e[$x;$i;$a""m\e[0;37;40m "
+    for x in {0..8}; do
+        for i in {30..37}; do
+            for a in {40..47}; do
+                echo -ne "\e[$x;$i;$a""m\\\e[$x;$i;$a""m\e[0;37;40m "
+            done
+            echo
         done
-        echo
     done
-done
-echo ""
+    echo ""
 }
+
+sizeof() {
+    URL="$1"
+    humanize_size() {
+        local SIZE=$1
+        local KiB=1024
+        local MiB=$((1024 ** 2))
+        local GiB=$((1024 ** 3))
+
+        if ((SIZE > GiB)); then
+            echo "scale=2; $SIZE/$GiB" | bc | xargs -I{} printf "%.1fG" "{}"
+        elif ((SIZE > MiB)); then
+            echo "scale=2; $SIZE/$MiB" | bc | xargs -I{} printf "%.1fM" "{}"
+        elif ((SIZE > KiB)); then
+            echo "scale=2; $SIZE/$KiB" | bc | xargs -I{} printf "%.1fK" "{}"
+        else
+            echo "${SIZE}B"
+        fi
+    }
+
+    # Get Content-Length
+    local curl_size
+    curl_size=$(curl -sLI "$URL" | grep "[Cc]ontent-[Ll]ength" | awk 'NR==1{print $2}' | tr -d '\r')
+
+    if [ -z "$curl_size" ]; then
+        echo "File size not available"
+        exit 1
+    elif [[ "$curl_size" =~ ^[0-9]+$ ]]; then
+        humanize_size "$curl_size"
+    else
+        echo "Please provide a valid URL of a file"
+        exit 1
+    fi
+}
+
 
