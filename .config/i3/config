@@ -87,7 +87,7 @@ bindsym $mod+s scratchpad show , move position center , sticky enable
 
 # 切换工作区
 bindsym Ctrl+Tab workspace next
-bindsym Shift+Tab workspace prev
+#bindsym Shift+Tab workspace prev
 
 # 截图快捷键
 #bindsym $mod+a exec --no-startup-id deepin-screenshot | xclip -selection clipboard -t image/png -i
