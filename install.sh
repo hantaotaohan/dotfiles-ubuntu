@@ -60,6 +60,7 @@ Dotfiles_symlinks=(\
         .wgetrc\
         .Xmodmap\
 	.imwheelrc\
+	.fzf\
         .Xresources
         )
 
@@ -667,6 +668,13 @@ echo -e "                                                                       
             sudo chmod 777 /usr/local/bin/trans
         fi
         echo -e "              ${green}[√] Trans Successful${reset}\n"
+
+#----------------------------------------------------------------------------------------#
+# Install FZF
+#----------------------------------------------------------------------------------------#
+
+        $HOME/.fzf/install --all
+        echo -e "              ${green}[√] FZF Successful${reset}\n"
 
 #----------------------------------------------------------------------------------------#
 # Install Vim Plug
