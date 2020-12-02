@@ -126,6 +126,9 @@ endif
 "                                                                                                                                
 "-----------------------------------------------------------------o--------------------------------------------------------------o
 
+let mapleader="\\"
+let maplocalleader = ";"
+
 nnoremap q <nop>
 vnoremap q <nop>
 
@@ -722,22 +725,20 @@ nnoremap <Leader>s :Startify <CR>
 "=================================================================================================================================
 " Leader(\)+ 123....  切换Buffers快捷键设置
 "=================================================================================================================================
-" noremap <Leader>a :badd<Space>
-" noremap <leader>d :bdelete<Space>
-" noremap <silent><leader>1 :b1<cr>
-" noremap <silent><leader>2 :b2<cr>
-" noremap <silent><leader>3 :b3<cr>
-" noremap <silent><leader>4 :b4<cr>
-" noremap <silent><leader>5 :b5<cr>
-" noremap <silent><leader>6 :b6<cr>
-" noremap <silent><leader>7 :b7<cr>
-" noremap <silent><leader>8 :b8<cr>
-" noremap <silent><leader>9 :b9<cr>
-" noremap <silent><leader>0 :b10<cr>
-" noremap <silent><leader><tab> :bnext<CR>
-" inoremap <silent><leader><tab> <ESC>:bnext<CR>
-noremap <silent><leader><s-tab> :bnext<CR>
-inoremap <silent><leader><s-tab> <ESC>:bnext<CR>
+noremap <localleader>a :badd<Space>
+noremap <localleader>d :bdelete<Space>
+noremap <silent><localleader>1 :b1<cr>
+noremap <silent><localleader>2 :b2<cr>
+noremap <silent><localleader>3 :b3<cr>
+noremap <silent><localleader>4 :b4<cr>
+noremap <silent><localleader>5 :b5<cr>
+noremap <silent><localleader>6 :b6<cr>
+noremap <silent><localleader>7 :b7<cr>
+noremap <silent><localleader>8 :b8<cr>
+noremap <silent><localleader>9 :b9<cr>
+noremap <silent><localleader>0 :b10<cr>
+noremap <silent><localleader><tab> :bnext<CR>
+inoremap <silent><localleader><tab> <ESC>:bnext<CR>
 
 "=================================================================================================================================
 " Leader(\)+ 123....  切换Tabs快捷键设置 
