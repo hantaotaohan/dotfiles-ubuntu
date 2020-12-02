@@ -42,7 +42,7 @@ Options:
     -26       Install SSH_banner
     -27       Install Ly
     -28       Install Ctags
-    -29       Install Nodejs
+    -29       Install Nodejs & Yarn
 EOF
 }
 
@@ -413,6 +413,14 @@ Nodejs() {
     row
     node --version
     row
+    curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+    echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+    sudo apt update
+    sudo apt install yarn
+    sudo rm -rf /etc/apt/sources.list.d/yarn.list
+    row
+    yarn --version
+    row
 }
 
 main() {
@@ -454,7 +462,7 @@ main() {
     echo " -26       Setup SSH_banner                                                    "
     echo " -27       Setup Ly                                                            "
     echo " -28       Setup Ctags                                                         "
-    echo " -29       Setup Nodejs                                                        "
+    echo " -29       Setup Nodejs & Yarn                                                 "
     echo "                                                                               "
     echo "-------------------------------------------------------------------------------"
     echo "                                                                               "
