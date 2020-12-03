@@ -1286,6 +1286,10 @@ autocmd filetype vimwiki nnoremap <buffer> <leader>wd :call VimwikiDeleteClean()
 nnoremap <F6> :Nuake<CR>
 inoremap <F6> <C-\><C-n>:Nuake<CR>
 tnoremap <F6> <C-\><C-n>:Nuake<CR>
+nnoremap <silent><localleader>s :Nuake<CR>
+inoremap <silent><localleader>s <C-\><C-n>:Nuake<CR>
+tnoremap <silent><localleader>s <C-\><C-n>:Nuake<CR>
+
 let g:nuake_position = 'bottom'                                  " 'bottom', 'right', 'top' or 'left'.
 let g:nuake_size = 0.38                                          " 'default 0.25'
 
