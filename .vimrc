@@ -671,7 +671,10 @@ let g:tagbar_type_vimwiki = {
 " FZF.vim 
 "=================================================================================================================================
 nnoremap <silent><Leader>ff :Files /<CR>
-nnoremap <silent><Leader>fl :Lines<CR>
+nnoremap <silent><Leader>fl :BLines<CR>
+nnoremap <silent><Leader>fo :Colors<CR>
+nnoremap <silent><Leader>ft :BTags<CR>
+nnoremap <silent><Leader>fb :Buffers<CR>
 
 
 "=================================================================================================================================
