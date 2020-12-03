@@ -979,16 +979,16 @@ endfunc
 "=================================================================================================================================
 " 输入法自动切换
 "=================================================================================================================================
-function! IMtoEng()
-    call system('/$HOME/.vim/plugged/neuims/bin/win_ims.exe 0x0409')
-endfunction
+" function! IMtoEng()
+"     call system('/$HOME/.vim/plugged/neuims/bin/win_ims.exe 0x0409')
+" endfunction
 
-function! IMtoCN()
-    call system('$HOME/.vim/plugged/neuims/bin/win_ims.exe 0x0804')
-endfunction
+" function! IMtoCN()
+"     call system('$HOME/.vim/plugged/neuims/bin/win_ims.exe 0x0804')
+" endfunction
 
-autocmd InsertEnter * call IMtoCN()
-autocmd InsertLeave * call IMtoEng()
+" autocmd InsertEnter * call IMtoCN()
+" autocmd InsertLeave * call IMtoEng()
 
 
 "=================================================================================================================================
