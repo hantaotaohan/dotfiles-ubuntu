@@ -628,9 +628,9 @@ let g:table_mode_corner = '|'
 "=================================================================================================================================
 " Tagbar   
 "=================================================================================================================================
-noremap <F9> :TagbarToggle<CR>                                           " F9打开关闭Tagbar
+nnoremap <F9> :TagbarToggle<CR>                                           " F9打开关闭Tagbar
 inoremap <F9> <Esc>:TagbarToggle<CR>                                     " F9打开关闭Tagbar
-noremap <localleader>t :TagbarToggle<CR>                                 " ;t打开关闭Tagbar
+nnoremap <localleader>t :TagbarToggle<CR>                                 " ;t打开关闭Tagbar
 inoremap <localleader>t <Esc>:TagbarToggle<CR>                           " ;t打开关闭Tagbar
 let g:tagbar_autofocus = 1                                               " 焦点自动聚焦到Tagbar
 
@@ -677,7 +677,7 @@ nnoremap <silent> <Leader>ff :Lines<CR>
 "=================================================================================================================================
 " asyncru
 "=================================================================================================================================
-noremap <F7> :call asyncrun#quickfix_toggle(6)<cr>
+nnoremap <F7> :call asyncrun#quickfix_toggle(6)<cr>
 inoremap <F7> <esc> :call asyncrun#quickfix_toggle(6)<cr>
 
 
@@ -685,7 +685,7 @@ inoremap <F7> <esc> :call asyncrun#quickfix_toggle(6)<cr>
 " indentLine
 "=================================================================================================================================
 let g:indentLine_enabled = 0
-noremap <F12> :IndentLinesToggle<CR>
+nnoremap <F12> :IndentLinesToggle<CR>
 inoremap <F12> <esc> :IndentLinesToggle<CR>
 
 
@@ -730,43 +730,43 @@ nnoremap <Leader>s :Startify <CR>
 "=================================================================================================================================
 " Leader(\)+ 123....  切换Buffers快捷键设置
 "=================================================================================================================================
-noremap <localleader>a :badd<Space>
-noremap <localleader>d :bdelete<Space>
-noremap <silent><localleader>1 :b1<cr>
-noremap <silent><localleader>2 :b2<cr>
-noremap <silent><localleader>3 :b3<cr>
-noremap <silent><localleader>4 :b4<cr>
-noremap <silent><localleader>5 :b5<cr>
-noremap <silent><localleader>6 :b6<cr>
-noremap <silent><localleader>7 :b7<cr>
-noremap <silent><localleader>8 :b8<cr>
-noremap <silent><localleader>9 :b9<cr>
-noremap <silent><localleader>0 :b10<cr>
-noremap <silent><localleader><tab> :bnext<CR>
+nnoremap <localleader>a :badd<Space>
+nnoremap <localleader>d :bdelete<Space>
+nnoremap <silent><localleader>1 :b1<cr>
+nnoremap <silent><localleader>2 :b2<cr>
+nnoremap <silent><localleader>3 :b3<cr>
+nnoremap <silent><localleader>4 :b4<cr>
+nnoremap <silent><localleader>5 :b5<cr>
+nnoremap <silent><localleader>6 :b6<cr>
+nnoremap <silent><localleader>7 :b7<cr>
+nnoremap <silent><localleader>8 :b8<cr>
+nnoremap <silent><localleader>9 :b9<cr>
+nnoremap <silent><localleader>0 :b10<cr>
+nnoremap <silent><localleader><tab> :bnext<CR>
 inoremap <silent><localleader><tab> <ESC>:bnext<CR>
 
 "=================================================================================================================================
 " Leader(\)+ 123....  切换Tabs快捷键设置 
 "=================================================================================================================================
-noremap <Leader>a :tabnew<cr>
-noremap <Leader>d :tabclose<cr>
-noremap <silent><leader>1 :tabn1<cr>
-noremap <silent><leader>2 :tabn2<cr>
-noremap <silent><leader>3 :tabn3<cr>
-noremap <silent><leader>4 :tabn4<cr>
-noremap <silent><leader>5 :tabn5<cr>
-noremap <silent><leader>6 :tabn6<cr>
-noremap <silent><leader>7 :tabn7<cr>
-noremap <silent><leader>8 :tabn8<cr>
-noremap <silent><leader>9 :tabn9<cr>
-noremap <silent><leader>0 :tabn10<cr>
-noremap <silent><leader><tab> :tabnext<CR>
+nnoremap <Leader>a :tabnew<cr>
+nnoremap <Leader>d :tabclose<cr>
+nnoremap <silent><leader>1 :tabn1<cr>
+nnoremap <silent><leader>2 :tabn2<cr>
+nnoremap <silent><leader>3 :tabn3<cr>
+nnoremap <silent><leader>4 :tabn4<cr>
+nnoremap <silent><leader>5 :tabn5<cr>
+nnoremap <silent><leader>6 :tabn6<cr>
+nnoremap <silent><leader>7 :tabn7<cr>
+nnoremap <silent><leader>8 :tabn8<cr>
+nnoremap <silent><leader>9 :tabn9<cr>
+nnoremap <silent><leader>0 :tabn10<cr>
+nnoremap <silent><leader><tab> :tabnext<CR>
 inoremap <silent><leader><tab> <ESC>:tabnext<CR>
 
 "================================================================================================================================= 
 " Ctrl + n 切换buff快捷键 
 "=================================================================================================================================
-" noremap <c-e> :bp!<CR>
+" nnoremap <c-e> :bp!<CR>
 " inoremap <c-e> <esc> :bp!<CR>
 
 
@@ -775,10 +775,10 @@ inoremap <silent><leader><tab> <ESC>:tabnext<CR>
 "=================================================================================================================================
 " 设置Alt快捷方式为 进入编辑模式后 ctrl+v 再按 alt+某键即可
 "=================================================================================================================================
-noremap <c-h> <c-w>h
-noremap <c-l> <c-w>l
-noremap <c-j> <c-w>j
-noremap <c-k> <c-w>k
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
 inoremap <c-h> <esc><c-w>h
 inoremap <c-l> <esc><c-w>l
 inoremap <c-j> <esc><c-w>j
@@ -817,10 +817,10 @@ inoremap <C-k> <up><up><up><up><up>
 "=================================================================================================================================
 " Shift + - = , . 调整窗口高低宽窄快捷键 
 "=================================================================================================================================
-noremap <silent><leader>j <C-W>:resize           +5<CR>
-noremap <silent><leader>k <C-W>:resize           -5<CR>
-noremap <silent><leader>h <C-W>:vertical resize  +5<CR>
-noremap <silent><leader>l <C-W>:vertical resize  -5<CR>
+nnoremap <silent><leader>j <C-W>:resize           +5<CR>
+nnoremap <silent><leader>k <C-W>:resize           -5<CR>
+nnoremap <silent><leader>h <C-W>:vertical resize  +5<CR>
+nnoremap <silent><leader>l <C-W>:vertical resize  -5<CR>
 
 
 "=================================================================================================================================
@@ -1299,9 +1299,9 @@ let g:nuake_size = 0.38                                          " 'default 0.25
 " EasyAlign  settings
 "=================================================================================================================================
 " Start interactive EasyAlign in visual mode (e.g. vipga)
-xmap ga <Plug>(EasyAlign)
+xnoremap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
-nmap ga <Plug>(EasyAlign)
+nnoremap ga <Plug>(EasyAlign)
 
 let g:easy_align_delimiters = {
 \ '>': { 'pattern': '>>\|=>\|>'  },
@@ -1621,8 +1621,6 @@ let g:UltiSnipsJumpBackwardTrigger="<C-k>"
 "=================================================================================================================================
 " Zoom settings
 "=================================================================================================================================
-nmap <localleader>f <Plug>(zoom-toggle)
+nnoremap <localleader>f <Plug>(zoom-toggle)
 let g:zoom#statustext = 'Zoomed'
 let g:airline_section_error = airline#section#create('%{zoom#statusline()}')
-
-vim:tw=78:ts=8:noet:ft=vim:norl:
