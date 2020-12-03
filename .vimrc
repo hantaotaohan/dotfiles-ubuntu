@@ -1594,11 +1594,11 @@ if !exists('which_key#register')
     silent! call which_key#register('<Space>', "g:which_key_map")
 endif
 
-nnoremap <silent> <space><space> :<c-u>WhichKey '<Space>'<CR>
-vnoremap <silent> <space><space> :<c-u>WhichKeyVisual '<Space>'<CR>
+nnoremap <silent><space><space> :<c-u>WhichKey '<Space>'<CR>
+vnoremap <silent><space><space> :<c-u>WhichKeyVisual '<Space>'<CR>
 
-nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
-vnoremap <silent> <leader> :WhichKeyVisual '<Space>'<CR>
+nnoremap <silent><leader> :WhichKey '<Space>'<CR>
+vnoremap <silent><leader> :WhichKeyVisual '<Space>'<CR>
 
 autocmd! FileType which_key
 autocmd  FileType which_key set laststatus=0 noshowmode noruler
@@ -1608,8 +1608,8 @@ autocmd  FileType which_key set laststatus=0 noshowmode noruler
 " Signature  settings
 "=================================================================================================================================
 let g:SignatureEnabledAtStartup = 0
-nnoremap <silent> <leader>m :SignatureToggleSigns<CR>    
-nnoremap <silent> <localleader>m :SignatureToggleSigns<CR> 
+nnoremap <silent><leader>m :SignatureToggleSigns<CR>    
+nnoremap <silent><localleader>m :SignatureToggleSigns<CR> 
 
 "=================================================================================================================================
 " Ultisnips settings
