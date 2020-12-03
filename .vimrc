@@ -111,7 +111,7 @@ set guioptions=M                                                         " 去�
 set guioptions=T                                                         " 去除VIN得GUI版本中得工具栏
 set guioptions-=m
 set guioptions-=T
-map <silent> <S-F2> :if &guioptions =~# 'T' <Bar>
+nnoremap <silent> <S-F2> :if &guioptions =~# 'T' <Bar>
         \set guioptions-=T <Bar>
         \set guioptions-=m <bar>
     \else <Bar>
@@ -140,8 +140,8 @@ nnoremap <silent> N Nzz
 nnoremap <CR> :noh<CR><CR>
 
 " Go to home and end using capitalized directions
-noremap H ^
-noremap L $
+"noremap H ^
+"noremap L $
 
 " Quickly close the current window
 function! BufferClose()
@@ -605,7 +605,7 @@ let g:mkdp_port = '8888'
 let g:mkdp_page_title = '「${name}」'
 
 " MarkdownPreviewToggle
-nmap <Leader>] <Plug>MarkdownPreviewToggle
+nnoremap <Leader>] <Plug>MarkdownPreviewToggle
 
 "=================================================================================================================================
 " Vim-table-mode 插件配置
