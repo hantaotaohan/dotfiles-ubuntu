@@ -29,7 +29,7 @@ endif
 
 " If using a dark background within the editing area and syntax highlighting
 " turn on this option as well
-"set background=dark
+set background=dark
 
 " Uncomment the following to have Vim jump to the last position when
 " reopening a file
@@ -209,6 +209,7 @@ Plug 'junegunn/limelight.vim'                                            " 专�
 Plug 'liuchengxu/vim-which-key'                                          " Leader辅助
 Plug 'kshenoy/vim-signature' , { 'on': 'SignatureToggleSigns'}           " 书签插件
 Plug 'arcticicestudio/nord-vim'                                          " Themes
+Plug 'rakr/vim-one'                                                      " Themes
 "Plug 'vim-airline/vim-airline-themes'                                    " 状态栏主题
 "Plug 'Neur1n/neuims'                                                     " 输入法自动切换 
 "Plug 'arecarn/vim-auto-autoread'                                         " 自动Autoread插件
@@ -228,8 +229,8 @@ call plug#end()
 "=================================================================================================================================
 " Display Config  
 "=================================================================================================================================
-if !empty(glob('$HOME/.vim/plugged/onedark.vim'))
-colorscheme onedark                                                      " 终端配色方案
+if !empty(glob('$HOME/.vim/plugged/vim-one'))
+colorscheme one                                                          " 终端配色方案
 endif
 set number                                                               " 显示行号
 set laststatus=2                                                         " 启用状态栏信息
@@ -410,7 +411,7 @@ vnoremap <silent><localleader>p "+p
 " Airline
 "=================================================================================================================================
 if !empty(glob('$HOME/.vim/plugged/vim-airline'))
-let g:airline_theme='onedark'                                            " 设置状态栏主题默认powerlineish
+let g:airline_theme='one'                                            " 设置状态栏主题默认powerlineish
 let g:airline#extensions#tabline#enabled= 1                              " 开启tabline
 let g:airline#extensions#tabline#show_tabs = 1                           " 显示Tabls文字
 let g:airline#extensions#tabline#buffer_nr_show = 1                      " tabline中buffer显示编号
