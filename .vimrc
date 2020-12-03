@@ -1416,8 +1416,6 @@ highlight default link WhichKeyFloating  Pmenu
 "highlight Function ctermbg=red guibg=#282c34
 
 "=================================================================================================================================
-
-
 let g:which_key_map =  {}
 
 let g:which_key_map = {
@@ -1627,10 +1625,8 @@ let g:which_key_map.g = {
   \ "o"    : [':call Switch_goyo()'               , 'Enter Goyo Mode'                          ] ,
   \
   \ }
-
-
+  
 "=================================================================================================================================
-
 if !exists('which_key#register')
     silent! call which_key#register('<Space>', "g:which_key_map")
 endif
@@ -1645,12 +1641,14 @@ autocmd! FileType which_key
 autocmd  FileType which_key set laststatus=0 noshowmode noruler
   \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
 
+
 "=================================================================================================================================
 " Signature  settings
 "=================================================================================================================================
 let g:SignatureEnabledAtStartup = 0
 nnoremap <silent><leader>m :SignatureToggleSigns<CR>    
 nnoremap <silent><localleader>m :SignatureToggleSigns<CR> 
+
 
 "=================================================================================================================================
 " Ultisnips settings
