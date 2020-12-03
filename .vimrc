@@ -379,8 +379,8 @@ call s:key_escape('<S-F12>', '[24;2~')
 "=================================================================================================================================
 set foldmethod=manual                                                    " 启用手动折叠zf
 set viewdir=~/.vim/                                                      " view视图文件目录设定
-nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>         " 空格打开关闭折叠视图
-vnoremap <Space> zf                                                      " 空格打开关闭折叠视图
+" nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>         " 空格打开关闭折叠视图
+" vnoremap <Space> zf                                                      " 空格打开关闭折叠视图
 "---------------------------------------------------------------------------------------------------------------------------------
 " augroup AutoSaveFolds
 " autocmd!
