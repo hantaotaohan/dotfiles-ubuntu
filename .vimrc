@@ -1624,3 +1624,5 @@ let g:UltiSnipsJumpBackwardTrigger="<C-k>"
 nmap <localleader>f <Plug>(zoom-toggle)
 let g:zoom#statustext = 'Zoomed'
 let g:airline_section_error = airline#section#create('%{zoom#statusline()}')
+
+vim:tw=78:ts=8:noet:ft=vim:norl:
