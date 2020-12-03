@@ -504,10 +504,10 @@ endif
 "=================================================================================================================================
 " NERDTree 插件配置
 "=================================================================================================================================
-nmap <F8> :NERDTreeToggle<CR>                                         " F8开启关闭NERDTree
-imap <F8> <Esc>:NERDTreeToggle<CR>                                    " F8开启关闭NERDTree
-nmap <localleader>e :NERDTreeToggle<CR>                               " ;e开启关闭NERDTree
-imap <localleader>e <Esc>:NERDTreeToggle<CR>                          " ;e开启关闭NERDTree
+nnoremap <F8> :NERDTreeToggle<CR>                                         " F8开启关闭NERDTree
+inoremap <F8> <Esc>:NERDTreeToggle<CR>                                    " F8开启关闭NERDTree
+nnoremap <localleader>e :NERDTreeToggle<CR>                               " ;e开启关闭NERDTree
+inoremap <localleader>e <Esc>:NERDTreeToggle<CR>                          " ;e开启关闭NERDTree
 "---------------------------------------------------------------------------------------------------------------------------------
 let NERDTreeShowBookmarks=1                                              " 显示书签
 let NERDTreeChDirMode=2                                                  " 是否改变PWD目录路径
@@ -670,8 +670,8 @@ let g:tagbar_type_vimwiki = {
 "=================================================================================================================================
 " FZF.vim 
 "=================================================================================================================================
-nnoremap <silent> <Leader>f :Files /<CR>
-nnoremap <silent> <Leader>ff :Lines<CR>
+nnoremap <silent><Leader>f :Files /<CR>
+nnoremap <silent><Leader>ff :Lines<CR>
 
 
 "=================================================================================================================================
