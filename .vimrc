@@ -718,7 +718,7 @@ let g:startify_custom_footer = [
     \ '    +----------------+-------------+',
     \]
 
-nnoremap <Leader>s :Startify <CR>
+nnoremap <silent><Leader>s :Startify <CR>
 
 "-----------------------------------------------------------------o--------------------------------------------------------------o
 "                                                                                                                                
@@ -748,8 +748,8 @@ inoremap <silent><localleader><tab> <ESC>:bnext<CR>
 "=================================================================================================================================
 " Leader(\)+ 123....  切换Tabs快捷键设置 
 "=================================================================================================================================
-nnoremap <Leader>a :tabnew<cr>
-nnoremap <Leader>d :tabclose<cr>
+nnoremap <silent><Leader>a :tabnew<cr>
+nnoremap <silent><Leader>d :tabclose<cr>
 nnoremap <silent><leader>1 :tabn1<cr>
 nnoremap <silent><leader>2 :tabn2<cr>
 nnoremap <silent><leader>3 :tabn3<cr>
