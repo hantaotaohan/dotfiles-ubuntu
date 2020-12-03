@@ -1438,13 +1438,14 @@ let g:which_key_map = {
   \ }
 
 let g:which_key_map[';'] = {
- \ 'name' : '+LocalLeader' ,
- \
- \ 't'    : [ ':TagbarToggle<CR>'                              , 'TagBar Toggle'             ] ,
- \ 'e'    : [ ':NERDTreeToggle<CR>'                            , 'NERDTree Toggle'           ] ,
- \ 'm'    : [ ':SignatureToggleSigns<CR>'                      , 'Marker Toggle'             ] ,
- \
- \ }
+  \ 'name' : '+LocalLeader' ,
+  \
+  \ 't'    : [ ':TagbarToggle<CR>'                           , 'TagBar Toggle'               ] ,
+  \ 'e'    : [ ':NERDTreeToggle<CR>'                         , 'NERDTree Toggle'             ] ,
+  \ 'm'    : [ ':SignatureToggleSigns<CR>'                   , 'Marker Toggle'               ] ,
+  \ 's'    : [ ':Nuake<CR>'                                  , 'Terminal Toggle'             ] ,
+  \
+  \ }
 
 let g:which_key_map.b = {
   \ 'name' : '+Buffer',
