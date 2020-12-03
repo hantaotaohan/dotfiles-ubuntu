@@ -60,7 +60,6 @@ Dotfiles_symlinks=(\
         .wgetrc\
         .Xmodmap\
 	.imwheelrc\
-	.fzf\
         .Xresources
         )
 
@@ -68,7 +67,6 @@ Dotfiles_copy=(\
         .config\
         .vim\
         .w3m\
-	.fzf.bash\
 	.snclirc\
         extras/z.lua
         )
@@ -673,8 +671,8 @@ echo -e "                                                                       
 # Install FZF
 #----------------------------------------------------------------------------------------#
 
-        $HOME/.fzf/install --all
-        echo -e "              ${green}[√] FZF Successful${reset}\n"
+#        $HOME/.fzf/install --all
+#        echo -e "              ${green}[√] FZF Successful${reset}\n"
 
 #----------------------------------------------------------------------------------------#
 # Install Vim Plug
