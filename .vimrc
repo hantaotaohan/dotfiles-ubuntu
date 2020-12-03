@@ -185,12 +185,12 @@ Plug 'joshdick/onedark.vim'                                              " 主�
 Plug 'vim-airline/vim-airline'                                           " 状态栏
 Plug 'vim-airline/vim-airline-themes'                                    " 状态栏主题
 Plug 'tpope/vim-fugitive'                                                " git插件
-Plug 'scrooloose/nerdtree'                                               " 文件树插件
+Plug 'scrooloose/nerdtree' , { 'on':  'NERDTreeToggle' }                 " 文件树插件
 Plug 'godlygeek/tabular'                                                 " 文本对齐插件
 Plug 'dhruvasagar/vim-table-mode'                                        " 表格模式
 Plug 'majutsushi/tagbar'                                                 " Tag浏览
 Plug 'junegunn/fzf.vim'                                                  " 为vim安装fzf插件
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }        " 为系统安装fzf工具
+Plug 'junegunn/fzf' , { 'dir': '~/.fzf', 'do': './install --all' }       " 为系统安装fzf工具
 Plug 'skywind3000/asyncrun.vim'                                          " 配合调测python插件
 Plug 'christoomey/vim-tmux-navigator'                                    " 同步vim与tmux快捷键
 Plug 'Yggdroot/indentLine'                                               " 缩进线显示插件
@@ -198,12 +198,12 @@ Plug 'tpope/vim-commentary'                                              " 快�
 Plug 'mhinz/vim-startify'                                                " 定制vim开始页面
 Plug 'SirVer/ultisnips'                                                  " 代码片段管理器
 Plug 'hantaotaohan/vim-snippets'                                         " 代码片段仓库
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  } " MarkdownPreview插件
+Plug 'iamcco/markdown-preview.nvim' , { 'do': 'cd app && yarn install' } " MarkdownPreview插件
 Plug 'jszakmeister/markdown2ctags'                                       " Tags的Toc插件
 Plug 'Neur1n/neuims'                                                     " 输入法自动切换 
 Plug 'vim-scripts/fcitx.vim'                                             " 输入法自动切换Fcitx
 Plug 'ferrine/md-img-paste.vim'                                          " Markdown截图自动粘贴
-Plug 'vimwiki/vimwiki' , { 'branch': 'dev' }                             " Vimwiki插件
+Plug 'vimwiki/vimwiki' , { 'branch': 'dev' ,'on': 'VimwikiIndex' }       " Vimwiki插件
 Plug 'michal-h21/vim-zettel'                                             " 配合vimwiki的功能插件
 Plug 'Lenovsky/nuake'                                                    " 快速启动命令行工具
 Plug 'jiangmiao/auto-pairs'                                              " 成对添加括号等
@@ -222,8 +222,8 @@ Plug 'arcticicestudio/nord-vim'                                          " Theme
 "Plug 'edkolev/tmuxline.vim'                                             " Vim同步tmux配色
 "Plug 'scrooloose/nerdcommenter'                                         " 快速注释插件
 "Plug 'junegunn/fzf.vim'                                                 " 为vim安装fzf插件
-"Plug 'https://github.com/junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }        " 为系统安装fzf工具
-"Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install_sync() } }              " MarkdownPreview插件
+"Plug 'https://github.com/junegunn/fzf' , { 'dir': '~/.fzf', 'do': './install --all' }        " 为系统安装fzf工具
+"Plug 'iamcco/markdown-preview.nvim' , { 'do': { -> mkdp#util#install_sync() } }              " MarkdownPreview插件
 call plug#end()
 
 
