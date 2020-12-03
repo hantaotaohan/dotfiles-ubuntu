@@ -892,7 +892,7 @@ set pastetoggle=<F4>                                                     " 设�
 " 非root权限保存快捷命令 命令模式下输入:W
 "=================================================================================================================================
 " command W w !sudo tee % > /dev/null
-nnoremap <localleader>w :execute 'silent! write !sudo tee % >/dev/null' <bar> edit!<cr>
+nnoremap <localleader>w :execute 'silent! write !sudo tee % >/dev/null' <bar> edit!<CR>
 
 
 "-----------------------------------------------------------------o--------------------------------------------------------------o
