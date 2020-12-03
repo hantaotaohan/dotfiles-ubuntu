@@ -1372,7 +1372,7 @@ autocmd! User GoyoLeave nested call <SID>goyo_leave()
 "=================================================================================================================================
 
 " Auto switch goyo
-function! s:switch_goyo()
+function! Switch_goyo()
     if  winnr('$') == 1
         Goyo 200x200
         "Goyo 80
@@ -1382,7 +1382,7 @@ function! s:switch_goyo()
 "        "set colorcolumn=+1
     endif
 endfunction
-nnoremap <Leader>g :call <SID>switch_goyo()<cr>
+nnoremap <Leader>go :call Switch_goyo()<cr>
 
 
 "=================================================================================================================================
