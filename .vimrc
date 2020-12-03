@@ -187,7 +187,7 @@ Plug 'tpope/vim-fugitive'                                                " git�
 Plug 'scrooloose/nerdtree' , { 'on': 'NERDTreeToggle' }                  " 文件树插件
 Plug 'godlygeek/tabular'                                                 " 文本对齐插件
 Plug 'dhruvasagar/vim-table-mode'                                        " 表格模式
-Plug 'majutsushi/tagbar'                                                 " Tag浏览
+Plug 'majutsushi/tagbar' , { 'on': 'TagbarToggle' }                      " Tag浏览
 Plug 'junegunn/fzf.vim'                                                  " 为vim安装fzf插件
 Plug 'junegunn/fzf' , { 'dir': '~/.fzf', 'do': './install --all' }       " 为系统安装fzf工具
 Plug 'skywind3000/asyncrun.vim'                                          " 配合调测python插件
