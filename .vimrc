@@ -1267,10 +1267,17 @@ function! Get_asyncrun_running()
   return async_status
 endfunction
 
-if !empty(glob("$HOME/.vim/plugged/vim-airline"))
+" if !empty(glob("$HOME/.vim/plugged/vim-airline"))
+" call airline#parts#define_function('asyncrun_status', 'Get_asyncrun_running')
+" let g:airline_section_x = airline#section#create(['asyncrun_status'])
+" endif
+
+try 
 call airline#parts#define_function('asyncrun_status', 'Get_asyncrun_running')
 let g:airline_section_x = airline#section#create(['asyncrun_status'])
-endif
+catch
+endtry
+
 
 "=================================================================================================================================
 
