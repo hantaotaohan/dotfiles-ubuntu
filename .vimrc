@@ -183,9 +183,8 @@ let g:plug_url_format = 'https://hub.fastgit.org/%s.git'
 call plug#begin('$HOME/.vim/plugged')
 Plug 'joshdick/onedark.vim'                                              " 主题文件
 Plug 'vim-airline/vim-airline'                                           " 状态栏
-Plug 'vim-airline/vim-airline-themes'                                    " 状态栏主题
 Plug 'tpope/vim-fugitive'                                                " git插件
-Plug 'scrooloose/nerdtree' , { 'on':  'NERDTreeToggle' }                 " 文件树插件
+Plug 'scrooloose/nerdtree' , { 'on': 'NERDTreeToggle' }                  " 文件树插件
 Plug 'godlygeek/tabular'                                                 " 文本对齐插件
 Plug 'dhruvasagar/vim-table-mode'                                        " 表格模式
 Plug 'majutsushi/tagbar'                                                 " Tag浏览
@@ -193,37 +192,36 @@ Plug 'junegunn/fzf.vim'                                                  " 为vi
 Plug 'junegunn/fzf' , { 'dir': '~/.fzf', 'do': './install --all' }       " 为系统安装fzf工具
 Plug 'skywind3000/asyncrun.vim'                                          " 配合调测python插件
 Plug 'christoomey/vim-tmux-navigator'                                    " 同步vim与tmux快捷键
-Plug 'Yggdroot/indentLine'                                               " 缩进线显示插件
+Plug 'Yggdroot/indentLine' , { 'on': 'IndentLinesToggle'}                " 缩进线显示插件
 Plug 'tpope/vim-commentary'                                              " 快速注释插件                                     
 Plug 'mhinz/vim-startify'                                                " 定制vim开始页面
 Plug 'SirVer/ultisnips'                                                  " 代码片段管理器
 Plug 'hantaotaohan/vim-snippets'                                         " 代码片段仓库
 Plug 'iamcco/markdown-preview.nvim' , { 'do': 'cd app && yarn install' } " MarkdownPreview插件
 Plug 'jszakmeister/markdown2ctags'                                       " Tags的Toc插件
-Plug 'Neur1n/neuims'                                                     " 输入法自动切换 
 Plug 'vim-scripts/fcitx.vim'                                             " 输入法自动切换Fcitx
 Plug 'ferrine/md-img-paste.vim'                                          " Markdown截图自动粘贴
 Plug 'vimwiki/vimwiki' , { 'branch': 'dev' ,'on': 'VimwikiIndex' }       " Vimwiki插件
 Plug 'michal-h21/vim-zettel'                                             " 配合vimwiki的功能插件
 Plug 'Lenovsky/nuake'                                                    " 快速启动命令行工具
-Plug 'jiangmiao/auto-pairs'                                              " 成对添加括号等
-Plug 'tpope/vim-surround'                                                " 成对更改删除括号等
-Plug 'junegunn/vim-easy-align'                                           " 自动对齐插件
-Plug 'mg979/vim-visual-multi'                                            " 多光标插件
 Plug 'junegunn/goyo.vim'                                                 " 专注模式
 Plug 'junegunn/limelight.vim'                                            " 专注模式辅助
 Plug 'liuchengxu/vim-which-key'                                          " Leader辅助
-Plug 'kshenoy/vim-signature'                                             " 书签插件
-Plug 'arecarn/vim-auto-autoread'                                         " 自动Autoread插件
-Plug 'brooth/far.vim'                                                    " 全局查找替换插件
+Plug 'kshenoy/vim-signature' , { 'on': 'SignatureToggleSigns'}           " 书签插件
 Plug 'arcticicestudio/nord-vim'                                          " Themes
+"Plug 'vim-airline/vim-airline-themes'                                    " 状态栏主题
+"Plug 'Neur1n/neuims'                                                     " 输入法自动切换 
+"Plug 'arecarn/vim-auto-autoread'                                         " 自动Autoread插件
+"Plug 'brooth/far.vim'                                                    " 全局查找替换插件
+"Plug 'jiangmiao/auto-pairs'                                              " 成对添加括号等
+"Plug 'tpope/vim-surround'                                                " 成对更改删除括号等
+"Plug 'junegunn/vim-easy-align'                                           " 自动对齐插件
+"Plug 'mg979/vim-visual-multi'                                            " 多光标插件
 "Plug 'morhetz/gruvbox'                                                  " Themes
 "Plug 'terryma/vim-multiple-cursors'                                     " 多光标插件
 "Plug 'edkolev/tmuxline.vim'                                             " Vim同步tmux配色
 "Plug 'scrooloose/nerdcommenter'                                         " 快速注释插件
 "Plug 'junegunn/fzf.vim'                                                 " 为vim安装fzf插件
-"Plug 'https://github.com/junegunn/fzf' , { 'dir': '~/.fzf', 'do': './install --all' }        " 为系统安装fzf工具
-"Plug 'iamcco/markdown-preview.nvim' , { 'do': { -> mkdp#util#install_sync() } }              " MarkdownPreview插件
 call plug#end()
 
 
