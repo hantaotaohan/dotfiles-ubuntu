@@ -670,8 +670,8 @@ let g:tagbar_type_vimwiki = {
 "=================================================================================================================================
 " FZF.vim 
 "=================================================================================================================================
-nnoremap <silent><Leader>f :Files /<CR>
-nnoremap <silent><Leader>ff :Lines<CR>
+nnoremap <silent><Leader>ff :Files /<CR>
+nnoremap <silent><Leader>fl :Lines<CR>
 
 
 "=================================================================================================================================
@@ -792,19 +792,19 @@ tnoremap <c-l> <c-w><c-l>
 " 快速移动光标快捷键 
 "=================================================================================================================================
 " 普通模式下:Shift+HJKL快速移动
-nnoremap K <Esc>5<up>
-nnoremap J <Esc>5<down>
+" nnoremap K <Esc>5<up>
+" nnoremap J <Esc>5<down>
 " nnoremap H <Esc>0
 " nnoremap L <Esc>$
 
 " 编辑模式下:Alt+Shift+hjkl加速移动
 inoremap <C-a> <ESC>I
 inoremap <C-e> <ESC>A
-inoremap <C-w> <C-o>W
-inoremap <C-b> <C-o>B
+" inoremap <C-w> <C-o>W
+" inoremap <C-b> <C-o>B
 " inoremap <C-H> <ESC>I
-inoremap <C-j> <down><down><down><down><down>
-inoremap <C-k> <up><up><up><up><up>
+" inoremap <C-j> <down><down><down><down><down>
+" inoremap <C-k> <up><up><up><up><up>
 " inoremap <C-L> <ESC>A
 
 " 可视化模式下:Shift+HJKL快速移动
@@ -817,10 +817,10 @@ inoremap <C-k> <up><up><up><up><up>
 "=================================================================================================================================
 " Shift + - = , . 调整窗口高低宽窄快捷键 
 "=================================================================================================================================
-nnoremap <silent><leader>j <C-W>:resize           +5<CR>
-nnoremap <silent><leader>k <C-W>:resize           -5<CR>
-nnoremap <silent><leader>h <C-W>:vertical resize  +5<CR>
-nnoremap <silent><leader>l <C-W>:vertical resize  -5<CR>
+"nnoremap <silent><leader>j <C-W>:resize           +5<CR>
+"nnoremap <silent><leader>k <C-W>:resize           -5<CR>
+"nnoremap <silent><leader>h <C-W>:vertical resize  +5<CR>
+"nnoremap <silent><leader>l <C-W>:vertical resize  -5<CR>
 
 
 "=================================================================================================================================
@@ -1621,6 +1621,6 @@ let g:UltiSnipsJumpBackwardTrigger="<C-k>"
 "=================================================================================================================================
 " Zoom settings
 "=================================================================================================================================
-nnoremap <localleader>f <Plug>(zoom-toggle)
+nnoremap <localleader>z <Plug>(zoom-toggle)
 let g:zoom#statustext = 'Zoomed'
 let g:airline_section_error = airline#section#create('%{zoom#statusline()}')
