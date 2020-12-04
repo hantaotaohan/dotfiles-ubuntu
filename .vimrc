@@ -230,10 +230,10 @@ endfunction
 " Timing
 ----------------------------------------------------------------
 set timeout ttimeout
-set timeoutlen=500   " Time out on mappings
-set ttimeoutlen=10   " Time out on key codes
-set updatetime=400   " Idle time to write swap and trigger CursorHold
-set redrawtime=2000  " Time in milliseconds for stopping display redraw
+set timeoutlen=500   " 映射超时
+set ttimeoutlen=10   " 按键密码超时
+set updatetime=400   " 空闲时间以写入交换并触发CursorHold
+set redrawtime=2000  " 停止显示重绘的时间（以毫秒为单位）
 
 " ----------------------------------------------------------------o
 " Wildmenu 
@@ -244,16 +244,22 @@ if has('wildmenu')
         set wildmode=list:longest,full
     endif
     set wildignorecase
-    set wildignore+=.git,.hg,.svn,.stversions,*.pyc,*.spl,*.o,*.out,*~,%*
-    set wildignore+=*.jpg,*.jpeg,*.png,*.gif,*.zip,**/tmp/**,*.DS_Store
-    set wildignore+=**/node_modules/**,**/bower_modules/**,*/.sass-cache/*
-    set wildignore+=__pycache__,*.egg-info,.pytest_cache,.mypy_cache/**
+    set wildignore+=
+        \ .git,.hg,.svn,.stversions,*.pyc,*.spl,*.o,*.out,*~,%*
+    set wildignore+=
+        \ *.jpg,*.jpeg,*.png,*.gif,*.zip,**/tmp/**,*.DS_Store
+    set wildignore+=
+        \ **/node_modules/**,**/bower_modules/**,*/.sass-cache/*
+    set wildignore+=
+        \ __pycache__,*.egg-info,.pytest_cache,.mypy_cache/**
 endif
 
 " ----------------------------------------------------------------o
 " Vim Directories
 " ----------------------------------------------------------------o
-let $DATA_PATH = expand(($XDG_CACHE_HOME ? $XDG_CACHE_HOME : '~').'/.vim')
+let $DATA_PATH = 
+    \ expand(($XDG_CACHE_HOME ? $XDG_CACHE_HOME : '~').'/.vim')
+    
 set directory=$DATA_PATH/swap//,$DATA_PATH,~/tmp,/var/tmp,/tmp
 set undodir=$DATA_PATH/undo//,$DATA_PATH,~/tmp,/var/tmp,/tmp
 set backupdir=$DATA_PATH/backup/,$DATA_PATH,~/tmp,/var/tmp,/tmp
@@ -278,6 +284,28 @@ augroup user_persistent_undo
     au BufWritePre *.tmp           setlocal noundofile
     au BufWritePre *.bak           setlocal noundofile
 augroup END
+
+----------------------------------------------------------------
+" Disable vim distribution plugins
+----------------------------------------------------------------
+let g:loaded_gzip = 1
+let g:loaded_tar = 1
+let g:loaded_tarPlugin = 1
+let g:loaded_zip = 1
+let g:loaded_zipPlugin = 1
+let g:loaded_getscript = 1
+let g:loaded_getscriptPlugin = 1
+let g:loaded_vimball = 1
+let g:loaded_vimballPlugin = 1
+let g:loaded_matchit = 1
+let g:loaded_matchparen = 1
+let g:loaded_2html_plugin = 1
+let g:loaded_logiPat = 1
+let g:loaded_rrhelper = 1
+let g:loaded_netrw = 1
+let g:loaded_netrwPlugin = 1
+let g:loaded_netrwSettings = 1
+let g:loaded_netrwFileHandlers = 1
 
 
 "-----------------------------------------------------------------o--------------------------------------------------------------o
