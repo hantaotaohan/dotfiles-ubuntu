@@ -93,11 +93,11 @@ endif
 "----------------------------------------------------------------------
 " 有 tmux 何没有的功能键超时（毫秒）
 "----------------------------------------------------------------------
-if $TMUX != ''
-	set ttimeoutlen=30
-elseif &ttimeoutlen > 80 || &ttimeoutlen <= 0
-	set ttimeoutlen=80
-endif
+"if $TMUX != ''
+"	set ttimeoutlen=30
+"elseif &ttimeoutlen > 80 || &ttimeoutlen <= 0
+"	set ttimeoutlen=80
+"endif
 
 
 "-----------------------------------------------------------------o--------------------------------------------------------------o
@@ -122,7 +122,7 @@ endif
 
 "-----------------------------------------------------------------o--------------------------------------------------------------o
 "                                                                                                                                
-"                                                                ESC                                                          
+"                                                              General                                                          
 "                                                                                                                                
 "-----------------------------------------------------------------o--------------------------------------------------------------o
 
@@ -225,6 +225,15 @@ function! s:zoom()
 		normal! ze
 	endif
 endfunction
+
+----------------------------------------------------------------
+" Timing
+----------------------------------------------------------------
+set timeout ttimeout
+set timeoutlen=500   " Time out on mappings
+set ttimeoutlen=10   " Time out on key codes
+set updatetime=400   " Idle time to write swap and trigger CursorHold
+set redrawtime=2000  " Time in milliseconds for stopping display redraw
 
 " ----------------------------------------------------------------o
 " Wildmenu 
@@ -393,10 +402,10 @@ set autochdir                                                            " 自�
 set noswapfile                                                           " 设置无临时文件
 set noshowmode                                                           " 任务栏不显示状态
 set ambiwidth=single                                                     " 设置为双字宽显示默认值double
-set hidden                                                               " 针对buffer不保存即可切换
-set ttimeout                                                             " 打开功能键超时检测（终端下功能键为一串 ESC 开头的字符串）
-set ttimeoutlen=50                                                       " 功能键超时检测 50 毫秒
 set incsearch                                                            " 查找输入时动态增量显示查找结果
+set hidden                                                               " 针对buffer不保存即可切换
+" set ttimeout                                                             " 打开功能键超时检测（终端下功能键为一串 ESC 开头的字符串）
+" set ttimeoutlen=50                                                       " 功能键超时检测 50 毫秒
 " set undodir=~/.vim/                                                    " 开启撤销功能的目录
 " set backupdir=/etc/vim/.vim/                                           " 备份文件目录  
 " set directory=/etc/vim/.vim/                                           " 交换文件目录  
