@@ -126,13 +126,21 @@ endif
 "                                                                                                                                
 "-----------------------------------------------------------------o--------------------------------------------------------------o
 
+" ----------------------------------------------------------------o
+" Leader & LocalLeader Settings
+" ----------------------------------------------------------------o
 let mapleader="\\"
 let maplocalleader = ";"
 
+" ----------------------------------------------------------------o
+" Q > nop
+" ----------------------------------------------------------------o
 nnoremap q <nop>
 vnoremap q <nop>
 
+" ----------------------------------------------------------------o
 " Keep search pattern at the center of the screen.
+" ----------------------------------------------------------------o
 nnoremap <silent> n nzz
 nnoremap <silent> N Nzz
 
@@ -145,14 +153,48 @@ nnoremap <silent> ( (zz
 nnoremap <silent> [[ [[zz
 nnoremap <silent> ]] ]]zz
 
+" ----------------------------------------------------------------o
 " Clear highlighted search
+" ----------------------------------------------------------------o
 nnoremap <CR> :noh<CR><CR>
 
+" ----------------------------------------------------------------o
 " Go to home and end using capitalized directions
+" ----------------------------------------------------------------o
 "noremap H ^
 "noremap L $
 
+" ----------------------------------------------------------------o
+" Scroll step sideways
+" ----------------------------------------------------------------o
+nnoremap zl z4l
+nnoremap zh z4h
+
+" ----------------------------------------------------------------o
+" Yank buffer's relative/absolute path to clipboard
+" ----------------------------------------------------------------o
+nnoremap <Leader>Y :let @+=expand("%:~:.")<CR>:echo 'Yanked relative path'<CR>
+nnoremap <Leader>y :let @+=expand("%:p")<CR>:echo 'Yanked absolute path'<CR>
+
+" ----------------------------------------------------------------o
+" Re-select blocks after indenting in visual/select mode
+" ----------------------------------------------------------------o
+xnoremap << <gv
+xnoremap >> >gv|
+
+" ----------------------------------------------------------------o
+" Allow misspellings
+" ----------------------------------------------------------------o
+cnoreabbrev qw wq
+cnoreabbrev qq wq
+cnoreabbrev wQ wq
+cnoreabbrev Wq wq
+cnoreabbrev WQ wq
+cnoreabbrev Qa qa
+
+" ----------------------------------------------------------------o
 " Quickly close the current window
+" ----------------------------------------------------------------o
 function! BufferClose()
     " close whole vim if this is the last buffer
     if len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1
@@ -167,6 +209,46 @@ endfunction
 nnoremap <expr><leader>q BufferClose()
 vnoremap <expr><leader>q BufferClose()
 inoremap <expr><leader>q BufferClose()
+
+" ----------------------------------------------------------------o
+" Simple zoom toggle
+" ----------------------------------------------------------------o
+nnoremap <silent><leader>z  :<C-u>call <SID>zoom()<CR>
+function! s:zoom()
+	if exists('t:zoomed')
+		unlet t:zoomed
+		wincmd =
+	else
+		let t:zoomed = { 'nr': bufnr('%') }
+		vertical resize
+		resize
+		normal! ze
+	endif
+endfunction
+
+" ----------------------------------------------------------------o
+" Wildmenu 
+" ----------------------------------------------------------------o
+if has('wildmenu')
+    if ! has('nvim')
+    	set nowildmenu
+        set wildmode=list:longest,full
+    endif
+    set wildignorecase
+    set wildignore+=.git,.hg,.svn,.stversions,*.pyc,*.spl,*.o,*.out,*~,%*
+    set wildignore+=*.jpg,*.jpeg,*.png,*.gif,*.zip,**/tmp/**,*.DS_Store
+    set wildignore+=**/node_modules/**,**/bower_modules/**,*/.sass-cache/*
+    set wildignore+=__pycache__,*.egg-info,.pytest_cache,.mypy_cache/**
+endif
+
+" ----------------------------------------------------------------o
+" Vim Directories
+" ----------------------------------------------------------------o
+let $DATA_PATH = expand(($XDG_CACHE_HOME ? $XDG_CACHE_HOME : '~').'/.vim')
+set directory=$DATA_PATH/swap//,$DATA_PATH,~/tmp,/var/tmp,/tmp
+set undodir=$DATA_PATH/undo//,$DATA_PATH,~/tmp,/var/tmp,/tmp
+set backupdir=$DATA_PATH/backup/,$DATA_PATH,~/tmp,/var/tmp,/tmp
+set viewdir=$DATA_PATH/view/
 
 
 "-----------------------------------------------------------------o--------------------------------------------------------------o
@@ -284,7 +366,6 @@ set pythondll=                                                           " pytho
 set writebackup                                                          " 保存文件前建立备份，保存成功后删除该备份
 set nobackup                                                             " 设置无备份文件
 set undofile                                                             " 开启撤销功能
-set undodir=~/.vim/                                                      " 开启撤销功能的目录
 set autoread                                                             " 当文件在外部被修改，自动更新该文件
 set ignorecase                                                           " 搜索模式里忽略大小写
 set smartcase                                                            " 如果搜索模式包含大写字符，不使用 'ignorecase' 选项
@@ -296,6 +377,7 @@ set hidden                                                               " 针�
 set ttimeout                                                             " 打开功能键超时检测（终端下功能键为一串 ESC 开头的字符串）
 set ttimeoutlen=50                                                       " 功能键超时检测 50 毫秒
 set incsearch                                                            " 查找输入时动态增量显示查找结果
+" set undodir=~/.vim/                                                    " 开启撤销功能的目录
 " set backupdir=/etc/vim/.vim/                                           " 备份文件目录  
 " set directory=/etc/vim/.vim/                                           " 交换文件目录  
 " set vb t_vb=                                                           " 关闭提示音
@@ -313,7 +395,7 @@ set listchars=tab:\|\ ,trail:.,extends:>,precedes:<                      " 设�
 set formatoptions+=B                                                     " 合并两行中文时，不在中间加空格
 set ffs=unix,dos,mac                                                     " 文件换行符，默认使用 unix 换行符
 set ruler                                                                " 显示光标位置
-set wildmode=list:full                                                   " 长列表补全
+" set wildmode=list:full                                                 " 长列表补全
 set completeopt=menuone,menu,longest,preview                             " 自动补全
 au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 
@@ -386,7 +468,7 @@ call s:key_escape('<S-F12>', '[24;2~')
 " 折叠设置 
 "=================================================================================================================================
 set foldmethod=manual                                                    " 启用手动折叠zf
-set viewdir=~/.vim/                                                      " view视图文件目录设定
+" set viewdir=~/.vim/                                                      " view视图文件目录设定
 " nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>         " 空格打开关闭折叠视图
 " vnoremap <Space> zf                                                      " 空格打开关闭折叠视图
 "---------------------------------------------------------------------------------------------------------------------------------
