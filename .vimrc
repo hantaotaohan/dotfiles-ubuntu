@@ -208,21 +208,20 @@ Plug 'junegunn/goyo.vim'                                                 " 专�
 Plug 'junegunn/limelight.vim'                                            " 专注模式辅助
 Plug 'liuchengxu/vim-which-key'                                          " Leader辅助
 Plug 'kshenoy/vim-signature' , { 'on': 'SignatureToggleSigns'}           " 书签插件
+Plug 'jiangmiao/auto-pairs'                                              " 成对添加括号等
 Plug 'arcticicestudio/nord-vim'                                          " Themes
 Plug 'rakr/vim-one'                                                      " Themes
 "Plug 'vim-airline/vim-airline-themes'                                    " 状态栏主题
 "Plug 'Neur1n/neuims'                                                     " 输入法自动切换 
 "Plug 'arecarn/vim-auto-autoread'                                         " 自动Autoread插件
 "Plug 'brooth/far.vim'                                                    " 全局查找替换插件
-"Plug 'jiangmiao/auto-pairs'                                              " 成对添加括号等
 "Plug 'tpope/vim-surround'                                                " 成对更改删除括号等
 "Plug 'junegunn/vim-easy-align'                                           " 自动对齐插件
 "Plug 'mg979/vim-visual-multi'                                            " 多光标插件
-"Plug 'morhetz/gruvbox'                                                  " Themes
-"Plug 'terryma/vim-multiple-cursors'                                     " 多光标插件
-"Plug 'edkolev/tmuxline.vim'                                             " Vim同步tmux配色
-"Plug 'scrooloose/nerdcommenter'                                         " 快速注释插件
-"Plug 'junegunn/fzf.vim'                                                 " 为vim安装fzf插件
+"Plug 'morhetz/gruvbox'                                                   " Themes
+"Plug 'terryma/vim-multiple-cursors'                                      " 多光标插件
+"Plug 'edkolev/tmuxline.vim'                                              " Vim同步tmux配色
+"Plug 'scrooloose/nerdcommenter'                                          " 快速注释插件
 call plug#end()
 
 
