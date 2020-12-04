@@ -136,6 +136,15 @@ vnoremap q <nop>
 nnoremap <silent> n nzz
 nnoremap <silent> N Nzz
 
+nnoremap <silent> { {zz
+nnoremap <silent> } }zz
+
+nnoremap <silent> ( (zz
+nnoremap <silent> ( (zz
+
+nnoremap <silent> [[ [[zz
+nnoremap <silent> ]] ]]zz
+
 " Clear highlighted search
 nnoremap <CR> :noh<CR><CR>
 
