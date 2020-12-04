@@ -926,38 +926,38 @@ nnoremap <silent><Leader>s :Startify <CR>
 "=================================================================================================================================
 " Leader(\)+ 123....  切换Buffers快捷键设置
 "=================================================================================================================================
-nnoremap <localleader>a :badd<Space>
-nnoremap <localleader>d :bdelete<Space>
-nnoremap <silent><localleader>1 :b1<cr>
-nnoremap <silent><localleader>2 :b2<cr>
-nnoremap <silent><localleader>3 :b3<cr>
-nnoremap <silent><localleader>4 :b4<cr>
-nnoremap <silent><localleader>5 :b5<cr>
-nnoremap <silent><localleader>6 :b6<cr>
-nnoremap <silent><localleader>7 :b7<cr>
-nnoremap <silent><localleader>8 :b8<cr>
-nnoremap <silent><localleader>9 :b9<cr>
-nnoremap <silent><localleader>0 :b10<cr>
-nnoremap <silent><localleader><tab> :bnext<CR>
-inoremap <silent><localleader><tab> <ESC>:bnext<CR>
+nnoremap <Leader>a :badd<Space>
+nnoremap <Leader>d :bdelete<Space>
+nnoremap <silent><Leader>1 :b1<cr>
+nnoremap <silent><Leader>2 :b2<cr>
+nnoremap <silent><Leader>3 :b3<cr>
+nnoremap <silent><Leader>4 :b4<cr>
+nnoremap <silent><Leader>5 :b5<cr>
+nnoremap <silent><Leader>6 :b6<cr>
+nnoremap <silent><Leader>7 :b7<cr>
+nnoremap <silent><Leader>8 :b8<cr>
+nnoremap <silent><Leader>9 :b9<cr>
+nnoremap <silent><Leader>0 :b10<cr>
+nnoremap <silent><Leader><tab> :bnext<CR>
+inoremap <silent><Leader><tab> <ESC>:bnext<CR>
 
 "=================================================================================================================================
 " Leader(\)+ 123....  切换Tabs快捷键设置 
 "=================================================================================================================================
-nnoremap <silent><Leader>a :tabnew<cr>
-nnoremap <silent><Leader>d :tabclose<cr>
-nnoremap <silent><leader>1 :tabn1<cr>
-nnoremap <silent><leader>2 :tabn2<cr>
-nnoremap <silent><leader>3 :tabn3<cr>
-nnoremap <silent><leader>4 :tabn4<cr>
-nnoremap <silent><leader>5 :tabn5<cr>
-nnoremap <silent><leader>6 :tabn6<cr>
-nnoremap <silent><leader>7 :tabn7<cr>
-nnoremap <silent><leader>8 :tabn8<cr>
-nnoremap <silent><leader>9 :tabn9<cr>
-nnoremap <silent><leader>0 :tabn10<cr>
-nnoremap <silent><leader><tab> :tabnext<CR>
-inoremap <silent><leader><tab> <ESC>:tabnext<CR>
+nnoremap <silent><LocalLeader>a :tabnew<cr>
+nnoremap <silent><LocalLeader>d :tabclose<cr>
+nnoremap <silent><LocalLeader>1 :tabn1<cr>
+nnoremap <silent><LocalLeader>2 :tabn2<cr>
+nnoremap <silent><LocalLeader>3 :tabn3<cr>
+nnoremap <silent><LocalLeader>4 :tabn4<cr>
+nnoremap <silent><LocalLeader>5 :tabn5<cr>
+nnoremap <silent><LocalLeader>6 :tabn6<cr>
+nnoremap <silent><LocalLeader>7 :tabn7<cr>
+nnoremap <silent><LocalLeader>8 :tabn8<cr>
+nnoremap <silent><LocalLeader>9 :tabn9<cr>
+nnoremap <silent><LocalLeader>0 :tabn10<cr>
+nnoremap <silent><LocalLeader><tab> :tabnext<CR>
+inoremap <silent><LocalLeader><tab> <ESC>:tabnext<CR>
 
 "================================================================================================================================= 
 " Ctrl + n 切换buff快捷键 
@@ -1740,7 +1740,7 @@ let g:which_key_map.t = {
   \ "8"     : [ 'tabn8    '                         , 'Toggle Tabs 8 '                          ] ,
   \ "9"     : [ 'tabn9    '                         , 'Toggle Tabs 9 '                          ] ,
   \ "0"     : [ 'tabn10   '                         , 'Toggle Tabs 10'                          ] ,
-  \ "<Tab>" : ['tabnext  '                         , 'Next Buffer   '                           ] ,
+  \ "<Tab>" : ['tabnext   '                         , 'Next Buffer   '                          ] ,
   \                                                      
   \ }
 
@@ -1748,7 +1748,7 @@ let g:which_key_map.t = {
 let g:which_key_map.T = {
   \ 'name' : '+Table Mode',
   \
-  \ "m"    : ['TableModeToggle'                   , 'TableModeToggle'                          ] ,
+  \ "m"    : ['TableModeToggle'                    , 'TableModeToggle'                          ] ,
   \
   \ }
 
