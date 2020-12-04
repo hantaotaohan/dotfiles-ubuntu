@@ -240,6 +240,7 @@ set nowrap                                                               " 设�
 set showtabline=2                                                        " 永远显示标签页
 set t_Co=256                                                             " 设置终端显示颜色
 set scrolloff=5                                                          " 光标上下两侧最少保留的屏幕行数
+set showcmd                                                              " 显示命令
 syntax enable                                                            " 开启语法高亮
 set guifont=Saber\ Bold\ 10.5                                            " 设置GUI字体
 "set guifont=DejaVu\ Sans\ Mono\ 10                                      " 设置字体
