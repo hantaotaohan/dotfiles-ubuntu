@@ -250,6 +250,26 @@ set undodir=$DATA_PATH/undo//,$DATA_PATH,~/tmp,/var/tmp,/tmp
 set backupdir=$DATA_PATH/backup/,$DATA_PATH,~/tmp,/var/tmp,/tmp
 set viewdir=$DATA_PATH/view/
 
+----------------------------------------------------------------
+" History saving
+----------------------------------------------------------------
+set history=2000
+
+if has('nvim') && ! has('win32') && ! has('win64')
+    set shada=!,'100,<20,@100,s10,h,r/tmp,r/private/var
+else
+    set viminfo='100,<20,@50,h,n$DATA_PATH/viminfo
+endif
+
+augroup user_persistent_undo
+    autocmd!
+    au BufWritePre /tmp/*          setlocal noundofile
+    au BufWritePre COMMIT_EDITMSG  setlocal noundofile
+    au BufWritePre MERGE_MSG       setlocal noundofile
+    au BufWritePre *.tmp           setlocal noundofile
+    au BufWritePre *.bak           setlocal noundofile
+augroup END
+
 
 "-----------------------------------------------------------------o--------------------------------------------------------------o
 "                                                                                                                                
@@ -298,7 +318,7 @@ Plug 'Lenovsky/nuake'                                                    " 快�
 Plug 'junegunn/goyo.vim'                                                 " 专注模式
 Plug 'junegunn/limelight.vim'                                            " 专注模式辅助
 Plug 'liuchengxu/vim-which-key'                                          " Leader辅助
-Plug 'kshenoy/vim-signature' , { 'on': 'SignatureToggleSigns'}           " 书签插件
+Plug 'kshenoy/vim-signature'                                             " 书签插件
 Plug 'jiangmiao/auto-pairs'                                              " 成对添加括号等
 Plug 'arcticicestudio/nord-vim'                                          " Themes
 Plug 'rakr/vim-one'                                                      " Themes
@@ -377,7 +397,6 @@ set hidden                                                               " 针�
 set ttimeout                                                             " 打开功能键超时检测（终端下功能键为一串 ESC 开头的字符串）
 set ttimeoutlen=50                                                       " 功能键超时检测 50 毫秒
 set incsearch                                                            " 查找输入时动态增量显示查找结果
-set history=2000                                                         " 历史记录条目数
 " set undodir=~/.vim/                                                    " 开启撤销功能的目录
 " set backupdir=/etc/vim/.vim/                                           " 备份文件目录  
 " set directory=/etc/vim/.vim/                                           " 交换文件目录  
