@@ -173,8 +173,10 @@ nnoremap zh z4h
 " ----------------------------------------------------------------o
 " Yank buffer's relative/absolute path to clipboard
 " ----------------------------------------------------------------o
-nnoremap <Leader>Y :let @+=expand("%:~:.")<CR>:echo 'Yanked relative path'<CR>
-nnoremap <Leader>y :let @+=expand("%:p")<CR>:echo 'Yanked absolute path'<CR>
+nnoremap <Leader>Y :let @+=
+            \expand("%:~:.")<CR>:echo 'Yanked relative path'<CR>
+nnoremap <Leader>y :let @+=
+            \expand("%:p")<CR>:echo 'Yanked absolute path'<CR>
 
 " ----------------------------------------------------------------o
 " Re-select blocks after indenting in visual/select mode
@@ -226,9 +228,9 @@ function! s:zoom()
 	endif
 endfunction
 
-----------------------------------------------------------------
+" ----------------------------------------------------------------o
 " Timing
-----------------------------------------------------------------
+" ----------------------------------------------------------------o
 set timeout ttimeout
 set timeoutlen=500   " 映射超时
 set ttimeoutlen=10   " 按键密码超时
@@ -245,13 +247,13 @@ if has('wildmenu')
     endif
     set wildignorecase
     set wildignore+=
-        \ .git,.hg,.svn,.stversions,*.pyc,*.spl,*.o,*.out,*~,%*
+        \.git,.hg,.svn,.stversions,*.pyc,*.spl,*.o,*.out,*~,%*
     set wildignore+=
-        \ *.jpg,*.jpeg,*.png,*.gif,*.zip,**/tmp/**,*.DS_Store
+        \*.jpg,*.jpeg,*.png,*.gif,*.zip,**/tmp/**,*.DS_Store
     set wildignore+=
-        \ **/node_modules/**,**/bower_modules/**,*/.sass-cache/*
+        \**/node_modules/**,**/bower_modules/**,*/.sass-cache/*
     set wildignore+=
-        \ __pycache__,*.egg-info,.pytest_cache,.mypy_cache/**
+        \__pycache__,*.egg-info,.pytest_cache,.mypy_cache/**
 endif
 
 " ----------------------------------------------------------------o
@@ -265,9 +267,9 @@ set undodir=$DATA_PATH/undo//,$DATA_PATH,~/tmp,/var/tmp,/tmp
 set backupdir=$DATA_PATH/backup/,$DATA_PATH,~/tmp,/var/tmp,/tmp
 set viewdir=$DATA_PATH/view/
 
-----------------------------------------------------------------
+" ----------------------------------------------------------------o
 " History saving
-----------------------------------------------------------------
+" ----------------------------------------------------------------o
 set history=2000
 
 if has('nvim') && ! has('win32') && ! has('win64')
@@ -285,9 +287,9 @@ augroup user_persistent_undo
     au BufWritePre *.bak           setlocal noundofile
 augroup END
 
-----------------------------------------------------------------
+" ----------------------------------------------------------------o
 " Disable vim distribution plugins
-----------------------------------------------------------------
+" ----------------------------------------------------------------o
 let g:loaded_gzip = 1
 let g:loaded_tar = 1
 let g:loaded_tarPlugin = 1
