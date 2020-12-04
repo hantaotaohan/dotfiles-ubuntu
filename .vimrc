@@ -148,7 +148,7 @@ nnoremap <silent> { {zz
 nnoremap <silent> } }zz
 
 nnoremap <silent> ( (zz
-nnoremap <silent> ( (zz
+nnoremap <silent> ) )zz
 
 nnoremap <silent> [[ [[zz
 nnoremap <silent> ]] ]]zz
