@@ -912,6 +912,11 @@ let g:startify_skiplist = [
 
 let g:startify_bookmarks = [
     \ { 'v': '$HOME/.vimrc' },
+    \ { 'i': '$HOME/.config/i3/config' },
+    \ { 'a': '$HOME/.config/alacritty/alacritty.yml' },
+    \ { 'b': '$HOME/.config/i3blocks/config' },
+    \ { 'p': '$HOME/.config/picom/picom.conf' },
+    \ { 's': '$HOME/.bashrc' },
     \ ]
 
 let g:startify_custom_footer = [
