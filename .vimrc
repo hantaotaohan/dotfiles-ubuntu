@@ -506,6 +506,7 @@ set listchars=tab:\|\ ,trail:.,extends:>,precedes:<                      " 设�
 set formatoptions+=B                                                     " 合并两行中文时，不在中间加空格
 set ffs=unix,dos,mac                                                     " 文件换行符，默认使用 unix 换行符
 set ruler                                                                " 显示光标位置
+set ttyfast                                                              " 刷新更快
 " set wildmode=list:full                                                 " 长列表补全
 set completeopt=menuone,menu,longest,preview                             " 自动补全
 au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
