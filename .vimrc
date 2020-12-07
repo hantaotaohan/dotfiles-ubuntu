@@ -305,31 +305,33 @@ inoremap <expr><localleader>q BufferClose()
 " Quickly Save the current window
 " ----------------------------------------------------------------o
 function! MySave()
-let cantSave = "echo \"Can't save the file: \" . v:exception | return"
-let notSaved = "redraw | echo 'This buffer was NOT saved!' | return"
+let cantSave = "redraw | echohl ErrorMsg | echo \"Can't save the file: \" . v:exception | return | echohl None"
+let notSaved = "redraw | echohl ErrorMsg | echo 'This buffer was NOT saved!' | return | echohl None"
 try
 silent w
 catch /:E45:\|:E505:\|:E212:/
 if (confirm("This Buffer is read only! Wanna save it anyway?", "&Yes\n&No", 2)==1) | redraw
-  try
-    silent w!
-  catch /:E212:/
-    if (confirm("Can't open the file, do you want to save it as Root?", "&Yes\n&No", 2)==1) | redraw
-      try
-        " w !sudo tee % > /dev/null
-        execute 'silent! write !sudo tee % >/dev/null' 
-        edit!
-      catch
-        exe cantSave
-      endtry
-    else
-      exe notSaved
-    endif
-  catch
-    exe cantSave
-  endtry
+redraw
+try
+silent w!
+catch /:E212:/
+if (confirm("Can't open the file, do you want to save it as Root?", "&Yes\n&No", 2)==1) | redraw
+redraw
+try
+" w !sudo tee % > /dev/null
+execute 'silent! write !sudo tee % >/dev/null' 
+edit!
+catch
+exe cantSave
+endtry
 else
-  exe notSaved
+exe notSaved
+endif
+catch
+exe cantSave
+endtry
+else
+exe notSaved
 endif
 catch
 exe cantSave
@@ -339,6 +341,9 @@ let file = expand('%:P')
 let permissions = getfperm(file)
 redraw
 echom '"' . file . '"' . " Save Done" . ' ' . time
+redraw
+echohl None
+redraw
 endfunction
 
 nnoremap <silent><localleader>w :call MySave()<CR>
