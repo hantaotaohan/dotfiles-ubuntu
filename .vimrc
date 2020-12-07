@@ -798,7 +798,7 @@ let g:mkdp_port = '8888'
 let g:mkdp_page_title = '「${name}」'
 
 " MarkdownPreviewToggle
-nnoremap <Leader>] <Plug>MarkdownPreviewToggle
+nnoremap <Leader>e <Plug>MarkdownPreviewToggle
 
 "=================================================================================================================================
 " Vim-table-mode 插件配置
@@ -915,6 +915,7 @@ let g:startify_custom_footer = [
     \]
 
 nnoremap <silent><Leader>s :Startify <CR>
+nnoremap <silent><LocalLeader>s :Startify <CR>
 
 "-----------------------------------------------------------------o--------------------------------------------------------------o
 "                                                                                                                                
@@ -1500,9 +1501,9 @@ autocmd filetype vimwiki nnoremap <buffer> <leader>wd :call VimwikiDeleteClean()
 nnoremap <F6> :Nuake<CR>
 inoremap <F6> <C-\><C-n>:Nuake<CR>
 tnoremap <F6> <C-\><C-n>:Nuake<CR>
-nnoremap <silent><localleader>s :Nuake<CR>
-inoremap <silent><localleader>s <C-\><C-n>:Nuake<CR>
-tnoremap <silent><localleader>s <C-\><C-n>:Nuake<CR>
+nnoremap <silent><localleader>c :Nuake<CR>
+inoremap <silent><localleader>c <C-\><C-n>:Nuake<CR>
+tnoremap <silent><localleader>c <C-\><C-n>:Nuake<CR>
 
 let g:nuake_position = 'bottom'                                  " 'bottom', 'right', 'top' or 'left'.
 let g:nuake_size = 0.38                                          " 'default 0.25'
@@ -1640,8 +1641,8 @@ let g:which_key_map = {
   \
   \ 'm' : [ ':SignatureToggleSigns'                          , 'SignatureToggle'             ] ,
   \ 'q' : [ ':q'                                             , 'Exit Vim'                    ] ,
-  \ 's' : [ ':Startify'                                      , 'Go to Startify'              ] ,
-  \ ']' : [ '<Plug>MarkdownPreviewToggle'                    , 'MarkdownPreview'             ] ,
+  \ 'c' : [ ':Startify'                                      , 'Go to Startify'              ] ,
+  \ 'e' : [ '<Plug>MarkdownPreviewToggle'                    , 'MarkdownPreview'             ] ,
   \ 'p' : [ ':call mdip#MarkdownClipboardImage()<cr>'        , 'ClipboardImage to Vim'       ] ,
   \
   \ 'F2 ' : [ ''                                             , 'Toggle Number'               ] ,
@@ -1661,7 +1662,7 @@ let g:which_key_map[';'] = {
   \ 't'    : [ ':TagbarToggle<CR>'                           , 'TagBar Toggle'               ] ,
   \ 'e'    : [ ':NERDTreeToggle<CR>'                         , 'NERDTree Toggle'             ] ,
   \ 'm'    : [ ':SignatureToggleSigns<CR>'                   , 'Marker Toggle'               ] ,
-  \ 's'    : [ ':Nuake<CR>'                                  , 'Terminal Toggle'             ] ,
+  \ 'c'    : [ ':Nuake<CR>'                                  , 'Terminal Toggle'             ] ,
   \
   \ }
 
