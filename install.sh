@@ -834,7 +834,7 @@ main() {
             sudo apt autoremove -y -qq > /dev/null 2>&1
             sudo apt-get clean > /dev/null 2>&1
             echo -e "              ${green}[√] *** All Install Successful *** ${reset}\n"
-            bash
+            cd $HOME
             bash $HOME/dotfiles/setup/setup_tools.sh
             cd $HOME
             bash
