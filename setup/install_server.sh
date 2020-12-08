@@ -767,14 +767,14 @@ main() {
             exit 0
             ;;
         -[aA]|-all)
-            install_dotfiles \
-            workspace_settings \
-            sysUpdate \
-            aptInstall \
-            pipInstall \
-            gemInstall \
-            LocalDpkg \
-            LoaclConfig \
+            install_dotfiles
+            workspace_settings
+            sysUpdate
+            aptInstall
+            pipInstall
+            gemInstall
+            LocalDpkg
+            LoaclConfig
             installFonts
             sudo apt-get -y -qq --purge remove byobu gnome-terminal yelp > /dev/null 2>&1
             sudo apt autoremove -y -qq > /dev/null 2>&1
@@ -791,12 +791,12 @@ main() {
             bash
             ;;
         -[sS])
-            sysUpdate \
-	        aptInstall \
-	        pipInstall \
-            gemInstall \
-            LocalDpkg \
-            LoaclConfig \
+            sysUpdate
+            aptInstall
+            pipInstall
+            gemInstall
+            LocalDpkg
+            LoaclConfig
             sudo apt-get -y -qq --purge remove byobu gnome-terminal yelp > /dev/null 2>&1
             sudo apt autoremove -y -qq > /dev/null 2>&1
             sudo apt-get clean
