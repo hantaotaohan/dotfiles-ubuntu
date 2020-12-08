@@ -770,8 +770,8 @@ main() {
             install_dotfiles \
             workspace_settings \
             sysUpdate \
-	        aptInstall \
-	        pipInstall \
+            aptInstall \
+            pipInstall \
             gemInstall \
             LocalDpkg \
             LoaclConfig \
