@@ -9,8 +9,11 @@
 ! BaseKey       Base        Shift       Mode_switch       Shift+Mode_switch
 !---------------------------------------------------------------------------
 
-keycode 66 = Mode_switch
 clear Lock
+! clear control
+! add control = Caps_Lock Control_L Control_R
+! keycode 66 = Mode_switch Control_L
+keycode 66 = Mode_switch
 
 ! Caps + hjkl > left Down Up Right
 keycode 43 = h H Left
