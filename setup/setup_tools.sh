@@ -429,6 +429,8 @@ Crow_Translate() {
     wget -P $HOME/desktop https://download.fastgit.org/crow-translate/crow-translate/releases/download/2.6.1/crow-translate_2.6.1_amd64.deb
     cd $HOME/desktop
     sudo dpkg -i crow-translate_2.6.1_amd64.deb
+    sudo apt install -f
+    sudo dpkg -i crow-translate_2.6.1_amd64.deb   
     rm -rf $HOME/desktop/crow-translate_2.6.1_amd64.deb
     cd $HOME
     row
