@@ -591,6 +591,20 @@ main() {
             # SSR
             # Github
             ;;
+        -[sS])
+            VIM
+            Imagemagick
+            Jupyter
+            Navi
+            Offlineimap
+            Rdrview
+            SSH_banner
+            # Copytranslator
+            Ctags
+            Nodejs
+            # SSR
+            # Github
+            ;; 
         -[qQ]) 
             exit; break 
             ;;
