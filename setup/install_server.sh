@@ -767,24 +767,23 @@ main() {
             exit 0
             ;;
         -[aA]|-all)
-            install_dotfiles
-            workspace_settings
-            sysUpdate
-	        aptInstall
-	        pipInstall
-            gemInstall
-            LocalDpkg
-            LoaclConfig
+            install_dotfiles \
+            workspace_settings \
+            sysUpdate \
+	        aptInstall \
+	        pipInstall \
+            gemInstall \
+            LocalDpkg \
+            LoaclConfig \
             installFonts
-	    Make_apps
             sudo apt-get -y -qq --purge remove byobu gnome-terminal yelp > /dev/null 2>&1
             sudo apt autoremove -y -qq > /dev/null 2>&1
-	    sudo apt-get clean > /dev/null 2>&1
+            sudo apt-get clean > /dev/null 2>&1
             echo -e "              ${green}[√] *** All Install Successful *** ${reset}\n"
-	    bash
-	    bash $HOME/dotfiles/setup/setup_tools.sh
-	    cd $HOME
-	    bash
+            bash
+            bash $HOME/dotfiles/setup/setup_tools.sh
+            cd $HOME
+            bash
             ;;
         -[dD])
             install_dotfiles
@@ -792,16 +791,15 @@ main() {
             bash
             ;;
         -[sS])
-            sysUpdate
-	        aptInstall
-	        pipInstall
-            gemInstall
-            LocalDpkg
-            LoaclConfig
-	    Make_apps
-	    sudo apt-get -y -qq --purge remove byobu gnome-terminal yelp > /dev/null 2>&1
+            sysUpdate \
+	        aptInstall \
+	        pipInstall \
+            gemInstall \
+            LocalDpkg \
+            LoaclConfig \
+            sudo apt-get -y -qq --purge remove byobu gnome-terminal yelp > /dev/null 2>&1
             sudo apt autoremove -y -qq > /dev/null 2>&1
-	    sudo apt-get clean
+            sudo apt-get clean
 	    echo -e "              ${green}[√] *** All Install Successful *** ${reset}\n"
             bash
             ;;
