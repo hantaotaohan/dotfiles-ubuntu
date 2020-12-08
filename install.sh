@@ -871,11 +871,11 @@ main() {
             bash
             ;;
         -4)
-	        aptInstall
+            aptInstall
             bash
             ;;
         -5)
-	        pipInstall
+            pipInstall
             bash
             ;;
         -6)
