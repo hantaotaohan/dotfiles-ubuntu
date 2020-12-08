@@ -39,35 +39,35 @@ Backup_dir="$HOME/.dotfiles.orig"
 Dotfiles_repo=$(pwd)
 #Dotfiles_repo=$(dirname $PWD)
 
-Dotfiles_symlinks=(\
-        .aliases\
-        .bashrc\
-        .bash_profile\
-        .bash_prompt\
-        .curlrc\
-        .exports\
-	.functions\
-	.fonts.conf\
-        .dircolors\
-        .gitignore\
-        .gitconfig\
-        .inputrc\
-        .ripgreprc\
-        .tmux.conf\
-        .vimrc\
-	.offlineimaprc\
-	.msmtprc\
-        .wgetrc\
-        .Xmodmap\
-	.imwheelrc\
+Dotfiles_symlinks=( \
+        .aliases \
+        .bashrc \
+        .bash_profile \
+        .bash_prompt \
+        .curlrc \
+        .exports \
+        .functions \
+        .fonts.conf \
+        .dircolors \
+        .gitignore \
+        .gitconfig \
+        .inputrc \
+        .ripgreprc \
+        .tmux.conf \
+        .vimrc \
+        .offlineimaprc \
+        .msmtprc \
+        .wgetrc \
+        .Xmodmap \
+        .imwheelrc \
         .Xresources
         )
 
-Dotfiles_copy=(\
-        .config\
-        .vim\
-        .w3m\
-	.snclirc\
+Dotfiles_copy=( \
+        .config \
+        .vim \
+        .w3m \
+        .snclirc \
         extras/z.lua
         )
 
@@ -339,82 +339,82 @@ echo -e "              ${blue}Apt - Install${reset}                             
 echo -e "-------------------------------------------------------------------------------";
 echo -e "                                                                               ";
 
-	aptApps=(\
-        wget\
-        git\
-        python3-pip\
-        python-pip\
-        curl\
-        #ctags\
-        vim\
-	vim-gtk\
-        tmux\
-	neomutt\
-        silversearcher-ag\
-        w3m\
-	wmctrl\
-	tree\
-	zip\
-        unzip\
-        ranger\
-        xclip\
-        inotify-tools\
-        zlib1g-dev\
-        ruby-full\
-        xvfb\
-        xserver-xorg\
-	xdotool\
-        dbus-x11\
-        xinit\
-        language-pack-zh-hans\
-        fonts-wqy-microhei\
-        fcitx\
-        fcitx-pinyin\
-	fcitx-module-cloudpinyin\
-        i3\
-        rofi\
-        feh\
-        compton\
-        i3status\
-        i3lock-fancy\
-        zathura\
-        i3blocks\
-        xinput\
-	jq\
-        open-vm-tools\
-        open-vm-tools-desktop\
-	language-pack-gnome-zh-hans\
-        #calibre\
-        deepin-screenshot\
-        openssh-server\
-        openssh-client\
-	offlineimap\
-	msmtp\
-	solaar\
-	ncdu\
-	nautilus\
-	newsboat\
-	axel\
-	pv\
-	aria2\
-	rar\
-	unrar\
-	ffmpeg\
-	xautolock\
-	vlc\
-	p7zip-full\
-	gnome-keyring\
-	lua5.2\
-	imwheel\
-	libsecret-tools\
-	yank
+	aptApps=( \
+        wget \
+        git \
+        python3-pip \
+        python-pip \
+        curl \
+        #ctags \
+        vim \
+        vim-gtk \
+        tmux \
+        neomutt \
+        silversearcher-ag \
+        w3m \
+        wmctrl \
+        tree \
+        zip \
+        unzip \
+        ranger \
+        xclip \
+        inotify-tools \
+        zlib1g-dev \
+        ruby-full \
+        xvfb \
+        xserver-xorg \
+        xdotool \
+        dbus-x11 \
+        xinit \
+        language-pack-zh-hans \
+        fonts-wqy-microhei \
+        fcitx \
+        fcitx-pinyin \
+        fcitx-module-cloudpinyin \
+        i3 \
+        rofi \
+        feh \
+        compton \
+        i3status \
+        i3lock-fancy \
+        zathura \
+        i3blocks \
+        xinput \
+        jq \
+        open-vm-tools \
+        open-vm-tools-desktop \
+        language-pack-gnome-zh-hans \
+        #calibre \
+        deepin-screenshot \
+        openssh-server \
+        openssh-client \
+        offlineimap \
+        msmtp \
+        solaar \
+        ncdu \
+        nautilus \
+        newsboat \
+        axel \
+        pv \
+        aria2 \
+        rar \
+        unrar \
+        ffmpeg \
+        xautolock \
+        vlc \
+        p7zip-full \
+        gnome-keyring \
+        lua5.2 \
+        imwheel \
+        libsecret-tools \
+        yank
         )
-	for app in "${aptApps[@]}"
-	do
-        echo -e "              [*] Installing: $app";
-		sudo apt install -y -qq $app > /dev/null 2>&1
-		installSuccess $? $app
-	done
+        for app in "${aptApps[@]}"
+        do
+            echo -e "              [*] Installing: $app";
+            sudo apt install -y -qq $app > /dev/null 2>&1
+            installSuccess $? $app
+        done
 }
 
 #----------------------------------------------------------------------------------------#
@@ -437,32 +437,32 @@ echo -e "              ${blue}PIP3 - Install${reset}                            
 echo -e "-------------------------------------------------------------------------------";
 echo -e "                                                                               ";
 
-	pipApps=(\
-        #powerline-shell\
-        #pandas\
-        #django\
-        pyvirtualdisplay\
-        #selenium\
-	tabview\
-	you-get\
-	sncli\
-	i3ipc\
-	#ipython\
-	#beautifulsoup4\
-	keyring\
-	mdv\
-	#notebook\
-	#prompt-toolkit\
-	litecli\
-	raiseorlaunch\
-	xlsx2csv
+	pipApps=( \
+        #powerline-shell \
+        #pandas \
+        #django \
+        pyvirtualdisplay \
+        #selenium \
+        tabview \
+        you-get \
+        sncli \
+        i3ipc \
+        #ipython \
+        #beautifulsoup4 \
+        keyring \
+        mdv \
+        #notebook \
+        #prompt-toolkit \
+        litecli \
+        raiseorlaunch \
+        xlsx2csv
         )
-	for app in "${pipApps[@]}"
-	do
-        echo -e "              [*] Installing: $app";
-		sudo pip3 install -q --timeout 1000 --retries 20  $app -i https://pypi.tuna.tsinghua.edu.cn/simple > /dev/null 2>&1
-		installSuccess $? $app
-	done
+        for app in "${pipApps[@]}"
+        do
+            echo -e "              [*] Installing: $app";
+            sudo pip3 install -q --timeout 1000 --retries 20  $app -i https://pypi.tuna.tsinghua.edu.cn/simple > /dev/null 2>&1
+            installSuccess $? $app
+        done
 }
 
 #----------------------------------------------------------------------------------------#
@@ -488,15 +488,15 @@ echo -e "                                                                       
 	gemApps=(\
         vimwiki_markdown
         )
-	for app in "${gemApps[@]}"
-	do
-        echo -e "              [*] Installing: $app";
-		gem sources --remove https://rubygems.org/ > /dev/null 2>&1
-		gem sources -a https://gems.ruby-china.com/ > /dev/null 2>&1
-		sudo gem install $app > /dev/null 2>&1
-		#sudo gem install --local $Dotfiles_repo/bin/$app > /dev/null 2>&1
-		installSuccess $? $app
-	done
+        for app in "${gemApps[@]}"
+        do
+            echo -e "              [*] Installing: $app";
+            gem sources --remove https://rubygems.org/ > /dev/null 2>&1
+            gem sources -a https://gems.ruby-china.com/ > /dev/null 2>&1
+            sudo gem install $app > /dev/null 2>&1
+            #sudo gem install --local $Dotfiles_repo/bin/$app > /dev/null 2>&1
+            installSuccess $? $app
+        done
 }
 
 #----------------------------------------------------------------------------------------#
@@ -519,19 +519,19 @@ echo -e "              ${blue}Local - Install ${reset}                          
 echo -e "-------------------------------------------------------------------------------";
 echo -e "                                                                               ";
 
-	dpkgApps=(\
-        ripgrep.deb\
-        fd.deb\
-        bat.deb\
-	#resilio-sync.deb\
+	dpkgApps=( \
+        ripgrep.deb \
+        fd.deb \
+        bat.deb \
+        #resilio-sync.deb \
         Alacritty.deb
         )
-	for app in "${dpkgApps[@]}"
-	do
-        echo -e "              [*] Installing: $app";
-		sudo dpkg -i $Dotfiles_repo/bin/$app > /dev/null 2>&1
-		installSuccess $? $app
-	done
+        for app in "${dpkgApps[@]}"
+        do
+            echo -e "              [*] Installing: $app";
+            sudo dpkg -i $Dotfiles_repo/bin/$app > /dev/null 2>&1
+            installSuccess $? $app
+        done
 }
 
 LoaclConfig() {
@@ -823,21 +823,21 @@ main() {
             install_dotfiles
             workspace_settings
             sysUpdate
-	        aptInstall
-	        pipInstall
+            aptInstall
+            pipInstall
             gemInstall
             LocalDpkg
             LoaclConfig
             installFonts
-	    Make_apps
+            Make_apps
             sudo apt-get -y -qq --purge remove byobu gnome-terminal yelp > /dev/null 2>&1
             sudo apt autoremove -y -qq > /dev/null 2>&1
-	    sudo apt-get clean > /dev/null 2>&1
+            sudo apt-get clean > /dev/null 2>&1
             echo -e "              ${green}[√] *** All Install Successful *** ${reset}\n"
-	    bash
-	    bash $HOME/dotfiles/setup/setup_tools.sh
-	    cd $HOME
-	    bash
+            bash
+            bash $HOME/dotfiles/setup/setup_tools.sh
+            cd $HOME
+            bash
             ;;
         -[dD])
             install_dotfiles
@@ -846,16 +846,16 @@ main() {
             ;;
         -[sS])
             sysUpdate
-	        aptInstall
-	        pipInstall
+            aptInstall
+            pipInstall
             gemInstall
             LocalDpkg
             LoaclConfig
-	    Make_apps
-	    sudo apt-get -y -qq --purge remove byobu gnome-terminal yelp > /dev/null 2>&1
+            Make_apps
+            sudo apt-get -y -qq --purge remove byobu gnome-terminal yelp > /dev/null 2>&1
             sudo apt autoremove -y -qq > /dev/null 2>&1
-	    sudo apt-get clean
-	    echo -e "              ${green}[√] *** All Install Successful *** ${reset}\n"
+            sudo apt-get clean
+            echo -e "              ${green}[√] *** All Install Successful *** ${reset}\n"
             bash
             ;;
         -1)
