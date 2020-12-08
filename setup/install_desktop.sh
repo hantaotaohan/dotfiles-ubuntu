@@ -39,32 +39,36 @@ Backup_dir="$HOME/.dotfiles.orig"
 Dotfiles_repo=$(pwd)
 #Dotfiles_repo=$(dirname $PWD)
 
-Dotfiles_symlinks=(\
-        .aliases\
-        .bashrc\
-        .bash_profile\
-        .bash_prompt\
-        .curlrc\
-        .exports\
-	    .functions\
-	    .fzf.bash\
-        .dircolors\
-        .gitignore\
-        .gitconfig\
-        .inputrc\
-        .ripgreprc\
-        .tmux.conf\
-        .vimrc\
-        .wgetrc\
-        .Xmodmap\
+Dotfiles_symlinks=( \
+        .aliases \
+        .bashrc \
+        .bash_profile \
+        .bash_prompt \
+        .curlrc \
+        .exports \
+        .functions \
+        .fonts.conf \
+        .dircolors \
+        .gitignore \
+        .gitconfig \
+        .inputrc \
+        .ripgreprc \
+        .tmux.conf \
+        .vimrc \
+        .offlineimaprc \
+        .msmtprc \
+        .wgetrc \
+        .Xmodmap \
+        .imwheelrc \
         .Xresources
         )
 
-Dotfiles_copy=(\
-        .config\
-        .vim\
-        .w3m\
-        extras
+Dotfiles_copy=( \
+        .config \
+        .vim \
+        .w3m \
+        .snclirc \
+        extras/z.lua
         )
 
 #----------------------------------------------------------------------------------------#
@@ -258,8 +262,8 @@ echo -e "-----------------------------------------------------------------------
 echo -e "                                                                               ";
 
 # Make Floder
-if [ ! -d "$HOME/Workspace" ]; then mkdir -p "$HOME/Workspace"; fi
-if [ ! -d "$HOME/Desktop" ]; then mkdir -p "$HOME/Desktop"; fi
+if [ ! -d "$HOME/workspace" ]; then mkdir -p "$HOME/workspace"; fi
+if [ ! -d "$HOME/desktop" ]; then mkdir -p "$HOME/desktop"; fi
 
 # Set Xrdb
 #if [ ! "$XDG_VTNR" = "" ]; then
@@ -306,7 +310,8 @@ echo -e "              ${blue}Repace Sources and System Update ${reset}         
 echo -e "-------------------------------------------------------------------------------";
 echo -e "                                                                               ";
 
-sudo ln -sf "$Dotfiles_repo/sources.list" "/etc/apt/sources.list"
+#sudo ln -sf "$Dotfiles_repo/sources.list" "/etc/apt/sources.list"
+sudo cp "$Dotfiles_repo/sources.list" "/etc/apt/sources.list"
 echo -e "              ${green}[+]Repace sources.list Done !${reset}\n"
 sudo apt update -y -qq > /dev/null 2>&1
 echo -e "              ${green}[+]Update Successful !${reset}\n"
@@ -334,54 +339,82 @@ echo -e "              ${blue}Apt - Install${reset}                             
 echo -e "-------------------------------------------------------------------------------";
 echo -e "                                                                               ";
 
-	aptApps=(\
-        wget\
-        git\
-        python3-pip\
-        python-pip\
-        curl\
-        ctags\
-        vim\
-        tmux\
-        silversearcher-ag\
-        w3m\
-        unzip\
-        ranger\
-        xclip\
-        inotify-tools\
-        zlib1g-dev\
-        ruby-full\
-        xvfb\
-        xserver-xorg\
-        dbus-x11\
-        xinit\
-        language-pack-zh-hans\
-        fonts-wqy-microhei\
-        fcitx\
-        fcitx-pinyin\
-        i3\
-        rofi\
-        feh\
-        compton\
-        i3status\
-        i3lock-fancy\
-        zathura\
-        i3blocks\
-        xinput\
-        open-vm-tools\
-        open-vm-tools-desktop\
-        calibre\
-        deepin-screenshot\
-        openssh-server\
-        openssh-client\
-	yank
+	aptApps=( \
+        wget \
+        git \
+        python3-pip \
+        python-pip \
+        curl \
+        #ctags \
+        vim \
+        vim-gtk \
+        tmux \
+        neomutt \
+        silversearcher-ag \
+        w3m \
+        wmctrl \
+        tree \
+        zip \
+        unzip \
+        ranger \
+        xclip \
+        inotify-tools \
+        zlib1g-dev \
+        ruby-full \
+        xvfb \
+        xserver-xorg \
+        xdotool \
+        dbus-x11 \
+        xinit \
+        language-pack-zh-hans \
+        fonts-wqy-microhei \
+        fcitx \
+        fcitx-pinyin \
+        fcitx-module-cloudpinyin \
+        i3 \
+        rofi \
+        feh \
+        compton \
+        i3status \
+        i3lock-fancy \
+        zathura \
+        i3blocks \
+        xinput \
+        jq \
+        open-vm-tools \
+        open-vm-tools-desktop \
+        language-pack-gnome-zh-hans \
+        #calibre \
+        deepin-screenshot \
+        openssh-server \
+        openssh-client \
+        offlineimap \
+        msmtp \
+        solaar \
+        ncdu \
+        nautilus \
+        newsboat \
+        axel \
+        pv \
+        aria2 \
+        rar \
+        unrar \
+        ffmpeg \
+        xautolock \
+        vlc \
+        p7zip-full \
+        gnome-keyring \
+        lua5.2 \
+        imwheel \
+        libsecret-tools \
+        yank
         )
-	for app in "${aptApps[@]}"
-	do
-        echo -e "              [*] Installing: $app";
-		sudo apt install -y -qq $app > /dev/null 2>&1
-		installSuccess $? $app
-	done
+        for app in "${aptApps[@]}"
+        do
+            echo -e "              [*] Installing: $app";
+            sudo apt install -y -qq $app > /dev/null 2>&1
+            installSuccess $? $app
+        done
 }
 
 #----------------------------------------------------------------------------------------#
@@ -404,20 +437,32 @@ echo -e "              ${blue}PIP3 - Install${reset}                            
 echo -e "-------------------------------------------------------------------------------";
 echo -e "                                                                               ";
 
-	pipApps=(\
-        powerline-shell\
-        pandas\
-        django\
-        pyvirtualdisplay\
-        selenium\
-	xlsx2csv
+	pipApps=( \
+        #powerline-shell \
+        #pandas \
+        #django \
+        pyvirtualdisplay \
+        #selenium \
+        tabview \
+        you-get \
+        sncli \
+        i3ipc \
+        #ipython \
+        #beautifulsoup4 \
+        keyring \
+        mdv \
+        #notebook \
+        #prompt-toolkit \
+        litecli \
+        raiseorlaunch \
+        xlsx2csv
         )
-	for app in "${pipApps[@]}"
-	do
-        echo -e "              [*] Installing: $app";
-		sudo pip3 install -q --timeout 1000 $app -i https://pypi.tuna.tsinghua.edu.cn/simple/ > /dev/null 2>&1
-		installSuccess $? $app
-	done
+        for app in "${pipApps[@]}"
+        do
+            echo -e "              [*] Installing: $app";
+            sudo pip3 install -q --timeout 1000 --retries 20  $app -i https://pypi.tuna.tsinghua.edu.cn/simple > /dev/null 2>&1
+            installSuccess $? $app
+        done
 }
 
 #----------------------------------------------------------------------------------------#
@@ -443,12 +488,15 @@ echo -e "                                                                       
 	gemApps=(\
         vimwiki_markdown
         )
-	for app in "${gemApps[@]}"
-	do
-        echo -e "              [*] Installing: $app";
-		sudo gem install $app > /dev/null 2>&1
-		installSuccess $? $app
-	done
+        for app in "${gemApps[@]}"
+        do
+            echo -e "              [*] Installing: $app";
+            gem sources --remove https://rubygems.org/ > /dev/null 2>&1
+            gem sources -a https://gems.ruby-china.com/ > /dev/null 2>&1
+            sudo gem install $app > /dev/null 2>&1
+            #sudo gem install --local $Dotfiles_repo/bin/$app > /dev/null 2>&1
+            installSuccess $? $app
+        done
 }
 
 #----------------------------------------------------------------------------------------#
@@ -471,18 +519,19 @@ echo -e "              ${blue}Local - Install ${reset}                          
 echo -e "-------------------------------------------------------------------------------";
 echo -e "                                                                               ";
 
-	dpkgApps=(\
-        ripgrep.deb\
-        fd.deb\
-        bat.deb\
+	dpkgApps=( \
+        ripgrep.deb \
+        fd.deb \
+        bat.deb \
+        #resilio-sync.deb \
         Alacritty.deb
         )
-	for app in "${dpkgApps[@]}"
-	do
-        echo -e "              [*] Installing: $app";
-		sudo dpkg -i $Dotfiles_repo/bin/$app > /dev/null 2>&1
-		installSuccess $? $app
-	done
+        for app in "${dpkgApps[@]}"
+        do
+            echo -e "              [*] Installing: $app";
+            sudo dpkg -i $Dotfiles_repo/bin/$app > /dev/null 2>&1
+            installSuccess $? $app
+        done
 }
 
 LoaclConfig() {
@@ -507,14 +556,18 @@ echo -e "                                                                       
 
         im-config -n fcitx > /dev/null 2>&1
         im-config -s fcitx > /dev/null 2>&1
-	if [ -f "/usr/share/fcitx/imicon/pinyin.png" ]; then
-	sudo mv /usr/share/fcitx/imicon/pinyin.png pinyin.png1
-	fi
-	if [ -f "/usr/share/fcitx/skin/dark/en.png" ]; then
-	sudo mv /usr/share/fcitx/skin/dark/en.png inactive.png
-	fi
+        if [ -f "/usr/share/fcitx/imicon/pinyin.png" ]; then
+            sudo mv /usr/share/fcitx/imicon/pinyin.png /usr/share/fcitx/imicon/pinyin.png1
+    	fi
+    	if [ -f "/usr/share/fcitx/skin/dark/cn.png" ]; then
+            sudo cp $Dotfiles_repo/setup/fcitx/cn.png /usr/share/fcitx/skin/dark/active.png
+    	fi
+    	if [ -f "/usr/share/fcitx/skin/dark/vk_inactive.png" ]; then
+            sudo cp $Dotfiles_repo/setup/fcitx/en.png /usr/share/fcitx/skin/dark/inactive.png
+    	fi
         echo -e "              ${green}[√] Fcitx Successful${reset}\n"
 
+	
 #----------------------------------------------------------------------------------------#
 # TLDR 
 #----------------------------------------------------------------------------------------#
@@ -565,8 +618,9 @@ echo -e "                                                                       
             env mkdir $HOME/chrome-extend
         fi
         unzip -q $Dotfiles_repo/chrome/darkreader.zip -d $HOME/chrome-extend
-        unzip -q $Dotfiles_repo/chrome/vimium.zip -d $HOME/chrome-extend
         unzip -q $Dotfiles_repo/chrome/proxyswitch.zip -d $HOME/chrome-extend
+        unzip -q $Dotfiles_repo/chrome/tampermonkey.zip -d $HOME/chrome-extend
+        unzip -q $Dotfiles_repo/chrome/Surfingkeys.zip -d $HOME/chrome-extend
         echo -e "              ${green}[√] Unzip ChromeExtend-Pack Successful${reset}\n"
 
 #----------------------------------------------------------------------------------------#
@@ -598,6 +652,27 @@ echo -e "                                                                       
             sudo chmod 777 /usr/local/bin/diff-so-fancy
         fi
         echo -e "              ${green}[√] Diff-So-Fancy Successful${reset}\n"
+	
+#----------------------------------------------------------------------------------------#
+# Install trans
+#----------------------------------------------------------------------------------------#
+
+        if [ ! -f "/usr/local/bin/trans" ]; then
+            sudo cp -f $Dotfiles_repo/bin/trans /usr/local/bin
+            sudo chmod 777 /usr/local/bin/trans
+        else
+            sudo rm -rf /usr/local/bin/trans
+            sudo cp -f $Dotfiles_repo/bin/trans /usr/local/bin
+            sudo chmod 777 /usr/local/bin/trans
+        fi
+        echo -e "              ${green}[√] Trans Successful${reset}\n"
+
+#----------------------------------------------------------------------------------------#
+# Install FZF
+#----------------------------------------------------------------------------------------#
+
+#        $HOME/.fzf/install --all
+#        echo -e "              ${green}[√] FZF Successful${reset}\n"
 
 #----------------------------------------------------------------------------------------#
 # Install Vim Plug
@@ -605,6 +680,30 @@ echo -e "                                                                       
 
         vim
         echo -e "              ${green}[√] Vim Successful${reset}\n"
+
+#----------------------------------------------------------------------------------------#
+# Install Tabview
+#----------------------------------------------------------------------------------------#
+
+#        if [ -f "$HOME/.local/bin/tabview" ]; then
+#            sudo cp $HOME/.local/bin/tabview /bin/
+#            sudo chmod +x /bin/tabview
+#        fi
+#        echo -e "              ${green}[√] Tabview Successful${reset}\n"
+
+#----------------------------------------------------------------------------------------#
+# Install Rsync
+#----------------------------------------------------------------------------------------#
+
+#        if [ -f "/usr/bin/rslsync" ]; then
+#	    sudo usermod -aG $USER rslsync &&\
+#	    sudo usermod -aG rslsync $USER &&\
+#	    sudo chmod g+rw $HOME &&\
+#	    systemctl --user enable resilio-sync &&\
+#	    systemctl --user start resilio-sync &&\
+#	    sudo service resilio-sync start    
+#        fi
+#        echo -e "              ${green}[√] Rsync Successful${reset}\n"
 }
 
 #----------------------------------------------------------------------------------------#
@@ -627,12 +726,12 @@ echo -e "              ${blue}Fonts Install ${reset}                            
 echo -e "-------------------------------------------------------------------------------";
 echo -e "                                                                               ";
 
-        if [ ! -d "$HOME/Fonts" ]; then
-            git clone --depth=1 -q\
-                https://github.com/hantaotaohan/Fonts_minimize.git\
-                $HOME/Fonts && cd $HOME/Fonts && ./install.sh
+        if [ ! -d "$HOME/fonts" ]; then
+            git clone -q\
+                https://hub.fastgit.org/hantaotaohan/fonts_minimize.git\
+                $HOME/fonts && cd $HOME/fonts && ./install.sh
         else
-            cd $HOME/Fonts &&\
+            cd $HOME/fonts &&\
             git reset -q --hard && git pull -q && ./install.sh
         fi
 }
@@ -642,7 +741,7 @@ echo -e "                                                                       
 #----------------------------------------------------------------------------------------#
 
 Make_apps() {
-	pushd $HOME/extras/i3lock_fancy > /dev/null
+	pushd $Dotfiles_repo/setup/i3lock_fancy > /dev/null
 	sudo make install
 	popd > /dev/null
 	echo -e "              ${green}[√] Make_apps Successful${reset}\n"
@@ -706,6 +805,8 @@ main() {
     echo "                                                                               "
     echo " -9        Install Server Edition                                              "
     echo "                                                                               "
+    echo " -t        Install Tools                                                       "
+    echo "                                                                               "
     echo " -q        Exit                                                                "
     echo "                                                                               "
     echo "-------------------------------------------------------------------------------"
@@ -718,21 +819,24 @@ main() {
             usage
             exit 0
             ;;
-        -[aA])
+        -[aA]|-all)
             install_dotfiles
             workspace_settings
             sysUpdate
-	        aptInstall
-	        pipInstall
+            aptInstall
+            pipInstall
             gemInstall
             LocalDpkg
             LoaclConfig
             installFonts
-	    Make_apps
-	    sudo apt-get -y -qq --purge remove byobu
+            Make_apps
+            sudo apt-get -y -qq --purge remove byobu gnome-terminal yelp > /dev/null 2>&1
             sudo apt autoremove -y -qq > /dev/null 2>&1
-	    sudo apt-get clean
-            echo -e "              ${green}[√] *** All Install Successful *** l${reset}\n"
+            sudo apt-get clean > /dev/null 2>&1
+            echo -e "              ${green}[√] *** All Install Successful *** ${reset}\n"
+            bash
+            bash $HOME/dotfiles/setup/setup_tools.sh
+            cd $HOME
             bash
             ;;
         -[dD])
@@ -742,16 +846,16 @@ main() {
             ;;
         -[sS])
             sysUpdate
-	        aptInstall
-	        pipInstall
+            aptInstall
+            pipInstall
             gemInstall
             LocalDpkg
             LoaclConfig
-	    Make_apps
-	    sudo apt-get -y -qq --purge remove byobu
+            Make_apps
+            sudo apt-get -y -qq --purge remove byobu gnome-terminal yelp > /dev/null 2>&1
             sudo apt autoremove -y -qq > /dev/null 2>&1
-	    sudo apt-get clean
-            echo -e "              ${green}[√] *** All Install Successful *** l${reset}\n"
+            sudo apt-get clean
+            echo -e "              ${green}[√] *** All Install Successful *** ${reset}\n"
             bash
             ;;
         -1)
@@ -788,7 +892,11 @@ main() {
             bash
             ;;
     	-9)
-            bash $HOME/Dotfiles/setup/install_server.sh
+            bash $Dotfiles_repo/setup/install_server.sh
+            bash
+            ;;
+	-[tT])
+            bash $Dotfiles_repo/setup/setup_tools.sh
             bash
             ;;
         [qQ]) 
