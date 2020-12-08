@@ -426,12 +426,9 @@ Nodejs() {
 }
 
 Crow_Translate() {
-    sudo add-apt-repository -y ppa:jonmagon/crow-translate
-    sudo sed -i "s/http:\/\/ppa.launchpad.net/https:\/\/launchpad.proxy.ustclug.org/g" /etc/apt/sources.list.d/*.list
-    sudo apt update
-    sudo apt install -y crow-translate
-    sudo sed -i "s/https:\/\/launchpad.proxy.ustclug.org/http:\/\/ppa.launchpad.net/g" /etc/apt/sources.list.d/*.list
-    sudo add-apt-repository -y --remove ppa:jonmagon/crow-translate
+    wget -P $HOME/desktop https://download.fastgit.org/crow-translate/crow-translate/releases/download/2.6.1/crow-translate_2.6.1_amd64.deb
+    sudo dpkg -i $HOME/desktop/crow-translate_2.6.1_amd64.deb
+    rm -rf $HOME/desktop/crow-translate_2.6.1_amd64.deb
     row
 }
 
