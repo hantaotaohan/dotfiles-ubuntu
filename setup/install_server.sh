@@ -17,7 +17,7 @@ echo -e "              |___||_| \_||____/   |_|  /_/   \_\|_____||_____|        
 echo -e "                                                                               ";                                                                                    
 echo -e "                                                                               ";
 echo -e "-------------------------------------------------------------------------------";
-echo -e "              TaoTao - Saber - Ubuntu - Server - Install                       ";
+echo -e "              TaoTao - Saber - Ubuntu - Desktop - Install                      ";
 echo -e "-------------------------------------------------------------------------------";
 echo -e "                                                                               ";
 
@@ -39,32 +39,34 @@ Backup_dir="$HOME/.dotfiles.orig"
 Dotfiles_repo=$(pwd)
 #Dotfiles_repo=$(dirname $PWD)
 
-Dotfiles_symlinks=(\
-        .aliases\
-        .bashrc\
-        .bash_profile\
-        .bash_prompt\
-        .curlrc\
-        .exports\
-	    .functions\
-	    .fzf.bash\
-        .dircolors\
-        .gitignore\
-        .gitconfig\
-        .inputrc\
-        .ripgreprc\
-        .tmux.conf\
-        .vimrc\
-        .wgetrc\
-        .Xmodmap\
+Dotfiles_symlinks=( \
+        .aliases \
+        .bashrc \
+        .bash_profile \
+        .bash_prompt \
+        .curlrc \
+        .exports \
+        .functions \
+        .fonts.conf \
+        .dircolors \
+        .gitignore \
+        .gitconfig \
+        .inputrc \
+        .ripgreprc \
+        .tmux.conf \
+        .vimrc \
+        .offlineimaprc \
+        .msmtprc \
+        .wgetrc \
         .Xresources
         )
 
-Dotfiles_copy=(\
-        .config\
-        .vim\
-        .w3m\
-        extras
+Dotfiles_copy=( \
+        .config \
+        .vim \
+        .w3m \
+        .snclirc \
+        extras/z.lua
         )
 
 #----------------------------------------------------------------------------------------#
@@ -98,7 +100,8 @@ Options:
  -6        Install GEM Tools                                                
  -7        Install Local Bin Folder Tools                                   
  -8        Install Fonts                                                    
-                                                                            
+ -9        Install Server Edition                                           
+                                                                      
  -q        Exit                                                             
                                                                             
 ------------------------------------------------------------------------------------------
@@ -257,8 +260,8 @@ echo -e "-----------------------------------------------------------------------
 echo -e "                                                                               ";
 
 # Make Floder
-if [ ! -d "$HOME/Workspace" ]; then mkdir -p "$HOME/Workspace"; fi
-if [ ! -d "$HOME/Desktop" ]; then mkdir -p "$HOME/Desktop"; fi
+if [ ! -d "$HOME/workspace" ]; then mkdir -p "$HOME/workspace"; fi
+if [ ! -d "$HOME/desktop" ]; then mkdir -p "$HOME/desktop"; fi
 
 # Set Xrdb
 #if [ ! "$XDG_VTNR" = "" ]; then
@@ -305,7 +308,8 @@ echo -e "              ${blue}Repace Sources and System Update ${reset}         
 echo -e "-------------------------------------------------------------------------------";
 echo -e "                                                                               ";
 
-sudo ln -sf "$Dotfiles_repo/sources.list" "/etc/apt/sources.list"
+#sudo ln -sf "$Dotfiles_repo/sources.list" "/etc/apt/sources.list"
+sudo cp "$Dotfiles_repo/sources.list" "/etc/apt/sources.list"
 echo -e "              ${green}[+]Repace sources.list Done !${reset}\n"
 sudo apt update -y -qq > /dev/null 2>&1
 echo -e "              ${green}[+]Update Successful !${reset}\n"
@@ -333,26 +337,53 @@ echo -e "              ${blue}Apt - Install${reset}                             
 echo -e "-------------------------------------------------------------------------------";
 echo -e "                                                                               ";
 
-	aptApps=(\
-        wget\
-        git\
-        python3-pip\
-        python-pip\
-        curl\
-        ctags\
-        vim\
-        tmux\
-        silversearcher-ag\
-        w3m\
-        unzip\
-        ranger\
-        inotify-tools\
-        zlib1g-dev\
-        ruby-full\
-        xvfb\
-        openssh-server\
-        openssh-client\
-	yank
+	aptApps=( \
+        wget \
+        git \
+        python3-pip \
+        python-pip \
+        curl \
+        #ctags \
+        vim \
+        vim-gtk \
+        tmux \
+        neomutt \
+        silversearcher-ag \
+        w3m \
+        wmctrl \
+        tree \
+        zip \
+        unzip \
+        ranger \
+        xclip \
+        inotify-tools \
+        zlib1g-dev \
+        ruby-full \
+        xvfb \
+        zathura \
+        xinput \
+        jq \
+        language-pack-gnome-zh-hans \
+        #calibre \
+        deepin-screenshot \
+        openssh-server \
+        openssh-client \
+        offlineimap \
+        msmtp \
+        ncdu \
+        nautilus \
+        newsboat \
+        axel \
+        pv \
+        aria2 \
+        rar \
+        unrar \
+        ffmpeg \
+        p7zip-full \
+        gnome-keyring \
+        lua5.2 \
+        libsecret-tools \
+        yank
         )
 	for app in "${aptApps[@]}"
 	do
@@ -382,18 +413,30 @@ echo -e "              ${blue}PIP3 - Install${reset}                            
 echo -e "-------------------------------------------------------------------------------";
 echo -e "                                                                               ";
 
-	pipApps=(\
-        powerline-shell\
-        pandas\
-        django\
-        pyvirtualdisplay\
-        selenium\
-	xlsx2csv
+	pipApps=( \
+        #powerline-shell \
+        #pandas \
+        #django \
+        pyvirtualdisplay \
+        #selenium \
+        tabview \
+        you-get \
+        sncli \
+        i3ipc \
+        #ipython \
+        #beautifulsoup4 \
+        keyring \
+        mdv \
+        #notebook \
+        #prompt-toolkit \
+        litecli \
+        raiseorlaunch \
+        xlsx2csv
         )
 	for app in "${pipApps[@]}"
 	do
         echo -e "              [*] Installing: $app";
-		sudo pip3 install -q --timeout 1000 $app -i https://pypi.tuna.tsinghua.edu.cn/simple/ > /dev/null 2>&1
+		sudo pip3 install -q --timeout 1000 --retries 20  $app -i https://pypi.tuna.tsinghua.edu.cn/simple > /dev/null 2>&1
 		installSuccess $? $app
 	done
 }
@@ -424,7 +467,10 @@ echo -e "                                                                       
 	for app in "${gemApps[@]}"
 	do
         echo -e "              [*] Installing: $app";
+		gem sources --remove https://rubygems.org/ > /dev/null 2>&1
+		gem sources -a https://gems.ruby-china.com/ > /dev/null 2>&1
 		sudo gem install $app > /dev/null 2>&1
+		#sudo gem install --local $Dotfiles_repo/bin/$app > /dev/null 2>&1
 		installSuccess $? $app
 	done
 }
@@ -449,10 +495,11 @@ echo -e "              ${blue}Local - Install ${reset}                          
 echo -e "-------------------------------------------------------------------------------";
 echo -e "                                                                               ";
 
-	dpkgApps=(\
-        ripgrep.deb\
-        fd.deb\
+	dpkgApps=( \
+        ripgrep.deb \
+        fd.deb \
         bat.deb
+        #resilio-sync.deb\
         )
 	for app in "${dpkgApps[@]}"
 	do
@@ -528,8 +575,9 @@ echo -e "                                                                       
             env mkdir $HOME/chrome-extend
         fi
         unzip -q $Dotfiles_repo/chrome/darkreader.zip -d $HOME/chrome-extend
-        unzip -q $Dotfiles_repo/chrome/vimium.zip -d $HOME/chrome-extend
         unzip -q $Dotfiles_repo/chrome/proxyswitch.zip -d $HOME/chrome-extend
+        unzip -q $Dotfiles_repo/chrome/tampermonkey.zip -d $HOME/chrome-extend
+        unzip -q $Dotfiles_repo/chrome/Surfingkeys.zip -d $HOME/chrome-extend
         echo -e "              ${green}[√] Unzip ChromeExtend-Pack Successful${reset}\n"
 
 #----------------------------------------------------------------------------------------#
@@ -561,6 +609,27 @@ echo -e "                                                                       
             sudo chmod 777 /usr/local/bin/diff-so-fancy
         fi
         echo -e "              ${green}[√] Diff-So-Fancy Successful${reset}\n"
+	
+#----------------------------------------------------------------------------------------#
+# Install trans
+#----------------------------------------------------------------------------------------#
+
+        if [ ! -f "/usr/local/bin/trans" ]; then
+            sudo cp -f $Dotfiles_repo/bin/trans /usr/local/bin
+            sudo chmod 777 /usr/local/bin/trans
+        else
+            sudo rm -rf /usr/local/bin/trans
+            sudo cp -f $Dotfiles_repo/bin/trans /usr/local/bin
+            sudo chmod 777 /usr/local/bin/trans
+        fi
+        echo -e "              ${green}[√] Trans Successful${reset}\n"
+
+#----------------------------------------------------------------------------------------#
+# Install FZF
+#----------------------------------------------------------------------------------------#
+
+#        $HOME/.fzf/install --all
+#        echo -e "              ${green}[√] FZF Successful${reset}\n"
 
 #----------------------------------------------------------------------------------------#
 # Install Vim Plug
@@ -568,6 +637,60 @@ echo -e "                                                                       
 
         vim
         echo -e "              ${green}[√] Vim Successful${reset}\n"
+
+#----------------------------------------------------------------------------------------#
+# Install Tabview
+#----------------------------------------------------------------------------------------#
+
+#        if [ -f "$HOME/.local/bin/tabview" ]; then
+#            sudo cp $HOME/.local/bin/tabview /bin/
+#            sudo chmod +x /bin/tabview
+#        fi
+#        echo -e "              ${green}[√] Tabview Successful${reset}\n"
+
+#----------------------------------------------------------------------------------------#
+# Install Rsync
+#----------------------------------------------------------------------------------------#
+
+#        if [ -f "/usr/bin/rslsync" ]; then
+#	    sudo usermod -aG $USER rslsync &&\
+#	    sudo usermod -aG rslsync $USER &&\
+#	    sudo chmod g+rw $HOME &&\
+#	    systemctl --user enable resilio-sync &&\
+#	    systemctl --user start resilio-sync &&\
+#	    sudo service resilio-sync start    
+#        fi
+#        echo -e "              ${green}[√] Rsync Successful${reset}\n"
+}
+
+#----------------------------------------------------------------------------------------#
+# Install - Fonts
+#----------------------------------------------------------------------------------------#
+
+installFonts() {
+
+echo -e "                                                                               ";
+echo -e "-------------------------------------------------------------------------------";
+echo -e "                                                                               ";           
+echo -e "               _____           _                                               ";
+echo -e "              |  ___|__  _ __ | |_ ___                                         ";
+echo -e "              | |_ / _ \| '_ \| __/ __|                                        ";
+echo -e "              |  _| (_) | | | | |_\__ \                                        ";
+echo -e "              |_|  \___/|_| |_|\__|___/   - Install                            ";
+echo -e "                                                                               ";           
+echo -e "-------------------------------------------------------------------------------";
+echo -e "              ${blue}Fonts Install ${reset}                                    ";
+echo -e "-------------------------------------------------------------------------------";
+echo -e "                                                                               ";
+
+        if [ ! -d "$HOME/fonts" ]; then
+            git clone -q\
+                https://hub.fastgit.org/hantaotaohan/fonts_minimize.git\
+                $HOME/fonts && cd $HOME/fonts && ./install.sh
+        else
+            cd $HOME/fonts &&\
+            git reset -q --hard && git pull -q && ./install.sh
+        fi
 }
 
 
@@ -606,29 +729,35 @@ main() {
     Sync_Dotfiles
 
     echo "                                                                            "
-    echo "----------------------------------------------------------------------------"
-    echo "                                                                            "
-    echo " -h        Print this message                                               "
-    echo "                                                                            "
-    echo " -A        Install All                                                      "
-    echo " -D        Install Dotfiles & Enviroment                                    "
-    echo " -S        Update System & Setup Alls Tools & Enviroment                    "
-    echo "                                                                            "
-    echo "----------------------------------------------------------------------------"
-    echo "                                                                            "
-    echo " -1        Install Dotfiles                                                 "
-    echo " -2        Uninstall Dotfiles                                               "
-    echo " -3        Install Environment                                              "
-    echo " -4        Install APT Tools                                                "
-    echo " -5        Install PIP3 Tools                                               "
-    echo " -6        Install GEM Tools                                                "
-    echo " -7        Install Local Bin Folder Tools                                   "
-    echo " -8        Install Fonts                                                    "
-    echo "                                                                            "
-    echo " -q        Exit                                                             "
-    echo "                                                                            "
-    echo "----------------------------------------------------------------------------"
-    echo "                                                                            "
+    echo "-------------------------------------------------------------------------------"
+    echo "                                                                               "
+    echo " -h        Print this message                                                  "
+    echo "                                                                               "
+    echo " -A        Install All                                                         "
+    echo " -D        Install Dotfiles & Enviroment                                       "
+    echo " -S        Update System & Setup Alls Tools & Enviroment                       "
+    echo "                                                                               "
+    echo "-------------------------------------------------------------------------------"
+    echo "                                                                               "
+    echo " -1        Install Dotfiles                                                    "
+    echo " -2        Uninstall Dotfiles                                                  "
+    echo " -3        Install Environment                                                 "
+    echo " -4        Install APT Tools                                                   "
+    echo " -5        Install PIP3 Tools                                                  "
+    echo " -6        Install GEM Tools                                                   "
+    echo " -7        Install Local Bin Folder Tools                                      "
+    echo " -8        Install Fonts                                                       "
+    echo "                                                                               "
+    echo "-------------------------------------------------------------------------------"
+    echo "                                                                               "
+    echo " -9        Install Server Edition                                              "
+    echo "                                                                               "
+    echo " -t        Install Tools                                                       "
+    echo "                                                                               "
+    echo " -q        Exit                                                                "
+    echo "                                                                               "
+    echo "-------------------------------------------------------------------------------"
+    echo "                                                                               "
 
     read -r -p "Please select the mode you want to install ?  " input
 
@@ -637,7 +766,7 @@ main() {
             usage
             exit 0
             ;;
-        -[aA])
+        -[aA]|-all)
             install_dotfiles
             workspace_settings
             sysUpdate
@@ -646,11 +775,16 @@ main() {
             gemInstall
             LocalDpkg
             LoaclConfig
-            sudo apt-get -y -qq --purge remove byobu
+            installFonts
+	    Make_apps
+            sudo apt-get -y -qq --purge remove byobu gnome-terminal yelp > /dev/null 2>&1
             sudo apt autoremove -y -qq > /dev/null 2>&1
-	    sudo apt-get clean
-            echo -e "              ${green}[√] *** All Install Successful *** l${reset}\n"
-            bash
+	    sudo apt-get clean > /dev/null 2>&1
+            echo -e "              ${green}[√] *** All Install Successful *** ${reset}\n"
+	    bash
+	    bash $HOME/dotfiles/setup/setup_tools.sh
+	    cd $HOME
+	    bash
             ;;
         -[dD])
             install_dotfiles
@@ -664,10 +798,11 @@ main() {
             gemInstall
             LocalDpkg
             LoaclConfig
-            sudo apt-get -y -qq --purge remove byobu
+	    Make_apps
+	    sudo apt-get -y -qq --purge remove byobu gnome-terminal yelp > /dev/null 2>&1
             sudo apt autoremove -y -qq > /dev/null 2>&1
 	    sudo apt-get clean
-            echo -e "              ${green}[√] *** All Install Successful *** l${reset}\n"
+	    echo -e "              ${green}[√] *** All Install Successful *** ${reset}\n"
             bash
             ;;
         -1)
@@ -697,6 +832,18 @@ main() {
         -7)
             LocalDpkg
             LoaclConfig
+            bash
+            ;;
+        -8)
+            installFonts
+            bash
+            ;;
+    	-9)
+            bash $Dotfiles_repo/setup/install_server.sh
+            bash
+            ;;
+	-[tT])
+            bash $Dotfiles_repo/setup/setup_tools.sh
             bash
             ;;
         [qQ]) 
