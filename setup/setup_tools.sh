@@ -13,7 +13,8 @@ Options:
     --help    Print this message
     
     -all      Install All tools
-
+    -s        Install Server All tools
+    
     -1        Install Alttab
     -2        Install Arcthemes
     -3        Install Arcicons
@@ -43,6 +44,7 @@ Options:
     -27       Install Ly
     -28       Install Ctags
     -29       Install Nodejs & Yarn
+    -30       Install Crow_Translate
 EOF
 }
 
@@ -423,6 +425,16 @@ Nodejs() {
     row
 }
 
+Crow_Translate() {
+    sudo add-apt-repository -y ppa:jonmagon/crow-translate
+    sudo sed -i "s/http:\/\/ppa.launchpad.net/https:\/\/launchpad.proxy.ustclug.org/g" /etc/apt/sources.list.d/*.list
+    sudo apt update
+    sudo apt install -y crow-translate
+    sudo sed -i "s/https:\/\/launchpad.proxy.ustclug.org/http:\/\/ppa.launchpad.net/g" /etc/apt/sources.list.d/*.list
+    sudo add-apt-repository -y --remove ppa:jonmagon/crow-translate
+    row
+}
+
 main() {
 
     echo "                                                                               "
@@ -431,6 +443,7 @@ main() {
     echo " -h        Print this message                                                  "
     echo "                                                                               "
     echo " -a        Setup All                                                           "
+    echo " -s        Setup Server All                                                    "
     echo "                                                                               "
     echo "-------------------------------------------------------------------------------"
     echo "                                                                               "
@@ -463,6 +476,7 @@ main() {
     echo " -27       Setup Ly                                                            "
     echo " -28       Setup Ctags                                                         "
     echo " -29       Setup Nodejs & Yarn                                                 "
+    echo " -30       Setup Crow_Translate                                                "
     echo "                                                                               "
     echo "-------------------------------------------------------------------------------"
     echo "                                                                               "
@@ -565,6 +579,9 @@ main() {
         -29)
             Nodejs
             ;;
+        -30)
+            Crow_Translate
+            ;;            
         -[aA])
             Github_Hosts
             Dunst
