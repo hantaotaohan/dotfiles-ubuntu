@@ -271,9 +271,9 @@ if [ ! -d "$HOME/desktop" ]; then mkdir -p "$HOME/desktop"; fi
 
 # Set Locales Language
 # sudo dpkg-reconfigure locales
-sudo locale-gen "zh_CN.UTF-8" > /dev/null 2>&1
-sudo dpkg-reconfigure --frontend=noninteractive locales > /dev/null 2>&1
-echo -e "              ${green}[+]Set Locales Language is Successful${reset}\n"
+# sudo locale-gen "zh_CN.UTF-8" > /dev/null 2>&1
+# sudo dpkg-reconfigure --frontend=noninteractive locales > /dev/null 2>&1
+# echo -e "              ${green}[+]Set Locales Language is Successful${reset}\n"
 
 # Set TimeZone
 sudo timedatectl set-timezone "Asia/Shanghai"
