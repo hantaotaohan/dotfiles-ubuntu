@@ -455,8 +455,8 @@ set guifont=Saber\ Bold\ 10.5                                            " 设�
 
 hi Search       term=standout ctermfg=235 ctermbg=204 guifg=#282C34 guibg=#E06C75   " 搜索高亮自定义
 hi IncSearch    term=standout ctermfg=235 ctermbg=204 guifg=#282C34 guibg=#E06C75   " 搜索行高亮自定义
-hi Folded       term=standout ctermfg=0   ctermbg=5   guifg=#282c34 guibg=#c678dd   " 折叠提示颜色
-hi FoldColumn   term=standout ctermfg=0   ctermbg=5   guifg=#282c34 guibg=#c678dd   " 折叠提示颜色
+hi Folded       term=standout ctermfg=0   ctermbg=5   guifg=#282c34 guibg=#abb2bf   " 折叠提示颜色
+hi FoldColumn   term=standout ctermfg=0   ctermbg=5   guifg=#282c34 guibg=#abb2bf   " 折叠提示颜色
 
 "=================================================================================================================================
 " Base Config 
