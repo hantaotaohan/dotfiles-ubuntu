@@ -987,16 +987,16 @@ nnoremap <LocalLeader>d          :bdelete<Space>
 "=================================================================================================================================
 " Airline  切换Buffers/Tabs快捷键设置 
 "=================================================================================================================================
-map <silent><LocalLeader>1     <Plug>AirlineSelectTab1
-map <silent><LocalLeader>2     <Plug>AirlineSelectTab2
-map <silent><LocalLeader>3     <Plug>AirlineSelectTab3
-map <silent><LocalLeader>4     <Plug>AirlineSelectTab4
-map <silent><LocalLeader>5     <Plug>AirlineSelectTab5
-map <silent><LocalLeader>6     <Plug>AirlineSelectTab6
-map <silent><LocalLeader>7     <Plug>AirlineSelectTab7
-map <silent><LocalLeader>8     <Plug>AirlineSelectTab8
-map <silent><LocalLeader>9     <Plug>AirlineSelectTab9
-map <silent><LocalLeader><tab> <Plug>AirlineSelectNextTab
+nmap <silent><LocalLeader>1     <Plug>AirlineSelectTab1
+nmap <silent><LocalLeader>2     <Plug>AirlineSelectTab2
+nmap <silent><LocalLeader>3     <Plug>AirlineSelectTab3
+nmap <silent><LocalLeader>4     <Plug>AirlineSelectTab4
+nmap <silent><LocalLeader>5     <Plug>AirlineSelectTab5
+nmap <silent><LocalLeader>6     <Plug>AirlineSelectTab6
+nmap <silent><LocalLeader>7     <Plug>AirlineSelectTab7
+nmap <silent><LocalLeader>8     <Plug>AirlineSelectTab8
+nmap <silent><LocalLeader>9     <Plug>AirlineSelectTab9
+nmap <silent><LocalLeader><tab> <Plug>AirlineSelectNextTab
 
 "================================================================================================================================= 
 " Ctrl + n 切换buff快捷键 
