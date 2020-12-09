@@ -621,8 +621,8 @@ vnoremap <silent><localleader>p "+p
 if !empty(glob('$HOME/.vim/plugged/vim-airline'))
 let g:airline_theme='onedark'                                            " 设置状态栏主题默认powerlineish
 let g:airline#extensions#tabline#enabled= 1                              " 开启tabline
-let g:airline#extensions#tabline#show_tabs = 1                           " 显示Tabls文字
-let g:airline#extensions#tabline#buffer_nr_show = 1                      " tabline中buffer显示编号
+let g:airline#extensions#tabline#show_tabs = 0                           " 显示Tabls文字
+let g:airline#extensions#tabline#buffer_nr_show = 0                      " tabline中buffer显示编号
 let g:airline#extensions#tabline#fnamemod = ':t'                         " 只显示文件名称
 let g:airline_powerline_fonts= 1                                         " 使用powerline打过补丁的字体
 let g:airline#extensions#whitespace#enabled = 0                          " 取消计数
@@ -655,7 +655,20 @@ let g:airline#extensions#tabline#tab_nr_type = 1 " tab number
 let g:airline#extensions#tabline#tabnr_formatter = 'tabnr'
 let g:airline#extensions#tabline#show_tab_nr = 1
 let g:airline#extensions#tabline#show_tab_type = 1
-
+let g:airline#extensions#tabline#buffer_idx_mode = 1
+let g:airline#extensions#tabline#formatter = 'default'
+let g:airline#extensions#tabline#buffer_idx_format = {
+    \ '0': '0 ',
+    \ '1': '1 ',
+    \ '2': '2 ',
+    \ '3': '3 ',
+    \ '4': '4 ',
+    \ '5': '5 ',
+    \ '6': '6 ',
+    \ '7': '7 ',
+    \ '8': '8 ',
+    \ '9': '9 '
+    \}
 " let g:airline_statusline_ontop = 1                                     " 在状态栏中显示状态行（第一行)
 " let g:airline_disable_statusline = 1                                   " 禁用每个缓冲区
 
