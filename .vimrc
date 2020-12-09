@@ -951,38 +951,52 @@ nnoremap <silent><LocalLeader>s :Startify <CR>
 "=================================================================================================================================
 " Leader(\)+ 123....  切换Buffers快捷键设置
 "=================================================================================================================================
-nnoremap <Leader>a :badd<Space>
-nnoremap <Leader>d :bdelete<Space>
-nnoremap <silent><Leader>1 :b1<cr>
-nnoremap <silent><Leader>2 :b2<cr>
-nnoremap <silent><Leader>3 :b3<cr>
-nnoremap <silent><Leader>4 :b4<cr>
-nnoremap <silent><Leader>5 :b5<cr>
-nnoremap <silent><Leader>6 :b6<cr>
-nnoremap <silent><Leader>7 :b7<cr>
-nnoremap <silent><Leader>8 :b8<cr>
-nnoremap <silent><Leader>9 :b9<cr>
-nnoremap <silent><Leader>0 :b10<cr>
-nnoremap <silent><Leader><tab> :bnext<CR>
-inoremap <silent><Leader><tab> <ESC>:bnext<CR>
+nnoremap <LocalLeader>a          :badd<Space>
+nnoremap <LocalLeader>d          :bdelete<Space>
+" nnoremap <silent><Leader>1     :b1<cr>
+" nnoremap <silent><Leader>2     :b2<cr>
+" nnoremap <silent><Leader>3     :b3<cr>
+" nnoremap <silent><Leader>4     :b4<cr>
+" nnoremap <silent><Leader>5     :b5<cr>
+" nnoremap <silent><Leader>6     :b6<cr>
+" nnoremap <silent><Leader>7     :b7<cr>
+" nnoremap <silent><Leader>8     :b8<cr>
+" nnoremap <silent><Leader>9     :b9<cr>
+" nnoremap <silent><Leader>0     :b10<cr>
+" nnoremap <silent><Leader><tab> :bnext<CR>
+" inoremap <silent><Leader><tab> <ESC>:bnext<CR>
 
 "=================================================================================================================================
 " Leader(\)+ 123....  切换Tabs快捷键设置 
 "=================================================================================================================================
-nnoremap <silent><LocalLeader>a :tabnew<cr>
-nnoremap <silent><LocalLeader>d :tabclose<cr>
-nnoremap <silent><LocalLeader>1 :tabn1<cr>
-nnoremap <silent><LocalLeader>2 :tabn2<cr>
-nnoremap <silent><LocalLeader>3 :tabn3<cr>
-nnoremap <silent><LocalLeader>4 :tabn4<cr>
-nnoremap <silent><LocalLeader>5 :tabn5<cr>
-nnoremap <silent><LocalLeader>6 :tabn6<cr>
-nnoremap <silent><LocalLeader>7 :tabn7<cr>
-nnoremap <silent><LocalLeader>8 :tabn8<cr>
-nnoremap <silent><LocalLeader>9 :tabn9<cr>
-nnoremap <silent><LocalLeader>0 :tabn10<cr>
-nnoremap <silent><LocalLeader><tab> :tabnext<CR>
-inoremap <silent><LocalLeader><tab> <ESC>:tabnext<CR>
+" nnoremap <silent><LocalLeader>a     :tabnew<cr>
+" nnoremap <silent><LocalLeader>d     :tabclose<cr>
+" nnoremap <silent><LocalLeader>1     :tabn1<cr>
+" nnoremap <silent><LocalLeader>2     :tabn2<cr>
+" nnoremap <silent><LocalLeader>3     :tabn3<cr>
+" nnoremap <silent><LocalLeader>4     :tabn4<cr>
+" nnoremap <silent><LocalLeader>5     :tabn5<cr>
+" nnoremap <silent><LocalLeader>6     :tabn6<cr>
+" nnoremap <silent><LocalLeader>7     :tabn7<cr>
+" nnoremap <silent><LocalLeader>8     :tabn8<cr>
+" nnoremap <silent><LocalLeader>9     :tabn9<cr>
+" nnoremap <silent><LocalLeader>0     :tabn10<cr>
+" nnoremap <silent><LocalLeader><tab> :tabnext<CR>
+" inoremap <silent><LocalLeader><tab> <ESC>:tabnext<CR>
+
+"=================================================================================================================================
+" Airline  切换Buffers/Tabs快捷键设置 
+"=================================================================================================================================
+map <silent><LocalLeader>1     <Plug>AirlineSelectTab1
+map <silent><LocalLeader>2     <Plug>AirlineSelectTab2
+map <silent><LocalLeader>3     <Plug>AirlineSelectTab3
+map <silent><LocalLeader>4     <Plug>AirlineSelectTab4
+map <silent><LocalLeader>5     <Plug>AirlineSelectTab5
+map <silent><LocalLeader>6     <Plug>AirlineSelectTab6
+map <silent><LocalLeader>7     <Plug>AirlineSelectTab7
+map <silent><LocalLeader>8     <Plug>AirlineSelectTab8
+map <silent><LocalLeader>9     <Plug>AirlineSelectTab9
+map <silent><LocalLeader><tab> <Plug>AirlineSelectNextTab
 
 "================================================================================================================================= 
 " Ctrl + n 切换buff快捷键 
