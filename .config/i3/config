@@ -32,7 +32,8 @@ floating_modifier $mod
 workspace_auto_back_and_forth yes
 
 # 默认浮动窗口大小
-floating_minimum_size 1200 x 800
+# floating_minimum_size 1200 x 800
+floating_minimum_size -1 x -1
 floating_maximum_size -1 x -1
 
 # 窗口标题居中
@@ -451,18 +452,17 @@ bindsym Mod4+Return bar hidden_state toggle
 # 便签区域设定
 # --------------------------------------------------------------------------------------------------
 
-for_window [class="Alacritty" title="scratchpad"] move to scratchpad , sticky enable , border normal 0 , title_format "<b>%title</b>"
-#bindsym $mod+v exec i3-msg exec "alacritty -d 100 30 -t scratchpad -e vim $HOME/.scratchpad" > /dev/null
+for_window [class="Alacritty" title="scratchpad"] move to scratchpad , sticky enable , border normal 0 , title_format "<b>%title</b>" , resize set 1200 800 , move absolute position center
 bindsym Mod4+1 exec --no-startup-id raiseorlaunch -r -t "scratchpad" -e "--no-startup-id alacritty -d 100 30 -t scratchpad -e vim $HOME/.scratchpad"
 
-#for_window [class="Lotion"] move to scratchpad , sticky enable , border normal 0 , title_format "<b>%title</b>"
-#bindsym $mod+n exec --no-startup-id raiseorlaunch -r -c "Lotion" -e "/home/taotao/Desktop/lotion/Lotion/Lotion"
-
-for_window [class="Alacritty" title="neomutt"] move to scratchpad , sticky enable , border normal 0 , title_format "<b>%title</b>"
+for_window [class="Alacritty" title="neomutt"] move to scratchpad , sticky enable , border normal 0 , title_format "<b>%title</b>" , resize set 1200 800 , move absolute position center
 bindsym Mod4+2 exec --no-startup-id raiseorlaunch -r -t "neomutt" -e "--no-startup-id alacritty -d 100 30 -t neomutt -e neomutt"
 
-for_window [class="Google-chrome" title="notion.so"] move to scratchpad , sticky enable , border normal 0 , title_format "<b>%title</b>"
+for_window [class="Google-chrome" title="notion.so"] move to scratchpad , sticky enable , border normal 0 , title_format "<b>%title</b>" , resize set 1200 800 , move absolute position center
 bindsym Mod4+3 exec --no-startup-id raiseorlaunch -r -c "notion.so" -c "Google-chrome" -e "google-chrome --force-dark-mode --enable-features=OverlayScrollbar --enable-plugins --process-per-tab --app=https://notion.so"
+
+for_window [class="Crow Translate"] move to scratchpad , sticky enable , resize set 748 380 , move absolute position center
+bindsym Mod4+4 exec --no-startup-id raiseorlaunch -r -t "Crow Translate" -e "crow"
 
 # Scratchpad config
 #for_window [class="Zathura"] move to scratchpad, scratchpad
