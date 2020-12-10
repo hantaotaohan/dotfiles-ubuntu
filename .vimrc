@@ -415,9 +415,10 @@ Plug 'vimwiki/vimwiki' , { 'branch': 'dev' ,'on': 'VimwikiIndex' }       " Vimwi
 Plug 'michal-h21/vim-zettel'                                             " 配合vimwiki的功能插件
 Plug 'Lenovsky/nuake'                                                    " 快速启动命令行工具
 Plug 'liuchengxu/vim-which-key'                                          " Leader辅助
-Plug 'kshenoy/vim-signature'                                             " 书签插件
 Plug 'jiangmiao/auto-pairs'                                              " 成对添加括号等
 Plug 'arcticicestudio/nord-vim'                                          " Themes
+Plug 'MattesGroeger/vim-bookmarks'                                       " 书签插件
+"Plug 'kshenoy/vim-signature'                                             " 书签插件
 "Plug 'rakr/vim-one'                                                      " Themes
 "Plug 'vim-airline/vim-airline-themes'                                    " 状态栏主题
 "Plug 'Neur1n/neuims'                                                     " 输入法自动切换 
@@ -453,10 +454,18 @@ set guifont=Saber\ Bold\ 10.5                                            " 设�
 "set guifont=DejaVu\ Sans\ Mono\ 10                                      " 设置字体
 "set termguicolors                                                       " 终端模式 自动转换256真色彩 
 
-hi Search       term=standout ctermfg=235 ctermbg=204 guifg=#282C34 guibg=#E06C75   " 搜索高亮自定义
-hi IncSearch    term=standout ctermfg=235 ctermbg=204 guifg=#282C34 guibg=#E06C75   " 搜索行高亮自定义
-hi Folded       term=standout ctermfg=0   ctermbg=5   guifg=#282c34 guibg=#abb2bf   " 折叠提示颜色
-hi FoldColumn   term=standout ctermfg=0   ctermbg=5   guifg=#282c34 guibg=#abb2bf   " 折叠提示颜色
+hi Search                 term=standout ctermfg=235 ctermbg=204 guifg=#282C34 guibg=#E06C75   " 搜索高亮自定义
+hi IncSearch              term=standout ctermfg=235 ctermbg=204 guifg=#282C34 guibg=#E06C75   " 搜索行高亮自定义
+hi Folded                 term=standout ctermfg=0   ctermbg=5   guifg=#282c34 guibg=#ABB2BF   " 折叠提示颜色
+hi FoldColumn             term=standout ctermfg=0   ctermbg=5   guifg=#282c34 guibg=#ABB2BF   " 折叠提示颜色
+hi QuickFixLine           term=standout ctermfg=235 ctermbg=180 guifg=#282C34 guibg=#ABB2BF   " 快速栏颜色
+hi SignColumn             term=standout ctermbg=2   ctermbg=2   guifg=#E06C75 guibg=#282C34   " 标签栏颜色
+hi BookmarkSign           term=standout ctermbg=2   ctermfg=2   guifg=#E06C75 guibg=#282C34   " 书签标记颜色
+hi BookmarkAnnotationSign term=standout ctermbg=2   ctermfg=2   guifg=#98C379 guibg=#282C34   " 书签标记颜色
+hi BookmarkLine           term=standout ctermbg=2   ctermfg=2   guifg=#E06C75 guibg=#282C34   " 书签标记颜色-行
+hi BookmarkAnnotationLine term=standout ctermbg=2   ctermfg=2   guifg=#98C379 guibg=#282C34   " 书签标记颜色-行
+" hi SignatureMarkText   term=standout ctermbg=2   ctermbg=2   guifg=#E06C75 guibg=#282C34   " 书签标记颜色
+" hi SignatureMarkerText term=standout ctermbg=2   ctermbg=2   guifg=#E06C75 guibg=#282C34   " 折叠提示颜色
 
 "=================================================================================================================================
 " Base Config 
@@ -1903,10 +1912,19 @@ autocmd  FileType which_key set laststatus=0 noshowmode noruler
 "=================================================================================================================================
 " Signature  settings
 "=================================================================================================================================
-let g:SignatureEnabledAtStartup = 0
-nnoremap <silent><leader>m :SignatureToggleSigns<CR>    
-nnoremap <silent><localleader>m :SignatureToggleSigns<CR> 
+" let g:SignatureEnabledAtStartup = 0
+" nnoremap <silent><leader>m :SignatureToggleSigns<CR>    
+" nnoremap <silent><localleader>m :SignatureToggleSigns<CR> 
 
+"=================================================================================================================================
+" Vim-bookmarks  settings
+"=================================================================================================================================
+let g:bookmark_sign = ' ' "⚑ ♥ 
+let g:bookmark_annotation_sign = ' ' "☰  ﭅ 
+let g:bookmark_auto_close = 1                 "跳转到标签后自动关闭
+let g:bookmark_save_per_working_dir = 1
+let g:bookmark_auto_save = 1
+let g:bookmark_highlight_lines = 0             "高亮书签行
 
 "=================================================================================================================================
 " Ultisnips settings
