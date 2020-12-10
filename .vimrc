@@ -1908,7 +1908,7 @@ autocmd  FileType which_key set laststatus=0 noshowmode noruler
 "=================================================================================================================================
 " Signature  settings
 "=================================================================================================================================
-let g:SignatureEnabledAtStartup = 0
+let g:SignatureEnabledAtStartup = 1
 nnoremap <silent><leader>m :SignatureToggleSigns<CR>    
 nnoremap <silent><localleader>m :SignatureToggleSigns<CR> 
 
