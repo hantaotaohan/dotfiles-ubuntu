@@ -1904,7 +1904,6 @@ autocmd! FileType which_key
 autocmd  FileType which_key set laststatus=0 noshowmode noruler
   \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
 
-
 "=================================================================================================================================
 " Signature  settings
 "=================================================================================================================================
@@ -1926,8 +1925,8 @@ let g:SignatureMap = {
         \ 'GotoPrevSpotAlpha'  :  "`[",
         \ 'GotoNextLineByPos'  :  "mn",
         \ 'GotoPrevLineByPos'  :  "mp",
-        \ 'GotoNextSpotByPos'  :  "]`",
-        \ 'GotoPrevSpotByPos'  :  "[`",
+        \ 'GotoNextSpotByPos'  :  "mf",
+        \ 'GotoPrevSpotByPos'  :  "mb",
         \ 'GotoNextMarker'     :  "]-",
         \ 'GotoPrevMarker'     :  "[-",
         \ 'GotoNextMarkerAny'  :  "]=",
@@ -1936,10 +1935,10 @@ let g:SignatureMap = {
         \ 'ListBufferMarkers'  :  "m?"
         \ }
 autocmd FileType qf nnoremap <buffer> <CR> <CR>:lclose<CR>
+autocmd FileType qf nnoremap <buffer> ma <CR>:lclose<CR>
 
 hi SignatureMarkText   term=standout ctermbg=2   ctermbg=2   guifg=#E06C75 guibg=#282C34   " 书签标记颜色
 hi SignatureMarkerText term=standout ctermbg=2   ctermbg=2   guifg=#E06C75 guibg=#282C34   " 折叠提示颜色
-
 
 "=================================================================================================================================
 " Vim-bookmarks  settings
