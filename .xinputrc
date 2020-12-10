@@ -20,7 +20,7 @@ xset -r 18  # key 9
 xset -r 19  # key 0
 xset -r 20  # minus
 xset -r 21  # equals
-#xset -r 22  # backspace
+# xset -r 22  # backspace
 xset -r 51  # backslash
 xset -r 61  # slash
 xset -r 47  # semicolon ;
