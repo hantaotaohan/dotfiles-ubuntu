@@ -451,8 +451,9 @@ set showtabline=2                                                        " 永�
 set t_Co=256                                                             " 设置终端显示颜色
 set scrolloff=5                                                          " 光标上下两侧最少保留的屏幕行数
 set showcmd                                                              " 显示命令
-"syntax enable                                                            " 开启语法高亮
+set diffopt=filler,context:9999                                          " 禁止VIMDIFF折叠
 set guifont=Saber\ Bold\ 10.5                                            " 设置GUI字体
+"syntax enable                                                           " 开启语法高亮
 "set guifont=DejaVu\ Sans\ Mono\ 10                                      " 设置字体
 "set termguicolors                                                       " 终端模式 自动转换256真色彩 
 
@@ -461,7 +462,8 @@ hi IncSearch              term=standout ctermfg=235 ctermbg=204 guifg=#282C34 gu
 hi Folded                 term=standout ctermfg=0   ctermbg=5   guifg=#282c34 guibg=#ABB2BF   " 折叠提示颜色
 hi FoldColumn             term=standout ctermfg=0   ctermbg=5   guifg=#282c34 guibg=#ABB2BF   " 折叠提示颜色
 hi QuickFixLine           term=standout ctermfg=235 ctermbg=180 guifg=#282C34 guibg=#ABB2BF   " 快速栏颜色
-hi SignColumn             term=standout ctermbg=2   ctermbg=2   guifg=#E06C75 guibg=#282C34   " 标签栏颜色
+hi SignColumn             term=standout ctermfg=2   ctermbg=2   guifg=#E06C75 guibg=#282C34   " 标签栏颜色
+hi DiffDelete             term=standout ctermfg=235 ctermbg=204 guifg=#E06C75 guibg=#E06C75   " 差异删除颜色
 
 "=================================================================================================================================
 " Base Config 
