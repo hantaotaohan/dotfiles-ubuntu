@@ -267,7 +267,7 @@ mode "$mode_system" {
      bindsym Return mode "default"
      bindsym Escape mode "default"
 }
- bindsym $mod+Delete mode "$mode_system"
+ bindsym $mod+e mode "$mode_system"
 
 # --------------------------------------------------------------------------------------------------
 # 鼠标键设置
