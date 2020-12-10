@@ -290,6 +290,8 @@ function! BufferClose()
     " close whole vim if this is the last buffer
     if len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1
         return ":q\n"
+    elseif getbufvar(winbufnr('.'), '&buftype') == 'quickfix'
+        return ":lclose\n"
     elseif buflisted(bufnr('%')) == 1
         return ":bn\n:bd#\n"
     else
