@@ -228,6 +228,23 @@ if has('wildmenu')
         \**/node_modules/**,**/bower_modules/**,*/.sass-cache/*
     set wildignore+=
         \__pycache__,*.egg-info,.pytest_cache,.mypy_cache/**
+    set suffixes=.bak,~,.o,.h,.info,.swp,.obj,.pyc,.pyo,.egg-info,.class
+    set wildignore=*.o,*.obj,*~,*.exe,*.a,*.pdb,*.lib 
+    set wildignore+=*.so,*.dll,*.swp,*.egg,*.jar,*.class,*.pyc,*.pyo,*.bin,*.dex
+    set wildignore+=*.zip,*.7z,*.rar,*.gz,*.tar,*.gzip,*.bz2,*.tgz,*.xz 
+    set wildignore+=*DS_Store*,*.ipch
+    set wildignore+=*.gem
+    set wildignore+=*.png,*.jpg,*.gif,*.bmp,*.tga,*.pcx,*.ppm,*.img,*.iso
+    set wildignore+=*.so,*.swp,*.zip,*/.Trash/**,*.pdf,*.dmg,*/.rbenv/**
+    set wildignore+=*/.nx/**,*.app,*.git,.git
+    set wildignore+=*.wav,*.mp3,*.ogg,*.pcm
+    set wildignore+=*.mht,*.suo,*.sdf,*.jnlp
+    set wildignore+=*.chm,*.epub,*.pdf,*.mobi,*.ttf
+    set wildignore+=*.mp4,*.avi,*.flv,*.mov,*.mkv,*.swf,*.swc
+    set wildignore+=*.ppt,*.pptx,*.docx,*.xlt,*.xls,*.xlsx,*.odt,*.wps
+    set wildignore+=*.msi,*.crx,*.deb,*.vfd,*.apk,*.ipa,*.bin,*.msu
+    set wildignore+=*.gba,*.sfc,*.078,*.nds,*.smd,*.smc
+    set wildignore+=*.linux2,*.win32,*.darwin,*.freebsd,*.linux,*.android
 endif
 
 " ----------------------------------------------------------------o
@@ -289,19 +306,40 @@ let g:loaded_netrwFileHandlers = 1
 function! BufferClose()
     " close whole vim if this is the last buffer
     if len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1
-        return ":q\n"
-    elseif getbufvar(winbufnr('.'), '&buftype') == 'quickfix'
-        return ":lclose\n"
+    " 对为保存的文件进行提示并退出
+        try
+        execute "silent q"
+        catch /:E37:\|:E162:/
+        if (confirm("Wanna save it ?", "&Yes\n&No", 2)==1) | redraw
+        try
+        silent w!
+        catch
+        endtry
+        endif
+        catch
+        endtry
+        let time = strftime("%T")
+        let file = expand('%:P')
+        let permissions = getfperm(file)
+        redraw
+        echom '"' . file . '"' . " Save Done" . ' ' . time
+        redraw
+        echohl None
+        " execute "silent q"
+        redraw
+    elseif getbufvar(winbufnr('%'), '&buftype') == 'quickfix'
+        execute "lclose"
     elseif buflisted(bufnr('%')) == 1
-        return ":bn\n:bd#\n"
+        execute "bn"
+        execute "bd#"
     else
-        return ":bd\n"
+        execute "bd"
     endif
-endfunction
 
-nnoremap <expr><localleader>q BufferClose()
-vnoremap <expr><localleader>q BufferClose()
-inoremap <expr><localleader>q BufferClose()
+endfunction
+nnoremap <silent><localleader>q :call BufferClose()<cr>
+inoremap <silent><localleader>q <Esc>:call BufferClose()<cr>
+vnoremap <silent><localleader>q <Esc>:call BufferClose()<cr>
 
 " ----------------------------------------------------------------o
 " Quickly Save the current window
@@ -349,13 +387,13 @@ redraw
 endfunction
 
 nnoremap <silent><localleader>w :call MySave()<CR>
-vnoremap <silent><localleader>w :call MySave()<CR>
-inoremap <silent><localleader>w :call MySave()<CR>
+vnoremap <silent><localleader>w <ESC>:call MySave()<CR>
+inoremap <silent><localleader>w <ESC>:call MySave()<CR>
 
 " ----------------------------------------------------------------o
 " Simple zoom toggle
 " ----------------------------------------------------------------o
-nnoremap <silent><leader>z  :<C-u>call <SID>zoom()<CR>
+nnoremap <silent><LocalLeader>z  :<C-u>call <SID>zoom()<CR>
 function! s:zoom()
 	if exists('t:zoomed')
 		unlet t:zoomed
@@ -367,6 +405,16 @@ function! s:zoom()
 		normal! ze
 	endif
 endfunction
+
+" ----------------------------------------------------------------o
+" Vim Quickfix
+" ----------------------------------------------------------------o
+augroup Quickfix
+	autocmd!
+	autocmd FileType qf setlocal nonumber
+    	autocmd FileType qf nnoremap <buffer> <CR> <CR>:lclose<CR>
+    	autocmd FileType qf nnoremap <buffer> ma <CR>:lclose<CR>
+augroup END
 
 
 "-----------------------------------------------------------------o--------------------------------------------------------------o
