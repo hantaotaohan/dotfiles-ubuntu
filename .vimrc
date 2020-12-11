@@ -1984,8 +1984,6 @@ let g:SignatureMap = {
         \ 'ListBufferMarks'    :  "ma",
         \ 'ListBufferMarkers'  :  "m?"
         \ }
-autocmd FileType qf nnoremap <buffer> <CR> <CR>:lclose<CR>
-autocmd FileType qf nnoremap <buffer> ma <CR>:lclose<CR>
 
 hi SignatureMarkText   term=standout ctermbg=2   ctermbg=2   guifg=#E06C75 guibg=#282C34   " 书签标记颜色
 hi SignatureMarkerText term=standout ctermbg=2   ctermbg=2   guifg=#E06C75 guibg=#282C34   " 折叠提示颜色
