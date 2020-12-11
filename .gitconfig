@@ -12,6 +12,8 @@
     undo = reset HEAD~1
     d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
     di = !"d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD -- || clear; d"
+    dv = difftool --tool=vimdiff -y
+    sd = !sh -c 'git difftool --tool=vimdiff -y $1^ $1' 
 
 [user]
     email = hantaotaohan@gmail.com 
