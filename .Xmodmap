@@ -10,7 +10,9 @@
 !---------------------------------------------------------------------------
 
 clear Lock
+! clear shift
 ! clear control
+! add shift = Caps_Lock Shift_L Shift_R
 ! add control = Caps_Lock Control_L Control_R
 ! keycode 66 = Mode_switch Control_L
 keycode 66 = Mode_switch
