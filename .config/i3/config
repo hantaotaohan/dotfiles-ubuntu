@@ -461,8 +461,11 @@ bindsym Mod4+2 exec --no-startup-id raiseorlaunch -r -t "neomutt" -e "--no-start
 for_window [class="Google-chrome" title="notion.so"] move to scratchpad , sticky enable , border normal 0 , title_format "<b>%title</b>" , resize set 1200 800 , move absolute position center
 bindsym Mod4+3 exec --no-startup-id raiseorlaunch -r -c "notion.so" -c "Google-chrome" -e "google-chrome --force-dark-mode --enable-features=OverlayScrollbar --enable-plugins --process-per-tab --app=https://notion.so"
 
-for_window [class="Crow Translate"] move to scratchpad , sticky enable , resize set 748 380 , move absolute position center
-bindsym Mod4+4 exec --no-startup-id raiseorlaunch -r -t "Crow Translate" -e "crow"
+for_window [class="copytranslator"] move to scratchpad , sticky enable , resize set 650 250 , move absolute position center
+bindsym $mod+q exec --no-startup-id raiseorlaunch -r -c "copytranslator" -t "Copytranslator" -e "copytranslator"
+
+#for_window [class="Crow Translate"] move to scratchpad , sticky enable , resize set 748 380 , move absolute position center
+#bindsym Mod4+4 exec --no-startup-id raiseorlaunch -r -t "Crow Translate" -e "crow"
 
 # Scratchpad config
 #for_window [class="Zathura"] move to scratchpad, scratchpad
