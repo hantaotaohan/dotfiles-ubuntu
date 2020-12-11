@@ -201,6 +201,7 @@ cnoreabbrev wQ wq
 cnoreabbrev Wq wq
 cnoreabbrev WQ wq
 cnoreabbrev Qa qa
+cnoreabbrev q1 q!
 
 " ----------------------------------------------------------------o--------------------------------------------------------------o
 " Timing
