@@ -515,10 +515,10 @@ set guifont=Saber\ Bold\ 10.5                                            " 设�
 hi Search                 term=standout ctermfg=235 ctermbg=204 guifg=#282C34 guibg=#E06C75   " 搜索高亮自定义
 hi IncSearch              term=standout ctermfg=235 ctermbg=204 guifg=#282C34 guibg=#E06C75   " 搜索行高亮自定义
 hi Folded                 term=standout ctermfg=0   ctermbg=5   guifg=#282c34 guibg=#ABB2BF   " 折叠提示颜色
-hi FoldColumn             term=standout ctermfg=0   ctermbg=5   guifg=#282c34 guibg=#ABB2BF   " 折叠提示颜色
 hi QuickFixLine           term=standout ctermfg=235 ctermbg=180 guifg=#282C34 guibg=#ABB2BF   " 快速栏颜色
 hi SignColumn             term=standout ctermfg=2   ctermbg=2   guifg=#E06C75 guibg=#282C34   " 标签栏颜色
 hi DiffDelete             term=standout ctermfg=235 ctermbg=204 guifg=#E06C75 guibg=#E06C75   " 差异删除颜色
+" hi FoldColumn             term=standout ctermfg=0   ctermbg=5   guifg=#282c34 guibg=#ABB2BF   " 折叠提示颜色
 
 "=================================================================================================================================
 " Base Config 
