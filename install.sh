@@ -729,10 +729,10 @@ echo -e "                                                                       
         if [ ! -d "$HOME/fonts" ]; then
             git clone -q\
                 https://hub.fastgit.org/hantaotaohan/fonts_minimize.git\
-                $HOME/fonts && cd $HOME/fonts && ./install.sh
+                $HOME/fonts && cd $HOME/fonts && . ./install.sh
         else
             cd $HOME/fonts &&\
-            git reset -q --hard && git pull -q && ./install.sh
+            git reset -q --hard && git pull -q && . ./install.sh
         fi
 }
 
