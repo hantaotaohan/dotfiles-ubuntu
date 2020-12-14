@@ -38,6 +38,9 @@ alias mkdir='mkdir -v'
 alias rm='rm -i'
 alias rmf='rm -rf'
 
+# Tmux
+alias tmux='test -z "$TMUX" && (tmux attach || tmux new-session -s "TaoTao")'
+
 # Shortcuts
 alias cl='clear'
 alias cat='bat'
