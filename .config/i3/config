@@ -483,6 +483,7 @@ bindsym $mod+q exec --no-startup-id raiseorlaunch -r -c "copytranslator" -t "Cop
 # smart_gaps on
 # gaps inner 8
 # gaps outer 2
+# smart_gaps inverse_outer
 
 # --------------------------------------------------------------------------------------------------
 # 随机启动设置
