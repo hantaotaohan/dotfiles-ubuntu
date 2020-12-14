@@ -342,6 +342,8 @@ function! BufferClose()
         redraw
     elseif getbufvar(winbufnr('%'), '&buftype') == 'quickfix'
         execute "lclose"
+    elseif getbufvar(winbufnr('%'), '&buftype') == 'terminal'
+        execute "q"
     elseif buflisted(bufnr('%')) == 1
         execute "bn"
         execute "bd#"
