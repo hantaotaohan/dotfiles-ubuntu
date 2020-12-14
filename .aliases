@@ -60,6 +60,7 @@ alias chrome="google-chrome --force-dark-mode --proxy-server=socks5://127.0.0.1:
 alias sai='sudo apt install'
 alias mail='neomutt'
 alias rss='newsboat'
+alias file='nautilus .'
 
 # ----------------------------------------------------------
 # Fcode bind | showkey -a
