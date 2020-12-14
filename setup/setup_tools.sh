@@ -91,6 +91,7 @@ Copytranslator() {
     sudo chown -R taotao:taotao /dev/input/mice
     cd $HOME
     sudo rm -rf $HOME/desktop/copytranslator_10.0.0-beta.2_amd64.deb
+    sudo chown -R $USER:$USER /dev/input/mice
     row
 }
 
