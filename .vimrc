@@ -1274,7 +1274,7 @@ func! CompileRunGcc1()
     elseif &filetype == 'sh'
         exec "AsyncRun -mode=term -pos=bottom -rows=10 -focus=0 time bash %"
     elseif &filetype == 'java'
-        execute 'AsyncRun! -mode=term -pos=bottom -rows=10 -cwd=<root> javac "$(VIM_RELNAME)" ; java $(VIM_FILENOEXT)'
+        execute 'AsyncRun -mode=term -pos=bottom -rows=10 -focus=0 -cwd=<root> javac "$(VIM_RELNAME)" ; java $(VIM_FILENOEXT)'
     endif
 endfunc
 
