@@ -152,6 +152,7 @@ I3gaps() {
     sed -i 's|# smart_gaps on|smart_gaps on|g' $HOME/.config/i3/config
     sed -i 's|# gaps inner 8|gaps inner 8|g' $HOME/.config/i3/config
     sed -i 's|# gaps outer 2|gaps outer 2|g' $HOME/.config/i3/config
+    sed -i 's|# smart_gaps inverse_outer|smart_gaps inverse_outer|g' $HOME/.config/i3/config
     row
 }
 
