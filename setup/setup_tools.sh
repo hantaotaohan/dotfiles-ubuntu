@@ -608,6 +608,7 @@ main() {
             Nodejs
             # SSR
             # Github
+            sudo rm -rf /etc/apt/sources.list.d/*
             ;;
         -[sS])
             VIM
