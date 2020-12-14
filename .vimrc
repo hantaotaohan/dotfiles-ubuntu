@@ -475,6 +475,7 @@ Plug 'liuchengxu/vim-which-key'                                          " Leade
 Plug 'jiangmiao/auto-pairs'                                              " 成对添加括号等
 Plug 'arcticicestudio/nord-vim'                                          " Themes
 Plug 'kshenoy/vim-signature'                                             " 书签插件
+Plug 'yianwillis/vimcdoc'                                                " 中文帮助
 "Plug 'MattesGroeger/vim-bookmarks'                                       " 书签插件
 "Plug 'rakr/vim-one'                                                      " Themes
 "Plug 'vim-airline/vim-airline-themes'                                    " 状态栏主题
