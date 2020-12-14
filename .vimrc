@@ -161,6 +161,12 @@ nnoremap <silent> ) )zz
 nnoremap <silent> [[ [[zz
 nnoremap <silent> ]] ]]zz
 
+nnoremap <silent> <C-u> <C-u>zz
+nnoremap <silent> <C-d> <C-d>zz
+
+nnoremap <silent> <C-b> <C-b>zz
+nnoremap <silent> <C-f> <C-f>zz
+
 " ----------------------------------------------------------------o--------------------------------------------------------------o
 " Clear highlighted search
 " ----------------------------------------------------------------o--------------------------------------------------------------o
