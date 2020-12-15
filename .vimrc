@@ -1270,6 +1270,9 @@ set pastetoggle=<F4>                                                     " è®¾ç½
 "=================================================================================================================================
 
 nnoremap <F5> :call CompileRunGcc1()<cr>
+nnoremap <silent><localleader>r :call CompileRunGcc1()<cr>
+inoremap <silent><localleader>r <esc>:call CompileRunGcc1()<cr>
+vnoremap <silent><localleader>r <esc>:call CompileRunGcc1()<cr>
 func! CompileRunGcc1()
     exec "w"
     if &filetype == 'python'
@@ -1279,6 +1282,10 @@ func! CompileRunGcc1()
         exec "AsyncRun -mode=term -pos=bottom -rows=10 -focus=0 time bash %"
     elseif &filetype == 'java'
         execute 'AsyncRun -mode=term -pos=bottom -rows=10 -focus=0 -cwd=<root> javac "$(VIM_RELNAME)" ; java $(VIM_FILENOEXT)'
+    elseif &filetype == 'javascript'
+        exec "AsyncRun -mode=term -pos=bottom -rows=10 -focus=0 time node %"
+    elseif &filetype == 'markdown'
+        MarkdownPreview
     endif
 endfunc
 
