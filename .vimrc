@@ -484,6 +484,7 @@ Plug 'jiangmiao/auto-pairs'                                              " 成�
 Plug 'arcticicestudio/nord-vim'                                          " Themes
 Plug 'kshenoy/vim-signature'                                             " 书签插件
 Plug 'yianwillis/vimcdoc'                                                " 中文帮助
+Plug 'Yggdroot/LeaderF'                                                  " 模糊搜索
 "Plug 'ludovicchabant/vim-gutentags'                                      " Tags管理
 "Plug 'MattesGroeger/vim-bookmarks'                                       " 书签插件
 "Plug 'rakr/vim-one'                                                      " Themes
@@ -2069,3 +2070,142 @@ let g:UltiSnipsJumpBackwardTrigger="<C-k>"
 "   silent! call mkdir(s:vim_tags, 'p')
 "endif
 
+"=================================================================================================================================
+" LeaderF settings
+"=================================================================================================================================
+let g:Lf_HideHelp = 1
+let g:Lf_UseCache = 0
+let g:Lf_UseVersionControlTool = 0
+let g:Lf_IgnoreCurrentBufferName = 1
+let g:Lf_WindowHeight = 0.30
+let g:Lf_StlColorscheme = 'one'
+let g:Lf_DisableStl = 0
+let g:Lf_GtagsAutoGenerate = 1
+let g:Lf_ShowDevIcons = 1
+let g:Lf_ShortcutF = '' 
+let g:Lf_ShortcutB = '' 
+let g:Lf_WindowPosition = 'bottom'
+let g:Lf_ShowRelativePath = 0
+let g:Lf_PopupWidth = &columns * 1 / 2
+let g:Lf_PopupHeight = float2nr(&lines * 0.3)
+let g:Lf_PopupShowStatusline = 1
+let g:Lf_PopupColorscheme = 'one'
+let g:Lf_PopupShowFoldcolumn = 0
+let g:Lf_CommandMap = { '<C-j>': ['<Down>'], '<C-k>': ['<Up>']}
+let g:Lf_StlSeparator = { 'left': '', 'right': '', 'font': '' }
+let g:Lf_SpinSymbols =  ['△', '▲', '▷', '▶', '▽', '▼', '◁', '◀']
+let g:Lf_WildIgnore = {
+            \ 'dir': ['.svn','.git','.hg'],
+            \ 'file': ['*.sw?','~$*','*.bak','*.exe','*.o','*.so','*.py[co]']
+            \}
+
+hi Cursor                      gui=bold    guifg=#E06C75  guibg=#E06C75
+hi Lf_hl_cursorline            gui=bold    guifg=#C678DD
+hi Lf_hl_match                 gui=bold    guifg=#e06c75
+hi Lf_hl_match2                gui=bold    guifg=#3FF5D1
+hi Lf_hl_match3                gui=bold    guifg=#FF7272
+hi Lf_hl_match4                gui=bold    guifg=#43B9F0
+hi Lf_hl_matchRefine           gui=bold    guifg=#e06c75
+hi Lf_hl_selection             gui=bold    guifg=#282C34  guibg=#A5EB84
+hi Lf_hl_buftagLineNum         gui=bold    guifg=#abb2bf
+hi Lf_hl_cursor                gui=bold    guifg=#E06C75  guibg=#E06C75
+hi Lf_hl_popup_cursor          gui=bold    guifg=#E06C75  guibg=#E06C75
+hi Lf_hl_quickfixColumnNumber  gui=bold    guifg=#E06C75  guibg=#E06C75
+hi Lf_hl_loclistColumnNumber   gui=bold    guifg=#E06C75  guibg=#E06C75
+hi Lf_hl_rgColumnNumber        gui=bold    guifg=#E06C75  guibg=#E06C75
+
+let g:Lf_StlPalette = {
+            \   'stlName': {
+            \       'gui': 'bold',
+            \       'font': 'NONE',
+            \       'guifg': '#282c34',
+            \       'guibg': '#e06c75',
+            \       'cterm': 'bold',
+            \       'ctermfg': '22',
+            \       'ctermbg': '157'
+            \   },
+            \   'stlCategory': {
+            \       'gui': 'NONE',
+            \       'font': 'NONE',
+            \       'guifg': '#282C34',
+            \       'guibg': '#ABB2BF',
+            \       'cterm': 'NONE',
+            \       'ctermfg': '16',
+            \       'ctermbg': '210'
+            \   },
+            \   'stlNameOnlyMode': {
+            \       'gui': 'NONE',
+            \       'font': 'NONE',
+            \       'guifg': '#000000',
+            \       'guibg': '#E8ED51',
+            \       'cterm': 'NONE',
+            \       'ctermfg': '16',
+            \       'ctermbg': '227'
+            \   },
+            \   'stlFullPathMode': {
+            \       'gui': 'NONE',
+            \       'font': 'NONE',
+            \       'guifg': '#000000',
+            \       'guibg': '#AAAAFF',
+            \       'cterm': 'NONE',
+            \       'ctermfg': '16',
+            \       'ctermbg': '147'
+            \   },
+            \   'stlFuzzyMode': {
+            \       'gui': 'NONE',
+            \       'font': 'NONE',
+            \       'guifg': '#282C34',
+            \       'guibg': '#808C8F',
+            \       'cterm': 'NONE',
+            \       'ctermfg': '16',
+            \       'ctermbg': '227'
+            \   },
+            \   'stlRegexMode': {
+            \       'gui': 'NONE',
+            \       'font': 'NONE',
+            \       'guifg': '#000000',
+            \       'guibg': '#7FECAD',
+            \       'cterm': 'NONE',
+            \       'ctermfg': '16',
+            \       'ctermbg': '121'
+            \   },
+            \   'stlCwd': {
+            \       'gui': 'NONE',
+            \       'font': 'NONE',
+            \       'guifg': '#ABB2BF',
+            \       'guibg': '#282c45',
+            \       'cterm': 'NONE',
+            \       'ctermfg': '195',
+            \       'ctermbg': '241'
+            \   },
+            \   'stlBlank': {
+            \       'gui': 'NONE',
+            \       'font': 'NONE',
+            \       'guifg': 'NONE',
+            \       'guibg': '#3B3E4C',
+            \       'cterm': 'NONE',
+            \       'ctermfg': 'NONE',
+            \       'ctermbg': '237'
+            \   },
+            \   'stlLineInfo': {
+            \       'gui': 'NONE',
+            \       'font': 'NONE',
+            \       'guifg': '#ABB2BF',
+            \       'guibg': '#282c45',
+            \       'cterm': 'NONE',
+            \       'ctermfg': '16',
+            \       'ctermbg': '195'
+            \   },
+            \   'stlTotal': {
+            \       'gui': 'NONE',
+            \       'font': 'NONE',
+            \       'guifg': '#282C34',
+            \       'guibg': '#ABB2BF',
+            \       'cterm': 'NONE',
+            \       'ctermfg': '16',
+            \       'ctermbg': '149'
+            \   }
+            \ }
+
+noremap <silent> <LocalLeader>t :<C-U><C-R>=printf("Leaderf! bufTag %s", "--bottom --nowrap")<CR><CR>
+noremap <silent> <LocalLeader>u :<C-U><C-R>=printf("Leaderf! function %s", "--bottom --nowrap")<CR><CR>
