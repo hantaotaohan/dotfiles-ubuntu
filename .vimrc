@@ -2080,8 +2080,8 @@ let g:Lf_IgnoreCurrentBufferName = 1
 let g:Lf_WindowHeight = 0.30
 let g:Lf_StlColorscheme = 'one'
 let g:Lf_DisableStl = 0
-let g:Lf_GtagsAutoGenerate = 1
-let g:Lf_ShowDevIcons = 1
+let g:Lf_GtagsAutoGenerate = 0
+let g:Lf_ShowDevIcons = 0
 let g:Lf_ShortcutF = '' 
 let g:Lf_ShortcutB = '' 
 let g:Lf_WindowPosition = 'bottom'
@@ -2093,7 +2093,7 @@ let g:Lf_PopupColorscheme = 'one'
 let g:Lf_PopupShowFoldcolumn = 0
 let g:Lf_CommandMap = { '<C-j>': ['<Down>'], '<C-k>': ['<Up>']}
 let g:Lf_StlSeparator = { 'left': '', 'right': '', 'font': '' }
-let g:Lf_SpinSymbols =  ['△', '▲', '▷', '▶', '▽', '▼', '◁', '◀']
+let g:Lf_SpinSymbols =  ['🌘', '🌗', '🌖', '🌕', '🌔', '🌓', '🌒', '🌑']
 let g:Lf_WildIgnore = {
             \ 'dir': ['.svn','.git','.hg'],
             \ 'file': ['*.sw?','~$*','*.bak','*.exe','*.o','*.so','*.py[co]']
@@ -2113,13 +2113,14 @@ hi Lf_hl_popup_cursor          gui=bold    guifg=#E06C75  guibg=#E06C75
 hi Lf_hl_quickfixColumnNumber  gui=bold    guifg=#E06C75  guibg=#E06C75
 hi Lf_hl_loclistColumnNumber   gui=bold    guifg=#E06C75  guibg=#E06C75
 hi Lf_hl_rgColumnNumber        gui=bold    guifg=#E06C75  guibg=#E06C75
+hi Lf_hl_stlSpin               gui=bold    guifg=#E06C75  guibg=#3B3E4C
 
 let g:Lf_StlPalette = {
             \   'stlName': {
             \       'gui': 'bold',
             \       'font': 'NONE',
-            \       'guifg': '#282c34',
-            \       'guibg': '#e06c75',
+            \       'guifg': '#ABBABF',
+            \       'guibg': '#40444E',
             \       'cterm': 'bold',
             \       'ctermfg': '22',
             \       'ctermbg': '157'
@@ -2127,8 +2128,8 @@ let g:Lf_StlPalette = {
             \   'stlCategory': {
             \       'gui': 'NONE',
             \       'font': 'NONE',
-            \       'guifg': '#282C34',
-            \       'guibg': '#ABB2BF',
+            \       'guifg': '#ABBABF',
+            \       'guibg': '#2C3339',
             \       'cterm': 'NONE',
             \       'ctermfg': '16',
             \       'ctermbg': '210'
@@ -2136,8 +2137,8 @@ let g:Lf_StlPalette = {
             \   'stlNameOnlyMode': {
             \       'gui': 'NONE',
             \       'font': 'NONE',
-            \       'guifg': '#000000',
-            \       'guibg': '#E8ED51',
+            \       'guifg': '#ABBABF',
+            \       'guibg': '#40444E',
             \       'cterm': 'NONE',
             \       'ctermfg': '16',
             \       'ctermbg': '227'
@@ -2145,8 +2146,8 @@ let g:Lf_StlPalette = {
             \   'stlFullPathMode': {
             \       'gui': 'NONE',
             \       'font': 'NONE',
-            \       'guifg': '#000000',
-            \       'guibg': '#AAAAFF',
+            \       'guifg': '#ABBABF',
+            \       'guibg': '#40444E',
             \       'cterm': 'NONE',
             \       'ctermfg': '16',
             \       'ctermbg': '147'
@@ -2154,8 +2155,8 @@ let g:Lf_StlPalette = {
             \   'stlFuzzyMode': {
             \       'gui': 'NONE',
             \       'font': 'NONE',
-            \       'guifg': '#282C34',
-            \       'guibg': '#808C8F',
+            \       'guifg': '#ABBABF',
+            \       'guibg': '#40444E',
             \       'cterm': 'NONE',
             \       'ctermfg': '16',
             \       'ctermbg': '227'
@@ -2163,8 +2164,8 @@ let g:Lf_StlPalette = {
             \   'stlRegexMode': {
             \       'gui': 'NONE',
             \       'font': 'NONE',
-            \       'guifg': '#000000',
-            \       'guibg': '#7FECAD',
+            \       'guifg': '#ABBABF',
+            \       'guibg': '#40444E',
             \       'cterm': 'NONE',
             \       'ctermfg': '16',
             \       'ctermbg': '121'
