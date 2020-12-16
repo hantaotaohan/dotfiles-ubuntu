@@ -833,6 +833,7 @@ let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = 'RO'
 let g:airline_symbols.linenr = ''
 let g:airline_symbols.maxlinenr = ''
+let g:airline_symbols.dirty = ' ●'
 endif
 
 
