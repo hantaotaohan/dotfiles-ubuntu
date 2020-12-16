@@ -317,44 +317,93 @@ let g:loaded_netrwFileHandlers = 1
 " Quickly close the current window
 " ----------------------------------------------------------------o--------------------------------------------------------------o
 function! BufferClose()
-    " close whole vim if this is the last buffer
+
+let time = strftime("%T")
+let file = expand('%:P')
+let permissions = getfperm(file)
+let notSaved = "redraw | echohl ErrorMsg | echo file . ' ' . 'Not Saved!' | return | echohl None"
+
+try
     if len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1
-    " 对为保存的文件进行提示并退出
         try
         execute "silent q"
         catch /:E37:\|:E162:/
-        if (confirm("Wanna save it ?", "&Yes\n&No", 2)==1) | redraw
+        if (confirm("Wanna save " . file . ' ' , "&Yes\n&No", 2)==1) | redraw
         try
         silent w!
+        echom '"' . file . '"' . " Save Done" . ' ' . time . ' - ' . "You can exit"
+        echohl None
         catch
         endtry
+        else
+        exe notSaved
         endif
         catch
         endtry
-        let time = strftime("%T")
-        let file = expand('%:P')
-        let permissions = getfperm(file)
-        redraw
-        echom '"' . file . '"' . " Save Done" . ' ' . time
-        redraw
-        echohl None
-        " execute "silent q"
-        redraw
-    elseif getbufvar(winbufnr('%'), '&buftype') == 'quickfix'
+        redraws
+    elseif get(getloclist(0, {'winid':0}), 'winid', 0)
         execute "lclose"
-    elseif getbufvar(winbufnr('%'), '&buftype') == 'terminal'
-        execute "q"
+    elseif get(getqflist({'winid':0}), 'winid', 0)
+        execute "cclose"
     elseif buflisted(bufnr('%')) == 1
         execute "bn"
         execute "bd#"
+    elseif winnr("$") == 1 && tabpagenr("$") > 1 && tabpagenr() > 1 && tabpagenr() < tabpagenr("$")
+        tabclose | tabprev
+    elseif getbufvar(winbufnr('%'), '&buftype') == 'help'
+        execute "bd#"
     else
-        execute "bd"
+        execute 'bd!'
     endif
-
+  catch
+endtry
 endfunction
+
 nnoremap <silent><localleader>q :call BufferClose()<cr>
 inoremap <silent><localleader>q <Esc>:call BufferClose()<cr>
 vnoremap <silent><localleader>q <Esc>:call BufferClose()<cr>
+
+"=================================================================================================================================
+
+" function! BufferClose()
+"     " close whole vim if this is the last buffer
+"     if len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1
+"     " 对为保存的文件进行提示并退出
+"         try
+"         execute "silent q"
+"         catch /:E37:\|:E162:/
+"         if (confirm("Wanna save it ?", "&Yes\n&No", 2)==1) | redraw
+"         try
+"         silent w!
+"         catch
+"         endtry
+"         endif
+"         catch
+"         endtry
+"         let time = strftime("%T")
+"         let file = expand('%:P')
+"         let permissions = getfperm(file)
+"         redraw
+"         echom '"' . file . '"' . " Save Done" . ' ' . time
+"         redraw
+"         echohl None
+"         " execute "silent q"
+"         redraw
+"     elseif getbufvar(winbufnr('%'), '&buftype') == 'quickfix'
+"         execute "lclose"
+"     elseif getbufvar(winbufnr('%'), '&buftype') == 'terminal'
+"         execute "q"
+"     elseif buflisted(bufnr('%')) == 1
+"         execute "bn"
+"         execute "bd#"
+"     else
+"         execute "bd"
+"     endif
+
+" endfunction
+" nnoremap <silent><localleader>q :call BufferClose()<cr>
+" inoremap <silent><localleader>q <Esc>:call BufferClose()<cr>
+" vnoremap <silent><localleader>q <Esc>:call BufferClose()<cr>
 
 " ----------------------------------------------------------------o--------------------------------------------------------------o
 " Quickly Save the current window
