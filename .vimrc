@@ -2035,13 +2035,16 @@ autocmd  FileType which_key set laststatus=0 noshowmode noruler
 " Signature  settings
 "=================================================================================================================================
 let g:SignatureEnabledAtStartup = 1
+let g:SignatureForceMarkPlacement = 1
+let g:SignatureForceMarkerPlacement = 1
+let g:SignatureMarkOrder="\m"
 nnoremap <silent><leader>m :SignatureToggleSigns<CR>    
 nnoremap <silent><localleader>m :SignatureToggleSigns<CR> 
 
 let g:SignatureMap = {
         \ 'Leader'             :  "m",
-        \ 'PlaceNextMark'      :  "mm",
-        \ 'ToggleMarkAtLine'   :  "m.",
+        \ 'PlaceNextMark'      :  "m.",
+        \ 'ToggleMarkAtLine'   :  "mm",
         \ 'PurgeMarksAtLine'   :  "m-",
         \ 'DeleteMark'         :  "md",
         \ 'PurgeMarks'         :  "mx",
