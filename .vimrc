@@ -534,6 +534,7 @@ Plug 'kshenoy/vim-signature'                                             " 书�
 Plug 'yianwillis/vimcdoc'                                                " 中文帮助
 Plug 'Yggdroot/LeaderF'                                                  " 模糊搜索
 Plug 'voldikss/vim-floaterm'                                             " 终端插件
+"Plug 'neoclide/coc.nvim', {'branch': 'release'}                          " 补全插件
 "Plug 'Lenovsky/nuake'                                                    " 快速启动命令行工具
 "Plug 'ludovicchabant/vim-gutentags'                                      " Tags管理
 "Plug 'MattesGroeger/vim-bookmarks'                                       " 书签插件
@@ -2275,3 +2276,23 @@ let g:floaterm_wintype = 'normal'
 let g:floaterm_height = 0.3
 let g:floaterm_autoclose = 2
 let g:floaterm_autohide = v:false
+
+"=================================================================================================================================
+" Coc.nvim settings
+"=================================================================================================================================
+"function! s:check_back_space() abort
+"    let col = col('.') - 1
+"    return !col || getline('.')[col - 1]  =~ '\s'
+"endfunction
+
+"inoremap <silent><expr> <TAB>
+"    \ pumvisible() ? "\<C-n>" :
+"    \ <SID>check_back_space() ? "\<TAB>" :
+"    \ coc#refresh()
+
+"inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+"    \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+"":CocConfig ->
+""    "suggest.autoTrigger": "none"
+
