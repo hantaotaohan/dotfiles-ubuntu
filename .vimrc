@@ -534,6 +534,7 @@ Plug 'arcticicestudio/nord-vim'                                          " Theme
 Plug 'kshenoy/vim-signature'                                             " 书签插件
 Plug 'yianwillis/vimcdoc'                                                " 中文帮助
 Plug 'Yggdroot/LeaderF'                                                  " 模糊搜索
+"Plug 'voldikss/vim-floaterm'                                             " 终端插件
 "Plug 'ludovicchabant/vim-gutentags'                                      " Tags管理
 "Plug 'MattesGroeger/vim-bookmarks'                                       " 书签插件
 "Plug 'rakr/vim-one'                                                      " Themes
@@ -2260,3 +2261,13 @@ let g:Lf_StlPalette = {
 
 noremap <silent> <LocalLeader>t :<C-U><C-R>=printf("Leaderf! bufTag %s", "--bottom --nowrap")<CR><CR>
 noremap <silent> <LocalLeader>u :<C-U><C-R>=printf("Leaderf! function %s", "--bottom --nowrap")<CR><CR>
+
+"=================================================================================================================================
+" Floaterm settings
+"=================================================================================================================================
+let g:floaterm_keymap_toggle = '<F6>'
+let g:floaterm_keymap_toggle = '<silent><localleader>c'
+let g:floaterm_wintype = 'normal'
+let g:floaterm_height = 0.3
+let g:floaterm_autoclose = 2
+let g:floaterm_autohide = v:false
