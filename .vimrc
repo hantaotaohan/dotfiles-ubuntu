@@ -527,14 +527,14 @@ Plug 'vim-scripts/fcitx.vim'                                             " 输�
 Plug 'ferrine/md-img-paste.vim'                                          " Markdown截图自动粘贴
 Plug 'vimwiki/vimwiki' , { 'branch': 'dev' ,'on': 'VimwikiIndex' }       " Vimwiki插件
 Plug 'michal-h21/vim-zettel'                                             " 配合vimwiki的功能插件
-Plug 'Lenovsky/nuake'                                                    " 快速启动命令行工具
 Plug 'liuchengxu/vim-which-key'                                          " Leader辅助
 Plug 'jiangmiao/auto-pairs'                                              " 成对添加括号等
 Plug 'arcticicestudio/nord-vim'                                          " Themes
 Plug 'kshenoy/vim-signature'                                             " 书签插件
 Plug 'yianwillis/vimcdoc'                                                " 中文帮助
 Plug 'Yggdroot/LeaderF'                                                  " 模糊搜索
-"Plug 'voldikss/vim-floaterm'                                             " 终端插件
+Plug 'voldikss/vim-floaterm'                                             " 终端插件
+"Plug 'Lenovsky/nuake'                                                    " 快速启动命令行工具
 "Plug 'ludovicchabant/vim-gutentags'                                      " Tags管理
 "Plug 'MattesGroeger/vim-bookmarks'                                       " 书签插件
 "Plug 'rakr/vim-one'                                                      " Themes
@@ -1668,15 +1668,15 @@ autocmd filetype vimwiki nnoremap <buffer> <leader>wd :call VimwikiDeleteClean()
 "=================================================================================================================================
 " Nuake settings
 "=================================================================================================================================
-nnoremap <F6> :Nuake<CR>
-inoremap <F6> <C-\><C-n>:Nuake<CR>
-tnoremap <F6> <C-\><C-n>:Nuake<CR>
-nnoremap <silent><localleader>c :Nuake<CR>
-inoremap <silent><localleader>c <C-\><C-n>:Nuake<CR>
-tnoremap <silent><localleader>c <C-\><C-n>:Nuake<CR>
+"nnoremap <F6> :Nuake<CR>
+"inoremap <F6> <C-\><C-n>:Nuake<CR>
+"tnoremap <F6> <C-\><C-n>:Nuake<CR>
+"nnoremap <silent><localleader>c :Nuake<CR>
+"inoremap <silent><localleader>c <C-\><C-n>:Nuake<CR>
+"tnoremap <silent><localleader>c <C-\><C-n>:Nuake<CR>
 
-let g:nuake_position = 'bottom'                                  " 'bottom', 'right', 'top' or 'left'.
-let g:nuake_size = 0.38                                          " 'default 0.25'
+"let g:nuake_position = 'bottom'                                  " 'bottom', 'right', 'top' or 'left'.
+"let g:nuake_size = 0.38                                          " 'default 0.25'
 
 
 "=================================================================================================================================
@@ -2262,12 +2262,13 @@ let g:Lf_StlPalette = {
 noremap <silent> <LocalLeader>t :<C-U><C-R>=printf("Leaderf! bufTag %s", "--bottom --nowrap")<CR><CR>
 noremap <silent> <LocalLeader>u :<C-U><C-R>=printf("Leaderf! function %s", "--bottom --nowrap")<CR><CR>
 
+
 "=================================================================================================================================
 " Floaterm settings
 "=================================================================================================================================
-"let g:floaterm_keymap_toggle = '<F6>'
-"let g:floaterm_keymap_toggle = '<silent><localleader>c'
-"let g:floaterm_wintype = 'normal'
-"let g:floaterm_height = 0.3
-"let g:floaterm_autoclose = 2
-"let g:floaterm_autohide = v:false
+let g:floaterm_keymap_toggle = '<F6>'
+let g:floaterm_keymap_toggle = '<silent><localleader>c'
+let g:floaterm_wintype = 'normal'
+let g:floaterm_height = 0.3
+let g:floaterm_autoclose = 2
+let g:floaterm_autohide = v:false
