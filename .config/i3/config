@@ -412,7 +412,7 @@ bar {
         active_workspace    $base00 $base00 $base06
         inactive_workspace  $base00 $base00 $base06
         urgent_workspace    $base00 $base08 $base00
-        binding_mode        $base00 $base0E $base00
+        binding_mode        $base00 $base00 $base08
     }
 }
 
