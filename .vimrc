@@ -968,8 +968,8 @@ let g:table_mode_corner = '|'
 "=================================================================================================================================
 nnoremap <F9> :TagbarToggle<CR>                                           " F9打开关闭Tagbar
 inoremap <F9> <Esc>:TagbarToggle<CR>                                     " F9打开关闭Tagbar
-nnoremap <localleader>t :TagbarToggle<CR>                                 " ;t打开关闭Tagbar
-inoremap <localleader>t <Esc>:TagbarToggle<CR>                           " ;t打开关闭Tagbar
+"nnoremap <localleader>t :TagbarToggle<CR>                                 " ;t打开关闭Tagbar
+"inoremap <localleader>t <Esc>:TagbarToggle<CR>                           " ;t打开关闭Tagbar
 let g:tagbar_autofocus = 1                                               " 焦点自动聚焦到Tagbar
 
 
