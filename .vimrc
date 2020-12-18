@@ -522,12 +522,12 @@ Plug 'ferrine/md-img-paste.vim'                                          " Markd
 Plug 'vimwiki/vimwiki' , { 'branch': 'dev' ,'on': 'VimwikiIndex' }       " Vimwiki插件
 Plug 'michal-h21/vim-zettel'                                             " 配合vimwiki的功能插件
 Plug 'liuchengxu/vim-which-key'                                          " Leader辅助
-Plug 'jiangmiao/auto-pairs'                                              " 成对添加括号等
 Plug 'arcticicestudio/nord-vim'                                          " Themes
 Plug 'kshenoy/vim-signature'                                             " 书签插件
 Plug 'yianwillis/vimcdoc'                                                " 中文帮助
 Plug 'Yggdroot/LeaderF'                                                  " 模糊搜索
 Plug 'voldikss/vim-floaterm'                                             " 终端插件
+"Plug 'jiangmiao/auto-pairs'                                              " 成对添加括号等
 "Plug 'neoclide/coc.nvim', {'branch': 'release'}                          " 补全插件
 "Plug 'Lenovsky/nuake'                                                    " 快速启动命令行工具
 "Plug 'ludovicchabant/vim-gutentags'                                      " Tags管理
