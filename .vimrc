@@ -543,7 +543,6 @@ Plug 'voldikss/vim-floaterm'                                             " 终�
 "Plug 'Lenovsky/nuake'                                                    " 快速启动命令行工具
 "Plug 'ludovicchabant/vim-gutentags'                                      " Tags管理
 "Plug 'MattesGroeger/vim-bookmarks'                                       " 书签插件
-"Plug 'rakr/vim-one'                                                      " Themes
 "Plug 'vim-airline/vim-airline-themes'                                    " 状态栏主题
 "Plug 'Neur1n/neuims'                                                     " 输入法自动切换 
 "Plug 'arecarn/vim-auto-autoread'                                         " 自动Autoread插件
@@ -551,6 +550,8 @@ Plug 'voldikss/vim-floaterm'                                             " 终�
 "Plug 'junegunn/vim-easy-align'                                           " 自动对齐插件
 "Plug 'mg979/vim-visual-multi'                                            " 多光标插件
 "Plug 'morhetz/gruvbox'                                                   " Themes
+"Plug 'rakr/vim-one'                                                      " Themes
+"Plug 'tyrannicaltoucan/vim-deep-space'                                   " Themes
 "Plug 'terryma/vim-multiple-cursors'                                      " 多光标插件
 "Plug 'edkolev/tmuxline.vim'                                              " Vim同步tmux配色
 "Plug 'scrooloose/nerdcommenter'                                          " 快速注释插件
