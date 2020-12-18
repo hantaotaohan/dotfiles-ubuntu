@@ -527,6 +527,7 @@ Plug 'kshenoy/vim-signature'                                             " 书�
 Plug 'yianwillis/vimcdoc'                                                " 中文帮助
 Plug 'Yggdroot/LeaderF'                                                  " 模糊搜索
 Plug 'voldikss/vim-floaterm'                                             " 终端插件
+Plug 'hotoo/pangu.vim'                                                   " 中文排版
 "Plug 'jiangmiao/auto-pairs'                                              " 成对添加括号等
 "Plug 'neoclide/coc.nvim', {'branch': 'release'}                          " 补全插件
 "Plug 'Lenovsky/nuake'                                                    " 快速启动命令行工具
@@ -2299,3 +2300,7 @@ let g:floaterm_autohide = v:false
 "":CocConfig ->
 ""    "suggest.autoTrigger": "none"
 
+"=================================================================================================================================
+" Pangu settings
+"=================================================================================================================================
+autocmd BufWritePre *.markdown,*.md,*.text,*.txt,*.wiki,*.cnx call PanGuSpacing()
