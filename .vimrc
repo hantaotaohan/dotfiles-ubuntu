@@ -2044,6 +2044,7 @@ autocmd  FileType which_key set laststatus=0 noshowmode noruler
 let g:SignatureEnabledAtStartup = 1
 let g:SignatureForceMarkPlacement = 1
 let g:SignatureForceMarkerPlacement = 1
+let g:SignatureWrapJumps = 0
 let g:SignatureMarkOrder="\m"
 nnoremap <silent><leader>m :SignatureToggleSigns<CR>    
 nnoremap <silent><localleader>m :SignatureToggleSigns<CR> 
