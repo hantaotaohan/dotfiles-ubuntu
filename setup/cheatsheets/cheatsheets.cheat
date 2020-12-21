@@ -23,7 +23,8 @@ bat --style header,grid --color always $HOME/dotfiles/setup/cheatsheets/tmux_che
 % Zip
 
 # Compressed a file or Multiple files to zip
-zip -r <file_zip_name>.zip $(echo "<files>")
+zip -r <file_name>.zip $(echo "<files>")
+$ file_name : echo $(date +%H%M%S)
 $ files : ls .  --- --multi 
 
 # Add a file to zip file
@@ -57,14 +58,18 @@ $ file_zip_name: ls *.zip
 
 # Create .tar package
 tar cf <file_tar_name>.tar $(echo "<files>")
+$ file_tar_name : echo $(date +%H%M%S)
 $ files : ls .  --- --multi 
 
 # Create .tar.gz package
 tar czf <file_tar_name>.tar.gz $(echo "<files>")
+$ file_tar_name : echo $(date +%H%M%S)
 $ files : ls .  --- --multi 
 
 # Use the Directory to create a compression package
 tar czf <file_tar_name>.tar.gz -C <Directory> .
+$ file_tar_name : echo $(date +%H%M%S)
+$ files : ls .  --- --multi 
 $ Directory : fd -t d . 
 
 # Unzip tar to the current directory
@@ -271,8 +276,8 @@ git checkout -b <new_branch_name>
 
 $ branch: git branch | awk '{print $NF}'
 $ toplevel_directory: git rev-parse --show-toplevel
-$ unstaged_files: git status --untracked-files=no -s --porcelain | awk '{print $NF}' --- --multi true
-$ changed_files: git status --untracked-files=all -s --porcelain | awk '{print $NF}' --- --multi true
+$ unstaged_files: git status --untracked-files=no -s --porcelain | awk '{print $NF}' --- --multi
+$ changed_files: git status --untracked-files=all -s --porcelain | awk '{print $NF}' --- --multi
 
 ; -----------------------------------------------------------------------------------------------------------------
 ; Systemctl
