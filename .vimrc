@@ -978,6 +978,21 @@ inoremap <F9> <Esc>:TagbarToggle<CR>                                     " F9打
 "nnoremap <localleader>t :TagbarToggle<CR>                                 " ;t打开关闭Tagbar
 "inoremap <localleader>t <Esc>:TagbarToggle<CR>                           " ;t打开关闭Tagbar
 let g:tagbar_autofocus = 1                                               " 焦点自动聚焦到Tagbar
+let g:tagbar_autopreview = 0
+let g:tagbar_no_autocmds = 1
+let g:tagbar_jump_lazy_scroll = 1
+let g:tagbar_sort = 1
+let g:tagbar_case_insensitive = 1
+let g:tagbar_compact = 1
+let g:tagbar_show_balloon = 0
+let g:tagbar_show_data_type = 0
+let g:tagbar_show_visibility = 1
+let g:tagbar_expand = 1
+let g:tagbar_autoshowtag = 2
+let g:no_status_line = 1
+let g:tagbar_silent = 1
+let g:tagbar_scrolloff = 10
+let g:tagbar_hide_nonpublic = 1
 
 
 "=================================================================================================================================
