@@ -974,14 +974,15 @@ let g:table_mode_corner = '|'
 " Tagbar   
 "=================================================================================================================================
 nnoremap <F9> :TagbarToggle<CR>                                           " F9打开关闭Tagbar
-inoremap <F9> <Esc>:TagbarToggle<CR>                                     " F9打开关闭Tagbar
-"nnoremap <localleader>t :TagbarToggle<CR>                                 " ;t打开关闭Tagbar
+inoremap <F9> <Esc>:TagbarToggle<CR>                                      " F9打开关闭Tagbar
+"nnoremap <localleader>t :TagbarToggle<CR>                                " ;t打开关闭Tagbar
 "inoremap <localleader>t <Esc>:TagbarToggle<CR>                           " ;t打开关闭Tagbar
-let g:tagbar_autofocus = 1                                               " 焦点自动聚焦到Tagbar
+let g:tagbar_autofocus = 1                                                " 焦点自动聚焦到Tagbar
+let g:tagbar_autoclose = 0
 let g:tagbar_autopreview = 0
 let g:tagbar_no_autocmds = 1
 let g:tagbar_jump_lazy_scroll = 1
-let g:tagbar_sort = 1
+let g:tagbar_sort = 0
 let g:tagbar_case_insensitive = 1
 let g:tagbar_compact = 1
 let g:tagbar_show_balloon = 0
@@ -993,6 +994,8 @@ let g:no_status_line = 1
 let g:tagbar_silent = 1
 let g:tagbar_scrolloff = 10
 let g:tagbar_hide_nonpublic = 1
+let g:tagbar_map_preview = '<SPACE>'
+let g:tagbar_map_showproto = "d"
 
 
 "=================================================================================================================================
