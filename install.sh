@@ -60,6 +60,7 @@ Dotfiles_symlinks=( \
         .wgetrc \
         .Xmodmap \
         .imwheelrc \
+	.gtkrc-2.0 \
         .Xresources
         )
 
