@@ -242,7 +242,7 @@ VIM() {
     sudo add-apt-repository -y ppa:jonathonf/vim
     sudo sed -i "s/http:\/\/ppa.launchpad.net/https:\/\/launchpad.proxy.ustclug.org/g" /etc/apt/sources.list.d/*.list
     sudo apt update
-    sudo apt install -y vim
+    sudo apt install -y vim vim-gtk
     sudo sed -i "s/https:\/\/launchpad.proxy.ustclug.org/http:\/\/ppa.launchpad.net/g" /etc/apt/sources.list.d/*.list
     sudo add-apt-repository -y --remove ppa:jonathonf/vim
     row
