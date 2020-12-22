@@ -53,7 +53,7 @@ set convert-meta off
 # 自定义按键绑定
 # F5 进入HOME
 "\e[15~":"cd $HOME && ll\n"
-# \+q 退出bash
+# ;+q 退出bash
 "\;q":"exit\n"
 # \+g 进入navi
 "\\g":"navi\n"
