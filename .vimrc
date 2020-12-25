@@ -1415,56 +1415,61 @@ autocmd FileType markdown nmap <buffer><silent> <leader>p :call mdip#MarkdownCli
 
 
 "=================================================================================================================================
+" 
+"
+"
+"
+"
+" Vimwiki HUGO  settings
+"
+"
+"
+"
+"
+"
+"=================================================================================================================================
+"=================================================================================================================================
 " Vimwiki Zettel settings
 "=================================================================================================================================
-let g:zettel_dir = "$HOME/vimwiki/src"
-let g:zettel_format = "%Y-%m-%d-%H-%M"
+let g:zettel_dir = "$HOME/blog/content/en/docs"
+let g:zettel_format = "%Y%m%d%H%M"
 let g:zettel_link_format="[%title](%link)"
-let g:zettel_options = [{"template" :  "$HOME/vimwiki/templates/zettelnew.tpl"}]
-
+let g:zettel_disable_front_matter=1
+let g:zettel_options = [{},{"front_matter" :
+            \[["draft","false"]],
+            \"template" :  "$HOME/vimwiki/templates/zettelnew.tpl"}]
 
 "=================================================================================================================================
 " Vimwiki settings
 "=================================================================================================================================
-" Vimwiki 快捷键设置
-" autocmd FileType vimwiki nmap <Leader>wg <Plug>Vimwiki2HTMLBrowse
-" autocmd FileType vimwiki nmap <Leader>wh :VimwikiAll2HTML<cr>
-" autocmd FileType vimwiki nmap <Leader>wb :ZettelBackLinks<cr>
-" autocmd FileType vimwiki nmap <Leader>wn :ZettelNew<cr>
-" autocmd FileType vimwiki nmap <Leader>wl :VimwikiBacklinks<cr>
 autocmd FileType vimwiki nmap <Leader>ws :VWS<Space>
 autocmd FileType vimwiki nmap <Plug>VimwikiUISelect <nop>
-
+autocmd FileType vimwiki nmap <silent><localleader>p :call GitPush()<cr>
 
 let g:vimwiki_list = [{
         \ 'auto_export': 1,
-	\ 'auto_tags': 1,
+        \ 'auto_tags': 1,
         \ 'auto_generate_tags': 1,
         \ 'auto_generate_links': 1,
         \ 'automatic_nested_syntaxes': 1,
-        \ 'path': '$HOME/vimwiki/src',
-        \ 'path_html': '$HOME/vimwiki/docs/',
-        \ 'template_path': '$HOME/vimwiki/templates/',
-        \ 'template_default': 'default',
-        \ 'template_ext': '.tpl',
-        \ 'css_file': '$HOME/vimwiki/templates/style.css',
+        \ 'path': '$HOME/blog/content/en/docs/',
+        \ 'path_html': '$HOME/blog/public',
         \ 'syntax': 'markdown',
         \ 'ext': '.md',
-        \ 'custom_wiki2html': 'vimwiki_markdown',
+        \ 'index' : '_index',
+        \ 'custom_wiki2html': '$HOME/1.sh',
         \ 'let wiki.nested_syntaxes': {'python': 'python', 'bash': 'sh'},
         \ 'html_filename_parameterization': 1
         \ }]
 
 let g:vimwiki_hl_cb_checked = 2
-let g:vimwiki_ext = '.md' " set extension to .md
-let g:vimwiki_global_ext = 0 " make sure vimwiki doesn't own all .md files
+let g:vimwiki_global_ext = 1 " make sure vimwiki doesn't own all .md files
 let g:vimwiki_use_mouse = 1
 let g:vimwiki_conceallevel=1
-let g:vimwiki_markdown_link_ext = 1
+let g:vimwiki_markdown_link_ext = 0
 let g:list_margin=0
 let g:vimwiki_user_htmls = '404.html,search.html,books.html,todo,html,contact.html,tags.html'
 let g:vimwiki_valid_html_tags='b,i,s,u,sub,sup,kbd,del,br,hr,div,code,h1,nav,body,aside'
-
 
 hi VimwikiHeader1 guifg=#e5c07b
 hi VimwikiHeader2 guifg=#98c379
@@ -1484,121 +1489,7 @@ hi VimwikiLink guifg=#61afef
 hi VimwikiLink guifg=#61afef
 hi VimwikiBold term=reverse cterm=underline ctermfg=204 gui=underline guifg=#E06C75
 
-
 "=================================================================================================================================
-
-" 自动执行同步src的img同步到docs的img脚本
-au VimEnter *
-            \  if (isdirectory($HOME . "vimwiki")) && filereadable("$HOME/dotfiles/extras/vimwiki_img_autosync.sh")
-            \| silent execute "!nohup $HOME/dotfiles/extras/vimwiki_img_autosync.sh >/dev/null 2>&1 &"
-            \| endif
-
-" 开启/关闭Vimiki时自动步上传github
-
-" 方案一
-"augroup vimwiki
-  "if !exists('g:zettel_synced')
-    "let g:zettel_synced = 0
-  "else
-    "finish
-  "endif
-
-  "if !exists('g:zettel_dir')
-    "let g:zettel_dir = vimwiki#vars#get_wikilocal('path')
-  "endif
-
-  "function! s:git_action(action)
-    "exec ":cd %:h"
-    ".normal ^L
-    "exec ":AsyncStop"
-    "exec ":AsyncRun !pushd" . g:zettel_dir . "; ". a:action . "; popd"
-    "autocmd User AsyncRunStop exec ":ccl"
-    "autocmd User AsyncRunStop exec ":e %"
-    "redraw!
-  "endfunction
-
-  "" sync changes at the start
-  "au! BufRead $HOME/vimwiki/src/index.md call <sid>git_action("git pull origin master")
-  "au! BufWritePost $HOME/vimwiki/src/index.md call <sid>git_action("git add .;git commit -m \"Auto commit + push. `date`\"")
-  "au! VimLeave $HOME/vimwiki/src/index.md call <sid>git_action("git push origin master")
-"augroup END
-
-
-" 方案二
-"au! BufReadPost $HOME/vimwiki/src/index.md !git -C $HOME/vimwiki/ pull origin master
-"au! BufWritePost $HOME/vimwiki/* !git -C $HOME/vimwiki/ add . ;git commit -m "Auto commit."
-"au! VimLeave $HOME/vimwiki/* !bash $HOME/dotfiles/extras/comparefolders.sh || !git -C $HOME/vimwiki/ add . ;git commit -m "Auto commit + push." ;git push origin master
-
-
-" " 方案三(异步)
-" func GitPull()
-"     " 获取云端最新版
-"     exec "w"
-"     exec ":cd %:h"
-"     .normal ^L
-"     exec ":AsyncStop"
-"     exec ":AsyncRun git pull origin master"
-"     autocmd User AsyncRunStop exec ":ccl"
-"     autocmd User AsyncRunStop exec ":e %"
-"     let g:asyncrun_exit = "echom 'Sync Done'"
-" endfunc
-
-" func GitCommit()
-"     " 提交到本地
-"     call system("git add --all")
-" 	call system("git commit -m \"`whoami` @  `hostname` in `date +%Y-%m-%d=%H:%M:%S`\"")
-" 	exec ":AsyncRun git push origin master"
-"     let g:asyncrun_exit = "echom 'Git Push Done'"
-" endfunc
-
-" func GitPush()
-"     " 上传到云端
-"     call system("git add --all")
-" 	call system("git commit -m \"`whoami` @  `hostname` in `date +%Y-%m-%d=%H:%M:%S`\"")
-" 	exec ":AsyncRun -mode=bang git push origin master"
-"     exec ":AsyncStop"
-"     let g:asyncrun_exit = "echom 'Done'"
-" endfunc
-
-" autocmd BufReadPost $HOME/vimwiki/src/index.md call GitPull()
-" autocmd BufWritePost $HOME/vimwiki/src/index.md call GitCommit()
-" autocmd VimLeave $HOME/vimwiki/* if exists("g:asyncrun_exit") | call GitPush() | endif
-
-" let g:asyncrun_status= ''
-" if exists('g:asyncrun_status')
-" let g:airline_section_x = airline#section#create_right(['%{g:asyncrun_status}'])
-" endif
-
-
-" " 方案三(异步)
-" func GitPull()
-"     " 获取云端最新版
-"     exec "w"
-"     exec ":cd %:h"
-"     .normal ^L
-"     exec ":AsyncStop"
-"     exec ":AsyncRun git pull origin master"
-"     autocmd User AsyncRunStop exec ":ccl"
-"     autocmd User AsyncRunStop exec ":e %"
-"     let g:asyncrun_exit = "echom 'Sync done'"
-" endfunc
-
-" func GitCommit()
-"     " 提交到本地
-"     exec ":AsyncStop"
-"     exec ":AsyncRun git -C $HOME/vimwiki/ add . ;git commit -m 'Auto commit'"
-" endfunc
-
-" func GitPush()
-"     " 上传到云端
-"     exec ":AsyncStop"
-"     exec ":AsyncRun git -C $HOME/vimwiki/ add . ;git commit -m \"Auto commit `date`\" ;git push origin master"
-" endfunc
-
-" autocmd BufReadPost $HOME/vimwiki/src/index.md call GitPull()
-" autocmd BufWritePost $HOME/vimwiki/src/index.md call GitPush()
-" autocmd VimLeave $HOME/vimwiki/* !git -C $HOME/vimwiki/ add . ;git commit -m "Auto commit + push." ;git push origin master
-
 " 方案三(异步) - 最终方案
 func GitPull()
     " 获取云端最新版
@@ -1629,12 +1520,11 @@ func GitPush()
     let g:asyncrun_exit = "echom 'Done'"
 endfunc
 
-autocmd BufReadPost $HOME/vimwiki/src/index.md call GitPull()
-autocmd BufWritePost $HOME/vimwiki/src/index.md call GitCommit()
-autocmd VimLeave $HOME/vimwiki/* call GitPush() 
+autocmd BufReadPost $HOME/blog/content/en/docs/_index.md call GitPull()
+autocmd BufWritePost $HOME/blog/contet/en/docs/_index.md call GitCommit()
+autocmd VimLeave $HOME/blog/* call GitPush() 
 
 "=================================================================================================================================
-
 " 自定义airline同步通知颜色
 function! AirlineThemePatch(palette)
   " [ guifg, guibg, ctermfg, ctermbg, opts ].
@@ -1667,20 +1557,13 @@ function! Get_asyncrun_running()
   return async_status
 endfunction
 
-" if !empty(glob("$HOME/.vim/plugged/vim-airline"))
-" call airline#parts#define_function('asyncrun_status', 'Get_asyncrun_running')
-" let g:airline_section_x = airline#section#create(['asyncrun_status'])
-" endif
-
 try 
 call airline#parts#define_function('asyncrun_status', 'Get_asyncrun_running')
 let g:airline_section_x = airline#section#create(['asyncrun_status'])
 catch
 endtry
 
-
 "=================================================================================================================================
-
 " 使用wd删除markdown时自动删除相对应不使用的HTML文件
 function! VimwikiDeleteClean()
   let htmlfile = expand('%:r') . '.html'
@@ -1690,6 +1573,292 @@ function! VimwikiDeleteClean()
   call vimwiki#base#delete_link()
 endfunction
 autocmd filetype vimwiki nnoremap <buffer> <leader>wd :call VimwikiDeleteClean()<CR>
+
+
+""=================================================================================================================================
+"" 
+""
+""
+""
+""
+""
+"" Vimwiki DEFAULT  settings
+""
+""
+""
+""
+""
+""
+""=================================================================================================================================
+""=================================================================================================================================
+"" Vimwiki Zettel settings
+""=================================================================================================================================
+"let g:zettel_dir = "$HOME/vimwiki/src"
+"let g:zettel_format = "%Y-%m-%d-%H-%M"
+"let g:zettel_link_format="[%title](%link)"
+"let g:zettel_options = [{"template" :  "$HOME/vimwiki/templates/zettelnew.tpl"}]
+
+""=================================================================================================================================
+"" Vimwiki settings
+""=================================================================================================================================
+"" Vimwiki 快捷键设置
+"" autocmd FileType vimwiki nmap <Leader>wg <Plug>Vimwiki2HTMLBrowse
+"" autocmd FileType vimwiki nmap <Leader>wh :VimwikiAll2HTML<cr>
+"" autocmd FileType vimwiki nmap <Leader>wb :ZettelBackLinks<cr>
+"" autocmd FileType vimwiki nmap <Leader>wn :ZettelNew<cr>
+"" autocmd FileType vimwiki nmap <Leader>wl :VimwikiBacklinks<cr>
+"autocmd FileType vimwiki nmap <Leader>ws :VWS<Space>
+"autocmd FileType vimwiki nmap <Plug>VimwikiUISelect <nop>
+
+"let g:vimwiki_list = [{
+"        \ 'auto_export': 1,
+"	\ 'auto_tags': 1,
+"        \ 'auto_generate_tags': 1,
+"        \ 'auto_generate_links': 1,
+"        \ 'automatic_nested_syntaxes': 1,
+"        \ 'path': '$HOME/vimwiki/src',
+"        \ 'path_html': '$HOME/vimwiki/docs/',
+"        \ 'template_path': '$HOME/vimwiki/templates/',
+"        \ 'template_default': 'default',
+"        \ 'template_ext': '.tpl',
+"        \ 'css_file': '$HOME/vimwiki/templates/style.css',
+"        \ 'syntax': 'markdown',
+"        \ 'ext': '.md',
+"        \ 'custom_wiki2html': 'vimwiki_markdown',
+"        \ 'let wiki.nested_syntaxes': {'python': 'python', 'bash': 'sh'},
+"        \ 'html_filename_parameterization': 1
+"        \ }]
+
+"let g:vimwiki_hl_cb_checked = 2
+"let g:vimwiki_ext = '.md' " set extension to .md
+"let g:vimwiki_global_ext = 0 " make sure vimwiki doesn't own all .md files
+"let g:vimwiki_use_mouse = 1
+"let g:vimwiki_conceallevel=1
+"let g:vimwiki_markdown_link_ext = 1
+"let g:list_margin=0
+"let g:vimwiki_user_htmls = '404.html,search.html,books.html,todo,html,contact.html,tags.html'
+"let g:vimwiki_valid_html_tags='b,i,s,u,sub,sup,kbd,del,br,hr,div,code,h1,nav,body,aside'
+
+"hi VimwikiHeader1 guifg=#e5c07b
+"hi VimwikiHeader2 guifg=#98c379
+"hi VimwikiHeader3 guifg=#c678dd
+"hi VimwikiHeader4 guifg=#8096BF
+"hi VimwikiHeader5 guifg=#8096BF
+"hi VimwikiHeader6 guifg=#8096BF
+
+"hi VimwikiH1Folding guifg=#e5c07b
+"hi VimwikiH2Folding guifg=#98c379
+"hi VimwikiH3Folding guifg=#c678dd
+"hi VimwikiH4Folding guifg=#8096BF
+"hi VimwikiH5Folding guifg=#8096BF
+"hi VimwikiH6Folding guifg=#8096BF
+
+"hi VimwikiLink guifg=#61afef
+"hi VimwikiLink guifg=#61afef
+"hi VimwikiBold term=reverse cterm=underline ctermfg=204 gui=underline guifg=#E06C75
+
+""=================================================================================================================================
+"" 自动执行同步src的img同步到docs的img脚本
+"au VimEnter *
+"            \  if (isdirectory($HOME . "vimwiki")) && filereadable("$HOME/dotfiles/extras/vimwiki_img_autosync.sh")
+"            \| silent execute "!nohup $HOME/dotfiles/extras/vimwiki_img_autosync.sh >/dev/null 2>&1 &"
+"            \| endif
+
+"" 开启/关闭Vimiki时自动步上传github
+
+"" 方案一
+""augroup vimwiki
+"  "if !exists('g:zettel_synced')
+"    "let g:zettel_synced = 0
+"  "else
+"    "finish
+"  "endif
+
+"  "if !exists('g:zettel_dir')
+"    "let g:zettel_dir = vimwiki#vars#get_wikilocal('path')
+"  "endif
+
+"  "function! s:git_action(action)
+"    "exec ":cd %:h"
+"    ".normal ^L
+"    "exec ":AsyncStop"
+"    "exec ":AsyncRun !pushd" . g:zettel_dir . "; ". a:action . "; popd"
+"    "autocmd User AsyncRunStop exec ":ccl"
+"    "autocmd User AsyncRunStop exec ":e %"
+"    "redraw!
+"  "endfunction
+
+"  "" sync changes at the start
+"  "au! BufRead $HOME/vimwiki/src/index.md call <sid>git_action("git pull origin master")
+"  "au! BufWritePost $HOME/vimwiki/src/index.md call <sid>git_action("git add .;git commit -m \"Auto commit + push. `date`\"")
+"  "au! VimLeave $HOME/vimwiki/src/index.md call <sid>git_action("git push origin master")
+""augroup END
+
+
+"" 方案二
+""au! BufReadPost $HOME/vimwiki/src/index.md !git -C $HOME/vimwiki/ pull origin master
+""au! BufWritePost $HOME/vimwiki/* !git -C $HOME/vimwiki/ add . ;git commit -m "Auto commit."
+""au! VimLeave $HOME/vimwiki/* !bash $HOME/dotfiles/extras/comparefolders.sh || !git -C $HOME/vimwiki/ add . ;git commit -m "Auto commit + push." ;git push origin master
+
+
+"" " 方案三(异步)
+"" func GitPull()
+""     " 获取云端最新版
+""     exec "w"
+""     exec ":cd %:h"
+""     .normal ^L
+""     exec ":AsyncStop"
+""     exec ":AsyncRun git pull origin master"
+""     autocmd User AsyncRunStop exec ":ccl"
+""     autocmd User AsyncRunStop exec ":e %"
+""     let g:asyncrun_exit = "echom 'Sync Done'"
+"" endfunc
+
+"" func GitCommit()
+""     " 提交到本地
+""     call system("git add --all")
+"" 	call system("git commit -m \"`whoami` @  `hostname` in `date +%Y-%m-%d=%H:%M:%S`\"")
+"" 	exec ":AsyncRun git push origin master"
+""     let g:asyncrun_exit = "echom 'Git Push Done'"
+"" endfunc
+
+"" func GitPush()
+""     " 上传到云端
+""     call system("git add --all")
+"" 	call system("git commit -m \"`whoami` @  `hostname` in `date +%Y-%m-%d=%H:%M:%S`\"")
+"" 	exec ":AsyncRun -mode=bang git push origin master"
+""     exec ":AsyncStop"
+""     let g:asyncrun_exit = "echom 'Done'"
+"" endfunc
+
+"" autocmd BufReadPost $HOME/vimwiki/src/index.md call GitPull()
+"" autocmd BufWritePost $HOME/vimwiki/src/index.md call GitCommit()
+"" autocmd VimLeave $HOME/vimwiki/* if exists("g:asyncrun_exit") | call GitPush() | endif
+
+"" let g:asyncrun_status= ''
+"" if exists('g:asyncrun_status')
+"" let g:airline_section_x = airline#section#create_right(['%{g:asyncrun_status}'])
+"" endif
+
+
+"" " 方案三(异步)
+"" func GitPull()
+""     " 获取云端最新版
+""     exec "w"
+""     exec ":cd %:h"
+""     .normal ^L
+""     exec ":AsyncStop"
+""     exec ":AsyncRun git pull origin master"
+""     autocmd User AsyncRunStop exec ":ccl"
+""     autocmd User AsyncRunStop exec ":e %"
+""     let g:asyncrun_exit = "echom 'Sync done'"
+"" endfunc
+
+"" func GitCommit()
+""     " 提交到本地
+""     exec ":AsyncStop"
+""     exec ":AsyncRun git -C $HOME/vimwiki/ add . ;git commit -m 'Auto commit'"
+"" endfunc
+
+"" func GitPush()
+""     " 上传到云端
+""     exec ":AsyncStop"
+""     exec ":AsyncRun git -C $HOME/vimwiki/ add . ;git commit -m \"Auto commit `date`\" ;git push origin master"
+"" endfunc
+
+"" autocmd BufReadPost $HOME/vimwiki/src/index.md call GitPull()
+"" autocmd BufWritePost $HOME/vimwiki/src/index.md call GitPush()
+"" autocmd VimLeave $HOME/vimwiki/* !git -C $HOME/vimwiki/ add . ;git commit -m "Auto commit + push." ;git push origin master
+
+"" 方案三(异步) - 最终方案
+"func GitPull()
+"    " 获取云端最新版
+"    exec "w"
+"    exec ":cd %:h"
+"    .normal ^L
+"    exec ":AsyncStop"
+"    exec ":AsyncRun git pull origin master"
+"    autocmd User AsyncRunStop exec ":ccl"
+"    autocmd User AsyncRunStop exec ":e %"
+"    let g:asyncrun_exit = "echom 'Sync Done'"
+"endfunc
+
+"func GitCommit()
+"    " 提交到本地
+"    call system("git add --all")
+"	call system("git commit -m \"`whoami` @  `hostname` in `date +%Y-%m-%d=%H:%M:%S`\"")
+"	exec ":AsyncRun git push origin master"
+"    let g:asyncrun_exit = "echom 'Git Push Done'"
+"endfunc
+
+"func GitPush()
+"    " 上传到云端
+"    call system("git add --all")
+"	call system("git commit -m \"`whoami` @  `hostname` in `date +%Y-%m-%d=%H:%M:%S`\"")
+"	exec ":AsyncRun -mode=hide git push origin master"
+"    exec ":AsyncStop"
+"    let g:asyncrun_exit = "echom 'Done'"
+"endfunc
+
+"autocmd BufReadPost $HOME/vimwiki/src/index.md call GitPull()
+"autocmd BufWritePost $HOME/vimwiki/src/index.md call GitCommit()
+"autocmd VimLeave $HOME/vimwiki/* call GitPush() 
+
+""=================================================================================================================================
+"" 自定义airline同步通知颜色
+"function! AirlineThemePatch(palette)
+"  " [ guifg, guibg, ctermfg, ctermbg, opts ].
+"  " See "help attr-list" for valid values for the "opt" value.
+"  " http://vim.wikia.com/wiki/Xterm256_color_names_for_console_Vim
+"  let a:palette.accents.running = [ '#c678dd', '' , '', '', '' ]
+"  let a:palette.accents.success = [ '#61afef', '' , '', '', '' ]
+"  let a:palette.accents.failure = [ '#e06c75', '' , '', '', '' ]
+"endfunction
+"let g:airline_theme_patch_func = 'AirlineThemePatch'
+
+"" Change color of the relevant section according to g:asyncrun_status, a global variable exposed by AsyncRun
+"" 'running': default, 'success': green, 'failure': red
+"let g:asyncrun_status = ''
+"let g:async_status_old = ''
+"function! Get_asyncrun_running()
+"  let async_status = g:asyncrun_status
+"  if async_status != g:async_status_old
+"    if async_status == 'running'
+"      call airline#parts#define_accent('asyncrun_status', 'running')
+"    elseif async_status == 'success'
+"      call airline#parts#define_accent('asyncrun_status', 'success')
+"    elseif async_status == 'failure'
+"      call airline#parts#define_accent('asyncrun_status', 'failure')
+"    endif
+"    let g:airline_section_x = airline#section#create(['asyncrun_status'])
+"    AirlineRefresh
+"    let g:async_status_old = async_status
+"  endif
+"  return async_status
+"endfunction
+
+"" if !empty(glob("$HOME/.vim/plugged/vim-airline"))
+"" call airline#parts#define_function('asyncrun_status', 'Get_asyncrun_running')
+"" let g:airline_section_x = airline#section#create(['asyncrun_status'])
+"" endif
+
+"try 
+"call airline#parts#define_function('asyncrun_status', 'Get_asyncrun_running')
+"let g:airline_section_x = airline#section#create(['asyncrun_status'])
+"catch
+"endtry
+
+
+""=================================================================================================================================
+"" 使用wd删除markdown时自动删除相对应不使用的HTML文件
+"function! VimwikiDeleteClean()
+"  let htmlfile = expand('%:r') . '.html'
+"  lcd ${HOME}/vimwiki/docs/
+"  call delete(htmlfile)
+"  lcd %:p:h
+"  call vimwiki#base#delete_link()
+"endfunction
+"autocmd filetype vimwiki nnoremap <buffer> <leader>wd :call VimwikiDeleteClean()<CR>
 
 
 "=================================================================================================================================
