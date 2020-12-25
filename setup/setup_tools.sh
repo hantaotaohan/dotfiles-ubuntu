@@ -45,6 +45,7 @@ Options:
     -28       Install Ctags
     -29       Install Nodejs & Yarn
     -30       Install Crow_Translate
+    -31       Install Hugo
 EOF
 }
 
@@ -438,6 +439,15 @@ Crow_Translate() {
     row
 }
 
+Hugo() {
+    wget https://download.fastgit.org/gohugoio/hugo/releases/download/v0.79.1/hugo_extended_0.79.1_Linux-64bit.deb -O $HOME/desktop/hugo.deb
+    cd $HOME/desktop
+    sudo dpkg -i hugo.deb
+    cd $HOME
+    rm -rf $HOME/desktop/hugo.deb
+    row
+}
+
 main() {
 
     echo "                                                                               "
@@ -480,6 +490,7 @@ main() {
     echo " -28       Setup Ctags                                                         "
     echo " -29       Setup Nodejs & Yarn                                                 "
     echo " -30       Setup Crow_Translate                                                "
+    echo " -33       Setup Hugo                                                          "
     echo "                                                                               "
     echo "-------------------------------------------------------------------------------"
     echo "                                                                               "
@@ -584,7 +595,10 @@ main() {
             ;;
         -30)
             Crow_Translate
-            ;;            
+            ;;
+        -33)
+            Hugo
+            ;;  
         -[aA])
             Github_Hosts
             Dunst
@@ -608,6 +622,7 @@ main() {
             Picom
             Ctags
             Nodejs
+            Hugo
             # SSR
             # Github
             sudo rm -rf /etc/apt/sources.list.d/*
