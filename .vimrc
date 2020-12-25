@@ -1437,7 +1437,7 @@ let g:zettel_link_format="[%title](%link)"
 let g:zettel_disable_front_matter=1
 let g:zettel_options = [{},{"front_matter" :
             \[["draft","false"]],
-            \"template" :  "$HOME/vimwiki/templates/zettelnew.tpl"}]
+            \"template" :  "$HOME/dotfiles/extras/zettelnew.tpl"}]
 
 "=================================================================================================================================
 " Vimwiki settings
@@ -1457,7 +1457,7 @@ let g:vimwiki_list = [{
         \ 'syntax': 'markdown',
         \ 'ext': '.md',
         \ 'index' : '_index',
-        \ 'custom_wiki2html': '$HOME/1.sh',
+        \ 'custom_wiki2html': '$HOME/dotfiles/extras/wiki2html.sh',
         \ 'let wiki.nested_syntaxes': {'python': 'python', 'bash': 'sh'},
         \ 'html_filename_parameterization': 1
         \ }]
