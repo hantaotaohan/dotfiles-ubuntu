@@ -1104,7 +1104,7 @@ nnoremap <silent><LocalLeader>s :Startify <CR>
 " Leader(\)+ 123....  切换Buffers快捷键设置
 "=================================================================================================================================
 nnoremap <LocalLeader>a          :badd<Space>
-nnoremap <LocalLeader>d          :bdelete<Space>
+" nnoremap <LocalLeader>d          :bdelete<Space>
 " nnoremap <silent><Leader>1     :b1<cr>
 " nnoremap <silent><Leader>2     :b2<cr>
 " nnoremap <silent><Leader>3     :b3<cr>
@@ -2484,22 +2484,47 @@ let g:floaterm_autohide = v:false
 " Coc.nvim settings
 "=================================================================================================================================
 "" 使用Tab开启补全
-"function! s:check_back_space() abort
-"    let col = col('.') - 1
-"    return !col || getline('.')[col - 1]  =~ '\s'
-"endfunction
+function! s:check_back_space() abort
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
 
-"inoremap <silent><expr> <TAB>
-"    \ pumvisible() ? "\<C-n>" :
-"    \ <SID>check_back_space() ? "\<TAB>" :
-"    \ coc#refresh()
-"
+let g:coc_snippet_next = '<tab>'
+inoremap <silent><expr> <TAB>
+	\ pumvisible() ? coc#_select_confirm() :
+	\ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+	\ <SID>check_back_space() ? "\<TAB>" :
+	\ coc#refresh()
+
+inoremap <expr> <down> pumvisible() ? "\<C-n>" : "\<down>"
+inoremap <expr> <up> pumvisible() ? "\<C-p>" : "\<up>"
+
+inoremap <silent><expr> <TAB>
+    \ pumvisible() ? "\<C-n>" :
+    \ <SID>check_back_space() ? "\<TAB>" :
+    \ coc#refresh()
+
+"=================================================================================================================================
+" 多光标支持
+nnoremap <localleader>d :CocCommand document.renameCurrentWord<CR>
+nmap <silent> <C-c> <Plug>(coc-cursors-position)
+xmap <silent> <C-c> <Plug>(coc-cursors-range)
+nmap <expr> <silent> <C-m> <SID>select_current_word()
+function! s:select_current_word()
+  if !get(g:, 'coc_cursors_activated', 0)
+    return "\<Plug>(coc-cursors-word)"
+  endif
+  return "*\<Plug>(coc-cursors-word):nohlsearch\<CR>"
+endfunc
+
 "" 使用回车强制去确认上屏
-"inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+" inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
 "    \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 ""在命令行输入:CocConfig ->将下面代码添加进去后。强制开启不自动补全模式
 ""    "suggest.autoTrigger": "none"
+
+hi CocErrorSign guifg=#E06C75 guibg=#282C34
 
 "=================================================================================================================================
 " Pangu settings
