@@ -2522,7 +2522,15 @@ endfunc
 "    \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 ""在命令行输入:CocConfig ->将下面代码添加进去后。强制开启不自动补全模式
-""    "suggest.autoTrigger": "none"
+"{
+" "suggest.autoTrigger": "none",
+" "cursors.nextKey": "<C-j>",
+" "cursors.previousKey": "<C-k>",
+" "diagnostic.errorSign": "•",
+" "diagnostic.warningSign": "•",
+" "diagnostic.infoSign": "•"
+"}
+
 
 hi CocErrorSign guifg=#E06C75 guibg=#282C34
 
