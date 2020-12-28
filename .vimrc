@@ -217,8 +217,8 @@ xnoremap >> >gv|
 " ----------------------------------------------------------------o--------------------------------------------------------------o
 " Jumps
 " ----------------------------------------------------------------o--------------------------------------------------------------o
-nnoremap <tab> g;
-nnoremap <S-tab> g,
+" nnoremap <tab> g;
+" nnoremap <S-tab> g,
 
 " ----------------------------------------------------------------o--------------------------------------------------------------o
 " Allow misspellings
@@ -2524,8 +2524,8 @@ endfunc
 ""在命令行输入:CocConfig ->将下面代码添加进去后。强制开启不自动补全模式
 "{
 " "suggest.autoTrigger": "none",
-" "cursors.nextKey": "<C-j>",
-" "cursors.previousKey": "<C-k>",
+" "cursors.nextKey": "<Tab>",
+" "cursors.previousKey": "<S-Tab>",
 " "diagnostic.errorSign": "•",
 " "diagnostic.warningSign": "•",
 " "diagnostic.infoSign": "•"
