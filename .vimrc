@@ -2483,6 +2483,7 @@ let g:floaterm_autohide = v:false
 "=================================================================================================================================
 " Coc.nvim settings
 "=================================================================================================================================
+"" 使用Tab开启补全
 "function! s:check_back_space() abort
 "    let col = col('.') - 1
 "    return !col || getline('.')[col - 1]  =~ '\s'
@@ -2492,11 +2493,12 @@ let g:floaterm_autohide = v:false
 "    \ pumvisible() ? "\<C-n>" :
 "    \ <SID>check_back_space() ? "\<TAB>" :
 "    \ coc#refresh()
-
+"
+"" 使用回车强制去确认上屏
 "inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
 "    \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
-"":CocConfig ->
+""在命令行输入:CocConfig ->将下面代码添加进去后。强制开启不自动补全模式
 ""    "suggest.autoTrigger": "none"
 
 "=================================================================================================================================
