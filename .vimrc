@@ -2217,8 +2217,8 @@ if !exists('which_key#register')
     silent! call which_key#register('<Space>', "g:which_key_map")
 endif
 
-nnoremap <silent><space><space> :<c-u>WhichKey '<Space>'<CR>
-vnoremap <silent><space><space> :<c-u>WhichKeyVisual '<Space>'<CR>
+" nnoremap <silent><space><space> :<c-u>WhichKey '<Space>'<CR>
+" vnoremap <silent><space><space> :<c-u>WhichKeyVisual '<Space>'<CR>
 
 nnoremap <silent><leader> :WhichKey '<Space>'<CR>
 vnoremap <silent><leader> :WhichKeyVisual '<Space>'<CR>
