@@ -634,8 +634,8 @@ main() {
             Alttab
             Rdrview
             SSH_banner
-            # Copytranslator
-            Crossover
+            Copytranslator
+            # Crossover
             Picom
             Ctags
             Nodejs
