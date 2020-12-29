@@ -46,6 +46,7 @@ Options:
     -29       Install Nodejs & Yarn
     -30       Install Crow_Translate
     -31       Install Hugo
+    -32       Install Java
 EOF
 }
 
@@ -446,6 +447,18 @@ Hugo() {
     cd $HOME
     rm -rf $HOME/desktop/hugo.deb
     row
+    hugo version
+    row
+}
+
+Java() {
+    sudo apt install default-jre
+    sudo apt install default-jdk
+    row
+    java -version
+    row
+    javac -version
+    row
 }
 
 main() {
@@ -490,7 +503,8 @@ main() {
     echo " -28       Setup Ctags                                                         "
     echo " -29       Setup Nodejs & Yarn                                                 "
     echo " -30       Setup Crow_Translate                                                "
-    echo " -33       Setup Hugo                                                          "
+    echo " -31       Setup Hugo                                                          "
+    echo " -32       Setup Java                                                          "    
     echo "                                                                               "
     echo "-------------------------------------------------------------------------------"
     echo "                                                                               "
@@ -596,9 +610,12 @@ main() {
         -30)
             Crow_Translate
             ;;
-        -33)
+        -31)
             Hugo
-            ;;  
+            ;; 
+        -32)
+            Java
+            ;;             
         -[aA])
             Github_Hosts
             Dunst
