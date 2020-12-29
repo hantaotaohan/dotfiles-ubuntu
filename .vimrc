@@ -2473,7 +2473,7 @@ noremap <silent> <LocalLeader>u :<C-U><C-R>=printf("Leaderf! function %s", "--bo
 "=================================================================================================================================
 " Floaterm settings
 "=================================================================================================================================
-let g:floaterm_keymap_toggle = '<F6>'
+" let g:floaterm_keymap_toggle = '<F6>'
 let g:floaterm_keymap_toggle = '<silent><localleader>c'
 let g:floaterm_wintype = 'normal'
 let g:floaterm_height = 0.3
