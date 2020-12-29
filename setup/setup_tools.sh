@@ -399,7 +399,7 @@ Ly() {
 
 Ctags() {
     sudo apt purge --remove ctags
-    sudo apt-get install libjansson-dev autotools-dev autoconf
+    sudo apt-get install -y libjansson-dev autotools-dev autoconf
     git clone https://hub.fastgit.org/universal-ctags/ctags.git --depth=1 $HOME/desktop/ctags
     cd $HOME/desktop/ctags
     ./autogen.sh
@@ -415,14 +415,14 @@ Ctags() {
 
 Nodejs() {
     curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
-    sudo apt install nodejs
+    sudo apt install -y nodejs
     row
     node --version
     row
     curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
     echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
     sudo apt update
-    sudo apt install yarn
+    sudo apt install -y yarn
     sudo rm -rf /etc/apt/sources.list.d/yarn.list
     row
     yarn --version
@@ -452,8 +452,8 @@ Hugo() {
 }
 
 Java() {
-    sudo apt install default-jre
-    sudo apt install default-jdk
+    sudo apt install -y default-jre
+    sudo apt install -y default-jdk
     row
     java -version
     row
