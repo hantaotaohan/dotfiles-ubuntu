@@ -2485,59 +2485,64 @@ let g:floaterm_autohide = v:false
 "=================================================================================================================================
 " 使用Tab开启补全
 
-"function! s:check_back_space() abort
-"    let col = col('.') - 1
-"    return !col || getline('.')[col - 1]  =~ '\s'
-"endfunction
+if exists('g:plugs["coc.nvim"]')
 
-"let g:coc_snippet_next = '<tab>'
-"inoremap <silent><expr> <TAB>
-"	\ pumvisible() ? coc#_select_confirm() :
-"	\ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
-"	\ <SID>check_back_space() ? "\<TAB>" :
-"	\ coc#refresh()
+function! s:check_back_space() abort
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
 
-"inoremap <expr> <down> pumvisible() ? "\<C-n>" : "\<down>"
-"inoremap <expr> <up> pumvisible() ? "\<C-p>" : "\<up>"
+let g:coc_snippet_next = '<tab>'
+inoremap <silent><expr> <TAB>
+	\ pumvisible() ? coc#_select_confirm() :
+	\ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+	\ <SID>check_back_space() ? "\<TAB>" :
+	\ coc#refresh()
 
-"inoremap <silent><expr> <TAB>
-"    \ pumvisible() ? "\<C-n>" :
-"    \ <SID>check_back_space() ? "\<TAB>" :
-"    \ coc#refresh()
+inoremap <expr> <down> pumvisible() ? "\<C-n>" : "\<down>"
+inoremap <expr> <up> pumvisible() ? "\<C-p>" : "\<up>"
+
+inoremap <silent><expr> <TAB>
+    \ pumvisible() ? "\<C-n>" :
+    \ <SID>check_back_space() ? "\<TAB>" :
+    \ coc#refresh()
 
 ""=================================================================================================================================
 " 多光标支持
 
-"nnoremap <leader>rr :CocCommand document.renameCurrentWord<CR>
-"nnoremap <leader>rs :CocSearch<Space>
-"nnoremap <leader>rw :CocSearch <C-R>=expand("<cword>")<CR><CR>
-"nmap <silent> <C-c> <Plug>(coc-cursors-position)
-"xmap <silent> <C-m> <Plug>(coc-cursors-range)
-"nmap <expr> <silent> <C-m> <SID>select_current_word()
-"function! s:select_current_word()
-"  if !get(g:, 'coc_cursors_activated', 0)
-"    return "\<Plug>(coc-cursors-word)"
-"  endif
-"  return "*\<Plug>(coc-cursors-word):nohlsearch\<CR>"
-"endfunc
+nnoremap <leader>rr :CocCommand document.renameCurrentWord<CR>
+nnoremap <leader>rs :CocSearch<Space>
+nnoremap <leader>rw :CocSearch <C-R>=expand("<cword>")<CR><CR>
+nmap <silent> <C-c> <Plug>(coc-cursors-position)
+xmap <silent> <C-m> <Plug>(coc-cursors-range)
+nmap <expr> <silent> <C-m> <SID>select_current_word()
+function! s:select_current_word()
+  if !get(g:, 'coc_cursors_activated', 0)
+    return "\<Plug>(coc-cursors-word)"
+  endif
+  return "*\<Plug>(coc-cursors-word):nohlsearch\<CR>"
+endfunc
 
-"""在命令行输入:CocConfig ->将下面代码添加进去后。强制开启不自动补全模式
-""{
-"" "suggest.autoTrigger": "none",
-"" "cursors.cancelKey": "<esc>",
-"" "cursors.nextKey": "<C-n>",
-"" "cursors.previousKey": "<C-p>",
-"" "diagnostic.errorSign": "•",
-"" "diagnostic.warningSign": "•",
-"" "diagnostic.infoSign": "•"
-""}
+""在命令行输入:CocConfig ->将下面代码添加进去后。强制开启不自动补全模式
+"{
+" "suggest.autoTrigger": "none",
+" "cursors.cancelKey": "<esc>",
+" "cursors.nextKey": "<C-n>",
+" "cursors.previousKey": "<C-p>",
+" "diagnostic.errorSign": "•",
+" "diagnostic.warningSign": "•",
+" "diagnostic.infoSign": "•"
+"}
 
-"hi CocCursorRange term=reverse cterm=bold ctermfg=238 ctermbg=226 gui=bold guifg=#FFFFFF guibg=#E06c75
-"hi CocHoverRange term=reverse cterm=bold ctermfg=238 ctermbg=226 gui=bold guifg=#FFFFFF guibg=#E06c75
+hi CocCursorRange term=reverse cterm=bold ctermfg=238 ctermbg=226 gui=bold guifg=#FFFFFF guibg=#E06c75
+hi CocHoverRange term=reverse cterm=bold ctermfg=238 ctermbg=226 gui=bold guifg=#FFFFFF guibg=#E06c75
 
 """ 使用回车强制去确认上屏
 "" inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
 ""    \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+endif
+
 
 "=================================================================================================================================
 " Pangu settings
