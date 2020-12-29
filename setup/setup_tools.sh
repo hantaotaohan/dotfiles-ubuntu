@@ -634,12 +634,13 @@ main() {
             Alttab
             Rdrview
             SSH_banner
-            Copytranslator
+            Crow_Translate
             # Crossover
             Picom
             Ctags
             Nodejs
             Hugo
+            Java
             # SSR
             # Github
             sudo rm -rf /etc/apt/sources.list.d/*
