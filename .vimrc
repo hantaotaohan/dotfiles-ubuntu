@@ -2483,7 +2483,7 @@ let g:floaterm_autohide = v:false
 "=================================================================================================================================
 " Coc.nvim settings
 "=================================================================================================================================
-"" 使用Tab开启补全
+" 使用Tab开启补全
 function! s:check_back_space() abort
     let col = col('.') - 1
     return !col || getline('.')[col - 1]  =~ '\s'
@@ -2506,9 +2506,11 @@ inoremap <silent><expr> <TAB>
 
 "=================================================================================================================================
 " 多光标支持
-nnoremap <localleader>d :CocCommand document.renameCurrentWord<CR>
+nnoremap <leader>rr :CocCommand document.renameCurrentWord<CR>
+nnoremap <leader>rs :CocSearch<Space>
+nnoremap <leader>rw :CocSearch <C-R>=expand("<cword>")<CR><CR>
 nmap <silent> <C-c> <Plug>(coc-cursors-position)
-xmap <silent> <C-c> <Plug>(coc-cursors-range)
+xmap <silent> <C-m> <Plug>(coc-cursors-range)
 nmap <expr> <silent> <C-m> <SID>select_current_word()
 function! s:select_current_word()
   if !get(g:, 'coc_cursors_activated', 0)
@@ -2517,22 +2519,23 @@ function! s:select_current_word()
   return "*\<Plug>(coc-cursors-word):nohlsearch\<CR>"
 endfunc
 
-"" 使用回车强制去确认上屏
-" inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
-"    \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-
 ""在命令行输入:CocConfig ->将下面代码添加进去后。强制开启不自动补全模式
 "{
 " "suggest.autoTrigger": "none",
-" "cursors.nextKey": "<Tab>",
-" "cursors.previousKey": "<S-Tab>",
+" "cursors.cancelKey": "<esc>",
+" "cursors.nextKey": "<C-n>",
+" "cursors.previousKey": "<C-p>",
 " "diagnostic.errorSign": "•",
 " "diagnostic.warningSign": "•",
 " "diagnostic.infoSign": "•"
 "}
 
+hi CocCursorRange term=reverse cterm=bold ctermfg=238 ctermbg=226 gui=bold guifg=#FFFFFF guibg=#E06c75
+hi CocHoverRange term=reverse cterm=bold ctermfg=238 ctermbg=226 gui=bold guifg=#FFFFFF guibg=#E06c75
+"" 使用回车强制去确认上屏
+" inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+"    \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
-hi CocErrorSign guifg=#E06C75 guibg=#282C34
 
 "=================================================================================================================================
 " Pangu settings
