@@ -51,20 +51,24 @@ set convert-meta off
 "\e[3;3~": kill-word
 
 # 自定义按键绑定
+
 # F5 进入HOME
-"\e[15~":"cd $HOME && ll\n"
+"\e[15~":"cd $HOME\C-m"
+
 # ;+q 退出bash
-"\;q":"exit\n"
+"\;q":"exit\C-m"
+
 # \+g 进入navi
-"\\g":"navi\n"
-# 自定义按键绑定
-# F5 进入HOME
-"\e[15~":"cd $HOME\015"
-# ;+q 退出bash
-"\;q":"exit\n"
-# \+g 进入navi
-"\\g":"navi\n"
-# CTRL+JK 上下历史命令
-"\C-J": history-search-forward
-"\C-K": history-search-backward
+"\\g":"navi\C-m"
+
+# CTRL+ALT+J,K 上下历史命令
+"\e\C-J": history-search-forward
+"\e\C-K": history-search-backward
+
+# CTRL+ALT+M,N 删除单词
+"\e\C-M": kill-word
+"\e\C-N": backward-kill-word
+
+# CTRL+Backspace > delete
+"\C-H": delete-char
 
