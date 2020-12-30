@@ -187,6 +187,10 @@ fi
 # source "$HOME/extras/z.sh"
 # 设定 z.lua
 [ -f ~/z.lua ] && eval "$(lua $HOME/z.lua --init bash enhanced echo fzf)"
+export _ZL_CD=cds
+export _ZL_ECHO=0
+export _ZL_MATCH_MODE=1
+export _ZL_ROOT_MARKERS=".git,.svn,.hg,.root,package.json"
 
 # Install FZF
 # 安装FZF模糊所搜
