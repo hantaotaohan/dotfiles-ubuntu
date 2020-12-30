@@ -4,7 +4,7 @@
 -- z.lua - a cd command that learns, by skywind 2018, 2019, 2020
 -- Licensed under MIT license.
 --
--- Version 1.8.7, Last Modified: 2020/06/29 18:04
+-- Version 1.8.10, Last Modified: 2020/12/23 16:37
 --
 -- * 10x faster than fasd and autojump, 3x faster than z.sh
 -- * available for posix shells: bash, zsh, sh, ash, dash, busybox
@@ -2059,6 +2059,7 @@ end
 -----------------------------------------------------------------------
 function z_clink_init()
 	local once = os.environ("_ZL_ADD_ONCE", false)
+	local _zl_clink_prompt_priority = os.environ('_ZL_CLINK_PROMPT_PRIORITY', 99)
 	local previous = ''
 	function z_add_to_database()
 		pwd = clink.get_cwd()
@@ -2070,7 +2071,7 @@ function z_clink_init()
 		end
 		z_add(clink.get_cwd())
 	end
-	clink.prompt.register_filter(z_add_to_database, 99)
+	clink.prompt.register_filter(z_add_to_database, _zl_clink_prompt_priority)
 	function z_match_completion(word)
 		local M = z_match({word}, Z_METHOD, Z_SUBDIR)
 		for _, item in pairs(M) do
@@ -2080,6 +2081,8 @@ function z_clink_init()
 	end
 	local z_parser = clink.arg.new_parser()
 	z_parser:set_arguments({ z_match_completion })
+	z_parser:set_flags("-c", "-r", "-i", "--cd", "-e", "-b", "--add", "-x", "--purge", 
+		"--init", "-l", "-s", "--complete", "--help", "-h")
 	clink.arg.register_parser("z", z_parser)
 end
 
@@ -2502,6 +2505,11 @@ if /i "%1"=="-x" (
 	shift /1
 	goto parse
 )
+if /i "%1"=="--add" (
+	set "RunMode=--add"
+	shift /1
+	goto parse
+)
 if "%1"=="-i" (
 	set "InterMode=-i"
 	shift /1
@@ -2728,5 +2736,3 @@ if not pcall(debug.getlocal, 4, 1) then
 		main()
 	end
 end
-
-
