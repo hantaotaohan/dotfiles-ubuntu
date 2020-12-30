@@ -23,6 +23,7 @@ xset -r 51  # backslash
 xset -r 61  # slash
 xset -r 47  # semicolon ;
 xset -r 48  # apostrophe '
+xset -r 110  # apostrophe HOME
 # xset -r 65  # spacebar
 # xset -r 22  # backspace
 
