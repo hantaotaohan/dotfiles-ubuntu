@@ -8,6 +8,20 @@ alias 3='cd -3'
 alias 4='cd -4'
 alias 5='cd -5'
 
+cds() {
+    cd "${1}";
+    ls -alhovqF --color=always --group-directories-first;
+}
+
+alias cd=cds
+
+# z.lua
+alias zh='z -I -t .' # 使用 fzf 选择最近去过的目录
+alias zc='z -c'      # 严格匹配当前路径的子路径
+alias zz='z -i'      # 使用交互式选择模式
+alias zf='z -I'      # 使用 fzf 对多个结果进行选择
+alias zb='z -b'      # 快速回到父目录
+
 # some more ls aliases
 alias ll='ls -alhovqF --color=always --group-directories-first'
 alias la='ls -A'
