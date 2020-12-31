@@ -155,3 +155,56 @@ my_cd_func() {
     \cd "${1}" 
     ls -alhovqF --color=always --group-directories-first
 }
+
+# ----------------------------------------------------------------------------------------------------------------
+# CD到所选文件的目录中
+# ----------------------------------------------------------------------------------------------------------------
+cdf() {
+   local file
+   local dir
+   file=$(fzf +m -q "$1") && dir=$(dirname "$file") && cd "$dir"
+}
+
+# ----------------------------------------------------------------------------------------------------------------
+# 通过fzf搜索文件并用vim打开
+# ----------------------------------------------------------------------------------------------------------------
+fe() {
+    local file
+    file="$(fd --type f ${1:-.} ${2:-.} \
+    --hidden \
+    --follow \
+    --exclude .git \
+    --exclude boot \
+    --exclude lib \
+    --exclude lib64 \
+    --exclude lost+found \
+    --exclude opt \
+    --exclude proc \
+    --exclude root \
+    --exclude run \
+    --exclude sbin \
+    --exclude srv \
+    --exclude sys \
+    --exclude tmp \
+    --exclude var | fzf --multi --exit-0 --select-1)"
+    if [[ -n $file ]]; then
+        VIMRUNTIME= vim -p $file
+    fi
+    if [ -z "${file}" ]; then
+        return 1
+    fi
+    history -w
+    : > /tmp/fzf_tmp
+    for files in ${file[@]}; do
+        echo $files >> /tmp/fzf_tmp
+    done
+    # sed -i 's/\n//g; s/ /\\ /g; s/(/\\(/; s/)/\\)/' /tmp/fzf_tmp
+    # # If the program is on the GUI list add a '&' to the command history
+    # if [[ $1 =~ ^(vim|zathura|vlc|eog|kolourpaint)$ ]]; then
+    #     sed -i '${s/$/ \&/}' /tmp/fzf_tmp
+    # fi
+    arguments=$(cat /tmp/fzf_tmp)
+    echo vim ${arguments} >> ~/.bash_history
+    history -r
+    rm -rf /tmp/fzf_tmp
+}
