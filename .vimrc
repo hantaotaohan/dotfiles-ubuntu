@@ -1413,16 +1413,16 @@ autocmd FileType markdown nmap <buffer><silent> <leader>p :call mdip#MarkdownCli
 " let g:mdip_imgdir = 'img'
 " let g:mdip_imgname = 'image'
 
-
 "=================================================================================================================================
 " 
 "
 "
 "
-"
-" Vimwiki HUGO  settings
-"
-"
+"""""""""""""""""""""""""""""""""
+" ==  Vimwiki And HUGO-wiki  == "
+"""""""""""""""""""""""""""""""""
+" ==  Multiple  =  Settings  == "
+"""""""""""""""""""""""""""""""""
 "
 "
 "
@@ -1431,7 +1431,6 @@ autocmd FileType markdown nmap <buffer><silent> <leader>p :call mdip#MarkdownCli
 "=================================================================================================================================
 " Vimwiki Zettel settings
 "=================================================================================================================================
-let g:zettel_dir = "$HOME/blog/content/en/docs"
 let g:zettel_format = "%Y%m%d%H%M"
 let g:zettel_link_format="[%title](%link)"
 let g:zettel_disable_front_matter=1
@@ -1442,25 +1441,46 @@ let g:zettel_options = [{},{"front_matter" :
 "=================================================================================================================================
 " Vimwiki settings
 "=================================================================================================================================
-autocmd FileType vimwiki nmap <Leader>ws :VWS<Space>
-autocmd FileType vimwiki nmap <Plug>VimwikiUISelect <nop>
+" autocmd FileType vimwiki nmap <Leader>ws :VWS<Space>
+" autocmd FileType vimwiki nmap <Plug>VimwikiUISelect <nop>
 autocmd FileType vimwiki nmap <silent><localleader>p :call GitPush()<cr>
 
-let g:vimwiki_list = [{
-        \ 'auto_export': 1,
-        \ 'auto_tags': 1,
-        \ 'auto_generate_tags': 1,
-        \ 'auto_generate_links': 1,
-        \ 'automatic_nested_syntaxes': 1,
-        \ 'path': '$HOME/blog/content/en/docs/',
-        \ 'path_html': '$HOME/blog/public',
-        \ 'syntax': 'markdown',
-        \ 'ext': '.md',
-        \ 'index' : '_index',
-        \ 'custom_wiki2html': '$HOME/dotfiles/extras/wiki2html.sh',
-        \ 'let wiki.nested_syntaxes': {'python': 'python', 'bash': 'sh'},
-        \ 'html_filename_parameterization': 1
-        \ }]
+let wiki_1 = {}
+let wiki_1.name= '<Hugo   >'
+let wiki_1.auto_export= 1
+let wiki_1.auto_tags= 1
+let wiki_1.auto_generate_tags= 1
+let wiki_1.auto_generate_links= 1
+let wiki_1.automatic_nested_syntaxes= 1
+let wiki_1.path= '$HOME/blog/content/en/docs/'
+let wiki_1.path_html= '$HOME/blog/public'
+let wiki_1.syntax= 'markdown'
+let wiki_1.ext= '.md'
+let wiki_1.index = '_index'
+let wiki_1.custom_wiki2html= '$HOME/dotfiles/extras/wiki2html.sh'
+let wiki_1.nested_syntaxes= {'python': 'python','bash': 'sh'}
+let wiki_1.html_filename_parameterization= 1
+
+let wiki_2 = {}
+let wiki_2.name= '<Vimwiki>'
+let wiki_2.auto_export= 1
+let wiki_2.auto_tags= 1
+let wiki_2.auto_generate_tags= 0
+let wiki_2.auto_generate_links= 0
+let wiki_2.automatic_nested_syntaxes= 1
+let wiki_2.path= '$HOME/vimwiki/src'
+let wiki_2.path_html= '$HOME/vimwiki/docs/'
+let wiki_2.template_path= '$HOME/vimwiki/templates/'
+let wiki_2.template_default= 'default'
+let wiki_2.template_ext= '.tpl'
+let wiki_2.css_file= '$HOME/vimwiki/templates/style.css'
+let wiki_2.syntax= 'markdown'
+let wiki_2.ext= '.md'
+let wiki_2.custom_wiki2html= 'vimwiki_markdown'
+let wiki_2.nested_syntaxes= {'python': 'python','bash': 'sh'}
+let wiki_2.html_filename_parameterization= 1
+
+let g:vimwiki_list = [wiki_1, wiki_2]
 
 let g:vimwiki_hl_cb_checked = 2
 let g:vimwiki_global_ext = 1 " make sure vimwiki doesn't own all .md files
@@ -1471,6 +1491,7 @@ let g:list_margin=0
 let g:vimwiki_user_htmls = '404.html,search.html,books.html,todo,html,contact.html,tags.html'
 let g:vimwiki_valid_html_tags='b,i,s,u,sub,sup,kbd,del,br,hr,div,code,h1,nav,body,aside'
 
+"=================================================================================================================================
 hi VimwikiHeader1 guifg=#e5c07b
 hi VimwikiHeader2 guifg=#98c379
 hi VimwikiHeader3 guifg=#c678dd
@@ -1524,6 +1545,10 @@ autocmd BufReadPost $HOME/blog/content/en/docs/_index.md call GitPull()
 autocmd BufWritePost $HOME/blog/contet/en/docs/_index.md call GitCommit()
 autocmd VimLeave $HOME/blog/* call GitPush() 
 
+autocmd BufReadPost $HOME/vimwiki/src/index.md call GitPull()
+autocmd BufWritePost $HOME/vimwiki/src/index.md call GitCommit()
+autocmd VimLeave $HOME/vimwiki/* call GitPush() 
+
 "=================================================================================================================================
 " 自定义airline同步通知颜色
 function! AirlineThemePatch(palette)
@@ -1574,6 +1599,166 @@ function! VimwikiDeleteClean()
 endfunction
 autocmd filetype vimwiki nnoremap <buffer> <leader>wd :call VimwikiDeleteClean()<CR>
 
+
+""=================================================================================================================================
+"" 
+""
+""
+""
+""
+"" Vimwiki HUGO  settings
+""
+""
+""
+""
+""
+""
+""=================================================================================================================================
+""=================================================================================================================================
+"" Vimwiki Zettel settings
+""=================================================================================================================================
+"let g:zettel_dir = "$HOME/blog/content/en/docs"
+"let g:zettel_format = "%Y%m%d%H%M"
+"let g:zettel_link_format="[%title](%link)"
+"let g:zettel_disable_front_matter=1
+"let g:zettel_options = [{},{"front_matter" :
+"            \[["draft","false"]],
+"            \"template" :  "$HOME/dotfiles/extras/zettelnew.tpl"}]
+
+""=================================================================================================================================
+"" Vimwiki settings
+""=================================================================================================================================
+"autocmd FileType vimwiki nmap <Leader>ws :VWS<Space>
+"autocmd FileType vimwiki nmap <Plug>VimwikiUISelect <nop>
+"autocmd FileType vimwiki nmap <silent><localleader>p :call GitPush()<cr>
+
+"let g:vimwiki_list = [{
+"        \ 'auto_export': 1,
+"        \ 'auto_tags': 1,
+"        \ 'auto_generate_tags': 1,
+"        \ 'auto_generate_links': 1,
+"        \ 'automatic_nested_syntaxes': 1,
+"        \ 'path': '$HOME/blog/content/en/docs/',
+"        \ 'path_html': '$HOME/blog/public',
+"        \ 'syntax': 'markdown',
+"        \ 'ext': '.md',
+"        \ 'index' : '_index',
+"        \ 'custom_wiki2html': '$HOME/dotfiles/extras/wiki2html.sh',
+"        \ 'let wiki.nested_syntaxes': {'python': 'python', 'bash': 'sh'},
+"        \ 'html_filename_parameterization': 1
+"        \ }]
+
+"let g:vimwiki_hl_cb_checked = 2
+"let g:vimwiki_global_ext = 1 " make sure vimwiki doesn't own all .md files
+"let g:vimwiki_use_mouse = 1
+"let g:vimwiki_conceallevel=1
+"let g:vimwiki_markdown_link_ext = 0
+"let g:list_margin=0
+"let g:vimwiki_user_htmls = '404.html,search.html,books.html,todo,html,contact.html,tags.html'
+"let g:vimwiki_valid_html_tags='b,i,s,u,sub,sup,kbd,del,br,hr,div,code,h1,nav,body,aside'
+
+"hi VimwikiHeader1 guifg=#e5c07b
+"hi VimwikiHeader2 guifg=#98c379
+"hi VimwikiHeader3 guifg=#c678dd
+"hi VimwikiHeader4 guifg=#8096BF
+"hi VimwikiHeader5 guifg=#8096BF
+"hi VimwikiHeader6 guifg=#8096BF
+
+"hi VimwikiH1Folding guifg=#e5c07b
+"hi VimwikiH2Folding guifg=#98c379
+"hi VimwikiH3Folding guifg=#c678dd
+"hi VimwikiH4Folding guifg=#8096BF
+"hi VimwikiH5Folding guifg=#8096BF
+"hi VimwikiH6Folding guifg=#8096BF
+
+"hi VimwikiLink guifg=#61afef
+"hi VimwikiLink guifg=#61afef
+"hi VimwikiBold term=reverse cterm=underline ctermfg=204 gui=underline guifg=#E06C75
+
+""=================================================================================================================================
+"" 方案三(异步) - 最终方案
+"func GitPull()
+"    " 获取云端最新版
+"    exec "w"
+"    exec ":cd %:h"
+"    .normal ^L
+"    exec ":AsyncStop"
+"    exec ":AsyncRun git pull origin master"
+"    autocmd User AsyncRunStop exec ":ccl"
+"    autocmd User AsyncRunStop exec ":e %"
+"    let g:asyncrun_exit = "echom 'Sync Done'"
+"endfunc
+
+"func GitCommit()
+"    " 提交到本地
+"    call system("git add --all")
+"	call system("git commit -m \"`whoami` @  `hostname` in `date +%Y-%m-%d=%H:%M:%S`\"")
+"	exec ":AsyncRun git push origin master"
+"    let g:asyncrun_exit = "echom 'Git Push Done'"
+"endfunc
+
+"func GitPush()
+"    " 上传到云端
+"    call system("git add --all")
+"	call system("git commit -m \"`whoami` @  `hostname` in `date +%Y-%m-%d=%H:%M:%S`\"")
+"	exec ":AsyncRun -mode=hide git push origin master"
+"    exec ":AsyncStop"
+"    let g:asyncrun_exit = "echom 'Done'"
+"endfunc
+
+"autocmd BufReadPost $HOME/blog/content/en/docs/_index.md call GitPull()
+"autocmd BufWritePost $HOME/blog/contet/en/docs/_index.md call GitCommit()
+"autocmd VimLeave $HOME/blog/* call GitPush() 
+
+""=================================================================================================================================
+"" 自定义airline同步通知颜色
+"function! AirlineThemePatch(palette)
+"  " [ guifg, guibg, ctermfg, ctermbg, opts ].
+"  " See "help attr-list" for valid values for the "opt" value.
+"  " http://vim.wikia.com/wiki/Xterm256_color_names_for_console_Vim
+"  let a:palette.accents.running = [ '#c678dd', '' , '', '', '' ]
+"  let a:palette.accents.success = [ '#61afef', '' , '', '', '' ]
+"  let a:palette.accents.failure = [ '#e06c75', '' , '', '', '' ]
+"endfunction
+"let g:airline_theme_patch_func = 'AirlineThemePatch'
+
+"" Change color of the relevant section according to g:asyncrun_status, a global variable exposed by AsyncRun
+"" 'running': default, 'success': green, 'failure': red
+"let g:asyncrun_status = ''
+"let g:async_status_old = ''
+"function! Get_asyncrun_running()
+"  let async_status = g:asyncrun_status
+"  if async_status != g:async_status_old
+"    if async_status == 'running'
+"      call airline#parts#define_accent('asyncrun_status', 'running')
+"    elseif async_status == 'success'
+"      call airline#parts#define_accent('asyncrun_status', 'success')
+"    elseif async_status == 'failure'
+"      call airline#parts#define_accent('asyncrun_status', 'failure')
+"    endif
+"    let g:airline_section_x = airline#section#create(['asyncrun_status'])
+"    AirlineRefresh
+"    let g:async_status_old = async_status
+"  endif
+"  return async_status
+"endfunction
+
+"try 
+"call airline#parts#define_function('asyncrun_status', 'Get_asyncrun_running')
+"let g:airline_section_x = airline#section#create(['asyncrun_status'])
+"catch
+"endtry
+
+""=================================================================================================================================
+"" 使用wd删除markdown时自动删除相对应不使用的HTML文件
+"function! VimwikiDeleteClean()
+"  let htmlfile = expand('%:r') . '.html'
+"  lcd ${HOME}/vimwiki/docs/
+"  call delete(htmlfile)
+"  lcd %:p:h
+"  call vimwiki#base#delete_link()
+"endfunction
+"autocmd filetype vimwiki nnoremap <buffer> <leader>wd :call VimwikiDeleteClean()<CR>
 
 ""=================================================================================================================================
 "" 
