@@ -1,4 +1,6 @@
+# ------------------------------------------------------------------------------------------------------------
 # Locale.
+# ------------------------------------------------------------------------------------------------------------
 # 本地语言环境设定
 if [ -f "/usr/bin/i3" ]; then
     export LANG="zh_CN.UTF-8"
@@ -23,32 +25,41 @@ export PAGER="less"
 # 多用户历史记录保存及读取
 export PROMPT_COMMAND="history -a; history -r;  $PROMPT_COMMAND"    
 
+# ------------------------------------------------------------------------------------------------------------
 # FZF.
+# ------------------------------------------------------------------------------------------------------------
 # FZF默认功能设定及颜色设定
-#export FZF_DEFAULT_OPTS=" \
-#    --color=fg:#abb2bf,bg:#282c34,hl:#e06c75,fg+:#61afef,bg+:#282c34,hl+:#c678dd \
-#    --color=info:#f7c662,prompt:#e06c75,pointer:#61afef,marker:#a6bc69,spinner:#f7c662,header:#6699cc"
     
+export FZF_DEFAULT_COMMAND="fd --hidden --follow --type f"
+
 export FZF_DEFAULT_OPTS='
   --color=fg:#abb2bf,bg:#282c34,hl:#e06c75,gutter:#282c34,fg+:#e06c75,bg+:#3d4148,hl+:#98c379
-  --color=info:#f7c662,prompt:#e06c75,pointer:#e06c75,marker:#e5c07b,spinner:#f7c662,header:#6699cc
-'
-export FZF_DEFAULT_COMMAND="fd --hidden --follow --exclude .git -t f . /"
+  --color=info:#f7c662,prompt:#e06c75,pointer:#e06c75,marker:#98c379,spinner:#f7c662,header:#6699cc
+  --layout=reverse 
+  --border
+  --inline-info
+  --exact'
+  # --prompt="❱❱❱ "  
+  # --pointer="●"
+  # --marker="❱ "
 
 # CTRL+T 搜索目录
 export FZF_CTRL_T_COMMAND="${FZF_DEFAULT_COMMAND}"
 
 # CTRL+R 搜索历史命令
-export FZF_CTRL_R_OPTS="--preview 'echo {}' --preview-window down:3:hidden:wrap --bind '?:toggle-preview'"
+export FZF_CTRL_R_OPTS="--sort --exact --preview 'echo {}' --preview-window down:3:hidden:wrap --bind '?:toggle-preview'"
 
 # ALT+C 搜索文件夹并cd进入
-export FZF_ALT_C_COMMAND="fd -t d . /"
+export FZF_ALT_C_COMMAND='fd --hidden --type directory --exclude ".git"'
 export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"
 
 # ctrl+t 采用预览框 ?打开关闭预览框
 # export FZF_CTRL_T_OPTS="--preview 'bat --color=always {}' --preview-window right:wrap --bind '?:toggle-preview'"
 # export FZF_DEFAULT_OPTS="--preview 'bat --color=always {}' --preview-window right:wrap --bind '?:toggle-preview'"
 
+# ------------------------------------------------------------------------------------------------------------
+# Navi.
+# ------------------------------------------------------------------------------------------------------------
 # # Navi fzf预览设置
 export NAVI_FZF_OVERRIDES='--height 30 --margin 1,1 --inline-info --border --preview-window=top:3:wrap'
 export NAVI_FZF_OVERRIDES_VAR='--height 3'
@@ -60,11 +71,15 @@ export NAVI_COMMENT_WIDTH=50
 export NAVI_FZF_OVERRIDES='--height 30 --margin 1,1 --border --no-sort --layout=reverse'
 export NAVI_FZF_OVERRIDES_VAR='--height 30 --margin 1,1 --border'
 
-# ripgrep.
+# ------------------------------------------------------------------------------------------------------------
+# Ripgrep.
+# ------------------------------------------------------------------------------------------------------------
 # Rg模糊搜索设定
 export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
 
+# ------------------------------------------------------------------------------------------------------------
 # Less.
+# ------------------------------------------------------------------------------------------------------------
 # 文档预览Less设定
 export LESS="--RAW-CONTROL-CHARS"
 export LESS_TERMCAP_mb=$'\e[1;31m' # Start blinking
@@ -75,7 +90,9 @@ export LESS_TERMCAP_se=$'\e[0m' # End standout mode
 export LESS_TERMCAP_us=$'\e[4;35m' # Start underline
 export LESS_TERMCAP_ue=$'\e[0m' # End underline
 
-# Tldr
+# ------------------------------------------------------------------------------------------------------------
+# Tldr.
+# ------------------------------------------------------------------------------------------------------------
 export TLDR_HEADER='magenta bold underline'
 export TLDR_QUOTE='yellow bold italic'
 export TLDR_DESCRIPTION='bold green'
