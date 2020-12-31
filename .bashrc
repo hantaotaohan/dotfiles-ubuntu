@@ -187,7 +187,7 @@ fi
 # source "$HOME/extras/z.sh"
 # 设定 z.lua
 [ -f ~/z.lua ] && eval "$(lua $HOME/z.lua --init bash enhanced fzf)"
-export _ZL_CD=cds
+export _ZL_CD=my_cd_func
 set $_ZL_ECHO=0
 set $_ZL_MATCH_MODE=1
 set $_ZL_ROOT_MARKERS=".git,.svn,.hg,.root,package.json"
