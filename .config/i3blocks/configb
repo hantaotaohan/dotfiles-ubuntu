@@ -40,6 +40,7 @@ full_text=
 
 [separator]
 full_text=Bookmarks 
+color=#4F5767
 min_width=100
 
 [vim]
@@ -72,6 +73,7 @@ command=i3-msg exec "google-chrome --force-dark-mode --enable-features=OverlaySc
 
 [separator]
 full_text=System 
+color=#4F5767
 min_width=100
 
 [memory]
