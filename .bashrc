@@ -43,7 +43,10 @@ shopt -s checkwinsize
 # match all files and zero or more directories and subdirectories.
 # 如果设置了，在路径名扩展上下文中使用的模式“**”将              
 # 匹配所有文件以及零个或多个目录和子目录。
-#shopt -s globstar
+shopt -s globstar
+
+# 打开extglob模式
+shopt -s extglob
 
 # don't put duplicate lines or lines starting with space in the history.
 # 不要在历史中放置重复的行或以空格开头的行。 
