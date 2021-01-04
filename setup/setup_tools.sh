@@ -241,6 +241,7 @@ Dunst() {
 }
 
 VIM() {
+    sudo apt-get remove --purge vi vim-tiny vim vim-runtime gvim vim-common vim-gui-common vim-nox
     sudo add-apt-repository -y ppa:jonathonf/vim
     sudo sed -i "s/http:\/\/ppa.launchpad.net/https:\/\/launchpad.proxy.ustclug.org/g" /etc/apt/sources.list.d/*.list
     sudo apt update
