@@ -540,7 +540,7 @@ Plug 'Yggdroot/LeaderF'                                                  " 模�
 Plug 'voldikss/vim-floaterm'                                             " 终端插件
 Plug 'hotoo/pangu.vim'                                                   " 中文排版
 Plug 'chriskempson/base16-vim'                                           " Themes
-"Plug 'jiangmiao/auto-pairs'                                              " 成对添加括号等
+Plug 'jiangmiao/auto-pairs'                                              " 成对添加括号等
 "Plug 'neoclide/coc.nvim', {'branch': 'release'}                          " 补全插件
 "Plug 'Lenovsky/nuake'                                                    " 快速启动命令行工具
 "Plug 'ludovicchabant/vim-gutentags'                                      " Tags管理
