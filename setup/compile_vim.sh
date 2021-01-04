@@ -4,6 +4,8 @@ git clone https://hub.fastgit.org/vim/vim.git $HOME/desktop/vim
 
 cd $HOME/desktop/vim
 
+sudo apt-get remove --purge vi vim-tiny vim vim-runtime gvim vim-common vim-gui-common vim-nox
+
 sudo apt-get install libncurses5-dev python-dev python3-dev libwxgtk3.0-dev libatk1.0-dev libbonoboui2-dev libcairo2-dev libx11-dev libxpm-dev libxt-dev
 
 sudo ./configure --with-features=huge \
