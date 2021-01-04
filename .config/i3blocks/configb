@@ -38,57 +38,65 @@ full_text=
 #min_width=200
 #command=i3-msg exec "alacritty -d 80 20 -t vim -e vim $HOME/.scratchpad" > /dev/null
 
+[separator]
+full_text=Bookmarks 
+min_width=100
+
 [vim]
-min_width=200
+min_width=100
 markup=pango
 command=$HOME/.config/i3blocks/vim
 interval=1
 
 [neomutt]
-min_width=200
+min_width=100
 markup=pango
 command=$HOME/.config/i3blocks/neomutt
 interval=1
 
 [notion]
-min_width=200
+min_width=100
 markup=pango
 command=$HOME/.config/i3blocks/notion
 interval=1
 
 [github]
 full_text=  Github
-min_width=200
+min_width=100
 command=i3-msg exec "google-chrome --force-dark-mode https://www.github.com" > /dev/null
 
 [book]
 full_text=  Book
-min_width=200
+min_width=100
 command=i3-msg exec "google-chrome --force-dark-mode --enable-features=OverlayScrollbar --enable-plugins --app=https://weread.qq.com/" > /dev/null
 
-[iface]
-command=$HOME/.config/i3blocks/iface
-label= 
-color=#abb2bf
-interval=10
-min_width=200
-
-[bandwidth]
-label= 
-full_text=Network I/O
-command=$HOME/.config/i3blocks/bandwidth
-interval=1
-min_width=200
+[separator]
+full_text=System 
+min_width=100
 
 [memory]
 command=$HOME/.config/i3blocks/memory
 label=
 interval=1
 instance=mem
-min_width=70
+min_width=100
+
+[bandwidth]
+label= 
+full_text=Network I/O
+command=$HOME/.config/i3blocks/bandwidth
+interval=1
+min_width=100
 
 [cpu_usage]
 full_text=CPU
 label= 
 interval=1
+min_width=100
+
+[iface]
+command=$HOME/.config/i3blocks/iface
+label= 
+color=#abb2bf
+interval=10
 min_width=200
