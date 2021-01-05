@@ -184,9 +184,12 @@ bind index,pager                uu      undelete-message
 bind index,pager                <F8>    sidebar-toggle-visible
 bind index,pager                <Up>    sidebar-prev
 bind index,pager                \Cp     sidebar-prev
+bind index,pager                \Ck     sidebar-prev
 bind index,pager                <Down>  sidebar-next
 bind index,pager                \Cn     sidebar-next
+bind index,pager                \Cj     sidebar-next
 bind index                      <Right> sidebar-open
+bind index                      \Cl     sidebar-open
 bind index,pager                R       group-reply
 
 # Threads
