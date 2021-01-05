@@ -15,14 +15,14 @@
 #menu_select space Return
 
 # Same for image navigation ...
-next_img n Right space
-prev_img p Left BackSpace
+next_img j Right space 
+prev_img k Left BackSpace 
 
 # and image movement
-scroll_up    k C-Up
-scroll_down  j C-Down
-scroll_left  h C-Left
-scroll_right l C-Right
+scroll_up    K C-Up
+scroll_down  J C-Down
+scroll_left  H C-Left
+scroll_right L C-Right
 
 # File deletion
 remove     d   Delete
@@ -32,8 +32,8 @@ delete   C-d C-Delete
 toggle_filenames f
 
 # zooming
-zoom_in  C-Up equal
-zoom_out C-Down minus
+zoom_in  C-k equal
+zoom_out C-j minus
 zoom_default z
 zoom_fit w
 
