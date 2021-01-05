@@ -38,9 +38,10 @@ color article color250 default bold
 text-width 80
 
 browser rdrview -B w3m
-bind-key \ macro-prefix
+bind-key ; macro-prefix
 unbind-key ,
-macro w set browser "google-chrome %u" ; open-in-browser ; set browser rdrview -B w3m
+macro b set browser "google-chrome %u" ; open-in-browser ; set browser rdrview -B w3m
+macro r open-in-browser 
 macro q quit
 
 highlight all "  Reeder.*" color1
