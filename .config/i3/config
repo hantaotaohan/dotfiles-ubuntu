@@ -95,7 +95,7 @@ bindsym $mod+s scratchpad show , move position center , sticky enable
 bindsym --release $mod+a exec "deepin-screenshot -s /tmp/screenshot.png && xclip -selection clipboard -t image/png < /tmp/screenshot.png"
 
 # 锁屏设定
-bindsym Ctrl+$mod+l exec --no-startup-id i3lock-fancy -f DejaVu-Sans-Bold  -t "Type Password To Unlock"
+# bindsym Ctrl+$mod+l exec --no-startup-id i3lock-fancy -f DejaVu-Sans-Bold  -t "Type Password To Unlock"
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -142,7 +142,7 @@ bindsym $mod+Shift+l move right
 # --------------------------------------------------------------------------------------------------
 
 # 开启全屏模式
-bindsym $mod+f fullscreen toggle
+bindsym $mod+Shift+f fullscreen toggle
 
 # 切换模式 窗口模式与浮动窗口模式
 bindsym $mod+Shift+space floating toggle
