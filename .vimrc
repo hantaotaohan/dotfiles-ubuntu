@@ -1202,7 +1202,7 @@ inoremap <C-e> <C-o>A
 inoremap <C-b> <Left>
 inoremap <C-f> <Right>
 inoremap <C-w> <C-o>dB
-inoremap <C-u> <C-o>d0
+inoremap <C-u> <C-u><C-o>d0
 inoremap <C-k> <C-o>D
 inoremap <C-d> <C-o>dW
 inoremap <M-B> <S-Left>
