@@ -24,28 +24,24 @@ keycode 45 = k K Up
 keycode 46 = l L Right
 
 ! Caps + c v a x > copy paste select all cut
-keycode 38 = a A 0x01
-keycode 56 = b B 0x02
-keycode 54 = c C 0x03
-keycode 26 = e E 0x05
-keycode 41 = f F 0x06
-keycode 55 = v V 0x16
-keycode 25 = w W 0x17
-keycode 53 = x X 0x18
+!keycode 38 = a A 0x01
+!keycode 56 = b B 0x02
+!keycode 54 = c C 0x03
+!keycode 26 = e E 0x05
+!keycode 41 = f F 0x06
+!keycode 55 = v V 0x16
+!keycode 25 = w W 0x17
+!keycode 53 = x X 0x18
 
 !keycode 38 = a A Home
 !keycode 26 = e E End
 !keycode 54 = c C XF86Copy
 !keycode 55 = v V XF86Paste
 !keycode 53 = x X XF86Cut
-! keycode 38 = a A Control_L
-! keycode 54 = c C Control_L
-! keycode 55 = v V Control_L
-! keycode 53 = x X Control_L
 
 ! Caps + m n > Delete BackSpace
-keycode 58 = m M Delete
-keycode 57 = n N BackSpace
+!keycode 58 = m M Delete
+!keycode 57 = n N BackSpace
 
 ! Caps + ;'./> Home Next Prior End
 !keycode 47 = semicolon colon Home
@@ -77,4 +73,4 @@ keycode 62 = Shift_R Shift_R grave
 keycode 9 = Escape asciitilde grave
 
 ! Caps + Enter > `
-keycode 36 = Return Return grave
+!keycode 36 = Return Return grave
