@@ -66,9 +66,12 @@ set convert-meta off
 "\e\C-K": history-search-backward
 
 # CTRL+ALT+M,N 删除单词
-"\e\C-M": kill-word
-"\e\C-N": backward-kill-word
+# "\e\C-M": kill-word
+# "\e\C-N": backward-kill-word
 
 # CTRL+Backspace > delete
-"\C-H": delete-char
+"\e\C-M": delete-char
+"\e\C-N": backward-delete-char
 
+"\e\C-H": backward-char
+"\e\C-L": forward-char
