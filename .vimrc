@@ -1196,15 +1196,20 @@ tnoremap <c-l> <c-w><c-l>
 " nnoremap H <Esc>0
 " nnoremap L <Esc>$
 
-" 编辑模式下:Alt+Shift+hjkl加速移动
-inoremap <C-a> <ESC>I
-inoremap <C-e> <ESC>A
-" inoremap <C-w> <C-o>W
-" inoremap <C-b> <C-o>B
-" inoremap <C-H> <ESC>I
-" inoremap <C-j> <down><down><down><down><down>
-" inoremap <C-k> <up><up><up><up><up>
-" inoremap <C-L> <ESC>A
+" 编辑模式下:光标移动及删除
+inoremap <C-a> <C-o>I
+inoremap <C-e> <C-o>A
+inoremap <C-b> <Left>
+inoremap <C-f> <Right>
+inoremap <C-w> <C-o>dB
+inoremap <C-u> <C-o>d0
+inoremap <C-k> <C-o>d$
+inoremap <C-d> <C-o>dW
+inoremap <M-B> <S-Left>
+inoremap <M-F> <S-Right>
+inoremap <C-m> <C-o>x
+inoremap <C-n> <C-o>X
+
 
 " 可视化模式下:Shift+HJKL快速移动
 " vnoremap K 5<up>
