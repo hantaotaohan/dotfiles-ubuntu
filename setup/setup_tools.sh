@@ -47,6 +47,7 @@ Options:
     -30       Install Crow_Translate
     -31       Install Hugo
     -32       Install Java
+    -33       Install Fix FZF-history
 EOF
 }
 
@@ -462,6 +463,13 @@ Java() {
     row
 }
 
+Fix_FZF_history() {
+    echo "bind -m emacs-standard '\"\\C-r\": \"\\C-e \\C-u\\C-y\\ey\\C-u\"\$(__fzf_history__)\"\\e\\C-e\\er\\C-m\"'" >> $HOME/.fzf/shell/key-bindings.bash
+    row
+    echo "Fix FZF History Done!"
+    row
+}
+
 main() {
 
     echo "                                                                               "
@@ -505,7 +513,8 @@ main() {
     echo " -29       Setup Nodejs & Yarn                                                 "
     echo " -30       Setup Crow_Translate                                                "
     echo " -31       Setup Hugo                                                          "
-    echo " -32       Setup Java                                                          "    
+    echo " -32       Setup Java                                                          "
+    echo " -33       Fix FZF-history                                                     "
     echo "                                                                               "
     echo "-------------------------------------------------------------------------------"
     echo "                                                                               "
@@ -616,7 +625,10 @@ main() {
             ;; 
         -32)
             Java
-            ;;             
+            ;;
+        -33)
+            Fix_FZF_history
+            ;;  
         -[aA])
             Github_Hosts
             Dunst
@@ -643,6 +655,7 @@ main() {
             Nodejs
             Hugo
             Java
+            Fix_FZF_history
             # SSR
             # Github
             sudo rm -rf /etc/apt/sources.list.d/*
