@@ -52,7 +52,9 @@ export FZF_DEFAULT_OPTS='
   --layout=reverse 
   --border
   --inline-info
-  --exact'
+  --exact
+  --bind '?:toggle-preview,Ctrl-j:down,Ctrl-k:up,J:preview-down,K:preview-up'
+  '
   # --prompt="❱❱❱ "  
   # --pointer="●"
   # --marker="❱ "
@@ -61,7 +63,7 @@ export FZF_DEFAULT_OPTS='
 export FZF_CTRL_T_COMMAND="${FZF_DEFAULT_COMMAND}"
 
 # CTRL+R 搜索历史命令
-export FZF_CTRL_R_OPTS="--sort --exact --preview 'echo {}' --preview-window down:3:hidden:wrap --bind '?:toggle-preview'"
+export FZF_CTRL_R_OPTS="--sort --exact --preview 'echo {}' --preview-window down:3:hidden:wrap --bind '?:toggle-preview,Ctrl-j:down,Ctrl-k:up,J:preview-down,K:preview-up'" 
 
 # ALT+C 搜索文件夹并cd进入
 export FZF_ALT_C_COMMAND='fd --hidden --type directory --exclude ".git"'
