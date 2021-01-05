@@ -158,3 +158,8 @@ colors:
     magenta: '0xc678dd'
     cyan:    '0x56b6c2'
     white:   '0x5c6370'
+
+key_bindings:
+  - { key: V,              mods: Control,         action: Paste            }
+  - { key: C,              mods: Control,         action: Copy             }
+  - { key: C,              mods: Control|Shift,   chars: "\x03"            }
