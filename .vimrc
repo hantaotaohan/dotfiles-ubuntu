@@ -1203,12 +1203,12 @@ inoremap <C-b> <Left>
 inoremap <C-f> <Right>
 inoremap <C-w> <C-o>dB
 inoremap <C-u> <C-o>d0
-inoremap <C-k> <C-o>d$
+inoremap <C-k> <C-o>D
 inoremap <C-d> <C-o>dW
 inoremap <M-B> <S-Left>
 inoremap <M-F> <S-Right>
-inoremap <C-m> <C-o>x
-inoremap <C-n> <C-o>X
+inoremap <C-n> <BackSpace>
+inoremap <C-m> <Delete>
 
 
 " 可视化模式下:Shift+HJKL快速移动
