@@ -68,6 +68,7 @@ alias sai='sudo apt install'
 alias mail='neomutt'
 alias rss='newsboat'
 alias file='nautilus .'
+alias pdf='zathura'
 
 # ----------------------------------------------------------
 # Fcode bind | showkey -a
