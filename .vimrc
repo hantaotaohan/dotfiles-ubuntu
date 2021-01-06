@@ -668,7 +668,7 @@ autocmd BufReadPost *
 let s:alpha = 'a'
 while s:alpha <= 'z'
   execute "set <M-" . toupper(s:alpha) . ">=\e" . s:alpha
-  "execute "imap \e" . s:alpha . " <M-" . toupper(s:alpha) . ">"
+  execute "imap \e" . s:alpha . " <M-" . toupper(s:alpha) . ">"
   let s:alpha = nr2char(1+char2nr(s:alpha))
 endwhile
 unlet s:alpha
