@@ -91,10 +91,9 @@ Copytranslator() {
     wget -P $HOME/desktop https://download.fastgit.org/CopyTranslator/CopyTranslator/releases/download/v10.0.0-beta.2/copytranslator_10.0.0-beta.2_amd64.deb
     cd $HOME/desktop
     sudo dpkg -i copytranslator_10.0.0-beta.2_amd64.deb
-    sudo chown -R taotao:taotao /dev/input/mice
+    sudo chown -R $USER:$USER /dev/input/mice
     cd $HOME
     sudo rm -rf $HOME/desktop/copytranslator_10.0.0-beta.2_amd64.deb
-    sudo chown -R $USER:$USER /dev/input/mice
     row
 }
 
