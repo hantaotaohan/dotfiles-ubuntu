@@ -1199,10 +1199,8 @@ tnoremap <C-l> <C-w><C-l>
 " 编辑模式下:光标移动及删除
 inoremap <C-a> <Home>
 inoremap <C-e> <End>
-inoremap <C-b> <S-Left>
-inoremap <C-w> <S-Right>
-inoremap <M-b> <C-\><C-o>dB
-inoremap <M-w> <C-\><C-o>dw
+inoremap <C-w> <C-\><C-o>dB
+inoremap <C-b> <C-\><C-o>dw
 
 
 " 可视化模式下:Shift+HJKL快速移动
