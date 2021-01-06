@@ -63,6 +63,10 @@ alias yank='yank-cli | xclip -sel c'
 # Google-Chrome
 alias chrome="google-chrome --force-dark-mode --proxy-server=socks5://127.0.0.1:1080"
 
+# IP addresses
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
+
 # Other
 alias sai='sudo apt install'
 alias mail='neomutt'
