@@ -58,5 +58,5 @@ set completion-highlight-bg     "#61afef"
 set recolor-lightcolor          "#282c34"
 set recolor-darkcolor           "#b6bdca"
 
-set recolor                     "false"
+set recolor                     "true"
 set recolor-keephue             "false"
