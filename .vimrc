@@ -2174,8 +2174,8 @@ autocmd! User GoyoLeave Limelight!
 "=================================================================================================================================
 let g:AutoPairsMapCh = 0
 let g:AutoPairsMapBS = 0
-let g:AutoPairsMapCR = 1
-let g:AutoPairsShortcutBackInsert = 1
+let g:AutoPairsMapCR = 0
+let g:AutoPairsShortcutBackInsert = 0
 
 "=================================================================================================================================
 " Which Key Map  settings
