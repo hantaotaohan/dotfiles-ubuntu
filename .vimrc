@@ -1202,7 +1202,7 @@ inoremap <C-e> <End>
 inoremap <C-b> <Left>
 inoremap <C-f> <Right>
 inoremap <C-w> <C-o>dB
-inoremap <C-d> <C-o>dW
+inoremap <M-d> <C-o>dW
 inoremap <M-b> <S-Left>
 inoremap <M-f> <S-Right>
 inoremap <C-n> <BackSpace>
