@@ -1201,13 +1201,10 @@ inoremap <C-a> <Home>
 inoremap <C-e> <End>
 inoremap <C-b> <Left>
 inoremap <C-f> <Right>
-inoremap <C-w> <C-o>dB
-inoremap <M-d> <C-o>dW
+inoremap <C-w> <C-\><C-o>dB
+inoremap <M-d> <C-\><C-o>dw
 inoremap <M-b> <S-Left>
 inoremap <M-f> <S-Right>
-inoremap <C-n> <BackSpace>
-inoremap <C-m> <Delete>
-
 
 " 可视化模式下:Shift+HJKL快速移动
 " vnoremap K 5<up>
