@@ -352,7 +352,7 @@ try
         catch
         endtry
         else
-        exe notSaved
+        exe notSaved && execute "q!"
         endif
         catch
         endtry
