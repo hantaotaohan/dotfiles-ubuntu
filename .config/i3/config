@@ -51,13 +51,12 @@ bindsym --whole-window $mod+button2 kill
 
 # 关闭窗口快捷键 
 bindsym $mod+Shift+q kill
-bindsym Mod4+Shift+q kill
 
 # 开启Terminal快捷键 
 bindsym $mod+Return exec --no-startup-id alacritty
 
 # rofi 设置及配置 apt install rofi
-bindsym $mod+d exec --no-startup-id rofi -show drun
+bindsym $mod+Shift+d exec --no-startup-id rofi -show drun
 
 # 切换窗口
 bindsym $mod+p exec --no-startup-id rofi -show window -theme sidetab -window-format {t} -kb-row-down 'Alt+p' -kb-accept-entry '!Alt-p'
