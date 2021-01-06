@@ -1174,18 +1174,18 @@ nmap <silent><LocalLeader><tab> <Plug>AirlineSelectNextTab
 "=================================================================================================================================
 " 设置Alt快捷方式为 进入编辑模式后 ctrl+v 再按 alt+某键即可
 "=================================================================================================================================
-nnoremap <c-h> <c-w>h
-nnoremap <c-l> <c-w>l
-nnoremap <c-j> <c-w>j
-nnoremap <c-k> <c-w>k
-inoremap <c-h> <esc><c-w>h
-inoremap <c-l> <esc><c-w>l
-inoremap <c-j> <esc><c-w>j
-inoremap <c-k> <esc><c-w>k
-tnoremap <c-h> <c-w><c-h>
-tnoremap <c-j> <c-w><c-j>
-tnoremap <c-k> <c-w><c-k>
-tnoremap <c-l> <c-w><c-l>
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+inoremap <C-h> <ESC><C-w>h
+inoremap <C-l> <ESC><C-w>l
+inoremap <C-j> <ESC><C-w>j
+inoremap <C-k> <ESC><C-w>k
+tnoremap <C-h> <C-w><C-h>
+tnoremap <C-j> <C-w><C-j>
+tnoremap <C-k> <C-w><C-k>
+tnoremap <C-l> <C-w><C-l>
 
 "================================================================================================================================= 
 " 快速移动光标快捷键 
@@ -1197,16 +1197,14 @@ tnoremap <c-l> <c-w><c-l>
 " nnoremap L <Esc>$
 
 " 编辑模式下:光标移动及删除
-inoremap <C-a> <C-o>I
-inoremap <C-e> <C-o>A
+inoremap <C-a> <Home>
+inoremap <C-e> <End>
 inoremap <C-b> <Left>
 inoremap <C-f> <Right>
 inoremap <C-w> <C-o>dB
-inoremap <C-u> <C-u><C-o>d0
-inoremap <C-k> <C-o>D
 inoremap <C-d> <C-o>dW
-inoremap <M-B> <S-Left>
-inoremap <M-F> <S-Right>
+inoremap <M-b> <S-Left>
+inoremap <M-f> <S-Right>
 inoremap <C-n> <BackSpace>
 inoremap <C-m> <Delete>
 
@@ -2179,6 +2177,7 @@ autocmd! User GoyoLeave Limelight!
 "=================================================================================================================================
 let g:AutoPairsMapCh = 0
 let g:AutoPairsMapBS = 0
+let g:AutoPairsShortcutBackInsert= 0
 
 "=================================================================================================================================
 " Which Key Map  settings
