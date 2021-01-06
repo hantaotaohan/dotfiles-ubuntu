@@ -2172,9 +2172,10 @@ autocmd! User GoyoLeave Limelight!
 "=================================================================================================================================
 " AutoPairs  settings
 "=================================================================================================================================
-let g:AutoPairsMapCh = 0
+let g:AutoPairsMapCh = 1
 let g:AutoPairsMapBS = 0
-let g:AutoPairsShortcutBackInsert= 0
+let g:AutoPairsMapCR = 1
+let g:AutoPairsShortcutBackInsert = 1
 
 "=================================================================================================================================
 " Which Key Map  settings
