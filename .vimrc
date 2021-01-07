@@ -1200,10 +1200,7 @@ tnoremap <C-l> <C-w><C-l>
 inoremap <C-a> <Home>
 inoremap <C-e> <End>
 inoremap <C-w> <C-\><C-o>dB
-inoremap <C-b> <C-\><C-o>dw
-inoremap <M-b> <S-Left>
-inoremap <M-f> <S-Right>
-
+inoremap <M-b> <C-\><C-o>dw
 
 " 可视化模式下:Shift+HJKL快速移动
 " vnoremap K 5<up>
