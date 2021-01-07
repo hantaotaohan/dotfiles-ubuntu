@@ -1197,6 +1197,8 @@ tnoremap <C-l> <C-w><C-l>
 " nnoremap L <Esc>$
 
 " 编辑模式下:光标移动及删除
+inoremap <C-b> <Left>
+inoremap <C-f> <Right>
 inoremap <C-a> <Home>
 inoremap <C-e> <End>
 inoremap <C-w> <C-\><C-o>dB
