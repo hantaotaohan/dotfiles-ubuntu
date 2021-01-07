@@ -751,6 +751,7 @@ vnoremap <silent><localleader>y "+yy
 
 nnoremap <silent><localleader>p "+p
 vnoremap <silent><localleader>p "+p
+inoremap <silent><localleader>p <Esc>"+p
 
 
 "-----------------------------------------------------------------o--------------------------------------------------------------o
