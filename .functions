@@ -200,7 +200,7 @@ fe() {
     --exclude srv \
     --exclude sys \
     --exclude tmp \
-    --exclude var | fzf --multi --exit-0 --select-1)"
+    --exclude var / | fzf --multi --exit-0 --select-1)"
     if [[ -n $file ]]; then
         VIMRUNTIME= vim -p $file
     fi
