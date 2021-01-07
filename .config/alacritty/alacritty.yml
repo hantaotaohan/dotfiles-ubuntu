@@ -159,9 +159,16 @@ colors:
     cyan:    '0x56b6c2'
     white:   '0x5c6370'
 
-key_bindings:
-  - { key: C,              mods: Control,         action: Copy             }
-  - { key: V,              mods: Control,         action: Paste            }
-  - { key: C,              mods: Control|Shift,   chars: "\x03"            }
-  - { key: V,              mods: Control|Shift,   chars: "\x16"            }
+# key_bindings:
+#   - { key: C,              mods: Control,         action: Copy               }
+#   - { key: V,              mods: Control,         action: Paste              }
+#   - { key: C,              mods: Control,         chars : "\x03 "            }
+#   - { key: V,              mods: Control,         chars : "\x16 "            }
+#   - { key: N,              mods: Control,         chars : "\x7f "            }
+#   - { key: M,              mods: Control,         chars : "[3~"            }
+#   - { key: H,              mods: Control|Shift,   chars : "[D "            }
+#   - { key: J,              mods: Control|Shift,   chars : "[B "            }
+#   - { key: K,              mods: Control|Shift,   chars : "[A "            }
+#   - { key: L,              mods: Control|Shift,   chars : "[C "            }
+#   - { key: Back,                                  chars : "\x7f "            }
 
