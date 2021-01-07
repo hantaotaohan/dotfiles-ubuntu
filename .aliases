@@ -6,6 +6,7 @@ alias .....="cd ../../../.."
 alias ~='cd ~'
 alias -- -="cd -"
 alias cd=my_cd_func
+alias c='cd "$(ls  -dx -- */ .*/ | yank-cli -i)"'
 
 # z.lua
 alias zh='z -I -t .' # 使用 fzf 选择最近去过的目录
@@ -15,12 +16,12 @@ alias zf='z -I'      # 使用 fzf 对多个结果进行选择
 alias zb='z -b'      # 快速回到父目录
 
 # some more ls aliases
-alias ll='ls -alhovqF --color=always --group-directories-first'
+alias l='ls -l --time-style +"%F %T"'
+alias ll='ls -alhovqF --color=always --group-directories-first --time-style +"%F %T"'
 alias la='ls -A'
-alias l='ls -CF'
 alias lk='ls -AlXHLF --color=always'
-
-alias c='cd "$(ls  -dx -- */ .*/ | yank-cli -i)"'
+alias ls='ls -Fh --color=auto --group-directories-first'
+alias lsd="ls -lF --color=always | grep --color=never '^d'"
 
 # BookMarks
 alias dt='cd ~/desktop && ls -lhA'
@@ -30,11 +31,7 @@ alias ds='cd ~/dotfiles && ls -lhA'
 alias cf='cd ~/.config && ls -lhA'
 
 # Easy report
-alias ls='ls -Fh --color=auto --group-directories-first'
-alias lsd="ls -lF --color=auto | grep --color=never '^d'"
 alias grep='grep --color=auto'
-alias l='ls -l'
-alias la='ls -lA'
 alias fdir='find . -type d -name'
 alias ff='find . -type f -name'
 alias h='history'
@@ -73,11 +70,3 @@ alias mail='neomutt'
 alias rss='newsboat'
 alias file='nautilus .'
 alias pdf='zathura'
-
-# ----------------------------------------------------------
-# Fcode bind | showkey -a
-# ----------------------------------------------------------
-# Ctrl+l
-# bind -x '"\C-l":ls -l'
-# F5
-# bind '"\e[15~":"cd $HOME && ll\n"'
