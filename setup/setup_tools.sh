@@ -638,33 +638,38 @@ main() {
             ;;  
         -[aA])
             Github_Hosts
-            Dunst
-            VIM
-            I3gaps
+            Alttab
             Arcthemes
             Arcicons
-            GTK
+            Copytranslator
+            #Crossover
+            I3gaps
             Imagemagick
             Jupyter
             Navi
-            Peek
-            Fcitx
-            I3_Sensible_Terminal
-            Offlineimap
-            Alttab
-            Rdrview
-            SSH_banner
-            # Crow_Translate
-            # Crossover
-            Copytranslator
+            #Peek
             Picom
+            #SSR
+            Dunst
+            VIM
+            #Offlineimap
+            Fcitx
+            GTK
+            #Github
+            I3_Sensible_Terminal
+            #Vmware_Share_Fix
+            #Calibre
+            #Foliate
+            Rdrview
+            I3wm
+            SSH_banner
+            #Ly
             Ctags
             Nodejs
+            #Crow_Translate
             Hugo
             Java
             Fix_FZF_history
-            # SSR
-            # Github
             sudo rm -rf /etc/apt/sources.list.d/*
             ;;
         -[sS])
