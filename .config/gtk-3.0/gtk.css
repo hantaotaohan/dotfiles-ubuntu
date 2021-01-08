@@ -1,12 +1,14 @@
-@binding-set gtk-xf86cut-copy-paste
+@binding-set rebind
 {
-        bind "XF86Cut"   { "cut-clipboard" () };
-        bind "XF86Copy"  { "copy-clipboard" () };
-        bind "XF86Paste" { "paste-clipboard" () };
+        bind "<Capslock>a" { "select-all" (1)   };
+        bind "<Capslock>x" { "cut-clipboard" ()   };
+        bind "<Capslock>c" { "copy-clipboard" ()  };
+        bind "<Capslock>v" { "paste-clipboard" () };
+        bind "<super>z"    { "undo" () };
 }
 
 * {
-        -gtk-key-bindings: gtk-xf86cut-copy-paste
+        -gtk-key-bindings: rebind
 }
 
 #vim-main-window {
