@@ -48,6 +48,7 @@ Options:
     -31       Install Hugo
     -32       Install Java
     -33       Install Fix FZF-history
+    -34       Git Clone My vimwiki and hugowiki
 EOF
 }
 
@@ -477,6 +478,14 @@ Fix_FZF_history() {
     row
 }
 
+Clone() {
+    git clone git@github.com:hantaotaohan/vimwiki.git $HOME/vimwiki
+    git clone git@github.com:hantaotaohan/hantaotaohan.github.io.git $HOME/blog
+    row
+    echo "Git Clone Done!"
+    row
+}
+
 main() {
 
     echo "                                                                               "
@@ -522,6 +531,7 @@ main() {
     echo " -31       Setup Hugo                                                          "
     echo " -32       Setup Java                                                          "
     echo " -33       Fix FZF-history                                                     "
+    echo " -34       Git Clone Mywiki and hugowiki                                       "
     echo "                                                                               "
     echo "-------------------------------------------------------------------------------"
     echo "                                                                               "
@@ -635,6 +645,9 @@ main() {
             ;;
         -33)
             Fix_FZF_history
+            ;;
+        -34)
+            Clone
             ;;  
         -[aA])
             Github_Hosts
