@@ -292,6 +292,13 @@ Fcitx() {
         sudo cp $Dotfiles_repo/fcitx/fcitx-keyboard.config $HOME/.config/fcitx/conf/fcitx-keyboard.config
     fi
     
+    if [ -f $HOME/.config/fcitx/config ]; then
+        sudo rm -rf $HOME/.config/fcitx/config
+        sudo cp $Dotfiles_repo/fcitx/config $HOME/.config/fcitx/config
+    else
+        sudo cp $Dotfiles_repo/fcitx/config $HOME/.config/fcitx/config
+    fi
+
     if [ -f $HOME/.config/fcitx/skin/dark/fcitx_skin.conf  ]; then
         sudo rm -rf $HOME/.config/fcitx/skin/dark/fcitx_skin.conf
         sudo cp $Dotfiles_repo/fcitx/fcitx_skin.conf $HOME/.config/fcitx/skin/dark/fcitx_skin.conf
