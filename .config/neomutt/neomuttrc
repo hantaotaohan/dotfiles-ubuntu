@@ -207,8 +207,7 @@ bind pager \Ch help
 bind index \Ch help
 
 bind index,pager S sync-mailbox
-
-
+bind browser,index,pager <Esc><Esc> sync-mailbox
 
 
 # vim: filetype=muttrc
