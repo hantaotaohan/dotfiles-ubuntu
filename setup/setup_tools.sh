@@ -49,6 +49,7 @@ Options:
     -32       Install Java
     -33       Install Fix FZF-history
     -34       Git Clone My vimwiki and hugowiki
+    -35       Fix Icons
 EOF
 }
 
@@ -493,6 +494,13 @@ Clone() {
     row
 }
 
+Fixicons() {
+    sudo sed -i '$a\Icon=/home/taotao/dotfiles/setup/icons/pdf.png' /usr/share/applications/zathura.desktop
+    sudo sed -i '$a\Icon=/home/taotao/dotfiles/setup/icons/mail.png' /usr/share/applications/neomutt.desktop 
+    sudo sed -i '$a\Icon=/home/taotao/dotfiles/setup/icons/translate.png' /usr/share/applications/copytranslator.desktop
+    sudo sed -i '$a\Icon=/home/taotao/dotfiles/setup/icons/browser.png' /usr/share/applications/ranger.desktop
+}
+
 main() {
 
     echo "                                                                               "
@@ -539,6 +547,7 @@ main() {
     echo " -32       Setup Java                                                          "
     echo " -33       Fix FZF-history                                                     "
     echo " -34       Git Clone Mywiki and hugowiki                                       "
+    echo " -35       Fix Icons                                                           "
     echo "                                                                               "
     echo "-------------------------------------------------------------------------------"
     echo "                                                                               "
@@ -655,6 +664,9 @@ main() {
             ;;
         -34)
             Clone
+            ;;  
+        -35)
+            FixIcons
             ;;  
         -[aA])
             Github_Hosts
