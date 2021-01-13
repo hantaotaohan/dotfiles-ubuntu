@@ -352,3 +352,10 @@ keyring set bteb hantao@bteb.cn
 keyring set bteb hantaotaohan@hotmail.com
 
 ```
+
+### Vimwiki 支持 hugo link style
+
+vimwiki 修改 .vim/plugged/vimwiki/autoload/vimwiki/vars.vim
+1190行 let mkd_syntax.Weblink1Template 
+处找到         \ mkd_syntax.rxWeblink1Separator. '__LinkUrl__'. rxWeblink1Ext.
+修改成         \ mkd_syntax.rxWeblink1Separator. '/__LinkUrl__'. rxWeblink1Ext.
