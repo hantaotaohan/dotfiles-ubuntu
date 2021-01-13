@@ -1448,11 +1448,12 @@ autocmd FileType markdown nmap <buffer><silent> <leader>p :call mdip#MarkdownCli
 "=================================================================================================================================
 " Vimwiki Zettel settings
 "=================================================================================================================================
-let g:zettel_format = "%Y%m%d%H%M"
+" let g:zettel_format = "%Y%m%d%H%M"
+let g:zettel_format = "%title"
 let g:zettel_link_format="[%title](/%link)"
 let g:zettel_disable_front_matter=1
-let g:zettel_options = [{},{"front_matter" :
-            \[["draft","false"]],
+let g:zettel_options = [{"front_matter" :
+            \[["draft","false"],["categories","[]"],["tags","[]"]],
             \"template" :  "$HOME/dotfiles/extras/zettelnew.tpl"}]
 
 "=================================================================================================================================
