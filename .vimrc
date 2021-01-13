@@ -1469,11 +1469,11 @@ let wiki_1.auto_tags= 1
 let wiki_1.auto_generate_tags= 1
 let wiki_1.auto_generate_links= 1
 let wiki_1.automatic_nested_syntaxes= 1
-let wiki_1.path= '$HOME/blog/content/en/docs/'
+let wiki_1.path= '$HOME/blog/content/posts/'
 let wiki_1.path_html= '$HOME/blog/public'
 let wiki_1.syntax= 'markdown'
 let wiki_1.ext= '.md'
-let wiki_1.index = '_index'
+let wiki_1.index = 'inbox'
 let wiki_1.custom_wiki2html= '$HOME/dotfiles/extras/wiki2html.sh'
 let wiki_1.nested_syntaxes= {'python': 'python','bash': 'sh'}
 let wiki_1.html_filename_parameterization= 1
@@ -1499,13 +1499,14 @@ let wiki_2.html_filename_parameterization= 1
 
 let g:vimwiki_list = [wiki_1, wiki_2]
 
+let g:vimwiki_CJK_length = 1
 let g:vimwiki_hl_cb_checked = 2
 let g:vimwiki_global_ext = 1 " make sure vimwiki doesn't own all .md files
 let g:vimwiki_use_mouse = 1
 let g:vimwiki_conceallevel=1
 let g:vimwiki_markdown_link_ext = 0
 let g:list_margin=0
-let g:vimwiki_user_htmls = '404.html,search.html,books.html,todo,html,contact.html,tags.html'
+let g:vimwiki_user_htmls = '404.html,search.html,books.html,todo,html,contact.html,tags.html,inbox.html'
 let g:vimwiki_valid_html_tags='b,i,s,u,sub,sup,kbd,del,br,hr,div,code,h1,nav,body,aside'
 
 "=================================================================================================================================
@@ -1558,8 +1559,8 @@ func GitPush()
     let g:asyncrun_exit = "echom 'Done'"
 endfunc
 
-autocmd BufReadPost $HOME/blog/content/en/docs/_index.md call GitPull()
-autocmd BufWritePost $HOME/blog/contet/en/docs/_index.md call GitCommit()
+autocmd BufReadPost $HOME/blog/content/posts/inbox.md call GitPull()
+autocmd BufWritePost $HOME/blog/content/posts/inbox.md call GitCommit()
 autocmd VimLeave $HOME/blog/* call GitPush() 
 
 autocmd BufReadPost $HOME/vimwiki/src/index.md call GitPull()
