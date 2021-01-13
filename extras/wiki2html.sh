@@ -1,6 +1,6 @@
 cd $HOME/blog
 env HUGO_baseURL="$HOME/blog/public/" \
-    hugo --themesDir $HOME/blog/themes/ -t zdoc \
-    --config $HOME/blog/config/_default/config.toml \
-    --contentDir $HOME/blog/content/en \
+    hugo --themesDir $HOME/blog/themes/ -t LoveIt \
+    --config $HOME/blog/config.toml \
+    --contentDir $HOME/blog/content/posts \
     -d $HOME/blog/public --quiet > /dev/null
