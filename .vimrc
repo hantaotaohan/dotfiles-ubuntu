@@ -1508,6 +1508,14 @@ let g:vimwiki_user_htmls = '404.html,search.html,books.html,todo,html,contact.ht
 let g:vimwiki_valid_html_tags='b,i,s,u,sub,sup,kbd,del,br,hr,div,code,h1,nav,body,aside'
 let g:vimwiki_tag_format = {'pre': 'tags:.*', 'pre_mark': '\[', 'post_mark': '\]', 'sep': ','}
 
+autocmd BufNewFile ~/blog/content/posts/*.md :0r !echo ---
+autocmd BufNewFile ~/blog/content/posts/*.md :r! echo title: %:t:r
+autocmd BufNewFile ~/blog/content/posts/*.md :r! echo "date: `date +'\%Y-\%m-\%d \%H:\%M'`"
+autocmd BufNewFile ~/blog/content/posts/*.md :r! echo draft: false
+autocmd BufNewFile ~/blog/content/posts/*.md :r! echo categories: []
+autocmd BufNewFile ~/blog/content/posts/*.md :r! echo tags: []
+autocmd BufNewFile ~/blog/content/posts/*.md :r! echo ---
+
 "=================================================================================================================================
 hi VimwikiHeader1 guifg=#e5c07b
 hi VimwikiHeader2 guifg=#98c379
