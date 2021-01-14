@@ -1475,6 +1475,7 @@ let wiki_1.index = 'inbox'
 let wiki_1.custom_wiki2html= '$HOME/dotfiles/extras/wiki2html.sh'
 let wiki_1.nested_syntaxes= {'python': 'python','bash': 'sh'}
 let wiki_1.html_filename_parameterization= 1
+let wiki_1.vimwiki_auto_chdir= 1
 
 let wiki_2 = {}
 let wiki_2.name= '<Vimwiki>'
@@ -1494,6 +1495,7 @@ let wiki_2.ext= '.md'
 let wiki_2.custom_wiki2html= 'vimwiki_markdown'
 let wiki_2.nested_syntaxes= {'python': 'python','bash': 'sh'}
 let wiki_2.html_filename_parameterization= 1
+let wiki_1.vimwiki_auto_chdir= 1
 
 let g:vimwiki_list = [wiki_1, wiki_2]
 
