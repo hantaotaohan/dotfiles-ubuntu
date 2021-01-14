@@ -2478,12 +2478,12 @@ let g:SignatureMap = {
         \ 'ListBufferMarkers'  :  "m?"
         \ }
 	
-augroup Quickfix
-	autocmd!
-	autocmd FileType qf setlocal nonumber
-    	autocmd FileType qf nnoremap <buffer> <CR> <CR>:lclose<CR>
-    	autocmd FileType qf nnoremap <buffer> ma :lclose<CR>
-augroup END
+" augroup Quickfix
+" 	autocmd!
+" 	autocmd FileType qf setlocal nonumber
+"     	autocmd FileType qf nnoremap <buffer> <CR> <CR>:lclose<CR>
+"     	autocmd FileType qf nnoremap <buffer> ma :lclose<CR>
+" augroup END
 
 hi SignatureMarkText   term=standout ctermbg=2   ctermbg=2   guifg=#E06C75 guibg=#282C34   " 书签标记颜色
 hi SignatureMarkerText term=standout ctermbg=2   ctermbg=2   guifg=#E06C75 guibg=#282C34   " 折叠提示颜色
