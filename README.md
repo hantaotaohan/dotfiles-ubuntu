@@ -354,8 +354,16 @@ keyring set bteb hantaotaohan@hotmail.com
 ```
 
 ### Vimwiki 支持 hugo link style
-
+```
 vimwiki 修改 .vim/plugged/vimwiki/autoload/vimwiki/vars.vim
 1190行 let mkd_syntax.Weblink1Template 
 处找到         \ mkd_syntax.rxWeblink1Separator. '__LinkUrl__'. rxWeblink1Ext.
 修改成         \ mkd_syntax.rxWeblink1Separator. '/__LinkUrl__'. rxWeblink1Ext.
+```
+
+### Vimwiki zeet插件修改 支持静默创建模式
+```
+/home/taotao/.vim/plugged/vim-zettel/autoload/zettel/vimwiki.vim 
+539行位置修改成
+silent! execute "normal! :'<,'>s/\\%V.*\\%V./" . zettel#vimwiki#format_link( name, "\\\\0") ."\<cr>\<C-o>" | redraw
+```
