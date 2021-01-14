@@ -367,3 +367,9 @@ vimwiki 修改 .vim/plugged/vimwiki/autoload/vimwiki/vars.vim
 539行位置修改成
 silent! execute "normal! :'<,'>s/\\%V.*\\%V./" . zettel#vimwiki#format_link( name, "\\\\0") ."\<cr>\<C-o>" | redraw
 ```
+
+### 支持 hugo - loveit 主题的编辑当前页面功能
+```
+编辑当前页面功能修改正确地址
+编辑 themes/LoveIt/layouts/partials/single/footer.html 修改 34 行处的位置里面的 herf 地址处即可
+```
