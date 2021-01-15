@@ -512,6 +512,7 @@ Plug 'vim-airline/vim-airline'                                           " 状�
 Plug 'tpope/vim-fugitive'                                                " git插件
 Plug 'tpope/vim-commentary'                                              " 快速注释插件
 Plug 'tpope/vim-surround'                                                " 成对更改删除括号等
+Plug 'tpope/vim-rsi'                                                     " 更改编辑方式为Emac模式
 Plug 'junegunn/fzf.vim'                                                  " 为vim安装fzf插件
 Plug 'junegunn/fzf' , { 'dir': '~/.fzf', 'do': './install --all' }       " 为系统安装fzf工具
 Plug 'junegunn/goyo.vim'                                                 " 专注模式
@@ -1191,21 +1192,21 @@ tnoremap <C-l> <C-w><C-l>
 "================================================================================================================================= 
 " 快速移动光标快捷键 
 "=================================================================================================================================
+" 编辑模式下:光标移动及删除
+" inoremap <C-b> <Left>
+" inoremap <C-f> <Right>
+" inoremap <C-a> <Home>
+" inoremap <C-e> <End>
+" inoremap <C-w> <C-\><C-o>dB
+" inoremap <M-d> <C-\><C-o>dw
+" inoremap <M-b> <S-Left>
+" inoremap <M-f> <S-Right>
+
 " 普通模式下:Shift+HJKL快速移动
 " nnoremap K <Esc>5<up>
 " nnoremap J <Esc>5<down>
 " nnoremap H <Esc>0
 " nnoremap L <Esc>$
-
-" 编辑模式下:光标移动及删除
-inoremap <C-b> <Left>
-inoremap <C-f> <Right>
-inoremap <C-a> <Home>
-inoremap <C-e> <End>
-inoremap <C-w> <C-\><C-o>dB
-inoremap <M-d> <C-\><C-o>dw
-inoremap <M-b> <S-Left>
-inoremap <M-f> <S-Right>
 
 " 可视化模式下:Shift+HJKL快速移动
 " vnoremap K 5<up>
