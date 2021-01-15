@@ -2246,213 +2246,182 @@ let g:which_key_map =  {}
 
 let g:which_key_map = {
   \
-  \ 'm' : [ ':SignatureToggleSigns'                          , 'SignatureToggle'             ] ,
-  \ 'q' : [ ':q'                                             , 'Exit Vim'                    ] ,
-  \ 'c' : [ ':Startify'                                      , 'Go to Startify'              ] ,
-  \ 'e' : [ '<Plug>MarkdownPreviewToggle'                    , 'MarkdownPreview'             ] ,
-  \ 'p' : [ ':call mdip#MarkdownClipboardImage()<cr>'        , 'ClipboardImage to Vim'       ] ,
+  \ 'e'    : [ ''                                            , 'MarkdownPreview'             ] ,
+  \ 'p'    : [ ''                                            , 'ClipboardImage to Vim'       ] ,
   \
-  \ 'F2 ' : [ ''                                             , 'Toggle Number'               ] ,
-  \ 'F3 ' : [ ''                                             , 'Toggle Syntax'               ] ,
-  \ 'F5 ' : [ ''                                             , 'Runner'                      ] ,
-  \ 'F6 ' : [ ''                                             , 'Toggle Terminal'             ] ,
-  \ 'F7 ' : [ ''                                             , 'Toggle QuickFix'             ] ,
-  \ 'F8 ' : [ ''                                             , 'Toggle NERDTree'             ] ,
-  \ 'F9 ' : [ ''                                             , 'Toggle TagBar'               ] ,
-  \ 'F12' : [ ''                                             , 'Toggle IndentLines'          ] ,
+  \ 'F2 '  : [ ''                                            , 'Toggle Number'               ] ,
+  \ 'F3 '  : [ ''                                            , 'Toggle Syntax'               ] ,
+  \ 'F4 '  : [ ''                                            , 'Toggle Paste'                ] ,
+  \ 'F5 '  : [ ''                                            , 'Toggle Runner'               ] ,
+  \ 'F6 '  : [ ''                                            , 'Toggle Terminal'             ] ,
+  \ 'F7 '  : [ ''                                            , 'Toggle QuickFix'             ] ,
+  \ 'F8 '  : [ ''                                            , 'Toggle NERDTree'             ] ,
+  \ 'F9 '  : [ ''                                            , 'Toggle TagBar'               ] ,
+  \ 'F12'  : [ ''                                            , 'Toggle IndentLines'          ] ,
+  \
+  \ 'm'    : {
+  \ 'name' : '+SignatureMap',
+  \
+  \ "a"    : [''                                             , 'List All Marks'              ] ,
+  \ "m"    : [''                                             , 'MarkLine'                    ] ,
+  \ "d"    : [''                                             , 'Delete Marks'                ] ,
+  \ "x"    : [''                                             , 'Delete All Marks'            ] ,
+  \ "n"    : [''                                             , 'Next Marks Line'             ] ,
+  \ "p"    : [''                                             , 'Prev Marks Line'             ] ,
+  \ "f"    : [''                                             , 'Next Marks Spot'             ] ,
+  \ "b"    : [''                                             , 'Prev Marks Spot'             ] ,
+  \
+  \ },
   \
   \ }
 
 let g:which_key_map[';'] = {
   \ 'name' : '+LocalLeader' ,
   \
-  \ 't'    : [ ':TagbarToggle<CR>'                           , 'TagBar Toggle'               ] ,
-  \ 'e'    : [ ':NERDTreeToggle<CR>'                         , 'NERDTree Toggle'             ] ,
-  \ 'm'    : [ ':SignatureToggleSigns<CR>'                   , 'Marker Toggle'               ] ,
-  \ 'c'    : [ ':Nuake<CR>'                                  , 'Terminal Toggle'             ] ,
+  \ 'q'    : [ ''                                            , 'Exit'                        ] ,
+  \ 'w'    : [ ''                                            , 'Save'                        ] ,
+  \ 't'    : [ ''                                            , 'Toggle LeaderF BufferTag'    ] ,
+  \ 'u'    : [ ''                                            , 'Toggle LeaderF Functions'    ] ,
+  \ 'e'    : [ ''                                            , 'Toggle NERDTree'             ] ,
+  \ 'm'    : [ ''                                            , 'Toggle Signature'            ] ,
+  \ 'z'    : [ ''                                            , 'Toggle Zoom mode'            ] ,
+  \ 'y'    : [ ''                                            , 'Copy  System Clipboard'      ] ,
+  \ 'p'    : [ ''                                            , 'Paste System Clipboard'      ] ,
+  \ 's'    : [ ''                                            , 'Toggle Startify'             ] ,
+  \ 'r'    : [ ''                                            , 'Toggle Runner Code'          ] ,
   \
-  \ }
-
-let g:which_key_map.b = {
-  \ 'name' : '+Buffer',
+  \ "1"    : [''                                             , 'Toggle Buffers 1 '           ] ,
+  \ "2"    : [''                                             , 'Toggle Buffers 2 '           ] ,
+  \ "3"    : [''                                             , 'Toggle Buffers 3 '           ] ,
+  \ "4"    : [''                                             , 'Toggle Buffers 4 '           ] ,
+  \ "5"    : [''                                             , 'Toggle Buffers 5 '           ] ,
+  \ "6"    : [''                                             , 'Toggle Buffers 6 '           ] ,
+  \ "7"    : [''                                             , 'Toggle Buffers 7 '           ] ,
+  \ "8"    : [''                                             , 'Toggle Buffers 8 '           ] ,
+  \ "9"    : [''                                             , 'Toggle Buffers 9 '           ] ,
+  \ "0"    : [''                                             , 'Toggle Buffers 10'           ] ,
+  \ "a"    : [''                                             , 'Buffer Add'                  ] ,
+  \ "Tab"  : [''                                             , 'Buffer Next'                 ] ,
+  \ "STab" : [''                                             , 'Buffer Previous'             ] ,
   \
-  \ "1"   : ['b1'                                , 'Toggle Buffers 1 '                       ] ,
-  \ "2"   : ['b2'                                , 'Toggle Buffers 2 '                       ] ,
-  \ "3"   : ['b3'                                , 'Toggle Buffers 3 '                       ] ,
-  \ "4"   : ['b4'                                , 'Toggle Buffers 4 '                       ] ,
-  \ "5"   : ['b5'                                , 'Toggle Buffers 5 '                       ] ,
-  \ "6"   : ['b6'                                , 'Toggle Buffers 6 '                       ] ,
-  \ "7"   : ['b7'                                , 'Toggle Buffers 7 '                       ] ,
-  \ "8"   : ['b8'                                , 'Toggle Buffers 8 '                       ] ,
-  \ "9"   : ['b9'                                , 'Toggle Buffers 9 '                       ] ,
-  \ "0"   : ['b10'                               , 'Toggle Buffers 10'                       ] ,
-  \ "a"   : ['badd'                              , 'Add Buffer'                              ] ,
-  \ "d"   : ['bdelete'                           , 'Delete Buffer'                           ] ,
-  \ "n"   : ['bnext'                             , 'Next Buffer'                             ] ,
-  \ "p"   : ['bprevious'                         , 'Previous Buffer'                         ] ,
+  \ "<Tab>": [''                                             , 'Edit Mode UltiSnip'          ] ,
   \
   \ }
 
 let g:which_key_map.d = {
   \ 'name' : '+Display',
   \
-  \ "w"    : ['<C-W>w'                            , 'other-window'                            ] ,
-  \ "d"    : ['<C-W>c'                            , 'delete-window'                           ] ,
-  \ "b"    : ['<C-W>s'                            , 'split-window-below'                      ] ,
-  \ "r"    : ['<C-W>v'                            , 'split-window-right'                      ] ,
-  \ "2"    : ['<C-W>v'                            , 'layout-double-columns'                   ] ,
-  \ "h"    : ['<C-W>5<'                           , 'expand-window-left'                      ] ,
-  \ "l"    : ['<C-W>5>'                           , 'expand-window-right'                     ] ,
-  \ "a"    : ['<C-W>='                            , 'balance-window'                          ] ,
-  \ "s"    : ['<C-W>s'                            , 'split-window-below'                      ] ,
-  \ "v"    : ['<C-W>v'                            , 'split-window-below'                      ] ,
-  \ "k"    : [':resize -5'                        , 'expand-window-up'                        ] ,
-  \ "j"    : [':resize +5'                        , 'expand-window-below'                     ] ,
+  \ "w"    : ['<C-W>w'                                       , 'other-window'                ] ,
+  \ "d"    : ['<C-W>c'                                       , 'delete-window'               ] ,
+  \ "b"    : ['<C-W>s'                                       , 'split-window-below'          ] ,
+  \ "r"    : ['<C-W>v'                                       , 'split-window-right'          ] ,
+  \ "2"    : ['<C-W>v'                                       , 'layout-double-columns'       ] ,
+  \ "h"    : ['<C-W>5<'                                      , 'expand-window-left'          ] ,
+  \ "l"    : ['<C-W>5>'                                      , 'expand-window-right'         ] ,
+  \ "a"    : ['<C-W>='                                       , 'balance-window'              ] ,
+  \ "s"    : ['<C-W>s'                                       , 'split-window-below'          ] ,
+  \ "v"    : ['<C-W>v'                                       , 'split-window-below'          ] ,
+  \ "k"    : [':resize -5'                                   , 'expand-window-up'            ] ,
+  \ "j"    : [':resize +5'                                   , 'expand-window-below'         ] ,
   \
   \ }
 
-"let g:which_key_map.e = {
-"  \ 'name' : '+File',
-"  \ }
-"
 let g:which_key_map.f = {
   \ "name" : "+FZF",
   \
-  \ "f"    : ['Files'                             , 'Search Files'                             ] ,
-  \ "l"    : ['BLines'                            , 'Search Lines Buffers'                     ] ,
-  \ "o"    : ['Colors'                            , 'Search Color Themes'                      ] ,
-  \ "t"    : ['BTags'                             , 'Search Tags'                              ] ,
-  \ "b"    : ['Buffers'                           , 'Search Open Buffers'                      ] ,
-  \ "i"    : ['GFiles'                            , 'Search Git-Files'                         ] ,
-  \ "g"    : ['GFiles?'                           , 'Search Modified-Git-Files'                ] ,
-  \ "a"    : ['Ag'                                , 'Search Ag'                                ] ,
-  \ "r"    : ['Rg'                                , 'Search Rg'                                ] ,
-  \ "m"    : ['Marks'                             , 'Search Marks'                             ] ,
-  \ "w"    : ['Windows'                           , 'Search Windows'                           ] ,
-  \ "c"    : ['Commands'                          , 'Search Commands'                          ] ,
+  \ "f"    : ['Files'                                        , 'Search Files'                ] ,
+  \ "l"    : ['BLines'                                       , 'Search Lines Buffers'        ] ,
+  \ "o"    : ['Colors'                                       , 'Search Color Themes'         ] ,
+  \ "t"    : ['BTags'                                        , 'Search Tags'                 ] ,
+  \ "b"    : ['Buffers'                                      , 'Search Open Buffers'         ] ,
+  \ "i"    : ['GFiles'                                       , 'Search Git-Files'            ] ,
+  \ "g"    : ['GFiles?'                                      , 'Search Modified-Git-Files'   ] ,
+  \ "a"    : ['Ag'                                           , 'Search Ag'                   ] ,
+  \ "r"    : ['Rg'                                           , 'Search Rg'                   ] ,
+  \ "m"    : ['Marks'                                        , 'Search Marks'                ] ,
+  \ "w"    : ['Windows'                                      , 'Search Windows'              ] ,
+  \ "c"    : ['Commands'                                     , 'Search Commands'             ] ,
   \
   \ }
+
 
 let g:which_key_map.t = {
-  \ 'name' : '+Tab',
-  \
-  \ "a"     : [ 'tabnew   '                         , 'Add Tabs      '                          ] ,
-  \ "d"     : [ 'tabclose '                         , 'Close Tabs    '                          ] ,
-  \ "1"     : [ 'tabn1    '                         , 'Toggle Tabs 1 '                          ] ,
-  \ "2"     : [ 'tabn2    '                         , 'Toggle Tabs 2 '                          ] ,
-  \ "3"     : [ 'tabn3    '                         , 'Toggle Tabs 3 '                          ] ,
-  \ "4"     : [ 'tabn4    '                         , 'Toggle Tabs 4 '                          ] ,
-  \ "5"     : [ 'tabn5    '                         , 'Toggle Tabs 5 '                          ] ,
-  \ "6"     : [ 'tabn6    '                         , 'Toggle Tabs 6 '                          ] ,
-  \ "7"     : [ 'tabn7    '                         , 'Toggle Tabs 7 '                          ] ,
-  \ "8"     : [ 'tabn8    '                         , 'Toggle Tabs 8 '                          ] ,
-  \ "9"     : [ 'tabn9    '                         , 'Toggle Tabs 9 '                          ] ,
-  \ "0"     : [ 'tabn10   '                         , 'Toggle Tabs 10'                          ] ,
-  \ "<Tab>" : ['tabnext   '                         , 'Next Buffer   '                          ] ,
-  \                                                      
-  \ }
-
-
-let g:which_key_map.T = {
   \ 'name' : '+Table Mode',
   \
-  \ "m"    : ['TableModeToggle'                    , 'TableModeToggle'                          ] ,
+  \ "m"    : ['TableModeToggle'                              , 'TableModeToggle'             ] ,
   \
   \ }
 
 let g:which_key_map.v = {
   \ 'name' : '+VCS',
   \
-  \ "e"    : ['Gbrowse'                           , 'Browse'                                   ] ,
-  \ "i"    : ['Gdiff'                             , 'Diff'                                     ] ,
-  \ "g"    : ['Gmerge'                            , 'Merge'                                    ] ,
-  \ "s"    : ['Gpush'                             , 'Push'                                     ] ,
-  \ "a"    : ['Grebase'                           , 'Rebase'                                   ] ,
-  \ "b"    : ['Gblame'                            , 'Blame'                                    ] ,
-  \ "c"    : ['Gcommit'                           , 'Commit'                                   ] ,
-  \ "d"    : ['Gdelete'                           , 'Delete'                                   ] ,
-  \ "f"    : ['Gfetch'                            , 'Fetch'                                    ] ,
-  \ "o"    : ['Glog'                              , 'Log'                                      ] ,
-  \ "m"    : ['Gmove'                             , 'Move'                                     ] ,
-  \ "l"    : ['Gpull'                             , 'Pull'                                     ] ,
-  \ "r"    : ['Grename'                           , 'Rename'                                   ] ,
-  \ "t"    : ['Gstatus'                           , 'Status'                                   ] ,
+  \ "e"    : ['Gbrowse'                                     , 'Browse'                       ] ,
+  \ "i"    : ['Gdiff'                                       , 'Diff'                         ] ,
+  \ "g"    : ['Gmerge'                                      , 'Merge'                        ] ,
+  \ "s"    : ['Gpush'                                       , 'Push'                         ] ,
+  \ "a"    : ['Grebase'                                     , 'Rebase'                       ] ,
+  \ "b"    : ['Gblame'                                      , 'Blame'                        ] ,
+  \ "c"    : ['Gcommit'                                     , 'Commit'                       ] ,
+  \ "d"    : ['Gdelete'                                     , 'Delete'                       ] ,
+  \ "f"    : ['Gfetch'                                      , 'Fetch'                        ] ,
+  \ "o"    : ['Glog'                                        , 'Log'                          ] ,
+  \ "m"    : ['Gmove'                                       , 'Move'                         ] ,
+  \ "l"    : ['Gpull'                                       , 'Pull'                         ] ,
+  \ "r"    : ['Grename'                                     , 'Rename'                       ] ,
+  \ "t"    : ['Gstatus'                                     , 'Status'                       ] ,
   \
   \ }
 
 let g:which_key_map.w = {
   \ 'name' : '+VimWiki',
   \
-  \ "w"    : ['VimwikiIndex'                      , 'Go To Index'                              ] ,
-  \ "n"    : ['VimwikiGoto'                       , 'Create new wiki page'                     ] ,
-  \ "d"    : ['VimwikiDeleteFile'                 , 'Delete wiki page'                         ] ,
-  \ "r"    : ['VimwikiRenameFile'                 , 'Rename wiki page'                         ] ,
-  \ "s"    : ['VimwikiSearch'                     , 'Search-for-wiki'                          ] ,
-  \ "o"    : ['lopen'                             , 'Display-all-matches'                      ] ,
-  \ "x"    : ['lnext'                             , 'Display-next-matches'                     ] ,
-  \ "p"    : ['lprevious'                         , 'Display-previous-matches'                 ] ,
-  \ "b"    : ['VimwikiBacklinks'                  , 'Display-backlinks'                        ] ,
-  \ "T"    : ['VimwikiTOC'                        , 'Create or Update TOC'                     ] ,
+  \ "w"    : [''                                            , 'Go To Index'                  ] ,
+  \ "n"    : [''                                            , 'Create new wiki page'         ] ,
+  \ "d"    : [''                                            , 'Delete wiki page'             ] ,
+  \ "r"    : [''                                            , 'Rename wiki page'             ] ,
+  \ "v"    : [''                                            , 'Toggle wiki List'             ] ,
+  \ "s"    : [''                                            , 'Search-for-wiki-pattam'       ] ,
+  \ "f"    : [''                                            , 'Search-for-wiki-curword'      ] ,
   \
   \ 'c'    : {
   \ 'name' : '+CheckBox',
   \
-  \ "t"    : ['VimwikiToggleListItem'             , 'Toggle checkbox On/Off'                   ] ,
-  \ "n"    : ['VimwikiIncrementListItem'          , 'Toggle checkbox Next/Previous'            ] ,
-  \
-  \ },
-  \
-  \ 'h'    : {
-  \ 'name' : '+HTML',
-  \
-  \ "h"    : ['Vimwiki2HTML'                      , 'Covert wiki to HTML'                      ] ,
-  \ "b"    : ['Vimwiki2HTMLBrowse'                , 'Covert wiki to HTML open Browser'         ] ,
-  \ "a"    : ['VimwikiAll2HTML'                   , 'Covert all wiki to HTML'                  ] ,
+  \ "t"    : ['VimwikiToggleListItem'                       , 'Toggle checkbox On/Off'       ] ,
+  \ "n"    : ['VimwikiIncrementListItem'                    , 'Toggle checkbox Next/Previous'] ,
   \
   \ },
   \
   \ 't'    : {
   \ 'name' : '+Tables',
   \
-  \ "t"    : ['VimwikiTable'                      , 'Create Table'                             ] ,
-  \ "l"    : ['VimwikiTableMoveColumnLeft'        , 'Move current column to the left'          ] ,
-  \ "r"    : ['VimwikiTableMoveColumnRight'       , 'Move current column to the Right'         ] ,
+  \ "t"    : ['VimwikiTable'                                , 'Create Table'                             ] ,
+  \ "h"    : ['<Plug>VimwikiTableMoveColumnLeft'            , 'Move current column to the left'          ] ,
+  \ "l"    : ['<Plug>VimwikiTableMoveColumnRight'           , 'Move current column to the Right'         ] ,
   \
   \ },
+  \
   \ 'z'    : {
   \ 'name' : '+Zettel',
   \
-  \ "b"    : ['ZettelBackLinks'                   , 'add-backlineks'                           ] ,
-  \ "n"    : ['ZettelNew'                         , 'add-new'                                  ] ,
-  \ "o"    : ['ZettelOpen'                        , 'Search fulltext use FZF'                  ] ,
-  \ "i"    : ['ZettelInsertNote'                  , 'Using FZF and insert in the current'      ] ,
-  \ "s"    : ['ZettelSearch'                      , 'Search the content of your zettelkasten'  ] ,
-  \ "y"    : ['ZettelYankName'                    , 'Copy the current zettel file name'        ] ,
+  \ "b"    : ['ZettelBackLinks'                             , 'add-backlineks'                           ] ,
+  \ "n"    : ['ZettelNew'                                   , 'add-new'                                  ] ,
+  \ "o"    : ['ZettelOpen'                                  , 'Search fulltext use FZF'                  ] ,
+  \ "i"    : ['ZettelInsertNote'                            , 'Using FZF and insert in the current'      ] ,
+  \ "s"    : ['ZettelSearch'                                , 'Search the content of your zettelkasten'  ] ,
+  \ "y"    : ['ZettelYankName'                              , 'Copy the current zettel file name'        ] ,
   \
   \ },
-  \
-  \ }
-
-let g:which_key_map.p = {
-  \ 'name' : '+Plug',
-  \
-  \ "S"    : ['PlugSnapshot'                      , 'Snapshot'                                 ] ,
-  \ "U"    : ['PlugUpgrade'                       , 'Upgrade'                                  ] ,
-  \ "c"    : ['PlugClean'                         , 'Clean'                                    ] ,
-  \ "d"    : ['PlugDiff'                          , 'Diff'                                     ] ,
-  \ "i"    : ['PlugInstall'                       , 'Install'                                  ] ,
-  \ "s"    : ['PlugStatus'                        , 'Status'                                   ] ,
-  \ "u"    : ['PlugUpdate'                        , 'Update'                                   ] ,
   \
   \ }
 
 let g:which_key_map.g = {
   \ 'name' : '+Goyo',
   \
-  \ "o"    : [':call Switch_goyo()'               , 'Enter Goyo Mode'                          ] ,
+  \ "o"    : [':call Switch_goyo()'                         , 'Enter Goyo Mode'                          ] ,
   \
   \ }
-  
+
+
 "=================================================================================================================================
 if !exists('which_key#register')
     silent! call which_key#register('<Space>', "g:which_key_map")
@@ -2467,6 +2436,7 @@ vnoremap <silent><leader> :WhichKeyVisual '<Space>'<CR>
 autocmd! FileType which_key
 autocmd  FileType which_key set laststatus=0 noshowmode noruler
   \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
+  
 
 "=================================================================================================================================
 " Signature  settings
