@@ -378,5 +378,5 @@ silent! execute "normal! :'<,'>s/\\%V.*\\%V./" . zettel#vimwiki#format_link( nam
 ```
 找到 /home/taotao/desktop/blog/themes/LoveIt/layouts/partials/plugin/link.html
 修改 <a href="{{ .Destination | safeURL }}">
-为   <a href="/{{ .Destination | safeURL }}">
+为   <a href="{{ .Site.BaseURL }}/{{ .Destination | safeURL }}">
 ```
