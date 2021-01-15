@@ -1534,6 +1534,7 @@ autocmd BufNewFile ~/blog/content/posts/*.md :r! echo draft: false
 autocmd BufNewFile ~/blog/content/posts/*.md :r! echo categories: []
 autocmd BufNewFile ~/blog/content/posts/*.md :r! echo tags: []
 autocmd BufNewFile ~/blog/content/posts/*.md :r! echo ---
+autocmd BufNewFile ~/blog/content/posts/*.md :$r !echo   
 "-----------------------------------------------------------------o--------------------------------------------------------------o
 hi VimwikiHeader1 guifg=#e5c07b
 hi VimwikiHeader2 guifg=#98c379
