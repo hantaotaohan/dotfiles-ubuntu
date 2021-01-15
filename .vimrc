@@ -1510,6 +1510,9 @@ let g:vimwiki_user_htmls = '404.html,search.html,books.html,todo,html,contact.ht
 let g:vimwiki_valid_html_tags='b,i,s,u,sub,sup,kbd,del,br,hr,div,code,h1,nav,body,aside'
 let g:vimwiki_tag_format = {'pre': 'tags:.*', 'pre_mark': '\[', 'post_mark': '\]', 'sep': ','}
 
+# 自动插入YAML 并自动改写filename
+autocmd BufRead    ~/blog/content/posts/*.md :2d
+autocmd BufRead    ~/blog/content/posts/*.md :1r! echo title: %:t:r
 autocmd BufNewFile ~/blog/content/posts/*.md :0r !echo ---
 autocmd BufNewFile ~/blog/content/posts/*.md :r! echo title: %:t:r
 autocmd BufNewFile ~/blog/content/posts/*.md :r! echo "date: `date +'\%Y-\%m-\%d \%H:\%M'`"
