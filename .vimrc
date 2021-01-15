@@ -1150,19 +1150,22 @@ nnoremap <LocalLeader>a          :badd<Space>
 " nnoremap <silent><LocalLeader><tab> :tabnext<CR>
 " inoremap <silent><LocalLeader><tab> <ESC>:tabnext<CR>
 
+
 "=================================================================================================================================
 " Airline  切换Buffers/Tabs快捷键设置 
 "=================================================================================================================================
-nmap <silent><LocalLeader>1     <Plug>AirlineSelectTab1
-nmap <silent><LocalLeader>2     <Plug>AirlineSelectTab2
-nmap <silent><LocalLeader>3     <Plug>AirlineSelectTab3
-nmap <silent><LocalLeader>4     <Plug>AirlineSelectTab4
-nmap <silent><LocalLeader>5     <Plug>AirlineSelectTab5
-nmap <silent><LocalLeader>6     <Plug>AirlineSelectTab6
-nmap <silent><LocalLeader>7     <Plug>AirlineSelectTab7
-nmap <silent><LocalLeader>8     <Plug>AirlineSelectTab8
-nmap <silent><LocalLeader>9     <Plug>AirlineSelectTab9
-nmap <silent><LocalLeader><tab> <Plug>AirlineSelectNextTab
+nmap <silent><LocalLeader>1       <Plug>AirlineSelectTab1
+nmap <silent><LocalLeader>2       <Plug>AirlineSelectTab2
+nmap <silent><LocalLeader>3       <Plug>AirlineSelectTab3
+nmap <silent><LocalLeader>4       <Plug>AirlineSelectTab4
+nmap <silent><LocalLeader>5       <Plug>AirlineSelectTab5
+nmap <silent><LocalLeader>6       <Plug>AirlineSelectTab6
+nmap <silent><LocalLeader>7       <Plug>AirlineSelectTab7
+nmap <silent><LocalLeader>8       <Plug>AirlineSelectTab8
+nmap <silent><LocalLeader>9       <Plug>AirlineSelectTab9
+nmap <silent><LocalLeader><tab>   <Plug>AirlineSelectNextTab
+nmap <silent><LocalLeader><S-tab> <Plug>AirlineSelectPrevTab
+
 
 "================================================================================================================================= 
 " Ctrl + n 切换buff快捷键 
@@ -1188,6 +1191,7 @@ tnoremap <C-h> <C-w><C-h>
 tnoremap <C-j> <C-w><C-j>
 tnoremap <C-k> <C-w><C-k>
 tnoremap <C-l> <C-w><C-l>
+
 
 "================================================================================================================================= 
 " 快速移动光标快捷键 
@@ -1244,6 +1248,7 @@ tnoremap <C-l> <C-w><C-l>
 "endfunc
 "nnoremap <C-n> :call NumberToggle()<cr>
 
+
 "=================================================================================================================================
 "function! NumberToggle()
 "if(&relativenumber == 1)
@@ -1253,6 +1258,7 @@ tnoremap <C-l> <C-w><C-l>
 "endif
 "endfunc
 "nnoremap <C-n> :call NumberToggle()<cr>
+
 
 "=================================================================================================================================
 " F2 行号开关，用于鼠标复制代码用
@@ -1311,24 +1317,23 @@ set pastetoggle=<F4>                                                     " 设�
 "=================================================================================================================================
 " Python
 "-----------------------------------------------------------------o--------------------------------------------------------------o
-
 " F5 开启Quitfix 调测
 " F6 开启Term    调测
 
-"=================================================================================================================================
 
+"=================================================================================================================================
 " 窗口位置参数可选 leftabove aboveleft rightbelow belowright topleft botright
 " 分割位置参数 vert splitbelow
 " autocmd BufRead *.py nmap <F5> :rightbelow vert term python3 "%"<CR>
 
-"=================================================================================================================================
 
+"=================================================================================================================================
 " autocmd BufRead *.py nmap <F5> :botright term exec "w" python3 "%"<CR>
 " autocmd BufRead *.py nmap <F6> :make<CR>
 " autocmd BufRead *.py :cclose
 
-"=================================================================================================================================
 
+"=================================================================================================================================
 " nnoremap <F5> :call CompileRunGcc1()<cr>
 " func! CompileRunGcc1()
 "     exec "w"
@@ -1347,8 +1352,8 @@ set pastetoggle=<F4>                                                     " 设�
 "     endif
 " endfunc
 
-"=================================================================================================================================
 
+"=================================================================================================================================
 " map <F6> :call CompileRunGcc2()<CR>
 " func! CompileRunGcc2()
 "     exec "w"
@@ -1360,8 +1365,8 @@ set pastetoggle=<F4>                                                     " 设�
 "     endif
 " endfunc
 
-"=================================================================================================================================
 
+"=================================================================================================================================
 nnoremap <F5> :call CompileRunGcc1()<cr>
 nnoremap <silent><localleader>r :call CompileRunGcc1()<cr>
 inoremap <silent><localleader>r <esc>:call CompileRunGcc1()<cr>
@@ -1426,6 +1431,7 @@ autocmd FileType markdown nmap <buffer><silent> <leader>p :call mdip#MarkdownCli
 " there are some defaults for image directory and image name, you can change them
 " let g:mdip_imgdir = 'img'
 " let g:mdip_imgname = 'image'
+
 
 "=================================================================================================================================
 " 
