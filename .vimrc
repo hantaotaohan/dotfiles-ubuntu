@@ -1535,15 +1535,6 @@ autocmd BufNewFile ~/blog/content/posts/*.md :r! echo categories: []
 autocmd BufNewFile ~/blog/content/posts/*.md :r! echo tags: []
 autocmd BufNewFile ~/blog/content/posts/*.md :r! echo ---
 "-----------------------------------------------------------------o--------------------------------------------------------------o
-" 自动添加Backlinks
-autocmd BufWritePost ~/blog/content/posts/*.md if bufname() !='inbox.md' | call s:backlinks()
-fun! s:backlinks()
-    let fw = search('Backlinks')
-    if fw == 0
-        exec ":ZettelBackLinks"
-    endif
-endfun
-"-----------------------------------------------------------------o--------------------------------------------------------------o
 hi VimwikiHeader1 guifg=#e5c07b
 hi VimwikiHeader2 guifg=#98c379
 hi VimwikiHeader3 guifg=#c678dd
@@ -1561,6 +1552,16 @@ hi VimwikiLink guifg=#61afef
 hi VimwikiBold term=reverse cterm=underline ctermfg=204 gui=underline guifg=#E06C75
 
 "=================================================================================================================================
+" 自动添加Backlinks
+" autocmd BufWritePost ~/blog/content/posts/*.md if bufname() !='inbox.md' | call s:backlinks()
+function! s:backlinks()
+    let fw = search('Backlinks')
+	let bf = bufname()
+	if bf != "inbox.md" && fw == 0
+		exec ":ZettelBackLinks"
+    endif
+endfunction
+"-----------------------------------------------------------------o--------------------------------------------------------------o
 " 方案三(异步) - 最终方案
 func GitPull()
     " 获取云端最新版
@@ -1576,28 +1577,32 @@ endfunc
 
 func GitCommit()
     " 提交到本地
-    call system("git add --all")
-	call system("git commit -m \"`whoami` @  `hostname` in `date +%Y-%m-%d=%H:%M:%S`\"")
-	exec ":AsyncRun git push origin master"
-    let g:asyncrun_exit = "echom 'Git Push Done'"
+    " call system("git add --all")
+	" call system("git commit -m \"`whoami` @  `hostname` in `date +%Y-%m-%d=%H:%M:%S`\"")
+	call s:backlinks()
+	exec "w"
+	exec ":AsyncRun git add --all"
+	exec ":AsyncRun git add -m\"Update `whoami` at `hostname` in `date +%Y-%m-%d` `date +%H:%M:%S`\""
+    let g:asyncrun_exit = "echom 'Git Add and Commit Done'"
 endfunc
 
 func GitPush()
     " 上传到云端
     call system("git add --all")
-	call system("git commit -m \"`whoami` @  `hostname` in `date +%Y-%m-%d=%H:%M:%S`\"")
+	call system("git commit -m \"Update `whoami` at `hostname` in `date +%Y-%m-%d` `date +%H:%M:%S`\"")
 	exec ":AsyncRun -mode=hide git push origin master"
     exec ":AsyncStop"
     let g:asyncrun_exit = "echom 'Done'"
 endfunc
 
 autocmd BufReadPost $HOME/blog/content/posts/inbox.md call GitPull()
-autocmd BufWritePost $HOME/blog/content/posts/inbox.md call GitCommit()
+autocmd BufWritePost $HOME/blog/content/posts/*.md call GitCommit()
 autocmd VimLeave $HOME/blog/* call GitPush() 
 
 autocmd BufReadPost $HOME/vimwiki/src/index.md call GitPull()
-autocmd BufWritePost $HOME/vimwiki/src/index.md call GitCommit()
+autocmd BufWritePost $HOME/vimwiki/src/*.md call GitCommit()
 autocmd VimLeave $HOME/vimwiki/* call GitPush() 
+
 
 "=================================================================================================================================
 " 自定义airline同步通知颜色
