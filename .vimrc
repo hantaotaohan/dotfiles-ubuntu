@@ -2469,7 +2469,6 @@ let g:SignatureForceMarkPlacement = 1
 let g:SignatureForceMarkerPlacement = 1
 let g:SignatureWrapJumps = 0
 let g:SignatureMarkOrder="\m"
-nnoremap <silent><leader>m :SignatureToggleSigns<CR>    
 nnoremap <silent><localleader>m :SignatureToggleSigns<CR> 
 
 let g:SignatureMap = {
