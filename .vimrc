@@ -1459,7 +1459,7 @@ let g:zettel_options = [{"template":"$HOME/dotfiles/extras/zettelnew.tpl", "disa
 " autocmd FileType vimwiki nmap <Leader>ws :VWS<Space>
 " autocmd FileType vimwiki nmap <Plug>VimwikiUISelect <nop>
 autocmd FileType vimwiki nmap <silent><localleader>p :call GitPush()<cr>
-
+"-----------------------------------------------------------------o--------------------------------------------------------------o
 let wiki_1 = {}
 let wiki_1.name= '<Hugo   >'
 let wiki_1.auto_export= 1
@@ -1476,7 +1476,7 @@ let wiki_1.custom_wiki2html= '$HOME/dotfiles/extras/wiki2html.sh'
 let wiki_1.nested_syntaxes= {'python': 'python','bash': 'sh'}
 let wiki_1.html_filename_parameterization= 1
 let wiki_1.vimwiki_auto_chdir= 1
-
+"-----------------------------------------------------------------o--------------------------------------------------------------o
 let wiki_2 = {}
 let wiki_2.name= '<Vimwiki>'
 let wiki_2.auto_export= 1
@@ -1496,9 +1496,9 @@ let wiki_2.custom_wiki2html= 'vimwiki_markdown'
 let wiki_2.nested_syntaxes= {'python': 'python','bash': 'sh'}
 let wiki_2.html_filename_parameterization= 1
 let wiki_1.vimwiki_auto_chdir= 1
-
+"-----------------------------------------------------------------o--------------------------------------------------------------o
 let g:vimwiki_list = [wiki_1, wiki_2]
-
+"-----------------------------------------------------------------o--------------------------------------------------------------o
 let g:vimwiki_CJK_length = 1
 let g:vimwiki_hl_cb_checked = 2
 let g:vimwiki_global_ext = 1 " make sure vimwiki doesn't own all .md files
@@ -1509,10 +1509,10 @@ let g:list_margin=0
 let g:vimwiki_user_htmls = '404.html,search.html,books.html,todo,html,contact.html,tags.html,inbox.html'
 let g:vimwiki_valid_html_tags='b,i,s,u,sub,sup,kbd,del,br,hr,div,code,h1,nav,body,aside'
 let g:vimwiki_tag_format = {'pre': 'tags:.*', 'pre_mark': '\[', 'post_mark': '\]', 'sep': ','}
-
-# 自动插入YAML 并自动改写filename
-autocmd BufRead    ~/blog/content/posts/*.md :2d
-autocmd BufRead    ~/blog/content/posts/*.md :1r! echo title: %:t:r
+"-----------------------------------------------------------------o--------------------------------------------------------------o
+" 自动插入YAML 并自动改写filename
+autocmd BufEnter    ~/blog/content/posts/*.md :2d
+autocmd BufEnter    ~/blog/content/posts/*.md :1r! echo title: %:t:r
 autocmd BufNewFile ~/blog/content/posts/*.md :0r !echo ---
 autocmd BufNewFile ~/blog/content/posts/*.md :r! echo title: %:t:r
 autocmd BufNewFile ~/blog/content/posts/*.md :r! echo "date: `date +'\%Y-\%m-\%d \%H:\%M'`"
@@ -1520,22 +1520,28 @@ autocmd BufNewFile ~/blog/content/posts/*.md :r! echo draft: false
 autocmd BufNewFile ~/blog/content/posts/*.md :r! echo categories: []
 autocmd BufNewFile ~/blog/content/posts/*.md :r! echo tags: []
 autocmd BufNewFile ~/blog/content/posts/*.md :r! echo ---
-
-"=================================================================================================================================
+"-----------------------------------------------------------------o--------------------------------------------------------------o
+" 自动添加Backlinks
+autocmd BufWritePost ~/blog/content/posts/*.md if bufname() !='inbox.md' | call s:backlinks()
+fun! s:backlinks()
+    let fw = search('Backlinks')
+    if fw == 0
+        exec ":ZettelBackLinks"
+    endif
+endfun
+"-----------------------------------------------------------------o--------------------------------------------------------------o
 hi VimwikiHeader1 guifg=#e5c07b
 hi VimwikiHeader2 guifg=#98c379
 hi VimwikiHeader3 guifg=#c678dd
 hi VimwikiHeader4 guifg=#8096BF
 hi VimwikiHeader5 guifg=#8096BF
 hi VimwikiHeader6 guifg=#8096BF
-
 hi VimwikiH1Folding guifg=#e5c07b
 hi VimwikiH2Folding guifg=#98c379
 hi VimwikiH3Folding guifg=#c678dd
 hi VimwikiH4Folding guifg=#8096BF
 hi VimwikiH5Folding guifg=#8096BF
 hi VimwikiH6Folding guifg=#8096BF
-
 hi VimwikiLink guifg=#61afef
 hi VimwikiLink guifg=#61afef
 hi VimwikiBold term=reverse cterm=underline ctermfg=204 gui=underline guifg=#E06C75
