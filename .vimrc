@@ -531,7 +531,7 @@ Plug 'iamcco/markdown-preview.nvim' , { 'do': 'cd app && yarn install' } " Markd
 Plug 'jszakmeister/markdown2ctags'                                       " Tags的Toc插件
 Plug 'vim-scripts/fcitx.vim'                                             " 输入法自动切换Fcitx
 Plug 'ferrine/md-img-paste.vim'                                          " Markdown截图自动粘贴
-Plug 'vimwiki/vimwiki' , { 'branch': 'dev' ,'on': 'VimwikiIndex' }       " Vimwiki插件
+Plug 'vimwiki/vimwiki' , { 'branch': 'dev' }                             " Vimwiki插件
 Plug 'michal-h21/vim-zettel'                                             " 配合vimwiki的功能插件
 Plug 'liuchengxu/vim-which-key'                                          " Leader辅助
 Plug 'arcticicestudio/nord-vim'                                          " Themes
@@ -1463,9 +1463,16 @@ let g:zettel_options = [{"template":"$HOME/dotfiles/extras/zettelnew.tpl", "disa
 "=================================================================================================================================
 " Vimwiki settings
 "=================================================================================================================================
-" autocmd FileType vimwiki nmap <Leader>ws :VWS<Space>
-" autocmd FileType vimwiki nmap <Plug>VimwikiUISelect <nop>
-autocmd FileType vimwiki nmap <silent><localleader>p :call GitPush()<cr>
+autocmd FileType vimwiki nnoremap <leader>wv :VimwikiUISelect<CR>
+autocmd FileType vimwiki nnoremap <leader>ws :call VWS()<CR>
+autocmd FileType vimwiki nnoremap <leader>wf :execute "VWS /" . expand("<cword>") . "/" <Bar> :lopen<CR>
+autocmd FileType vimwiki nnoremap <silent><localleader>p :call GitPush()<cr>
+
+function! VWS()
+    execute ":VimwikiSearch " . input("VimwikiSearch:")
+    :lopen
+endfunction
+
 "-----------------------------------------------------------------o--------------------------------------------------------------o
 let wiki_1 = {}
 let wiki_1.name= '<Hugo   >'
