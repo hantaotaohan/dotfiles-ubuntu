@@ -965,7 +965,7 @@ let g:mkdp_port = '8888'
 let g:mkdp_page_title = '「${name}」'
 
 " MarkdownPreviewToggle
-nnoremap <Leader>e <Plug>MarkdownPreviewToggle
+nmap <Leader>e <Plug>MarkdownPreviewToggle
 
 "=================================================================================================================================
 " Vim-table-mode 插件配置
