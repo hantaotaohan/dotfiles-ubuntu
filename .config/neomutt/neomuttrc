@@ -405,5 +405,9 @@ macro generic "<esc>2" ":set from=hantaotaohan@hotmail.com"
 macro index,pager <F1> "<change-folder>=bteb/INBOX<enter>"
 macro index,pager <F2> "<change-folder>=live/Inbox<enter>"
 
+# 自动同步邮箱设置
+timeout-hook 'exec sync-mailbox'
+startup-hook 'exec sync-mailbox'
+shutdown-hook 'exec sync-mailbox'
 
 
