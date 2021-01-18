@@ -404,10 +404,10 @@ echo -e "                                                                       
         xautolock \
         vlc \
         p7zip-full \
-        gnome-keyring \
+        #gnome-keyring \
         lua5.2 \
         imwheel \
-        libsecret-tools \
+        #libsecret-tools \
         yank
         )
         for app in "${aptApps[@]}"
