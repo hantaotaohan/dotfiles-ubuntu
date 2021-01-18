@@ -700,12 +700,12 @@ main() {
             Fcitx
             GTK
             #Github
-            I3_Sensible_Terminal
             #Vmware_Share_Fix
             #Calibre
             #Foliate
             Rdrview
             I3wm
+            I3_Sensible_Terminal
             SSH_banner
             #Ly
             Ctags
