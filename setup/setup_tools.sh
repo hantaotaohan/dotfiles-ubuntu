@@ -678,7 +678,7 @@ main() {
             Clone
             ;;  
         -35)
-            FixIcons
+            Fixicons
             ;;  
         -[aA])
             Github_Hosts
@@ -714,6 +714,7 @@ main() {
             Hugo
             Java
             Fix_FZF_history
+            Fixicons
             sudo rm -rf /etc/apt/sources.list.d/*
             ;;
         -[sS])
