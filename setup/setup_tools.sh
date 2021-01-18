@@ -691,7 +691,6 @@ main() {
             Jupyter
             Navi
             #Peek
-            Picom
             #SSR
             Dunst
             VIM
@@ -706,6 +705,7 @@ main() {
             I3wm
             I3gaps
             I3_Sensible_Terminal
+            Picom
             SSH_banner
             #Ly
             Ctags
