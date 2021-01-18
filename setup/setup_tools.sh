@@ -687,7 +687,6 @@ main() {
             Arcicons
             Copytranslator
             #Crossover
-            I3gaps
             Imagemagick
             Jupyter
             Navi
@@ -705,6 +704,7 @@ main() {
             #Foliate
             Rdrview
             I3wm
+            I3gaps
             I3_Sensible_Terminal
             SSH_banner
             #Ly
