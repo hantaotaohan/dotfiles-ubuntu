@@ -2289,7 +2289,7 @@ let g:which_key_map[';'] = {
   \ 't'    : [ ''                                            , 'Toggle TagBar'               ] ,
   \ 'b'    : [ ''                                            , 'Toggle LeaderF BufferTag'    ] ,
   \ 'u'    : [ ''                                            , 'Toggle LeaderF Functions'    ] ,
-  \ 'i'    : [ ''                                            , 'Toggle LeaderF Files'        ] ,
+  \ 'f'    : [ ''                                            , 'Toggle LeaderF Files'        ] ,
   \ 'e'    : [ ''                                            , 'Toggle NERDTree'             ] ,
   \ 'm'    : [ ''                                            , 'Toggle Signature'            ] ,
   \ 'z'    : [ ''                                            , 'Toggle Zoom mode'            ] ,
@@ -2687,7 +2687,7 @@ let g:Lf_StlPalette = {
 
 noremap <silent> <LocalLeader>b :<C-U><C-R>=printf("Leaderf! bufTag %s", "--bottom --nowrap")<CR><CR>
 noremap <silent> <LocalLeader>u :<C-U><C-R>=printf("Leaderf! function %s", "--bottom --nowrap")<CR><CR>
-noremap <silent> <LocalLeader>i :<C-U><C-R>=printf("Leaderf! file %s", "--bottom --nowrap")<CR><CR>
+noremap <silent> <LocalLeader>f :<C-U><C-R>=printf("Leaderf! file %s", "--bottom --nowrap")<CR><CR>
 
 
 "=================================================================================================================================
