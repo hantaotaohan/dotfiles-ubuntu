@@ -395,10 +395,15 @@ color status default        black   ''
 #color index color229 color124 "~D"
 
 
-
 #set new_mail_command="dunstify -r 8888  normal  'New mail! %n new, %u unread.'"
 
+#切换发件人
 macro generic "<esc>1" ":set from=hantao@bteb.cn"
 macro generic "<esc>2" ":set from=hantaotaohan@hotmail.com"
+
+#切换信箱
+macro index,pager <F1> "<change-folder>=bteb/INBOX<enter>"
+macro index,pager <F2> "<change-folder>=live/Inbox<enter>"
+
 
 
