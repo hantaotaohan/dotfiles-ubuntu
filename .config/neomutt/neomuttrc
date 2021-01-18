@@ -314,9 +314,9 @@ color header            color29         black       '^reply-to:'
 color sidebar_indicator     color0      color4
 color sidebar_divider       color0      color0
 color sidebar_ordinary      color4      color0
-color sidebar_new           color4      color0
+color sidebar_new           color2      color0
 color sidebar_flagged       color4      color0
-color sidebar_highlight     color0      color5
+color sidebar_highlight     color0      color4
 
 
 # Credits to https://github.com/sheoak/neomutt-powerline-nerdfonts/
