@@ -2286,8 +2286,10 @@ let g:which_key_map[';'] = {
   \
   \ 'q'    : [ ''                                            , 'Exit'                        ] ,
   \ 'w'    : [ ''                                            , 'Save'                        ] ,
-  \ 't'    : [ ''                                            , 'Toggle LeaderF BufferTag'    ] ,
+  \ 't'    : [ ''                                            , 'Toggle TagBar'               ] ,
+  \ 'b'    : [ ''                                            , 'Toggle LeaderF BufferTag'    ] ,
   \ 'u'    : [ ''                                            , 'Toggle LeaderF Functions'    ] ,
+  \ 'i'    : [ ''                                            , 'Toggle LeaderF Files'        ] ,
   \ 'e'    : [ ''                                            , 'Toggle NERDTree'             ] ,
   \ 'm'    : [ ''                                            , 'Toggle Signature'            ] ,
   \ 'z'    : [ ''                                            , 'Toggle Zoom mode'            ] ,
@@ -2295,6 +2297,7 @@ let g:which_key_map[';'] = {
   \ 'p'    : [ ''                                            , 'Paste System Clipboard'      ] ,
   \ 's'    : [ ''                                            , 'Toggle Startify'             ] ,
   \ 'r'    : [ ''                                            , 'Toggle Runner Code'          ] ,
+  \ 'c'    : [ ''                                            , 'Toggle Terminal'             ] ,
   \
   \ "1"    : [''                                             , 'Toggle Buffers 1 '           ] ,
   \ "2"    : [''                                             , 'Toggle Buffers 2 '           ] ,
