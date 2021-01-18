@@ -1,7 +1,7 @@
 [general]
 accounts = bteb,live
 maxsyncaccounts = 3
-pythonfile = $HOME/.config/neomutt/offlineimap.py
+pythonfile = ~/.config/neomutt/offlineimap.py
 
 # --------------------------------------------------------------
 
@@ -12,7 +12,7 @@ autorefresh = 0.2
 quick = 10
 utf8foldernames = yes
 maxage = 10
-postsynchook = $HOME/.config/neomutt/notify.sh
+postsynchook = ~/.config/neomutt/notify.sh
 
 [Repository bteb-local]
 type = Maildir
