@@ -207,6 +207,8 @@ bind browser,pager,index,attach \Ch help
 # Sync-Maibox
 bind browser,index,pager <Esc><Esc> sync-mailbox
 
+bind index                      \;n     toggle-new
+bind index,pager                \;<Tab> next-unread-mailbox
 
 # vim: filetype=muttrc
 #----------------------------------------------------------------
