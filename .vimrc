@@ -990,8 +990,8 @@ let g:table_mode_corner = '|'
 "=================================================================================================================================
 nnoremap <F9> :TagbarToggle<CR>                                           " F9打开关闭Tagbar
 inoremap <F9> <Esc>:TagbarToggle<CR>                                      " F9打开关闭Tagbar
-"nnoremap <localleader>t :TagbarToggle<CR>                                " ;t打开关闭Tagbar
-"inoremap <localleader>t <Esc>:TagbarToggle<CR>                           " ;t打开关闭Tagbar
+nnoremap <localleader>t :TagbarToggle<CR>                                 " ;t打开关闭Tagbar
+inoremap <localleader>t <Esc>:TagbarToggle<CR>                            " ;t打开关闭Tagbar
 let g:tagbar_autofocus = 1                                                " 焦点自动聚焦到Tagbar
 let g:tagbar_autoclose = 0
 let g:tagbar_autopreview = 0
@@ -2682,15 +2682,16 @@ let g:Lf_StlPalette = {
             \   }
             \ }
 
-noremap <silent> <LocalLeader>t :<C-U><C-R>=printf("Leaderf! bufTag %s", "--bottom --nowrap")<CR><CR>
+noremap <silent> <LocalLeader>b :<C-U><C-R>=printf("Leaderf! bufTag %s", "--bottom --nowrap")<CR><CR>
 noremap <silent> <LocalLeader>u :<C-U><C-R>=printf("Leaderf! function %s", "--bottom --nowrap")<CR><CR>
+noremap <silent> <LocalLeader>i :<C-U><C-R>=printf("Leaderf! file %s", "--bottom --nowrap")<CR><CR>
 
 
 "=================================================================================================================================
 " Floaterm settings
 "=================================================================================================================================
 " let g:floaterm_keymap_toggle = '<silent><localleader>c'
-let g:floaterm_keymap_toggle = '<F6>'
+let g:floaterm_keymap_toggle = '<Localleader>c'
 let g:floaterm_wintype = 'normal'
 let g:floaterm_height = 0.3
 let g:floaterm_autoclose = 2
