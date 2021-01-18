@@ -278,7 +278,7 @@ VIM() {
 
 Offlineimap() {
     echo " Config and Unzip passwords "
-    unzip $HOME/.config/neomutt/user.pass
+    unzip -d $HOME/.config/neomutt/ $HOME/.config/neomutt/user.pass
     sudo cp /usr/share/doc/offlineimap/examples/systemd/offlineimap.service /etc/systemd/user
     systemctl --user enable offlineimap
     systemctl --user start offlineimap
