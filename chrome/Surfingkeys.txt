@@ -1,0 +1,7 @@
+map("L", "R");
+map("H", "E");
+map("K", "S");
+map("gi", "i");
+map("J", "D");
+map('<Alt-S>', '<Alt-s>');
+settings.blacklistPattern = /.*speedcoder.net.*/i;
