@@ -142,17 +142,14 @@ set sidebar_format  ="%B%?F? [%F]?%* %?N?%N/?%S"
 macro index \Cr '<enter-command>source $HOME/.config/neomutt/neomuttrc<enter>'
 
 # Get emails
-bind index \Cl imap-fetch-mail
+# bind index \Cl imap-fetch-mail
 
 # Search
-bind index / search
-bind index ? search-reverse
-#bind index n search-next
-#bind index N search-opposite
-bind pager / search
-bind pager ? search-reverse
-#bind pager n search-next
-#bind pager N search-opposite
+bind browser,pager,index,attach /       search
+bind browser,pager,index,attach ?       search-reverse
+bind browser,pager,index,attach n       search-next
+bind browser,pager,index,attach N       search-opposite
+
 # Moving around
 bind attach,browser,index       g       noop
 bind attach,browser,index       gg      first-entry
@@ -167,6 +164,7 @@ bind browser                    k       next-page
 bind browser                    j       previous-page 
 
 # Scrolling
+bind browser,pager,index,attach \;q     exit
 bind browser,pager,index,attach \CF     next-page
 bind browser,pager,index,attach \CB     previous-page # webview for URL
 bind browser,pager,index,attach \Cu     half-up
@@ -202,11 +200,11 @@ bind index,pager                gt      next-thread
 bind index,pager                gT      previous-thread
 bind index                      <Space> collapse-thread
 bind index                      zA      collapse-all # Missing :folddisable/foldenabl
-# '?' is used for search-opposite
-bind pager \Ch help
-bind index \Ch help
 
-bind index,pager S sync-mailbox
+# '?' is used for search-opposite
+bind browser,pager,index,attach \Ch help
+
+# Sync-Maibox
 bind browser,index,pager <Esc><Esc> sync-mailbox
 
 
