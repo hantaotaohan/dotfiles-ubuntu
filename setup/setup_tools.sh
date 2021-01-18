@@ -696,7 +696,7 @@ main() {
             #SSR
             Dunst
             VIM
-            #Offlineimap
+            Offlineimap
             Fcitx
             GTK
             #Github
