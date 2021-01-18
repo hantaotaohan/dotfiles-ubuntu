@@ -66,7 +66,7 @@ alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[
 
 # Other
 alias sai='sudo apt install'
-alias mail='neomutt'
+alias mail='neomutt ; clear'
 alias rss='newsboat'
 alias file='nautilus .'
 alias pdf='zathura'
