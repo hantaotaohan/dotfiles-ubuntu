@@ -2744,6 +2744,20 @@ function! s:select_current_word()
   return "*\<Plug>(coc-cursors-word):nohlsearch\<CR>"
 endfunc
 
+call coc#config('suggest', {
+  \ 'autoTrigger': 'none'
+  \ })
+call coc#config('cursors', {
+  \ 'cancelKey': '<esc>',
+  \ 'nextKey': '<C-n>',
+  \ 'previousKey': '<C-p>'
+  \ })
+call coc#config('diagnostic', {
+  \ 'errorSign': '•',
+  \ 'warningSign': '•',
+  \ 'infoSign': '•'
+  \ })
+
 ""在命令行输入:CocConfig ->将下面代码添加进去后。强制开启不自动补全模式
 "{
 " "suggest.autoTrigger": "none",
