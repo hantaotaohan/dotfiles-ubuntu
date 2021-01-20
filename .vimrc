@@ -1625,7 +1625,7 @@ autocmd BufEnter    ~/blog/content/posts/*.md :2d
 autocmd BufEnter    ~/blog/content/posts/*.md :1r! echo title: %:t:r
 autocmd BufNewFile ~/blog/content/posts/*.md :0r !echo ---
 autocmd BufNewFile ~/blog/content/posts/*.md :r! echo title: %:t:r
-autocmd BufNewFile ~/blog/content/posts/*.md :r! echo "date: `date +'\%Y-\%m-\%d \%H:\%M'`"
+autocmd BufNewFile ~/blog/content/posts/*.md :r! echo "date: `date +'\%Y-\%m-\%dT\%H:\%M:\%S+08:00'`"
 autocmd BufNewFile ~/blog/content/posts/*.md :r! echo draft: false
 autocmd BufNewFile ~/blog/content/posts/*.md :r! echo categories: []
 autocmd BufNewFile ~/blog/content/posts/*.md :r! echo tags: []
