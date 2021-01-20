@@ -127,6 +127,20 @@ endif
 "-----------------------------------------------------------------o--------------------------------------------------------------o
 
 " ----------------------------------------------------------------o--------------------------------------------------------------o
+" Vim Compatible
+" ----------------------------------------------------------------o--------------------------------------------------------------o
+if &compatible
+	set nocompatible
+endif
+
+" ----------------------------------------------------------------o--------------------------------------------------------------o
+" Clipborad Settings
+" ----------------------------------------------------------------o--------------------------------------------------------------o
+if has('clipboard') && has('vim_starting') && has('unnamedplus')
+	set clipboard& clipboard^=unnamed,unnamedplus
+endif
+
+" ----------------------------------------------------------------o--------------------------------------------------------------o
 " Abbreviation = Alias
 " ----------------------------------------------------------------o--------------------------------------------------------------o
 "abbreviate 所有模式
@@ -232,7 +246,15 @@ cnoreabbrev Qa qa
 cnoreabbrev q1 q!
 
 " ----------------------------------------------------------------o--------------------------------------------------------------o
-" Timing
+" Auto Read Filechanges
+" ----------------------------------------------------------------o--------------------------------------------------------------o
+autocmd CursorHold      *  checktime
+autocmd CursorHoldI     *  checktime
+autocmd FocusGained     *  checktime
+autocmd FocusLost       *  checktime
+
+" ----------------------------------------------------------------o--------------------------------------------------------------o
+" Timeing
 " ----------------------------------------------------------------o--------------------------------------------------------------o
 set timeout ttimeout
 set timeoutlen=500   " 映射超时
@@ -286,6 +308,7 @@ set directory=$DATA_PATH/swap//,$DATA_PATH,~/tmp,/var/tmp,/tmp
 set undodir=$DATA_PATH/undo//,$DATA_PATH,~/tmp,/var/tmp,/tmp
 set backupdir=$DATA_PATH/backup/,$DATA_PATH,~/tmp,/var/tmp,/tmp
 set viewdir=$DATA_PATH/view/
+set viewoptions=folds,cursor,curdir,slash,unix
 
 " ----------------------------------------------------------------o--------------------------------------------------------------o
 " History saving
@@ -572,7 +595,6 @@ set number                                                               " 显�
 set laststatus=2                                                         " 启用状态栏信息
 set cmdheight=1                                                          " 设置命令行的高度为2，默认为1
 set cursorline                                                           " 突出显示当前行
-set clipboard=unnamed                                                    " 共享剪贴板
 set nowrap                                                               " 设置不自动换行
 set showtabline=2                                                        " 永远显示标签页
 set t_Co=256                                                             " 设置终端显示颜色
@@ -580,6 +602,7 @@ set scrolloff=5                                                          " 光�
 set showcmd                                                              " 显示命令
 set diffopt=filler,context:9999                                          " 禁止VIMDIFF折叠
 set guifont=Saber\ Bold\ 10.5                                            " 设置GUI字体
+"set clipboard=unnamed                                                   " 共享剪贴板
 "syntax enable                                                           " 开启语法高亮
 "set guifont=DejaVu\ Sans\ Mono\ 10                                      " 设置字体
 "set termguicolors                                                       " 终端模式 自动转换256真色彩 
@@ -610,7 +633,6 @@ set shiftwidth=4                                                         " 换�
 set smarttab                                                             " 指定按一次backspace就删除shiftwidth宽度
 set helplang=cn                                                          " 双字宽
 set showmatch                                                            " 匹配模式,括号匹配
-set nocompatible                                                         " 去掉有关vi一致性模式
 set backspace=indent,eol,start                                           " 设置退格键的工作方式
 set hlsearch                                                             " 高亮搜索的关键字
 set pythondll=                                                           " python3.6支持
@@ -626,8 +648,9 @@ set noshowmode                                                           " 任�
 set ambiwidth=single                                                     " 设置为双字宽显示默认值double
 set incsearch                                                            " 查找输入时动态增量显示查找结果
 set hidden                                                               " 针对buffer不保存即可切换
-" set ttimeout                                                             " 打开功能键超时检测（终端下功能键为一串 ESC 开头的字符串）
-" set ttimeoutlen=50                                                       " 功能键超时检测 50 毫秒
+" set nocompatible                                                       " 去掉有关vi一致性模式
+" set ttimeout                                                           " 打开功能键超时检测（终端下功能键为一串 ESC 开头的字符串）
+" set ttimeoutlen=50                                                     " 功能键超时检测 50 毫秒
 " set undodir=~/.vim/                                                    " 开启撤销功能的目录
 " set backupdir=/etc/vim/.vim/                                           " 备份文件目录  
 " set directory=/etc/vim/.vim/                                           " 交换文件目录  
@@ -647,6 +670,7 @@ set formatoptions+=B                                                     " 合�
 set ffs=unix,dos,mac                                                     " 文件换行符，默认使用 unix 换行符
 set ruler                                                                " 显示光标位置
 set ttyfast                                                              " 刷新更快
+set ttyscroll=3                                                          " 鼠标滚轮速度
 set tags=./.tags;,.tags                                                  " 设置Tags
 " set wildmode=list:full                                                 " 长列表补全
 set completeopt=menuone,menu,longest,preview                             " 自动补全
