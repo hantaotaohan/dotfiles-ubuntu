@@ -2339,14 +2339,14 @@ let g:which_key_map = {
   \ 'e'    : [ ''                                            , 'MarkdownPreview'             ] ,
   \ 'p'    : [ ''                                            , 'ClipboardImage to Vim'       ] ,
   \
-  \ 'F2 '  : [ ''                                            , 'Toggle Number'               ] ,
-  \ 'F3 '  : [ ''                                            , 'Toggle Syntax'               ] ,
-  \ 'F4 '  : [ ''                                            , 'Toggle Paste'                ] ,
-  \ 'F5 '  : [ ''                                            , 'Toggle Runner'               ] ,
-  \ 'F6 '  : [ ''                                            , 'Toggle Terminal'             ] ,
-  \ 'F7 '  : [ ''                                            , 'Toggle QuickFix'             ] ,
-  \ 'F8 '  : [ ''                                            , 'Toggle NERDTree'             ] ,
-  \ 'F9 '  : [ ''                                            , 'Toggle TagBar'               ] ,
+  \ 'F2'   : [ ''                                            , 'Toggle Number'               ] ,
+  \ 'F3'   : [ ''                                            , 'Toggle Syntax'               ] ,
+  \ 'F4'   : [ ''                                            , 'Toggle Paste'                ] ,
+  \ 'F5'   : [ ''                                            , 'Toggle Runner'               ] ,
+  \ 'F6'   : [ ''                                            , 'Toggle Terminal'             ] ,
+  \ 'F7'   : [ ''                                            , 'Toggle QuickFix'             ] ,
+  \ 'F8'   : [ ''                                            , 'Toggle NERDTree'             ] ,
+  \ 'F9'   : [ ''                                            , 'Toggle TagBar'               ] ,
   \ 'F12'  : [ ''                                            , 'Toggle IndentLines'          ] ,
   \
   \ 'm'    : {
