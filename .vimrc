@@ -2225,6 +2225,7 @@ let g:easy_align_delimiters = {
 \   }
 \ }
 
+
 "=================================================================================================================================
 " Vim-visual-multi  settings
 "=================================================================================================================================
@@ -2237,34 +2238,49 @@ let g:VM_maps['Find Subword Under'] = '<C-d>'           " replace visual C-n
 " Goyo  settings
 "=================================================================================================================================
 function! s:goyo_enter()
-  if executable('tmux') && strlen($TMUX)
-    silent !tmux set status off
-    silent !tmux list-panes -F '\#F' | grep -q Z || tmux resize-pane -Z
-  endif
-  set noshowmode
-  set noshowcmd
-  set scrolloff=999
-  Limelight
-  " ...
+	if has('gui_running')
+		" Gui fullscreen
+		set fullscreen
+		set background=light
+		set linespace=7
+	elseif exists('$TMUX')
+		" Hide tmux status
+		silent !tmux set status off
+	endif
+
+	" Activate Limelight
+	let s:stl = &l:statusline
+	let &l:statusline = ''
+	Limelight
 endfunction
 
 function! s:goyo_leave()
-  if executable('tmux') && strlen($TMUX)
-    silent !tmux set status on
-    silent !tmux list-panes -F '\#F' | grep -q Z && tmux resize-pane -Z
-  endif
-  set showmode
-  set showcmd
-  set scrolloff=5
-  Limelight!
-  " ...
+	if has('gui_running')
+		" Gui exit fullscreen
+		set nofullscreen
+		set background=dark
+		set linespace=0
+	elseif exists('$TMUX')
+		" Show tmux status
+		silent !tmux set status on
+	endif
+
+	" De-activate Limelight
+	let &l:statusline = s:stl
+	unlet s:stl
+	Limelight!
 endfunction
 
-autocmd! User GoyoEnter nested call <SID>goyo_enter()
-autocmd! User GoyoLeave nested call <SID>goyo_leave()
+" Goyo Commands 
+augroup user_plugin_goyo
+	autocmd!
+	autocmd! User GoyoEnter
+	autocmd! User GoyoLeave
+	autocmd  User GoyoEnter nested call <SID>goyo_enter()
+	autocmd  User GoyoLeave nested call <SID>goyo_leave()
+augroup END
 
 "=================================================================================================================================
-
 " Auto switch goyo
 function! Switch_goyo()
     if  winnr('$') == 1
@@ -2278,11 +2294,13 @@ function! Switch_goyo()
 endfunction
 nnoremap <silent><Leader>go :call Switch_goyo()<cr>
 
+
 "=================================================================================================================================
 " Limelight  settings
 "=================================================================================================================================
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
+
 
 "=================================================================================================================================
 " AutoPairs  settings
@@ -2294,6 +2312,7 @@ let g:AutoPairsShortcutToggle = ''
 let g:AutoPairsshortcutFastWrap = ''
 let g:AutoPairsShortcutJump = ''
 let g:AutoPairsShortcutBackInsert = ''
+
 
 "=================================================================================================================================
 " Which Key Map  settings
