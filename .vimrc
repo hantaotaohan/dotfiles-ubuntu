@@ -590,6 +590,7 @@ hi Folded                 term=standout ctermfg=0   ctermbg=5   guifg=#282c34 gu
 hi QuickFixLine           term=standout ctermfg=235 ctermbg=180 guifg=#ABB2BF guibg=#282C34   " 快速栏颜色
 hi SignColumn             term=standout ctermfg=2   ctermbg=2   guifg=#E06C75 guibg=#282C34   " 标签栏颜色
 hi DiffDelete             term=standout ctermfg=235 ctermbg=204 guifg=#E06C75 guibg=#E06C75   " 差异删除颜色
+hi CursorLineNr           term=bold     ctermfg=235 ctermbg=204 guifg=#282C34 guibg=#61AFEF   " 当前光标行序号栏颜色
 " hi FoldColumn             term=standout ctermfg=0   ctermbg=5   guifg=#282c34 guibg=#ABB2BF   " 折叠提示颜色
 
 "=================================================================================================================================
