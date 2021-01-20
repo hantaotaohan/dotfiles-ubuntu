@@ -329,6 +329,38 @@ augroup user_persistent_undo
     au BufWritePre *.tmp           setlocal noundofile
     au BufWritePre *.bak           setlocal noundofile
 augroup END
+" ----------------------------------------------------------------o--------------------------------------------------------------o
+" If sudo, disable vim swap/backup/undo/shada/viminfo writing
+if $SUDO_USER !=# '' && $USER !=# $SUDO_USER
+		\ && $HOME !=# expand('~'.$USER, 1)
+		\ && $HOME ==# expand('~'.$SUDO_USER, 1)
+
+	set noswapfile
+	set nobackup
+	set nowritebackup
+	set noundofile
+	if has('nvim')
+		set shada="NONE"
+	else
+		set viminfo="NONE"
+	endif
+endif
+" ----------------------------------------------------------------o--------------------------------------------------------------o
+" Secure sensitive information, disable backup files in temp directories
+if exists('&backupskip')
+	set backupskip+=/tmp/*,$TMPDIR/*,$TMP/*,$TEMP/*,*/shm/*,/private/var/*
+	set backupskip+=.vault.vim
+endif
+" ----------------------------------------------------------------o--------------------------------------------------------------o
+" Disable swap/undo/viminfo files in temp directories or shm
+augroup user_secure
+	autocmd!
+	silent! autocmd BufNewFile,BufReadPre
+		\ /tmp/*,$TMPDIR/*,$TMP/*,$TEMP/*,*/shm/*,/private/var/*,.vault.vim
+		\ setlocal noswapfile noundofile
+		\ | set nobackup nowritebackup
+		\ | if has('nvim') | set shada= | else | set viminfo= | endif
+augroup END
 
 " ----------------------------------------------------------------o--------------------------------------------------------------o
 " Disable vim distribution plugins
