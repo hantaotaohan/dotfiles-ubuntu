@@ -661,7 +661,7 @@ hi Folded                 term=standout ctermfg=0   ctermbg=5   guifg=#282c34 gu
 hi QuickFixLine           term=standout ctermfg=235 ctermbg=180 guifg=#ABB2BF guibg=#282C34   " 快速栏颜色
 hi SignColumn             term=standout ctermfg=2   ctermbg=2   guifg=#E06C75 guibg=#282C34   " 标签栏颜色
 hi DiffDelete             term=standout ctermfg=235 ctermbg=204 guifg=#E06C75 guibg=#E06C75   " 差异删除颜色
-hi CursorLineNr           term=bold     ctermfg=235 ctermbg=204 guifg=#282C34 guibg=#61AFEF   " 当前光标行序号栏颜色
+hi CursorLineNr           term=standout ctermfg=145 ctermbg=236 guifg=#61AFEF guibg=#282C34   " 当前光标行序号栏颜色
 " hi FoldColumn             term=standout ctermfg=0   ctermbg=5   guifg=#282c34 guibg=#ABB2BF   " 折叠提示颜色
 
 "=================================================================================================================================
@@ -2791,6 +2791,8 @@ let g:floaterm_autohide = v:false
 
 if exists('g:plugs["coc.nvim"]')
 
+let g:coc_global_extensions = ['coc-json', 'coc-java']
+
 function! s:check_back_space() abort
     let col = col('.') - 1
     return !col || getline('.')[col - 1]  =~ '\s'
@@ -2854,6 +2856,7 @@ call coc#config('diagnostic', {
 
 hi CocCursorRange term=reverse cterm=bold ctermfg=238 ctermbg=226 gui=bold guifg=#FFFFFF guibg=#E06c75
 hi CocHoverRange term=reverse cterm=bold ctermfg=238 ctermbg=226 gui=bold guifg=#FFFFFF guibg=#E06c75
+hi CocErrorSign term=reverse cterm=bold ctermfg=238 ctermbg=226 gui=bold guifg=#e06c75 
 
 """ 使用回车强制去确认上屏
 "" inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
