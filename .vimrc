@@ -602,7 +602,7 @@ filetype plugin indent on                                                " 启�
 set fileencodings=utf-8,cp936,gb18030,big5,latin1                        " 探测即将打开的文件的字符编码
 set fileencoding=utf-8                                                   " 打开文件的字符编码
 set encoding=utf-8                                                       " Vim 内部使用的字符编码方式
-set autoindent                                                           " 代码自动对齐
+set autoindent                                                           " 换行时候代码自动缩进
 set smartindent                                                          " 启用智能对齐方式
 set expandtab                                                            " 将Tab键转换为空格
 set tabstop=4                                                            " 设置Tab键的宽度，可以更改，如：宽度为2
