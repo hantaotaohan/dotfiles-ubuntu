@@ -1151,17 +1151,35 @@ inoremap <F12> <esc> :IndentLinesToggle<CR>
 "=================================================================================================================================
 " vim-startify
 "=================================================================================================================================
-let g:startify_change_to_vcs_root = 1
-let g:startify_files_number = 6
+let g:startify_session_delete_buffers = 1
+let g:startify_files_number = 20
+let g:startify_change_to_dir = 1
+let g:startify_enable_special = 1
+let g:startify_change_cmd = 'lcd'
+
+let g:startify_custom_header = [
+		\'  _____                 _____            ',
+		\' |_   _|_ _  ___       |_   _|_ _  ___   ',
+		\'   | |/ _` |/ _ \        | |/ _` |/ _ \  ',
+		\'   | | (_| | (_) |  _    | | (_| | (_) | ',
+		\'   |_|\__,_|\___/  (_)   |_|\__,_|\___/  ',
+		\ ]
 
 let g:startify_list_order = [
-    \ ['   Recent files in this directory:'],
-    \ 'dir',
-    \ ['   Recent files:'],
+    \ ['   Files:'],
     \ 'files',
     \ ['   Bookmarks:'],
     \ 'bookmarks',
     \ ]
+
+" let g:startify_list_order = [
+"     \ ['   Recent files in this directory:'],
+"     \ 'dir',
+"     \ ['   Recent files:'],
+"     \ 'files',
+"     \ ['   Bookmarks:'],
+"     \ 'bookmarks',
+"     \ ]
 
 let g:startify_skiplist = [
     \ 'COMMIT_EDITMSG',
