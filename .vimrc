@@ -2239,35 +2239,25 @@ let g:VM_maps['Find Subword Under'] = '<C-d>'           " replace visual C-n
 "=================================================================================================================================
 function! s:goyo_enter()
 	if has('gui_running')
-		" Gui fullscreen
-		set fullscreen
 		set background=light
 		set linespace=7
 	elseif exists('$TMUX')
-		" Hide tmux status
 		silent !tmux set status off
 	endif
-
-	" Activate Limelight
-	let s:stl = &l:statusline
-	let &l:statusline = ''
+	set noshowmode
+	set noshowcmd
 	Limelight
 endfunction
 
 function! s:goyo_leave()
 	if has('gui_running')
-		" Gui exit fullscreen
-		set nofullscreen
 		set background=dark
 		set linespace=0
 	elseif exists('$TMUX')
-		" Show tmux status
 		silent !tmux set status on
 	endif
-
-	" De-activate Limelight
-	let &l:statusline = s:stl
-	unlet s:stl
+	set showmode
+	set showcmd
 	Limelight!
 endfunction
 
@@ -2281,15 +2271,13 @@ augroup user_plugin_goyo
 augroup END
 
 "=================================================================================================================================
+
 " Auto switch goyo
 function! Switch_goyo()
     if  winnr('$') == 1
         Goyo 200x200
-        "Goyo 80
-        "set colorcolumn=
     elseif exists('#goyo')
         Goyo!
-"        "set colorcolumn=+1
     endif
 endfunction
 nnoremap <silent><Leader>go :call Switch_goyo()<cr>
