@@ -657,9 +657,12 @@ filetype plugin indent on                                                " 启�
 set fileencodings=utf-8,cp936,gb18030,big5,latin1                        " 探测即将打开的文件的字符编码
 set fileencoding=utf-8                                                   " 打开文件的字符编码
 set encoding=utf-8                                                       " Vim 内部使用的字符编码方式
+set textwidth=80                                                         " 换行前文字宽度最大字符
 set autoindent                                                           " 换行时候代码自动缩进
+set softtabstop=-1                                                       " 自动与shiftwidth保持同步
+set shiftround                                                           " 将缩进舍入为shiftwidth的倍数
 set smartindent                                                          " 启用智能对齐方式
-set expandtab                                                            " 将Tab键转换为空格
+set noexpandtab                                                          " 不要将制表符扩展到空格
 set tabstop=4                                                            " 设置Tab键的宽度，可以更改，如：宽度为2
 set shiftwidth=4                                                         " 换行时自动缩进宽度，可更改（宽度同tabstop）
 set smarttab                                                             " 指定按一次backspace就删除shiftwidth宽度
@@ -687,6 +690,7 @@ set hidden                                                               " 针�
 " set backupdir=/etc/vim/.vim/                                           " 备份文件目录  
 " set directory=/etc/vim/.vim/                                           " 交换文件目录  
 " set vb t_vb=                                                           " 关闭提示音
+" set expandtab                                                          " 将Tab键转换为空格
 " set noincsearch                                                        " 在输入要搜索的文字时，取消实时匹配
 
 "=================================================================================================================================
