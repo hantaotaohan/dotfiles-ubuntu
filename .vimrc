@@ -636,6 +636,7 @@ set cmdheight=1                                                          " 设�
 set cursorline                                                           " 突出显示当前行
 set nowrap                                                               " 设置不自动换行
 set showtabline=2                                                        " 永远显示标签页
+set pumheight=15                                                         " 弹出窗口高度
 set t_Co=256                                                             " 设置终端显示颜色
 set scrolloff=5                                                          " 光标上下两侧最少保留的屏幕行数
 set showcmd                                                              " 显示命令
