@@ -642,6 +642,7 @@ set scrolloff=5                                                          " 光�
 set showcmd                                                              " 显示命令
 set diffopt=filler,context:9999                                          " 禁止VIMDIFF折叠
 set guifont=Saber\ Bold\ 10.5                                            " 设置GUI字体
+let &showbreak='↳  '                                                     " 设置换行符号
 "set clipboard=unnamed                                                   " 共享剪贴板
 "syntax enable                                                           " 开启语法高亮
 "set guifont=DejaVu\ Sans\ Mono\ 10                                      " 设置字体
