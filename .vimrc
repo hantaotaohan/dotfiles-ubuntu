@@ -610,6 +610,7 @@ Plug 'voldikss/vim-floaterm'                                             " 终�
 Plug 'hotoo/pangu.vim'                                                   " 中文排版
 Plug 'chriskempson/base16-vim'                                           " Themes
 Plug 'jiangmiao/auto-pairs'                                              " 成对添加括号等
+"Plug 'rhysd/clever-f.vim'                                                " 增强搜索功能
 "Plug 'neoclide/coc.nvim', {'branch': 'release'}                          " 补全插件
 "Plug 'Lenovsky/nuake'                                                    " 快速启动命令行工具
 "Plug 'ludovicchabant/vim-gutentags'                                      " Tags管理
@@ -2858,6 +2859,20 @@ hi CocHoverRange term=reverse cterm=bold ctermfg=238 ctermbg=226 gui=bold guifg=
 ""    \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 endif
+
+"=================================================================================================================================
+"Clever-F Settings
+"=================================================================================================================================
+map <CR> <Plug>(clever-f-repeat-forward)
+map <BS> <Plug>(clever-f-repeat-back)
+let g:clever_f_show_prompt=1       " 显示提示符
+let g:clever_f_fix_key_direction=0 " 循环搜索请设置为1
+let g:clever_f_smart_case=1          " 智能大小写搜索
+let g:clever_f_across_no_line=1
+let g:clever_f_chars_match_any_signs=";"
+hi CleverFDefaultLabel cterm=bold,underline ctermfg=9 gui=bold,underline guifg=#abb2bf guibg=#e06c75
+hi CleverFDefaultLabel cterm=bold,underline ctermfg=9 gui=bold,underline guifg=#abb2bf guibg=#e06c75
+hi CleverFChar         cterm=bold,underline ctermfg=9 gui=bold,underline guifg=#e06c75
 
 
 "=================================================================================================================================
