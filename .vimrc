@@ -2201,8 +2201,7 @@ function! Switch_goyo()
 "        "set colorcolumn=+1
     endif
 endfunction
-nnoremap <Leader>go :call Switch_goyo()<cr>
-
+nnoremap <silent><Leader>go :call Switch_goyo()<cr>
 
 "=================================================================================================================================
 " Limelight  settings
