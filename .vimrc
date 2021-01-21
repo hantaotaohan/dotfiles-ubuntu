@@ -1144,8 +1144,8 @@ inoremap <F7> <esc> :call asyncrun#quickfix_toggle(6)<cr>
 " indentLine
 "=================================================================================================================================
 let g:indentLine_enabled = 0
-nnoremap <F12> :IndentLinesToggle<CR>
-inoremap <F12> <esc> :IndentLinesToggle<CR>
+nnoremap <LocalLeader>l :IndentLinesToggle<CR>
+inoremap <LocalLeader>l <esc> :IndentLinesToggle<CR>
 
 
 "=================================================================================================================================
@@ -2339,10 +2339,10 @@ let g:which_key_run_map_on_popup = 0
 let g:which_key_fallback_to_native_key=1
 let g:which_key_disable_default_offset = 1
 let g:which_key_exit = ["\<Esc>","\q"]
-let g:which_key_hspace = 30
+let g:which_key_hspace = 3
 let g:which_key_vertical = 0
 let g:which_key_max_size = 0
-let g:which_key_sort_horizontal = 1
+let g:which_key_sort_horizontal = 0
 "=================================================================================================================================
 highlight default link WhichKey          Function
 highlight default link WhichKeySeperator DiffAdded
@@ -2360,16 +2360,16 @@ let g:which_key_map = {
   \
   \ 'e'    : [ ''                                            , 'MarkdownPreview'             ] ,
   \ 'p'    : [ ''                                            , 'ClipboardImage to Vim'       ] ,
+  \ 'l'    : [ ''                                            , 'Toggle IndentLines'          ] ,
   \
-  \ 'F2'   : [ ''                                            , 'Toggle Number'               ] ,
-  \ 'F3'   : [ ''                                            , 'Toggle Syntax'               ] ,
-  \ 'F4'   : [ ''                                            , 'Toggle Paste'                ] ,
-  \ 'F5'   : [ ''                                            , 'Toggle Runner'               ] ,
-  \ 'F6'   : [ ''                                            , 'Toggle Terminal'             ] ,
-  \ 'F7'   : [ ''                                            , 'Toggle QuickFix'             ] ,
-  \ 'F8'   : [ ''                                            , 'Toggle NERDTree'             ] ,
-  \ 'F9'   : [ ''                                            , 'Toggle TagBar'               ] ,
-  \ 'F12'  : [ ''                                            , 'Toggle IndentLines'          ] ,
+  \ '<F2>' : [ ''                                            , 'Toggle Number'               ] ,
+  \ '<F3>' : [ ''                                            , 'Toggle Syntax'               ] ,
+  \ '<F4>' : [ ''                                            , 'Toggle Paste'                ] ,
+  \ '<F5>' : [ ''                                            , 'Toggle Runner'               ] ,
+  \ '<F6>' : [ ''                                            , 'Toggle Terminal'             ] ,
+  \ '<F7>' : [ ''                                            , 'Toggle QuickFix'             ] ,
+  \ '<F8>' : [ ''                                            , 'Toggle NERDTree'             ] ,
+  \ '<F9>' : [ ''                                            , 'Toggle TagBar'               ] ,
   \
   \ 'm'    : {
   \ 'name' : '+SignatureMap',
