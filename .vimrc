@@ -1698,11 +1698,11 @@ endfunc
 
 autocmd BufReadPost $HOME/blog/content/posts/inbox.md call GitPull()
 autocmd BufWritePost $HOME/blog/content/posts/*.md call GitCommit()
-autocmd VimLeave inbox.md call GitPush() 
+autocmd VimLeavePre inbox.md call GitPush() 
 
 autocmd BufReadPost $HOME/vimwiki/src/index.md call GitPull()
 autocmd BufWritePost $HOME/vimwiki/src/*.md call GitCommit()
-autocmd VimLeave index.md call GitPush() 
+autocmd VimLeavePre index.md call GitPush() 
 
 
 "=================================================================================================================================
