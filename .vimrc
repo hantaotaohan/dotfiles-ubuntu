@@ -1632,6 +1632,10 @@ autocmd BufNewFile ~/blog/content/posts/*.md :r! echo tags: []
 autocmd BufNewFile ~/blog/content/posts/*.md :r! echo ---
 autocmd BufNewFile ~/blog/content/posts/*.md :$r !echo   
 "-----------------------------------------------------------------o--------------------------------------------------------------o
+" 改变Shift+Enter映射
+autocmd FileType vimwiki inoremap <silent><buffer> <localleader><CR> <Esc>:VimwikiReturn 2 2<CR>
+
+"-----------------------------------------------------------------o--------------------------------------------------------------o
 hi VimwikiHeader1 guifg=#e5c07b
 hi VimwikiHeader2 guifg=#98c379
 hi VimwikiHeader3 guifg=#c678dd
