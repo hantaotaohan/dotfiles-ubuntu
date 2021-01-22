@@ -2923,6 +2923,7 @@ endif
 "=================================================================================================================================
 "Clever-F Settings
 "=================================================================================================================================
+if exists('g:plugs["clever-f.vim"]')
 map <CR> <Plug>(clever-f-repeat-forward)
 map <BS> <Plug>(clever-f-repeat-back)
 let g:clever_f_show_prompt=1       " 显示提示符
@@ -2933,7 +2934,7 @@ let g:clever_f_chars_match_any_signs=";"
 hi CleverFDefaultLabel cterm=bold,underline ctermfg=9 gui=bold,underline guifg=#abb2bf guibg=#e06c75
 hi CleverFDefaultLabel cterm=bold,underline ctermfg=9 gui=bold,underline guifg=#abb2bf guibg=#e06c75
 hi CleverFChar         cterm=bold,underline ctermfg=9 gui=bold,underline guifg=#e06c75
-
+endif
 
 "=================================================================================================================================
 " Pangu settings
