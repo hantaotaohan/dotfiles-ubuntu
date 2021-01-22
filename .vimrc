@@ -397,51 +397,85 @@ let g:no_mail_maps = 1
 " Quickly close the current window
 " ----------------------------------------------------------------o--------------------------------------------------------------o
 function! BufferClose()
-
-let time = strftime("%T")
-let file = expand('%:P')
-let permissions = getfperm(file)
-let notSaved = "redraw | echohl ErrorMsg | echo file . ' ' . 'Not Saved!' | return | echohl None"
-
-try
-    if len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1
-        try
-        execute "silent q"
-        catch /:E37:\|:E162:/
-        if (confirm("Wanna save " . file . ' ' , "&Yes\n&No", 2)==1) | redraw
-        try
-        silent w!
-        echom '"' . file . '"' . " Save Done" . ' ' . time . ' - ' . "You can exit"
-        echohl None
-        catch
-        endtry
-        else
-        exe notSaved && execute "q!"
-        endif
-        catch
-        endtry
-        redraws
-    elseif get(getloclist(0, {'winid':0}), 'winid', 0)
-        execute "lclose"
-    elseif get(getqflist({'winid':0}), 'winid', 0)
-        execute "cclose"
-    elseif buflisted(bufnr('%')) == 1
-        execute "bn"
-        execute "bd#"
-    elseif winnr("$") == 1 && tabpagenr("$") > 1 && tabpagenr() > 1 && tabpagenr() < tabpagenr("$")
-        tabclose | tabprev
-    elseif getbufvar(winbufnr('%'), '&buftype') == 'help'
-        execute "bd#"
-    else
-        execute 'bd!'
-    endif
-  catch
-endtry
+	" 寻找Lockquickfix窗口并关闭
+	if get(getloclist(0, {'winid':0}), 'winid', 0)
+		execute "lclose"
+	" 寻找quickfix窗口并关闭
+	elseif get(getqflist({'winid':0}), 'winid', 0)
+		execute "cclose"
+	" 当前buffer数量大于1的时候并当前buffer的类型为help的时候执行关闭
+	elseif winnr('$') > 1 && getbufvar(bufnr('%'), '&filetype') == "help" 
+		execute "q"
+	" 当前buffer数量大于1的时候并当前buffer的类型为vim的时候执行关闭
+	elseif winnr('$') > 1 && getbufvar(bufnr('%'), '&filetype') == "vim" 
+		execute "close"
+	" 循环查找所有buffer,如果buffer数量等于1并且处于已经修改状态的时候
+	elseif len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1 && getbufvar(winbufnr('%'), '&mod') == 1
+		execute "confirm q"
+	" 循环查找所有buffer,如果buffer数量等于1并且处于未修改状态的时候
+	elseif len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1 && getbufvar(winbufnr('%'), '&mod') == 0
+		execute "q"
+	" 循环查找所有buffer,如果buffer数量大于1并且处于已经修改状态的时候
+	elseif len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) > 1 && getbufvar(winbufnr('%'), '&mod') == 1
+		execute "bnext"
+		execute "confirm  bdelete#"
+	" 循环查找所有buffer,如果buffer数量大于1并且处于未修改状态的时候
+	elseif len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) > 1 && getbufvar(winbufnr('%'), '&mod') == 0
+		execute "bnext"
+		execute "bdelete#"
+	endif
 endfunction
 
 nnoremap <silent><localleader>q :call BufferClose()<cr>
 inoremap <silent><localleader>q <Esc>:call BufferClose()<cr>
 vnoremap <silent><localleader>q <Esc>:call BufferClose()<cr>
+
+"=================================================================================================================================
+" function! BufferClose()
+" let time = strftime("%T")
+" let file = expand('%:P')
+" let permissions = getfperm(file)
+" let notSaved = "redraw | echohl ErrorMsg | echo file . ' ' . 'Not Saved!' | return | echohl None"
+
+" try
+"     if len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1
+"         try
+"         execute "silent q"
+"         catch /:E37:\|:E162:/
+"         if (confirm("Wanna save " . file . ' ' , "&Yes\n&No", 2)==1) | redraw
+"         try
+"         silent w!
+"         echom '"' . file . '"' . " Save Done" . ' ' . time . ' - ' . "You can exit"
+"         echohl None
+"         catch
+"         endtry
+"         else
+"         exe notSaved && execute "q!"
+"         endif
+"         catch
+"         endtry
+"         redraws
+"     elseif get(getloclist(0, {'winid':0}), 'winid', 0)
+"         execute "lclose"
+"     elseif get(getqflist({'winid':0}), 'winid', 0)
+"         execute "cclose"
+"     elseif buflisted(bufnr('%')) == 1
+"         execute "bn"
+"         execute "bd#"
+"     elseif winnr("$") == 1 && tabpagenr("$") > 1 && tabpagenr() > 1 && tabpagenr() < tabpagenr("$")
+"         tabclose | tabprev
+"     elseif getbufvar(winbufnr('%'), '&buftype') == 'help'
+"         execute "bd#"
+"     else
+"         execute 'bd!'
+"     endif
+"   catch
+" endtry
+" endfunction
+
+" nnoremap <silent><localleader>q :call BufferClose()<cr>
+" inoremap <silent><localleader>q <Esc>:call BufferClose()<cr>
+" vnoremap <silent><localleader>q <Esc>:call BufferClose()<cr>
 
 "=================================================================================================================================
 
