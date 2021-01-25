@@ -2590,6 +2590,8 @@ let g:SignatureMap = {
 "     	autocmd FileType qf nnoremap <buffer> ma :lclose<CR>
 " augroup END
 
+autocmd FileType qf 6wincmd_
+
 hi SignatureMarkText   term=standout ctermbg=2   ctermbg=2   guifg=#E06C75 guibg=#282C34   " 书签标记颜色
 hi SignatureMarkerText term=standout ctermbg=2   ctermbg=2   guifg=#E06C75 guibg=#282C34   " 折叠提示颜色
 
