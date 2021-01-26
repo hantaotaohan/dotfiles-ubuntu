@@ -256,10 +256,10 @@ cnoreabbrev q1 q!
 " ----------------------------------------------------------------o--------------------------------------------------------------o
 " Auto Read Filechanges
 " ----------------------------------------------------------------o--------------------------------------------------------------o
-autocmd CursorHold      *  checktime
-autocmd CursorHoldI     *  checktime
-autocmd FocusGained     *  checktime
-autocmd FocusLost       *  checktime
+augroup AutoRead
+    autocmd!
+    autocmd CursorHold * silent! checktime
+augroup END
 
 " ----------------------------------------------------------------o--------------------------------------------------------------o
 " Timeing
