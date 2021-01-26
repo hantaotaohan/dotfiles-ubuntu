@@ -1258,6 +1258,8 @@ nmap <silent><LocalLeader>8       <Plug>AirlineSelectTab8
 nmap <silent><LocalLeader>9       <Plug>AirlineSelectTab9
 nmap <silent><LocalLeader><tab>   <Plug>AirlineSelectNextTab
 nmap <silent><LocalLeader><S-tab> <Plug>AirlineSelectPrevTab
+imap <silent><Localleader><tab>   <Esc><Plug>AirlineSelectNextTab
+imap <silent><Localleader><S-tab> <Esc><Plug>AirlineSelectNextTab
 
 
 "================================================================================================================================= 
@@ -2613,7 +2615,7 @@ hi SignatureMarkerText term=standout ctermbg=2   ctermbg=2   guifg=#E06C75 guibg
 "=================================================================================================================================
 " Ultisnips settings
 "=================================================================================================================================
-let g:UltiSnipsExpandTrigger="<LocalLeader><Tab>"
+let g:UltiSnipsExpandTrigger="<C-j>"
 let g:UltiSnipsJumpForwardTrigger="<C-j>"
 let g:UltiSnipsJumpBackwardTrigger="<C-k>"
 
