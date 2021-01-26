@@ -1140,6 +1140,7 @@ inoremap <F7> <esc> :call asyncrun#quickfix_toggle(6)<cr>
 " indentLine
 "=================================================================================================================================
 let g:indentLine_enabled = 0
+let g:indentLine_defaultGroup = 'SpecialKey'
 nnoremap <LocalLeader>l :IndentLinesToggle<CR>
 inoremap <LocalLeader>l <esc> :IndentLinesToggle<CR>
 
