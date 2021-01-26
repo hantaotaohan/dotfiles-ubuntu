@@ -1155,11 +1155,15 @@ let g:startify_enable_special = 1
 let g:startify_change_cmd = 'lcd'
 
 let g:startify_custom_header = [
+		\'                                         ',
+		\'                                         ',
 		\'  _____                 _____            ',
 		\' |_   _|_ _  ___       |_   _|_ _  ___   ',
 		\'   | |/ _` |/ _ \        | |/ _` |/ _ \  ',
 		\'   | | (_| | (_) |  _    | | (_| | (_) | ',
 		\'   |_|\__,_|\___/  (_)   |_|\__,_|\___/  ',
+		\'                                         ',
+		\'                                         ',
 		\ ]
 
 let g:startify_list_order = [
