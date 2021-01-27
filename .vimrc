@@ -810,14 +810,12 @@ set foldmethod=manual                                                    " 启�
 " nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>         " 空格打开关闭折叠视图
 " vnoremap <Space> zf                                                      " 空格打开关闭折叠视图
 "---------------------------------------------------------------------------------------------------------------------------------
-" augroup AutoSaveFolds
-" autocmd!
-" au BufWinLeave .* mkview                                                 " 关闭时自动保存折叠视图
-" au BufWinEnter .* silent loadview                                        " 打开时自动读取折叠视图
-" augroup END
+augroup AutoSaveView
+autocmd!
+autocmd BufWinLeave,BufLeave,BufWritePost,BufHidden,QuitPre *.* nested silent! mkview! " 关闭时自动保存折叠视图
+autocmd BufWinEnter *.* silent! loadview                                               " 打开时自动读取折叠视图
+augroup END
 
-au BufWinLeave *.* silent mkview                                            " 关闭时自动保存折叠视图
-au BufWinEnter *.* silent loadview                                          " 打开时自动读取折叠视图
 
 "=================================================================================================================================
 " 跨终端粘贴 
