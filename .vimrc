@@ -150,30 +150,30 @@ augroup END
 " ----------------------------------------------------------------o--------------------------------------------------------------o
 " If sudo, disable vim swap/backup/undo/shada/viminfo writing
 if $SUDO_USER !=# '' && $USER !=# $SUDO_USER
-		\ && $HOME !=# expand('~'.$USER, 1)
-		\ && $HOME ==# expand('~'.$SUDO_USER, 1)
-	set noswapfile
-	set nobackup
-	set nowritebackup
-	set noundofile
+    \ && $HOME !=# expand('~'.$USER, 1)
+    \ && $HOME ==# expand('~'.$SUDO_USER, 1)
+    set noswapfile
+    set nobackup
+    set nowritebackup
+    set noundofile
 endif
 
 " ----------------------------------------------------------------o--------------------------------------------------------------o
 " Secure sensitive information, disable backup files in temp directories
 if exists('&backupskip')
-	set backupskip+=/tmp/*,$TMPDIR/*,$TMP/*,$TEMP/*,*/shm/*,/private/var/*
-	set backupskip+=.vault.vim
+    set backupskip+=/tmp/*,$TMPDIR/*,$TMP/*,$TEMP/*,*/shm/*,/private/var/*
+    set backupskip+=.vault.vim
 endif
 
 " ----------------------------------------------------------------o--------------------------------------------------------------o
 " Disable swap/undo/viminfo files in temp directories or shm
 augroup user_secure
-	autocmd!
-	silent! autocmd BufNewFile,BufReadPre
-		\ /tmp/*,$TMPDIR/*,$TMP/*,$TEMP/*,*/shm/*,/private/var/*,.vault.vim
-		\ setlocal noswapfile noundofile
-		\ | set nobackup nowritebackup
-		\ | if has('nvim') | set shada= | else | set viminfo= | endif
+    autocmd!
+    silent! autocmd BufNewFile,BufReadPre
+    \ /tmp/*,$TMPDIR/*,$TMP/*,$TEMP/*,*/shm/*,/private/var/*,.vault.vim
+    \ setlocal noswapfile noundofile
+    \ | set nobackup nowritebackup
+    \ | if has('nvim') | set shada= | else | set viminfo= | endif
 augroup END
 
 " ----------------------------------------------------------------o--------------------------------------------------------------o
@@ -190,7 +190,7 @@ set smarttab                                                               " 指
 set shiftround                                                             " 将缩进舍入为shiftwidth的倍数
 
 if exists('&breakindent')
-	set breakindentopt=shift:4,min:20
+    set breakindentopt=shift:4,min:20
 endif
 
 " ----------------------------------------------------------------o--------------------------------------------------------------o
@@ -216,7 +216,6 @@ set wrapscan                                                               " 开
 " ----------------------------------------------------------------o--------------------------------------------------------------o
 set complete=.,w,b,k                                                       " 补全设置
 set completeopt=menuone,menu,longest,preview                               " 自动补全
-au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif    " 自动预览窗口
 
 " ----------------------------------------------------------------o--------------------------------------------------------------o
 " Behavior
@@ -287,10 +286,10 @@ set tags=./.tags;,.tags                                                    " 设
 " 折叠设置 
 " ----------------------------------------------------------------o--------------------------------------------------------------o
 if has('folding') && has('vim_starting')
-	set foldenable
-	set foldmethod=manual                                                  " 启用手动折叠zf
-	" set foldmethod=indent
-	" set foldlevelstart=99
+    set foldenable
+    set foldmethod=manual                                                  " 启用手动折叠zf
+    " set foldmethod=indent
+    " set foldlevelstart=99
 endif
 
 " nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>         " 空格打开关闭折叠视图
@@ -305,7 +304,6 @@ endif
 " 终端下允许 ALT
 " 记得设置 ttimeout （见 init-basic.vim） 和 ttimeoutlen （上面）
 " ----------------------------------------------------------------o--------------------------------------------------------------o
-
 if has('nvim') == 0 && has('gui_running') == 0
 	function! s:metacode(key)
 		exec "set <M-".a:key.">=\e".a:key
@@ -329,9 +327,9 @@ endif
 " 终端下功能键设置
 " ----------------------------------------------------------------o--------------------------------------------------------------o
 function! s:key_escape(name, code)
-	if has('nvim') == 0 && has('gui_running') == 0
-		exec "set ".a:name."=\e".a:code
-	endif
+    if has('nvim') == 0 && has('gui_running') == 0
+        exec "set ".a:name."=\e".a:code
+    endif
 endfunc
 
 " ----------------------------------------------------------------o--------------------------------------------------------------o
@@ -474,10 +472,10 @@ tnoremap <C-l> <C-w><C-l>
 "-----------------------------------------------------------------o--------------------------------------------------------------o
 nnoremap <F2> :call HideNumber()<CR>
 function! HideNumber()
-	if(&number == 1)
-		set nonumber
-	else
-		set number
+    if(&number == 1)
+        set nonumber
+    else
+        set number
     endif
 endfunc
 
@@ -497,7 +495,7 @@ endfunc
 " F3 语法开关，关闭语法可以加快大文件的展示
 "-----------------------------------------------------------------o--------------------------------------------------------------o
 nnoremap <silent><F3>
-    \ : if exists("syntax_on") <BAR>
+    \ :if exists("syntax_on") <BAR>
     \    syntax off <BAR>
     \ else <BAR>
     \    syntax enable <BAR>
@@ -565,8 +563,16 @@ augroup END
 " ----------------------------------------------------------------o--------------------------------------------------------------o
 augroup AutoSaveView
 	autocmd!
-	autocmd BufWinLeave,BufLeave,BufWritePost,BufHidden,QuitPre * nested silent! mkview! " 关闭时自动保存折叠视图
-	autocmd BufWinEnter * silent! loadview                                               " 打开时自动读取折叠视图
+	autocmd BufWinLeave,BufLeave,BufWritePost,BufHidden,QuitPre * nested silent! mkview! 
+	autocmd BufWinEnter * silent! loadview                                              
+augroup END
+
+" ----------------------------------------------------------------o--------------------------------------------------------------o
+" 自动关闭预览窗口
+" ----------------------------------------------------------------o--------------------------------------------------------------o
+augroup AutoClosePreview
+    autocmd!
+    autocmd CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif  
 augroup END
 
 "=================================================================================================================================
@@ -578,48 +584,48 @@ augroup END
 " Quickly close the current window
 " ----------------------------------------------------------------o--------------------------------------------------------------o
 function! MyBufferClose()
-	let curbid = '%'
-	let allwinid = winnr('$')
-	let allbid = len(filter(range(1, bufnr('$')), 'buflisted(v:val)'))
-	let is_empty_buffer = (bufname(curbid) == '') && !getbufvar(curbid, '&modified')
-	let qflist =  get(getqflist({'winid':0}), 'winid', 0)
-	let loclist = get(getloclist(0, {'winid':0}), 'winid', 0)
-	let allfiletype =  getbufvar(bufnr('$'), '&filetype')
-	let curfiletype =  getbufvar(bufnr('%'), '&filetype')
-	let allmod = len(filter(getbufinfo(), 'v:val.changed == 1'))
+    let curbid = '%'
+    let allwinid = winnr('$')
+    let allbid = len(filter(range(1, bufnr('$')), 'buflisted(v:val)'))
+    let is_empty_buffer = (bufname(curbid) == '') && !getbufvar(curbid, '&modified')
+    let qflist =  get(getqflist({'winid':0}), 'winid', 0)
+    let loclist = get(getloclist(0, {'winid':0}), 'winid', 0)
+    let allfiletype =  getbufvar(bufnr('$'), '&filetype')
+    let curfiletype =  getbufvar(bufnr('%'), '&filetype')
+    let allmod = len(filter(getbufinfo(), 'v:val.changed == 1'))
 
-	if loclist > 1
-		execute "lclose"
-	elseif qflist > 1
-		execute "cclose"
-	elseif allfiletype == 'nerdtree' || loclist > 1 || qflist > 1
-		execute "NERDTreeClose"
-	elseif allfiletype == 'tagbar' || loclist > 1 || qflist > 1
-		execute "TagbarClose"
-	elseif allwinid > 1 && allfiletype == 'help' && curfiletype == 'vim'
-		execute "close"
-	elseif allbid >= 2 && allmod >= 1
-		execute "silent bm!" | redraw
-		let file = expand('%:P')
+    if loclist > 1
+        execute "lclose"
+    elseif qflist > 1
+        execute "cclose"
+    elseif allfiletype == 'nerdtree' || loclist > 1 || qflist > 1
+        execute "NERDTreeClose"
+    elseif allfiletype == 'tagbar' || loclist > 1 || qflist > 1
+        execute "TagbarClose"
+    elseif allwinid > 1 && allfiletype == 'help' && curfiletype == 'vim'
+        execute "close"
+    elseif allbid >= 2 && allmod >= 1
+        execute "silent bm!" | redraw
+        let file = expand('%:P')
         try
-			if (confirm("将改变保存到 "  . file . '？' , "&Yes\n&No" , 2)==1) | redraw
-				execute "w!"
-				execute "silent bnext!"
-				execute "bdelete#"
-			else
-				execute "edit!"
-			endif
+            if (confirm("将改变保存到 "  . file . '？' , "&Yes\n&No" , 2)==1) | redraw
+                execute "w!"
+                execute "silent bnext!"
+                execute "bdelete#"
+            else
+                execute "edit!"
+            endif
         endtry
-	elseif allbid >= 2 && allmod == 0
+    elseif allbid >= 2 && allmod == 0
         try
             execute "bnext!"
             execute "bdelete#"
         endtry
-	elseif allbid == 1 && allmod >= 1
-		execute "confirm q"
-	elseif allbid == 1 && allmod == 0
-		execute "q"
-	endif
+    elseif allbid == 1 && allmod >= 1
+        execute "confirm q"
+    elseif allbid == 1 && allmod == 0
+        execute "q"
+    endif
 endfunction
 
 nnoremap <silent><localleader>q :call MyBufferClose()<cr>
@@ -630,33 +636,33 @@ vnoremap <silent><localleader>q <Esc>:call MyBufferClose()<cr>
 " Quickly Save the current window
 " ----------------------------------------------------------------o--------------------------------------------------------------o
 function! MySave()
-	let cantSave = "redraw | echohl ErrorMsg | echo \"Can't save the file: \" . v:exception | return | echohl None"
-	let notSaved = "redraw | echohl ErrorMsg | echo 'This buffer was NOT saved!' | return | echohl None"
-	let time = strftime("%T")
-	let file = expand('%:P')
-	let permissions = getfperm(file)
-	try
-		silent w
-	catch /:E45:\|:E505:\|:E212:/
-		if (confirm("This Buffer is read only! Wanna save it anyway?", "&Yes\n&No", 2)==1)
-			redraw
-			try | silent w! | catch /:E212:/ |
-				if (confirm("Can't open the file, do you want to save it as Root?", "&Yes\n&No", 2)==1)
-					try | execute 'silent! write !sudo tee % >/dev/null' | edit! | catch | exe cantSave | endtry
-				else
-					exe notSaved
-				endif
-			catch
-				exe cantSave
-			endtry
-		else
-			exe notSaved
-		endif
-	endtry
-	redraw
-	echom '"' . file . '"' . " Save Done" . ' ' . time
-	redraw
-	echohl None
+    let cantSave = "redraw | echohl ErrorMsg | echo \"Can't save the file: \" . v:exception | return | echohl None"
+    let notSaved = "redraw | echohl ErrorMsg | echo 'This buffer was NOT saved!' | return | echohl None"
+    let time = strftime("%T")
+    let file = expand('%:P')
+    let permissions = getfperm(file)
+        try
+            silent w
+        catch /:E45:\|:E505:\|:E212:/
+            if (confirm("This Buffer is read only! Wanna save it anyway?", "&Yes\n&No", 2)==1)
+                redraw
+                try | silent w! | catch /:E212:/ |
+                    if (confirm("Can't open the file, do you want to save it as Root?", "&Yes\n&No", 2)==1)
+                        try | execute 'silent! write !sudo tee % >/dev/null' | edit! | catch | exe cantSave | endtry
+                    else
+                        exe notSaved
+                    endif
+                catch
+                    exe cantSave
+                endtry
+            else
+                exe notSaved
+            endif
+        endtry
+    redraw
+    echom '"' . file . '"' . " Save Done" . ' ' . time
+    redraw
+    echohl None
 endfunction
 
 nnoremap <silent><localleader>w :call MySave()<CR>
@@ -668,15 +674,15 @@ inoremap <silent><localleader>w <ESC>:call MySave()<CR>
 " ----------------------------------------------------------------o--------------------------------------------------------------o
 nnoremap <silent><LocalLeader>z  :<C-u>call <SID>zoom()<CR>
 function! s:zoom()
-	if exists('t:zoomed')
-		unlet t:zoomed
-		wincmd =
-	else
-		let t:zoomed = { 'nr': bufnr('%') }
-		vertical resize
-		resize
-		normal! ze
-	endif
+    if exists('t:zoomed')
+        unlet t:zoomed
+        wincmd =
+    else
+        let t:zoomed = { 'nr': bufnr('%') }
+        vertical resize
+        resize
+        normal! ze
+    endif
 endfunction
 
 "=================================================================================================================================
@@ -688,10 +694,10 @@ endfunction
 " Vim-Plug-AutoSync 
 " ----------------------------------------------------------------o--------------------------------------------------------------o
 au VimEnter *
-            \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
-            \|   PlugInstall --sync | qa!
-            \| endif
-	    
+    \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+    \|   PlugInstall --sync | qa!
+    \| endif
+
 " ----------------------------------------------------------------o--------------------------------------------------------------o
 " Vim-Plug-Config   
 " ----------------------------------------------------------------o--------------------------------------------------------------o
@@ -760,8 +766,8 @@ call plug#end()
 "  Themes
 " ----------------------------------------------------------------o--------------------------------------------------------------o
 if exists('g:plugs["onedark.vim"]')
-colorscheme onedark                                                      " 终端配色方案
-set background=dark                                                      " 开启深色模式
+    colorscheme onedark                                                      " 终端配色方案
+    set background=dark                                                      " 开启深色模式
 endif
 
 " ----------------------------------------------------------------o--------------------------------------------------------------o
@@ -874,7 +880,7 @@ if exists('g:plugs["vim-airline"]')
 " Symbols
 " ----------------------------------------------------------------o--------------------------------------------------------------o
 	if !exists('g:airline_symbols')
-		let g:airline_symbols = {}
+        let g:airline_symbols = {}
 	endif
 	let g:airline_left_sep = ''
 	let g:airline_left_alt_sep = ''
@@ -1037,29 +1043,29 @@ let g:tagbar_map_showproto = "d"
 " Markdown2-Ctags
 "=================================================================================================================================
 let g:tagbar_type_markdown = {
-		\ 'ctagstype': 'markdown',
-		\ 'ctagsbin' : '$HOME/.vim/plugged/markdown2ctags/markdown2ctags.py', 
-		\ 'ctagsargs' : '-f - --sort=yes --sro=»',
-		\ 'kinds' : [
-			\ 's:sections',
-			\ 'i:images'
-		\ ],
-		\ 'sro' : '»',
-		\ 'kind2scope' : {
-			\ 's' : 'section',
-		\ },
-		\ 'sort': 0,
-		\ }
+    \ 'ctagstype': 'markdown',
+    \ 'ctagsbin' : '$HOME/.vim/plugged/markdown2ctags/markdown2ctags.py', 
+    \ 'ctagsargs' : '-f - --sort=yes --sro=»',
+    \ 'kinds' : [
+        \ 's:sections',
+        \ 'i:images'
+    \ ],
+    \ 'sro' : '»',
+    \ 'kind2scope' : {
+        \ 's' : 'section',
+    \ },
+    \ 'sort': 0,
+    \ }
 
 let g:tagbar_type_vimwiki = {
-		\   'ctagstype':'vimwiki'
-		\ , 'kinds':['h:header']
-		\ , 'sro':'&&&'
-		\ , 'kind2scope':{'h':'header'}
-		\ , 'sort':0
-		\ , 'ctagsbin':'$HOME/.vim/vimwiki2ctags.py'
-		\ , 'ctagsargs': 'markdown'
-		\ }
+    \   'ctagstype':'vimwiki'
+    \ , 'kinds':['h:header']
+    \ , 'sro':'&&&'
+    \ , 'kind2scope':{'h':'header'}
+    \ , 'sort':0
+    \ , 'ctagsbin':'$HOME/.vim/vimwiki2ctags.py'
+    \ , 'ctagsargs': 'markdown'
+    \ }
 
 "=================================================================================================================================
 " FZF
@@ -1172,8 +1178,6 @@ let g:startify_custom_footer = [
     \ '    +----------------+-------------+',
     \]
 
-
-
 "=================================================================================================================================
 " 
 "
@@ -1192,7 +1196,6 @@ let g:startify_custom_footer = [
 "
 "
 "=================================================================================================================================
-
 "=================================================================================================================================
 " Vimwiki Zettel settings
 "=================================================================================================================================
@@ -1311,9 +1314,9 @@ hi VimwikiBold term=reverse cterm=underline ctermfg=204 gui=underline guifg=#E06
 autocmd BufWritePost ~/blog/content/posts/*.md if bufname() !='inbox.md' | call s:backlinks()
 function! s:backlinks()
     let fw = search('Backlinks')
-	let bf = bufname()
-	if bf != "inbox.md" && fw == 0
-		exec ":ZettelBackLinks"
+    let bf = bufname()
+    if bf != "inbox.md" && fw == 0
+        exec ":ZettelBackLinks"
     endif
 endfunction
 
@@ -1367,34 +1370,35 @@ augroup END
 " 自定义airline同步通知颜色
 "-----------------------------------------------------------------o--------------------------------------------------------------o
 function! AirlineThemePatch(palette)
-  let a:palette.accents.running = [ '#c678dd', '' , '', '', '' ]
-  let a:palette.accents.success = [ '#61afef', '' , '', '', '' ]
-  let a:palette.accents.failure = [ '#e06c75', '' , '', '', '' ]
+    let a:palette.accents.running = [ '#c678dd', '' , '', '', '' ]
+    let a:palette.accents.success = [ '#61afef', '' , '', '', '' ]
+    let a:palette.accents.failure = [ '#e06c75', '' , '', '', '' ]
 endfunction
 let g:airline_theme_patch_func = 'AirlineThemePatch'
 
 let g:asyncrun_status = ''
 let g:async_status_old = ''
 function! Get_asyncrun_running()
-  let async_status = g:asyncrun_status
-  if async_status != g:async_status_old
-    if async_status == 'running'
-      call airline#parts#define_accent('asyncrun_status', 'running')
-    elseif async_status == 'success'
-      call airline#parts#define_accent('asyncrun_status', 'success')
-    elseif async_status == 'failure'
-      call airline#parts#define_accent('asyncrun_status', 'failure')
+    let async_status = g:asyncrun_status
+    if async_status != g:async_status_old
+        if async_status == 'running'
+            call airline#parts#define_accent('asyncrun_status', 'running')
+        elseif async_status == 'success'
+            call airline#parts#define_accent('asyncrun_status', 'success')
+        elseif async_status == 'failure'
+            call airline#parts#define_accent('asyncrun_status', 'failure')
+        endif
+        let g:airline_section_x = airline#section#create(['asyncrun_status'])
+        AirlineRefresh
+        let g:async_status_old = async_status
     endif
-    let g:airline_section_x = airline#section#create(['asyncrun_status'])
-    AirlineRefresh
-    let g:async_status_old = async_status
-  endif
-  return async_status
+    return async_status
 endfunction
 
 try 
-	call airline#parts#define_function('asyncrun_status', 'Get_asyncrun_running')
-	let g:airline_section_x = airline#section#create(['asyncrun_status'])
+    call airline#parts#define_function('asyncrun_status', 'Get_asyncrun_running')
+    let g:airline_section_x = airline#section#create(['asyncrun_status'])
+    AirlineRefresh
 catch
 endtry
 
@@ -1402,11 +1406,11 @@ endtry
 " 使用wd删除markdown时自动删除相对应不使用的HTML文件
 "-----------------------------------------------------------------o--------------------------------------------------------------o
 function! VimwikiDeleteClean()
-  let htmlfile = expand('%:r') . '.html'
-  lcd ${HOME}/vimwiki/docs/
-  call delete(htmlfile)
-  lcd %:p:h
-  call vimwiki#base#delete_link()
+    let htmlfile = expand('%:r') . '.html'
+    lcd ${HOME}/vimwiki/docs/
+    call delete(htmlfile)
+    lcd %:p:h
+    call vimwiki#base#delete_link()
 endfunction
 autocmd filetype vimwiki nnoremap <buffer> <leader>wd :call VimwikiDeleteClean()<CR>
 
@@ -1417,30 +1421,29 @@ xnoremap ga <Plug>(EasyAlign)
 nnoremap ga <Plug>(EasyAlign)
 "-----------------------------------------------------------------o--------------------------------------------------------------o
 let g:easy_align_delimiters = {
-\ '>': { 'pattern': '>>\|=>\|>'  },
-\ '/': {
-\     'pattern':         '//\+\|/\*\|\*/',
-\     'delimiter_align': 'l',
-\     'ignore_groups':   ['!Comment'] },
-\ ']': {
-\     'pattern':       '[[\]]',
-\     'left_margin':   0,
-\     'right_margin':  0,
-\     'stick_to_left': 0
-\   },
-\ ')': {
-\     'pattern':       '[()]',
-\     'left_margin':   0,
-\     'right_margin':  0,
-\     'stick_to_left': 0
-\   },
-\ 'd': {
-\     'pattern':      ' \(\S\+\s*[;=]\)\@=',
-\     'left_margin':  0,
-\     'right_margin': 0
-\   }
-\ }
-
+    \ '>': { 'pattern': '>>\|=>\|>'  },
+    \ '/': {
+    \     'pattern':         '//\+\|/\*\|\*/',
+    \     'delimiter_align': 'l',
+    \     'ignore_groups':   ['!Comment'] },
+    \ ']': {
+    \     'pattern':       '[[\]]',
+    \     'left_margin':   0,
+    \     'right_margin':  0,
+    \     'stick_to_left': 0
+    \   },
+    \ ')': {
+    \     'pattern':       '[()]',
+    \     'left_margin':   0,
+    \     'right_margin':  0,
+    \     'stick_to_left': 0
+    \   },
+    \ 'd': {
+    \     'pattern':      ' \(\S\+\s*[;=]\)\@=',
+    \     'left_margin':  0,
+    \     'right_margin': 0
+    \   }
+    \ }
 
 "=================================================================================================================================
 " Vim-visual-multi  settings
@@ -1449,40 +1452,39 @@ let g:easy_align_delimiters = {
 " let g:VM_maps['Find Under']         = '<C-d>'           " replace C-n
 " let g:VM_maps['Find Subword Under'] = '<C-d>'           " replace visual C-n
 
-
 "=================================================================================================================================
 " Goyo  settings
 "=================================================================================================================================
 function! s:goyo_enter()
-	if has('gui_running')
-		set background=light
-		set linespace=7
-	elseif exists('$TMUX')
-		silent !tmux set status off
-	endif
-	set noshowmode
-	set noshowcmd
-	Limelight
+    if has('gui_running')
+        set background=light
+        set linespace=7
+    elseif exists('$TMUX')
+        silent !tmux set status off
+    endif
+    set noshowmode
+    set noshowcmd
+    Limelight
 endfunction
 
 function! s:goyo_leave()
-	if has('gui_running')
-		set background=dark
-		set linespace=0
-	elseif exists('$TMUX')
-		silent !tmux set status on
-	endif
-	set showmode
-	set showcmd
-	Limelight!
+    if has('gui_running')
+        set background=dark
+        set linespace=0
+    elseif exists('$TMUX')
+        silent !tmux set status on
+    endif
+    set showmode
+    set showcmd
+    Limelight!
 endfunction
 
 augroup user_plugin_goyo
-	autocmd!
-	autocmd! User GoyoEnter
-	autocmd! User GoyoLeave
-	autocmd  User GoyoEnter nested call <SID>goyo_enter()
-	autocmd  User GoyoLeave nested call <SID>goyo_leave()
+    autocmd!
+    autocmd! User GoyoEnter
+    autocmd! User GoyoLeave
+    autocmd  User GoyoEnter nested call <SID>goyo_enter()
+    autocmd  User GoyoLeave nested call <SID>goyo_leave()
 augroup END
 "-----------------------------------------------------------------o--------------------------------------------------------------o
 function! Switch_goyo()
@@ -1500,7 +1502,6 @@ nnoremap <silent><Leader>go :call Switch_goyo()<cr>
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
 
-
 "=================================================================================================================================
 " AutoPairs  settings
 "=================================================================================================================================
@@ -1511,7 +1512,6 @@ let g:AutoPairsShortcutToggle = ''
 let g:AutoPairsshortcutFastWrap = ''
 let g:AutoPairsShortcutJump = ''
 let g:AutoPairsShortcutBackInsert = ''
-
 
 "=================================================================================================================================
 " Which Key Map  settings
@@ -1525,7 +1525,7 @@ vnoremap <silent><leader> :WhichKeyVisual '<Space>'<CR>
 
 autocmd! FileType which_key
 autocmd  FileType which_key set laststatus=0 noshowmode noruler
-  \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
+    \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
 "-----------------------------------------------------------------o--------------------------------------------------------------o
 " let g:which_key_sep = '→'
 let g:which_key_sep = ' ◆ '
@@ -1554,184 +1554,184 @@ highlight default link WhichKeyFloating  Pmenu
 let g:which_key_map =  {}
 "-----------------------------------------------------------------o--------------------------------------------------------------o
 let g:which_key_map = {
-  \
-  \ 'e'    : [ ''                                            , 'MarkdownPreview'             ] ,
-  \ 'p'    : [ ''                                            , 'ClipboardImage to Vim'       ] ,
-  \ 'l'    : [ ''                                            , 'Toggle IndentLines'          ] ,
-  \
-  \ '<F2>' : [ ''                                            , 'Toggle Number'               ] ,
-  \ '<F3>' : [ ''                                            , 'Toggle Syntax'               ] ,
-  \ '<F4>' : [ ''                                            , 'Toggle Paste'                ] ,
-  \ '<F5>' : [ ''                                            , 'Toggle Runner'               ] ,
-  \ '<F6>' : [ ''                                            , 'Toggle Terminal'             ] ,
-  \ '<F7>' : [ ''                                            , 'Toggle QuickFix'             ] ,
-  \ '<F8>' : [ ''                                            , 'Toggle NERDTree'             ] ,
-  \ '<F9>' : [ ''                                            , 'Toggle TagBar'               ] ,
-  \
-  \ 'm'    : {
-  \ 'name' : '+SignatureMap',
-  \
-  \ "a"    : [''                                             , 'List All Marks'              ] ,
-  \ "m"    : [''                                             , 'MarkLine'                    ] ,
-  \ "d"    : [''                                             , 'Delete Marks'                ] ,
-  \ "x"    : [''                                             , 'Delete All Marks'            ] ,
-  \ "n"    : [''                                             , 'Next Marks Line'             ] ,
-  \ "p"    : [''                                             , 'Prev Marks Line'             ] ,
-  \ "f"    : [''                                             , 'Next Marks Spot'             ] ,
-  \ "b"    : [''                                             , 'Prev Marks Spot'             ] ,
-  \
-  \ },
-  \
-  \ }
+    \
+    \ 'e'    : [ ''                                            , 'MarkdownPreview'             ] ,
+    \ 'p'    : [ ''                                            , 'ClipboardImage to Vim'       ] ,
+    \ 'l'    : [ ''                                            , 'Toggle IndentLines'          ] ,
+    \
+    \ '<F2>' : [ ''                                            , 'Toggle Number'               ] ,
+    \ '<F3>' : [ ''                                            , 'Toggle Syntax'               ] ,
+    \ '<F4>' : [ ''                                            , 'Toggle Paste'                ] ,
+    \ '<F5>' : [ ''                                            , 'Toggle Runner'               ] ,
+    \ '<F6>' : [ ''                                            , 'Toggle Terminal'             ] ,
+    \ '<F7>' : [ ''                                            , 'Toggle QuickFix'             ] ,
+    \ '<F8>' : [ ''                                            , 'Toggle NERDTree'             ] ,
+    \ '<F9>' : [ ''                                            , 'Toggle TagBar'               ] ,
+    \
+    \ 'm'    : {
+    \ 'name' : '+SignatureMap',
+    \
+    \ "a"    : [''                                             , 'List All Marks'              ] ,
+    \ "m"    : [''                                             , 'MarkLine'                    ] ,
+    \ "d"    : [''                                             , 'Delete Marks'                ] ,
+    \ "x"    : [''                                             , 'Delete All Marks'            ] ,
+    \ "n"    : [''                                             , 'Next Marks Line'             ] ,
+    \ "p"    : [''                                             , 'Prev Marks Line'             ] ,
+    \ "f"    : [''                                             , 'Next Marks Spot'             ] ,
+    \ "b"    : [''                                             , 'Prev Marks Spot'             ] ,
+    \
+    \ },
+    \
+    \ }
 
 let g:which_key_map[';'] = {
-  \ 'name' : '+LocalLeader' ,
-  \
-  \ 'q'    : [ ''                                            , 'Exit'                        ] ,
-  \ 'w'    : [ ''                                            , 'Save'                        ] ,
-  \ 't'    : [ ''                                            , 'Toggle TagBar'               ] ,
-  \ 'b'    : [ ''                                            , 'Toggle LeaderF BufferTag'    ] ,
-  \ 'u'    : [ ''                                            , 'Toggle LeaderF Functions'    ] ,
-  \ 'f'    : [ ''                                            , 'Toggle LeaderF Files'        ] ,
-  \ 'e'    : [ ''                                            , 'Toggle NERDTree'             ] ,
-  \ 'm'    : [ ''                                            , 'Toggle Signature'            ] ,
-  \ 'z'    : [ ''                                            , 'Toggle Zoom mode'            ] ,
-  \ 'y'    : [ ''                                            , 'Copy  System Clipboard'      ] ,
-  \ 'p'    : [ ''                                            , 'Paste System Clipboard'      ] ,
-  \ 's'    : [ ''                                            , 'Toggle Startify'             ] ,
-  \ 'r'    : [ ''                                            , 'Toggle Runner Code'          ] ,
-  \ 'c'    : [ ''                                            , 'Toggle Terminal'             ] ,
-  \
-  \ "1"    : [''                                             , 'Toggle Buffers 1 '           ] ,
-  \ "2"    : [''                                             , 'Toggle Buffers 2 '           ] ,
-  \ "3"    : [''                                             , 'Toggle Buffers 3 '           ] ,
-  \ "4"    : [''                                             , 'Toggle Buffers 4 '           ] ,
-  \ "5"    : [''                                             , 'Toggle Buffers 5 '           ] ,
-  \ "6"    : [''                                             , 'Toggle Buffers 6 '           ] ,
-  \ "7"    : [''                                             , 'Toggle Buffers 7 '           ] ,
-  \ "8"    : [''                                             , 'Toggle Buffers 8 '           ] ,
-  \ "9"    : [''                                             , 'Toggle Buffers 9 '           ] ,
-  \ "0"    : [''                                             , 'Toggle Buffers 10'           ] ,
-  \ "a"    : [''                                             , 'Buffer Add'                  ] ,
-  \ "Tab"  : [''                                             , 'Buffer Next'                 ] ,
-  \ "STab" : [''                                             , 'Buffer Previous'             ] ,
-  \
-  \ "<Tab>": [''                                             , 'Edit Mode UltiSnip'          ] ,
-  \
-  \ }
+    \ 'name' : '+LocalLeader' ,
+    \
+    \ 'q'    : [ ''                                            , 'Exit'                        ] ,
+    \ 'w'    : [ ''                                            , 'Save'                        ] ,
+    \ 't'    : [ ''                                            , 'Toggle TagBar'               ] ,
+    \ 'b'    : [ ''                                            , 'Toggle LeaderF BufferTag'    ] ,
+    \ 'u'    : [ ''                                            , 'Toggle LeaderF Functions'    ] ,
+    \ 'f'    : [ ''                                            , 'Toggle LeaderF Files'        ] ,
+    \ 'e'    : [ ''                                            , 'Toggle NERDTree'             ] ,
+    \ 'm'    : [ ''                                            , 'Toggle Signature'            ] ,
+    \ 'z'    : [ ''                                            , 'Toggle Zoom mode'            ] ,
+    \ 'y'    : [ ''                                            , 'Copy  System Clipboard'      ] ,
+    \ 'p'    : [ ''                                            , 'Paste System Clipboard'      ] ,
+    \ 's'    : [ ''                                            , 'Toggle Startify'             ] ,
+    \ 'r'    : [ ''                                            , 'Toggle Runner Code'          ] ,
+    \ 'c'    : [ ''                                            , 'Toggle Terminal'             ] ,
+    \
+    \ "1"    : [''                                             , 'Toggle Buffers 1 '           ] ,
+    \ "2"    : [''                                             , 'Toggle Buffers 2 '           ] ,
+    \ "3"    : [''                                             , 'Toggle Buffers 3 '           ] ,
+    \ "4"    : [''                                             , 'Toggle Buffers 4 '           ] ,
+    \ "5"    : [''                                             , 'Toggle Buffers 5 '           ] ,
+    \ "6"    : [''                                             , 'Toggle Buffers 6 '           ] ,
+    \ "7"    : [''                                             , 'Toggle Buffers 7 '           ] ,
+    \ "8"    : [''                                             , 'Toggle Buffers 8 '           ] ,
+    \ "9"    : [''                                             , 'Toggle Buffers 9 '           ] ,
+    \ "0"    : [''                                             , 'Toggle Buffers 10'           ] ,
+    \ "a"    : [''                                             , 'Buffer Add'                  ] ,
+    \ "Tab"  : [''                                             , 'Buffer Next'                 ] ,
+    \ "STab" : [''                                             , 'Buffer Previous'             ] ,
+    \
+    \ "<Tab>": [''                                             , 'Edit Mode UltiSnip'          ] ,
+    \
+    \ }
 
 let g:which_key_map.d = {
-  \ 'name' : '+Display',
-  \
-  \ "w"    : ['<C-W>w'                                       , 'other-window'                ] ,
-  \ "d"    : ['<C-W>c'                                       , 'delete-window'               ] ,
-  \ "b"    : ['<C-W>s'                                       , 'split-window-below'          ] ,
-  \ "r"    : ['<C-W>v'                                       , 'split-window-right'          ] ,
-  \ "2"    : ['<C-W>v'                                       , 'layout-double-columns'       ] ,
-  \ "h"    : ['<C-W>5<'                                      , 'expand-window-left'          ] ,
-  \ "l"    : ['<C-W>5>'                                      , 'expand-window-right'         ] ,
-  \ "a"    : ['<C-W>='                                       , 'balance-window'              ] ,
-  \ "s"    : ['<C-W>s'                                       , 'split-window-below'          ] ,
-  \ "v"    : ['<C-W>v'                                       , 'split-window-below'          ] ,
-  \ "k"    : [':resize -5'                                   , 'expand-window-up'            ] ,
-  \ "j"    : [':resize +5'                                   , 'expand-window-below'         ] ,
-  \
-  \ }
+    \ 'name' : '+Display',
+    \
+    \ "w"    : ['<C-W>w'                                       , 'other-window'                ] ,
+    \ "d"    : ['<C-W>c'                                       , 'delete-window'               ] ,
+    \ "b"    : ['<C-W>s'                                       , 'split-window-below'          ] ,
+    \ "r"    : ['<C-W>v'                                       , 'split-window-right'          ] ,
+    \ "2"    : ['<C-W>v'                                       , 'layout-double-columns'       ] ,
+    \ "h"    : ['<C-W>5<'                                      , 'expand-window-left'          ] ,
+    \ "l"    : ['<C-W>5>'                                      , 'expand-window-right'         ] ,
+    \ "a"    : ['<C-W>='                                       , 'balance-window'              ] ,
+    \ "s"    : ['<C-W>s'                                       , 'split-window-below'          ] ,
+    \ "v"    : ['<C-W>v'                                       , 'split-window-below'          ] ,
+    \ "k"    : [':resize -5'                                   , 'expand-window-up'            ] ,
+    \ "j"    : [':resize +5'                                   , 'expand-window-below'         ] ,
+    \
+    \ }
 
 let g:which_key_map.f = {
-  \ "name" : "+FZF",
-  \
-  \ "f"    : ['Files'                                        , 'Search Files'                ] ,
-  \ "l"    : ['BLines'                                       , 'Search Lines Buffers'        ] ,
-  \ "o"    : ['Colors'                                       , 'Search Color Themes'         ] ,
-  \ "t"    : ['BTags'                                        , 'Search Tags'                 ] ,
-  \ "b"    : ['Buffers'                                      , 'Search Open Buffers'         ] ,
-  \ "i"    : ['GFiles'                                       , 'Search Git-Files'            ] ,
-  \ "g"    : ['GFiles?'                                      , 'Search Modified-Git-Files'   ] ,
-  \ "a"    : ['Ag'                                           , 'Search Ag'                   ] ,
-  \ "r"    : ['Rg'                                           , 'Search Rg'                   ] ,
-  \ "m"    : ['Marks'                                        , 'Search Marks'                ] ,
-  \ "w"    : ['Windows'                                      , 'Search Windows'              ] ,
-  \ "c"    : ['Commands'                                     , 'Search Commands'             ] ,
-  \
-  \ }
+    \ "name" : "+FZF",
+    \
+    \ "f"    : ['Files'                                        , 'Search Files'                ] ,
+    \ "l"    : ['BLines'                                       , 'Search Lines Buffers'        ] ,
+    \ "o"    : ['Colors'                                       , 'Search Color Themes'         ] ,
+    \ "t"    : ['BTags'                                        , 'Search Tags'                 ] ,
+    \ "b"    : ['Buffers'                                      , 'Search Open Buffers'         ] ,
+    \ "i"    : ['GFiles'                                       , 'Search Git-Files'            ] ,
+    \ "g"    : ['GFiles?'                                      , 'Search Modified-Git-Files'   ] ,
+    \ "a"    : ['Ag'                                           , 'Search Ag'                   ] ,
+    \ "r"    : ['Rg'                                           , 'Search Rg'                   ] ,
+    \ "m"    : ['Marks'                                        , 'Search Marks'                ] ,
+    \ "w"    : ['Windows'                                      , 'Search Windows'              ] ,
+    \ "c"    : ['Commands'                                     , 'Search Commands'             ] ,
+    \
+    \ }
 
 
 let g:which_key_map.t = {
-  \ 'name' : '+Table Mode',
-  \
-  \ "m"    : ['TableModeToggle'                              , 'TableModeToggle'             ] ,
-  \
-  \ }
+    \ 'name' : '+Table Mode',
+    \
+    \ "m"    : ['TableModeToggle'                              , 'TableModeToggle'             ] ,
+    \
+    \ }
 
 let g:which_key_map.v = {
-  \ 'name' : '+VCS',
-  \
-  \ "e"    : ['Gbrowse'                                     , 'Browse'                       ] ,
-  \ "i"    : ['Gdiff'                                       , 'Diff'                         ] ,
-  \ "g"    : ['Gmerge'                                      , 'Merge'                        ] ,
-  \ "s"    : ['Gpush'                                       , 'Push'                         ] ,
-  \ "a"    : ['Grebase'                                     , 'Rebase'                       ] ,
-  \ "b"    : ['Gblame'                                      , 'Blame'                        ] ,
-  \ "c"    : ['Gcommit'                                     , 'Commit'                       ] ,
-  \ "d"    : ['Gdelete'                                     , 'Delete'                       ] ,
-  \ "f"    : ['Gfetch'                                      , 'Fetch'                        ] ,
-  \ "o"    : ['Glog'                                        , 'Log'                          ] ,
-  \ "m"    : ['Gmove'                                       , 'Move'                         ] ,
-  \ "l"    : ['Gpull'                                       , 'Pull'                         ] ,
-  \ "r"    : ['Grename'                                     , 'Rename'                       ] ,
-  \ "t"    : ['Gstatus'                                     , 'Status'                       ] ,
-  \
-  \ }
+    \ 'name' : '+VCS',
+    \
+    \ "e"    : ['Gbrowse'                                     , 'Browse'                       ] ,
+    \ "i"    : ['Gdiff'                                       , 'Diff'                         ] ,
+    \ "g"    : ['Gmerge'                                      , 'Merge'                        ] ,
+    \ "s"    : ['Gpush'                                       , 'Push'                         ] ,
+    \ "a"    : ['Grebase'                                     , 'Rebase'                       ] ,
+    \ "b"    : ['Gblame'                                      , 'Blame'                        ] ,
+    \ "c"    : ['Gcommit'                                     , 'Commit'                       ] ,
+    \ "d"    : ['Gdelete'                                     , 'Delete'                       ] ,
+    \ "f"    : ['Gfetch'                                      , 'Fetch'                        ] ,
+    \ "o"    : ['Glog'                                        , 'Log'                          ] ,
+    \ "m"    : ['Gmove'                                       , 'Move'                         ] ,
+    \ "l"    : ['Gpull'                                       , 'Pull'                         ] ,
+    \ "r"    : ['Grename'                                     , 'Rename'                       ] ,
+    \ "t"    : ['Gstatus'                                     , 'Status'                       ] ,
+    \
+    \ }
 
 let g:which_key_map.w = {
-  \ 'name' : '+VimWiki',
-  \
-  \ "w"    : [''                                            , 'Go To Index'                  ] ,
-  \ "n"    : [''                                            , 'Create new wiki page'         ] ,
-  \ "d"    : [''                                            , 'Delete wiki page'             ] ,
-  \ "r"    : [''                                            , 'Rename wiki page'             ] ,
-  \ "v"    : [''                                            , 'Toggle wiki List'             ] ,
-  \ "s"    : [''                                            , 'Search-for-wiki-pattam'       ] ,
-  \ "f"    : [''                                            , 'Search-for-wiki-curword'      ] ,
-  \
-  \ 'c'    : {
-  \ 'name' : '+CheckBox',
-  \
-  \ "t"    : ['VimwikiToggleListItem'                       , 'Toggle checkbox On/Off'       ] ,
-  \ "n"    : ['VimwikiIncrementListItem'                    , 'Toggle checkbox Next/Previous'] ,
-  \
-  \ },
-  \
-  \ 't'    : {
-  \ 'name' : '+Tables',
-  \
-  \ "t"    : ['VimwikiTable'                                , 'Create Table'                             ] ,
-  \ "h"    : ['<Plug>VimwikiTableMoveColumnLeft'            , 'Move current column to the left'          ] ,
-  \ "l"    : ['<Plug>VimwikiTableMoveColumnRight'           , 'Move current column to the Right'         ] ,
-  \
-  \ },
-  \
-  \ 'z'    : {
-  \ 'name' : '+Zettel',
-  \
-  \ "b"    : ['ZettelBackLinks'                             , 'add-backlineks'                           ] ,
-  \ "n"    : ['ZettelNew'                                   , 'add-new'                                  ] ,
-  \ "o"    : ['ZettelOpen'                                  , 'Search fulltext use FZF'                  ] ,
-  \ "i"    : ['ZettelInsertNote'                            , 'Using FZF and insert in the current'      ] ,
-  \ "s"    : ['ZettelSearch'                                , 'Search the content of your zettelkasten'  ] ,
-  \ "y"    : ['ZettelYankName'                              , 'Copy the current zettel file name'        ] ,
-  \
-  \ },
-  \
-  \ }
+    \ 'name' : '+VimWiki',
+    \
+    \ "w"    : [''                                            , 'Go To Index'                  ] ,
+    \ "n"    : [''                                            , 'Create new wiki page'         ] ,
+    \ "d"    : [''                                            , 'Delete wiki page'             ] ,
+    \ "r"    : [''                                            , 'Rename wiki page'             ] ,
+    \ "v"    : [''                                            , 'Toggle wiki List'             ] ,
+    \ "s"    : [''                                            , 'Search-for-wiki-pattam'       ] ,
+    \ "f"    : [''                                            , 'Search-for-wiki-curword'      ] ,
+    \
+    \ 'c'    : {
+    \ 'name' : '+CheckBox',
+    \
+    \ "t"    : ['VimwikiToggleListItem'                       , 'Toggle checkbox On/Off'       ] ,
+    \ "n"    : ['VimwikiIncrementListItem'                    , 'Toggle checkbox Next/Previous'] ,
+    \
+    \ },
+    \
+    \ 't'    : {
+    \ 'name' : '+Tables',
+    \
+    \ "t"    : ['VimwikiTable'                                , 'Create Table'                             ] ,
+    \ "h"    : ['<Plug>VimwikiTableMoveColumnLeft'            , 'Move current column to the left'          ] ,
+    \ "l"    : ['<Plug>VimwikiTableMoveColumnRight'           , 'Move current column to the Right'         ] ,
+    \
+    \ },
+    \
+    \ 'z'    : {
+    \ 'name' : '+Zettel',
+    \
+    \ "b"    : ['ZettelBackLinks'                             , 'add-backlineks'                           ] ,
+    \ "n"    : ['ZettelNew'                                   , 'add-new'                                  ] ,
+    \ "o"    : ['ZettelOpen'                                  , 'Search fulltext use FZF'                  ] ,
+    \ "i"    : ['ZettelInsertNote'                            , 'Using FZF and insert in the current'      ] ,
+    \ "s"    : ['ZettelSearch'                                , 'Search the content of your zettelkasten'  ] ,
+    \ "y"    : ['ZettelYankName'                              , 'Copy the current zettel file name'        ] ,
+    \
+    \ },
+    \
+    \ }
 
 let g:which_key_map.g = {
-  \ 'name' : '+Goyo',
-  \
-  \ "o"    : [':call Switch_goyo()'                         , 'Enter Goyo Mode'                          ] ,
-  \
-  \ }
+    \ 'name' : '+Goyo',
+    \
+    \ "o"    : [':call Switch_goyo()'                         , 'Enter Goyo Mode'                          ] ,
+    \
+    \ }
 
 "=================================================================================================================================
 " Signature  settings
@@ -1744,28 +1744,28 @@ let g:SignatureForceMarkerPlacement = 1
 let g:SignatureWrapJumps = 0
 let g:SignatureMarkOrder="\m"
 let g:SignatureMap = {
-        \ 'Leader'             :  "m",
-        \ 'PlaceNextMark'      :  "m.",
-        \ 'ToggleMarkAtLine'   :  "mm",
-        \ 'PurgeMarksAtLine'   :  "m-",
-        \ 'DeleteMark'         :  "md",
-        \ 'PurgeMarks'         :  "mx",
-        \ 'PurgeMarkers'       :  "m<SPACE>",
-        \ 'GotoNextLineAlpha'  :  "']",
-        \ 'GotoPrevLineAlpha'  :  "'[",
-        \ 'GotoNextSpotAlpha'  :  "`]",
-        \ 'GotoPrevSpotAlpha'  :  "`[",
-        \ 'GotoNextLineByPos'  :  "mn",
-        \ 'GotoPrevLineByPos'  :  "mp",
-        \ 'GotoNextSpotByPos'  :  "mf",
-        \ 'GotoPrevSpotByPos'  :  "mb",
-        \ 'GotoNextMarker'     :  "]-",
-        \ 'GotoPrevMarker'     :  "[-",
-        \ 'GotoNextMarkerAny'  :  "]=",
-        \ 'GotoPrevMarkerAny'  :  "[=",
-        \ 'ListBufferMarks'    :  "ma",
-        \ 'ListBufferMarkers'  :  "m?"
-        \ }
+    \ 'Leader'             :  "m",
+    \ 'PlaceNextMark'      :  "m.",
+    \ 'ToggleMarkAtLine'   :  "mm",
+    \ 'PurgeMarksAtLine'   :  "m-",
+    \ 'DeleteMark'         :  "md",
+    \ 'PurgeMarks'         :  "mx",
+    \ 'PurgeMarkers'       :  "m<SPACE>",
+    \ 'GotoNextLineAlpha'  :  "']",
+    \ 'GotoPrevLineAlpha'  :  "'[",
+    \ 'GotoNextSpotAlpha'  :  "`]",
+    \ 'GotoPrevSpotAlpha'  :  "`[",
+    \ 'GotoNextLineByPos'  :  "mn",
+    \ 'GotoPrevLineByPos'  :  "mp",
+    \ 'GotoNextSpotByPos'  :  "mf",
+    \ 'GotoPrevSpotByPos'  :  "mb",
+    \ 'GotoNextMarker'     :  "]-",
+    \ 'GotoPrevMarker'     :  "[-",
+    \ 'GotoNextMarkerAny'  :  "]=",
+    \ 'GotoPrevMarkerAny'  :  "[=",
+    \ 'ListBufferMarks'    :  "ma",
+    \ 'ListBufferMarkers'  :  "m?"
+    \ }
 "-----------------------------------------------------------------o--------------------------------------------------------------o
 hi SignatureMarkText   term=standout ctermbg=2   ctermbg=2   guifg=#E06C75 guibg=#282C34   " 书签标记颜色
 hi SignatureMarkerText term=standout ctermbg=2   ctermbg=2   guifg=#E06C75 guibg=#282C34   " 折叠提示颜色
@@ -1874,98 +1874,97 @@ hi Lf_hl_rgColumnNumber        gui=bold    guifg=#E06C75  guibg=#E06C75
 hi Lf_hl_stlSpin               gui=bold    guifg=#E06C75  guibg=#3B3E4C
 "-----------------------------------------------------------------o--------------------------------------------------------------o
 let g:Lf_StlPalette = {
-            \   'stlName': {
-            \       'gui': 'bold',
-            \       'font': 'NONE',
-            \       'guifg': '#ABBABF',
-            \       'guibg': '#40444E',
-            \       'cterm': 'bold',
-            \       'ctermfg': '22',
-            \       'ctermbg': '157'
-            \   },
-            \   'stlCategory': {
-            \       'gui': 'NONE',
-            \       'font': 'NONE',
-            \       'guifg': '#ABBABF',
-            \       'guibg': '#2C3339',
-            \       'cterm': 'NONE',
-            \       'ctermfg': '16',
-            \       'ctermbg': '210'
-            \   },
-            \   'stlNameOnlyMode': {
-            \       'gui': 'NONE',
-            \       'font': 'NONE',
-            \       'guifg': '#ABBABF',
-            \       'guibg': '#40444E',
-            \       'cterm': 'NONE',
-            \       'ctermfg': '16',
-            \       'ctermbg': '227'
-            \   },
-            \   'stlFullPathMode': {
-            \       'gui': 'NONE',
-            \       'font': 'NONE',
-            \       'guifg': '#ABBABF',
-            \       'guibg': '#40444E',
-            \       'cterm': 'NONE',
-            \       'ctermfg': '16',
-            \       'ctermbg': '147'
-            \   },
-            \   'stlFuzzyMode': {
-            \       'gui': 'NONE',
-            \       'font': 'NONE',
-            \       'guifg': '#ABBABF',
-            \       'guibg': '#40444E',
-            \       'cterm': 'NONE',
-            \       'ctermfg': '16',
-            \       'ctermbg': '227'
-            \   },
-            \   'stlRegexMode': {
-            \       'gui': 'NONE',
-            \       'font': 'NONE',
-            \       'guifg': '#ABBABF',
-            \       'guibg': '#40444E',
-            \       'cterm': 'NONE',
-            \       'ctermfg': '16',
-            \       'ctermbg': '121'
-            \   },
-            \   'stlCwd': {
-            \       'gui': 'NONE',
-            \       'font': 'NONE',
-            \       'guifg': '#ABB2BF',
-            \       'guibg': '#282c45',
-            \       'cterm': 'NONE',
-            \       'ctermfg': '195',
-            \       'ctermbg': '241'
-            \   },
-            \   'stlBlank': {
-            \       'gui': 'NONE',
-            \       'font': 'NONE',
-            \       'guifg': 'NONE',
-            \       'guibg': '#3B3E4C',
-            \       'cterm': 'NONE',
-            \       'ctermfg': 'NONE',
-            \       'ctermbg': '237'
-            \   },
-            \   'stlLineInfo': {
-            \       'gui': 'NONE',
-            \       'font': 'NONE',
-            \       'guifg': '#ABB2BF',
-            \       'guibg': '#282c45',
-            \       'cterm': 'NONE',
-            \       'ctermfg': '16',
-            \       'ctermbg': '195'
-            \   },
-            \   'stlTotal': {
-            \       'gui': 'NONE',
-            \       'font': 'NONE',
-            \       'guifg': '#282C34',
-            \       'guibg': '#ABB2BF',
-            \       'cterm': 'NONE',
-            \       'ctermfg': '16',
-            \       'ctermbg': '149'
-            \   }
-            \ }
-
+    \   'stlName': {
+    \       'gui': 'bold',
+    \       'font': 'NONE',
+    \       'guifg': '#ABBABF',
+    \       'guibg': '#40444E',
+    \       'cterm': 'bold',
+    \       'ctermfg': '22',
+    \       'ctermbg': '157'
+    \   },
+    \   'stlCategory': {
+    \       'gui': 'NONE',
+    \       'font': 'NONE',
+    \       'guifg': '#ABBABF',
+    \       'guibg': '#2C3339',
+    \       'cterm': 'NONE',
+    \       'ctermfg': '16',
+    \       'ctermbg': '210'
+    \   },
+    \   'stlNameOnlyMode': {
+    \       'gui': 'NONE',
+    \       'font': 'NONE',
+    \       'guifg': '#ABBABF',
+    \       'guibg': '#40444E',
+    \       'cterm': 'NONE',
+    \       'ctermfg': '16',
+    \       'ctermbg': '227'
+    \   },
+    \   'stlFullPathMode': {
+    \       'gui': 'NONE',
+    \       'font': 'NONE',
+    \       'guifg': '#ABBABF',
+    \       'guibg': '#40444E',
+    \       'cterm': 'NONE',
+    \       'ctermfg': '16',
+    \       'ctermbg': '147'
+    \   },
+    \   'stlFuzzyMode': {
+    \       'gui': 'NONE',
+    \       'font': 'NONE',
+    \       'guifg': '#ABBABF',
+    \       'guibg': '#40444E',
+    \       'cterm': 'NONE',
+    \       'ctermfg': '16',
+    \       'ctermbg': '227'
+    \   },
+    \   'stlRegexMode': {
+    \       'gui': 'NONE',
+    \       'font': 'NONE',
+    \       'guifg': '#ABBABF',
+    \       'guibg': '#40444E',
+    \       'cterm': 'NONE',
+    \       'ctermfg': '16',
+    \       'ctermbg': '121'
+    \   },
+    \   'stlCwd': {
+    \       'gui': 'NONE',
+    \       'font': 'NONE',
+    \       'guifg': '#ABB2BF',
+    \       'guibg': '#282c45',
+    \       'cterm': 'NONE',
+    \       'ctermfg': '195',
+    \       'ctermbg': '241'
+    \   },
+    \   'stlBlank': {
+    \       'gui': 'NONE',
+    \       'font': 'NONE',
+    \       'guifg': 'NONE',
+    \       'guibg': '#3B3E4C',
+    \       'cterm': 'NONE',
+    \       'ctermfg': 'NONE',
+    \       'ctermbg': '237'
+    \   },
+    \   'stlLineInfo': {
+    \       'gui': 'NONE',
+    \       'font': 'NONE',
+    \       'guifg': '#ABB2BF',
+    \       'guibg': '#282c45',
+    \       'cterm': 'NONE',
+    \       'ctermfg': '16',
+    \       'ctermbg': '195'
+    \   },
+    \   'stlTotal': {
+    \       'gui': 'NONE',
+    \       'font': 'NONE',
+    \       'guifg': '#282C34',
+    \       'guibg': '#ABB2BF',
+    \       'cterm': 'NONE',
+    \       'ctermfg': '16',
+    \       'ctermbg': '149'
+    \   }
+    \ }
 
 "=================================================================================================================================
 " Floaterm settings
@@ -1980,29 +1979,29 @@ let g:floaterm_autohide = v:false
 " Coc.nvim settings
 "=================================================================================================================================
 if exists('g:plugs["coc.nvim"]')
-	let g:coc_global_extensions = ['coc-json', 'coc-java']                 "自动安装插件列表
+    let g:coc_global_extensions = ['coc-json', 'coc-java']                 "自动安装插件列表
 
 "-----------------------------------------------------------------o--------------------------------------------------------------o
 "开启<tab>补全
 "-----------------------------------------------------------------o--------------------------------------------------------------o
-	function! s:check_back_space() abort
-		let col = col('.') - 1
-		return !col || getline('.')[col - 1]  =~ '\s'
-	endfunction
+    function! s:check_back_space() abort
+        let col = col('.') - 1
+        return !col || getline('.')[col - 1]  =~ '\s'
+    endfunction
 "-----------------------------------------------------------------o--------------------------------------------------------------o
 	let g:coc_snippet_next = '<tab>'
 	inoremap <silent><expr> <TAB>
-		\ pumvisible() ? coc#_select_confirm() :
-		\ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
-		\ <SID>check_back_space() ? "\<TAB>" :
-		\ coc#refresh()
+        \ pumvisible() ? coc#_select_confirm() :
+        \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+        \ <SID>check_back_space() ? "\<TAB>" :
+        \ coc#refresh()
 "-----------------------------------------------------------------o--------------------------------------------------------------o
 	inoremap <expr> <down> pumvisible() ? "\<C-n>" : "\<down>"
 	inoremap <expr> <up> pumvisible() ? "\<C-p>" : "\<up>"
 	inoremap <silent><expr> <TAB>
-		\ pumvisible() ? "\<C-n>" :
-		\ <SID>check_back_space() ? "\<TAB>" :
-		\ coc#refresh()
+        \ pumvisible() ? "\<C-n>" :
+        \ <SID>check_back_space() ? "\<TAB>" :
+        \ coc#refresh()
 
 "-----------------------------------------------------------------o--------------------------------------------------------------o
 " 多光标支持
@@ -2015,32 +2014,32 @@ if exists('g:plugs["coc.nvim"]')
 	nmap <expr> <silent> <C-m> <SID>select_current_word()
 "-----------------------------------------------------------------o--------------------------------------------------------------o
 	function! s:select_current_word()
-	if !get(g:, 'coc_cursors_activated', 0)
-		return "\<Plug>(coc-cursors-word)"
-	endif
-	return "*\<Plug>(coc-cursors-word):nohlsearch\<CR>"
+        if !get(g:, 'coc_cursors_activated', 0)
+            return "\<Plug>(coc-cursors-word)"
+        endif
+        return "*\<Plug>(coc-cursors-word):nohlsearch\<CR>"
 	endfunc
 
 	call coc#config('suggest', {
-	\ 'autoTrigger': 'none'
-	\ })
+        \ 'autoTrigger': 'none'
+        \ })
 	call coc#config('cursors', {
-	\ 'cancelKey': '<esc>',
-	\ 'nextKey': '<C-n>',
-	\ 'previousKey': '<C-p>'
-	\ })
+        \ 'cancelKey': '<esc>',
+        \ 'nextKey': '<C-n>',
+        \ 'previousKey': '<C-p>'
+        \ })
 	call coc#config('diagnostic', {
-	\ 'errorSign': '•',
-	\ 'warningSign': '•',
-	\ 'infoSign': '•'
-	\ })
+        \ 'errorSign': '•',
+        \ 'warningSign': '•',
+        \ 'infoSign': '•'
+        \ })
 
 "-----------------------------------------------------------------o--------------------------------------------------------------o
 " Color
 "-----------------------------------------------------------------o--------------------------------------------------------------o
-	hi CocCursorRange term=reverse cterm=bold ctermfg=238 ctermbg=226 gui=bold guifg=#FFFFFF guibg=#E06c75
-	hi CocHoverRange term=reverse cterm=bold ctermfg=238 ctermbg=226 gui=bold guifg=#FFFFFF guibg=#E06c75
-	hi CocErrorSign term=reverse cterm=bold ctermfg=238 ctermbg=226 gui=bold guifg=#e06c75 
+    hi CocCursorRange term=reverse cterm=bold ctermfg=238 ctermbg=226 gui=bold guifg=#FFFFFF guibg=#E06c75
+    hi CocHoverRange term=reverse cterm=bold ctermfg=238 ctermbg=226 gui=bold guifg=#FFFFFF guibg=#E06c75
+    hi CocErrorSign term=reverse cterm=bold ctermfg=238 ctermbg=226 gui=bold guifg=#e06c75 
 
 endif
 
@@ -2048,19 +2047,19 @@ endif
 "Clever-F Settings
 "=================================================================================================================================
 if exists('g:plugs["clever-f.vim"]')
-	map <CR> <Plug>(clever-f-repeat-forward)
-	map <BS> <Plug>(clever-f-repeat-back)
-	let g:clever_f_show_prompt=1       " 显示提示符
-	let g:clever_f_fix_key_direction=0 " 循环搜索请设置为1
-	let g:clever_f_smart_case=1          " 智能大小写搜索
-	let g:clever_f_across_no_line=1
-	let g:clever_f_chars_match_any_signs=";"
+    map <CR> <Plug>(clever-f-repeat-forward)
+    map <BS> <Plug>(clever-f-repeat-back)
+    let g:clever_f_show_prompt=1       " 显示提示符
+    let g:clever_f_fix_key_direction=0 " 循环搜索请设置为1
+    let g:clever_f_smart_case=1          " 智能大小写搜索
+    let g:clever_f_across_no_line=1
+    let g:clever_f_chars_match_any_signs=";"
 "-----------------------------------------------------------------o--------------------------------------------------------------o
 " Color
 "-----------------------------------------------------------------o--------------------------------------------------------------o
-	hi CleverFDefaultLabel cterm=bold,underline ctermfg=9 gui=bold,underline guifg=#abb2bf guibg=#e06c75
-	hi CleverFDefaultLabel cterm=bold,underline ctermfg=9 gui=bold,underline guifg=#abb2bf guibg=#e06c75
-	hi CleverFChar         cterm=bold,underline ctermfg=9 gui=bold,underline guifg=#e06c75
+    hi CleverFDefaultLabel cterm=bold,underline ctermfg=9 gui=bold,underline guifg=#abb2bf guibg=#e06c75
+    hi CleverFDefaultLabel cterm=bold,underline ctermfg=9 gui=bold,underline guifg=#abb2bf guibg=#e06c75
+    hi CleverFChar         cterm=bold,underline ctermfg=9 gui=bold,underline guifg=#e06c75
 endif
 
 "=================================================================================================================================
