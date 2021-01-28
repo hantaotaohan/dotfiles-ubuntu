@@ -593,14 +593,20 @@ function! MyBufferClose()
     let allfiletype =  getbufvar(bufnr('$'), '&filetype')
     let curfiletype =  getbufvar(bufnr('%'), '&filetype')
     let allmod = len(filter(getbufinfo(), 'v:val.changed == 1'))
+    let tagbar_open = bufwinnr('__Tagbar__') != -1
+    if exists('t:NERDTreeBufName')
+        let nerdtree_open = bufwinnr(t:NERDTreeBufName) != -1
+    else
+        let nerdtree_open = 0
+    endif
 
     if loclist > 1
         execute "lclose"
     elseif qflist > 1
         execute "cclose"
-    elseif allfiletype == 'nerdtree' || loclist > 1 || qflist > 1
+    elseif nerdtree_open
         execute "NERDTreeClose"
-    elseif allfiletype == 'tagbar' || loclist > 1 || qflist > 1
+    elseif tagbar_open
         execute "TagbarClose"
     elseif allwinid > 1 && allfiletype == 'help' && curfiletype == 'vim'
         execute "close"
@@ -631,6 +637,7 @@ endfunction
 nnoremap <silent><localleader>q :call MyBufferClose()<cr>
 inoremap <silent><localleader>q <Esc>:call MyBufferClose()<cr>
 vnoremap <silent><localleader>q <Esc>:call MyBufferClose()<cr>
+
 
 " ----------------------------------------------------------------o--------------------------------------------------------------o
 " Quickly Save the current window
