@@ -861,6 +861,7 @@ if exists('g:plugs["vim-airline"]')
 	\ 'defx':  ['defx', '%{b:defx.paths[0]}'],
 	\ 'fugitive': ['fugitive', '%{airline#util#wrap(airline#extensions#branch#get_head(),80)}'],
 	\ 'gundo': [ 'Gundo', '' ],
+	\ 'tagbar': [ 'Tagbar', '' ],
 	\ 'help':  [ 'Help', '%f' ],
 	\ 'minibufexpl': [ 'MiniBufExplorer', '' ],
 	\ 'nerdtree': [ get(g:, 'NERDTreeStatusline', 'NERD'), '' ],
