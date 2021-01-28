@@ -1,76 +1,22 @@
 "=================================================================================================================================
 "
-"                                                              DEFAULT
+"                                                               VIMRC
+"                                                                
+"                                                        Update: 2021.01.28
 "
 "=================================================================================================================================
-" All system-wide defaults are set in $VIMRUNTIME/debian.vim and sourced by
-" the call to :runtime you can find below.  If you wish to change any of those
-" settings, you should do it in this file (/etc/vim/vimrc), since debian.vim
-" will be overwritten everytime an upgrade of the vim packages is performed.
-" It is recommended to make changes after sourcing debian.vim since it alters
-" the value of the 'compatible' option.
-
-"-----------------------------------------------------------------o--------------------------------------------------------------o
-" This line should not be removed as it ensures that various options are
-" properly set to work with the Vim-related packages available in Debian.
-"-----------------------------------------------------------------o--------------------------------------------------------------o
-" runtime! debian.vim
-
-"-----------------------------------------------------------------o--------------------------------------------------------------o
-" Source a global configuration file if available
-"-----------------------------------------------------------------o--------------------------------------------------------------o
-" if filereadable("/etc/vim/vimrc.local")
-"   source /etc/vim/vimrc.local
-" endif
-
-" if exists('$TMUX')
-"   set termguicolors
-"   set term=xterm-256color
-" endif
-"
-"-----------------------------------------------------------------o--------------------------------------------------------------o
-"Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
-"-----------------------------------------------------------------o--------------------------------------------------------------o
-" if (empty($TMUX))
-"   if (has("nvim"))
-"     let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-"   endif
-"   if (has("termguicolors"))
-"     set termguicolors
-"   endif
-" endif
-"-----------------------------------------------------------------o--------------------------------------------------------------o
-" 防止tmux下vim的背景色显示异常
-"-----------------------------------------------------------------o--------------------------------------------------------------o
-" if &term =~ '256color' && $TMUX != ''
-" 	" disable Background Color Erase (BCE) so that color schemes
-" 	" render properly when inside 256-color tmux and GNU screen.
-" 	" see also http://snk.tuxfamily.org/log/vim-256color-bce.html
-" 	set t_ut=
-" endif
-
-"-----------------------------------------------------------------o--------------------------------------------------------------o
-" 有 tmux 何没有的功能键超时（毫秒）
-"-----------------------------------------------------------------o--------------------------------------------------------------o
-"if $TMUX != ''
-"	set ttimeoutlen=30
-"elseif &ttimeoutlen > 80 || &ttimeoutlen <= 0
-"	set ttimeoutlen=80
-"endif
-
-
 "=================================================================================================================================
 "
 "                                                                GUI
 "
 "=================================================================================================================================
-
 if has("gui_running")
 set guioptions=M                                                         " 去除VIN得GUI版本中得菜单栏
 set guioptions=T                                                         " 去除VIN得GUI版本中得工具栏
 set guioptions-=m
 set guioptions-=T
-nnoremap <silent> <S-F2> :if &guioptions =~# 'T' <Bar>
+nnoremap <silent> <S-F2> 
+    \:if &guioptions =~# 'T' <Bar>
         \set guioptions-=T <Bar>
         \set guioptions-=m <bar>
     \else <Bar>
@@ -78,8 +24,11 @@ nnoremap <silent> <S-F2> :if &guioptions =~# 'T' <Bar>
         \set guioptions+=m <Bar>
     \endif<CR>
 endif
-
+" ----------------------------------------------------------------o--------------------------------------------------------------o
 set guifont=Saber\ Bold\ 10.5                                            " 设置GUI字体
+"=================================================================================================================================
+
+
 "=================================================================================================================================
 "                                                                                                                                
 "                                                              GENERAL                                                          
@@ -111,39 +60,38 @@ let g:loaded_netrwPlugin = 1
 let g:loaded_netrwSettings = 1
 let g:loaded_netrwFileHandlers = 1
 let g:no_mail_maps = 1
-
-" let g:loaded_matchparen = 1
+" let g:loaded_matchparen = 0
 
 " ----------------------------------------------------------------o--------------------------------------------------------------o
 " Vim Compatible
 " ----------------------------------------------------------------o--------------------------------------------------------------o
 if &compatible
-	set nocompatible
+    set nocompatible
 endif
 
 " ----------------------------------------------------------------o--------------------------------------------------------------o
 " Enables 24-bit RGB Color In The Terminal
 " ----------------------------------------------------------------o--------------------------------------------------------------o
 if has('termguicolors')
-	if empty($COLORTERM) || $COLORTERM =~# 'truecolor\|24bit'
-		set termguicolors
-	endif
+    if empty($COLORTERM) || $COLORTERM =~# 'truecolor\|24bit'
+        set termguicolors
+    endif
 endif
 
 " ----------------------------------------------------------------o--------------------------------------------------------------o
 " Enables Syntax HighLighting 
 " ----------------------------------------------------------------o--------------------------------------------------------------o
 if has("syntax")
-  syntax on         " 开启颜色高亮
-  "syntax enable     " 开启语法高亮
+    syntax on          " 开启颜色高亮
+    "syntax enable     " 开启语法高亮
 endif
 
 " ----------------------------------------------------------------o--------------------------------------------------------------o
 " Clipborad Settings
 " ----------------------------------------------------------------o--------------------------------------------------------------o
 if has('clipboard') && has('vim_starting') && has('unnamedplus')
-	set clipboard& clipboard^=unnamed,unnamedplus
-	xnoremap <silent> p p:let @+=@0<CR>:let @"=@0<CR>
+    set clipboard& clipboard^=unnamed,unnamedplus
+    xnoremap <silent> p p:let @+=@0<CR>:let @"=@0<CR>
 endif
 
 " ----------------------------------------------------------------o--------------------------------------------------------------o
@@ -151,10 +99,10 @@ endif
 " ----------------------------------------------------------------o--------------------------------------------------------------o
 if has('wildmenu')
     set wildignorecase
-	set wildignore+=.git,.hg,.svn,.stversions,*.pyc,*.spl,*.o,*.out,*~,%*
-	set wildignore+=*.jpg,*.jpeg,*.png,*.gif,*.zip,**/tmp/**,*.DS_Store
-	set wildignore+=**/node_modules/**,**/bower_modules/**,*/.sass-cache/*
-	set wildignore+=__pycache__,*.egg-info,.pytest_cache,.mypy_cache/**
+    set wildignore+=.git,.hg,.svn,.stversions,*.pyc,*.spl,*.o,*.out,*~,%*
+    set wildignore+=*.jpg,*.jpeg,*.png,*.gif,*.zip,**/tmp/**,*.DS_Store
+    set wildignore+=**/node_modules/**,**/bower_modules/**,*/.sass-cache/*
+    set wildignore+=__pycache__,*.egg-info,.pytest_cache,.mypy_cache/**
     set wildignore=*.o,*.obj,*~,*.exe,*.a,*.pdb,*.lib 
     set wildignore+=*.so,*.dll,*.swp,*.egg,*.jar,*.class,*.pyc,*.pyo,*.bin,*.dex
     set wildignore+=*.zip,*.7z,*.rar,*.gz,*.tar,*.gzip,*.bz2,*.tgz,*.xz 
@@ -480,10 +428,8 @@ nnoremap zh z4h
 " ----------------------------------------------------------------o--------------------------------------------------------------o
 " Yank buffer's relative/absolute path to clipboard
 " ----------------------------------------------------------------o--------------------------------------------------------------o
-nnoremap <Leader>Y :let @+=
-            \expand("%:~:.")<CR>:echo 'Yanked relative path'<CR>
-nnoremap <Leader>y :let @+=
-            \expand("%:p")<CR>:echo 'Yanked absolute path'<CR>
+nnoremap <Leader>Y :let @+= expand("%:~:.")<CR>:echo 'Yanked relative path'<CR>
+nnoremap <Leader>y :let @+= expand("%:p")<CR>:echo 'Yanked absolute path'<CR>
 
 " ----------------------------------------------------------------o--------------------------------------------------------------o
 " Re-select blocks after indenting in visual/select mode
@@ -828,6 +774,7 @@ hi QuickFixLine           term=standout ctermfg=235 ctermbg=180 guifg=#ABB2BF gu
 hi SignColumn             term=standout ctermfg=2   ctermbg=2   guifg=#E06C75 guibg=#282C34   " 标签栏颜色
 hi DiffDelete             term=standout ctermfg=235 ctermbg=204 guifg=#E06C75 guibg=#E06C75   " 差异删除颜色
 hi CursorLineNr           term=standout ctermfg=145 ctermbg=236 guifg=#61AFEF guibg=#282C34   " 当前光标行序号栏颜色
+hi Cursor                 term=standout ctermfg=145 ctermbg=236 guifg=#282c34 guibg=#E06C75   " 当前光标颜色
 
 " hi FoldColumn             term=standout ctermfg=0   ctermbg=5   guifg=#282c34 guibg=#ABB2BF   " 折叠提示颜色
 
@@ -1911,7 +1858,6 @@ let g:Lf_WildIgnore = { 'dir': ['.svn','.git','.hg'], 'file': ['*.sw?','~$*','*.
 "-----------------------------------------------------------------o--------------------------------------------------------------o
 " Color
 "-----------------------------------------------------------------o--------------------------------------------------------------o
-hi Cursor                      gui=bold    guifg=#E06C75  guibg=#E06C75
 hi Lf_hl_cursorline            gui=bold    guifg=#C678DD
 hi Lf_hl_match                 gui=bold    guifg=#e06c75
 hi Lf_hl_match2                gui=bold    guifg=#3FF5D1
