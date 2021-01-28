@@ -575,6 +575,15 @@ augroup AutoClosePreview
     autocmd CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif  
 augroup END
 
+" ----------------------------------------------------------------o--------------------------------------------------------------o
+" 加速语法渲染
+" ----------------------------------------------------------------o--------------------------------------------------------------o
+augroup AutoSyntax
+    autocmd!
+    autocmd Syntax * syn sync clear | syntax sync minlines=10 | syntax sync maxlines=10
+augroup END
+
+
 "=================================================================================================================================
 "
 "                                                         GENERAL - Fuction
