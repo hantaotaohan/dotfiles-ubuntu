@@ -742,7 +742,7 @@ Plug 'junegunn/fzf' , { 'dir': '~/.fzf', 'do': './install --all' }       " 为�
 Plug 'junegunn/goyo.vim'                                                 " 专注模式
 Plug 'junegunn/limelight.vim'                                            " 专注模式辅助
 Plug 'scrooloose/nerdtree' , { 'on': 'NERDTreeToggle' }                  " 文件树插件
-Plug 'godlygeek/tabular'                                                 " 文本对齐插件
+Plug 'godlygeek/tabular' , { 'on': 'Tabularize'}                         " 文本对齐插件
 Plug 'dhruvasagar/vim-table-mode'                                        " 表格模式
 Plug 'majutsushi/tagbar' , { 'on': 'TagbarToggle' }                      " Tag浏览
 Plug 'skywind3000/asyncrun.vim'                                          " 配合调测python插件
