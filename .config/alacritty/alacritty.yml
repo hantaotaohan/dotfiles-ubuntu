@@ -36,7 +36,7 @@ scrolling:
 
     # Number of lines that are scrolled at once
     # Faux multiplier is the same, but for commands like man and less
-    #multiplier: 3
+    multiplier: 1
     #faux_multiplier: 3
 
     # Scroll to bottom when new text is printed
