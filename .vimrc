@@ -2050,20 +2050,6 @@ if exists('g:plugs["coc.nvim"]')
         return "*\<Plug>(coc-cursors-word):nohlsearch\<CR>"
 	endfunc
 
-	call coc#config('suggest', {
-        \ 'autoTrigger': 'none'
-        \ })
-	call coc#config('cursors', {
-        \ 'cancelKey': '<esc>',
-        \ 'nextKey': '<C-n>',
-        \ 'previousKey': '<C-p>'
-        \ })
-	call coc#config('diagnostic', {
-        \ 'errorSign': '•',
-        \ 'warningSign': '•',
-        \ 'infoSign': '•'
-        \ })
-
 "-----------------------------------------------------------------o--------------------------------------------------------------o
 " Color
 "-----------------------------------------------------------------o--------------------------------------------------------------o
