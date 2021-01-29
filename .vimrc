@@ -294,10 +294,10 @@ set tags=./.tags;,.tags                                                    " 设
 " ----------------------------------------------------------------o--------------------------------------------------------------o
 if has('folding') && has('vim_starting')
     set foldmethod=manual                                                  " 启用手动折叠zf
-    set foldcolumn=3                                                       " 侧边栏宽度
+    set foldcolumn=2                                                       " 侧边栏宽度
     set foldlevel=3                                                        " 设置折层数为3
     set foldlevelstart=99                                                  " 初始化vim不折叠信息"
-    "set foldclose=all                                                     " 设置为自动关闭折叠
+    set foldclose=all                                                      " 设置为自动关闭折叠
 endif
 
 nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>           " 空格打开关闭折叠视图
