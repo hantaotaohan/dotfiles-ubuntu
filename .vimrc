@@ -300,6 +300,17 @@ if has('folding') && has('vim_starting')
     set foldlevel=3                                                        " 设置折层数为3
     set foldlevelstart=99                                                  " 初始化vim不折叠信息"
     set foldclose=all                                                      " 设置为自动关闭折叠
+    set foldtext=NeatFoldText()
+    function! NeatFoldText() 
+        let line = ' ' . substitute(getline(v:foldstart), '^\s*"\?\s*\|\s*"\?\s*{{' . '{\d*\s*', '', 'g') . ' '
+        let lines_count = v:foldend - v:foldstart + 1
+        let lines_count_text = '| ' . printf("%10s", lines_count . ' lines') . ' |'
+        let foldchar = matchstr(&fillchars, 'fold:\zs.')
+        let foldtextstart = strpart('+' . repeat(foldchar, v:foldlevel*2) . line, 0, (winwidth(0)*2)/3)
+        let foldtextend = lines_count_text . repeat(foldchar, 8)
+        let foldtextlength = strlen(substitute(foldtextstart . foldtextend, '.', 'x', 'g')) + &foldcolumn
+        return foldtextstart . repeat(foldchar, winwidth(0)-foldtextlength) . foldtextend
+    endfunction
 endif
 
 nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>           " 空格打开关闭折叠视图
