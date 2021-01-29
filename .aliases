@@ -23,11 +23,11 @@ alias ls='ls -Fh --color=auto --group-directories-first'
 alias lsd="ls -lF --color=always | grep --color=never '^d'"
 
 # BookMarks
-alias dt='cd ~/desktop && ls -lhA'
-alias ws='cd ~/workspace && ls -lhA'
-alias dl='cd ~/downloads && ls -lhA'
-alias ds='cd ~/dotfiles && ls -lhA'
-alias cf='cd ~/.config && ls -lhA'
+alias dt='cd ~/desktop'
+alias ws='cd ~/workspace'
+alias dl='cd ~/downloads'
+alias ds='cd ~/dotfiles'
+alias cf='cd ~/.config'
 
 # Easy report
 alias grep='grep --color=auto'
