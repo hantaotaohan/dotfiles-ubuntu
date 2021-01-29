@@ -572,7 +572,7 @@ augroup END
 " ----------------------------------------------------------------o--------------------------------------------------------------o
 augroup AutoClosePreview
     autocmd!
-    autocmd CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif  
+    autocmd CursorMoved,CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif  
 augroup END
 
 " ----------------------------------------------------------------o--------------------------------------------------------------o
