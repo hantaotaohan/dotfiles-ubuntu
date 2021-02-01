@@ -456,8 +456,16 @@ nnoremap <Leader>y :let @+= expand("%:p")<CR>:echo 'Yanked absolute path'<CR>
 xnoremap < <gv
 xnoremap > >gv|
 
+xnoremap <Tab> >gv|
+xnoremap <S-Tab> <gv
+
 nmap >>  >>_
 nmap <<  <<_
+
+" ----------------------------------------------------------------o--------------------------------------------------------------o
+" Smart wrap toggle (breakindent and colorcolumn toggle as-well)
+" ----------------------------------------------------------------o--------------------------------------------------------------o
+nmap <Leader>tw :execute('setlocal wrap! breakindent!')<CR>
 
 " ----------------------------------------------------------------o--------------------------------------------------------------o
 " Jumps
@@ -727,6 +735,17 @@ function! s:zoom()
         resize
         normal! ze
     endif
+endfunction
+
+" ----------------------------------------------------------------o--------------------------------------------------------------o
+" Append modeline after last line in buffer
+" ----------------------------------------------------------------o--------------------------------------------------------------o
+nnoremap <silent> <Leader>ml :call <SID>append_modeline()<CR>
+function! s:append_modeline() 
+	let l:modeline = printf(' vim: set ts=%d sw=%d tw=%d %set :',
+				\ &tabstop, &shiftwidth, &textwidth, &expandtab ? '' : 'no')
+	let l:modeline = substitute(&commentstring, '%s', l:modeline, '')
+	call append(line('$'), l:modeline)
 endfunction
 
 "=================================================================================================================================
