@@ -1130,7 +1130,8 @@ inoremap <silent><localleader>r <esc>:call CompileRunGcc1()<cr>
 vnoremap <silent><localleader>r <esc>:call CompileRunGcc1()<cr>
 
 func! CompileRunGcc1()
-    exec "w"
+    " exec "w"
+    let fm = expand('%:p:h')
     if &filetype == 'python'
         exec "AsyncRun -mode=term -pos=bottom -rows=10 -focus=0 python3 %"
         exec "wincmd p"
@@ -1142,6 +1143,12 @@ func! CompileRunGcc1()
         exec "AsyncRun -mode=term -pos=bottom -rows=10 -focus=0 time node %"
     elseif &filetype == 'markdown'
         MarkdownPreview
+    elseif fm == "/home/taotao/blog/content/posts"
+        exec "AsyncStop"
+        exec PreviewHugo()
+    elseif fm == "/home/taotao/vimwiki/src"
+        exec "AsyncStop"
+        exec ":silent Vimwiki2HTMLBrowse"
     endif
 endfunc
 
