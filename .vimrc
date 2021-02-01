@@ -819,7 +819,6 @@ Plug 'SirVer/ultisnips'                                                  " 代�
 Plug 'hantaotaohan/vim-snippets'                                         " 代码片段仓库
 Plug 'iamcco/markdown-preview.nvim' , { 'do': 'cd app && yarn install' } " MarkdownPreview插件
 Plug 'jszakmeister/markdown2ctags'                                       " Tags的Toc插件
-Plug 'vim-scripts/fcitx.vim'                                             " 输入法自动切换Fcitx
 Plug 'ferrine/md-img-paste.vim'                                          " Markdown截图自动粘贴
 Plug 'vimwiki/vimwiki' , { 'on': '<Plug>VimwikiIndex' ,'branch': 'dev' } " Vimwiki插件
 Plug 'michal-h21/vim-zettel'                                             " 配合vimwiki的功能插件
@@ -831,6 +830,7 @@ Plug 'voldikss/vim-floaterm'                                             " 终�
 Plug 'chriskempson/base16-vim'                                           " Themes
 Plug 'jiangmiao/auto-pairs'                                              " 成对添加括号等
 Plug 'ludovicchabant/vim-gutentags'                                      " Tags管理
+" Plug 'vim-scripts/fcitx.vim'                                             " 输入法自动切换Fcitx
 " Plug 'hotoo/pangu.vim'                                                   " 中文排版
 " Plug 'Yggdroot/LeaderF' , { 'on': ['LeaderFile!','LeaderfFunction!'] }   " 模糊搜索
 " Plug 'rhysd/clever-f.vim'                                                " 增强搜索功能
@@ -859,7 +859,7 @@ call plug#end()
 "  Themes
 " ----------------------------------------------------------------o--------------------------------------------------------------o
 if exists('g:plugs["onedark.vim"]')
-    colorscheme onedark                                                      " 终端配色方案
+    colorscheme one                                                          " 终端配色方案
     set background=dark                                                      " 开启深色模式
 endif
 
@@ -886,7 +886,7 @@ hi Cursor                 term=standout ctermfg=145 ctermbg=236 guifg=#282c34 gu
 " Airline
 "=================================================================================================================================
 if exists('g:plugs["vim-airline"]')
-	let g:airline_theme='onedark'                                            " 设置状态栏主题默认powerlineish
+	let g:airline_theme='one'                                            " 设置状态栏主题默认powerlineish
 	let g:airline#extensions#tabline#enabled= 1                              " 开启tabline
 	let g:airline#extensions#tabline#show_tabs = 0                           " 显示Tabls文字
 	let g:airline#extensions#tabline#buffer_nr_show = 0                      " tabline中buffer显示编号
