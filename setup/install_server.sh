@@ -47,7 +47,6 @@ Dotfiles_symlinks=( \
         .curlrc \
         .exports \
         .functions \
-        .fonts.conf \
         .dircolors \
         .gitignore \
         .gitconfig \
@@ -58,6 +57,7 @@ Dotfiles_symlinks=( \
         .offlineimaprc \
         .msmtprc \
         .wgetrc \
+        .Xmodmap \
         .Xresources
         )
 
@@ -271,9 +271,9 @@ if [ ! -d "$HOME/desktop" ]; then mkdir -p "$HOME/desktop"; fi
 
 # Set Locales Language
 # sudo dpkg-reconfigure locales
-# sudo locale-gen "zh_CN.UTF-8" > /dev/null 2>&1
-# sudo dpkg-reconfigure --frontend=noninteractive locales > /dev/null 2>&1
-# echo -e "              ${green}[+]Set Locales Language is Successful${reset}\n"
+sudo locale-gen "zh_CN.UTF-8" > /dev/null 2>&1
+sudo dpkg-reconfigure --frontend=noninteractive locales > /dev/null 2>&1
+echo -e "              ${green}[+]Set Locales Language is Successful${reset}\n"
 
 # Set TimeZone
 sudo timedatectl set-timezone "Asia/Shanghai"
@@ -345,12 +345,12 @@ echo -e "                                                                       
         curl \
         #ctags \
         vim \
-        vim-gtk \
+        #vim-gtk \
         tmux \
         neomutt \
         silversearcher-ag \
         w3m \
-        wmctrl \
+        #wmctrl \
         tree \
         zip \
         unzip \
@@ -360,37 +360,59 @@ echo -e "                                                                       
         zlib1g-dev \
         ruby-full \
         xvfb \
+        #xserver-xorg \
+        #xdotool \
+        #dbus-x11 \
+        #xinit \
+        #language-pack-zh-hans \
+        #fonts-wqy-microhei \
+        #fcitx \
+        #fcitx-pinyin \
+        #fcitx-module-cloudpinyin \
+        #i3 \
+        #rofi \
+        #feh \
+        #compton \
+        #i3status \
+        #i3lock-fancy \
         zathura \
+        #i3blocks \
         xinput \
         jq \
-        language-pack-gnome-zh-hans \
+        #open-vm-tools \
+        #open-vm-tools-desktop \
+        #language-pack-gnome-zh-hans \
         #calibre \
-        deepin-screenshot \
+        #deepin-screenshot \
         openssh-server \
         openssh-client \
         offlineimap \
         msmtp \
+        #solaar \
         ncdu \
-        nautilus \
+        #nautilus \
         newsboat \
-        axel \
+        #axel \
         pv \
         aria2 \
         rar \
         unrar \
         ffmpeg \
+        #xautolock \
+        #vlc \
         p7zip-full \
-        gnome-keyring \
+        #gnome-keyring \
         lua5.2 \
-        libsecret-tools \
+        #imwheel \
+        #libsecret-tools \
         yank
         )
-	for app in "${aptApps[@]}"
-	do
-        echo -e "              [*] Installing: $app";
-		sudo apt install -y -qq $app > /dev/null 2>&1
-		installSuccess $? $app
-	done
+        for app in "${aptApps[@]}"
+        do
+            echo -e "              [*] Installing: $app";
+            sudo apt install -y -qq $app > /dev/null 2>&1
+            installSuccess $? $app
+        done
 }
 
 #----------------------------------------------------------------------------------------#
@@ -422,10 +444,10 @@ echo -e "                                                                       
         tabview \
         you-get \
         sncli \
-        i3ipc \
+        #i3ipc \
         #ipython \
         #beautifulsoup4 \
-        keyring \
+        #keyring \
         mdv \
         #notebook \
         #prompt-toolkit \
@@ -433,12 +455,12 @@ echo -e "                                                                       
         raiseorlaunch \
         xlsx2csv
         )
-	for app in "${pipApps[@]}"
-	do
-        echo -e "              [*] Installing: $app";
-		sudo pip3 install -q --timeout 1000 --retries 20  $app -i https://pypi.tuna.tsinghua.edu.cn/simple > /dev/null 2>&1
-		installSuccess $? $app
-	done
+        for app in "${pipApps[@]}"
+        do
+            echo -e "              [*] Installing: $app";
+            sudo pip3 install -q --timeout 1000 --retries 20  $app -i https://pypi.tuna.tsinghua.edu.cn/simple > /dev/null 2>&1
+            installSuccess $? $app
+        done
 }
 
 #----------------------------------------------------------------------------------------#
@@ -464,15 +486,15 @@ echo -e "                                                                       
 	gemApps=(\
         vimwiki_markdown
         )
-	for app in "${gemApps[@]}"
-	do
-        echo -e "              [*] Installing: $app";
-		gem sources --remove https://rubygems.org/ > /dev/null 2>&1
-		gem sources -a https://gems.ruby-china.com/ > /dev/null 2>&1
-		sudo gem install $app > /dev/null 2>&1
-		#sudo gem install --local $Dotfiles_repo/bin/$app > /dev/null 2>&1
-		installSuccess $? $app
-	done
+        for app in "${gemApps[@]}"
+        do
+            echo -e "              [*] Installing: $app";
+            gem sources --remove https://rubygems.org/ > /dev/null 2>&1
+            gem sources -a https://gems.ruby-china.com/ > /dev/null 2>&1
+            sudo gem install $app > /dev/null 2>&1
+            #sudo gem install --local $Dotfiles_repo/bin/$app > /dev/null 2>&1
+            installSuccess $? $app
+        done
 }
 
 #----------------------------------------------------------------------------------------#
@@ -498,15 +520,16 @@ echo -e "                                                                       
 	dpkgApps=( \
         ripgrep.deb \
         fd.deb \
-        bat.deb
-        #resilio-sync.deb\
+        bat.deb \
+        #resilio-sync.deb \
+        #Alacritty.deb
         )
-	for app in "${dpkgApps[@]}"
-	do
-        echo -e "              [*] Installing: $app";
-		sudo dpkg -i $Dotfiles_repo/bin/$app > /dev/null 2>&1
-		installSuccess $? $app
-	done
+        for app in "${dpkgApps[@]}"
+        do
+            echo -e "              [*] Installing: $app";
+            sudo dpkg -i $Dotfiles_repo/bin/$app > /dev/null 2>&1
+            installSuccess $? $app
+        done
 }
 
 LoaclConfig() {
@@ -538,47 +561,6 @@ echo -e "                                                                       
             sudo chmod +x /bin/tldr
         fi
         echo -e "              ${green}[√] TLDR Successful${reset}\n"
-
-
-#----------------------------------------------------------------------------------------#
-# Chrome 
-#----------------------------------------------------------------------------------------#
-
-        # Install Chrome
-        sudo wget -q -t 0 -P $HOME https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb > /dev/null 2>&1
-        sudo dpkg -i $HOME/google-chrome-stable_current_amd64.deb > /dev/null 2>&1
-        sudo apt --fix-broken install -y -qq > /dev/null 2>&1
-        sudo dpkg -i $Dotfiles_repo/chrome/google-chrome-stable_current_amd64.deb > /dev/null 2>&1
-        sudo rm -rf $HOME/google*
-        echo -e "              ${green}[√] Chrome Successful${reset}\n"
-        
-        # Install ChromeDriver
-        if [ -f "/usr/local/share/chromedriver" ]; then
-            sudo rm -rf /usr/local/share/chromedriver
-            sudo cp -f $Dotfiles_repo/chrome/chromedriver /usr/local/share/chromedriver
-            sudo chmod +x /usr/local/share/chromedriver
-            sudo ln -sf /usr/local/share/chromedriver /usr/local/bin/chromedriver
-            sudo ln -sf /usr/local/share/chromedriver /usr/bin/chromedriver
-        else
-            sudo cp -f $Dotfiles_repo/chrome/chromedriver /usr/local/share/chromedriver
-            sudo chmod +x /usr/local/share/chromedriver
-            sudo ln -sf /usr/local/share/chromedriver /usr/local/bin/chromedriver
-            sudo ln -sf /usr/local/share/chromedriver /usr/bin/chromedriver
-        fi
-        echo -e "              ${green}[√] ChromeDriver Successful${reset}\n"
-
-        # Unzip Chrome Plugin
-        if [ ! -d "$HOME/chrome-extend" ]; then
-            env mkdir $HOME/chrome-extend
-        else
-            rm -rf $HOME/chrome-extend
-            env mkdir $HOME/chrome-extend
-        fi
-        unzip -q $Dotfiles_repo/chrome/darkreader.zip -d $HOME/chrome-extend
-        unzip -q $Dotfiles_repo/chrome/proxyswitch.zip -d $HOME/chrome-extend
-        unzip -q $Dotfiles_repo/chrome/tampermonkey.zip -d $HOME/chrome-extend
-        unzip -q $Dotfiles_repo/chrome/Surfingkeys.zip -d $HOME/chrome-extend
-        echo -e "              ${green}[√] Unzip ChromeExtend-Pack Successful${reset}\n"
 
 #----------------------------------------------------------------------------------------#
 # Tmux
@@ -663,36 +645,6 @@ echo -e "                                                                       
 #        echo -e "              ${green}[√] Rsync Successful${reset}\n"
 }
 
-#----------------------------------------------------------------------------------------#
-# Install - Fonts
-#----------------------------------------------------------------------------------------#
-
-installFonts() {
-
-echo -e "                                                                               ";
-echo -e "-------------------------------------------------------------------------------";
-echo -e "                                                                               ";           
-echo -e "               _____           _                                               ";
-echo -e "              |  ___|__  _ __ | |_ ___                                         ";
-echo -e "              | |_ / _ \| '_ \| __/ __|                                        ";
-echo -e "              |  _| (_) | | | | |_\__ \                                        ";
-echo -e "              |_|  \___/|_| |_|\__|___/   - Install                            ";
-echo -e "                                                                               ";           
-echo -e "-------------------------------------------------------------------------------";
-echo -e "              ${blue}Fonts Install ${reset}                                    ";
-echo -e "-------------------------------------------------------------------------------";
-echo -e "                                                                               ";
-
-        if [ ! -d "$HOME/fonts" ]; then
-            git clone -q\
-                https://hub.fastgit.org/hantaotaohan/fonts_minimize.git\
-                $HOME/fonts && cd $HOME/fonts && ./install.sh
-        else
-            cd $HOME/fonts &&\
-            git reset -q --hard && git pull -q && ./install.sh
-        fi
-}
-
 
 #----------------------------------------------------------------------------------------#
 # Install - Status
@@ -775,12 +727,11 @@ main() {
             gemInstall
             LocalDpkg
             LoaclConfig
-            installFonts
             sudo apt-get -y -qq --purge remove byobu gnome-terminal yelp > /dev/null 2>&1
             sudo apt autoremove -y -qq > /dev/null 2>&1
             sudo apt-get clean > /dev/null 2>&1
             echo -e "              ${green}[√] *** All Install Successful *** ${reset}\n"
-            bash
+            cd $HOME
             bash $HOME/dotfiles/setup/setup_tools.sh
             cd $HOME
             bash
@@ -797,10 +748,11 @@ main() {
             gemInstall
             LocalDpkg
             LoaclConfig
+            Make_apps
             sudo apt-get -y -qq --purge remove byobu gnome-terminal yelp > /dev/null 2>&1
             sudo apt autoremove -y -qq > /dev/null 2>&1
             sudo apt-get clean
-	    echo -e "              ${green}[√] *** All Install Successful *** ${reset}\n"
+            echo -e "              ${green}[√] *** All Install Successful *** ${reset}\n"
             bash
             ;;
         -1)
@@ -816,11 +768,11 @@ main() {
             bash
             ;;
         -4)
-	        aptInstall
+            aptInstall
             bash
             ;;
         -5)
-	        pipInstall
+            pipInstall
             bash
             ;;
         -6)
