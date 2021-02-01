@@ -796,6 +796,7 @@ au VimEnter *
 let g:plug_url_format = 'https://hub.fastgit.org/%s.git'
 
 call plug#begin('$HOME/.vim/plugged')
+Plug 'laggardkernel/vim-one'                                             " 主题文件
 Plug 'joshdick/onedark.vim'                                              " 主题文件
 Plug 'vim-airline/vim-airline'                                           " 状态栏
 Plug 'tpope/vim-fugitive'                                                " git插件
