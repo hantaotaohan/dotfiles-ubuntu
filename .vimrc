@@ -1457,6 +1457,20 @@ function! VimwikiDeleteClean()
 endfunction
 autocmd filetype vimwiki nnoremap <buffer> <leader>wd :call VimwikiDeleteClean()<CR>
 
+"-----------------------------------------------------------------o--------------------------------------------------------------o
+" 预览Hugo
+"-----------------------------------------------------------------o--------------------------------------------------------------o
+function! PreviewHugo()
+    let filename = expand('%:t:r')
+    exec ":AsyncStop"
+    exec ":cd $HOME/blog"
+    exec ":AsyncRun -mode=hide hugo server"
+    exec ":AsyncRun -mode=hide google-chrome http://localhost:1313/" . filename
+    echom 'Hugo Server Done! You Can Preview Hugo ...'
+endfunc
+autocmd FileType vimwiki nnoremap <F12> :call PreviewHugo()<cr>
+
+
 "=================================================================================================================================
 " EasyAlign  settings
 "=================================================================================================================================
