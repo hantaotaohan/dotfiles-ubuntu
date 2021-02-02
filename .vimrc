@@ -96,6 +96,16 @@ if has('clipboard') && has('vim_starting') && has('unnamedplus')
     xnoremap <silent> p p:let @+=@0<CR>:let @"=@0<CR>
 endif
 
+if has('windows') && executable('clip.exe')
+    let s:clip = 'clip.exe'
+    if executable(s:clip)
+        augroup WSLYank
+            autocmd!
+            autocmd TextYankPost * if v:event.operator ==# 'y' | call system(s:clip, @0) | endif
+        augroup END
+    endif
+endif
+
 " ----------------------------------------------------------------o--------------------------------------------------------------o
 " Previewpopup
 " ----------------------------------------------------------------o--------------------------------------------------------------o
