@@ -726,11 +726,13 @@ main() {
             Offlineimap
             Rdrview
             SSH_banner
-            # Copytranslator
             Ctags
             Nodejs
-            # SSR
-            # Github
+            Github
+            Github_Hosts
+            Hugo
+            Java
+            Fix_FZF_history
             ;; 
         -[qQ]) 
             exit; break 
