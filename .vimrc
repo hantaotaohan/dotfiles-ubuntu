@@ -961,15 +961,16 @@ if exists('g:plugs["vim-airline"]')
 " ----------------------------------------------------------------o--------------------------------------------------------------o
 " 自定义airline c x z 区域的各项功能
 " ----------------------------------------------------------------o--------------------------------------------------------------o
-	let g:airline_section_c = airline#section#create(['readonly','  ','%{getcwd()}/','file'])
-	let g:airline_section_x = " "
-	let g:airline_section_y = airline#section#create(['file'])
-	let g:airline_section_z = airline#section#create(['%3p%',' %%  ', '%l' , ':%3v'])
+	if !empty(glob('$HOME/.vim/plugged/vim-airline'))
+		let g:airline_section_c = airline#section#create(['readonly','  ','%{getcwd()}/','file'])
+		let g:airline_section_x = " "
+		let g:airline_section_y = airline#section#create(['file'])
+		let g:airline_section_z = airline#section#create(['%3p%',' %%  ', '%l' , ':%3v'])
 
-	" let g:airline_section_z='%3p%% %#__accent_orange#%4l% :%3v'
-	" let g:airline_section_y = '%{strftime("%c")}'                          " 显示时间
-	" let g:airline_section_x = airline#section#create(['%{&filetype}'])
-
+		" let g:airline_section_z='%3p%% %#__accent_orange#%4l% :%3v'
+		" let g:airline_section_y = '%{strftime("%c")}'                          " 显示时间
+		" let g:airline_section_x = airline#section#create(['%{&filetype}'])
+	endif
 " ----------------------------------------------------------------o--------------------------------------------------------------o
 " Symbols
 " ----------------------------------------------------------------o--------------------------------------------------------------o
