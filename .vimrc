@@ -1025,18 +1025,18 @@ inoremap <F8> <Esc>:NERDTreeToggle<CR>                                    " F8�
 nnoremap <localleader>e :NERDTreeToggle<CR>                               " ;e开启关闭NERDTree
 inoremap <localleader>e <Esc>:NERDTreeToggle<CR>                          " ;e开启关闭NERDTree
 " ----------------------------------------------------------------o--------------------------------------------------------------o
-let NERDTreeShowBookmarks=1                                              " 显示书签
-let NERDTreeChDirMode=2                                                  " 是否改变PWD目录路径
-let NERDTreeQuitOnOpen=0                                                 " 打开后是否关闭NT窗口
-let NERDTreeMinimalUI=1                                                  " 不显示帮助面板
-let NERDTreeWinSize=35                                                   " 窗口宽度
-let g:NERDTreeHidden=0                                                   " 是否显示隐藏文件
-let NERDTreeIgnore=['\.pyc','\~$','\.swp','_gsdata_']                    " 过滤所有指定的文件和文件夹
-let g:NERDTreeShowLineNumbers=1                                          " 是否显示行号
-let g:NERDTreeDirArrowExpandable = '▸'                                   " 设置树的显示图标
-let g:NERDTreeDirArrowCollapsible = '▾'                                  " 设置树的显示图标
-" let NERDTreeSortOrder=[1]                                              " 排序设置0 or 1
-"autocmd vimenter * NERDTree                                             " 自动开启Nerdtree
+let g:NERDTreeShowBookmarks=1                                             " 显示书签
+let g:NERDTreeChDirMode=3                                                 " 是否改变PWD目录路径
+let g:NERDTreeQuitOnOpen=0                                                " 打开后是否关闭NT窗口
+let g:NERDTreeMinimalUI=1                                                 " 不显示帮助面板
+let g:NERDTreeWinSize=35                                                  " 窗口宽度
+let g:NERDTreeShowHidden=1                                                " 是否显示隐藏文件
+let g:NERDTreeIgnore=['\.pyc','\~$','\.swp','_gsdata_']                   " 过滤所有指定的文件和文件夹
+let g:NERDTreeShowLineNumbers=1                                           " 是否显示行号
+let g:NERDTreeDirArrowExpandable = '▸'                                    " 设置树的显示图标
+let g:NERDTreeDirArrowCollapsible = '▾'                                   " 设置树的显示图标
+let g:NERDTreeUseTCD=1                                                    " 打开Tcd模式
+" let NERDTreeSortOrder=[1]                                                " 排序设置0 or 1
 " ----------------------------------------------------------------o--------------------------------------------------------------o
 "当NERDTree为剩下的唯一窗口时自动关闭
 " ----------------------------------------------------------------o--------------------------------------------------------------o
