@@ -1020,13 +1020,20 @@ endif
 "=================================================================================================================================
 " NERDTree 插件配置
 "=================================================================================================================================
-nnoremap <F8> :NERDTreeToggle<CR>                                         " F8开启关闭NERDTree
-inoremap <F8> <Esc>:NERDTreeToggle<CR>                                    " F8开启关闭NERDTree
-nnoremap <localleader>e :NERDTreeToggle<CR>                               " ;e开启关闭NERDTree
-inoremap <localleader>e <Esc>:NERDTreeToggle<CR>                          " ;e开启关闭NERDTree
+nnoremap <localleader>e :call <SID>nerdtreeToggle()<CR>                   " ;e开启关闭NERDTree
+inoremap <localleader>e <Esc> :call <SID>nerdtreeToggle()<CR>             " ;e开启关闭NERDTree
+
+function! s:nerdtreeToggle()
+    if &filetype == 'nerdtree'
+        NERDTreeToggle
+    else
+        NERDTreeFind
+    endif
+endfunction
+
 " ----------------------------------------------------------------o--------------------------------------------------------------o
 let g:NERDTreeShowBookmarks=1                                             " 显示书签
-let g:NERDTreeChDirMode=3                                                 " 是否改变PWD目录路径
+let g:NERDTreeChDirMode=0                                                 " 是否改变PWD目录路径
 let g:NERDTreeQuitOnOpen=0                                                " 打开后是否关闭NT窗口
 let g:NERDTreeMinimalUI=1                                                 " 不显示帮助面板
 let g:NERDTreeWinSize=35                                                  " 窗口宽度
