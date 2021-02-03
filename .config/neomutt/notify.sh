@@ -2,6 +2,9 @@
 #run OfflineIMAP once, with quiet interface
 #offlineimap -o -q -u quiet
 
+# Windows User 
+# In Powershell run > Install-Module -Name BurntToast
+
 #count new mail for every maildir
 # maildirnew="$HOME/Maildir/*/*/new/"
 maildirnew="$HOME/mail/bteb/INBOX/new/"
