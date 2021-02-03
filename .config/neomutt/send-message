@@ -4,4 +4,4 @@
 MSG1=$1
 MSG2=$2
 
-powershell.exe -Command New-BurntToastNotification -Text "Mail","$MSG1","$MSG2"
+powershell.exe -Command New-BurntToastNotification -Text "New Mail","$MSG1","$MSG2"
