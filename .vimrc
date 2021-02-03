@@ -1632,13 +1632,15 @@ autocmd! User GoyoLeave Limelight!
 "=================================================================================================================================
 " AutoPairs  settings
 "=================================================================================================================================
-let g:AutoPairsMapCh = 0
-let g:AutoPairsMapBS = 0
-let g:AutoPairsMapCR = 0
-let g:AutoPairsShortcutToggle = ''
-let g:AutoPairsshortcutFastWrap = ''
-let g:AutoPairsShortcutJump = ''
-let g:AutoPairsShortcutBackInsert = ''
+if exists('g:plugs["auto-pairs"]')
+    let g:AutoPairsMapCh = 0
+    let g:AutoPairsMapBS = 0
+    let g:AutoPairsMapCR = 0
+    let g:AutoPairsShortcutToggle = ''
+    let g:AutoPairsshortcutFastWrap = ''
+    let g:AutoPairsShortcutJump = ''
+    let g:AutoPairsShortcutBackInsert = ''
+endif
 
 "=================================================================================================================================
 " Which Key Map  settings
@@ -1914,9 +1916,11 @@ hi SignatureMarkerText term=standout ctermbg=2   ctermbg=2   guifg=#E06C75 guibg
 "=================================================================================================================================
 " Ultisnips settings
 "=================================================================================================================================
-let g:UltiSnipsExpandTrigger="<C-j>"
-let g:UltiSnipsJumpForwardTrigger="<C-j>"
-let g:UltiSnipsJumpBackwardTrigger="<C-k>"
+if exists('g:plugs["ultisnips"]')
+    let g:UltiSnipsExpandTrigger="<C-j>"
+    let g:UltiSnipsJumpForwardTrigger="<C-j>"
+    let g:UltiSnipsJumpBackwardTrigger="<C-k>"
+endif
 
 "=================================================================================================================================
 " Gutentags settings
