@@ -1,4 +1,7 @@
 #!/bin/bash
-MSG=$1
+# In Powershell run : Install-Module -Name BurntToast
 
-powershell.exe -NoProfile -ExecutionPolicy Bypass -File "alert.ps1" -msg "${MSG}"
+MSG2=$1
+MSG3=$2
+
+powershell.exe -Command New-BurntToastNotification -Text "Mail","$MSG1","$MSG2"
