@@ -654,6 +654,7 @@ function! MyBufferClose()
     let allmod = len(filter(getbufinfo(), 'v:val.changed == 1'))
     let tagbar_open = bufwinnr('__Tagbar__') != -1
     let term = getbufvar(bufnr('$'), '&buftype') == "terminal"
+    let term_cur = getbufvar(bufnr('%'), '&buftype') == "terminal"
     if exists('t:NERDTreeBufName')
         let nerdtree_open = bufwinnr(t:NERDTreeBufName) != -1
     else
@@ -664,8 +665,10 @@ function! MyBufferClose()
         execute "lclose"
     elseif qflist > 1
         execute "cclose"
-    elseif term == 1
+    elseif term == 1 && term_cur == 0
         call feedkeys("\<C-\>")
+        call feedkeys("\<C-W>c")
+    elseif term == 1 && term_cur == 1
         call feedkeys("\<C-W>c")
     elseif nerdtree_open
         execute "NERDTreeClose"
