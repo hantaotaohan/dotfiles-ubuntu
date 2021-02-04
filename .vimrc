@@ -842,7 +842,6 @@ Plug 'tpope/vim-fugitive'                                                " git�
 Plug 'tpope/vim-commentary'                                              " 快速注释插件
 Plug 'tpope/vim-surround'                                                " 成对更改删除括号等
 Plug 'tpope/vim-rsi'                                                     " 更改编辑方式为Emac模式
-Plug 'tpope/vim-eunuch'                                                  " 使用Linux内置命令
 Plug 'tpope/vim-repeat'                                                  " 重复键插件
 Plug 'junegunn/fzf.vim' , {'on': ['Files','Blines','Colors','Btags'] }   " 为vim安装fzf插件
 Plug 'junegunn/fzf' , { 'dir': '~/.fzf', 'do': './install --all' }       " 为系统安装fzf工具
@@ -871,6 +870,7 @@ Plug 'voldikss/vim-floaterm'                                             " 终�
 Plug 'chriskempson/base16-vim'                                           " Themes
 Plug 'jiangmiao/auto-pairs'                                              " 成对添加括号等
 Plug 'ludovicchabant/vim-gutentags'                                      " Tags管理
+" Plug 'tpope/vim-eunuch'                                                  " 使用Linux内置命令
 " Plug 'vim-scripts/fcitx.vim'                                             " 输入法自动切换Fcitx
 " Plug 'hotoo/pangu.vim'                                                   " 中文排版
 " Plug 'Yggdroot/LeaderF' , { 'on': ['LeaderFile!','LeaderfFunction!'] }   " 模糊搜索
