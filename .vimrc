@@ -665,7 +665,8 @@ function! MyBufferClose()
     elseif qflist > 1
         execute "cclose"
     elseif term == 1
-        execute "FloatermKill"
+        call feedkeys("\<C-\>")
+        call feedkeys("\<C-W>c")
     elseif nerdtree_open
         execute "NERDTreeClose"
     elseif tagbar_open
