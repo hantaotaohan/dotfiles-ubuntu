@@ -772,6 +772,24 @@ vnoremap <silent><localleader>w <ESC>:call MySave()<CR>
 inoremap <silent><localleader>w <ESC>:call MySave()<CR>
 
 " ----------------------------------------------------------------o--------------------------------------------------------------o
+" Quickly Rename current Files
+" ----------------------------------------------------------------o--------------------------------------------------------------o
+function! ReName()
+    let old_name = expand('%')
+    let new_name = input('Rename files name: ', expand('%'), 'file')
+    try
+        execute 'saveas ' . new_name
+        call delete(expand('#'))
+        execute "bdelete#"
+        redraw!
+    endtry
+endfunction
+
+nnoremap <Localleader>n :call ReName()<CR>
+vnoremap <Localleader>n <ESC>:call ReName()<CR>
+inoremap <Localleader>n <ESC>:call ReName()<CR>
+
+" ----------------------------------------------------------------o--------------------------------------------------------------o
 " Simple zoom toggle
 " ----------------------------------------------------------------o--------------------------------------------------------------o
 nnoremap <silent><LocalLeader>z  :<C-u>call <SID>zoom()<CR>
