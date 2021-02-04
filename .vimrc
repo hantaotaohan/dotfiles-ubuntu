@@ -653,6 +653,7 @@ function! MyBufferClose()
     let curfiletype =  getbufvar(bufnr('%'), '&filetype')
     let allmod = len(filter(getbufinfo(), 'v:val.changed == 1'))
     let tagbar_open = bufwinnr('__Tagbar__') != -1
+    let term = getbufvar(bufnr('$'), '&buftype') == "terminal"
     if exists('t:NERDTreeBufName')
         let nerdtree_open = bufwinnr(t:NERDTreeBufName) != -1
     else
@@ -663,6 +664,8 @@ function! MyBufferClose()
         execute "lclose"
     elseif qflist > 1
         execute "cclose"
+    elseif term == 1
+        execute "FloatermKill"
     elseif nerdtree_open
         execute "NERDTreeClose"
     elseif tagbar_open
