@@ -11,19 +11,19 @@
 "
 "=================================================================================================================================
 if has("gui_running")
-set guioptions=M                                                         " 去除VIN得GUI版本中得菜单栏
-set guioptions=T                                                         " 去除VIN得GUI版本中得工具栏
-set guioptions-=m
-set guioptions-=T
-nnoremap <silent> <S-F2> 
-    \:if &guioptions =~# 'T' <Bar>
-        \set guioptions-=T <Bar>
-        \set guioptions-=m <bar>
-    \else <Bar>
-        \set guioptions+=T <Bar>
-        \set guioptions+=m <Bar>
-    \endif<CR>
+    set guioptions=M                                                     " 去除VIN得GUI版本中得菜单栏
+    set guioptions=T                                                     " 去除VIN得GUI版本中得工具栏
+    set guioptions-=m
+    set guioptions-=T
+    nnoremap <silent> <S-F2> :if &guioptions =~# 'T' <Bar>
+            \set guioptions-=T <Bar>
+            \set guioptions-=m <bar>
+            \else <Bar>
+            \set guioptions+=T <Bar>
+            \set guioptions+=m <Bar>
+            \endif<CR>
 endif
+
 " ----------------------------------------------------------------o--------------------------------------------------------------o
 set guifont=Saber\ Bold\ 10.5                                            " 设置GUI字体
 set guicursor+=a:blinkon0                                                " 设置光标不闪烁
@@ -290,7 +290,7 @@ set ttyfast                                                                " 刷
 set ttyscroll=3                                                            " 鼠标滚轮速度
 set errorformat+=[%f:%l]\ ->\ %m,[%f:%l]:%m                                " 错误格式
 set listchars=tab:\|\ ,trail:.,extends:>,precedes:<                        " 设置分隔符可视
-set formatoptions+=B                                                       " 合并两行中文时，不在中间加空格
+set formatoptions+=j                                                       " 合并两行中文时，不在中间加空格
 set fileformats=unix,dos,mac                                               " 文件换行符，默认使用 unix 换行符
 set tags=./.tags;,.tags                                                    " 设置Tags
 
