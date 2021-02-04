@@ -25,8 +25,12 @@ if has("gui_running")
 endif
 
 " ----------------------------------------------------------------o--------------------------------------------------------------o
-set guifont=Saber\ Bold\ 10.5                                            " 设置GUI字体
-set guicursor+=a:blinkon0                                                " 设置光标不闪烁
+if has("win32") && has("gui_running")
+    source $VIMRUNTIME/delmenu.vim
+    source $VIMRUNTIME/menu.vim
+    set guifont=Saber:b:h11                                              " 设置GUI字体
+    set guicursor+=a:blinkon0                                            " 设置光标不闪烁
+endif
 
 "=================================================================================================================================
 
