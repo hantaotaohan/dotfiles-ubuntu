@@ -853,7 +853,7 @@ Plug 'dhruvasagar/vim-table-mode' , { 'on': 'TableModeToggle' }          " 表�
 Plug 'majutsushi/tagbar' , { 'on': 'TagbarToggle' }                      " Tag浏览
 Plug 'skywind3000/asyncrun.vim'                                          " 配合调测python插件
 Plug 'christoomey/vim-tmux-navigator'                                    " 同步vim与tmux快捷键
-Plug 'Yggdroot/indentLine'                                               " 缩进线显示插件
+Plug 'Yggdroot/indentLine' , { 'on': 'IndentLinesToggle' }               " 缩进线显示插件
 Plug 'mhinz/vim-startify'                                                " 定制vim开始页面
 Plug 'SirVer/ultisnips'                                                  " 代码片段管理器
 Plug 'hantaotaohan/vim-snippets'                                         " 代码片段仓库
