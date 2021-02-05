@@ -329,7 +329,8 @@ if has('folding') && has('vim_starting')
     endfunction
 endif
 
-nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>           " 空格打开关闭折叠视图
+" nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>           " 空格打开关闭折叠视图(在不自动打开关闭折叠的情况下)
+nnoremap <expr> <Space> &foldlevel ? 'zM' :'zR'                            " 空格打开关闭折叠视图(在光标自动打开关闭折叠的情况下)
 vnoremap <Space> zf                                                        " 空格打开关闭折叠视图
 
 "=================================================================================================================================
