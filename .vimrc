@@ -1071,8 +1071,12 @@ if exists('g:plugs["vim-airline"]')
 	nmap <silent><LocalLeader>9       <Plug>AirlineSelectTab9
 	nmap <silent><LocalLeader><tab>   <Plug>AirlineSelectNextTab
 	nmap <silent><LocalLeader><S-tab> <Plug>AirlineSelectPrevTab
+	nmap <silent><S-Left>             <Plug>AirlineSelectPrevTab
+	nmap <silent><S-Right>            <Plug>AirlineSelectNextTab
 	imap <silent><Localleader><tab>   <Esc><Plug>AirlineSelectNextTab
-	imap <silent><Localleader><S-tab> <Esc><Plug>AirlineSelectNextTab
+	imap <silent><Localleader><S-tab> <Esc><Plug>AirlineSelectPrevTab
+	imap <silent><S-Left>             <Esc><Plug>AirlineSelectPrevTab
+	imap <silent><S-Right>            <Esc><Plug>AirlineSelectNextTab
 "-----------------------------------------------------------------o--------------------------------------------------------------o
 endif
 
