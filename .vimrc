@@ -1723,11 +1723,11 @@ endif
 " Which Key Map  settings
 "=================================================================================================================================
 if !exists('which_key#register')
-    silent! call which_key#register('<Space>', "g:which_key_map")
+    silent! call which_key#register('\', "g:which_key_map")
 endif
 
-nnoremap <silent><leader> :WhichKey '<Space>'<CR>
-vnoremap <silent><leader> :WhichKeyVisual '<Space>'<CR>
+nnoremap <silent><leader> :WhichKey '\'<CR>
+vnoremap <silent><leader> :WhichKeyVisual '\'<CR>
 
 autocmd! FileType which_key
 autocmd  FileType which_key set laststatus=0 noshowmode noruler
