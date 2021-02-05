@@ -863,13 +863,13 @@ Plug 'ferrine/md-img-paste.vim'                                          " Markd
 Plug 'vimwiki/vimwiki' , { 'on': '<Plug>VimwikiIndex' ,'branch': 'dev' } " Vimwiki插件
 Plug 'michal-h21/vim-zettel'                                             " 配合vimwiki的功能插件
 Plug 'liuchengxu/vim-which-key'                                          " Leader辅助
-Plug 'arcticicestudio/nord-vim'                                          " Themes
 Plug 'kshenoy/vim-signature'                                             " 书签插件
 Plug 'yianwillis/vimcdoc'                                                " 中文帮助
 Plug 'voldikss/vim-floaterm'                                             " 终端插件
-Plug 'chriskempson/base16-vim'                                           " Themes
 Plug 'jiangmiao/auto-pairs'                                              " 成对添加括号等
 Plug 'ludovicchabant/vim-gutentags'                                      " Tags管理
+" Plug 'chriskempson/base16-vim'                                           " Themes
+" Plug 'arcticicestudio/nord-vim'                                          " Themes
 " Plug 'tpope/vim-eunuch'                                                  " 使用Linux内置命令
 " Plug 'vim-scripts/fcitx.vim'                                             " 输入法自动切换Fcitx
 " Plug 'hotoo/pangu.vim'                                                   " 中文排版
@@ -891,7 +891,6 @@ Plug 'ludovicchabant/vim-gutentags'                                      " Tags�
 " Plug 'edkolev/tmuxline.vim'                                              " Vim同步tmux配色
 " Plug 'scrooloose/nerdcommenter'                                          " 快速注释插件
 call plug#end()
-
 
 "=================================================================================================================================
 "                                                          主题及颜色配置 
@@ -916,7 +915,6 @@ hi DiffDelete             term=standout ctermfg=235 ctermbg=204 guifg=#E06C75 gu
 hi CursorLineNr           term=standout ctermfg=145 ctermbg=236 guifg=#61AFEF guibg=#282C34   " 当前光标行序号栏颜色
 hi Cursor                 term=standout ctermfg=145 ctermbg=236 guifg=#282c34 guibg=#E06C75   " 当前光标颜色
 hi FoldColumn             term=standout ctermfg=0   ctermbg=5   guifg=#ABB2BF guibg=#282C34   " 折叠边栏提示颜色
-
 
 "=================================================================================================================================
 "                                                                                                                                
