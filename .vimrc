@@ -302,18 +302,20 @@ set tags=./.tags;,.tags                                                    " 设
 " set noequalalways                                                        " 不要在拆分或关闭时调整窗口大小
 " set display=lastline                                                     " 显示最后一行信息
 " set list                                                                 " 显示隐藏字符
-" set listchars=tab:\▏\ ,extends:⟫,precedes:⟪,nbsp:␣,trail:·               " 设置特殊符号
+" set listchars=tab:\▏\ ,extends:⟫,precedes:⟪,nbsp:␣,trail:·              " 设置特殊符号
 " set wildmode=list:full                                                   " 长列表补全
 
 " ----------------------------------------------------------------o--------------------------------------------------------------o
 " 折叠设置 
 " ----------------------------------------------------------------o--------------------------------------------------------------o
 if has('folding') && has('vim_starting')
+    set foldenable
     set foldmethod=manual                                                  " 启用手动折叠zf
     set foldcolumn=2                                                       " 侧边栏宽度
-    set foldlevel=3                                                        " 设置折层数为3
-    set foldlevelstart=99                                                  " 初始化vim不折叠信息
-    set foldclose=all                                                      " 设置为自动关闭折叠
+    set foldlevel=0                                                        " 设置折层所有内容
+    set foldclose=all                                                      " 设置为折叠自动关闭
+    set foldopen=all                                                       " 设置为折叠自动打开
+    set foldnestmax=1                                                      " 设置 indent 和 syntax 方法的最大折叠嵌套层数
     set foldtext=NeatFoldText()
     function! NeatFoldText() 
         let line = ' ' . substitute(getline(v:foldstart), '^\s*"\?\s*\|\s*"\?\s*{{' . '{\d*\s*', '', 'g') . ' '
