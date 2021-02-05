@@ -10,11 +10,17 @@
 "                                                                GUI
 "
 "=================================================================================================================================
+"=================================================================================================================================
+"
+"                                                                GUI
+"
+"=================================================================================================================================
 if has("gui_running")
     set guioptions=M                                                     " 去除VIN得GUI版本中得菜单栏
     set guioptions=T                                                     " 去除VIN得GUI版本中得工具栏
     set guioptions-=m
     set guioptions-=T
+    set guifont=Inziu\ Iosevka\ SC\ Bold\ 10                             " 设置GUI字体
     nnoremap <silent> <S-F2> :if &guioptions =~# 'T' <Bar>
             \set guioptions-=T <Bar>
             \set guioptions-=m <bar>
@@ -28,7 +34,7 @@ endif
 if has("win32") && has("gui_running")
     source $VIMRUNTIME/delmenu.vim
     source $VIMRUNTIME/menu.vim
-    set guifont=Saber:b:h11                                              " 设置GUI字体
+    set guifont=Inziu_Iosevka_SC:b:h9                                    " 设置GUI字体
     set guicursor+=a:blinkon0                                            " 设置光标不闪烁
 endif
 
