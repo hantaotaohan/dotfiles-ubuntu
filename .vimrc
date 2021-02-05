@@ -469,9 +469,9 @@ nnoremap <silent> <C-f> <C-f>zz
 " ----------------------------------------------------------------o--------------------------------------------------------------o
 " Clear highlighted search
 " ----------------------------------------------------------------o--------------------------------------------------------------o
-" nnoremap <silent> <ESC><ESC> :nohlsearch<Return>
-nnoremap <ESC> :nohlsearch<CR>
-nnoremap <esc>^[ <esc>^[
+nnoremap <silent> <ESC><ESC> :nohlsearch<Return>
+" nnoremap <ESC> :nohlsearch<CR>
+" nnoremap <esc>^[ <esc>^[
 
 " ----------------------------------------------------------------o--------------------------------------------------------------o
 " Yank
@@ -1104,8 +1104,8 @@ endif
 "=================================================================================================================================
 " NERDTree 插件配置
 "=================================================================================================================================
-nnoremap <localleader>e :call <SID>nerdtreeToggle()<CR>                   " ;e开启关闭NERDTree
-inoremap <localleader>e <Esc> :call <SID>nerdtreeToggle()<CR>             " ;e开启关闭NERDTree
+nnoremap <silent><localleader>e :call <SID>nerdtreeToggle()<CR>                   " ;e开启关闭NERDTree
+inoremap <silent><localleader>e <Esc> :call <SID>nerdtreeToggle()<CR>             " ;e开启关闭NERDTree
 
 function! s:nerdtreeToggle()
     if &filetype == 'nerdtree'
