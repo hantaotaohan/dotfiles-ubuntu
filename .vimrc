@@ -916,8 +916,8 @@ Plug 'voldikss/vim-floaterm'                                             " 终�
 Plug 'jiangmiao/auto-pairs'                                              " 成对添加括号等
 Plug 'ludovicchabant/vim-gutentags'                                      " Tags管理
 if has("python3")
-	Plug 'SirVer/ultisnips'                                          " 代码片段管理器
-	Plug 'hantaotaohan/vim-snippets'                                 " 代码片段仓库
+    Plug 'SirVer/ultisnips'                                              " 代码片段管理器
+    Plug 'hantaotaohan/vim-snippets'                                     " 代码片段仓库
 endif
 " Plug 'chriskempson/base16-vim'                                           " Themes
 " Plug 'arcticicestudio/nord-vim'                                          " Themes
