@@ -909,14 +909,14 @@ endif
 " ----------------------------------------------------------------o--------------------------------------------------------------o
 hi Search                 term=standout ctermfg=235 ctermbg=204 guifg=#282C34 guibg=#E06C75   " 搜索高亮自定义
 hi IncSearch              term=standout ctermfg=235 ctermbg=204 guifg=#282C34 guibg=#E06C75   " 搜索行高亮自定义
-hi Folded                 term=standout ctermfg=0   ctermbg=5   guifg=#282c34 guibg=#ABB2BF   " 折叠提示颜色
+hi Folded                 term=standout ctermfg=0   ctermbg=5   guifg=#282c34 guibg=#80868F   " 折叠提示颜色
 hi QuickFixLine           term=standout ctermfg=235 ctermbg=180 guifg=#ABB2BF guibg=#282C34   " 快速栏颜色
 hi SignColumn             term=standout ctermfg=2   ctermbg=2   guifg=#E06C75 guibg=#282C34   " 标签栏颜色
 hi DiffDelete             term=standout ctermfg=235 ctermbg=204 guifg=#E06C75 guibg=#E06C75   " 差异删除颜色
 hi CursorLineNr           term=standout ctermfg=145 ctermbg=236 guifg=#61AFEF guibg=#282C34   " 当前光标行序号栏颜色
 hi Cursor                 term=standout ctermfg=145 ctermbg=236 guifg=#282c34 guibg=#E06C75   " 当前光标颜色
+hi FoldColumn             term=standout ctermfg=0   ctermbg=5   guifg=#ABB2BF guibg=#282C34   " 折叠边栏提示颜色
 
-" hi FoldColumn             term=standout ctermfg=0   ctermbg=5   guifg=#282c34 guibg=#ABB2BF   " 折叠提示颜色
 
 "=================================================================================================================================
 "                                                                                                                                
