@@ -336,6 +336,34 @@ vnoremap <Space> zf                                                        " 空
 "
 "=================================================================================================================================
 " ----------------------------------------------------------------o--------------------------------------------------------------o
+" 内部终端颜色设置
+" ----------------------------------------------------------------o--------------------------------------------------------------o
+if has('nvim')
+    let g:terminal_color_0 = "#282c34"
+    let g:terminal_color_1 = "#e06c75"
+    let g:terminal_color_2 = "#98c379"
+    let g:terminal_color_3 = "#e5c07b"
+    let g:terminal_color_4 = "#61afef"
+    let g:terminal_color_5 = "#c678dd"
+    let g:terminal_color_6 = "#56b6c2"
+    let g:terminal_color_7 = "#dcdfe4"
+    let g:terminal_color_8 = "#282c34"
+    let g:terminal_color_9 = "#e06c75"
+    let g:terminal_color_10= "#98c379"
+    let g:terminal_color_11= "#e5c07b"
+    let g:terminal_color_12= "#61afef"
+    let g:terminal_color_13= "#c678dd"
+    let g:terminal_color_14= "#56b6c2"
+    let g:terminal_color_15= "#dcdfe4"
+else
+    let g:terminal_ansi_colors = [
+    \ '#282c34', '#e06c75', '#98c379', '#e5c07b',
+    \ '#61afef', '#c678dd', '#56b6c2', '#abb2bf',
+    \ '#282c34', '#e06c75', '#98c379', '#e5c07b',
+    \ '#61afef', '#c678dd', '#56b6c2', '#abb2bf' ]
+endif
+
+" ----------------------------------------------------------------o--------------------------------------------------------------o
 " 终端下允许 ALT
 " 记得设置 ttimeout （见 init-basic.vim） 和 ttimeoutlen （上面）
 " ----------------------------------------------------------------o--------------------------------------------------------------o
