@@ -32,10 +32,14 @@ endif
 
 " ----------------------------------------------------------------o--------------------------------------------------------------o
 if has("win32") && has("gui_running")
-    source $VIMRUNTIME/delmenu.vim
-    source $VIMRUNTIME/menu.vim
+    let $LANG='zh_CN'
+    set helplang=cn
+    set encoding=utf8 
+    set langmenu=zh_CN.UTF-8 
     set guifont=Inziu_Iosevka_SC:b:h9                                    " 设置GUI字体
     set guicursor+=a:blinkon0                                            " 设置光标不闪烁
+    source $VIMRUNTIME/delmenu.vim
+    source $VIMRUNTIME/menu.vim
 endif
 
 "=================================================================================================================================
