@@ -70,7 +70,7 @@ min_width=60
 
 [fcitx]
 command=$HOME/.config/i3blocks/fcitx
-label=
+label= 
 interval=1
 min_width=50
 
