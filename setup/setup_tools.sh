@@ -514,6 +514,16 @@ Fixicons() {
     sudo sed -i '$a\Icon=/home/taotao/dotfiles/setup/icons/browser.png' /usr/share/applications/ranger.desktop
 }
 
+Alacritty() {
+    sudo add-apt-repository -y ppa:aslatter/ppa
+    sudo sed -i "s/http:\/\/ppa.launchpad.net/https:\/\/launchpad.proxy.ustclug.org/g" /etc/apt/sources.list.d/*.list
+    sudo apt update
+    sudo apt install -y alacritty
+    sudo sed -i "s/https:\/\/launchpad.proxy.ustclug.org/http:\/\/ppa.launchpad.net/g" /etc/apt/sources.list.d/*.list
+    sudo add-apt-repository -y --remove peek-developers/stable
+    row
+}
+
 main() {
 
     echo "                                                                               "
@@ -561,6 +571,7 @@ main() {
     echo " -33       Fix FZF-history                                                     "
     echo " -34       Git Clone Mywiki and hugowiki                                       "
     echo " -35       Fix Icons                                                           "
+    echo " -36       Setup Alacritty                                                     "
     echo "                                                                               "
     echo "-------------------------------------------------------------------------------"
     echo "                                                                               "
@@ -681,11 +692,15 @@ main() {
         -35)
             Fixicons
             ;;  
+        -36)
+            Alacritty
+            ;;  
         -[aA])
             Github_Hosts
             Alttab
             Arcthemes
             Arcicons
+            Alacritty
             Copytranslator
             #Crossover
             Imagemagick
