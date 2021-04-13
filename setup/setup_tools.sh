@@ -50,6 +50,7 @@ Options:
     -33       Install Fix FZF-history
     -34       Git Clone My vimwiki and hugowiki
     -35       Fix Icons
+    -36       Install Alacritty
 EOF
 }
 
@@ -700,7 +701,6 @@ main() {
             Alttab
             Arcthemes
             Arcicons
-            Alacritty
             Copytranslator
             #Crossover
             Imagemagick
