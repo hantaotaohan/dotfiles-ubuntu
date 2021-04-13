@@ -352,7 +352,7 @@ echo -e "                                                                       
         git \
         wget \
         curl \
-        python-pip \
+        #python-pip \
         python3-pip \
         ranger \
         alacritty \
@@ -403,12 +403,12 @@ echo -e "                                                                       
         ncdu \
         nautilus \
         newsboat \
-        axel \
-        pv \
-        aria2 \
+        #axel \
+        #pv \
+        #aria2 \
         rar \
         unrar \
-        ffmpeg \
+        #ffmpeg \
         vlc \
         p7zip-full \
         lua5.2 \
