@@ -374,6 +374,8 @@ echo -e "                                                                       
         ruby-full \
         #xvfb \
         xserver-xorg-core \
+	xserver-xorg-input-all \
+	x11-xserver-utils \
         xdotool \
         #dbus-x11 \
         xinit \
