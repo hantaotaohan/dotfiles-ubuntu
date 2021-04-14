@@ -512,7 +512,7 @@ echo -e "                                                                       
 # Local - Install & Config
 #----------------------------------------------------------------------------------------#
 
-#LocalDpkg() {
+LocalDpkg() {
 
 echo -e "                                                                               ";
 echo -e "-------------------------------------------------------------------------------";
@@ -849,7 +849,7 @@ main() {
             aptInstall
             pipInstall
             gemInstall
-            # LocalDpkg
+            LocalDpkg
             LoaclConfig
             installFonts
             Make_apps
