@@ -355,30 +355,30 @@ echo -e "                                                                       
         #python-pip \
         python3-pip \
         ranger \
-        alacritty \
+        #alacritty \
         ripgrep \
         silversearcher-ag \
-        bat \
+        #bat \
         tmux \
         vim \
         vim-gtk \
         neomutt \
         w3m \
-        zlib1g-dev \
+        #zlib1g-dev \
         inotify-tools \
         wmctrl \
-        tree \
+        #tree \
         zip \
         unzip \
         xclip \
         ruby-full \
-        xvfb \
+        #xvfb \
         xserver-xorg \
         xdotool \
-        dbus-x11 \
-        xinit \
+        #dbus-x11 \
+        #xinit \
         language-pack-zh-hans \
-        fonts-wqy-microhei \
+        #fonts-wqy-microhei \
         fcitx \
         fcitx-pinyin \
         fcitx-module-cloudpinyin \
@@ -388,7 +388,7 @@ echo -e "                                                                       
         i3lock-fancy \
         zathura \
         i3blocks \
-        xinput \
+        #xinput \
         jq \
         tldr \
         open-vm-tools \
@@ -406,11 +406,11 @@ echo -e "                                                                       
         #axel \
         #pv \
         #aria2 \
-        rar \
-        unrar \
+        #rar \
+        #unrar \
         #ffmpeg \
         vlc \
-        p7zip-full \
+        #p7zip-full \
         lua5.2 \
         imwheel \
         yank
