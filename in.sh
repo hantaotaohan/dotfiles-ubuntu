@@ -514,34 +514,34 @@ echo -e "                                                                       
 
 #LocalDpkg() {
 
-#echo -e "                                                                               ";
-#echo -e "-------------------------------------------------------------------------------";
-#echo -e "                                                                               ";           
-#echo -e "               _                    _                                          ";
-#echo -e "              | |    ___   ___ __ _| |                                         ";
-#echo -e "              | |   / _ \ / __/ _  | |                                         ";
-#echo -e "              | |__| (_) | (_| (_| | |                                         ";
-#echo -e "              |_____\___/ \___\__,_|_|  - Dpkg Install                         ";
-#echo -e "                                                                               ";           
-#echo -e "-------------------------------------------------------------------------------";
-#echo -e "              ${blue}Local - Install ${reset}                                  ";
-#echo -e "-------------------------------------------------------------------------------";
-#echo -e "                                                                               ";
+echo -e "                                                                               ";
+echo -e "-------------------------------------------------------------------------------";
+echo -e "                                                                               ";           
+echo -e "               _                    _                                          ";
+echo -e "              | |    ___   ___ __ _| |                                         ";
+echo -e "              | |   / _ \ / __/ _  | |                                         ";
+echo -e "              | |__| (_) | (_| (_| | |                                         ";
+echo -e "              |_____\___/ \___\__,_|_|  - Dpkg Install                         ";
+echo -e "                                                                               ";           
+echo -e "-------------------------------------------------------------------------------";
+echo -e "              ${blue}Local - Install ${reset}                                  ";
+echo -e "-------------------------------------------------------------------------------";
+echo -e "                                                                               ";
 
-#	dpkgApps=( \
-#        ripgrep.deb \
-#        fd.deb \
-#        bat.deb \
-#        #resilio-sync.deb \
-#        Alacritty.deb
-#        )
-#        for app in "${dpkgApps[@]}"
-#        do
-#            echo -e "              [*] Installing: $app";
-#            sudo dpkg -i $Dotfiles_repo/bin/$app > /dev/null 2>&1
-#            installSuccess $? $app
-#        done
-#}
+	dpkgApps=( \
+        #ripgrep.deb \
+        fd.deb \
+        bat.deb \
+        #resilio-sync.deb \
+        Alacritty.deb
+        )
+        for app in "${dpkgApps[@]}"
+        do
+            echo -e "              [*] Installing: $app";
+            sudo dpkg -i $Dotfiles_repo/bin/$app > /dev/null 2>&1
+            installSuccess $? $app
+        done
+}
 
 LoaclConfig() {
 
