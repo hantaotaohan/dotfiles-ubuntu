@@ -403,13 +403,14 @@ echo -e "                                                                       
         ncdu \
         nautilus \
         newsboat \
+	mpv \
         #axel \
         #pv \
         #aria2 \
         #rar \
         #unrar \
         #ffmpeg \
-        vlc \
+        #vlc \
         #p7zip-full \
         lua5.2 \
         imwheel \
