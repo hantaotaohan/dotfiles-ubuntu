@@ -430,7 +430,7 @@ echo -e "                                                                       
         for app in "${aptApps[@]}"
         do
             echo -e "              [*] Installing: $app";
-            sudo apt install -y -qq $app --no-install-recommends --no-install-suggests > /dev/null 2>&1
+            sudo apt install -y -qq $app > /dev/null 2>&1
             installSuccess $? $app
         done
 }
