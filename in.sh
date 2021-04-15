@@ -342,6 +342,64 @@ echo -e "-----------------------------------------------------------------------
 echo -e "                                                                               ";
 
 	aptApps=( \
+	#------System------
+	xinit \
+        openssh-server \
+        openssh-client \
+        ruby-full \
+	lua5.2 \
+	#------I3wm------
+	i3 \
+        rofi \
+        feh \
+	mpv \
+        i3lock-fancy \
+	i3blocks \
+	deepin-screenshot \
+	nautilus \
+	imwheel \
+	solaar \
+	zathura \
+	#------Fcitx------
+	fcitx \
+        fcitx-pinyin \
+        fcitx-module-cloudpinyin \
+	#------Language------
+	language-pack-zh-hans \
+	language-pack-gnome-zh-hans \
+	#------VmWare------
+	open-vm-tools \
+        open-vm-tools-desktop \
+	#------Tools------
+        git \
+        wget \
+        curl \
+        python3-pip \
+        ranger \
+        ripgrep \
+	zip \
+        unzip \
+        jq \
+        tldr \
+        silversearcher-ag \
+	xdotool \
+	xclip \
+	wmctrl \
+	ncdu \
+	inotify-tools \
+	#------Edit------
+        vim \
+        vim-gtk \
+	tmux \
+        w3m \
+	#------Mail------
+	neomutt \
+        offlineimap \
+        msmtp \
+	newsboat \
+	#------Other------
+        yank
+	#------ignore------
         #ctags \
         #compton \
         #i3status \
@@ -349,63 +407,15 @@ echo -e "                                                                       
         #xautolock \
         #gnome-keyring \
         #libsecret-tools \
-        git \
-        wget \
-        curl \
-        #python-pip \
-        python3-pip \
-        ranger \
-        #alacritty \
-        ripgrep \
-        silversearcher-ag \
-        #bat \
-        tmux \
-        vim \
-        vim-gtk \
-        neomutt \
-        w3m \
-        #zlib1g-dev \
-        inotify-tools \
-        wmctrl \
-        #tree \
-        zip \
-        unzip \
-        xclip \
-        ruby-full \
-        #xvfb \
-        xserver-xorg-core \
-	xserver-xorg-input-all \
-	x11-xserver-utils \
-        xdotool \
-        #dbus-x11 \
-        xinit \
-        language-pack-zh-hans \
-        #fonts-wqy-microhei \
-        fcitx \
-        fcitx-pinyin \
-        fcitx-module-cloudpinyin \
-        i3 \
-        rofi \
-        feh \
-        i3lock-fancy \
-        zathura \
-        i3blocks \
-        #xinput \
-        jq \
-        tldr \
-        open-vm-tools \
-        open-vm-tools-desktop \
-        language-pack-gnome-zh-hans \
-        deepin-screenshot \
-        openssh-server \
-        openssh-client \
-        offlineimap \
-        msmtp \
-        solaar \
-        ncdu \
-        nautilus \
-        newsboat \
-	mpv \
+	#python-pip \
+	#alacritty \
+	#bat \
+	#zlib1g-dev \
+	#tree \
+	#xvfb \
+	#dbus-x11 \
+	#fonts-wqy-microhei \
+	#xinput \
         #axel \
         #pv \
         #aria2 \
@@ -414,9 +424,8 @@ echo -e "                                                                       
         #ffmpeg \
         #vlc \
         #p7zip-full \
-        lua5.2 \
-        imwheel \
-        yank
+	#x11-xserver-utils \
+        #xinit \
         )
         for app in "${aptApps[@]}"
         do
