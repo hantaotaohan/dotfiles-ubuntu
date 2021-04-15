@@ -344,29 +344,28 @@ echo -e "                                                                       
 	aptApps=( \
 	#------System------
 	xinit \
+	lua5.2 \
+        ruby-full \
         openssh-server \
         openssh-client \
-        ruby-full \
-	lua5.2 \
 	#------I3wm------
 	i3 \
-        rofi \
         feh \
 	mpv \
-        i3lock-fancy \
+        rofi \
 	i3blocks \
+        i3lock-fancy \
 	deepin-screenshot \
-	nautilus \
-	imwheel \
 	solaar \
+	imwheel \
 	zathura \
+	nautilus \
 	#------Fcitx------
 	fcitx \
         fcitx-pinyin \
-        fcitx-module-cloudpinyin \
 	#------Language------
 	language-pack-zh-hans \
-	language-pack-gnome-zh-hans \
+	#language-pack-gnome-zh-hans \
 	#------VmWare------
 	open-vm-tools \
         open-vm-tools-desktop \
@@ -374,9 +373,9 @@ echo -e "                                                                       
         git \
         wget \
         curl \
-        python3-pip \
         ranger \
         ripgrep \
+        python3-pip \
 	zip \
         unzip \
         jq \
@@ -385,7 +384,7 @@ echo -e "                                                                       
 	xdotool \
 	xclip \
 	wmctrl \
-	ncdu \
+	#ncdu \
 	inotify-tools \
 	#------Edit------
         vim \
@@ -424,6 +423,7 @@ echo -e "                                                                       
         #ffmpeg \
         #vlc \
         #p7zip-full \
+        #fcitx-module-cloudpinyin \
 	#x11-xserver-utils \
         #xinit \
         )
