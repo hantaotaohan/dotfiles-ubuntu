@@ -342,13 +342,7 @@ echo -e "-----------------------------------------------------------------------
 echo -e "                                                                               ";
 
 	aptApps=( \
-	#------System------
-	xinit \
-	lua5.2 \
-        ruby-full \
-        openssh-server \
-        openssh-client \
-	#------I3wm------
+	#------I3wm----------
 	i3 \
         feh \
 	mpv \
@@ -359,17 +353,23 @@ echo -e "                                                                       
 	solaar \
 	imwheel \
 	zathura \
-	nautilus \
-	#------Fcitx------
+	nautilus --no-install-recommends --no-install-suggests \
+	#------System--------
+	xinit \
+	lua5.2 \
+        ruby-full \
+        openssh-server \
+        openssh-client \
+	#------Fcitx---------
 	fcitx \
         fcitx-pinyin \
 	#------Language------
 	language-pack-zh-hans \
 	#language-pack-gnome-zh-hans \
-	#------VmWare------
+	#------VmWare--------
 	open-vm-tools \
         open-vm-tools-desktop \
-	#------Tools------
+	#------Tools---------
         git \
         wget \
         curl \
@@ -386,19 +386,19 @@ echo -e "                                                                       
 	wmctrl \
 	#ncdu \
 	inotify-tools \
-	#------Edit------
+	#------Edit----------
         vim \
         vim-gtk \
 	tmux \
         w3m \
-	#------Mail------
+	#------Mail----------
 	neomutt \
         offlineimap \
         msmtp \
 	newsboat \
-	#------Other------
+	#------Other---------
         yank
-	#------ignore------
+	#------ignore--------
         #ctags \
         #compton \
         #i3status \
