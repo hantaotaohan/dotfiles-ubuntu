@@ -31,10 +31,6 @@ green='\e[0;32m'
 white='\e[0;37m'
 reset='\e[0;37m'
 
-loginuser="taotao"
-su -c "apt install sudo -y -qq"
-su -c "usermod -aG sudo $loginuser"
-su $loginuser
 
 #----------------------------------------------------------------------------------------#
 # Setting Bash Variable
